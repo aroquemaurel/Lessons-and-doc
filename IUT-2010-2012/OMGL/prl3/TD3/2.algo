@@ -1,0 +1,13 @@
+int GestionCourse
++editerResultat()
++editerClassement
++allumer()
++eteindre()
++ajouterEquipe()
++initialiser()
++supprimerEquipe(int p_nom, string)
+-- ...
+
+int interfaceGraphique
++initialisation()
+-- ...

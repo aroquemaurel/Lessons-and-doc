@@ -1,0 +1,62 @@
+\documentclass[12pt,a4paper,openany]{report}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+
+\newcommand{\titre}{Systèmes répartis et réseaux locaux}
+
+\newcommand{\module}{}
+\newcommand{\sigle}{srrl}
+
+\newcommand{\semestre}{4}
+
+\input{/home/satenske/cours/listings.tex} %prise en charge du langage algo
+\input{/home/satenske/cours/entete_iut-cours.tex}
+
+\begin{document}
+	\maketitle
+	Clef moodle $=$ \$asr4
+	\chapter{Réseaux et protocoles}
+	\section{La famille des protocoles TCP/IP}
+		\subsection{Internet et TCP-IP}
+		\begin{itemize}
+			\item Le protocole TCP-IP date des années 70-75. Ce n'est pas un protocole nouveau. Il à été créer par le 
+			département de la défense américaine DoD. Protection de la sécurité du pays.
+			\item \bsc{HAYES} pour les modem
+			\item \bsc{SMTP} pour les mail
+			\item \bsc{MOSAIC} (client)
+		\end{itemize}
+
+		\subsubsection{Raison de son succés}
+		\begin{itemize}
+			\item Protocole du réseau Internet
+			\item Tous les Systèmes d'exploitation 
+			\item Différentes couches
+				\begin{itemize}
+					\item Couche transport (TCP ou UDP)
+					\item Couche réseau (IP)
+				\end{itemize}
+			\item Routable
+			\item Protocole ouvert
+			\item Indépendant du support physique
+		\end{itemize}
+		\subsubsection{Les différentes couches}
+		\paragraph{Couches d'accés au réseau}
+		LLC\footnote{Logical Link Control} et MAC\footnote{Medium Acces Control}\\
+		
+		
+
+\end{document}
+
+
+

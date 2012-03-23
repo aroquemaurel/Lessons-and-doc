@@ -1,0 +1,168 @@
+% Taille de la police du CV et le format
+\documentclass[11pt,a4paper]{cv}
+
+% Un certain nombre de packages sont déjà inclus par la classe CV
+\usepackage[francais]{babel} 
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{color}
+% Langue
+\Language{francais}
+
+% Méta-données PDF
+\hypersetup{
+	pdfauthor   = {Antoine de Roquemaurel},		% C'est vous qui avez fait le PDF
+	pdftitle    = {Curriculum Vitae},
+%	pdfsubject  = {},
+%	pdfkeywords = {},
+	pdfcreator  = {PDFLaTeX},						% Vous l'avez fait avec LateX !
+	pdfproducer = {PDFLaTeX}
+}
+
+% Couleur des liens hypertextes, si vous voulez les faire ressortir
+\definecolor{urlcolor}{rgb}{0, 0, 0.5}
+
+% Version (0 = simple, devrait rentrer sur une page et 1 = détaillé)
+% Par défaut, tout est inclus dans la version simple sauf les cours (\Course{}).
+% Pour n'inclure un élément que dans la version détaillée, ajouter l'argument [\detailedOnly]
+% (cela n'est toutefois pas implémenté partout, votre nom par exemple ne peut pas ne pas figurer dans la version simple)
+\Detailed{1}
+
+% Marges
+\geometry{
+	hmargin=2.3cm,			% Marges gauche-droite
+	vmargin=2.5cm				% Marges haut-bas
+}
+
+% Largeur de la colonne de gauche
+\setlength{\colwidth}{2.5cm}
+
+% Espacements
+\smallskipamount=1mm	% Espace entre les différents entrées d'une section
+\medskipamount=3mm		% Espace entre les sections
+\bigskipamount=5mm		% Espace entre le chapeau et l'objectif ou la première section
+
+\begin{document}
+
+% Le CV commence ici
+%%%%%%%%%%%%%%%%%%%%
+
+% Chapeau (= informations personnelles)
+\begin{heading}
+	\Name{\textbf{Antoine de Roquemaurel}}
+	\Address{23, avenue André Bousquairol\\
+		31~400 Toulouse}
+	\Telephone{06~84~33~52~93}
+	\Email{antoinederoquemaurel@yahoo.fr}		% Un lien hypertexte est automatiquement créé pour l'Email
+	\DateOfBirth{08 Novembre 1991}
+	\Age{19}
+	\Gender{M}	% M = Masculin, F = Féminin. Est utilisé pour savoir s'il faut écrire Né ou Née par exemple ;-)
+	\MaritalStatus{Célibataire}
+	\Photo{Photo.jpg}	% Vous pouvez choisir de mettre une photo ou pas.
+	% sa dimension est sans importance, au final sa hauteur est fixée à 3cm 
+	% et son rapport hauteur/largeur est concervé.
+	% Meilleure est sa résolution, mieux c'est !
+\end{heading}
+\begin{section}{}
+	\\ \\
+\end{section}
+% Objectif (optionnel)
+%\begin{objective}
+%trouver un stage de recherche long dans le domaine de l'électronique ou du traitement du signal.
+%\end{objective}
+
+% Première section
+\begin{section}{Formations}
+	\begin{entry}
+		% Commence une nouvelle entrée
+		\Date{2010 -- 2011}
+		% Il est possible d'ajouter des liens hypertextes n'importe où.
+		\Place{Diplome Universitaire de Technologies informatique}
+%		\Locality{Institut Universitaire de Technologies - Université Toulouse III}
+%		\Country{France}
+		\Activity{\textit{Institut Universitaire de Technologies - Université Toulouse III, France}}
+%		\Activity{Année de préparation à l'agrégation de physique appliquée}
+	\end{entry}
+	\begin{entry}
+		\Date{2008 -- 2010}
+		\Place{Baccalauréat Sciences et Techniques de l'Industriel Génie Eletrotechnique}
+		%\Locality{Lycée Saint Joseph Toulouse}
+%		\Country{France}
+		\Activity{\textit{Lycée Saint Joseph Toulouse, France}}
+		\Locality{Mention assez-bien}
+%		\Course{Electronique de puissance des machines}
+%		\Course{Commande numérique}
+%		\Course{Electronique pour la transmission de l'information}
+%		\Course{Informatique industrielle}
+%		\Course{Signal et image}
+	\end{entry}
+\\
+\end{section}
+\begin{subsection}{Compétence linguistique}
+	\singleEntry{$\cdot$ Anglais}
+\end{subsection}
+
+\begin{subsection}{Compétences techniques}
+	\begin{entrytech}
+		\Date{\textbf{Programmation~:}}
+		\Activity{~~~~~C, C++}
+	\end{entrytech}
+	\begin{entrytech}
+		\Date{\textbf{Web~:}}
+		\Activity{~~~~~XHTML, CSS, PHP}
+	\end{entrytech}
+	\begin{entrytech}
+		\Date{Système~:}
+		\Activity{~~~~~Linux, Unix, Windows}
+	\end{entrytech}  
+	\begin{entrytech}
+		\Date{SGBD~:}
+		\Activity{~~~~~MySQL}
+	\end{entrytech}  
+	\begin{entrytech}
+		\Date{Bureautique~:}
+		\Activity{~~~~~Word, Excel, Powerpoint, \LaTeX}
+	\end{entrytech}  
+	\\ 
+\end{subsection}
+
+\begin{section}{Expériences professionnelles}
+
+	\begin{entry}
+		\Date{2010-2011}
+		\Place{Animation bénévole d'enfants de 8-11 ans}
+		\Locality{\textit{Toulouse}}
+		\Country{\textit{France}}
+	\end{entry}
+	\begin{entry}
+		\Skill{~~~~~~~~2 semaines}
+		\Date{Août2009 ~~~~~~~~~~~~~~}
+		\Place{Construction d'un site internet}
+		\Locality{\textit{Yverdon-les-bains}}
+		\Country{\textit{Suisse}}
+		\Activity{Construction de toute l'architecture du site d'un artisan vérrier, déstiné à exposer ses pièces. Il est totalement géré grâce au PHP, l'artisan peut donc l'administrer.}	
+		\Course{\href{http://valeriederoquemaurel.com}{http://valeriederoquemaurel.com}}
+	\end{entry}
+	\begin{entry}
+		\Date{2009-2010}
+		\Place{Animation bénévole d'enfants de 6-8 ans}
+		\Locality{\textit{Toulouse}}
+		\Country{\textit{France}}
+%		\Activity{Construction de toute l'architecture du site d'un artisan vérrier, déstiné à exposer ses pièces. Il est totalement géré grâce au PHP, l'artisan peut donc l'administrer.}	
+%		\Course{\href{http://valeriederoquemaurel.com}{http://valeriederoquemaurel.com}}
+	\end{entry}
+	\\ \\
+\end{section}
+
+\begin{section}{Loisirs et activités}
+	\singleEntry{$\cdot$ Trésorier dans le cadre de l'animation d'enfants de 8-11ans} 
+	\singleEntry{$\cdot$ Animateur bénévole Scouts et Guides de France} 
+	\singleEntry{$\cdot$ En formation de Brevet d'Aptitude à la Fonction d'Animateur}
+	\singleEntry{$\cdot$ Lecture} 
+
+\end{section}
+
+% Le CV termine ici
+%%%%%%%%%%%%%%%%%%%
+
+\end{document}

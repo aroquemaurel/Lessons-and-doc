@@ -1,0 +1,31 @@
+\select@language {french}
+\contentsline {chapter}{\numberline {1}Les emprunts et les pr\IeC {\^e}ts}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}Emprunts et inter\IeC {\^e}ts}{3}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Principes}{3}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Les syst\IeC {\`e}mes de calcul des inter\IeC {\^e}ts}{3}{subsection.1.1.2}
+\contentsline {subsubsection}{\numberline {1.1.2.1}Le syst\IeC {\`e}me des inter\IeC {\^e}ts simples}{3}{subsubsection.1.1.2.1}
+\contentsline {subsubsection}{\numberline {1.1.2.2}Le sys\IeC {\`e}me des int\IeC {\'e}r\IeC {\^e}ts compos\IeC {\'e}s}{3}{subsubsection.1.1.2.2}
+\contentsline {section}{\numberline {1.2}Valeur acquise et valeur actuelle d'un capital}{4}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Valeur acquise}{4}{subsection.1.2.1}
+\contentsline {subsubsection}{\numberline {1.2.1.1}La notion de valeur acquise}{4}{subsubsection.1.2.1.1}
+\contentsline {subsubsection}{\numberline {1.2.1.2}Valeur acquise d'un capital place \IeC {\`a} int\IeC {\'e}r\IeC {\^e}ts compos\IeC {\'e}s}{4}{subsubsection.1.2.1.2}
+\contentsline {paragraph}{G\IeC {\'e}n\IeC {\'e}ralisation}{4}{section*.2}
+\contentsline {subsection}{\numberline {1.2.2}Valeur actuelle d'un capitale \IeC {\`a} int\IeC {\'e}r\IeC {\^e}ts compos\IeC {\'e}s}{5}{subsection.1.2.2}
+\contentsline {subsubsection}{\numberline {1.2.2.1}Calcul de la valeur actuelle}{5}{subsubsection.1.2.2.1}
+\contentsline {section}{\numberline {1.3}Les cas des emprunts remboursables au moyen de versements p\IeC {\'e}riodiques}{5}{section.1.3}
+\contentsline {paragraph}{}{5}{section*.3}
+\contentsline {subsection}{\numberline {1.3.1}1\IeC {\`e}re possibilit\IeC {\'e} : Amortissement constants}{6}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}2nd possibilit\IeC {\'e} : Tableau d'amortissement}{6}{subsection.1.3.2}
+\contentsline {paragraph}{}{6}{section*.4}
+\contentsline {chapter}{\numberline {2}La politique d'investissement}{8}{chapter.2}
+\contentsline {section}{\numberline {2.1}La rentabilit\IeC {\'e} des investissements}{8}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Les investissements}{8}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Les d\IeC {\'e}penses et les recettes li\IeC {\'e}s \IeC {\`a} l'investissement}{8}{subsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.2.1}La d\IeC {\'e}pense d'investissement ($C$)}{8}{subsubsection.2.1.2.1}
+\contentsline {paragraph}{Les recettes nettes d'exploitations apr\IeC {\`e}s imp\IeC {\^o}ts\newline }{9}{section*.5}
+\contentsline {paragraph}{La valeur r\IeC {\'e}siduelle de l'investissement ($V$)\newline }{9}{section*.6}
+\contentsline {subsection}{\numberline {2.1.3}Actualisation des recettes pr\IeC {\'e}visionnelles}{10}{subsection.2.1.3}
+\contentsline {section}{\numberline {2.2}Le plan de financement}{11}{section.2.2}
+\contentsline {paragraph}{Amortissements}{12}{section*.7}
+\contentsline {paragraph}{}{12}{table.2.1}
+\contentsline {subparagraph}{Capacit\IeC {\'e} d'autofinancement}{12}{section*.10}

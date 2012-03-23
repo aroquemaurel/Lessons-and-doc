@@ -1,0 +1,113 @@
+\documentclass{article}
+
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+
+\newcommand{\titre}{Le diagramme de modélisation UML}
+\newcommand{\numTD}{3}
+
+\newcommand{\module}{Prodution de logiciel}
+\newcommand{\sigle}{prl}
+
+\newcommand{\semestre}{3}
+
+\input{/home/satenske/cours/listings.tex} %prise en charge du langage algo
+\input{/home/satenske/cours/entete_iut-td.tex}
+
+\begin{document}
+	\maketitle
+	\section{}
+	\section{}
+	\input{1.tex}
+	\section{}
+	\subsection{Coureur}
+		-Nom\\
+		-Prenom\\
+		+Accesseurs\\
+	\subsection{Équipe}
+		-Nom\\
+		+Accesseurs\\
+		+addMembres(e.coureur)\\
+		+accesseurs\\
+	\subsection{Course}
+		-nom\\
+		-lieu\\
+		-date\\
+		+editerParticipants()\\
+		+editerClassement()\\
+		+editerAbandon()\\
+	\subsection{Temps}
+	+difference(tps.Temps): Temps\\
+	+ajouts(tps.temps): Temps\\
+	+egal(tps:Temps):boolean\\
+	+sup(tps.Temps):boolean\\
+	+affecter(c:String):Temps
+
+	\subsection{Classement}
+	-classer()\\
+	+ajouterArrivant(p\_dossard.integer, p\_tps:Temps)\\
+	+getResultat:Liste(rang:integer, c:Coureur, t:Temps)\\
+	
+	\subsection{Dossard}
+	-numero:integer\\
+	+attribuer() (constructeur)\\
+
+	\subsection{Panneaux Lumineux}
+	+afficher(p\_res1:String, p\_res2:String, p\_res3:string, p\_res4:String)	\\
+	+allumer()\\
+	+eteindre()\\
+
+	\section{L'encapsulation}
+	\begin{verbatim}
+		+----------------+
+		| Interface      |
+		+----------------+
+	        ^
+	        |
+	        |
+	        v
+		+----------------+
+		| GestionCourse  | +----------------+
+	\end{verbatim}
+	\subsection{y'a-t-il des identifiants?}
+		\subsubsection{Trouver les opérations}
+		\paragraph{15 opérations:}
+		\begin{itemize}
+			\item 7 déduits des cas d'utilisation + des scénarios
+			\item 8 issues de l'expérience (TAD + BD)
+		\end{itemize}
+		Pour chaque opération on veut: 
+		\begin{itemize}
+			\item Paramètres
+			\item Exceptions
+		\end{itemize}
+		\subsubsection{Opérations}
+		\lstinputlisting{1.algo}
+
+		\section{}
+		\section{}
+		\subsection{Cas 1}
+		\input{diag1.tex}
+		\subsection{Cas 2}
+		\input{diag2.tex}
+		\section{}
+		\input{diag3.tex}
+		\lstinputlisting{2.algo}
+		\section{}
+		\input{diag4.tex}
+
+
+
+\end{document}
+

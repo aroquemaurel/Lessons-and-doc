@@ -1,0 +1,8 @@
+-- Algo niveau 1
+se placer sur le premier element a traiter
+tantque tous les elements n ont pas ete traites faire
+	comparer et traiter deux elements adjacents;
+	passer a l element suivant;
+fin tantque;
+
+

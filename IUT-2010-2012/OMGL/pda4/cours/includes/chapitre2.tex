@@ -1,0 +1,95 @@
+\chapter{Scrum} \label{scrum}
+\nouveauChapitre
+	\section{Rôles}
+		La méthode Scrum dispose de plusieurs rôles, chacun des rôles est important, en effet, comme toutes les méthodes Agiles l'humain est au centre du projet.
+		\paragraph{Le Product Owner} C'est le client, il est extrememnt important, l'équipe de projet doit le voir régulièrement pour qu'il valide chacun des sprints\footnote{
+		Les sprints sont définis section \ref{sprints} page \pageref{sprints}} afin de voir si ses besoins sont respectés. 
+		\paragraph{Le Scrum master} Il aide l'équipe il va essayer d'aider au mieux le déroulement du projet et veiller au respect de Scrum, en cas de problème, c'est lui qu'il faut contacter.
+		\paragraph{L'équipe} Ce sont toutes les personnes développant le projet. Elle ne doit pas trop nombreuse pour que les développeurs se sente impliqués dans le projet, et qu'ils puissent avoir
+		une vision globale du projet.
+	\section{Timeboxes}
+		\paragraph{Timeboxes} 
+		Une boîte de temps ou ``timebox'' est une période fixe pendant laquelle on cherche à exécuter le plus efficacement possible une ou plusieurs tâches.
+	\section{Story}
+		Une story est exprimée sous la forme suivante: \\
+		En tant que \ldots\\
+		Je désire \ldots\\
+		Quand \ldots\\
+		Afin de \ldots\\
+		Cette story va avoir un certain nombre d'état. 
+		\subsection{Éléments composants la story}
+			\begin{itemize}
+				\item Un nom
+				\item Une description
+				\item Un Type 
+					\exemple{User, Default, Technique\ldots}
+				\item Un État
+					\remarque{Les états peuvent être les suivants, une story doit passer par tous les états.
+						\begin{enumerate}
+							\item Créé (Tout le monde)
+							\item Acceptée (Product Owner)
+							\item Estimée (Équipe)
+							\item Planifiée (Équipe)
+							\item En cours 
+							\item Finie (Prend en compte les tests)
+						\end{enumerate}
+					}
+				\item Un Poids 
+					\exemple{1, 3, 5, 8, 13 \ldots \newline
+						Le poids est basé sur la suite de Fibonacci}
+				\item Un BVP\footnote{Business Value Point}, cela sert à connaître la priorités des stories
+					\remarque{
+						\begin{itemize}
+							\item (900--1000) Must (indispensable)
+							\item (700--800) Should 
+							\item (400--600) Could
+							\item (100--300) Would 
+						\end{itemize}
+						La priorité est donnée par le client.
+					}
+			\end{itemize}
+
+	\section{Sprints}\label{sprints}
+		Un sprint correspond à un incrément du projet. En effet, avec la méthode Scrum nous travaillons par incrément, le but étant d'avoir un programme fonctionnelle à la fin de chaque sprint. Ainsi, nous 
+		devons pouvoir montrer une démonstration au Product Owner, chaque sprint devra être une surcouche du précédent et ainsi améliorer le logiciel, tout en restant totalement fonctionnel.
+
+		Un sprint contient plusieurs stories qui devront être finies à la fin du sprint.
+		\remarque{Une tâche est finie que lorsque celle-ci à été correctement testée, que celle-ci est fonctionnelle, et peut donc être montrée au client.}
+		\newpage	
+	\section{Revue}
+		Une revue permet un feedback concret sur le produit (c'est mieux que sur de la documentation).
+
+		Le but de la revue est de montrer ce qui a été réalisé pendant le sprint afin d'en tirer les conséquences pour la suite du projet.
+		\subsection{Étapes}
+			Voici les différentes étapes de la revue de sprint.
+			\begin{itemize}
+				\item Sprint basé sur une démo 
+				\item Calculer la vélocité de l'équipe.
+				\item Release 
+				\item Ajouter les autres sprints et la release
+			\end{itemize}
+			À la fin des plans de sprint et des plans de release, on calcule: 
+			\begin{itemize}
+				\item La vélocité
+				\item La capacité
+			\end{itemize}
+	\section{Artefacts}
+		\subsection{Backlog produits}
+			Les équipes agiles ne produisent pas une documentation faite au début du projet, qui décrit en détail toutes les spécifications fonctionnelles. 
+			Elles collectent les fonctions essentielles (les features) et les raffinent progressivement. Il n'y a pas un gros document de spécification, l'outil de collecte s'appelle le backlog de produit.
+		\subsubsection{Objectif}
+			Le backlog de produit est la liste des fonctionnalités attendues d'un produit. Plus exactement, au-delà de cet aspect fonctionnel, 
+			il contient tous les éléments qui vont nécessiter du travail pour l'équipe. Les éléments y sont classés par priorité ce qui permet de définir l'ordre de réalisation.
+		\subsubsection{Rôle}
+			Le backlog de produit est sous la responsabilité du product owner. Chacun peut contribuer à collecter des éléments, mais c'est le product owner qui les accepte finalement et c'est lui qui définit les priorités.
+		\subsection{Plan de sprint}
+			Les plans de sprints correspondent à ce qui est prévu pour le sprint. C'est-à-dire les différentes stories que nous souhaitons développer pour l'increment. 
+			Ces stories doivent être regouprés en fonction de leurs poids et de leurs BVP.
+		\subsection{Plan de releases}
+			Le plan de release correspond au plan de la globalité du projet. C'est-à-dire les plans de chaque sprints.
+		\subsection{Burndown}
+			L'équipe affiche en grand format, sur un des murs de son local, un graphe représentant la quantité de travail restant à effectuer (sur l'axe vertical) rapportée au temps (sur l'axe horizontal). 
+			C'est un "radiateur d'information".
+
+			Ce graphe peut concerner l'itération en cours (``iteration burndown'') ou plus couramment l'ensemble du projet (``product burndown'').
+

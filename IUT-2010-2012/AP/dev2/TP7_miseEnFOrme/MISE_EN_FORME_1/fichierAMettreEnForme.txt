@@ -1,0 +1,12 @@
+#C8000 Abstract #J8005
+We present a design, including its movitation, for introducing concurrency into C++.
+The design work is based on a set of requirements and elementary execution properties that generate a corresponding
+set of programming language constructs needed to express concurrency. #G6002 The new constructs continue to
+support
+object-oriented
+facilities such as inheritance and code reuse. Features that allow flexibility in accepting and subsequently
+postponing
+servicing of
+requests are provided. #D4000 Currently, a major portion of the design is implemented, supporting concurrent programs on
+shared-memory
+uniprocessor and multiprocessor computers.

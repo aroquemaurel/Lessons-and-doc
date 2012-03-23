@@ -1,0 +1,45 @@
+procedure chercher (entree tab <Table[T1, T2]>, entree clé <T1>, sortie trouvé <Booleen>, 
+					sortie element <T2>)
+glossaire
+	rang <Entier>; --resultat de la recherche
+debut
+	chercherEmplacementClé(tab, clé, hach(clé), trouvé, rang);
+	si trouvé alors
+		element <- tab[rang].element;
+	fin si;
+fin
+
+procedure inserer(maj table <Table[T1, T2]>, entree clé <T1>, entree élément <T2>)
+	declenche cléPrésente, tablePleine
+glossaire
+	h <Entier>;
+	trouvé <Booleen>;
+	rang <Entier>;
+debut
+	chercherEmplacementClé(tab, clé, hach(clé), trouvé, rang);
+	si trouvé alors
+		declenche (cléPrésente);
+	fin si;
+	chercherPremierEmplacementLibre(tab, clé, hach(clé), trouvé, rang);
+	si non trouvé alors
+		declencher(taillePleine);
+	fin si;
+	-- insérer clé et élément dans tab à l'emplacement rang
+	tab[rang].clé <- clé;
+	tab[rang].élément <- élément;
+	tab[rang].libre <- FAUX;
+fin
+
+procedure supprimer(maj table <Table[T1, T2]>, entree clé <T1>)
+	declenche cléNonPrésente
+glossaire
+	trouvé <Booleen>, rang <Entier>;
+debut
+	chercherEmplacementClé(tab, clé, hash(clé), trouvé, rang);
+	si non trouvé alors
+		declencher (cléNonPrésente);
+	fin si;
+
+	tab[rang].libre <- VRAI;
+fin
+		

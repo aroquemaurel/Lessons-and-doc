@@ -1,0 +1,4 @@
+-- ramener par permutation succesives la plus grande valeur d'un intervale iDeb iFin d'un tableau d'entier en derniere position (iFin) 
+procedure ramenerValeurMax (maj tab <TabEntier>, entree iDeb <Entier>, entree iFin <Entier>);
+
+

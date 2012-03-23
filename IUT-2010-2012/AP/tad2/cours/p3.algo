@@ -1,0 +1,4 @@
+type PtrEntier : pointeur sur <Entier>
+-- Pointeur sur est le constructeur de type
+-- Entier est le type de donnees pointes
+

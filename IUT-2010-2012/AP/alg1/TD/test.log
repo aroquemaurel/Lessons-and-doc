@@ -1,0 +1,75 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdftex 2010.10.5)  26 JAN 2011 11:56
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**test.tex
+(./test.tex
+! Undefined control sequence.
+l.1 \documentclass
+                  [a4paper]{article}
+? ^^[[3~
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, E to edit your file,
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
+? 
+! Undefined control sequence.
+l.2 \usepackage
+               {xltxtra} % charge aussi fontspec et xunicode, n√©cessaires...
+? 
+! Undefined control sequence.
+l.3 \usepackage
+               {listings}
+? 
+! Undefined control sequence.
+l.4 \usepackage
+               [frenchb]{babel}
+? 
+! Undefined control sequence.
+l.6 \begin
+          {document}
+? 
+Missing character: There is no √ in font cmr10!
+Missing character: There is no © in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no © in font cmr10!
+! Undefined control sequence.
+l.8 \begin
+          {lstlisting}[language={[LaTeX]TeX}]
+? 
+! Undefined control sequence.
+l.9 \begin
+          {test}
+? 
+! Undefined control sequence.
+l.10 \une
+         \macro % avec des commentaires accentu√©s
+? 
+! Undefined control sequence.
+l.10 \une\macro
+                % avec des commentaires accentu√©s
+? 
+! Undefined control sequence.
+l.11 \une
+         \autre\bizarret√© % √ßa marche !
+? 
+! Undefined control sequence.
+l.11 \une\autre
+               \bizarret√© % √ßa marche !
+? 
+! Undefined control sequence.
+l.11 \une\autre\bizarret
+                        √© % √ßa marche !
+? 
+Missing character: There is no √ in font cmr10!
+Missing character: There is no © in font cmr10!
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] )</usr/share/texmf-texli
+ve/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/ty
+pe1/public/amsfonts/cm/cmr10.pfb>
+Output written on test.pdf (1 page, 24286 bytes).
+PDF statistics:
+ 14 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

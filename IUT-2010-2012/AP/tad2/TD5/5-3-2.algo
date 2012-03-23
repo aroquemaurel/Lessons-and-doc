@@ -1,0 +1,33 @@
+fonction add(entree p <Peano>, entree q <Peano>)
+	retourner <Peano>
+glossaire
+	i <Entier>:
+	j <Entier>;
+	r <Peano>; -- retour
+
+debut
+	-- recopier p;
+	i <- 1;
+	tantque p[i] != '!' faire
+		r[i] = '*';
+		i <- i + 1;
+	fin tantque;
+	i <- i - 1;	
+
+	--recopier q dans r
+	j <- 1;
+	tantque q[j] != '!' faire
+		si (i+j) > N alors
+			declencher debordement;
+		fin si;
+		r[i+j] <- '*';
+		j <- j+1;
+	fin tantque;
+
+	-- ajouter '!' a s
+	si (i+j) > N alors
+		declencher debordement;
+	fin si; r[i+j] = '!'; retourner r;
+		
+fin
+	

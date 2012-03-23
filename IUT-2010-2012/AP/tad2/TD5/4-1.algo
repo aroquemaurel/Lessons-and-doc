@@ -1,0 +1,28 @@
+-- en iteratif 
+fonction fact (entree p <Peano>)
+	retourne <Peano>
+	declenche debordement
+glossaire
+	r <Peano>; --retour
+	i <Peano>; --compteur
+debut
+	i <- succ(zero);
+	r <- succ(zero);
+	tantque inf(i, p) ou i = p faire
+		r <- mult(r, i);
+		i <- succ(i);
+	fin tantque;
+	retourner r;
+fin
+
+-- En recursif :-)
+fonction pred(entree p <Peano>)
+	retourne <Peano>
+debut
+	si p = zero alors
+		retourner(succ(zero));
+	sinon	
+		retourner(mult(fact(pred(p), p)));
+	fin si;
+fin
+

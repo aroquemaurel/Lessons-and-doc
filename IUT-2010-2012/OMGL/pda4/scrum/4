@@ -1,0 +1,105 @@
+\documentclass[12pt,a4paper,openany]{article}
+
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+
+\newcommand{\titre}{Méthode \bsc{SCRUM}}
+
+\newcommand{\module}{Processus de développement Agile}
+\newcommand{\sigle}{pda}
+
+\newcommand{\semestre}{4}
+
+\newcommand{\footCentre}{}
+\newcommand{\premierDestinataire}{Monsieur\bsc{Fernandez}}
+\newcommand{\rolePremierDestinataire}{}
+
+\newcommand{\secondDestinaire}{}
+\newcommand{\roleSecondDestinaire}{}
+
+\newcommand{\troisiemeDestinaire}{}
+\newcommand{\roleTroisiemeDestinaire}{}
+
+\newcommand{\quatriemeDestinaire}{}
+\newcommand{\roleQuatriemeDestinaire}{}
+
+\newcommand{\cinquiemeDestinaire}{}
+\newcommand{\roleCinquiereDestinaire}{}
+
+\newcommand{\titreDocument}{Méthode \bsc{Scrum}}
+
+
+\input{couverture_entete.tex}
+\input{/home/satenske/cours/listings.tex} %prise en charge du langage algo
+
+\begin{document}
+	\maketitle
+	\section*{Scrum, un truc qui marche}
+	On est naturellement tenté de parler de méthode agile ou de processus agile pour Scrum. En fait, la définition officielle, celle donnée par la Scrum Alliance\footnote{http://www.scrumalliance.org} et son fondateur
+	Ken \bsc{Schwaber} et légèrement différente. Scrum n'est présenté ni comme un processus ni comme une méthode.
+
+	Le plus souvent, Ken \bsc{Schwaber} décrit Scrum comme un cadre (framework) ; à d'autre occasions il en parle comme d'une voie ç suivre (path) ou d'un outil et il revient à procesus. 
+	Un spécialiste des processus parlerait pour Scrum de pattern de processus\ldots Un spécialise des processus parlerait, pour Scrum, de pattern de processus, orienté gestion de projet,
+	qui peut incorporer différentes méthodes ou pratiques d'ingénierie. 
+
+	Qu'on le désigne comme un cadre, un pattern de processus une méthode, voire un truc, Scrum définit des éléments qui feront partie du processus apliqué poru développer un produit. Ces éléments
+	sont en petit nombre, le cadre imposé par Scrum étant très léger : guère plus que des itérations des réunoins au début et à la fin de chacune, un hacing de produit et trois rôles;
+
+	Ce coté minimaliste, plus les succès sur le terrain, donnent à croire que Scrum est un truc qui marche.
+
+	\section*{Scrum en bref}
+	Si la vraie nature de Scrum est difficile à définir il est beaucoup plus simple d'expliquer la mécanique de mise en \oe{}uvre :
+	\begin{itemize}
+		\item \textbf{Scrum} sert à développer des produits, généralement en quelques mois. Les fonctionnalités souhaitées sont collectées dans le backlog de produit et classées
+			par priorité. C'est le produit Owner qui est responsable de la gestion de ce haking.
+		\item Une \textbf{version (release)} est produite par une série d'itérations d'un mois\footnote{On peut remarquer que l'usage de Scrum évolue : par exemple, un epratique courante aujourd'hui est
+			d'avoir des sprints de deux semaines, alors que la durée initialie était un mois} appelées des sprints. Le contenu d'un sprint est défini par l'équipe, avec le Product Owner, 
+			en tenant compte de spriorités et de la capacité de l'équipe. À partir de ce contenu, l'équipe identifie les tâches nécessaire et s'engage pour réaliser
+			les fonctionnalités sélectionnées pour le sprint.
+		\item Pendant un psrint des poitns de contrôle sur le déroulement des tâches sont effectués lors des mêlées quotidienne (scrums). Cela permet au \textbf{ScrumMaster} l'animateur chargé de faire
+			appliquer Scrum, de déterminer l'avancement par rapport aux engagements et d'appliquer avec l'équipe, des ajustements pour assurer le succés du sprint.
+		\item À la fin de chaque spirnt l'équipe obtient un \textbf{produit partiel} (un incrméent) qui fonctionne. Cet incrément du produit est potentiellement livrable et son
+			évaluation permet d'ajuster le backlog pour le sprint suivant.
+	\end{itemize}
+	\section{Théorie}
+	Les premières expérimentations de Scrum datent de 1993et le premier article\footnote{htt://jeffsutherland.com/oopsla/schwapub.pdf} est paru en 1995, pour la conférence \bsc{OOPSLA}\footnote{Object-Oriented Programming,
+	Systems, Languages \& Applications} ; signé de Ken \bsc{Schwaber}, il présent Scrum comme un processus empirique adapté aux développements de produits complexes.
+
+	Scrum a son origine dans la théorie de contrôle empirique des processus. Les trois piliers de la théorie sont la transparence, l'inspection et l'adaptation du processus dont Scrum fournit le cadre :
+	\begin{itemize}
+		\item \textbf{Transparence}
+		\item \textbf{Inspection}
+		\item \textbf{Adaptation}
+			\begin{itemize}
+				\item\textbf{Le scrum quotidien}
+				\item\textbf{La planification et la revue de sprint}
+				\item \textbf{La rétrospective}
+			\end{itemize}
+	\end{itemize}
+	%%% TODO
+	\section{Éléments}
+	Le cadre Scrum consiste en une équipe avec des rôles bien définis, des blocs de temps(timeboxes) et des artefacts).\\
+	\begin{tabular}{|c|p{1cm}|c|p{1cm}|c|}
+		\hline
+		Rôles && Timeboxes && Artefacts\\
+		\hline
+	\end{tabular}]
+			
+\end{document}
+
+
+
+
+
+

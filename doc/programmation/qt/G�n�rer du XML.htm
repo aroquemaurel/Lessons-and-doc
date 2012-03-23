@@ -1,0 +1,1314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0045)http://qt-quarterly.developpez.com/qq-05/xml/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <title>Générer du XML</title>
+  
+  <meta name="generator" content="developpez-com">
+  <meta name="description" content="Générer du XML">
+  <meta name="keywords" content="qt,xml,qtxml,sax,dom">
+  <meta name="MS.LOCALE" content="fr-FR">
+  
+    <link rel="stylesheet" type="text/css" href="./Générer du XML_files/gabarit0.css">
+    <link rel="stylesheet" type="text/css" media="print" href="./Générer du XML_files/printer.css">
+  
+  <script src="./Générer du XML_files/fonctions-kit.js" type="text/javascript"></script><link rel="stylesheet" type="text/css" media="screen" href="./Générer du XML_files/index2.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="./Générer du XML_files/article.css">
+    
+	<meta name="author" content="Jasmin Blanchette">
+	<meta name="MSN_TopicType" content="Whitepaper">
+	<meta name="MSN_PublishDate" content="06/18/2009 12:00:00 PM">
+	<meta name="MSN_RevisedDate" content="07/06/2010 12:00:00 PM">
+	<meta name="MSN_UserRating" content="100 %">
+</head>
+<body xml:lang="fr"><div id="quicknav">
+    <div id="quicksearch">
+        <form method="get" action="http://www.developpez.com/recherche/" id="cse-search-box">
+            <p>
+                <input type="text" name="q" id="recherche_g" style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(126, 157, 185); border-right-color: rgb(126, 157, 185); border-bottom-color: rgb(126, 157, 185); border-left-color: rgb(126, 157, 185); padding-top: 2px; padding-right: 2px; padding-bottom: 2px; padding-left: 2px; background-image: url(http://www.google.com/cse/intl/fr/images/google_custom_search_watermark.gif); background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(255, 255, 255); background-position: 0% 50%; background-repeat: no-repeat no-repeat; ">
+                <input type="image" name="sa" id="recherche_submit" value="Go" title="Rechercher" src="./Générer du XML_files/go-gray.png">
+                <input type="hidden" name="cx" value="006424388311999799839:-31tnf0iuqy">
+                <input type="hidden" name="cof" value="FORID:9">
+                <input type="hidden" name="ie" value="ISO-8859-1">
+            </p>
+        <input name="siteurl" type="hidden" value="qt-quarterly.developpez.com/qq-05/xml/"></form>
+        <script type="text/javascript" src="./Générer du XML_files/brand"></script>
+    </div>
+    <ul id="quicklinks">        
+        <li class="first">
+            <a href="http://www.developpez.net/forums/" title="">Forums</a>
+        </li>
+        <li>
+            <a href="http://general.developpez.com/cours/" title="">Tutoriels</a>
+        </li>
+        <li>
+            <a href="http://magazine.developpez.com/" title="">Magazine</a>
+        </li>
+        <li>
+            <a href="http://general.developpez.com/faq/" title="">FAQs</a>
+        </li>
+        <li>
+            <a href="http://blog.developpez.com/" title="">Blogs</a>
+        </li>
+        <li>
+            <a href="http://projets.developpez.com/" title="">Projets</a>
+        </li>
+        <li>
+            <a href="http://chat.developpez.com/" title="">Chat</a>
+        </li>
+        <li>
+            <a href="http://www.developpez.com/newsletter/">Newsletter</a>
+        </li>
+	<li>
+	    <a href="http://etudes.developpez.com/">Études</a>
+	</li>
+        <li>
+            <a href="http://emploi.developpez.com/" title="">Emploi</a>
+        </li>
+	<li>
+	    <a href="http://club.developpez.com/">Club</a>
+	</li>
+        <li>
+            <a href="http://club.developpez.com/contacts/" title="">Contacts</a>
+        </li>
+    </ul>
+</div>
+<!--[if lt IE 7]>
+<script src="/template/ie7/IE7.js" type="text/javascript"></script>
+<![endif]-->
+
+<div id="layout">
+
+    <div id="publicite">
+                    <!--JavaScript Tag // Tag for network 224: Hi-Media France // Website: zzz - developpez.com -->
+            <script type="text/javascript"><!--
+            document.write('<scr'+'ipt language="javascript1.1" src="http://adserver.adtech.de/addyn|3.0|224|1409138|0|1|ADTECH;loc=100;target=_blank; grp=1;misc='+new Date().getTime()+'"></scri'+'pt>');
+            //-->
+            </script><script language="javascript1.1" src="./Générer du XML_files/addyn-3.0-224-1409138-0-1-ADTECH;loc=100;target=_blank; grp=1"></script><a href="http://adserver.adtech.de/adlink%7C224%7C1409138%7C0%7C1%7CAdId=2881060;BnId=3;itime=873149106;nodecode=yes;link=http://www.developpez.com/" target="_blank"><img src="./Générer du XML_files/developpez-728-2.gif" border="0" alt="" title=""></a>
+
+            <noscript>
+            &lt;div&gt;
+                &lt;a href="http://adserver.adtech.de/adlink|3.0|224|1409138|0|1|ADTECH;loc=300;grp=1"&gt;
+                    &lt;img src="http://adserver.adtech.de/adserv|3.0|224|1409138|0|1|ADTECH;loc=300;grp=1" alt="" /&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+            </noscript>
+            <!-- End of JavaScript Tag -->                 
+            </div>
+
+    <div id="logo_dvp">
+        <a href="http://www.developpez.com/" title="Accueil Developpez.com">
+            <img src="./Générer du XML_files/logo.gif" alt="">
+        </a>    
+    </div>
+    
+    <div id="gabarit">
+
+    <div id="gabarit_tabmenu">
+        <div>&nbsp;</div>
+        <ul id="tabs">
+                            
+	            	                <li class="item first">
+	            
+	                                        <a href="http://www.developpez.com/">
+                                        
+	                   Accueil
+	                   
+	                                               <span class="tooltip">
+                            Actualités IT Pro
+	                       </span>
+                       	                </a>
+	                
+	                	                
+	            </li>
+                            
+	            	                <li class="item">
+	            
+	                                        <a href="http://conception.developpez.com/">
+                                        
+	                   Conception
+	                   
+	                                               <span class="tooltip">
+                            Cycle de vie du logiciel
+	                       </span>
+                       	                </a>
+	                
+	                	                
+	                    <ul class="submenu">
+	                        <li><a href="http://conception.developpez.com/">Conception</a></li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://uml.developpez.com/">UML</a>
+	                            </li>
+	                        	                            	                                <li class="last">
+	                            	                                <a href="http://merise.developpez.com/">Merise</a>
+	                            </li>
+	                        	                        
+	                        	                        
+	                    </ul>
+	                
+	                	                
+	            </li>
+                            
+	            	                <li class="item">
+	            
+	                                        <a href="http://java.developpez.com/">
+                                        
+	                   Java
+	                   
+	                                               <span class="tooltip">
+                            Plateforme et langage Java
+	                       </span>
+                       	                </a>
+	                
+	                	                
+	                    <ul class="submenu">
+	                        <li><a href="http://java.developpez.com/">Java</a></li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://spring.developpez.com/">Spring</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://javaweb.developpez.com/">Dév. Web Java</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://android.developpez.com/">Android</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://eclipse.developpez.com/">Eclipse</a>
+	                            </li>
+	                        	                            	                                <li class="last">
+	                            	                                <a href="http://netbeans.developpez.com/">NetBeans</a>
+	                            </li>
+	                        	                        
+	                        	                        
+	                    </ul>
+	                
+	                	                
+	            </li>
+                            
+	            	                <li class="item">
+	            
+	                                        <a href="http://dotnet.developpez.com/">
+                                        
+	                   .NET
+	                   
+	                                               <span class="tooltip">
+                            Microsoft Framework .NET
+	                       </span>
+                       	                </a>
+	                
+	                	                
+	                    <ul class="submenu">
+	                        <li><a href="http://dotnet.developpez.com/">Microsoft DotNET</a></li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://dotnet.developpez.com/visual-studio/">Visual Studio</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://dotnet.developpez.com/aspnet/">ASP.NET</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://dotnet.developpez.com/csharp/">C#</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://dotnet.developpez.com/vbnet/">VB.NET</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://windowsphone.developpez.com/">Windows Phone</a>
+	                            </li>
+	                        	                            	                                <li class="last">
+	                            	                                <a href="http://windows-azure.developpez.com/">Windows Azure</a>
+	                            </li>
+	                        	                        
+	                        	                        
+	                    </ul>
+	                
+	                	                
+	            </li>
+                            
+	            	                <li class="item">
+	            
+	                                        <a href="http://web.developpez.com/">
+                                        
+	                   Dév. Web
+	                   
+	                                               <span class="tooltip">
+                            Développement Web et Webmarketing
+	                       </span>
+                       	                </a>
+	                
+	                	                
+	                    <ul class="submenu">
+	                        <li><a href="http://web.developpez.com/">Développement Web</a></li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://javaweb.developpez.com/">Dév. Web Java</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://ajax.developpez.com/">AJAX</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://apache.developpez.com/">Apache</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://asp.developpez.com/">ASP</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://dotnet.developpez.com/aspnet/">ASP.NET</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://css.developpez.com/">CSS</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://flash.developpez.com/">Flash / Flex</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://javascript.developpez.com/">JavaScript</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://php.developpez.com/">PHP</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://ruby.developpez.com/">Ruby &amp; Rails</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://webmarketing.developpez.com/">Webmarketing</a>
+	                            </li>
+	                        	                            	                                <li class="last">
+	                            	                                <a href="http://xhtml.developpez.com/">(X)HTML</a>
+	                            </li>
+	                        	                        
+	                        	                        
+	                    </ul>
+	                
+	                	                
+	            </li>
+                            
+	            	                <li class="item">
+	            
+	                                        <a href="http://general.developpez.com/edi/">
+                                        
+	                   EDI
+	                   
+	                                               <span class="tooltip">
+                            Environnements de Développement Intégré
+	                       </span>
+                       	                </a>
+	                
+	                	                
+	                    <ul class="submenu">
+	                        <li><a href="http://general.developpez.com/edi/">EDI</a></li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://4d.developpez.com/">4D</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://delphi.developpez.com/">Delphi</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://eclipse.developpez.com/">Eclipse</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://labview.developpez.com/">LabVIEW</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://netbeans.developpez.com/">NetBeans</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://matlab.developpez.com/">MATLAB</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://dotnet.developpez.com/visual-studio/">Visual Studio</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://wind.developpez.com/">WinDev</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://vb.developpez.com/">Visual Basic 6</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://lazarus.developpez.com/">Lazarus</a>
+	                            </li>
+	                        	                            	                                <li class="last">
+	                            	                                <a href="http://www.developpez.net/forums/f1552/c-cpp/bibliotheques/qt/edi/qt-creator/">Qt Creator</a>
+	                            </li>
+	                        	                        
+	                        	                        
+	                    </ul>
+	                
+	                	                
+	            </li>
+                            
+	            	                <li class="item">
+	            
+	                                        <a href="http://general.developpez.com/langages/">
+                                        
+	                   Langages
+	                   
+	                                               <span class="tooltip">
+                            Langages de programmation applicatifs
+	                       </span>
+                       	                </a>
+	                
+	                	                
+	                    <ul class="submenu">
+	                        <li><a href="http://general.developpez.com/langages/">Langages</a></li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://asm.developpez.com/">Assembleur</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://c.developpez.com/">C</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://cpp.developpez.com/">C++</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://dotnet.developpez.com/csharp/">C#</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://pascal.developpez.com/">Pascal</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://perl.developpez.com/">Perl</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://python.developpez.com/">Python</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://vb.developpez.com/">Visual Basic 6</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://dotnet.developpez.com/vbnet/">VB.NET</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://xml.developpez.com/">XML</a>
+	                            </li>
+	                        	                            	                                <li class="last">
+	                            	                                <a href="http://general.developpez.com/cours/">Autres</a>
+	                            </li>
+	                        	                        
+	                        	                        
+	                    </ul>
+	                
+	                	                
+	            </li>
+                            
+	            	                <li class="item">
+	            
+	                                        <a href="http://sgbd.developpez.com/">
+                                        
+	                   SGBD
+	                   
+	                                               <span class="tooltip">
+                            Systèmes de Gestion de Bases de Données
+	                       </span>
+                       	                </a>
+	                
+	                	                
+	                    <ul class="submenu">
+	                        <li><a href="http://sgbd.developpez.com/">SGBD &amp; SQL</a></li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://4d.developpez.com/">4D</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://access.developpez.com/">Access</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://db2.developpez.com/">DB2</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://firebird.developpez.com/">Firebird</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://interbase.developpez.com/">InterBase</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://mysql.developpez.com/">MySQL</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://oracle.developpez.com/">Oracle</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://postgresql.developpez.com/">PostgreSQL</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://sqlserver.developpez.com/">SQL-Server</a>
+	                            </li>
+	                        	                            	                                <li class="last">
+	                            	                                <a href="http://sybase.developpez.com/">Sybase</a>
+	                            </li>
+	                        	                        
+	                        	                        
+	                    </ul>
+	                
+	                	                
+	            </li>
+                            
+	            	                <li class="item">
+	            
+	                                        <a href="http://office.developpez.com/">
+                                        
+	                   Office
+	                   
+	                                               <span class="tooltip">
+                            Bureautique pour l'entreprise
+	                       </span>
+                       	                </a>
+	                
+	                	                
+	                    <ul class="submenu">
+	                        <li><a href="http://office.developpez.com/">Microsoft Office</a></li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://access.developpez.com/">Access</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://excel.developpez.com/">Excel</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://word.developpez.com/">Word</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://outlook.developpez.com/">Outlook</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://powerpoint.developpez.com/">PowerPoint</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://sharepoint.developpez.com/">SharePoint</a>
+	                            </li>
+	                        	                            	                                <li class="last">
+	                            	                                <a href="http://project.developpez.com/">Microsoft Project</a>
+	                            </li>
+	                        	                        
+	                        	                        
+	                    </ul>
+	                
+	                	                
+	            </li>
+                            
+	            	                <li class="item">
+	            
+	                                        <a href="http://solutions-entreprise.developpez.com/">
+                                        
+	                   Solutions d'entreprise
+	                   
+	                                               <span class="tooltip">
+                            Autres logiciels pour l'entreprise
+	                       </span>
+                       	                </a>
+	                
+	                	                
+	                    <ul class="submenu">
+	                        <li><a href="http://solutions-entreprise.developpez.com/">Solutions d'entreprise</a></li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://business-intelligence.developpez.com/">Business Intelligence</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://solutions-entreprise.developpez.com/erp-pgi/presentation-erp-pgi/">ERP / PGI</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://solutions-entreprise.developpez.com/crm-grc/presentation-crm-grc/">CRM</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://sas.developpez.com/">SAS</a>
+	                            </li>
+	                        	                            	                                <li class="last">
+	                            	                                <a href="http://cloud-computing.developpez.com/">Cloud Computing</a>
+	                            </li>
+	                        	                        
+	                        	                        
+	                    </ul>
+	                
+	                	                
+	            </li>
+                            
+	            	                <li class="item prelast">
+	            
+	                                        <a href="http://applications.developpez.com/">
+                                        
+	                   Applications
+	                   
+	                                               <span class="tooltip">
+                            Applications logicielles
+	                       </span>
+                       	                </a>
+	                
+	                	                
+	                    <ul class="submenu">
+	                        <li><a href="http://applications.developpez.com/">Applications</a></li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://jeux.developpez.com/">2D - 3D - Jeux</a>
+	                            </li>
+	                        	                            	                                <li class="last">
+	                            	                                <a href="http://portail-projets.developpez.com/">Projets</a>
+	                            </li>
+	                        	                        
+	                        	                        
+	                    </ul>
+	                
+	                	                
+	            </li>
+                            
+	            	                <li class="item last">
+	            
+	                                        <a href="http://systeme.developpez.com/">
+                                        
+	                   Systèmes
+	                   
+	                                               <span class="tooltip">
+                            Logiciels et matériels systèmes
+	                       </span>
+                       	                </a>
+	                
+	                	                
+	                    <ul class="submenu">
+	                        <li><a href="http://systeme.developpez.com/">Systèmes</a></li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://windows.developpez.com/">Windows</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://linux.developpez.com/">Linux Professionnel</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://securite.developpez.com/">Sécurité</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://hardware.developpez.com/">PC</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://mac.developpez.com/">Mac</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://reseau.developpez.com/">Réseau</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://mobiles.developpez.com/">Mobiles</a>
+	                            </li>
+	                        	                            	                                <li>
+	                            	                                <a href="http://green-it.developpez.com/">Green IT</a>
+	                            </li>
+	                        	                            	                                <li class="last">
+	                            	                                <a href="http://virtualisation.developpez.com/">Virtualisation</a>
+	                            </li>
+	                        	                        
+	                        	                        
+	                    </ul>
+	                
+	                	                
+	            </li>
+                    </ul>
+    </div>
+    
+            <div id="gabarit_topicmenu">
+            <div>&nbsp;</div>
+            <ul id="topics">
+                    
+                                   
+                        <li>
+                                        
+                        <span><strong><a href="http://www.developpez.net/forums/f19/c-cpp/cpp/">Forum C++</a></strong></span>
+                    </li>
+                    
+                                   
+                        <li>
+                                        
+                        <span><strong><a href="http://cpp.developpez.com/faq/">FAQs C++</a></strong></span>
+                    </li>
+                    
+                                   
+                        <li>
+                                        
+                        <span><strong><a href="http://cpp.developpez.com/cours/">Tutoriels C++</a></strong></span>
+                    </li>
+                    
+                                   
+                        <li>
+                                        
+                        <span><strong><a href="http://cpp.developpez.com/livres/">Livres C++</a></strong></span>
+                    </li>
+                    
+                                   
+                        <li>
+                                        
+                        <span><strong><a href="http://cpp.developpez.com/outils/">Outils &amp; compilateurs C++</a></strong></span>
+                    </li>
+                    
+                                   
+                        <li>
+                                        
+                        <span><strong><a href="http://cpp.developpez.com/bibliotheques/">Bibliothèques C++</a></strong></span>
+                    </li>
+                    
+                                   
+                        <li>
+                                        
+                        <span><strong><a href="http://cpp.developpez.com/telecharger/">Sources C++</a></strong></span>
+                    </li>
+                    
+                                   
+                        <li>
+                                        
+                        <span><strong><a href="http://blog.developpez.com/recap/cpp">Blog C++</a></strong></span>
+                    </li>
+                    
+                                            <li class="selected">
+                                        
+                        <span><strong><a href="http://qt.developpez.com/">Qt</a></strong></span>
+                    </li>
+                                
+            </ul>
+        </div>
+        
+    <div id="gabarit_resourcemenu">
+
+            <div>&nbsp;</div>
+
+			                <div id="facebook_bloc">
+                    <a href="http://www.facebook.com/pages/Qt/108002002567970" target="_blank">
+						<img src="./Générer du XML_files/facebook.png" alt="Facebook" title="Retrouver Developpez sur Facebook">
+					</a>
+                </div>
+						
+						<div id="twitter_bloc">
+				<a href="http://twitter.com/QtDeveloppez" target="_blank">
+					<img src="./Générer du XML_files/twitter.png" alt="Twitter" title="Retrouver Developpez sur Twitter">
+				</a>
+			</div>	
+						
+            
+                <div id="rss_syndication">
+                    <img src="./Générer du XML_files/rss.png" alt="RSS">
+                    <ul class="submenu">
+                        <li><a href="http://qt.developpez.com/index/rss">RSS</a></li>
+                        <li class="last"><a href="http://qt.developpez.com/index/atom">Atom</a></li>
+                    </ul>
+                </div>
+						
+			
+
+            <strong id="topic_name"></strong>
+
+            <ul id="resources">
+                <li>
+                    <span><strong><a href="http://qt.developpez.com/">Accueil Qt</a></strong></span>
+                </li>
+                <li>
+                    <span><strong><a href="http://www.developpez.net/forums/f376/c-cpp/bibliotheques/qt/">Forum Qt</a></strong></span>
+                </li>
+                <li>
+                    <span><strong><a href="http://qt.developpez.com/faq/">FAQ Qt</a></strong></span>
+                </li>
+                <li>
+                    <span><strong><a href="http://qt.developpez.com/doc/latest/">Doc Qt</a></strong></span>
+                </li>
+                <li>
+                    <span><strong><a href="http://qt.developpez.com/tutoriels/">Tutoriels Qt</a></strong></span>
+                </li>
+                <li>
+                    <span><strong><a href="http://qt.developpez.com/outils/">Outils Qt</a></strong></span>
+                </li>
+                <li>
+                    <span><strong><a href="http://qt.developpez.com/telecharger/">Sources Qt</a></strong></span>
+                </li>
+                <li>
+                    <span><strong><a href="http://qt.developpez.com/binaires/">Binaires Qt</a></strong></span>
+                </li>
+                <li>
+                    <span><strong><a href="http://qt.developpez.com/livres/">Livres Qt</a></strong></span>
+                </li>
+                <li>
+                    <span><strong><a href="http://blog.developpez.com/recap/qt">Blog Qt</a></strong></span>
+                </li>
+                <li>
+                    <span><strong><a href="http://qt.developpez.tv/">Qt TV</a></strong></span>
+                </li>
+                <li>
+                    <span><strong><a href="http://pyqt.developpez.com/">PyQt &amp; PySide</a></strong></span>
+                </li>
+                            </ul>
+
+        </div>
+
+</div>    
+    <div id="shadow1">
+        <div id="shadow2">
+            <div class="contenuPage"><div class="divarticle">
+		<br><h1>Générer du XML</h1><div class="soustitre">
+        <a href="http://qt.nokia.com/"><img src="./Générer du XML_files/logo.png" alt=""></a>
+    </div><p class="dateArticle">Date de publication : 18/06/2009 , Date de mise à jour : 06/07/2010</p><p style="text-align: center;">
+		Par
+		<a class="auteur" href="">Jasmin Blanchette</a><br>&nbsp;<a class="auteur" href="http://www.developpez.net/forums/u254882/dourouc05/">traducteur : Thibaut Cuvelier</a><br>&nbsp;<a class="auteur" href="http://qt-quarterly.developpez.com/">Qt Quarterly</a><br>&nbsp;</p><div class="synopsis">
+        <div class="paragraph">
+            Qt fournit des classes DOM et SAX pour l'analyse du XML, mais n'a pas toujours proposé une classe pour sa génération.
+            Dans cet article, nous allons développer une classe <span class="codeinline">XmlWriter</span>, basée sur
+            <a href="http://qt.developpez.com/doc/4.6/qtextstream.html" target="_blank" class="lienArticle">QTextStream</a>.
+            Nous allons exemplifier son usage avec un générateur de fichiers <span class="codeinline">.ui</span>.
+		</div>
+		<div class="paragraph">
+			Cet article est une traduction autorisée de <a href="http://doc.qt.nokia.com/qq/qq05-generating-xml.html" class="lienArticle">Generating XML</a>,
+			par Jasmin Blanchette.
+		</div>
+    </div><br><div class="barreNavigation"><div style="float: left;">
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					
+			&nbsp;
+			<span class="lientelechargementpdf"><a class="lientelechargement" href="ftp://ftp-developpez.com/qt-quarterly/qq-05/xml/xml.pdf" title="Télécharger la version PDF de cet article, serveur principal." onclick="">Version PDF</a>
+					(<a class="lientelechargement" href="http://qt-quarterly.ftp-developpez.com/qq-05/xml/xml.pdf" title="Télécharger la version PDF de cet article, serveur secondaire" onclick="">Miroir</a>)
+				</span>
+		&nbsp;
+		<span class="lientelechargementzip"><a class="lientelechargement" href="ftp://ftp-developpez.com/qt-quarterly/qq-05/xml/xml.zip" title="Télécharger la version HTML de cet article, serveur principal." onclick="">Version hors-ligne</a>
+				(<a class="lientelechargement" href="http://qt-quarterly.ftp-developpez.com/qq-05/xml/xml.zip" title="Télécharger la version HTML de cet article, serveur secondaire" onclick="">Miroir</a>)
+			</span></div><div style="float:right"><span class="cachee"><a title="Viadeo" href="http://www.viadeo.com/shareit/share/?url=http%3A%2F%2Fqt-quarterly.developpez.com%2Fqq-05%2Fxml%2F&Title=G%C3%A9n%C3%A9rer+du+XML" rel="nofollow"><img alt="Viadeo" src="./Générer du XML_files/kitbm-viadeo.gif"></a>&nbsp;<a title="Twitter" href="http://twitter.com/timeline/home?status=http%3A%2F%2Fqt-quarterly.developpez.com%2Fqq-05%2Fxml%2F" rel="nofollow"><img alt="Twitter" src="./Générer du XML_files/kitbm-twitter.png"></a>&nbsp;<a title="Google Bookmarks !" href="http://www.google.com/bookmarks/mark?op=edit&bkmk=http%3A%2F%2Fqt-quarterly.developpez.com%2Fqq-05%2Fxml%2F&title=G%C3%A9n%C3%A9rer+du+XML" rel="nofollow"><img alt="Google Bookmarks !" src="./Générer du XML_files/kitbm-google.png"></a>&nbsp;<a title="Facebook" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fqt-quarterly.developpez.com%2Fqq-05%2Fxml%2F" rel="nofollow"><img alt="Facebook" src="./Générer du XML_files/kitbm-facebook.gif"></a>&nbsp;<a title="Digg" href="http://digg.com/submit?phase=2&url=http%3A%2F%2Fqt-quarterly.developpez.com%2Fqq-05%2Fxml%2F&title=G%C3%A9n%C3%A9rer+du+XML" rel="nofollow"><img alt="Digg" src="./Générer du XML_files/kitbm-digg.png"></a>&nbsp;<a title="del.icio.us" href="http://del.icio.us/post?url=http%3A%2F%2Fqt-quarterly.developpez.com%2Fqq-05%2Fxml%2F&title=G%C3%A9n%C3%A9rer+du+XML" rel="nofollow"><img alt="del.icio.us" src="./Générer du XML_files/kitbm-delicious.png"></a>&nbsp;<a title="MySpace" href="http://www.myspace.com/Modules/PostTo/Pages/?u=http%3A%2F%2Fqt-quarterly.developpez.com%2Fqq-05%2Fxml%2F&t=G%C3%A9n%C3%A9rer+du+XML" rel="nofollow"><img alt="MySpace" src="./Générer du XML_files/kitbm-myspace.gif"></a>&nbsp;<a title="Yahoo MyWeb" href="http://myweb2.search.yahoo.com/myresults/bookmarklet?t=G%C3%A9n%C3%A9rer+du+XML&u=http%3A%2F%2Fqt-quarterly.developpez.com%2Fqq-05%2Fxml%2F" rel="nofollow"><img alt="Yahoo MyWeb" src="./Générer du XML_files/kitbm-yahoomyweb.png"></a>&nbsp;<a title="Blinklist" href="http://www.blinklist.com/index.php?Action=Blink/addblink.php&Url=http%3A%2F%2Fqt-quarterly.developpez.com%2Fqq-05%2Fxml%2F&Title=G%C3%A9n%C3%A9rer+du+XML" rel="nofollow"><img alt="Blinklist" src="./Générer du XML_files/kitbm-blinklist.png"></a>&nbsp;<a title="Netvouz" href="http://www.netvouz.com/action/submitBookmark?url=http%3A%2F%2Fqt-quarterly.developpez.com%2Fqq-05%2Fxml%2F&title=G%C3%A9n%C3%A9rer+du+XML" rel="nofollow"><img alt="Netvouz" src="./Générer du XML_files/kitbm-netvouz.png"></a>&nbsp;<a title="Reddit" href="http://reddit.com/submit?url=http%3A%2F%2Fqt-quarterly.developpez.com%2Fqq-05%2Fxml%2F&title=G%C3%A9n%C3%A9rer+du+XML" rel="nofollow"><img alt="Reddit" src="./Générer du XML_files/kitbm-reddit.png"></a>&nbsp;<a title="Simpy" href="http://simpy.com/simpy/LinkAdd.do?note=G%C3%A9n%C3%A9rer+du+XML&href=http%3A%2F%2Fqt-quarterly.developpez.com%2Fqq-05%2Fxml%2F" rel="nofollow"><img alt="Simpy" src="./Générer du XML_files/kitbm-simpy.png"></a>&nbsp;<a title="StumbleUpon" href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fqt-quarterly.developpez.com%2Fqq-05%2Fxml%2F&title=G%C3%A9n%C3%A9rer+du+XML" rel="nofollow"><img alt="StumbleUpon" src="./Générer du XML_files/kitbm-stumbleupon.png"></a>&nbsp;<a title="Bookmarks" href="http://www.bookmarks.fr/Connexion/?action=add&address=http%3A%2F%2Fqt-quarterly.developpez.com%2Fqq-05%2Fxml%2F" rel="nofollow"><img alt="Bookmarks" src="./Générer du XML_files/kitbm-bookmarks.gif"></a>&nbsp;<a title="Windows Live Favorites" href="https://favorites.live.com/quickadd.aspx?marklet=1&mkt=en-us&top=1&url=http%3A%2F%2Fqt-quarterly.developpez.com%2Fqq-05%2Fxml%2F" rel="nofollow"><img alt="Windows Live Favorites" src="./Générer du XML_files/kitbm-live.gif"></a>&nbsp;</span>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+					</div><br><br></div>
+		<br><a class="summaryIndent0" href="http://qt-quarterly.developpez.com/qq-05/xml/#LI">I. L'article original</a>
+			
+			
+            
+            
+            
+		
+		<br><a class="summaryIndent0" href="http://qt-quarterly.developpez.com/qq-05/xml/#LII">II. Définition de la classe XmlWriter</a>
+			
+			
+
+			
+
+			
+
+
+		
+		<br><a class="summaryIndent0" href="http://qt-quarterly.developpez.com/qq-05/xml/#LIII">III. Générer un fichier XML</a>
+			
+			
+
+			
+			
+
+			
+		
+		<br><a class="summaryIndent0" href="http://qt-quarterly.developpez.com/qq-05/xml/#LIV">IV. Implémentation de la classe XmlWriter</a>
+			
+			
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+		
+		<br><a class="summaryIndent0" href="http://qt-quarterly.developpez.com/qq-05/xml/#LV">V. Suggestions d'améliorations</a>
+			
+			
+			
+			
+		
+        <br><a class="summaryIndent0" href="http://qt-quarterly.developpez.com/qq-05/xml/#LVI">VI. Divers</a>
+            
+            
+            
+        
+    <br><br>
+		<br><h1 class="TitreSection0" id="LI">I. L'article original</h1>
+			
+			<div class="paragraph">
+				Qt Quarterly est une revue trimestrielle électronique proposée par Nokia à destination des développeurs et
+                utilisateurs de Qt. Vous pouvez trouver les
+                <img src="./Générer du XML_files/kiten.jpg" alt="en">&nbsp;<a href="http://doc.qt.nokia.com/qq/" class="lienArticle">versions originales</a>.
+            </div><br>
+            <div class="paragraph">
+                Nokia, Qt, Qt Quarterly et leurs logos sont des marques déposées de <i>Nokia Corporation</i> en Finlande
+                et/ou dans les autres pays. Les autres marques déposées sont détenues par leurs propriétaires respectifs.
+            </div><br>
+            <div class="paragraph">
+                Cet article est la traduction de l'article
+                <a href="http://doc.qt.nokia.com/qq/qq05-generating-xml.html" class="lienArticle">Generating XML</a> de Jasmin Blanchette
+                paru dans la Qt Quarterly Issue 5.
+			</div><br>
+            <div class="paragraph">
+				Cet article est une traduction d'un des tutoriels écrits par <b>Nokia Corporation and/or its subsidiary(-ies)</b>
+				incluse dans la documentation de Qt, en anglais. Les éventuels problèmes résultant d'une mauvaise traduction ne sont
+				pas imputables à Nokia.
+			</div><br>
+		
+		<br><h1 class="TitreSection0" id="LII">II. Définition de la classe XmlWriter</h1>
+			
+			<div class="paragraph">
+				La classe <span class="codeinline">XmlWriter</span> fournit une API basique pour la génération de fichiers XML. Pour commencer, 
+				voici la définition de cette classe.
+			</div>
+<div style="text-align:center;"><table style="width:90%;margin:10px auto;border-collapse: collapse; " id="codeTabled0e186"><tbody><tr><td class="code"><div id="codeWrapperd0e186" class="codeWrapper"><div id="codeOverflowd0e186" style="overflow: auto;"><pre><code id="contenuCoded0e186" class="contenuCode"><code class="qt_keyword3">class</code> XmlWriter
+<code class="qt_operator">{</code>
+<code class="qt_keyword1">public</code>:
+    XmlWriter( <code class="qt_keyword4">QIODevice</code> <code class="qt_operator">*</code>device,
+               <code class="qt_keyword1">const</code> <code class="qt_keyword4">QTextCodec</code> <code class="qt_operator">*</code>codec <code class="qt_operator">=</code> <code class="qt_digit">0</code> );
+     XmlWriter();
+
+    <code class="qt_keyword1">void</code> writeRaw( <code class="qt_keyword1">const</code> <code class="qt_keyword4">QString</code><code class="qt_operator">&amp;</code> xml );
+    <code class="qt_keyword1">void</code> writeString( <code class="qt_keyword1">const</code> <code class="qt_keyword4">QString</code><code class="qt_operator">&amp;</code> string );
+    <code class="qt_keyword1">void</code> writeOpenTag( <code class="qt_keyword1">const</code> <code class="qt_keyword4">QString</code><code class="qt_operator">&amp;</code> name,
+                       <code class="qt_keyword1">const</code> AttrMap<code class="qt_operator">&amp;</code> attrs <code class="qt_operator">=</code> AttrMap() );
+    <code class="qt_keyword1">void</code> writeCloseTag( <code class="qt_keyword1">const</code> <code class="qt_keyword4">QString</code><code class="qt_operator">&amp;</code> name );
+    <code class="qt_keyword1">void</code> writeAtomTag( <code class="qt_keyword1">const</code> <code class="qt_keyword4">QString</code><code class="qt_operator">&amp;</code> name,
+                       <code class="qt_keyword1">const</code> AttrMap<code class="qt_operator">&amp;</code> attrs <code class="qt_operator">=</code> AttrMap() );
+    <code class="qt_keyword1">void</code> writeTaggedString( <code class="qt_keyword1">const</code> <code class="qt_keyword4">QString</code><code class="qt_operator">&amp;</code> name,
+                            <code class="qt_keyword1">const</code> <code class="qt_keyword4">QString</code><code class="qt_operator">&amp;</code> string,
+                            <code class="qt_keyword1">const</code> AttrMap<code class="qt_operator">&amp;</code> attrs <code class="qt_operator">=</code> AttrMap() );
+    <code class="qt_keyword1">void</code> newLine();
+    <code class="qt_keyword1">void</code> setIndentSize( <code class="qt_keyword3">int</code> size ) <code class="qt_operator">{</code> indentSize <code class="qt_operator">=</code> size; <code class="qt_operator">}</code>
+    <code class="qt_keyword1">void</code> setAutoNewLine( <code class="qt_keyword3">bool</code> on ) <code class="qt_operator">{</code> autoNewLine <code class="qt_operator">=</code> on; <code class="qt_operator">}</code>
+
+<code class="qt_keyword1">private</code>:
+    ...
+
+    <code class="qt_keyword4">QTextStream</code> out;
+    <code class="qt_keyword4">QString</code> indentStr;
+    <code class="qt_keyword3">int</code> indentSize;
+    <code class="qt_keyword3">bool</code> autoNewLine;
+    <code class="qt_keyword3">bool</code> atBeginningOfLine;
+<code class="qt_operator">}</code>;
+</code></pre></div></div></td></tr></tbody></table></div>
+			<div class="paragraph">
+				Le paramètre <span class="codeinline">AttrMap</span>, de <span class="codeinline">writeOpenTag()</span>, <span class="codeinline">writeAtomTag()</span> et
+                <span class="codeinline">writeTaggedString()</span>, stocke des paires <span class="codeinline">nom = valeur</span>. Cette classe hérite
+                ses propriétés de <a href="http://qt.developpez.com/doc/4.6/qmap.html" target="_blank" class="lienArticle">QMap</a>.
+			</div>
+<div style="text-align:center;"><table style="width:90%;margin:10px auto;border-collapse: collapse; " id="codeTabled0e394"><tbody><tr><td class="code"><div id="codeWrapperd0e394" class="codeWrapper"><div id="codeOverflowd0e394" style="overflow: auto;"><pre><code id="contenuCoded0e394" class="contenuCode"><code class="qt_keyword3">class</code> AttrMap : <code class="qt_keyword1">public</code> <code class="qt_keyword4">QMap</code><code class="qt_operator">&lt;</code><code class="qt_keyword4">QString</code>, <code class="qt_keyword4">QString</code><code class="qt_operator">&gt;</code>
+<code class="qt_operator">{</code>
+<code class="qt_keyword1">public</code>:
+    AttrMap() <code class="qt_operator">{</code> <code class="qt_operator">}</code>
+    AttrMap( <code class="qt_keyword1">const</code> <code class="qt_keyword4">QString</code><code class="qt_operator">&amp;</code> name, <code class="qt_keyword1">const</code> <code class="qt_keyword4">QString</code><code class="qt_operator">&amp;</code> value )
+    <code class="qt_operator">{</code>
+        insert( name, value );
+    <code class="qt_operator">}</code>
+<code class="qt_operator">}</code>;
+</code></pre></div></div></td></tr></tbody></table></div>
+			<div class="paragraph">
+				Par exemple, cette ligne peut être générée par ce code.
+			</div>
+<div style="text-align:center;"><table style="width:90%;margin:10px auto;border-collapse: collapse; " id="codeTabled0e454"><tbody><tr><td class="code"><div id="codeWrapperd0e454" class="codeWrapper"><div id="codeOverflowd0e454" style="overflow: auto;"><pre><code id="contenuCoded0e454" class="contenuCode"><code class="markup">&lt;</code><code class="markup">animal</code><code class="markup"> </code><code class="markup">age</code><code class="markup">=</code><code class="literal1">"</code><code class="literal1">25</code><code class="literal1">"</code><code class="markup">&gt;</code>Elephant<code class="markup">&lt;</code><code class="markup">/</code><code class="markup">animal</code><code class="markup">&gt;</code>
+</code></pre></div></div></td></tr></tbody></table></div>
+<div style="text-align:center;"><table style="width:90%;margin:10px auto;border-collapse: collapse; " id="codeTabled0e484"><tbody><tr><td class="code"><div id="codeWrapperd0e484" class="codeWrapper"><div id="codeOverflowd0e484" style="overflow: auto;"><pre><code id="contenuCoded0e484" class="contenuCode">XmlWriter xw( device );
+xw.writeTaggedString( <code class="qt_literal1">"</code><code class="qt_literal1">animal</code><code class="qt_literal1">"</code>, <code class="qt_literal1">"</code><code class="qt_literal1">Elephant</code><code class="qt_literal1">"</code>, AttrMap(<code class="qt_literal1">"</code><code class="qt_literal1">age</code><code class="qt_literal1">"</code>, <code class="qt_literal1">"</code><code class="qt_literal1">25</code><code class="qt_literal1">"</code>) );
+</code></pre></div></div></td></tr></tbody></table></div>
+		
+		<br><h1 class="TitreSection0" id="LIII">III. Générer un fichier XML</h1>
+			
+			<div class="paragraph">
+				Avant d'implémenter cette classe, nous allons voir comment l'utiliser pour générer un fichier XML.
+			</div>
+<div style="text-align:center;"><table style="width:90%;margin:10px auto;border-collapse: collapse; " id="codeTabled0e524"><tbody><tr><td class="code"><div id="codeWrapperd0e524" class="codeWrapper"><div id="codeOverflowd0e524" style="overflow: auto;"><pre><code id="contenuCoded0e524" class="contenuCode"><code class="keyword2">&lt;!</code><code class="keyword2">DOCTYPE</code><code class="keyword2"> </code><code class="keyword2">UI</code><code class="keyword2">&gt;</code><code class="markup">&lt;</code><code class="markup">UI</code><code class="markup"> </code><code class="markup">version</code><code class="markup">=</code><code class="literal1">"</code><code class="literal1">3.1</code><code class="literal1">"</code><code class="markup">&gt;</code>
+<code class="markup">&lt;</code><code class="markup">class</code><code class="markup">&gt;</code>Form1<code class="markup">&lt;</code><code class="markup">/</code><code class="markup">class</code><code class="markup">&gt;</code>
+<code class="markup">&lt;</code><code class="markup">widget</code><code class="markup"> </code><code class="markup">class</code><code class="markup">=</code><code class="literal1">"</code><code class="literal1">QDialog</code><code class="literal1">"</code><code class="markup">&gt;</code>
+    <code class="markup">&lt;</code><code class="markup">property</code><code class="markup"> </code><code class="markup">name</code><code class="markup">=</code><code class="literal1">"</code><code class="literal1">name</code><code class="literal1">"</code><code class="markup">&gt;</code>
+        <code class="markup">&lt;</code><code class="markup">cstring</code><code class="markup">&gt;</code>Form1<code class="markup">&lt;</code><code class="markup">/</code><code class="markup">cstring</code><code class="markup">&gt;</code>
+    <code class="markup">&lt;</code><code class="markup">/</code><code class="markup">property</code><code class="markup">&gt;</code>
+    <code class="markup">&lt;</code><code class="markup">property</code><code class="markup"> </code><code class="markup">name</code><code class="markup">=</code><code class="literal1">"</code><code class="literal1">caption</code><code class="literal1">"</code><code class="markup">&gt;</code>
+        <code class="markup">&lt;</code><code class="markup">string</code><code class="markup">&gt;</code>Form1<code class="markup">&lt;</code><code class="markup">/</code><code class="markup">string</code><code class="markup">&gt;</code>
+    <code class="markup">&lt;</code><code class="markup">/</code><code class="markup">property</code><code class="markup">&gt;</code>
+    <code class="markup">&lt;</code><code class="markup">vbox</code><code class="markup">&gt;</code>
+        <code class="markup">&lt;</code><code class="markup">widget</code><code class="markup"> </code><code class="markup">class</code><code class="markup">=</code><code class="literal1">"</code><code class="literal1">QLabel</code><code class="literal1">"</code><code class="markup">&gt;</code>
+            <code class="markup">&lt;</code><code class="markup">property</code><code class="markup"> </code><code class="markup">name</code><code class="markup">=</code><code class="literal1">"</code><code class="literal1">name</code><code class="literal1">"</code><code class="markup">&gt;</code>
+                <code class="markup">&lt;</code><code class="markup">cstring</code><code class="markup">&gt;</code>label<code class="markup">&lt;</code><code class="markup">/</code><code class="markup">cstring</code><code class="markup">&gt;</code>
+            <code class="markup">&lt;</code><code class="markup">/</code><code class="markup">property</code><code class="markup">&gt;</code>
+            <code class="markup">&lt;</code><code class="markup">property</code><code class="markup"> </code><code class="markup">name</code><code class="markup">=</code><code class="literal1">"</code><code class="literal1">text</code><code class="literal1">"</code><code class="markup">&gt;</code>
+                <code class="markup">&lt;</code><code class="markup">string</code><code class="markup">&gt;</code>Rock <code class="literal2">&amp;</code><code class="literal2">amp</code><code class="literal2">;</code><code class="literal2">&amp;</code><code class="literal2">amp</code><code class="literal2">;</code> Roll<code class="markup">&lt;</code><code class="markup">/</code><code class="markup">string</code><code class="markup">&gt;</code>
+            <code class="markup">&lt;</code><code class="markup">/</code><code class="markup">property</code><code class="markup">&gt;</code>
+        <code class="markup">&lt;</code><code class="markup">/</code><code class="markup">widget</code><code class="markup">&gt;</code>
+    <code class="markup">&lt;</code><code class="markup">/</code><code class="markup">vbox</code><code class="markup">&gt;</code>
+<code class="markup">&lt;</code><code class="markup">/</code><code class="markup">widget</code><code class="markup">&gt;</code>
+<code class="markup">&lt;</code><code class="markup">layoutdefaults</code><code class="markup"> </code><code class="markup">margin</code><code class="markup">=</code><code class="literal1">"</code><code class="literal1">11</code><code class="literal1">"</code><code class="markup"> </code><code class="markup">spacing</code><code class="markup">=</code><code class="literal1">"</code><code class="literal1">6</code><code class="literal1">"</code><code class="markup">/</code><code class="markup">&gt;</code>
+<code class="markup">&lt;</code><code class="markup">/</code><code class="markup">UI</code><code class="markup">&gt;</code>
+</code></pre></div></div></td></tr></tbody></table></div>
+			<div class="paragraph">
+				Le code qui génère cet exemple suit. Sa longueur peut paraître exagérée au vu de la sortie produite, de taille
+                inférieure à celle du programme.
+			</div><br>
+			<div class="paragraph">
+				Cependant, dans un contexte plus réaliste, où la sortie dépend de l'entrée et de l'état du programme, cette classe
+				va permettre de sauver un temps précieux, et empêchera toutes les bogues ennuyantes,
+                parce qu'elle échappe les caractères spéciaux en XML automatiquement.
+			</div>
+<div style="text-align:center;"><table style="width:90%;margin:10px auto;border-collapse: collapse; " id="codeTabled0e880"><tbody><tr><td class="code"><div id="codeWrapperd0e880" class="codeWrapper"><div id="codeOverflowd0e880" style="overflow: auto;"><pre><code id="contenuCoded0e880" class="contenuCode"><code class="qt_keyword1">void</code> writeProperty( XmlWriter<code class="qt_operator">&amp;</code> xw, <code class="qt_keyword1">const</code> <code class="qt_keyword4">QString</code><code class="qt_operator">&amp;</code> name,
+                    <code class="qt_keyword1">const</code> <code class="qt_keyword4">QString</code><code class="qt_operator">&amp;</code> type, <code class="qt_keyword1">const</code> <code class="qt_keyword4">QString</code><code class="qt_operator">&amp;</code> value )
+<code class="qt_operator">{</code>
+    xw.writeOpenTag( <code class="qt_literal1">"</code><code class="qt_literal1">property</code><code class="qt_literal1">"</code>, AttrMap(<code class="qt_literal1">"</code><code class="qt_literal1">name</code><code class="qt_literal1">"</code>, name) );
+    xw.writeTaggedString( type, value );
+    xw.writeCloseTag( <code class="qt_literal1">"</code><code class="qt_literal1">property</code><code class="qt_literal1">"</code> );
+<code class="qt_operator">}</code>
+
+<code class="qt_keyword3">int</code> main()
+<code class="qt_operator">{</code>
+    <code class="qt_keyword4">QFile</code> file;
+    file.open( IO_WriteOnly, stdout );
+    XmlWriter xw( <code class="qt_operator">&amp;</code> file );
+    xw.setAutoNewLine( <code class="qt_keyword1">true</code> );
+    xw.writeRaw( <code class="qt_literal1">"</code><code class="qt_literal1">&lt;!DOCTYPE</code><code class="qt_literal1"> </code><code class="qt_literal1">UI&gt;&lt;UI</code><code class="qt_literal1"> </code><code class="qt_literal1">version=\"3.1\"&gt;</code><code class="qt_literal1">"</code> );
+    xw.newLine();
+    xw.writeTaggedString( <code class="qt_literal1">"</code><code class="qt_literal1">class</code><code class="qt_literal1">"</code>, <code class="qt_literal1">"</code><code class="qt_literal1">Form1</code><code class="qt_literal1">"</code> );
+    xw.writeOpenTag( <code class="qt_literal1">"</code><code class="qt_literal1">widget</code><code class="qt_literal1">"</code>, AttrMap(<code class="qt_literal1">"</code><code class="qt_literal1">class</code><code class="qt_literal1">"</code>, <code class="qt_literal1">"</code><code class="qt_literal1">QDialog</code><code class="qt_literal1">"</code>) );
+    writeProperty( xw, <code class="qt_literal1">"</code><code class="qt_literal1">name</code><code class="qt_literal1">"</code>, <code class="qt_literal1">"</code><code class="qt_literal1">cstring</code><code class="qt_literal1">"</code>, <code class="qt_literal1">"</code><code class="qt_literal1">Form1</code><code class="qt_literal1">"</code> );
+    writeProperty( xw, <code class="qt_literal1">"</code><code class="qt_literal1">caption</code><code class="qt_literal1">"</code>, <code class="qt_literal1">"</code><code class="qt_literal1">string</code><code class="qt_literal1">"</code>, <code class="qt_literal1">"</code><code class="qt_literal1">Form1</code><code class="qt_literal1">"</code> );
+    xw.writeOpenTag( <code class="qt_literal1">"</code><code class="qt_literal1">vbox</code><code class="qt_literal1">"</code> );
+    xw.writeOpenTag( <code class="qt_literal1">"</code><code class="qt_literal1">widget</code><code class="qt_literal1">"</code>, AttrMap(<code class="qt_literal1">"</code><code class="qt_literal1">class</code><code class="qt_literal1">"</code>, <code class="qt_literal1">"</code><code class="qt_literal1">QLabel</code><code class="qt_literal1">"</code>) );
+    writeProperty( xw, <code class="qt_literal1">"</code><code class="qt_literal1">name</code><code class="qt_literal1">"</code>, <code class="qt_literal1">"</code><code class="qt_literal1">cstring</code><code class="qt_literal1">"</code>, <code class="qt_literal1">"</code><code class="qt_literal1">label</code><code class="qt_literal1">"</code> );
+    writeProperty( xw, <code class="qt_literal1">"</code><code class="qt_literal1">text</code><code class="qt_literal1">"</code>, <code class="qt_literal1">"</code><code class="qt_literal1">string</code><code class="qt_literal1">"</code>, <code class="qt_literal1">"</code><code class="qt_literal1">Rock</code><code class="qt_literal1"> </code><code class="qt_literal1">&amp;&amp;</code><code class="qt_literal1"> </code><code class="qt_literal1">Roll</code><code class="qt_literal1">"</code> );
+    xw.writeCloseTag( <code class="qt_literal1">"</code><code class="qt_literal1">widget</code><code class="qt_literal1">"</code> );
+    xw.writeCloseTag( <code class="qt_literal1">"</code><code class="qt_literal1">vbox</code><code class="qt_literal1">"</code> );
+    xw.writeCloseTag( <code class="qt_literal1">"</code><code class="qt_literal1">widget</code><code class="qt_literal1">"</code> );
+    AttrMap attrs;
+    attrs.insert( <code class="qt_literal1">"</code><code class="qt_literal1">spacing</code><code class="qt_literal1">"</code>, <code class="qt_literal1">"</code><code class="qt_literal1">6</code><code class="qt_literal1">"</code> );
+    attrs.insert( <code class="qt_literal1">"</code><code class="qt_literal1">margin</code><code class="qt_literal1">"</code>, <code class="qt_literal1">"</code><code class="qt_literal1">11</code><code class="qt_literal1">"</code> );
+    xw.writeAtomTag( <code class="qt_literal1">"</code><code class="qt_literal1">layoutdefaults</code><code class="qt_literal1">"</code>, attrs );
+    xw.writeRaw( <code class="qt_literal1">"</code><code class="qt_literal1">&lt;/UI&gt;</code><code class="qt_literal1">"</code> );
+    <code class="qt_keyword1">return</code> <code class="qt_digit">0</code>;
+<code class="qt_operator">}</code>
+</code></pre></div></div></td></tr></tbody></table></div>
+			<div class="paragraph">
+				Avec ce code, nous obtenons un code déjà bien formaté (indentation et retours à la ligne) sans effort, et nous ne
+                devons pas nous occuper des caractères spéciaux, qui doivent être écrits comme des entités XML (comme
+                <span class="codeinline">&amp;</span>, ou bien des caractères Unicode. Soit <span class="codeinline">XmlWriter</span> s'en occupe, soit 
+                <a href="http://qt.developpez.com/doc/4.6/qtextstream.html" target="_blank" class="lienArticle">QTextStream</a>.
+			</div><br>
+		
+		<br><h1 class="TitreSection0" id="LIV">IV. Implémentation de la classe XmlWriter</h1>
+			
+			<div class="paragraph">
+				Maintenant, jetons un coup d'oeil à l'implémentation de <span class="codeinline">XmlWriter</span>.
+			</div><br>
+			<div class="paragraph">
+				Le constructeur initialise le flux de texte <span class="codeinline">out</span> avec un périphérique d'E/S et initialise d'autres
+				variables membres privées. Si un codec est fourni, le flux l'utilise, et un en-tête est ajouté pour le préciser.
+				Par défaut, un texte est encodé en <span class="codeinline">Unicode UTF-8/UTF-16</span>.
+			</div>
+<div style="text-align:center;"><table style="width:90%;margin:10px auto;border-collapse: collapse; " id="codeTabled0e1229"><tbody><tr><td class="code"><div id="codeWrapperd0e1229" class="codeWrapper"><div id="codeOverflowd0e1229" style="overflow: auto;"><pre><code id="contenuCoded0e1229" class="contenuCode"><code class="qt_function">XmlWriter::</code>XmlWriter( <code class="qt_keyword4">QIODevice</code> <code class="qt_operator">*</code>device,
+                      <code class="qt_keyword1">const</code> <code class="qt_keyword4">QTextCodec</code> <code class="qt_operator">*</code>codec )
+    : indentSize( <code class="qt_digit">4</code> ), autoNewLine( <code class="qt_keyword1">false</code> ),
+      atBeginningOfLine( <code class="qt_keyword1">true</code> )
+<code class="qt_operator">{</code>
+    out.setDevice( device );
+    <code class="qt_keyword1">if</code> ( codec <code class="qt_operator">=</code><code class="qt_operator">=</code> <code class="qt_digit">0</code> )
+    <code class="qt_operator">{</code>
+        out.setEncoding( <code class="qt_keyword4">QTextStream</code><code class="qt_function">::</code>UnicodeUTF8 );
+    <code class="qt_operator">}</code>
+    <code class="qt_keyword1">else</code>
+    <code class="qt_operator">{</code>
+        out.setCodec( codec );
+        out <code class="qt_operator">&lt;</code><code class="qt_operator">&lt;</code> <code class="qt_literal1">"</code><code class="qt_literal1">&lt;?xml</code><code class="qt_literal1"> </code><code class="qt_literal1">version=\"1.0\"</code><code class="qt_literal1"> </code><code class="qt_literal1">encoding=\"</code><code class="qt_literal1">"</code>
+            <code class="qt_operator">&lt;</code><code class="qt_operator">&lt;</code> protect( codec<code class="qt_operator">-</code><code class="qt_operator">&gt;</code>mimeName() ) <code class="qt_operator">&lt;</code><code class="qt_operator">&lt;</code> <code class="qt_literal1">"</code><code class="qt_literal1">\"?&gt;\n</code><code class="qt_literal1">"</code>;
+    <code class="qt_operator">}</code>
+<code class="qt_operator">}</code>
+</code></pre></div></div></td></tr></tbody></table></div>
+			<div class="paragraph">
+				Le destructeur ajoute une ligne vide en mode <span class="codeinline">autoNewLine</span>. En effet, les systèmes UNIX préconisent
+				l'utilisation d'une ligne vide (<span class="codeinline">\n</span>) en fin de fichier.
+			</div>
+<div style="text-align:center;"><table style="width:90%;margin:10px auto;border-collapse: collapse; " id="codeTabled0e1346"><tbody><tr><td class="code"><div id="codeWrapperd0e1346" class="codeWrapper"><div id="codeOverflowd0e1346" style="overflow: auto;"><pre><code id="contenuCoded0e1346" class="contenuCode"><code class="function">XmlWriter::</code><code class="operator">~</code><code class="function">XmlWriter</code>()
+<code class="operator">{</code>
+    <code class="keyword1">if</code> ( autoNewLine <code class="operator">&amp;</code><code class="operator">&amp;</code> <code class="operator">!</code>atBeginningOfLine )
+        out <code class="operator">&lt;</code><code class="operator">&lt;</code> endl;
+<code class="operator">}</code>
+</code></pre></div></div></td></tr></tbody></table></div>
+			<div class="paragraph">
+				Même si elle est privée, la fonction <span class="codeinline">protect()</span> est de loin la plus utile. Elle remplace
+				les caractères par des identités.
+			</div>
+<div style="text-align:center;"><table style="width:90%;margin:10px auto;border-collapse: collapse; " id="codeTabled0e1383"><tbody><tr><td class="code"><div id="codeWrapperd0e1383" class="codeWrapper"><div id="codeOverflowd0e1383" style="overflow: auto;"><pre><code id="contenuCoded0e1383" class="contenuCode"><code class="qt_keyword4">QString</code> <code class="qt_function">XmlWriter::</code>protect( <code class="qt_keyword1">const</code> <code class="qt_keyword4">QString</code><code class="qt_operator">&amp;</code> string )
+<code class="qt_operator">{</code>
+    <code class="qt_keyword4">QString</code> s <code class="qt_operator">=</code> string;
+    s.replace( <code class="qt_literal1">"</code><code class="qt_literal1">&amp;</code><code class="qt_literal1">"</code>, <code class="qt_literal1">"</code><code class="qt_literal1">&amp;amp;</code><code class="qt_literal1">"</code> );
+    s.replace( <code class="qt_literal1">"</code><code class="qt_literal1">&gt;</code><code class="qt_literal1">"</code>, <code class="qt_literal1">"</code><code class="qt_literal1">&amp;gt;</code><code class="qt_literal1">"</code> );
+    s.replace( <code class="qt_literal1">"</code><code class="qt_literal1">&lt;</code><code class="qt_literal1">"</code>, <code class="qt_literal1">"</code><code class="qt_literal1">&amp;lt;</code><code class="qt_literal1">"</code> );
+    s.replace( <code class="qt_literal1">"</code><code class="qt_literal1">\"</code><code class="qt_literal1">"</code>, <code class="qt_literal1">"</code><code class="qt_literal1">&amp;quot;</code><code class="qt_literal1">"</code> );
+    s.replace( <code class="qt_literal1">"</code><code class="qt_literal1">\'</code><code class="qt_literal1">"</code>, <code class="qt_literal1">"</code><code class="qt_literal1">&amp;apos;</code><code class="qt_literal1">"</code> );
+    <code class="qt_keyword1">return</code> s;
+<code class="qt_operator">}</code>
+</code></pre></div></div></td></tr></tbody></table></div>
+			<div class="paragraph">
+				La méthode <span class="codeinline">opening()</span> privée construit une balise ouvrante avec le nom <span class="codeinline">tag</span> précisé
+                et les attributs <span class="codeinline">attrs</span>.
+			</div>
+<div style="text-align:center;"><table style="width:90%;margin:10px auto;border-collapse: collapse; " id="codeTabled0e1496"><tbody><tr><td class="code"><div id="codeWrapperd0e1496" class="codeWrapper"><div id="codeOverflowd0e1496" style="overflow: auto;"><pre><code id="contenuCoded0e1496" class="contenuCode"><code class="qt_keyword4">QString</code> <code class="qt_function">XmlWriter::</code>opening( <code class="qt_keyword1">const</code> <code class="qt_keyword4">QString</code><code class="qt_operator">&amp;</code> tag,
+                            <code class="qt_keyword1">const</code> AttrMap<code class="qt_operator">&amp;</code> attrs )
+<code class="qt_operator">{</code>
+    <code class="qt_keyword4">QString</code> s <code class="qt_operator">=</code> <code class="qt_literal1">"</code><code class="qt_literal1">&lt;</code><code class="qt_literal1">"</code> <code class="qt_operator">+</code> tag;
+    <code class="qt_function">AttrMap::</code>ConstIterator a <code class="qt_operator">=</code> attrs.begin();
+    <code class="qt_keyword1">while</code> ( a <code class="qt_operator">!</code><code class="qt_operator">=</code> attrs.end() )
+    <code class="qt_operator">{</code>
+        s <code class="qt_operator">+</code><code class="qt_operator">=</code> <code class="qt_literal1">"</code><code class="qt_literal1"> </code><code class="qt_literal1">"</code> <code class="qt_operator">+</code> a.key() <code class="qt_operator">+</code> <code class="qt_literal1">"</code><code class="qt_literal1">=\"</code><code class="qt_literal1">"</code> <code class="qt_operator">+</code> protect( <code class="qt_operator">*</code>a ) <code class="qt_operator">+</code> <code class="qt_literal1">"</code><code class="qt_literal1">\"</code><code class="qt_literal1">"</code>;
+        <code class="qt_operator">+</code><code class="qt_operator">+</code>a;
+    <code class="qt_operator">}</code>
+    s <code class="qt_operator">+</code><code class="qt_operator">=</code> <code class="qt_literal1">"</code><code class="qt_literal1">&gt;</code><code class="qt_literal1">"</code>;
+    <code class="qt_keyword1">return</code> s;
+<code class="qt_operator">}</code>
+</code></pre></div></div></td></tr></tbody></table></div>
+			<div class="paragraph">
+				<span class="codeinline">writePendingIndent()</span> indente une balise.
+			</div>
+<div style="text-align:center;"><table style="width:90%;margin:10px auto;border-collapse: collapse; " id="codeTabled0e1627"><tbody><tr><td class="code"><div id="codeWrapperd0e1627" class="codeWrapper"><div id="codeOverflowd0e1627" style="overflow: auto;"><pre><code id="contenuCoded0e1627" class="contenuCode"><code class="qt_keyword1">void</code> <code class="qt_function">XmlWriter::</code>writePendingIndent()
+<code class="qt_operator">{</code>
+    <code class="qt_keyword1">if</code> ( atBeginningOfLine )
+    <code class="qt_operator">{</code>
+        out <code class="qt_operator">&lt;</code><code class="qt_operator">&lt;</code> indentStr;
+        atBeginningOfLine <code class="qt_operator">=</code> <code class="qt_keyword1">false</code>;
+    <code class="qt_operator">}</code>
+<code class="qt_operator">}</code>
+</code></pre></div></div></td></tr></tbody></table></div>
+			<div class="paragraph">
+				Maintenant, nous allons passer aux fonctions publiques.
+			</div><br>
+			<div class="paragraph">
+				<span class="codeinline">newLine()</span> peut être utilisée pour forcer une nouvelle ligne.
+			</div>
+<div style="text-align:center;"><table style="width:90%;margin:10px auto;border-collapse: collapse; " id="codeTabled0e1670"><tbody><tr><td class="code"><div id="codeWrapperd0e1670" class="codeWrapper"><div id="codeOverflowd0e1670" style="overflow: auto;"><pre><code id="contenuCoded0e1670" class="contenuCode"><code class="qt_keyword1">void</code> <code class="qt_function">XmlWriter::</code>newLine()
+<code class="qt_operator">{</code>
+    out <code class="qt_operator">&lt;</code><code class="qt_operator">&lt;</code> endl;
+    atBeginningOfLine <code class="qt_operator">=</code> <code class="qt_keyword1">true</code>;
+<code class="qt_operator">}</code>
+</code></pre></div></div></td></tr></tbody></table></div>
+			<div class="paragraph">
+				<span class="codeinline">writeRaw</span> écrit du XML pur.
+			</div>
+<div style="text-align:center;"><table style="width:90%;margin:10px auto;border-collapse: collapse; " id="codeTabled0e1701"><tbody><tr><td class="code"><div id="codeWrapperd0e1701" class="codeWrapper"><div id="codeOverflowd0e1701" style="overflow: auto;"><pre><code id="contenuCoded0e1701" class="contenuCode"><code class="qt_keyword1">void</code> <code class="qt_function">XmlWriter::</code>writeRaw( <code class="qt_keyword1">const</code> <code class="qt_keyword4">QString</code><code class="qt_operator">&amp;</code> xml )
+<code class="qt_operator">{</code>
+    out <code class="qt_operator">&lt;</code><code class="qt_operator">&lt;</code> xml;
+    atBeginningOfLine <code class="qt_operator">=</code> <code class="qt_keyword1">false</code>;
+<code class="qt_operator">}</code>
+</code></pre></div></div></td></tr></tbody></table></div>
+			<div class="paragraph">
+				<span class="codeinline">writeString()</span> écrit une chaîne en remplaçant les caractères spéciaux par leurs entités XML.
+			</div>
+<div style="text-align:center;"><table style="width:90%;margin:10px auto;border-collapse: collapse; " id="codeTabled0e1740"><tbody><tr><td class="code"><div id="codeWrapperd0e1740" class="codeWrapper"><div id="codeOverflowd0e1740" style="overflow: auto;"><pre><code id="contenuCoded0e1740" class="contenuCode"><code class="qt_keyword1">void</code> <code class="qt_function">XmlWriter::</code>writeString( <code class="qt_keyword1">const</code> <code class="qt_keyword4">QString</code><code class="qt_operator">&amp;</code> string )
+<code class="qt_operator">{</code>
+    out <code class="qt_operator">&lt;</code><code class="qt_operator">&lt;</code> protect( string );
+    atBeginningOfLine <code class="qt_operator">=</code> <code class="qt_keyword1">false</code>;
+<code class="qt_operator">}</code>
+</code></pre></div></div></td></tr></tbody></table></div>
+			<div class="paragraph">
+				<span class="codeinline">writeOpenTag()</span> ouvre une balise avec des attributs optionnels. Par exemple,
+                <span class="codeinline">&lt;item id="23"&gt;</span>
+			</div>
+<div style="text-align:center;"><table style="width:90%;margin:10px auto;border-collapse: collapse; " id="codeTabled0e1782"><tbody><tr><td class="code"><div id="codeWrapperd0e1782" class="codeWrapper"><div id="codeOverflowd0e1782" style="overflow: auto;"><pre><code id="contenuCoded0e1782" class="contenuCode"><code class="qt_keyword1">void</code> <code class="qt_function">XmlWriter::</code>writeOpenTag( <code class="qt_keyword1">const</code> <code class="qt_keyword4">QString</code><code class="qt_operator">&amp;</code> name,
+                              <code class="qt_keyword1">const</code> AttrMap<code class="qt_operator">&amp;</code> attrs )
+<code class="qt_operator">{</code>
+    writePendingIndent();
+    out <code class="qt_operator">&lt;</code><code class="qt_operator">&lt;</code> opening( name, attrs );
+    indentStr <code class="qt_operator">+</code><code class="qt_operator">=</code> <code class="qt_keyword4">QString</code>().fill( <code class="qt_literal1">'</code><code class="qt_literal1"> </code><code class="qt_literal1">'</code>, indentSize );
+    <code class="qt_keyword1">if</code> ( autoNewLine )
+        newLine();
+<code class="qt_operator">}</code>
+</code></pre></div></div></td></tr></tbody></table></div>
+			<div class="paragraph">
+				<span class="codeinline">writeCloseTag()</span> ferme un tag. Par exemple, <span class="codeinline">&lt;/item&gt;</span>.
+			</div>
+<div style="text-align:center;"><table style="width:90%;margin:10px auto;border-collapse: collapse; " id="codeTabled0e1842"><tbody><tr><td class="code"><div id="codeWrapperd0e1842" class="codeWrapper"><div id="codeOverflowd0e1842" style="overflow: auto;"><pre><code id="contenuCoded0e1842" class="contenuCode"><code class="qt_keyword1">void</code> <code class="qt_function">XmlWriter::</code>writeCloseTag( <code class="qt_keyword1">const</code> <code class="qt_keyword4">QString</code><code class="qt_operator">&amp;</code> name )
+<code class="qt_operator">{</code>
+    indentStr <code class="qt_operator">=</code> indentStr.mid( indentSize );
+    writePendingIndent();
+    out <code class="qt_operator">&lt;</code><code class="qt_operator">&lt;</code> opening( <code class="qt_literal1">"</code><code class="qt_literal1">/</code><code class="qt_literal1">"</code> <code class="qt_operator">+</code> name );
+    <code class="qt_keyword1">if</code> ( autoNewLine )
+        newLine();
+<code class="qt_operator">}</code>
+</code></pre></div></div></td></tr></tbody></table></div>
+			<div class="paragraph">
+				<span class="codeinline">writeAtomTag()</span> crée une balise, ouverte puis fermée. Par exemple, <span class="codeinline">&lt;item id="23" /&gt;</span>
+			</div>
+<div style="text-align:center;"><table style="width:90%;margin:10px auto;border-collapse: collapse; " id="codeTabled0e1894"><tbody><tr><td class="code"><div id="codeWrapperd0e1894" class="codeWrapper"><div id="codeOverflowd0e1894" style="overflow: auto;"><pre><code id="contenuCoded0e1894" class="contenuCode"><code class="qt_keyword1">void</code> <code class="qt_function">XmlWriter::</code>writeAtomTag( <code class="qt_keyword1">const</code> <code class="qt_keyword4">QString</code><code class="qt_operator">&amp;</code> name,
+                              <code class="qt_keyword1">const</code> AttrMap<code class="qt_operator">&amp;</code> attrs )
+<code class="qt_operator">{</code>
+    writePendingIndent();
+    <code class="qt_keyword4">QString</code> atom <code class="qt_operator">=</code> opening( name, attrs );
+    atom.insert( atom.length() <code class="qt_operator">-</code> <code class="qt_digit">1</code>, <code class="qt_literal1">"</code><code class="qt_literal1">/</code><code class="qt_literal1">"</code> );
+    out <code class="qt_operator">&lt;</code><code class="qt_operator">&lt;</code> atom;
+    <code class="qt_keyword1">if</code> ( autoNewLine )
+        newLine();
+<code class="qt_operator">}</code>
+</code></pre></div></div></td></tr></tbody></table></div>
+			<div class="paragraph">
+				<span class="codeinline">writeTaggedString()</span> simplifie une partie des opérations : elle ouvre un balise, y insère un
+				texte et referme la balise.
+			</div>
+<div style="text-align:center;"><table style="width:90%;margin:10px auto;border-collapse: collapse; " id="codeTabled0e1955"><tbody><tr><td class="code"><div id="codeWrapperd0e1955" class="codeWrapper"><div id="codeOverflowd0e1955" style="overflow: auto;"><pre><code id="contenuCoded0e1955" class="contenuCode"><code class="qt_keyword1">void</code> <code class="qt_function">XmlWriter::</code>writeTaggedString( <code class="qt_keyword1">const</code> <code class="qt_keyword4">QString</code><code class="qt_operator">&amp;</code> name,
+                                   <code class="qt_keyword1">const</code> <code class="qt_keyword4">QString</code><code class="qt_operator">&amp;</code> string,
+                                   <code class="qt_keyword1">const</code> AttrMap<code class="qt_operator">&amp;</code> attrs )
+<code class="qt_operator">{</code>
+    writePendingIndent();
+    out <code class="qt_operator">&lt;</code><code class="qt_operator">&lt;</code> opening( name, attrs );
+    writeString( string );
+    out <code class="qt_operator">&lt;</code><code class="qt_operator">&lt;</code> opening( <code class="qt_literal1">"</code><code class="qt_literal1">/</code><code class="qt_literal1">"</code> <code class="qt_operator">+</code> name );
+    <code class="qt_keyword1">if</code> ( autoNewLine )
+        newLine();
+<code class="qt_operator">}</code>
+</code></pre></div></div></td></tr></tbody></table></div>
+		
+		<br><h1 class="TitreSection0" id="LV">V. Suggestions d'améliorations</h1>
+			
+			<div class="paragraph">
+				Cette classe <span class="codeinline">XmlWriter</span> est déjà fort utile, mais beaucoup d'améliorations pourraient être effectuées.
+				Voici quelques suggestions.
+			</div><br>
+			<ul style="list-style-type: disc;">
+				<li>Émettre un avertissement si les balises ne sont pas équilibrées ; </li>
+				<li>Supporter une plus grande partie du XML sans devoir écrire en dur ; </li>
+				<li>Utiliser <a href="http://qt.developpez.com/doc/4.6/qvariant.html" target="_blank" class="lienArticle">QVariant</a> au lieu de
+                    <a href="http://qt.developpez.com/doc/4.6/qstring.html" target="_blank" class="lienArticle">QString</a>  pour le type de l'attribut
+                    dans <span class="codeinline">AttrMap</span></li>
+			</ul>
+			<div class="paragraph">
+				Vous pouvez télécharger <img src="./Générer du XML_files/kitsrcs.jpg" alt="srcs">&nbsp;<a href="http://ftp-developpez.com/qt-quarterly/qq-05/xml/fichiers/qq05-xmlwriter.zip" class="lienArticle">les sources</a> de cet article.
+                Ces sources incluent la classe <span class="codeinline">XmlWriter</span> avec les petites applications de test.
+			</div><br>
+		
+        <br><h1 class="TitreSection0" id="LVI">VI. Divers</h1>
+            
+            <div class="paragraph">
+				Ceci a été écrit pour Qt3, mais il reste intéressant pour comprendre le mode de fonctionnement de
+				<a href="http://qt.developpez.com/doc/4.6/qxmlstreamwriter.html" class="lienArticle">QXmlStreamWriter</a>
+			</div><br>
+            <div class="paragraph">
+				Au nom de toute l'équipe Qt, j'aimerais adresser le plus grand remerciement à Nokia pour nous avoir 
+				autorisé la traduction de cet article !
+			</div><br>
+        
+    <br><div class="barreNavigation"><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			
+			&nbsp;
+			<span class="lientelechargementpdf"><a class="lientelechargement" href="ftp://ftp-developpez.com/qt-quarterly/qq-05/xml/xml.pdf" title="Télécharger la version PDF de cet article, serveur principal." onclick="">Version PDF</a>
+					(<a class="lientelechargement" href="http://qt-quarterly.ftp-developpez.com/qq-05/xml/xml.pdf" title="Télécharger la version PDF de cet article, serveur secondaire" onclick="">Miroir</a>)
+				</span>
+		&nbsp;
+		<span class="lientelechargementzip"><a class="lientelechargement" href="ftp://ftp-developpez.com/qt-quarterly/qq-05/xml/xml.zip" title="Télécharger la version HTML de cet article, serveur principal." onclick="">Version hors-ligne</a>
+				(<a class="lientelechargement" href="http://qt-quarterly.ftp-developpez.com/qq-05/xml/xml.zip" title="Télécharger la version HTML de cet article, serveur secondaire" onclick="">Miroir</a>)
+			</span><br></div><hr><p style="text-align:center;" class="cachee"><a href="http://validator.w3.org/check?uri=referer"><img src="./Générer du XML_files/valid-xhtml10" alt="Valid XHTML 1.0 Transitional" height="31" width="88"></a><a href="http://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px" src="./Générer du XML_files/vcss" alt="Valid CSS!"></a></p>
+</div>
+		
+<p class="licence">Copyright © 2003 Jasmin Blanchette. Aucune reproduction, même partielle, ne peut être faite 
+de ce site et de l'ensemble de son contenu : textes, documents, images, etc 
+sans l'autorisation expresse de l'auteur. 
+Sinon vous encourez selon la loi jusqu'à 3 ans de prison et jusqu'à 300&nbsp;000&nbsp;E 
+de dommages et intérêts. 
+Cette page est déposée à la 
+<a href="http://www.sacd.fr/" onclick="window.open(this.href); return false;">SACD</a>.</p> 
+                        
+                            <div style="clear: both;"></div>
+                        </div>
+                    </div>
+                </div>                
+
+                <div id="gabarit_footer">
+        <div id="gabarit_footer_right">&nbsp;</div>
+        <div id="gabarit_footer_left">&nbsp;</div>
+        
+        <p id="responsable">
+            
+            <strong>
+                        
+                                  Responsables bénévoles
+                                 de la rubrique Qt :</strong>
+            <a href="http://www.developpez.net/forums/u254882/dourouc05/" target="_blank">
+            Thibaut Cuvelier
+            </a> -
+                        <a href="http://www.developpez.net/forums/u44506/johnlamericain/" target="_blank">
+            Jonathan Courtois
+            </a> -
+               
+              
+                
+                      <script type="text/javascript">
+          <!--
+          Ch=new Array(4);Res=new Array(4);
+          Ch[0]='le_club_des_developeur';Ch[1]='ÙÆÈÏàä';
+          Ch[2]='¬×ÄÇÍØÖÈÓÓ';Ch[3]='ÐÊÕÈØäÒÏÉß¡ÂÓÒ';
+          for(y=1;y<4;y++){Res[y]="";for(x=0;x<Ch[y].length;x++)
+          Res[y]+=String.fromCharCode(Ch[y].charCodeAt(x)-Ch[0].charCodeAt(x));}
+          var st = '<a href="'+Res[1]+':qt'+Res[2]+'-'+Res[3]+'">Contacter par email<\/a>';          document.write(st);
+          //-->
+          </script><a href="mailto:qt@redaction-developpez.com">Contacter par email</a>
+
+            
+               
+        </p>
+
+    </div>
+    
+    <script type="text/javascript">
+    <!--
+    xtn2 = "55";
+    //-->
+    </script>
+    
+    <div id="pied">
+            <div class="logoXiTi"><a href="http://www.xiti.com/xiti.asp?s=123861" title="Mesurez votre audience">
+<script type="text/javascript">
+<!--
+Xt_param = 's=123861&p=';
+Xt_r = document.referrer;
+Xt_h = new Date();
+Xt_i = '<img width="39" height="25" border="0" ';
+Xt_i += 'src="http://logv23.xiti.com/hit.xiti?'+Xt_param;
+Xt_i += '&hl='+Xt_h.getHours()+'x'+Xt_h.getMinutes()+'x'+Xt_h.getSeconds();
+if(parseFloat(navigator.appVersion)>=4)
+{Xt_s=screen;Xt_i+='&r='+Xt_s.width+'x'+Xt_s.height+'x'+Xt_s.pixelDepth+'x'+Xt_s.colorDepth;}
+document.write(Xt_i+'&ref='+Xt_r.replace(/[<>"]/g, '').replace(/&/g, '$')+'" title="Analyse d\'audience">');
+//-->
+</script><img width="39" height="25" border="0" src="./Générer du XML_files/hit.xiti" title="Analyse d&#39;audience">
+<object>
+<noscript>
+&lt;div&gt;
+Mesure d'audience ROI frequentation par &lt;img width="39" height="25" src="http://logv23.xiti.com/hit.xiti?s=123861&amp;amp;p=" alt="Analyse d'audience XiTi" /&gt;
+&lt;/div&gt;
+</noscript>
+</object>
+</a></div>
+
+        Vos questions techniques : <b><a href="http://www.developpez.net/forums/f376/c-cpp/bibliotheques/qt/" onclick="window.open(this.href); return false;">forum d'entraide Qt</a></b> - Publiez vos articles, tutoriels et cours<br>
+            et rejoignez-nous dans l'équipe de rédaction du club d'entraide des développeurs francophones <br> <a href="http://club.developpez.com/contacts/">Nous contacter</a> - <a href="http://www.developpez.com/hebergement/">Hébergement</a> -
+            <a href="http://www.developpez.com/participez/" title="" target="_blank">Participez</a>
+            - Copyright © 2000-2011 www.developpez.com -
+            <a href="http://www.developpez.com/legal/">Legal informations</a>.</div>
+
+</div>              
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./Générer du XML_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6749412-2");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+<script type="text/javascript">
+<!-- 
+xtnv = document;
+xtsd = "http://logc15"; 
+xtsite = "203548"; 
+xtpage = "";
+xtdmc = "";
+xtprm = "";
+//--> 
+</script> 
+<script type="text/javascript" src="./Générer du XML_files/xtexpert.js"></script><img width="1" height="1" src="./Générer du XML_files/hit(1).xiti"> 
+<noscript> 
+&lt;div&gt;
+&lt;img width="1" alt="" height="1" src="http://logc15.xiti.com/hit.xiti?s=203548&amp;amp;p=&amp;amp;" /&gt; 
+&lt;/div&gt;
+</noscript>
+
+
+</body></html>

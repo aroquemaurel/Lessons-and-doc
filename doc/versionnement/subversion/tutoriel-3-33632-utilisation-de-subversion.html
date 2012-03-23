@@ -1,0 +1,2347 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml"><head><link media="all" href="tutoriel-3-33632-utilisation-de-subversion_fichiers/widget57.css" type="text/css" rel="stylesheet">
+
+
+
+
+
+
+
+    
+
+        
+
+
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta name="keywords" content="environnements, développement">
+        <meta name="description" content="Environnements de développement">
+        <meta name="robots" content="index,follow">
+        <meta name="verify-v1" content="UL/4+QUCNTv1xBkNcC4sv4EjPUAoVj1yE+fMZClqLsc=">
+
+        <title>
+            Utilisation de Subversion
+        </title>
+
+        <link rel="shortcut icon" type="image/x-icon" href="http://www.siteduzero.com/Templates/images/designs/2/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="News du Site du Zéro" href="http://www.siteduzero.com/Templates/xml/news_fr.xml">
+        
+        <link rel="alternate" type="application/rss+xml" title="Derniers tutoriels du Site du Zéro" href="http://www.siteduzero.com/Templates/xml/tutoriels_fr.xml">
+        
+
+        <link rel="index" href="http://www.siteduzero.com/plan.html">
+        <link rel="start" title="Accueil" href="http://www.siteduzero.com/">
+        <link rel="search" type="application/opensearchdescription+xml" title="Site Du Zero" href="http://www.siteduzero.com/Templates/xml/xpi/fr/siteduzero.xpi">
+        <link rel="search" href="http://www.siteduzero.com/recherche.html" title="Rechercher">
+        <link rel="help" title="Accessibilité" href="http://www.siteduzero.com/accessibilite.html">
+        <link rel="accesskeys" title="Raccourcis et Accesskeys" href="http://www.siteduzero.com/accessibilite.html">
+
+
+        <link href="tutoriel-3-33632-utilisation-de-subversion_fichiers/design.css" rel="stylesheet" type="text/css" media="screen, handheld, tv, projection">
+        <link href="tutoriel-3-33632-utilisation-de-subversion_fichiers/zcode.css" rel="stylesheet" type="text/css" media="screen, handheld, tv, projection">
+        <link href="tutoriel-3-33632-utilisation-de-subversion_fichiers/impression.css" rel="stylesheet" type="text/css" media="print">
+
+
+        
+
+        
+
+        <!--[if lt IE 8]>
+            <link href="/css/ie_old.min.css?1302100238" rel="stylesheet" type="text/css" media="screen" />
+        <![endif]-->
+
+        
+            <script src="tutoriel-3-33632-utilisation-de-subversion_fichiers/ga.js" async="" type="text/javascript"></script><script type="text/javascript">
+                document.write('<style type="text/css">');
+                document.write('.spoiler3{visibility: hidden;}');           // cache le contenu
+                document.write('.spoiler3_hidden{display: none;}');         // ferme le cadre "secret"
+
+                document.write('.spoiler_hidden a{visibility: visible;}');  // montre le lien pour afficher le contenu
+                document.write('.spoiler a{visibility: visible;');          // montre le lien pour afficher le contenu
+                document.write('</style>');
+            </script><style type="text/css">.spoiler3{visibility: hidden;}.spoiler3_hidden{display: none;}.spoiler_hidden a{visibility: visible;}.spoiler a{visibility: visible;</style>
+        
+        <!--
+        
+            <style type="text/css">
+                .spoiler3
+                {
+                        visibility: hidden;
+                }
+                .spoiler3_hidden
+                {
+                        display: none;
+                }
+            </style>
+        
+        -->
+        
+        <script type="text/javascript" src="tutoriel-3-33632-utilisation-de-subversion_fichiers/jquery.js"></script>
+        <script type="text/javascript" src="tutoriel-3-33632-utilisation-de-subversion_fichiers/jqueryui.js"></script>
+    </head><body><div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; z-index: 100000;"><iframe src="tutoriel-3-33632-utilisation-de-subversion_fichiers/sh38.html" style="height: 1px; width: 1px; position: absolute; z-index: 100000; border: 0pt none; left: 0pt; top: 0pt;" title="AddThis utility frame" id="_atssh678"></iframe></div>
+		
+            <div id="acces_rapide">
+                <a href="#menu">Aller au menu</a> - <a href="#corps">Aller au contenu</a>
+            </div>
+
+            <div id="top">
+                <ul class="intersites">
+                    
+                    <li class="selected"><a href="http://www.siteduzero.com/">Informatique</a></li>
+                    <li><a href="#" id="bientot_lien">Bientôt...</a></li>
+                </ul>
+
+		<ul class="stats_sites">
+                    
+                    <li class="last_items"><a href="http://www.siteduzero.com/connectes.html">2 221 Zéros connectés</a> - </li>
+                    <li class="last_items"><a href="http://www.siteduzero.com/membres-292.html">235 729 Membres inscrits</a></li>
+		</ul>
+            </div>
+
+            <div id="header">
+                <div class="header_gauche">
+                    <a href="http://www.siteduzero.com/"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/logo_sdz_fr.png" alt=""></a>
+                </div>
+
+                <div class="header_droit">
+                    <div class="fr">
+                        <div id="logbox">
+                            
+                                <div class="bloc_inscription">
+                                    <a href="http://www.siteduzero.com/membres-315.html">
+                                        <strong class="liens_invites">Inscription</strong><br>
+                                        Inscription rapide en 2 minutes
+                                    </a>
+                                </div>
+                                <div class="bloc_connexion">
+                                    <a href="http://www.siteduzero.com/connexion.html">
+                                        <strong class="liens_invites">Connexion</strong><br>
+                                        Utilisez votre compte
+                                    </a>
+                                    <a class="rpxDialog" href="http://www.siteduzero.com/compte/rpx/remplacer"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/rpx_icons.png" alt="connexion_rpx"></a>
+                                </div>
+                            
+                        </div>
+
+                        
+                    </div>
+
+                    <div id="publicite_header">
+                        <div id="publicite_banniere" class="publicite">
+                            <script type="text/javascript" src="tutoriel-3-33632-utilisation-de-subversion_fichiers/smartAdServer.js"></script>
+                            
+                                <script type="text/javascript">
+                                    <!--
+                                    ord=Math.random();
+                                    ord=ord*10000000000000000000;
+                                    document.write('<scr'+'ipt type="text/javascript" src="pub.js.php?cb='+ord+'&amp;l=468&amp;h=60&amp;age=0&amp;pays=0&amp;cid=242"><\/scr'+'ipt>');
+                                    -->
+                                </script><script type="text/javascript" src="tutoriel-3-33632-utilisation-de-subversion_fichiers/pub.html"></script>
+                            
+                        </div>
+
+                    </div>
+                    </div>
+                </div>
+
+                    <div id="speedbarre">
+                            <ul class="smenu">
+                                <li id="speed_accueil" class="home">
+                                    <a class="" href="http://www.siteduzero.com/" accesskey="1">
+                                        <span title="Accueil">Accueil</span>
+                                    </a>
+                                </li>
+                                
+                                <li class="" id="speed_cours">
+                                    <a class="" href="http://www.siteduzero.com/tutoriel.html">
+                                        <span>Cours</span>
+                                    </a>
+                                    <span class="speedbarre_arrow"></span>
+                                </li>
+                                <li class="" id="speed_forum">
+                                    <a class="" href="http://www.siteduzero.com/forum.html">
+                                        <span>Forums</span>
+                                    </a>
+                                    <span class="speedbarre_arrow"></span>
+                                </li>
+                                
+                                    <li class="" id="speed_concours">
+                                        <a class="" href="http://www.siteduzero.com/participez.html">
+                                            <span>Participez</span>
+                                        </a>
+                                        <span class="speedbarre_arrow"></span>
+                                    </li>
+                                    <li class="" id="speed_etudes">
+                                        <a href="http://www.siteduzero.com/etudes.html" class="last_item">
+                                            <span>Études</span>
+                                        </a>
+                                        <span class="speedbarre_arrow"></span>
+                                    </li>
+                                    <li class="" id="speed_job">
+                                        <a href="http://www.siteduzero.com/emploi.html" class="last_item">
+                                            <span>Emploi</span>
+                                        </a>
+                                        <span class="speedbarre_arrow"></span>
+                                    </li>
+
+                                    <li class="" id="speed_boutique">
+                                    <a href="http://www.siteduzero.com/boutique.html" class="last_item">
+                                            <span>Boutique</span>
+                                        </a>
+                                        <span class="speedbarre_arrow"></span>
+                                    </li>
+                                
+                            </ul>
+
+                            <div id="speedbar_expand" class="menuh" style="display: none;">
+                                <div class="menuh_content">
+                                    <div id="menuh_tutorials" style="display: none;">
+                                        
+
+                                        <div id="menu_tutorials">
+                                            <div class="menu_prim">
+                                                <h5>Les cours phares</h5>
+                                                <div class="menuh_list_category">
+                                                    <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-67-site-web.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/67.png" alt=""></a></div>
+                                                    <h6><a href="http://www.siteduzero.com/tutoriel-1-67-site-web.html"><strong>Site Web</strong></a></h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-13666-apprenez-a-creer-votre-site-web.html"><span style="display: block;">XHTML / CSS</span></a></li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-309961-dynamisez-vos-sites-web-avec-javascript.html">Javascript</a></li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-14668-concevez-votre-site-web-avec-php-et-mysql.html">PHP / MySQL</a>
+                                                            <a href="http://www4.smartadserver.com/call/cliccommand/4083181/92456312?">
+                                                                <span class="in_book"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/ico_livre.png" alt=""></span>
+                                                                <span style="display: none;">Ce cours existe en livre :<br>Concevez votre site web avec PHP et MySQL</span>
+                                                            </a>
+                                                        </li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-112219-apprenez-a-creer-des-applications-web-dynamiques-avec-jee.html">Java EE (J2EE)</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="menuh_list_category">
+                                                    <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-57-programmation.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/57.png" alt=""></a></div>
+                                                    <h6><a href="http://www.siteduzero.com/tutoriel-1-57-programmation.html"><strong>Programmation</strong></a></h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-14189-apprenez-a-programmer-en-c.html">Langage C</a>
+                                                            <a href="http://www4.smartadserver.com/call/cliccommand/4083178/92456312?">
+                                                                <span class="in_book"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/ico_livre.png" alt=""></span>
+                                                                <span style="display: none;">Ce cours existe en livre :<br>Apprenez à programmer en C</span>
+                                                            </a>
+                                                        </li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-11406-apprenez-a-programmer-en-c.html">Langage C++</a></li>
+                                                        <li>
+                                                            <a href="http://www.siteduzero.com/tutoriel-3-10601-programmation-en-java.html">
+                                                                Java
+                                                            </a>
+                                                            <a href="http://www4.smartadserver.com/call/cliccommand/4083192/92456312?">
+                                                                <span class="in_book"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/ico_livre.png" alt=""></span>
+                                                                <span style="display: none;">Ce cours existe en livre :<br>Apprenez à programmer en Java</span>
+                                                            </a>
+                                                        </li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-119239-programmation-en-java-api.html">Java (API)</a></li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-223267-apprendre-python.html">Python</a></li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-134798-visual_basic_net.html">VB .NET </a></li>
+                                                    </ul>
+                                                </div>
+
+
+                                                <div class="menuh_list_category">
+                                                    <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-60-systemes-d-exploitation.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/60.png" alt=""></a></div>
+                                                    <h6><a href="http://www.siteduzero.com/tutoriel-1-60-systemes-d-exploitation.html"><strong>Systèmes d'exploitation</strong></a></h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-12827-reprenez-le-controle-a-l-aide-de-linux.html">Linux</a>
+                                                            <a href="http://www4.smartadserver.com/call/cliccommand/4083194/92456312?">
+                                                                <span class="in_book"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/ico_livre.png" alt=""></span>
+                                                                <span style="display: none;">Ce cours existe en livre :<br>Reprenez le contrôle a l'aide de Linux</span>
+                                                            </a>
+                                                        </li>                                                    
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-273305-freebsd-et-l-envers-du-decor.html">FreeBSD</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="menuh_list_category">
+                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-56-graphisme.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/56.png" alt=""></a></div>
+                                                    <h6><a href="http://www.siteduzero.com/tutoriel-1-56-graphisme.html"><strong>Graphisme</strong></a></h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-351765-debuter-sur-adobe-photoshop.html">Photoshop</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="menuh_list_category">
+                                                    <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-58-infographie-3d.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/58.png" alt=""></a></div>
+                                                    <h6><a href="http://www.siteduzero.com/tutoriel-1-58-infographie-3d.html"><strong>Infographie 3D</strong></a></h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-11714-debutez-dans-la-3d-avec-blender.html">Blender</a></li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-228998-apprenez-a-modeliser-en-3d-avec-autodesk-maya.html">Maya </a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="menuh_list_category">
+                                                    <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-55-bureautique.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/55.png" alt=""></a></div>
+                                                    <h6><a href="http://www.siteduzero.com/tutoriel-1-55-bureautique.html"><strong>Bureautique</strong></a></h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-258577-redigez-des-documents-de-qualite-professionnelle-avec-latex.html">LaTeX</a>
+                                                            <a href="http://www4.smartadserver.com/call/cliccommand/4083197/92456312?">
+                                                                <span class="in_book"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/ico_livre.png" alt=""></span>
+                                                                <span style="display: none;">Ce cours existe en livre :<br>Rédigez des documents de qualité avec LaTeX</span>
+                                                            </a>
+                                                        </li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-417000-redigez-facilement-des-documents-avec-word.html">Word<img style="margin-left: 10px;" alt="" src="tutoriel-3-33632-utilisation-de-subversion_fichiers/iconouveau.png"></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="menu_princi menuhcattuto ">
+                                                <h5>Tous les cours par catégories</h5>
+                                                <div class="menuh_princi_col">
+                                                    
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-67-site-web.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/67.png" alt=""></a></div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-67-site-web.html">Site Web <span style="font-weight: normal;">(206 Cours)</span></a></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-69-xhtml-css.html">XHTML / CSS</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-1-210-php.html">PHP</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-71-divers.html">Divers</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-73-forums.html">Forums</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-77-hebergement.html">Hébergement</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-70-javascript.html">Javascript</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-74-serveur.html">Serveur</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-309-ide.html">IDE</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-60-systemes-d-exploitation.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/60.png" alt=""></a></div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-60-systemes-d-exploitation.html">Systèmes d'exploitation <span style="font-weight: normal;">(88 Cours)</span></a></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-96-linux.html">Linux</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-147-mac-os.html">Mac OS</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-1-97-windows.html">Windows</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-408-bsd.html">BSD</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-54-mapping.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/54.png" alt=""></a></div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-54-mapping.html">Mapping <span style="font-weight: normal;">(31 Cours)</span></a></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-63-half-life.html">Half-Life</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-66-half-life.html">Half-Life²</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-173-warcraft.html">Warcraft</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-188-autres.html">Autres</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-55-bureautique.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/55.png" alt=""></a></div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-55-bureautique.html">Bureautique <span style="font-weight: normal;">(29 Cours)</span></a></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-1-290-microsoft-office.html">Microsoft Office</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-1-291-openoffice-org.html">OpenOffice.org</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-192-divers.html">Divers</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-451-latex.html">LaTeX</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-59-jeux-video.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/59.png" alt=""></a></div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-59-jeux-video.html">Jeux Vidéo <span style="font-weight: normal;">(22 Cours)</span></a></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-102-hl-ses-mods.html">HL &amp; ses mods</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-185-autres-jeux.html">Autres jeux</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-61-materiel.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/61.png" alt=""></a></div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-61-materiel.html">Matériel <span style="font-weight: normal;">(11 Cours)</span></a></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-101-general.html">Général</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+
+                                                    <div class="menuh_list_category">
+                                                        <div class="ico"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/tuto_cat_thb.png" alt=""></div>
+                                                        <h6>Autres</h6>
+                                                        <ul>
+                                                            
+                                                                <li>
+                                                                    <a style="display: block;" href="http://www.siteduzero.com/tutoriel-2-404-bases-de-donnees.html">Bases de données</a>
+                                                                </li>
+                                                            
+                                                                <li>
+                                                                    <a style="display: block;" href="http://www.siteduzero.com/tutoriel-2-403-mobiles.html">Mobiles</a>
+                                                                </li>
+                                                            
+                                                                <li>
+                                                                    <a style="display: block;" href="http://www.siteduzero.com/tutoriel-2-141-site-du-zero.html">Site du Zéro</a>
+                                                                </li>
+                                                            
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                                <div class="menuh_princi_col">
+                                                    
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-57-programmation.html">
+                                                                    <img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/57.png" alt=""></a>
+                                                                </div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-57-programmation.html">Programmation</a> <span style="font-weight: normal;">(251 Cours)</span></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-91-as-flash-flex.html">AS / Flash / Flex</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-217-algorithmique.html">Algorithmique</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-254-basic-et-derives.html">Basic et dérivés</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-1-344-bibliotheques.html">Bibliothèques</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-262-c.html">C</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-261-c.html">C++</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-201-c-net.html">C# / .NET</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-1-258-calculatrices.html">Calculatrices</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-242-ide.html">IDE</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-336-erlang.html">Erlang</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-227-general.html">Général</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-178-java.html">Java</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-93-mirc.html">mIRC</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-196-python.html">Python</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-355-caml-ocaml.html">Caml / OCaml</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-386-cocoa-objective-c.html">Cocoa / Objective-C</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-253-autres-langages.html">Autres langages</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-56-graphisme.html">
+                                                                    <img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/56.png" alt=""></a>
+                                                                </div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-56-graphisme.html">Graphisme</a> <span style="font-weight: normal;">(30 Cours)</span></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-176-dessin.html">Dessin</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-177-divers.html">Divers</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-79-flash.html">Flash</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-157-gimp.html">Gimp</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-153-dessin-vectoriel.html">Dessin vectoriel</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-190-photofiltre.html">PhotoFiltre</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-78-photoshop.html">Photoshop</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-197-pov-ray.html">POV-Ray</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-58-infographie-3d.html">
+                                                                    <img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/58.png" alt=""></a>
+                                                                </div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-58-infographie-3d.html">Infographie 3D</a> <span style="font-weight: normal;">(24 Cours)</span></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-95-3d-studio-max.html">3D Studio Max</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-152-blender.html">Blender</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-296-maya.html">Maya</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-62-multimedia.html">
+                                                                    <img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/62.png" alt=""></a>
+                                                                </div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-62-multimedia.html">Multimédia</a> <span style="font-weight: normal;">(25 Cours)</span></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-99-audio.html">Audio</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-100-video.html">Vidéo</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-382-after-effects.html">After Effects</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-182-reseaux.html">
+                                                                    <img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/182.png" alt=""></a>
+                                                                </div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-182-reseaux.html">Réseaux</a> <span style="font-weight: normal;">(17 Cours)</span></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-183-general.html">Général</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-189-securite.html">Sécurité</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+
+                                                    <div class="menuh_list_category">
+                                                        <div id="create_tutorials_button">
+                                                            
+                                                                <div><a href="http://www.siteduzero.com/connexion.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/redigercours.png" alt=""></a></div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div id="menuh_forum" style="display: none;">
+                                        <div class="menu_princi">
+                                            <a class="button_all_forums" href="http://www.siteduzero.com/forum.html">Accueil des forums</a>
+                                            <div class="menuh_princi_col">
+                                                
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-121-site-web.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/121.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-121-site-web.html">Site Web</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-122-xhtml-css.html">XHTML / CSS</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-338-javascript.html">Javascript</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-123-php.html">PHP</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-128-mapping.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/128.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-128-mapping.html">Mapping</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-129-goldsource-hl1.html">GoldSource (HL1)</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-130-source-hl2.html">Source (HL2)</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-24-communaute-des-zeros.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/24.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-24-communaute-des-zeros.html">Communauté des zéros</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-28-discussions-generales.html">Discussions générales</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-278-vos-etudes.html">Vos études</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-239-presentation-de-vos-projets.html">Présentation de vos projets</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-200-recrutements-pour-vos-projets.html">Recrutements pour vos projets</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-440-sciences.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/440.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-440-sciences.html">Sciences</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-441-mathematiques.html">Mathématiques</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-442-physique-chimie.html">Physique - Chimie</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-443-biologie-et-geologie.html">Biologie et Géologie</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-444-autres-sciences.html">Autres sciences</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                            </div>
+
+                                            <div class="menuh_princi_col">
+                                                
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-125-programmation.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/125.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-125-programmation.html">Programmation</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-126-langage-c.html">Langage C</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-237-langage-c.html">Langage C++</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-450-c-net-vb-net.html">C# .NET &amp; VB .NET</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-305-langage-java.html">Langage Java</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-407-langage-python.html">Langage Python</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-406-bases-de-donnees.html">Bases de données</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-127-autres-langages-outils-et-approches.html">Autres langages, outils et approches</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-219-materiel-et-logiciels.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/219.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-219-materiel-et-logiciels.html">Matériel et logiciels</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-339-discussions-informatiques.html">Discussions informatiques</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-220-linux-mac-et-bsd.html">Linux, Mac et *BSD</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-221-windows.html">Windows</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-116-jeux-video.html">Jeux vidéo</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-117-graphisme.html">Graphisme</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-223-materiel.html">Matériel</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-310-concours.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/310.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-310-concours.html">Concours</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-435-innov-game-2011-a-la-gloire-de.html">Innov'Game 2011 : A la gloire de</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-143-le-site-du-zero.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/143.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-143-le-site-du-zero.html">Le Site du Zéro</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-144-suggestions-et-rapports-de-bugs.html">Suggestions et rapports de bugs</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-452-vos-commentaires.html">Vos commentaires</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-145-designs-du-site-du-zero.html">Designs du Site du Zéro</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-429-tutoriels-du-site-du-zero.html">Tutoriels du Site du Zéro</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                            </div>
+                                        </div>
+
+                                        
+                                    <div class="clear"></div>
+                                    </div>
+                                    <div id="menuh_collaborate" style="display: none;">
+                                        <div class="menuh_list_category">
+                                            
+                                                <div class="ico"><a href="http://www.siteduzero.com/membres-315.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/tuto_cat_thb.png" alt=""></a></div>
+                                                <h6><a href="http://www.siteduzero.com/membres-315.html">Cours</a></h6>
+                                                <ul>
+                                                    <li style="font-style: italic;">Pour rédiger et participer à la rédaction d'un tutoriel, <a style="display: inline; font-style: normal;" href="http://www.siteduzero.com/membres-315.html">rejoignez-nous !</a></li>
+                                                </ul>
+                                            
+                                        </div>
+
+                                        <div class="menuh_list_category">
+                                            
+                                                <div class="ico"><a href="http://www.siteduzero.com/membres-315.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/defaut_thb.png" alt=""></a></div>
+                                                <h6><a href="http://www.siteduzero.com/membres-315.html">News</a></h6>
+                                                <ul>
+                                                    <li style="font-style: italic;">Pour partager ou participer à la rédaction d'une news, <a style="display: inline; font-style: normal;" href="http://www.siteduzero.com/membres-315.html"> rejoignez-nous !</a></li>
+                                                </ul>
+                                            
+                                        </div>
+
+                                        <div class="menuh_list_category">
+                                            <div class="ico"><a href="http://www.siteduzero.com/concours.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/cup_thb.png" alt=""></a></div>
+                                            <h6><a href="http://www.siteduzero.com/concours.html">Concours</a></h6>
+                                            <ul>
+                                                
+                                                        <li><a href="http://www.siteduzero.com/concours-654-122-innov-game-2011-a-la-gloire-de.html">Innov'Game 2011 : A la gloire de</a></li>
+                                                    
+                                            </ul>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+
+
+                                    <div id="menuh_job" style="display: none;">
+                                        <div class="menu_princi">
+                                            <div class="menuh_princi_col">
+                                                <div class="menuh_list_category">
+                                                    <h6>Dernières annonces</h6>
+                                                    <div class="menuh_list_category_job">
+                                                        
+                                                            <a title="Consulter le poste : Stagiaire Développeur PHP (…" href="http://www.siteduzero.com/emploi/28/stagiaire-developpeur-php" class="corpsmenu">
+                                                                <span class="last_jobs">
+                                                                    <span title="App." class="job_type jobtypes4">App.</span> <span title="Stage" class="job_type jobtypes3">Stage</span>
+                                                                </span>
+                                                                <span>
+                                                                    <span class="job_title">Stagiaire Développeur PHP (…</span>
+                                                                    <span style="color: rgb(0, 0, 0);">Ideys</span>
+                                                                </span>
+                                                            </a>
+                                                        
+                                                            <a title="Consulter le poste : Développeur Php / Mysql (H/…" href="http://www.siteduzero.com/emploi/104/developpeur-php-mysql" class="corpsmenu">
+                                                                <span class="last_jobs">
+                                                                    <span title="CDI" class="job_type jobtypes1">CDI</span>
+                                                                </span>
+                                                                <span>
+                                                                    <span class="job_title">Développeur Php / Mysql (H/…</span>
+                                                                    <span style="color: rgb(0, 0, 0);">10 MEDIAS</span>
+                                                                </span>
+                                                            </a>
+                                                        
+                                                            <a title="Consulter le poste : Administrateur réseau (H/F)" href="http://www.siteduzero.com/emploi/101/administrateur-reseau" class="corpsmenu">
+                                                                <span class="last_jobs">
+                                                                    <span title="Pro." class="job_type jobtypes5">Pro.</span> <span title="Stage" class="job_type jobtypes3">Stage</span>
+                                                                </span>
+                                                                <span>
+                                                                    <span class="job_title">Administrateur réseau (H/F)</span>
+                                                                    <span style="color: rgb(0, 0, 0);">INSIA</span>
+                                                                </span>
+                                                            </a>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                
+                                                <div class="menuh_princi_col">
+                                                    
+                                                        <div class="menuh_list_category">
+                                                            <h6>Annonces à la une</h6>
+                                                            <div class="menuh_list_category_job">
+                                                                
+                                                                    <a title="Consulter le poste : Développeur Web (H/F)" href="http://www.siteduzero.com/emploi/96/developpeur-web" class="corpsmenu">
+
+                                                                        <span class="last_jobs">
+                                                                            <span title="CDI" class="job_type jobtypes1">CDI</span>
+                                                                        </span>
+                                                                        <span>
+                                                                            <span class="job_title">Développeur Web (H/F)</span>
+                                                                            <span style="color: rgb(0, 0, 0);">Gibert Joseph</span>
+                                                                        </span>
+                                                                    </a>
+                                                                
+                                                                    <a title="Consulter le poste : Ingénieur logiciel (H/F)" href="http://www.siteduzero.com/emploi/36/ingenieur-logiciel" class="corpsmenu">
+
+                                                                        <span class="last_jobs">
+                                                                            <span title="App." class="job_type jobtypes4">App.</span>
+                                                                        </span>
+                                                                        <span>
+                                                                            <span class="job_title">Ingénieur logiciel (H/F)</span>
+                                                                            <span style="color: rgb(0, 0, 0);">AFTI</span>
+                                                                        </span>
+                                                                    </a>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                      
+                                                    <div class="menuh_list_category">
+                                                        <div>
+                                                            <div><a href="http://www.siteduzero.com/emploi.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/speed_barre_btn_recherche_emploi.png" alt=""></a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="menuh_more2">
+                                                        <a href="http://www.siteduzero.com/emploi/liste.html">Toutes les annonces<img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/fleche_droite.png" alt="►"></a>
+                                                </div>
+                                            </div>
+                                        <div class="clear"></div>
+                                    </div>
+
+                                    <div id="menuh_study" style="display: none; padding-left: 15px;">
+                                        <div class="menu_princi">
+                                            <div class="ico_study"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/ico_etude.png" alt="icon etude" width="50"></div>
+                                            <div class="menuh_princi_col">
+                                                <div class="menuh_list_category">
+                                                    <h6>Recrutement à Bac / Bac +1</h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-280-bts.html">BTS</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-269-ecoles-d-ing%C3%A9nieurs-en-informatique.html">Ecoles d'ingénieurs en informatique</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-274-ecoles-d-ing%C3%A9nieurs-generalistes.html">Ecoles d'ingénieurs généralistes</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-283-iut.html">IUT</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-300-universites.html">Universités</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-287-autre-formation-diplomantes.html">Autres formations diplômantes</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-448-cpge.html">CPGE</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="menuh_list_category">
+                                                    <h6>Recrutement à Bac +2</h6>
+                                                    <ul>
+                                                       <li><a href="http://www.siteduzero.com/etudes-550-270-ecoles-d-ing%C3%A9nieurs-en-informatique.html">Ecoles d'ingénieurs en informatique</a></li>
+                                                       <li><a href="http://www.siteduzero.com/etudes-550-273-ecoles-d-ing%C3%A9nieurs-generalistes.html">Ecoles d'ingénieurs généralistes</a></li>
+                                                       <li><a href="http://www.siteduzero.com/etudes-550-289-autre-formation-diplomantes.html">Autres formations diplômantes</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div class="menuh_princi_col">
+                                                <div class="menuh_list_category">
+                                                    <h6>Recrutement à Bac +3 / Bac +4</h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-388-ecoles-d-ing%C3%A9nieurs-en-informatique.html">Ecoles d'ingénieurs en informatique</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-389-ecoles-d-ing%C3%A9nieurs-generalistes.html">Ecoles d'ingénieurs généralistes</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-390-autre-formation-diplomantes.html">Autres formations diplômantes</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="menuh_list_category">
+                                                    <h6>Recrutement à Bac +5</h6>
+                                                    <ul>
+                                                       <li><a href="http://www.siteduzero.com/etudes-550-299-doctorats.html">Doctorats</a></li>
+                                                       <li><a href="http://www.siteduzero.com/etudes-550-391-autre-formation-diplomantes.html">Autres formations diplômantes</a></li>
+                                                    </ul>
+                                                    <div class="menuh_list_category">
+                                                        <div id="find_training">
+                                                            <div><a href="http://www.siteduzero.com/etudes.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/ico_recherche_cours.png" alt=""><strong>Trouvez une formation</strong></a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+
+                                    <div id="menuh_shop" style="display: none;">
+                                        <div class="flagship_products bandeaunouveau">
+                                            <a style="display: block; height: 144px;" href="http://www.siteduzero.com/boutique-614-430-apprenez-a-programmer-en-java.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/livre_cours_java_2d.png" alt="Apprenez à programmer en Java"></a>
+                                            <h5>Apprenez à programmer en Java</h5>
+                                            <div class="price" style="margin-top: 30px;">
+                                                32 €
+                                            </div>
+                                            <span><a class="bouton_action fl" href="http://www.siteduzero.com/boutique-614-430-apprenez-a-programmer-en-java.html">Acheter</a></span>
+                                        </div>
+                                        
+                                        <div class="flagship_products">
+                                            <a href="http://www.siteduzero.com/boutique-614-188-cle-usb-du-site-du-zero-8-go.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/image_usb_speedbarre.jpg" alt="cle usb"></a>
+                                            <h5>Clé USB du site du Zéro</h5>
+                                            <a href="http://www.siteduzero.com/boutique-614-184-cle-usb-du-site-du-zero-4-go.html">4 Go</a>
+                                            - <a href="http://www.siteduzero.com/boutique-614-188-cle-usb-du-site-du-zero-8-go.html">8 Go</a>
+                                            - <a href="http://www.siteduzero.com/boutique-614-191-cle-usb-du-site-du-zero-16-go.html">16 Go</a><br>
+                                            <div class="price">
+                                                <span class="min_price">À partir de</span><br>
+                                                15,20 €
+                                            </div>
+                                            <span><a class="bouton_action fl" href="http://www.siteduzero.com/boutique-614-188-cle-usb-du-site-du-zero-8-go.html">Acheter</a></span>
+                                        </div>
+
+                                    <div class="other_products">
+                                        <span>Concevez votre site web avec PHP et MySQL<br>
+                                        <a href="http://www.siteduzero.com/boutique-614-107-concevez-votre-site-web-avec-php-et-mysql.html">En savoir plus ►</a></span>
+                                        <a href="http://www.siteduzero.com/boutique-614-107-concevez-votre-site-web-avec-php-et-mysql.html">
+                                        <img style="margin: 13px 0pt 0pt 22px;" alt="Concevez votre site web avec php et mysql" src="tutoriel-3-33632-utilisation-de-subversion_fichiers/livre_cours_php_2d.png"></a>
+                                    </div>
+
+                                    <div class="other_products">
+                                        <span>Apprenez à programmer en C <br>
+                                        <a href="http://www.siteduzero.com/boutique-614-65-apprenez-a-programmer-en-c.html">En savoir plus ►</a></span>
+                                        <a href="http://www.siteduzero.com/boutique-614-65-apprenez-a-programmer-en-c.html">
+                                        <img style="margin: 13px 0pt 0pt 22px;" alt="Apprenez à programmer en C" src="tutoriel-3-33632-utilisation-de-subversion_fichiers/livre_cours_c_2d.png"></a>
+                                    </div>
+                                    <div class="other_products">
+                                        <span>Reprenez le contrôle à l'aide de Linux <br>
+                                        <a href="http://www.siteduzero.com/boutique-614-171-reprenez-le-controle-a-l-aide-de-linux.html">En savoir plus ►</a></span>
+                                        <a href="http://www.siteduzero.com/boutique-614-171-reprenez-le-controle-a-l-aide-de-linux.html">
+                                        <img style="margin: 13px 0pt 0pt 22px;" alt="Reprenez le contrôle à l'aide de Linux" src="tutoriel-3-33632-utilisation-de-subversion_fichiers/livre_cours_linux_2d.png"></a>
+                                    </div>
+
+                                    <div class="other_products">
+                                        <span>Rédigez des documents de qualité avec LaTeX<br>
+                                        <a href="http://www.siteduzero.com/boutique-614-207-redigez-des-documents-de-qualite-avec-latex.html">En savoir plus ►</a></span>
+                                        <a href="http://www.siteduzero.com/boutique-614-207-redigez-des-documents-de-qualite-avec-latex.html">
+                                        <img style="margin: 13px 0pt 0pt 22px;" alt="Rédigez des documents de qualité avec LaTeX" src="tutoriel-3-33632-utilisation-de-subversion_fichiers/livre_cours_latex_2d.png"></a>
+                                    </div>
+                                      
+                                    <div class="menuh_more">
+                                        <a href="http://www.siteduzero.com/boutique.html">Tous les produits <img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/fleche_droite_002.png" alt="►"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="search_bar">
+                        <div class="ard"></div>
+                        <form method="get" action="recherche.html" id="recherche">
+                            <p>
+                                <input name="src" id="champ_recherche" accesskey="4" value="Rechercher" type="text">
+                                <select name="c" id="section_recherche">
+                                    <option value="3" selected="selected">Cours</option>
+                                    <option value="6">Forums</option>
+                                    <option value="4">News</option>
+                                    <option value="mbr">Membres</option>
+                                    <option value="formation">Études</option>
+                                    <option value="codeweb">Code web</option>
+                                    <option value="mp">MP</option>
+                                </select>
+                                <input class="button_go_search" value="Go" type="submit">
+                                <a class="button_more_search" href="http://www.siteduzero.com/recherche.html">+</a>
+                            </p>
+                        </form>
+                        </div>
+
+                    </div>
+
+<script type="text/javascript">
+
+    
+        //On Hover
+
+    var keyCodeEscape = 27;
+    $(document).keyup(function(f) {
+        if (f.keyCode == keyCodeEscape)
+        {
+            hideBlocMenu();
+        }
+    });
+
+
+    /* Var for speedbar*/
+    showDelay = 300;
+    hiddenDelay = 367;
+    fadeInDelay = 100
+    fadeOutDelay = 100
+    timer = null;
+    hideTimeOut = null
+    // speedbar function
+    function speedShowDelay(){
+        if($('.menuh_content > div').is(':visible'))
+        {
+            showDelay = null;
+        }
+        else
+        {
+            showDelay = 300;
+        }
+    }
+    
+    $("body").mouseleave(function(){
+        $('.menuh_content > div').hide();
+        $('#speedbarre .smenu>li a').removeClass("smenu_hover");
+    });
+    
+    function showMenu(id, id2){
+
+        $(id2).click(function(){
+            clearInterval(timer);
+            hideBlocMenu();
+            return;
+        });
+
+        speedShowDelay();
+
+        $("body").unbind('click');
+
+        clearInterval(timer);
+        if(!$(id).is(':visible'))
+        {
+            $('.menuh_content > div').hide();
+
+            $('#speedbarre .smenu>li a').removeClass("smenu_hover");
+            $('#speedbarre .smenu > li > .speedbarre_arrow').hide();
+
+            timer=setInterval(function(){
+                $(id+' ,#speedbar_expand').fadeIn(fadeInDelay);
+                $(id2+' a').addClass('smenu_hover')
+                clearInterval(timer);
+
+                },showDelay);
+        }
+    }
+
+    function hideMenu(id, id2){
+
+        clearInterval(timer);
+        clearTimeout(hideTimeOut);
+
+        $("body").bind('click',function(){
+            hideBlocMenu();
+        });
+
+        timer=setInterval(function(){
+            $(id).fadeOut(fadeOutDelay,function(){
+                $('#speedbar_expand').hide();
+                $('#speedbarre .smenu>li a').removeClass("smenu_hover");
+            });
+            clearInterval(timer);
+        },hiddenDelay)
+    }
+
+    function hideBlocMenu(){
+        $('.menuh_content > div').fadeOut(fadeOutDelay, function(){
+            $('#speedbar_expand').hide();
+            $('#speedbarre .smenu>li a').removeClass("smenu_hover");})
+    }
+
+        /* speedbar */
+
+
+    $("#speed_cours").addClass('hideOnLoad');
+    $("#speed_forum").addClass('hideOnLoad');
+    $("#speed_concours").addClass('hideOnLoad');
+    $("#speed_job").addClass('hideOnLoad');
+    $("#speed_etudes").addClass('hideOnLoad');
+    $("#speed_boutique").addClass('hideOnLoad');
+
+
+
+    $(document).mousemove(function(){
+        $("#speed_cours").removeClass('hideOnLoad');
+        $("#speed_forum").removeClass('hideOnLoad');
+        $("#speed_concours").removeClass('hideOnLoad');
+        $("#speed_job").removeClass('hideOnLoad');
+        $("#speed_etudes").removeClass('hideOnLoad');
+        $("#speed_boutique").removeClass('hideOnLoad');
+    })
+
+
+    //TUTORIALS
+    $("#speed_cours, #menuh_tutorials").hover(function(){
+        clearTimeout(hideTimeOut);
+        id = '#menuh_tutorials';
+        id2 = '#speed_cours';
+        if(!$(id2).hasClass('hideOnLoad'))
+        {
+            hideTimeOut = setTimeout(function(){
+                showMenu(id, id2);
+            },100);
+        }
+
+    ;},function(){
+
+        id = '#menuh_tutorials';
+        id2 = '#speed_cours';
+        hideMenu(id, id2);
+    });
+    //FORUMS
+    $("#speed_forum, #menuh_forum").hover(function(){
+        clearTimeout(hideTimeOut);
+        id = '#menuh_forum';
+        id2 = '#speed_forum';
+
+        if(!$(id2).hasClass('hideOnLoad'))
+        {
+            hideTimeOut = setTimeout(function(){
+                showMenu(id, id2);
+            },100);
+        }
+
+    ;},function(){
+
+        id = '#menuh_forum';
+        id2 = '#speed_forum';
+        hideMenu(id, id2);
+    });
+
+    //COLLABORATE
+    $("#speed_concours, #menuh_collaborate").hover(function(){
+        clearTimeout(hideTimeOut);
+        id = '#menuh_collaborate';
+        id2 = '#speed_concours';
+        if(!$(id2).hasClass('hideOnLoad'))
+        {
+            hideTimeOut = setTimeout(function(){
+                showMenu(id, id2);
+            },100);
+        }
+
+    ;},function(){
+
+        id = '#menuh_collaborate';
+        id2 = '#speed_concours';
+        hideMenu(id, id2);
+    });
+
+    //JOB
+    $("#speed_job, #menuh_job").hover(function(){
+        clearTimeout(hideTimeOut);
+        id = '#menuh_job';
+        id2 = '#speed_job';
+        if(!$(id2).hasClass('hideOnLoad'))
+        {
+            hideTimeOut = setTimeout(function(){
+                showMenu(id, id2);
+            },100);
+        }
+
+    ;},function(){
+
+        id = '#menuh_job';
+        id2 = '#speed_job';
+        hideMenu(id, id2);
+    });
+
+    //STUDY
+    $("#speed_etudes, #menuh_study").hover(function(){
+        clearTimeout(hideTimeOut);
+        id = '#menuh_study';
+        id2 = '#speed_etudes';
+        if(!$(id2).hasClass('hideOnLoad'))
+        {
+            hideTimeOut = setTimeout(function(){
+                showMenu(id, id2);
+            },100);
+        }
+
+    ;},function(){
+
+        id = '#menuh_study';
+        id2 = '#speed_etudes';
+        hideMenu(id, id2);
+    });
+
+    //SHOP
+    $("#speed_boutique, #menuh_shop").hover(function(){
+        clearTimeout(hideTimeOut);
+        id = '#menuh_shop';
+        id2 = '#speed_boutique';
+        if(!$(id2).hasClass('hideOnLoad'))
+        {
+            hideTimeOut = setTimeout(function(){
+                showMenu(id, id2);
+            },100);
+        }
+
+    ;},function(){
+
+        id = '#menuh_shop';
+        id2 = '#speed_boutique';
+        hideMenu(id, id2);
+    });
+
+    
+
+</script>
+            
+            <div class="contenu">
+                <div id="menu">
+                    
+
+                    <div class="box_menu">
+                        <h5>Cours</h5>
+
+                        <div class="corpsmenu">
+                            <ul>
+                                
+                                    <li style="border-bottom: 0pt none; padding: 0pt 0pt 2px; background-color: rgb(226, 240, 255);">
+                                        <a href="http://www.siteduzero.com/tutoriel-3-361996-par-ou-commencer.html"><img style="padding-left: 5px;" src="tutoriel-3-33632-utilisation-de-subversion_fichiers/compass.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu" style="margin-left: 43px;">
+                                            <a href="http://www.siteduzero.com/tutoriel-3-361996-par-ou-commencer.html"><strong class="menu_cours_section">Nouveau ?</strong></a>
+                                            <ul>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-361996-par-ou-commencer.html">Suivez le guide !</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.siteduzero.com/tutoriel-1-67-site-web.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/67.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu">
+                                            <a href="http://www.siteduzero.com/tutoriel-1-67-site-web.html"><strong class="menu_cours_section">Site Web</strong></a>
+                                            <ul>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-13666-apprenez-a-creer-votre-site-web.html">XHTML / CSS</a></li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-309961-dynamisez-vos-sites-web-avec-javascript.html">Javascript</a></li>
+                                                <li>
+                                                    <a href="http://www.siteduzero.com/tutoriel-3-14668-concevez-votre-site-web-avec-php-et-mysql.html">
+                                                        PHP / MySQL
+                                                    </a>
+<!--                                                    <a href="boutique-614-107-concevez-votre-site-web-avec-php-et-mysql.html">-->
+                                                    <a href="http://www4.smartadserver.com/call/cliccommand/4083179/92456312?">
+                                                        <span class="in_book"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/ico_livre.png" alt=""></span>
+                                                        <span style="display: none;">Ce cours existe en livre :<br>Concevez votre site web avec PHP et MySQL</span>
+                                                    </a>
+                                                </li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-112219-apprenez-a-creer-des-applications-web-dynamiques-avec-jee.html">Java EE (J2EE)</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.siteduzero.com/tutoriel-1-57-programmation.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/57.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu">
+                                            <a href="http://www.siteduzero.com/tutoriel-1-57-programmation.html"><strong class="menu_cours_section">Programmation</strong></a>
+                                            <ul>
+                                                <li>
+                                                    <a href="http://www.siteduzero.com/tutoriel-3-14189-apprenez-a-programmer-en-c.html">
+                                                        Langage C
+                                                    </a>
+<!--                                                    <a href="boutique-614-65-apprenez-a-programmer-en-c.html">-->
+                                                    <a href="http://www4.smartadserver.com/call/cliccommand/4083176/92456312?">
+                                                        <span class="in_book"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/ico_livre.png" alt=""></span>
+                                                        <span style="display: none;">Ce cours existe en livre :<br>Apprenez à programmer en C</span>
+                                                    </a>
+                                                </li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-11406-apprenez-a-programmer-en-c.html">Langage C++</a></li>
+                                                <li>
+                                                    <a href="http://www.siteduzero.com/tutoriel-3-10601-programmation-en-Java.html">
+                                                        Java
+                                                    </a>
+                                                    <a href="http://www4.smartadserver.com/call/cliccommand/4083191/92456312?">
+<!--                                                    <a href="boutique-614-430-apprenez-a-programmer-en-java.html">-->
+                                                        <span class="in_book"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/ico_livre.png" alt=""></span>
+                                                        <span style="display: none;">Ce cours existe en livre :<br>Apprenez à programmer en Java</span>
+                                                    </a>
+                                                </li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-119239-programmation-en-java-api.html">Java (API)</a></li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-223267-apprendre-python.html">Python </a></li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-134798-visual_basic_net.html">VB .NET</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>                                        
+                                        <a href="http://www.siteduzero.com/tutoriel-1-60-systemes-d-exploitation.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/60.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu">
+                                            <a href="http://www.siteduzero.com/tutoriel-1-60-systemes-d-exploitation.html"><strong class="menu_cours_section">Systèmes d'exploitation</strong></a>
+                                            <ul>
+                                                <li>
+                                                    <a href="http://www.siteduzero.com/tutoriel-3-12827-reprenez-le-controle-a-l-aide-de-linux.html">
+                                                        Linux
+                                                    </a>
+                                                    <a href="http://www4.smartadserver.com/call/cliccommand/4083193/92456312?">
+<!--                                                    <a href="boutique-614-171-reprenez-le-controle-a-l-aide-de-linux.html">-->
+                                                        <span class="in_book"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/ico_livre.png" alt=""></span>
+                                                        <span style="display: none;">Ce cours existe en livre :<br>Reprenez le contrôle a l'aide de Linux</span>
+                                                    </a>
+                                                </li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-273305-freebsd-et-l-envers-du-decor.html">FreeBSD</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.siteduzero.com/tutoriel-1-56-graphisme.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/56.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu">
+                                            <a href="http://www.siteduzero.com/tutoriel-1-56-graphisme.html"><strong class="menu_cours_section">Graphisme</strong></a>
+                                            <ul>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-351765-debuter-sur-adobe-photoshop.html">Photoshop</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.siteduzero.com/tutoriel-1-58-infographie-3d.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/58.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu">
+                                            <a href="http://www.siteduzero.com/tutoriel-1-58-infographie-3d.html"><strong class="menu_cours_section">Infographie 3D</strong></a>
+                                            <ul>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-11714-debutez-dans-la-3d-avec-blender.html">Blender</a></li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-228998-apprenez-a-modeliser-en-3d-avec-autodesk-maya.html">Maya</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <a href="http://www.siteduzero.com/tutoriel-1-55-bureautique.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/55.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu">
+                                            <a href="http://www.siteduzero.com/tutoriel-1-55-bureautique.html"><strong class="menu_cours_section">Bureautique</strong></a>
+                                            <ul>
+                                                <li>
+                                                    <a href="http://www.siteduzero.com/tutoriel-3-258577-redigez-des-documents-de-qualite-professionnelle-avec-latex.html">
+                                                        LaTeX
+                                                    </a>
+                                                    <a href="http://www4.smartadserver.com/call/cliccommand/4083195/92456312?">
+<!--                                                    <a href="boutique-614-207-redigez-des-documents-de-qualite-professionnelle-avec-latex.html">-->
+                                                        <span class="in_book"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/ico_livre.png" alt=""></span>
+                                                        <span style="display: none;">Ce cours existe en livre :<br>Rédigez des documents de qualité avec LaTeX</span>
+                                                    </a>
+                                                </li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-417000-redigez-facilement-des-documents-avec-word.html">Word<img style="margin-left: 10px;" alt="" src="tutoriel-3-33632-utilisation-de-subversion_fichiers/iconouveau.png"></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                <li class="last_idem_liste">
+                                    <div id="menu_ajout_cours">
+                                        <ul>
+                                            <li>
+                                                
+                                                    <a href="http://www.siteduzero.com/tutoriel-3-256867-devenez-auteur-de-cours-sur-le-site-du-zero-et-le-livre-du-zero.html">
+                                                
+                                                Rédigez un cours <img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/add.png" alt="">&nbsp;</a>
+                                             </li>
+                                             <li>
+                                                 <a href="http://www.siteduzero.com/tutoriel.html" title="Tous les cours">Tous les cours  <img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/fleche_droite.png" alt="">&nbsp;</a>
+                                             </li>
+                                         </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="corps">
+                    <div id="zozor_position">
+                        <div id="zozor">
+                            <div class="centre"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/zozor6.png" alt=" Zozor" title=" Zozor"></div>
+                       </div>
+                    </div>
+
+                    <div id="container_bulle_zozor">
+                        
+                    </div>
+
+                    <div id="arbre">
+                        
+			&gt;  <a href="http://www.siteduzero.com/">Le Site du Zéro</a>
+		
+			&gt;  <a href="http://www.siteduzero.com/tutoriel.html">Cours</a>
+			 &gt;  <a href="http://www.siteduzero.com/tutoriel-1-352-tutoriels.html">Tutoriels</a>
+		 &gt;  <a href="http://www.siteduzero.com/tutoriel-1-57-programmation.html">Programmation</a>
+		 &gt;  <a href="http://www.siteduzero.com/tutoriel-2-242-ide.html">IDE</a>
+		&gt;  <a href="http://www.siteduzero.com/tutoriel-3-33632-utilisation-de-subversion.html">Utilisation de Subversion</a> 
+
+&gt; Lecture du tutoriel
+
+                    </div>
+
+                    
+
+
+
+<h1>
+    Utilisation de Subversion
+    
+</h1>
+
+
+<div id="onglets_tutos" class="onglets_tutos">
+  <ul>
+    
+      <li class="selected">
+      <a href="http://www.siteduzero.com/tutoriel-3-33632-utilisation-de-subversion.html">Tutoriel</a></li>
+    
+      <li>
+      <a href="http://www.siteduzero.com/tutoriel-50-33632-p1-utilisation-de-subversion.html#r42199">8 commentaires</a></li>
+    
+      <li>
+      <a href="http://www.siteduzero.com/tutoriel-21-33632-utilisation-de-subversion.html">Historique</a></li>
+    
+  </ul>
+</div>
+<hr class="bas_onglets">
+
+
+
+
+
+<div class="cadre_auteur_date">
+    <form action="tutoriel-54-33632.html" method="post">
+        <div class="dnone"><input value="9bfe7865ce419fa498071d7302ecb21c6e6fe02a" name="challenge" type="hidden"></div>
+
+        <div class="infobox">
+<h3 class="special">Informations sur le tutoriel</h3>
+<div class="conteneur_infobox">
+<table>
+  <tbody><tr>
+    <td>
+    <div class="boite_avatar_100px">
+      <a href="http://www.apognu.net/"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/175281.jpg" style="width: 100px; height: 100px; display: block;" alt="Avatar" class="avatar" id="avatar1405"></a>  
+     </div>
+    </td>
+    <td>
+     
+      <strong>Auteur</strong> :
+      
+    
+	    <a class="auteur_tut" href="http://www.siteduzero.com/membres-294-1405.html">apognu</a>
+    
+      <br>
+    
+      <br>
+      <br>
+      <a href="#tuto_details" onclick="return false;" id="tuto_details_plus">Plus d'informations <img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/fleche_bas.png" alt="Plus d'informations" title="Plus d'informations" id="image_detail"></a>
+      <a href="#onglets_tutos" onclick="return false;" id="tuto_details_moins" style="display: none;">Moins d'informations <img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/fleche_haut.png" alt="Plus d'informations" title="Plus d'informations" id="image_detail_moins"></a>
+      <script type="text/javascript">
+          var lien_plus = document.getElementById('tuto_details_plus');
+          var lien_moins = document.getElementById('tuto_details_moins');
+
+          var toggleDetails = function()
+          {
+              toggle('infos_detaillees');
+              toggle('tuto_details_plus');
+              toggle('tuto_details_moins');
+              return false;
+          };
+
+          if(lien_plus.addEventListener)
+          {
+              lien_plus.addEventListener('click', toggleDetails , false);
+          } else
+          {
+              lien_plus.attachEvent('onclick', toggleDetails);
+          }
+
+          if(lien_moins.addEventListener)
+          {
+              lien_moins.addEventListener('click', toggleDetails , false);
+          } else
+          {
+              lien_moins.attachEvent('onclick', toggleDetails);
+          }
+          
+      </script>
+
+      <div style="display: none;" id="infos_detaillees">
+	<br>			
+<strong>Créé</strong> : Le 12/06/2007 à 13:26:41<br>
+<strong>Modifié</strong> : Le 09/02/2009 à 23:19:17<br>
+
+<strong>Avancement</strong> : 100%<br>
+
+<strong>Licence</strong> : Copie non autorisée<br><br>
+
+
+  <a href="http://www.zcorrecteurs.fr/"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/zcorrige.png" alt="L'orthographe, la grammaire et la présentation de ce tutoriel ont été vérifiées par les zCorrecteurs." title="L'orthographe, la grammaire et la présentation de ce tutoriel ont été vérifiées par les zCorrecteurs."></a><br>
+
+<a href="http://www.siteduzero.com/tutoriel-50-33632-42199-utilisation-de-subversion.html#r42199">8 commentaires</a><br>
+
+
+      </div>
+
+    </td>
+  </tr>
+</tbody></table>
+</div>
+</div>
+
+
+    <div class="infobox">
+        <h3 class="special">Popularité</h3>
+        <div class="conteneur_infobox">
+            <strong>Visualisations</strong> : 34&nbsp;674<br><br>
+            <div style="padding-top: 1px; float: left;"><strong>Appréciation<br>des lecteurs</strong> : </div>
+            <div class="tut_appreciation">
+                <div class="tut_appreciation_smiley" id="smiley-1-2015--637529" style="background-position: -19px 50%;"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/empty.gif" alt=""></div>
+                <span id="eval_nb-1">0</span>
+            </div>
+            <div class="tut_appreciation">
+                <div class="tut_appreciation_smiley" id="smiley-2-2015--637529" style="background-position: -57px 50%;"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/empty.gif" alt=""></div>
+                <span id="eval_nb-2">0</span>
+            </div>
+            <div class="tut_appreciation">
+                <div class="tut_appreciation_smiley" id="smiley-3-2015--637529" style="background-position: -95px 50%;"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/empty.gif" alt=""></div>
+                <span id="eval_nb-3">0</span>
+            </div>
+            <div class="tut_appreciation">
+                <div class="tut_appreciation_smiley" id="smiley-4-2015--637529" style="background-position: -133px 50%;"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/empty.gif" alt=""></div>
+                <span id="eval_nb-4">0</span>
+            </div>
+            
+            <div style="clear: both;"></div>
+            
+        </div>
+    </div>
+
+
+<div class="infobox" id="pave_pub_tuto" style="display: block;">
+<h3 class="special">Publicité</h3>
+<div class="conteneur_infobox">
+<table style="width: 100%;">
+  <tbody><tr>
+    <td colspan="2" id="menu_pub_tuto">
+        
+            <script type="text/javascript">
+                <!--
+                ord=Math.random();
+                ord=ord*10000000000000000000;
+                var test = true;
+                document.write('<scr'+'ipt type="text/javascript" src="pub.js.php?cb='+ord+'&amp;l=300&amp;h=250&amp;age=0&amp;afficher_bloc_pub=pave_pub_tuto&amp;cid=242&amp;pays=0"><\/scr'+'ipt>');
+                -->
+            </script><script type="text/javascript" src="tutoriel-3-33632-utilisation-de-subversion_fichiers/pub_002.html"></script>
+        
+    </td>
+  </tr>
+</tbody></table>
+</div>
+</div>
+
+        
+
+        
+            <div class="infobox expandable">
+                <h3 class="special">Partager</h3>
+                <div class="conteneur_infobox addthis_toolbox" style="text-decoration: none;" addthis:url="http://www.siteduzero.com/tutoriel-3-33632-utilisation-de-subversion.html" addthis:title="Utilisation de Subversion">
+                    <div class="vertical">
+                        <a class="addthis_button_print at300b" title="Imprimer"><span class="at300bs at15nc at15t_print"></span>Imprimer</a>
+                        <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=pdfonline&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-33632-utilisation-de-subversion.html&amp;title=Utilisation%20de%20Subversion&amp;ate=AT-simpleit/-/-/4d9e17e12763e389/1&amp;uid=4d9e17e1d3fc89de&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Frecherche.html%3Fsrc%3Dsubversion%26c%3D3&amp;tt=0" class="addthis_button_pdfonline at300b" title="Convertir au format PDF"><span class="at300bs at15nc at15t_pdfonline"></span>Convertir en PDF</a>
+                        <a class="addthis_button_email at300b" title="Partager via Email"><span class="at300bs at15nc at15t_email"></span>Email</a>
+                        <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=twitter&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-33632-utilisation-de-subversion.html&amp;title=Utilisation%20de%20Subversion&amp;ate=AT-simpleit/-/-/4d9e17e12763e389/2&amp;uid=4d9e17e1edf67500&amp;sms_ss=1&amp;at_xt=1&amp;template=%7B%7Btitle%7D%7D%20%7B%7Burl%7D%7D%20%23SdZ&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Frecherche.html%3Fsrc%3Dsubversion%26c%3D3&amp;tt=0" class="addthis_button_twitter at300b" title="Partager via Twitter"><span class="at300bs at15nc at15t_twitter"></span>Twitter</a>
+                        <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=facebook&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-33632-utilisation-de-subversion.html&amp;title=Utilisation%20de%20Subversion&amp;ate=AT-simpleit/-/-/4d9e17e12763e389/3&amp;uid=4d9e17e15f11e42c&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Frecherche.html%3Fsrc%3Dsubversion%26c%3D3&amp;tt=0" class="addthis_button_facebook at300b" title="Partager via Facebook"><span class="at300bs at15nc at15t_facebook"></span>Facebook</a>
+                        <a class="expend" href="#plus"><span class="more">&nbsp;</span>Plus de services</a>
+                        <div style="display: none;" class="slidable">
+                            <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=myspace&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-33632-utilisation-de-subversion.html&amp;title=Utilisation%20de%20Subversion&amp;ate=AT-simpleit/-/-/4d9e17e12763e389/4&amp;uid=4d9e17e18f7e4457&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Frecherche.html%3Fsrc%3Dsubversion%26c%3D3&amp;tt=0" class="addthis_button_myspace at300b" title="Partager via MySpace"><span class="at300bs at15nc at15t_myspace"></span>MySpace</a>
+                            <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=googlebuzz&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-33632-utilisation-de-subversion.html&amp;title=Utilisation%20de%20Subversion&amp;ate=AT-simpleit/-/-/4d9e17e12763e389/5&amp;uid=4d9e17e150892c07&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Frecherche.html%3Fsrc%3Dsubversion%26c%3D3&amp;tt=0" class="addthis_button_googlebuzz at300b" title="Partager via Google Buzz"><span class="at300bs at15nc at15t_googlebuzz"></span>Google Buzz</a>
+                            <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=blogger&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-33632-utilisation-de-subversion.html&amp;title=Utilisation%20de%20Subversion&amp;ate=AT-simpleit/-/-/4d9e17e12763e389/6&amp;uid=4d9e17e1f337e1a4&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Frecherche.html%3Fsrc%3Dsubversion%26c%3D3&amp;tt=0" class="addthis_button_blogger at300b" title="Partager via Blogger"><span class="at300bs at15nc at15t_blogger"></span>Blogger</a>
+                            <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=buzz&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-33632-utilisation-de-subversion.html&amp;title=Utilisation%20de%20Subversion&amp;ate=AT-simpleit/-/-/4d9e17e12763e389/7&amp;uid=4d9e17e10d3222e3&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Frecherche.html%3Fsrc%3Dsubversion%26c%3D3&amp;tt=0" class="addthis_button_buzz at300b" title="Partager via Yahoo! Buzz"><span class="at300bs at15nc at15t_buzz"></span>Y! Buzz</a>
+                            <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=live&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-33632-utilisation-de-subversion.html&amp;title=Utilisation%20de%20Subversion&amp;ate=AT-simpleit/-/-/4d9e17e12763e389/8&amp;uid=4d9e17e18dfa3d05&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Frecherche.html%3Fsrc%3Dsubversion%26c%3D3&amp;tt=0" class="addthis_button_live at300b" title="Partager via MSN Live"><span class="at300bs at15nc at15t_live"></span>MSN Live</a>
+                            <a class="addthis_button_expanded at300m" title="Partager via un autre service"><span class="at300bs at15nc at15t_expanded"></span>Encore plus de services</a>
+                        </div>
+                    </div>
+                <div class="atclear"></div></div>
+            </div>
+        
+    </form>
+</div>
+
+<div id="chap_intro">Bienvenue dans ce cours sur l'utilisation basique du logiciel de <span class="italique">versionning</span>
+ Subversion, considéré comme le successeur de CVS (Concurrent Versions 
+System). Très basiquement, Subversion (que je surnommerai SVN dans le 
+reste de ce tuto) est un logiciel permettant une gestion des versions.<br>
+<br>
+Je peux comprendre que l'expression "gestion des versions" puisse 
+paraître obscure à certains, mais tout va s'éclaircir une fois le 
+premier chapitre lu et compris !<br>
+<br>
+Je vais essayer de rester le plus clair possible, tout en n'étant pas 
+exhaustif sur les possibilités que nous offre SVN (il faudrait un 
+big-tuto d'une vingtaine de chapitres pour cela).<br>
+<br>
+Je conseillerais à ceux à qui ce tuto va plaire, qui voudront en savoir 
+plus et qui ne sont pas réfractaires à l'anglais d'aller lire <a href="http://svnbook.red-bean.com/">le book SVN</a>,
+ très complet (360 pages) et qui vous expliquera toutes les facettes du 
+logiciel, aussi bien l'utilisation que l'administration du serveur.<br>
+<br>
+Finalement, je traiterai le côté ligne de commande de SVN, je 
+n'aborderai nulle part les diverses interfaces graphiques qui existent, 
+tel <a href="http://tortoisesvn.tigris.org/">TortoiseSVN</a> pour Windows par exemple.<br>
+<br>
+Bonne chance !</div>
+
+
+    <div class="sommaire_chap">
+        <span>Sommaire du tutoriel :</span>
+        <div class="icone_chap">
+            
+                <img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/19516.png" alt="Icône du chapitre" class="icone_chapitre">
+            
+        </div>
+
+        <div class="droite_chapitre">
+            <ul class="liste_sommaire_chap">
+                
+                    <li>
+                        <a href="#ss_part_1">Présentation de Subversion</a>
+                    </li>
+                
+                    <li>
+                        <a href="#ss_part_2">Actions de base sur Subversion</a>
+                    </li>
+                
+                    <li>
+                        <a href="#ss_part_3">Conflits, merging et lock</a>
+                    </li>
+                
+                    <li>
+                        <a href="#ss_part_4">Contrôlez vos commits</a>
+                    </li>
+                
+                    <li>
+                        <a href="#ss_part_5">Remonter le temps</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    <div class="liens_bas_tuto">
+        
+    </div>
+
+
+<hr>
+
+
+                <h2>
+                    <a id="ss_part_1" class="titre_sous_partie">Présentation de Subversion</a>
+                    
+                </h2>
+
+                <div class="ss_part_texte"><h3>Qu'est-ce que Subversion ?</h3><br>
+<br>
+Comme dit dans l'introduction, Subversion est un logiciel de contrôle de
+ versions. En langage clair, il s'agit d'un logiciel qui enregistre tous
+ les états d'une arborescence au fil du temps (par arborescence, 
+j'entends à la fois la structure des dossiers, mais également le contenu
+ des fichiers). C'est de là que vient le terme de "version" : le 
+logiciel surveille les différentes versions d'un répertoire.<br>
+<br>
+Subversion (tout comme son prédécesseur, CVS) est principalement utilisé
+ dans le cadre du développement de logiciels, et j'espère qu'avec le 
+paragraphe précédent, vous comprendrez rapidement pourquoi. Le 
+développement d'un logiciel est composé de multiples modifications de 
+fichiers au fil du temps ; SVN permet d'enregistrer tous ces changements
+ pour, par exemple, pouvoir avoir une trace explicite et exhaustive de 
+tous les changements faits au code source, ou pouvoir revenir au code 
+tel qu'il était il y a 5 mois.<br>
+<br>
+<h3>Basiquement, comment fonctionne Subversion ?</h3><br>
+<br>
+Sans rentrer dans les détails, dites-vous que Subversion réalise des <strong>snapshots</strong>
+ de l'arborescence à chaque changement qui lui est fait. C'est-à-dire 
+qu'il garde en mémoire tous les changements faits à l'arborescence au 
+fil du temps.<br>
+<br>
+Imaginez que vous faites un dessin sur une feuille de papier, et qu'à 
+chaque fois que vous ajoutez une partie sur le dessin, vous photocopiez 
+votre feuille et la rangez dans une archive. C'est exactement le même 
+principe avec SVN.<br>
+<br>
+Maintenant, imaginez qu'à la place de photocopier votre dessin, vous le 
+scannez pour le mettre à disposition d'autres dessinateurs dans le monde
+ via le réseau Internet, eh bien là vous avez tout à fait compris le 
+principe de SVN. Il permet à plusieurs développeurs à travers le monde 
+de travailler simultanément sur le même code source, grâce à différents 
+procédés que nous mettrons en lumière plus loin.<br>
+<br>
+<span class="italique">Nota bene :</span> je parle depuis tout à l'heure de code source, mais le principe est le même avec des fichiers binaires (images, vidéos, etc.).<br>
+<br>
+<div class="rmq question">Pardon, mais si SVN garde une copie de mon 
+dessin à chaque changement, mon archive risque de devenir relativement 
+grosse à la longue, non ? <img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/unsure.gif" alt=":euh:" class="smilies"> </div><br>
+<br>
+Merci lapin malin, en effet sur mon exemple ça serait le cas, mais 
+Subversion est plus intelligent que ça et, au lieu de "photocopier" 
+comme un bourrin toute l'arborescence à chaque fois, il analyse 
+tranquillement ce qui a changé et réalise ce que j'appellerais joliment 
+un <strong>snapshot différentiel</strong> (je ne sais pas si ce terme existe, mais c'est la classe !). En gros, il ne sauvegardera que ce qui a changé d'un <span class="italique">snapshot</span>
+ à l'autre, et tout de suite la masse de données à enregistrer est 
+beaucoup moins importante, ce qui soulage à la fois les disques durs et 
+les connexions.<br>
+<br>
+<h3>Une histoire de révisions</h3><br>
+<br>
+Subversion, pour organiser les données qu'il enregistre, se base sur un système de <strong>révisions</strong>.
+ Explicitons rapidement ce terme : pour SVN une révision correspond à un
+ état de l'arborescence à un moment précis du temps. La révision 13 
+pourra être un <span class="italique">snapshot</span> du 22 juillet et la révision 14 le <span class="italique">snapshot</span> suivant.<br>
+<br>
+SVN utilise un système de révisions global, c'est-à-dire qu'une révision
+ correspond aux changements effectués sur l'arborescence entière depuis 
+la dernière révision.<br>
+<br>
+La première révision est la révision 0 (ou <strong>r0</strong>) et chaque nouvelle révision incrémente de 1 le nombre (la deuxième révision sera la révision 1 et ainsi de suite).<br>
+<br>
+<h3>Dépôt et copie locale</h3><br>
+<br>
+Un système utilisant Subversion est à diviser en deux parties distinctes, le <strong>dépôt</strong> (ou <strong>repository</strong> en anglais) et la <strong>copie locale</strong> (ou <strong>local copy</strong>
+ chez Shakespeare). J'utiliserai à partir de maintenant ces termes à la 
+place d'arborescence, qui est trop long et trop importun à écrire.<br>
+<br>
+<h4>Dépôt</h4><br>
+<br>
+Le dépot est le côté serveur d'un système utilisant Subversion, c'est 
+"l'archive" dans laquelle seront envoyées les modifications faites à 
+l'arborescence (appelées <strong>changeset</strong>* d'ailleurs). 
+Celui-ci peut se trouver sur un serveur distant, sur un serveur situé 
+dans le réseau local ou même sur votre propre machine.<br>
+<br>
+* : un <span class="italique">changeset</span> est un ensemble de modifications qui formeront une nouvelle révision.<br>
+<br>
+Un utilisateur "basique" (entendre un non-administrateur) de Subversion 
+n'a pas besoin de savoir ce qui se passe dans le dépôt, ce sont les 
+mécanismes internes du processus.<br>
+<br>
+<h4>Copie locale</h4><br>
+<br>
+Voilà quelque chose qui concerne beaucoup plus les utilisateurs. Une 
+copie locale est une copie de l'état du dépôt à un moment précis, située
+ sur l'ordinateur d'un des utilisateurs. Reprenons mon exemple du 
+dessin, ce que le dessinateur a est une copie locale ; et ce qu'un autre
+ dessinateur va récupérer du dépôt sera aussi une copie locale.<br>
+<br>
+C'est sur la copie locale que l'utilisateur travaille.</div>
+                <hr>
+            
+                <h2>
+                    <a id="ss_part_2" class="titre_sous_partie">Actions de base sur Subversion</a>
+                    
+                </h2>
+
+                <div class="ss_part_texte"><h3>Créer un dépôt</h3><br>
+<br>
+Une fois Subversion installé et en état de marche, la première étape est
+ de créer un dépôt. C'est la seule action d'administration que nous 
+verrons (très rapidement) pour les besoins du tuto. Je suis sous Linux 
+et toutes les actions se produiront à l'intérieur de <span class="italique">/home/apognu/svn</span>. Pour créer un dépôt, ouvrez donc un terminal ou une invite de commande et tapez :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>svnadmin&nbsp;create&nbsp;repository</pre></div></td></tr></tbody></table></div><br>
+<br>
+Cela a eu pour conséquence d'utiliser le programme <span class="italique">svnadmin</span> pour créer (sous-programme <span class="italique">create</span>) un dépôt dans le répertoire <span class="italique">repository</span>.<br>
+<br>
+Un rapide coup d'oeil dans le répertoire sus-cité nous fait voir son affreux contenu :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>conf&nbsp;&nbsp;dav&nbsp;&nbsp;db&nbsp;&nbsp;format&nbsp;&nbsp;hooks&nbsp;&nbsp;locks&nbsp;&nbsp;README.txt</pre></div></td></tr></tbody></table></div><br>
+<br>
+Et encore, je ne suis pas allé lister les répertoires ; comme je l'ai 
+dis plus haut, l'utilisateur lambda doit faire abstraction du contenu du
+ dépôt, celui-ci doit être aussi important pour vous que la première 
+représentation sur scène de Mireille Mathieu (j'emploie les grands 
+moyens) !<br>
+<br>
+Nous voilà en possession d'un dépôt vide, maintenant peuplons-le !<br>
+<br>
+<h3>Checkout</h3><br>
+<br>
+Du côté utilisateur, la première chose à faire est la création de sa copie locale. C'est à cela que sert le <strong>checkout</strong>. Basiquement, il crée une copie locale en téléchargeant le contenu du dépôt sur votre disque. Habituellement, le <span class="italique">checkout</span>
+ est à faire une seule fois car avoir deux copies locales est rarement 
+intéressant (quoiqu'il peut l'être, mais on n'abordera pas ça ici) et 
+parce que le <span class="italique">checkout</span> télécharge à chaque fois <span class="souligne">tout le contenu du dépôt</span> ce qui dans certains cas peut être assez lourd pour les connexions Internet.<br>
+<br>
+<div class="rmq information">Un dépôt est toujours appelé par son adresse sous forme d'URL, cela peut être :<br>
+<ul>
+<li>file:///chemin/vers/le/dépot ;</li>
+<li><a href="http://server.web.com/repository">http://server.web.com/repository</a> ;</li>
+<li>svn://server.svn.com/repository ;</li>
+<li>etc.</li>
+</ul></div><br>
+<br>
+Dans notre cas le dépôt est vide et situé sur notre machine, donc pas de
+ problème de poids, procédons procédons ; tapez ceci dans un terminal ou
+ une invite de commande :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>svn&nbsp;checkout&nbsp;file:///home/apognu/svn/repository&nbsp;localcopy</pre></div></td></tr></tbody></table></div><br>
+<br>
+Basiquement, on demande ici à SVN de procéder au <span class="italique">checkout</span> du dépôt situé dans le dossier <span class="italique">/home/apognu/svn/repository</span> et de créer la copie locale dans le dossier <span class="italique">localcopy</span>.<br>
+<br>
+<div class="rmq information">Si on ne précise pas, Subversion réalise toujours le <span class="italique">checkout</span> depuis la dernière révision existante (appelée révision <strong>HEAD</strong>), soit la dernière version du dépôt.</div><br>
+<br>
+Voilà ce qu'on a :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>Checked&nbsp;out&nbsp;revision&nbsp;0.</pre></div></td></tr></tbody></table></div><br>
+<br>
+Parfait.<br>
+<br>
+Un coup d'oeil dans le dossier <span class="italique">localcopy</span> ne nous montre rien sauf (si on a activé l'affichage des fichiers et dossiers cachés) un dossier <span class="italique">.svn</span>. Tout comme le dépôt, ce dossier sert aux mécanismes de Subversion et n'est d'aucune utilité pour l'utilisateur que vous êtes. <img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/clin.png" alt=";)" class="smilies"><br>
+<br>
+<h3>Update</h3><br>
+<br>
+L'action <strong>update</strong> de SVN est dans la lignée du <span class="italique">checkout</span>, dans le sens où elle télécharge des données depuis le dépôt, sauf que celle-ci ne créé pas de copie locale.<br>
+<br>
+Lorsqu'un utilisateur lance une <span class="italique">update</span> de 
+sa copie locale, Subversion va comparer cette dernière avec le contenu 
+du dépôt et si celui-ci est à une révision supérieure que celle de la 
+copie locale, SVN va télécharger le différentiel entre les deux.<br>
+<br>
+Un exemple concret : vous êtes deux utilisateurs sur un même dépôt, à un temps <span class="italique">t</span>
+ vous êtes à la révision 4, seulement là vous partez en vacances. 
+Pendant votre absence votre collègue continue à travailler, et le dépôt 
+passe à la révision 7. À votre retour vous avez envie de récupérer ce 
+qui a changé depuis votre départ, donc vous lancez une <span class="italique">update</span>, votre copie locale est mise à jour de la révision 4 à la révision 7. Vous pouvez de nouveau travailler.<br>
+<br>
+<div class="rmq attention">Il est très important d'avoir le réflexe de lancer des <span class="italique">updates</span>
+ relativement souvent, pour toujours avoir une copie locale à jour. Nous
+ verrons dans les sous-parties suivantes les conséquences sur le travail
+ que pourrait avoir un oubli.</div><br>
+<br>
+Pour réaliser une <span class="italique">update</span>, en imaginant que vous êtes dans <span class="italique">/home/apognu/svn</span> et que la copie locale se trouve dans un sous-répertoire <span class="italique">localcopy</span>, lancez simplement la commande :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>svn&nbsp;update&nbsp;localcopy</pre></div></td></tr></tbody></table></div><br>
+<br>
+Si vous vous trouvez déjà dans le répertoire <span class="italique">localcopy</span>, vous pouvez omettre de le préciser dans la ligne de commande.<br>
+<br>
+<div class="rmq information">Il est à noter que <span class="italique">update</span>
+ ne téléchargera pas toujours des fichiers, il peut arriver (et plutôt 
+souvent) que votre copie locale soit déjà à jour, et par conséquent le 
+différentiel est nul : rien n'est téléchargé. Souvent, l'<span class="italique">update</span> est une mesure de précaution au cas où l'état du dépôt aurait changé.</div><br>
+<br>
+<h3>Commit</h3><br>
+<br>
+Pour partir simplement, le <strong>commit</strong> est l'action contraire de l'<span class="italique">update</span> et en même temps sa soeur. <span class="italique">Update</span> et <span class="italique">commit</span> seront les deux actions que vous utiliserez le plus souvent dans votre utilisation de Subversion. En gros, <span class="italique">commit</span> compare les modifications que vous avez faites sur votre copie locale avec l'état du dépôt, puis envoie le différentiel du <span class="italique">changeset</span> à celui-ci, créant par la même occasion une nouvelle révision.<br>
+<br>
+Pour réaliser un <span class="italique">commit</span>, créons déjà un fichier <span class="italique">file.txt</span> dans notre copie locale en lui mettant un contenu. Ensuite, deux étapes sont à réaliser. Tout d'abord, il faut <strong>versionner</strong>
+ le fichier, en gros dire à SVN qu'il s'agit d'un fichier à prendre en 
+compte dans le contrôle des versions ; et ensuite, lancer le <span class="italique">commit</span> de la copie locale. Voilà comment procéder (toujours dans <span class="italique">/home/apognu/svn</span>) :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>svn&nbsp;add&nbsp;localcopy/file.txt
+svn&nbsp;commit&nbsp;localcopy</pre></div></td></tr></tbody></table></div><br>
+<br>
+Voilà ce qui apparaît en sortie :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;localcopy/file.txt
+&nbsp;
+Adding&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;localcopy/file.txt
+Transmitting&nbsp;file&nbsp;data&nbsp;.
+Committed&nbsp;revision&nbsp;1.</pre></div></td></tr></tbody></table></div><br>
+<br>
+La première ligne indique que le fichier <span class="italique">localcopy/file.txt</span> a été prévu pour être ajouté au dépôt au prochain <span class="italique">commit</span> (signification de la lettre <span class="italique">A</span>), et les trois dernières symbolisent le <span class="italique">commit</span>.
+ Comme prévu celui-ci ajoute le fichier, il transmet ensuite le 
+différentiel puis nous informe que la révision 1 vient d'être créée.<br>
+<br>
+<h3>Supprimer, copier, déplacer</h3><br>
+<br>
+Seul petit hic : pour déplacer, supprimer ou copier des fichiers ou 
+dossiers, il ne suffit pas d'utiliser les fonctions fournies avec son 
+système d'exploitation et de faire son <span class="italique">commit</span>, il faut utiliser les trois sous-programmes <span class="italique">move</span>, <span class="italique">delete</span> et <span class="italique">copy</span>.<br>
+<br>
+<div class="rmq information">Déplacer revient à copier un fichier puis à le supprimer de son emplacement d'origine.</div><br>
+<br>
+Voici les trois commandes :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>svn&nbsp;move&nbsp;FICHIER&nbsp;DESTINATION
+svn&nbsp;copy&nbsp;FICHIER&nbsp;DESTINATION
+svn&nbsp;delete&nbsp;FICHIER</pre></div></td></tr></tbody></table></div><br>
+<br>
+Maintenant les fichiers sont dans une sorte de file d'attente où vont tous les fichiers "modifiés" en attendant le <span class="italique">commit</span>. Rappelez-vous qu'aucune modification n'est appliquée tant que le <span class="italique">commit</span> n'est pas lancé.<br>
+<br>
+<h3>Exercices</h3><br>
+<br>
+À partir de là, vous connaissez les trois actions de base de SVN 
+(checkout, update et commit), pour vous entraîner vous pouvez simuler 
+l'utilisation du dépôt par plusieurs personnes, en répétant les 
+opérations <span class="italique">checkout </span>/ modification / <span class="italique">commit </span>/ <span class="italique">update</span>, etc.<br>
+<br>
+Pour commencer cela, vous pouvez dès lors créer une seconde copie 
+locale, qui cette fois au lieu d'être à la révision 0 sera à la révision
+ 1. Ensuite modifiez le fichier sur la copie locale 1, <span class="italique">commitez</span>, puis <span class="italique">updatez </span>la copie locale 2.<br>
+<br>
+Entraînez-vous comme cela un petit temps pour avoir bien en tête le 
+processus. Avec un peu de (mal)chance, vous tomberez sur un bel os que 
+je vous expliquerai dans la prochaine sous-partie.</div>
+                <hr>
+            
+                <h2>
+                    <a id="ss_part_3" class="titre_sous_partie">Conflits, merging et lock</a>
+                    
+                </h2>
+
+                <div class="ss_part_texte"><h3>Conflits</h3><br>
+<br>
+La première notion à assimiler dans cette sous-partie est celle de <strong>conflits</strong>.
+ D'après un dictionnaire, un conflit est un choc, une lutte, une 
+rivalité. Eh bien dans Subversion, c'est exactement la même chose : il y
+ a une rivalité entre les utilisateurs à propos des fichiers versionnés.
+ Comment cela ? <span class="italique">me direz-vous</span>. Comme ceci : <span class="italique">vous répondrai-je</span>.<br>
+<br>
+Supposons deux utilisateurs (Joe et Bobby) devant travailler en même temps sur un fichier <span class="italique">README</span>, et que leurs modifications sur ce fichier soient prises en compte par SVN, on peut dès lors dresser le scénario suivant :<br>
+<br>
+<ul>
+<li>Joe et Bobby font un <span class="italique">checkout</span> sur du dépôt et obtiennent à la révision 1 le fichier <span class="italique">README</span> ;</li>
+<li>ils commencent tous les deux à éditer le fichier ;</li>
+<li>Joe, content de lui, fait un <span class="italique">commit</span> avec ses modifications, le fichier est <span class="italique">uploadé</span> et la révision 2 est créée ;</li>
+<li>Bobby, une fois ses propres modifications terminées, va vouloir en faire un <span class="italique">commit</span>, sauf que là c'est le drame, un message d'erreur lui dit qu'il ne peut pas le faire !</li>
+</ul><br>
+<br>
+Comment cela se fait-il ? Rappelez-vous, je vous avais dit qu'il était 
+important de toujours avoir une copie locale à jour, or celle de Bobby 
+ne l'était plus au moment de son hypothétique <span class="italique">commit</span>
+ : sa copie locale était encore à la révision 1 alors que le dépôt était
+ à la révision 2. Par mesure de sécurité, Subversion bloquera le commit 
+pour éviter qu'il ne détruise les modifications de Joe. Il y a conflit !<br>
+<br>
+<div class="rmq question">Mais alors, le travail du pauvre Bobby est réduit à néant ?</div><br>
+<br>
+<span class="italique">Que nenni !</span> Subversion propose plusieurs moyens de résoudre et prévenir les conflits, que nous allons étudier dans cette sous-partie.<br>
+<br>
+<h3>Merging</h3><br>
+<br>
+Pour <strong>résoudre</strong> un conflit, Subversion propose une solution de <strong>merging</strong>, terme signifiant ici <strong>mélange</strong>. Basiquement, cela consiste en un mélange des deux fichiers pour en obtenir un nouveau. Il y a deux types de <span class="italique">merging</span> pour résoudre les conflits, les voici les voilà :<br>
+<br>
+<h4>Merging "automatique"</h4><br>
+<br>
+Subversion étant un être doué d'intelligence, il est capable de réaliser certaines opérations tout seul comme un grand.<br>
+<br>
+Reprenons notre exemple de conflit entre Joe et Bobby : ce dernier se retrouve comme un con avec son <span class="italique">commit</span> défectueux, la première chose à faire est un <span class="italique">update</span>,
+ afin de mettre sa copie locale à jour. Pas de panique, cela ne 
+supprimera pas ses modifications : SVN sait qu'il y a conflit, et va 
+donc agir !<br>
+<br>
+Le cas du <span class="italique">merging</span> "automatique" est 
+efficace lorsque les modifications effectuées par les deux utilisateurs 
+ne se "recoupent" pas, par exemple s'ils ont modifié chacun deux parties
+ distinctes du fichier. Dans ce cas, Subversion repère ce 
+non-recoupement et peut mélanger intelligemment les deux fichier. Voici 
+une mise en pratique avec un fichier contenant "Bonjour !" avant toute 
+modification :<br>
+<br>
+<span class="citation">Citation : Joe (commit réussi)</span><div class="citation2">J'ajoute ce texte au dessus de bonjour...<br>
+<br>
+Bonjour !</div><br>
+<br>
+<span class="citation">Citation : Bobby (commit foireux)</span><div class="citation2">Bonjour !<br>
+<br>
+Moi, je veux ajouter du texte en dessous !</div><br>
+<br>
+<div class="rmq attention">Je suis désolé des exemples totalement débiles et sans intérêt mais il faut que tout le monde comprenne !</div><br>
+<br>
+Comme vous le voyez ici, les modifications de l'un n'annulent pas celles
+ de l'autre, et elles peuvent être distinctement séparées. Donc lorsque 
+Bobby fera son <span class="italique">update</span>, SVN laissera le fichier README contenant :<br>
+<br>
+<span class="citation">Citation : Bobby (après l'update)</span><div class="citation2">Je rajoute ce texte au dessus de bonjour...<br>
+<br>
+Bonjour !<br>
+<br>
+Moi, je veux rajouter du texte en dessous !</div><br>
+<br>
+Il suffit alors de faire son <span class="italique">commit</span> du fichier créé par Subversion pour le réussir et créer la révision 3 !<br>
+<br>
+<h4>Merging "manuel"</h4><br>
+<br>
+Il arrive parfois (même plutôt souvent) que les modifications effectuées
+ par deux utilisateurs se recoupent, et dans ce cas Subversion ne peut 
+pas prendre le risque d'effectuer lui-même le <span class="italique">merging</span>.
+ C'est donc à l'utilisateur responsable du conflit de le corriger 
+lui-même ! Je vais reprendre l'exemple du book SVN qui est facile à 
+comprendre.<br>
+<br>
+Imaginez qu'un fichier versionné soit une liste de ce que deux 
+collaborateurs veulent pour leurs sandwiches, voici ce fichier à la 
+révision 1 :<br>
+<br>
+<span class="citation">Citation : Fichier à la révision 1</span><div class="citation2">4 tranches de jambon<br>
+3 tomates<br>
+9 cornichons</div><br>
+<br>
+Maintenant, imaginons que Joe aime la viande, et ajoute une tranche de jambon (il y en aura donc cinq), il <span class="italique">commit</span>, et juste après Bobby (toujours malchanceux avec ses <span class="italique">commits</span>), tente d'envoyer son <span class="italique">commit</span> pour les deux tranches de jambon supplémentaires :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>Sending&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sandwiches.txt
+svn:&nbsp;Commit&nbsp;failed&nbsp;(details&nbsp;follow):
+svn:&nbsp;Out&nbsp;of&nbsp;date:&nbsp;'sandwiches.txt'&nbsp;in&nbsp;transaction&nbsp;'5-1'</pre></div></td></tr></tbody></table></div><br>
+<br>
+Il tente de faire son <span class="italique">update</span> comme la dernière fois, sauf que là ça ne fonctionne pas, et voilà avec quoi il se retrouve dans sa copie locale :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>sandwiches.txt&nbsp;&nbsp;sandwiches.txt.mine&nbsp;&nbsp;sandwiches.txt.r4&nbsp;&nbsp;sandwiches.txt.r5</pre></div></td></tr></tbody></table></div><br>
+<br>
+Décortiquons un peu cela ! <br>
+<span class="italique">sandwiches.txt.mine</span> contient le fichier qu'il a tenté de <span class="italique">commiter</span>, <span class="italique">sandwiches.txt.r4</span> contient le fichier à la révision précédente (avant tout changement donc) et <span class="italique">sandwiches.txt.r5</span> contient le fichier avec les modifications de Joe. Mais ce qui est intéressant est le fichier <span class="italique">sandwiches.txt</span>, si on l'édite voilà ce qu'il y a dedans :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&nbsp;.mine
+6&nbsp;tranches&nbsp;de&nbsp;jambon
+=======
+5&nbsp;tranches&nbsp;de&nbsp;jambon
+&gt;&gt;&gt;&gt;&gt;&gt;&gt;&nbsp;.r5
+3&nbsp;tomates
+9&nbsp;cornichons</pre></div></td></tr></tbody></table></div><br>
+<br>
+Et c'est là que vous prenez votre tube d'aspirine et que vous commencez à
+ pleurer ! Sans raison, parce que ce n'est vraiment pas compliqué... Il y
+ a deux choses à retenir, la signification des signes qu'on peut résumer
+ à cela :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&nbsp;.mine
+CE&nbsp;QUE&nbsp;J'AI&nbsp;MODIFIE
+=======
+CE&nbsp;QUE&nbsp;L'AUTRE&nbsp;A&nbsp;MODIFIE
+&gt;&gt;&gt;&gt;&gt;&gt;&gt;&nbsp;.rX</pre></div></td></tr></tbody></table></div><br>
+<br>
+Tout ce qu'il y a en dehors des signes est ce qui n'a pas été modifié. 
+Il suffit ici de faire réfléchir un peu ses méninges : on sait qu'il y 
+avait 4 tranches de jambon avant (le fichier <span class="italique">sandwiches.txt.r4</span>
+ en témoigne), Joe en demande une de plus, moi deux. Un peu de maths, ça
+ fait qu'il en faut trois de plus. On retire donc les marques en 
+laissant la ligne, mais en mettant sept tranches de jambon.<br>
+<br>
+<div class="rmq attention">Dans des cas réels liés à la programmation, 
+résoudre des conflits peut s'avérer plus ardu que cela, c'est pourquoi 
+on verra comment éviter les conflits !</div><br>
+<br>
+Tout ce qu'il nous reste à faire est de déclarer le conflit comme résolu, puis à réaliser le <span class="italique">commit</span> :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>svn&nbsp;resolved&nbsp;sandwiches.txt
+svn&nbsp;commit&nbsp;-m&nbsp;"Conflit&nbsp;résolu&nbsp;youhouh"</pre></div></td></tr></tbody></table></div><br>
+<br>
+La sortie devrait être :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>Resolved&nbsp;conflicted&nbsp;state&nbsp;of&nbsp;'sandwiches.txt'
+&nbsp;
+Sending&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sandwiches.txt
+Transmitting&nbsp;file&nbsp;data&nbsp;.
+Committed&nbsp;revision&nbsp;6.</pre></div></td></tr></tbody></table></div><br>
+<br>
+Le conflit a aussi été résolu, mais avec plus de peine.<br>
+<br>
+<div class="rmq attention">Il va évidemment de soi que la résolution de 
+conflit ne marche que pour des fichier ASCII. Il est strictement 
+impossible de résoudre un conflit sur un fichier binaire (image, vidéo, 
+etc.) ! D'où la nécessité d'une lecture assidue du prochain point.</div><br>
+<br>
+<h3>Lock</h3><br>
+<br>
+Après avoir vu comment résoudre un conflit, j'espère vous avoir à vie 
+dégouté de ces petites choses-là. Je vous ai déjà dit à plusieurs 
+reprises dans ce tuto de faire des <span class="italique">updates</span>
+ régulières pour essayer d'être à jour le plus souvent possible, mais 
+cela ne suffira pas toujours. Il ne s'agit pas seulement de prier pour 
+qu'un conflit ne se produise pas, il faut également les empêcher. 
+L'expression <span class="italique">mieux vaut prévenir que guérir</span> prend ici tout son sens.<br>
+<br>
+Bien sûr vous pourriez courir après vos collaborateurs pour leur dire 
+que vous allez modifier ce fichier dans les prochaines heures, mais ce 
+n'est ni pratique ni productif. Non, pour cela vous allez utiliser la 
+fonction de <strong>lock</strong> de Subversion.<br>
+<br>
+<div class="rmq attention">En production, votre responsable de projet vous menacera sûrement de pratiques <span class="italique">verre-pileuses</span> si jamais vous n'appliquez pas un effort constant et complet sur la mise en place de <span class="italique">locks</span>. Et il aura raison !</div><br>
+<br>
+Là le nom est explicite, il s'agira de <strong>verrouiller</strong> un 
+fichier pendant que vous l'utiliserez, pour être certain que personne ne
+ sera en mesure de le modifier à son tour. Mais ici encore, l'adoption 
+d'une routine, d'une procédure d'utilisation de Subversion est requise !
+ En effet, demander un <span class="italique">lock</span> sur un fichier avant modification doit devenir une habitude ! Cela permet deux choses : d'abord d'obtenir le <span class="italique">lock</span>, et donc que personne ne gâche notre boulot ; mais également de s'assurer que personne n'a pris de <span class="italique">lock</span> sur ce fichier, et donc qu'on n'est pas sur le point de gâcher le boulot de quelqu'un.<br>
+<br>
+Le <span class="italique">lock</span> doit donc devenir une institution, que dis-je ? on doit vénérer le <span class="italique">lock</span>. Le <span class="italique">lock</span> est le patron, le <span class="italique">lock</span> c'est la vie, répétez après moi !<br>
+<br>
+Pour demander un <span class="italique">lock</span>, entrez la commande suivante :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>svn&nbsp;lock&nbsp;sandwiches.txt</pre></div></td></tr></tbody></table></div><br>
+<br>
+Ce qui donne :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>'sandwiches.txt'&nbsp;locked&nbsp;by&nbsp;user&nbsp;'apognu'.</pre></div></td></tr></tbody></table></div><br>
+<br>
+À partir de ce moment, n'importe qui demandant un <span class="italique">lock</span> sur ce fichier se verra gratifié d'un majestueux :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>svn:&nbsp;warning:&nbsp;Path&nbsp;'/sandwiches.txt'&nbsp;is&nbsp;already&nbsp;locked&nbsp;by&nbsp;user&nbsp;'apognu'&nbsp;in&nbsp;filesystem&nbsp;'/home/apognu/svn/repository/db'</pre></div></td></tr></tbody></table></div><br>
+<br>
+Il est à noter que demander un <span class="italique">lock</span> sur un fichier situé dans une copie locale non à jour provoquera également un message d'erreur. Demander un <span class="italique">lock</span> permet aussi de s'assurer de travailler sur une base saine.<br>
+<br>
+Surtout, ne pas oublier de <strong>déverrouiller</strong> le fichier une fois qu'on a fini de travailler dessus, grâce au sous-programme <strong>unlock</strong> :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>svn&nbsp;unlock&nbsp;sandwiches.txt</pre></div></td></tr></tbody></table></div><br>
+<br>
+Une fois compris le fait que le <span class="italique">lock</span> est 
+le Bien, et pris l'habitude d'en demander un chaque fois que l'on désire
+ travailler sur un fichier, le risque de création de conflits est 
+minime, voire inexistant. Et ça c'est réjouissant !</div>
+                <hr>
+            
+                <h2>
+                    <a id="ss_part_4" class="titre_sous_partie">Contrôlez vos commits</a>
+                    
+                </h2>
+
+                <div class="ss_part_texte"><h3>Status</h3><br>
+<br>
+Le premier sous-programme permettant de contrôler ses commit est <strong>status</strong>,
+ celui-ci permet de fouiller la copie locale pour donner des 
+informations sur ses éléments constitutifs (fichiers et dossiers).  
+Appelée sans argument, elle affiche le(s) fichier(s) prévus pour 
+modification au prochain <span class="italique">commit</span>, c'est-à-dire les fichiers ou dossiers modifiés, déplacés, supprimés, etc.<br>
+<br>
+Si je modifie le fichier <span class="italique">sandwiches.txt</span> et que je lance :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>svn&nbsp;status</pre></div></td></tr></tbody></table></div><br>
+<br>
+Voilà ce qui s'affichera :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>M&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sandwiches.txt</pre></div></td></tr></tbody></table></div><br>
+<br>
+Le <span class="italique">M</span> signifie "modifié", on sait donc qu'au prochain <span class="italique">commit</span> les modifications apportées au fichier <span class="italique">sandwiches.txt</span>
+ seront prises en compte. La lettre changera en fonction du type 
+d'actions réalisées sur le fichier ou dossier. Vous pouvez trouver plus 
+d'informations à ce sujet grâce à la commande <span class="italique">svn help status</span>.<br>
+<br>
+En gros, cette commande vous donne une vue d'ensemble de ce que vous avez fait pour vous aider à vous représenter le <span class="italique">commit</span> qui va suivre.<br>
+<br>
+<h3>Diff</h3><br>
+<br>
+Ça, c'est une sous-commande qu'elle est intéressante !<br>
+<br>
+En gros, le principe reste le même que <span class="italique">status</span>
+ : elle donne des informations sur les modifications effectuées sur la 
+copie locale, mais cette fois-ci à une échelle plus petite. Elle va vous
+ donner, pour chaque fichier modifié, un détail des ajouts, retraits et 
+modifications apportés, à la ligne près.<br>
+<br>
+Si j'ajoute une ligne au fichier <span class="italique">sandwiches.txt</span>, et que je lance <span class="italique">svn diff</span>, j'aurai cette sortie :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>Index:&nbsp;sandwiches.txt
+===================================================================
+---&nbsp;sandwiches.txt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(revision&nbsp;6)
++++&nbsp;sandwiches.txt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(working&nbsp;copy)
+@@&nbsp;-1,3&nbsp;+1,4&nbsp;@@
+&nbsp;7&nbsp;tranches&nbsp;de&nbsp;jambon
+&nbsp;3&nbsp;tomates
+&nbsp;9&nbsp;cornichons
++1&nbsp;pot&nbsp;de&nbsp;mayonnaise</pre></div></td></tr></tbody></table></div><br>
+<br>
+Dans ce capharnaüm, je vois qu'entre le fichier de la révision 6 et ma copie locale, il y a eu une ligne ajoutée (le signe <span class="italique">+</span> en début de ligne) disant <span class="italique">1 pot de mayonnaise</span>. Il va sans dire qu'un signe <span class="italique">-</span>
+ indique un retrait de ligne. Je signale au passage que, puisque l'unité
+ est la ligne, la correction d'un caractère provoquera la suppression de
+ l'ancienne ligne et l'ajout de la ligne corrigée ! <img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/clin.png" alt=";)" class="smilies"><br>
+<br>
+Sans paramètre, la commande renvoie tous les fichiers modifiés, on peut bien entendu préciser un fichier en particulier :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>svn&nbsp;diff&nbsp;sandwiches.txt</pre></div></td></tr></tbody></table></div></div>
+                <hr>
+            
+                <h2>
+                    <a id="ss_part_5" class="titre_sous_partie">Remonter le temps</a>
+                    
+                </h2>
+
+                <div class="ss_part_texte"><h3>Grand-père, comment c'était de ton temps ?</h3><br>
+<br>
+Comme je vous l'ai déjà dit plus haut, le serveur Subversion conserve 
+une trace de toutes les modifications faites aux fichiers soumis au 
+contrôle des versions. Cela a notamment pour avantage de permettre de 
+visualiser le dépôt tel qu'il était à une révision donnée.<br>
+<br>
+Pour faire cela, on utilise une option de la commande <span class="italique">update</span> qui permet de spécifier à quel moment dans le temps on veut aller. Par défaut, cette option est définie à <span class="italique">HEAD</span> (la dernière révision), et finalement cette option est <span class="italique">-r</span>. Ainsi :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>svn&nbsp;update&nbsp;-r&nbsp;3
+U&nbsp;&nbsp;&nbsp;&nbsp;foobar
+Checked&nbsp;out&nbsp;revision&nbsp;3.</pre></div></td></tr></tbody></table></div><br>
+<br>
+Les fichier marqués <span class="italique">U</span> sont les fichiers qui ont été modifiés par l'<span class="italique">update</span>. Ensuite, vous pouvez parcourir, utiliser et modifier les fichiers de votre dépôt comme d'habitude. <br>
+<br>
+<div class="rmq information">À la fin de cette commande, vous pouvez 
+très bien spécifier le nom d'un ou plusieurs fichiers, de sorte de ne 
+mettre à jour que ceux-ci, et de laisser les autres à jour.</div><br>
+<br>
+Rappelez-vous simplement que les fichiers que vous modifierez ne seront 
+pas à jour, vous ne pourrez donc pas les envoyer sur le serveur sans 
+action de résolution de conflit.<br>
+<br>
+<div class="rmq information">De plus, la commande <span class="italique">svn revert</span>
+ permet d'annuler les modifications portées à sa copie locale, elle 
+prend en paramètre le nom du fichier à "réinitialiser". Vous pouvez 
+cependant utiliser le sélecteur universel * pour annuler tout changement
+ à votre copie locale depuis la dernière <span class="italique">update</span>.</div><br>
+<br>
+<h3>Ressusciter des fichiers</h3><br>
+<br>
+Il arrive souvent qu'on supprime un fichier du dépôt, puis qu'on veuille
+ s'en resservir par la suite. Il existe plusieurs méthodes pour cela, je
+ vais exposer la plus pratique à mon goût. Tout d'abord, il faut 
+identifier le moment de la suppression, pour cela on utilisera la 
+commande <span class="italique">svn log</span>. L'option <span class="italique">-v</span> permet d'afficher plus d'informations.<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>svn&nbsp;log&nbsp;-v
+(...)
+------------------------------------------------------------------------
+r7&nbsp;|&nbsp;apognu&nbsp;|&nbsp;2007-10-26&nbsp;18:49:01&nbsp;+0200&nbsp;(Fri,&nbsp;26&nbsp;Oct&nbsp;2007)&nbsp;|&nbsp;1&nbsp;line
+&nbsp;
+Suppression&nbsp;du&nbsp;fichier&nbsp;foobar.
+------------------------------------------------------------------------
+(...)</pre></div></td></tr></tbody></table></div><br>
+<br>
+Ici, on apprend que le fichier a été supprimé le 26 octobre 2007 par 
+apognu à 18h49 (ce qui nous fait une belle jambe), mais surtout que le 
+fichier a été supprimé à la révision 7, ce qui signifie qu'il existait à
+ la révision 6 ! Maintenant, on peut le copier depuis la révision 6 :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>svn&nbsp;copy&nbsp;-r&nbsp;6&nbsp;file:///home/apognu/svn/repository/foobar&nbsp;./foobar
+A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foobar</pre></div></td></tr></tbody></table></div><br>
+<br>
+Le fichier vient d'être récupéré, puis "prévu pour <span class="italique">commit</span>" dans la copie locale, il ne reste plus qu'à <span class="italique">commiter</span> pour finir le travail !</div>
+                <hr>
+            
+
+<div id="chap_conclusion">Bon, eh bien nous voici au terme de ce 
+tutoriel, je pense avoir atteint mon but, à savoir vous apprendre le 
+fonctionnement du logiciel Subversion. Mais ne vous méprenez pas, 
+connaître ce fonctionnement ne suffit pas à pouvoir gérer un projet de 
+grosse envergure : même avec SVN une grande organisation est nécessaire,
+ et dans ce cas la lecture du <a href="http://svnbook.red-bean.com/">book SVN</a> dont je parlais au début de mon cours est pratiquement indispensable.<br>
+<br>
+Je pense notamment à l'organisation des versions en <span class="italique">trunk</span>, <span class="italique">branches</span> et <span class="italique">tags</span> (et tout ce qui en découle), ou tout simplement à l'administration du dépôt.<br>
+<br>
+Foncez, et ne vous demandez plus pourquoi des projets tels que 
+Wordpress, KDE, GCC ou encore Apache utilisent maintenant Subversion 
+(avec parfois l'utilisation conjointe de l'application <a href="http://trac.edgewall.org/">Trac</a>, permettant de gérer la collaboration et l'organisation au sein du projet), la réponse est toute trouvée !</div>
+
+
+
+    <div class="liens_bas_tuto">
+        
+    </div>
+
+
+<div class="clearer"></div>
+
+<div class="infobox cadre_auteur_date" id="tuto_details">
+    <h3 class="special">Informations sur le tutoriel</h3>
+    <div class="conteneur_infobox">
+        <a href="#onglets_tutos">Retour en haut <img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/fleche_haut.png" alt="Retour en haut" title="Retour en haut"></a>
+        <br>
+        <br>			
+<strong>Créé</strong> : Le 12/06/2007 à 13:26:41<br>
+<strong>Modifié</strong> : Le 09/02/2009 à 23:19:17<br>
+
+<strong>Avancement</strong> : 100%<br>
+
+<strong>Licence</strong> : Copie non autorisée<br><br>
+
+
+  <a href="http://www.zcorrecteurs.fr/"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/zcorrige.png" alt="L'orthographe, la grammaire et la présentation de ce tutoriel ont été vérifiées par les zCorrecteurs." title="L'orthographe, la grammaire et la présentation de ce tutoriel ont été vérifiées par les zCorrecteurs."></a><br>
+
+<a href="http://www.siteduzero.com/tutoriel-50-33632-42199-utilisation-de-subversion.html#r42199">8 commentaires</a><br>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+            <div id="footer">
+                <ul>
+                    <li>
+                        Le Site du Zéro
+                        <ul>
+                            <li><a href="http://www.siteduzero.com/plan.html">Plan du site</a></li>
+                            <li><a href="http://www.siteduzero.com/membres-304.html">L'équipe</a></li>
+                            <li><a href="http://www.siteduzero.com/mentions.html">Mentions légales</a></li>
+                            <li><a href="http://www.siteduzero.com/accessibilite.html" accesskey="0">Accessibilité</a></li>
+                            <li><a href="http://www.siteduzero.com/livreor.html">Livre d'or</a></li>
+                            <li><a href="http://suggestions.siteduzero.com/"><img alt="logo_user_voice" src="tutoriel-3-33632-utilisation-de-subversion_fichiers/ico_uservoice.png"> Suggestions <img alt="Nouveau" src="tutoriel-3-33632-utilisation-de-subversion_fichiers/iconouveau.png"></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        Simple IT
+                        <ul>
+                            <li><a href="http://www.siteduzero.com/simpleit.html">Qui sommes-nous ? </a></li>
+                            
+                                <li><a href="http://www.siteduzero.com/formations.html">Formation professionnelle</a></li>
+                                <li><a href="http://www.siteduzero.com/recrutement.html">Recrutement</a></li>
+                            
+                            <li><a href="http://www.simple-it.fr/blog/">Notre blog</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        Contacts
+                        <ul>
+                            <li><a href="http://www.siteduzero.com/publicite-440.html">Espace annonceurs</a></li>
+                            <li><a href="http://www.siteduzero.com/presse.html">Espace presse</a></li>
+                            <li><strong><a href="http://www.siteduzero.com/contact.html" accesskey="7">Nous contacter</a></strong></li>
+                            <li><a href="http://www.siteduzero.com/promouvoir.html">Promouvoir le site</a></li>
+                            <li><a href="http://suggestions.siteduzero.com/forums/97879-rapports-de-bugs">Signaler un bug</a></li>
+                        </ul>
+                    </li>
+                    
+                        <li>
+                            Partenaires 
+                            <ul>
+                                <li><a href="http://www.planethoster.net/Site-du-Zero">Hébergement web</a></li>
+                                <li><a href="http://www.zcorrecteurs.fr/">Correction tutoriels</a></li>
+                            </ul>
+                        </li>
+                    
+                    <li>
+                        Suivez-nous
+                        <ul class="dernier">
+                            <li><a href="http://www.siteduzero.com/Templates/xml/news_fr.xml"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/rss_mini.png" alt="Flux RSS"> Flux RSS News</a>, <a href="http://www.siteduzero.com/Templates/xml/tutoriels_fr.xml">Cours</a>, <a href="http://www.simple-it.fr/blog/index.php?feed/atom">Blog</a></li>
+                            <li><a href="http://www.siteduzero.com/twitter.html"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/twitter_mini.png" alt="Twitter"> Twitter</a></li>
+                            <li><a href="http://www.facebook.com/siteduzero"><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/fb_mini.png" alt="Facebook"> Facebook</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                
+            </div>
+
+            
+
+
+            
+            <script type="text/javascript" src="tutoriel-3-33632-utilisation-de-subversion_fichiers/scripts_lang.js"></script>
+            <script type="text/javascript" src="tutoriel-3-33632-utilisation-de-subversion_fichiers/scripts.js"></script>
+            <script type="text/javascript" src="tutoriel-3-33632-utilisation-de-subversion_fichiers/lib.js"></script>
+
+            
+                <script type="text/javascript">
+    var addthis_config = {  ui_508_compliant: true,
+                            ui_cobrand: "Site du Zéro",
+                            ui_header_color: "#ffffff",
+                            ui_header_background: "#7AB7FC",
+                            username: "simpleit",
+                            services_exclude: 'print,pdfonline,email,twitter,facebook,myspace,googlebuzz,blogger,buzz,live',
+                            data_track_clickback: true  };
+                        
+    var addthis_share = {templates: { twitter:'{{title}} {{url}} #SdZ' } };
+
+    $('div.slidable').hide();
+    $('a.expend').show();
+    $('a.expend').removeAttr('style');
+    
+    $('.expend').click(function(e)
+    {
+        e.preventDefault();
+        $(this).hide('fast');
+        $(this).next('div.slidable').slideToggle('fast');
+    });
+   
+</script>
+<script type="text/javascript" src="tutoriel-3-33632-utilisation-de-subversion_fichiers/addthis_widget.js"></script>
+            
+
+            <div class="droite printnone">
+                <a href="http://www.xiti.com/xiti.asp?s=129196" title="WebAnalytics">
+                    <script type="text/javascript">
+                        <!--
+                        Xt_param = 's=129196&p=%2Ftutoriel-3-33632-utilisation-de-subversion.html';
+                        try {Xt_r = top.document.referrer;}
+                        catch(e) {Xt_r = document.referrer; }
+                        Xt_h = new Date();
+                        Xt_i = '<img width="80" height="15" border="0" ';
+                        Xt_i += 'src="http://logv23.xiti.com/g.xiti?'+Xt_param;
+                        Xt_i += '&hl='+Xt_h.getHours()+'x'+Xt_h.getMinutes()+'x'+Xt_h.getSeconds();
+                        if(parseFloat(navigator.appVersion)>=4)
+                        {
+                        Xt_s=screen;Xt_i+='&r='+Xt_s.width+'x'+Xt_s.height+'x'+Xt_s.pixelDepth+'x'+Xt_s.colorDepth;
+                        }
+                        document.write(Xt_i+'&ref='+Xt_r.replace(/[<>"]/g, '').replace(/&/g, '$')+'">');
+                        //-->
+                    </script><img src="tutoriel-3-33632-utilisation-de-subversion_fichiers/g.gif" height="15" width="80" border="0">
+                    <object>
+                        <noscript>
+                            <p><img width="80" height="15" src="http://logv23.xiti.com/g.xiti?s=129196&amp;p=&amp;" alt="WebAnalytics" /></p>
+                        </noscript>
+                    </object>
+                </a>
+                <script type="text/javascript">
+                    var _gaq = _gaq || [];
+                    _gaq.push(['_setAccount', 'UA-19807070-2']);
+                    _gaq.push(['_trackPageview']);
+
+                    (function() {
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                    })();
+                </script>
+            </div>
+
+            <!-- /#2 221/#0.288/#0.1954/# -->
+	
+    <div aria-labelledby="ui-dialog-title-dialog_bientot" role="dialog" tabindex="-1" class="ui-dialog ui-widget ui-widget-content ui-corner-all " style="display: none; position: absolute; overflow: hidden; z-index: 1000; outline: 0px none;"><div style="-moz-user-select: none;" unselectable="on" class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span style="-moz-user-select: none;" unselectable="on" id="ui-dialog-title-dialog_bientot" class="ui-dialog-title">Bientôt sur le Site du Zéro.</span><a style="-moz-user-select: none;" unselectable="on" role="button" class="ui-dialog-titlebar-close ui-corner-all" href="#"><span style="-moz-user-select: none;" unselectable="on" class="ui-icon ui-icon-closethick">close</span></a></div><div class="ui-dialog-content ui-widget-content" id="dialog_bientot" style="">
+                <p>Le Site du Zéro vous proposera bientôt de nouveaux cours partant de Zéro dans d'autres domaines que l'informatique ! </p>
+                 <a style="color: rgb(38, 119, 201); text-decoration: none;" href="http://www.siteduzero.com/tutoriel-1-433-sciences.html">Découvrir les cours scientifiques</a>
+            </div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><button class="ui-state-default ui-corner-all" type="button">Ok</button></div></div><div style="display: none;" id="tooltip"><h3></h3><div class="body"></div><div class="url"></div></div></body></html>

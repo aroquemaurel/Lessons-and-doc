@@ -1,0 +1,161 @@
+\chapter{L'envoi de message et le polymorphisme}
+Envoie de message demandé par un objet de l'exécution d'un service de la classe. \\
+C'est l'unique de manière de dialoguer entre objets.
+
+Envoi de message = (Objet receveur, sélecteur de méthode, une liste de paramètre)
+
+\section{L'envoi de message}
+\subsection{Cas général}
+L'envoi de message est réalisé par la primitive \textbf{send} ou la notation pointée
+
+\subsubsection{Exemple}
+Soit l'objet laLacoste, instance de la classe chemise.\\
+prix = laLacoste.prixDeVente();\\
+Avec un prixHT de 50\euro{}, prix = 59.8euros (car TVA = 19.6\%)
+
+\paragraph{}Soit a de type Article et prix = a.prixDeVente()
+Si a à l'exécution désigne une chemise (instance de la classe Chemise). \\
+prix = 59.8 euros (TVA = 19.6)
+\lstinputlisting[language=java]{ex8.java}
+\subsection{Désignation de l'objet receveur (objet self)}
+Dans les exemples de la section 3-1-1, on connait l'identité de l'objet receveur.
+L'objet laLacoste, l'objet a, l'objet out\ldots\\
+lorsque l'objet receveur n'est pas connu, on le désigne par l'objet courant receveur du message:
+l'objet \textbf{self} (en Java, self = \textbf{this}).\\
+Cas code d'un code d'une classe = code de l'instance (l'objet) courant
+
+\paragraph{Exemple}Dans la classe Article, ajout d'une méthode prixAvecLivraison = prixDeVente + coutLIvraison\\
+Le même code doit s'appliquer à une chemise avec un taux de TVA = 19.6\% et une eau gazeuse avec TVA = 5.5\%
+\lstinputlisting[language=java]{ex9.java}
+\paragraph{Remarque}
+Cet objet courant \textbf{this} est implicite dans la première version de la classe Article
+(chapitre 1 section 2).
+
+\subsection{Accès à la superméthode (mot-clé \textbf{super})}
+Héritage par substitution $\Rightarrow$ la méthode héritée est masquée par la redéfinition. \\
+La méthode masquée est appelée superméthode.
+\lstinputlisting[language=java]{ex8.java}
+\paragraph{pb} Comment réutiliser le code de la superméthode ? 
+\paragraph{} On utilise la superméthode par un envoi de message en utilisant le mot clé \textbf{super}
+(qui n'est pas un objet)
+\paragraph{Exemple} Dans la classe Chaine-hifi, redéfinition de la méthode prixDeVente définie par :
+$$prixDeVente_{materielHifi} = prixDeVente_{Article} + coutGarantie_{MaterielHifi}$$
+
+\paragraph{Remarque} Attention à l'usage de \textbf{super} ! Un envoi de message avec \textbf{super}
+ne doit s'appliquer pour l'accès d'une superméthode masquée par l'héritage. Dans les autres cas utiliser
+\textbf{this}.
+\lstinputlisting[language=java]{ex10.java}
+\subsection{La délégation}
+Mécanisme de communication entre objets (par envoi de message) qui permet à un objet composite
+de déléguer à un de ses composant la requête à satisfaire.
+\paragraph{Exemple} Un produit laitier confie à un de ses composants conditionnement le soi d'emballer le produit.
+Pour mettre en place la relation non structurelle, on communique à l'emballage la référence \textbf{this} du produit laitier.
+\begin{center}
+\input{uml20}
+	\lstinputlisting[language=java]{ex11.java}
+\end{center}
+
+\paragraph{Remarque}
+\begin{enumerate}
+	\item Le code de méthodes conditionnement de ProduitLaitier et conditionnement est valide, quels que soient les
+		produits laitiers et le conditionnement (ch chapitre 2 section 3.2)
+	\item Une classe A dépend d'une classe B (relation non structurelle).
+		\begin{itemize}
+			\item Lorsque une méthode de A possède un paramètre de type ou un retour de type B
+			\item Lorsque une méthode de A possède un objet local de type B
+		\end{itemize}
+	\item On peut coder la classe Chemise du chapitre 2 par par un mécanisme de délégation. On indique
+		alors qu'une chemise possède (relation avoir) la caractéristique d'un Article.
+
+\end{enumerate}
+
+
+\section{Le polymorphisme}
+\paragraph{Polymorphisme} Plusieurs (poly) formes (morphes) possible d'une même entité.
+Deux types de molymorphisme lié:
+\begin{itemize}
+	\item Le polymorphisme d'inclusions
+	\item Le polymorphisme de redéfinition(ou polymorphisme) d'héritage
+\end{itemize}
+
+\subsection{L'attachement polymorphe}
+Tout objet de classe d'appartenance (de type) A peut désigner à l'exécution un objet, 
+sous-classe (sous type) de A. \\D'après le principe d'inclusion des extensions (chapitre 2, section 1) 
+\paragraph{Exemple}
+	La classe Article avec Chemise et EauGazeuse.
+	\begin{lstlisting}[language=java]
+		Article a;
+		Chemise c;
+		c = new Chemise("Chemise", 50.0, 1, rouge);
+
+		// Ecriture valide: 
+		a = c;
+		a = new EauGazeuse("Eau Gazeuse", 0.70);
+	\end{lstlisting}
+
+	\paragraph{Remarque}
+	\begin{enumerate}
+		\item Les attachements polymorphes (cf exemple avec a et c) interviennent lors des relations paramètre effectif.
+	Paramètre formel- pour les paramètres de retour, pour les objets locaux et les objets courant \textbf{this}
+		\item L'attachement est autorisé dans le sens $objet_{ancetre} = objet_{descendant}$
+	L'affectation inverse n'a en général pas de sens!
+	\end{enumerate}
+	\subsection{Le polymorphisme d'inclusions}
+	Ce polymorphisme résulte de l'héritage.\\
+	À l'exécution, un objet d'une classe peut désigner un objet d'une sous classe.
+	Traiter une famille d'ojet en ignorant pour chacun sa classe d'appartenance. (ici des chemises ch et des eaux gazeuses eg)\\
+	Polymorphisme à condition de définir un héritage d'interface.\\
+	\begin{center} \input{20.tex} \end{center}
+	\subsubsection{Exemple}
+	\paragraph{1} Dans la classe HyperMarché, définition d'un attribut de type Tableau<Article>. Le table stock est un tableau
+	polymorphe car il peut recevoir tout type d'article (des chemises, des eaux gazeuses,\ldots)
+	\paragraph{2} Autre exemple: \\
+	\begin{lstlisting}[language=java]
+ProduitLaitier p;
+Conditionnement c;
+
+c = new Bouteille();
+p = new Lait(c);
+p.conditionner ();
+	\end{lstlisting}
+
+	\subsection{Polymorphisme de redéfinition ou polymorphisme d'héritage}
+	Polymorphisme qui s'appuie sur la redéfinition de méthode. \\
+	À l'exécution, le système choisit la méthode la plus spécialisée (redéfinie) en fonction du type 
+	de l'objet.
+	Appliquer une même méthode à des objets en ignorant pour chacun sa classe d'appartenance (ici la méthode m des chemises et des eaux gazeuses)
+	\\
+\input{22.tex}
+	\subsection{Exemple}
+	\paragraph{1}
+	Calcul du prixDeVente d'un article, fonction  la TVA (19.6\%) en général et 5.5\% pour les eaux gazeuses)\\
+	Ce calcul s'effectue en fonction du ième article du tableau stock de type Table<Article>.
+	\begin{lstlisting}[language=java, caption=Dans Article]
+public Float prixDeVente(){
+	return this.prixHT * 1.196);
+}
+	\end{lstlisting}
+
+	\begin{lstlisting}[language=java, caption=Dans eau gazeuse]
+public Float prixDeVente(){
+	return this.prixHT * 1.055);
+}
+	\end{lstlisting}
+	\begin{lstlisting}[language=java, caption=Dans supermarché]
+prix = this.stock.getIème(i).prixDeVente();
+\end{lstlisting}
+
+\paragraph{2}Calcul de la masse salariale de la classe HyperMarché avec un attribut personnel de type Liste<Employé>.\\
+Remarque: La méthode salaire de la classe employée est retardée!
+\begin{lstlisting}[language=java, caption=Dans supermarché]
+public Float masseSalariale(){
+	Float s=0.0
+	for (int i = 0; i < this.personnel.longueur(); i++)
+		s = s + this.personnel.getIeme.salaire();
+
+	return (s);
+}
+\end{lstlisting}
+
+\paragraph{3}Recharche séquentielle d'un élément dans un tableau
+\lstinputlisting[language=java]{12.java}

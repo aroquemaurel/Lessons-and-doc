@@ -1,0 +1,4 @@
+--afficher les jours d'un mois
+	imprimer les espaces dus aux jours vides;
+	afficher les numeros du jour;
+	eventuellement effectuer un saut de ligne;

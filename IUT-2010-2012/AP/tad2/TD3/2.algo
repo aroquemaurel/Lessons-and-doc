@@ -1,0 +1,12 @@
+-- calcul la valeur d'une expression 
+lire le premier caractere;
+tantque le caractere /= '.' faire
+	si caractere est une operande alors
+		empiler la valeur de l'operande;
+	sinon
+		depiler pour obtenir le deuxieme operande;
+		depiler pour obtenir le premier operande;
+		empiler le resultat de l'operateur sur les deux operandes;
+	fin si;
+	lire le caractere suivant;
+fin tantque;

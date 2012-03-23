@@ -1,0 +1,2 @@
+class Paresseux extends Animal {
+}

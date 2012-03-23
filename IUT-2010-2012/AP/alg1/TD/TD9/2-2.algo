@@ -1,0 +1,19 @@
+importer entreeSortie;
+
+programme afficherCalendrierAnnee
+
+glossaire
+	mois <Entier>;
+	annee <Entier>;
+	premierJour <Entier>;
+
+debut
+	lire(annee);
+	mois <- 1;
+	premierJour <- premierJourAnnee (annee);
+	
+	tantque mois <= 12 faire
+		afficherMois(mois, annee, premierJour);
+		premierJour <- (premierJour + nbJourMois (mois, annee)) mod 7 ;
+	fin tantque;
+fin

@@ -1,0 +1,75 @@
+\documentclass{article}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+%\usepackage[frenchb]{babel}
+%\usepackage{layout}
+%\usepackage{setspace}
+%\usepackage{soul}
+%\usepackage{ulem}
+%\usepackage{eurosym}
+%\usepackage{bookman}
+%\usepackage{charter}
+%\usepackage{newcent}
+%\usepackage{lmodern}
+%\usepackage{mathpazo}
+%\usepackage{mathptmx}
+%\usepackage{url}
+\usepackage{verbatim}
+%\usepackage{moreverb}
+%\usepackage{wrapfig}
+%\usepackage{amsmath}
+%\usepackage{mathrsfs}
+%\usepackage{asmthm}
+%\usepackage{makeidx}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+
+
+\input{/home/satenske/cours/listings.tex} %prise en charge du langage algo
+
+\title{TD 10\\ Construction et évaluation d'une expression algébrique postfixée}
+\date{TAD\\ Semestre 2}
+
+\lhead{TD10: Construction et évaluation d'une expression algébrique postfixée} 
+\chead{}
+\rhead{\thepage}
+
+\lfoot{Université Paul Sabatier Toulouse III}
+\cfoot{\thepage}
+\rfoot{tad2}
+
+\pagestyle{fancy}
+\begin{document}
+	\maketitle
+	\paragraph{Type fonctionnelle} C'est un type ou on ne propose que des fonctions
+	\paragraph{Type impératif} C'est un type ou on ne propose au moins une procédure
+	\section{Spécification algorithmique des opérations du TAD}
+	\lstinputlisting[language=algo, caption=sécification algorithmiques]{1.algo}	
+	\section{Algorithmes de parcours d'un arbre binaire}
+		\subsection{}
+			\input{2.tex}
+			\begin{itemize}
+				\item Parcours GRD: $a+b*c-d/e$
+				\item Parcours RGD: $/*+a~b-c~d~e$
+				\item Parcours GDR: $a~b+c~d-*e/$
+			\end{itemize}
+		\subsection{}
+		\lstinputlisting[language=algo, caption=Affichage d'un arbre binaire de parcours RGD]{2-2.algo}	
+	\section{Utilisation du TAD ArbreBinaire[T]}			
+		\subsection{}
+		\lstinputlisting[language=algo, caption=construireArbre]{3-1.algo}	
+	\section{Représentation physique du TAD ArbreBinaire[T]}
+		\lstinputlisting[language=algo, caption=Représentation du type]{4-1.algo}	
+
+
+\end{document}
+
+

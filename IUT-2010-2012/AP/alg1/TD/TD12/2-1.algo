@@ -1,0 +1,7 @@
+tantque la tranche n'est pas vide et l'element n'est pas trouve faire
+	si l'element x est plus petit que l'element du milieu alors
+		reduire la partie gauche;
+	sinon
+		reduire la partie droite;
+	fin si;
+fin tantque;

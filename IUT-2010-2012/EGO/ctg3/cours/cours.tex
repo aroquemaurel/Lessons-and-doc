@@ -1,0 +1,433 @@
+\documentclass[12pt,a4paper,openany]{report}
+%%%% JNLP 
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.5cm, right=1.5cm]{geometry}
+\usepackage{pdfpages}
+\usepackage{listingsutf8}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{makeidx}
+\usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, colorlinks=none, linktoc=all,urlcolor=white]{hyperref}
+\usepackage{eurosym}
+
+\newcommand{\titre}{Contrôle de gestion}
+\newcommand{\module}{Contrôle de gestion}
+\newcommand{\sigle}{ctg}
+\newcommand{\semestre}{3}
+\input{/home/satenske/cours/entete_iut-cours}
+
+\pagestyle{fancy}
+\begin{document}
+	\maketitle
+	\chapter{Seuil de rentabilité (SR)}
+	La méthode du seuil de rentabilité pose la question à partir de quel chiffre on a un résultat positif.
+	\begin{eqnarray*}
+		CA = Px \times QtéVendue\\
+	\end{eqnarray*}
+	\section{Charges fixes et charges variables}
+	\paragraph{Charges} Flux fixes entrantes sauf les immobilisations
+
+	\subsection{Les charges fixes (Charges de structure)}
+	Le montant est indépendant de l'activité
+	\subparagraph{Exemple} Amortissement, loyer du bâtiment, éclairage
+	\subparagraph{Remarque} La somme des charges fixes est appelée le coût fixe \\ $\sum{chargesFixes} = coûtFixe$ 
+
+	\subsection{Charges variables (Charges opérationnelles)}
+	Le montant est proportionnelle au niveau d'activité
+	\paragraph{Remarque} La somme des charges fixes est appelée le coût variable \\ $\sum{chargesVariables} = coûtVariable$
+	\paragraph{Niveau d'activité} Les entreprises qui ne vendent qu'un seul produit peuvent mesurer leur activité par le nombre de produits vendus
+	\subparagraph{Exemple} Le producteur de lait. 
+	\paragraph{} Ces mesures présentent l'avantage d'être indépendant du prix de vente, cependant dans la plupart des entreprises, la production est diversifiée, 
+	on prend alors le chiffre d'affaire pour mesurer la variation d'activités.
+	\section{La marge sur coût variable (MCV)}
+	Une marge est toujours la différence entre un chiffre d'affaire et un coût. 
+	\begin{eqnarray*}
+		MCV = CA - CV
+	\end{eqnarray*}
+	\begin{center}
+	\begin{tabular}{|c|}
+		\hline
+	CV      \\
+		\hline
+	CF  \\
+		\hline
+	Resultat\\ 
+		\hline
+	\end{tabular}
+	\hspace{1cm}
+	\begin{tabular}{|c|}
+		\hline
+		~ \\	
+		CA \\
+		~ 	\\
+		\hline
+	\end{tabular}
+	\end{center}
+	\paragraph{Remarque} La marge sur coût variable correspondrait au résultat, si il n'y avait pas de coût fixe. 
+	\section{Le Taux de Marge sur coût Variable (TMCV)} 
+	\begin{eqnarray*}
+		TMCV = \frac{MCV}{CA} = \frac{CA - CV}{CA} = Constante
+	\end{eqnarray*}
+	Il correspond au montant de la marge sur coût variable pour un euro de chiffre d'affaire. 
+	\section{Détermination du seuil de rentabilité}
+	Le seuil de rentabilité est un chiffre d'affaire, en effet il correspond au chiffre d'affaire pour lequel le résultat est égal = 0
+	\begin{eqnarray*}
+		TMCV &=& \frac{MCV}{CA}\\
+		\Leftrightarrow MCV &=& TMCV \times CA\\
+		lqR &=& 0\\
+		MCV &=& CF\\
+		CA &=& SR\\
+		CF &=& TMCV \times CA\\
+		CF &=& TMCV \times SR\\
+		SR &=& \frac{CF}{TMCV}\\
+	\end{eqnarray*}
+	\paragraph{Remarque}La différence entre le chiffre d'affaire et le seuil de rentabilité correspond au montant du chiffre
+	d'affaire qui pourrait diminuer avant que l'on soit en perte, on l'appelle la \textbf{marge de sécurité}
+	\begin{eqnarray*}
+	Ms = CA-SR
+\end{eqnarray*}
+	\paragraph{Détermination de la date du seuil de rentabilité}
+	Lorsque nous avons le choix entre plusieurs projets, on peut déterminer le projet le moins risqué.
+	Ce sera bien évidemment celui qui atteint le SR \textit{le plus tôt}.
+	\begin{eqnarray*}
+		DateSR_{en~mois} &=& \frac{SR}{CA} * 12\\
+	\end{eqnarray*}
+	\paragraph{Remarque} En supposant que la chiffre d'affaire est constant. 
+	\chapter{La fixation du prix de vente par la méthode des coûts complet}
+	\section{La notion de coût complet} \label{coutcomplet}
+	\subsection{La formation des coûts}
+	\subsubsection{Le reclassement des charges}
+	Dans cette méthode on ne distingue plus les charges variables et les charges fixes comme dans la méthode du seuil de rentabilité.
+	On les regroupe maintenant selon la fonction à laquelle on considère qu'elles appartiennent.
+	\begin{itemize}
+		\item fonction acquisition
+		\item fonction production
+		\item fonction distribution
+		\item fonction administration
+	\end{itemize}
+	\subsubsection{Le calcul des différents coûts}
+	\paragraph{Exemple} Une menuiserie on va essayer de déterminer le coût de revient d'une table et donc
+	son prix minimum de vente.
+	\paragraph{Le coût d'acquisition}
+	On a répertorié les charges suivantes qui appartiennent à la fonction d'acquisition pour une table
+	\begin{itemize}
+		\item Prix d'achat du bois: 10\euro
+		\item Coût d'acquisition des fournitures (peintures, colles, \ldots): 6\euro
+		\item Charges d'approvisionnement : 8\euro (transport du bois, loyer du local où est stocké
+			le bois, salaire du magasinier, etc\ldots)
+	\end{itemize}
+	\begin{center}$\Rightarrow$ Coût d'acquisition: 24\euro~pour une table.\end{center}
+		\paragraph{Le coût de production}
+		\subparagraph{Attention} le coût de production ne correspond pas uniquement aux charges de production !\\
+		On doit lui additionner le coût d'acquisition. Ainsi le coût d'acquisition est inclus dans le coût de production.
+		\begin{eqnarray*} Cout_{acquisition} + charges_{production} = cout_{production} \end{eqnarray*}
+			\begin{center}
+			\begin{tabular}{|c|c|}
+				\hline
+				coût d'acquisition & charges de production \\
+				\hline
+				\multicolumn{2}{|c|}{coût de production}\\
+				\hline
+			\end{tabular}
+		\end{center}
+		Dans notre exemple, le coût de production d'une table: 
+		\begin{itemize}
+			\item Coût acquisition : 24\euro
+			\item Charges de production 50\euro~(salaires des employés dans les ateliers, éclairages des ateliers, loyers des ateliers, \ldots)
+		\end{itemize}
+	\begin{center}$\Rightarrow$ Coût de production: 74\euro~pour une table.\end{center}
+		\paragraph{Le coût de distribution}
+		Le coût de distribution d'une table comprend uniquement les charges de distribution comme les salaires
+		des vendeurs, les charges d'emballages, la publicité \ldots
+
+		Dans notre exemple on va les estimer pour une table à 20\euro .
+	\begin{center}$\Rightarrow$ Coût de distribution: 20\euro~pour une table.\end{center}
+		\paragraph{Le coût d'administration}
+		Pour ce dernier coût on parle aussi de ``charges de structure''. 
+
+		Dans notre exemple on va les estimer pour une table à 6\euro .
+	\begin{center}$\Rightarrow$ Coût d'administration: 6\euro~pour une table.\end{center}
+		\paragraph{Le coût complet aussi appelé coût de revient)}
+		Le coût de revient est un coût complet puisqu'il comprend toutes les charges.
+
+		Coût de revient d'une table : 
+		\begin{itemize}
+			\item Coût de production: 74\euro
+			\item Coût de distribution: 20\euro 
+			\item Charges administratives: 6\euro
+		\end{itemize}
+	\begin{center}$\Rightarrow$ Coût de revient: 100\euro.\end{center}
+	\section{Conclusion}
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		Coût d'acquisition & Charge de production &\multicolumn{2}{c|}{}\\
+		\hline
+		\multicolumn{2}{|c|}{Coût de production} & Coût de distribution & Charges administratives\\
+		\hline
+		\multicolumn{4}{|c|}{Coût de revient}\\
+		\hline
+	\end{tabular}
+	\section{Le résultat analytique et les marges}
+	 \subsection{Le résultat analytique (RA}
+	 \begin{eqnarray*}
+		 RA &=& CA - Coût_{revient~total} ~ ~ où\\ 
+		 RA_{unitaire} &=& prix_{vente} - coût_{revient~unitaire}
+	 \end{eqnarray*}
+	 \subsection{Les marges}
+	 \paragraph{Rappel} Une marge est la différence entre un prix de vente et un coût partiel.
+	 \subparagraph{Exemple} $Marge~sur~coût~de~distribution = prix_{vente} - coût_{distribution} $
+	 \section{Les charges directes et indirectes}
+	 \subsection{La distinction}
+	 Les charges directes sont celles qui sont affectées à un coût précis, sans aucun doute ni arbitraire; cf section \ref{coutcomplet}.
+	 \paragraph{Exemple} Les commissions des représentants $\Rightarrow$ coût de distribution.\\
+	 Les charges ``indirectes'' sont celles qui concernent plusieurs coût à la fois ; il n'est pas possible de les
+	 affecter à un coût particulier.
+	 \paragraph{Exemple} Les charges du chauffage central, concernent les ateliers et l'administration. 
+	 \textit{ Coût de production ou coût d'administration ? }
+
+	 Les charges indirectes seront réparties dans un $1^{er}$ temps dans des divisions comptables de l'entreprise: ``les centres d'analyses''.\\
+	 Puis dans un $2^{nd}$ temps, elles seront affectées à un coût.\\ \\
+	 \begin{tikzpicture}
+		\draw (0,0) rectangle (3.5,2) ;
+		 \node at(1.7,1.5) {Charges directes} ;
+		 \draw (0,1) -- (3.5,1);
+		 \node at(1.7,0.5) {Charges indirectes} ;
+
+		\draw (15.5,0) rectangle (11.6,2) ;
+		 \node at(13.5,1.0) {Coûts des produits} ;
+		 \draw[>=latex, ->, thick] (3.5,1.5) -- (11.6,1.5);
+
+		 \draw[>=latex, ->, thick] (3.5,0.5) -- (5.6,0.5);
+		 \node at(7.2,0.5) {Centre d'analyses} ;
+		 \draw[>=latex, ->, thick] (9.0,0.5) -- (11.6,0.5);
+	 \end{tikzpicture}
+	 \subsection{Les centres d'analyse}
+	 Un centre d'analyse correspond à une division de l'entreprise où sont réparties les charges indirectes \textit{avant} leur affectation
+	 aux différents coûts des produits.
+	 \section{La répartition des charges indirectes}
+	 La répartition est présentée dans la réalité sous la forme d'un table ``tableau d'analyse des charges indirectes''
+	 \begin{itemize}
+		 \item ``La répartition primaire'' consiste à répartir les charges indirectes entre tous les centres d'analyses (y compris les centres auxiliaires)
+		 \item ``La répartition secondaire'' consiste à répartir les charges des centres auxiliaires entre les autres centres d'analyses (centre principaux : 
+			 approv, prod, distribution et les centres de structure).
+	 \end{itemize}
+	 \begin{table}
+		 \begin{center}
+	 \begin{tabular}{|p{3.5cm}|p{1.3cm}|p{2.96cm}|p{1.4cm}|p{1.4cm}|p{2.1cm}|p{3.7cm}|}
+		 \hline
+		 {Charges} & {Totaux} &{ Centre auxiliaire }& \multicolumn{3}{|c|}{{Centres principaux}} & {Centre de structure}\\
+		 \hline
+		   & &Prestation annexes & Découpe & Finition & Distribution & Administration \\
+		 \hline
+		 Achats non stockés (énergie\ldots) & $19800$ & $5000$ & $10000$ & $1500$ & $300$ & $3000$\\
+		 \hline
+		 Services extérieurs (assurances\ldots) & 45150 & 15000 & 2000 & 3850 &3800 &2500\\
+		 \hline
+		 Autres services extérieurs & 48000 & 15000& 5000& 7000&7000&14000\\
+		 \hline
+		 Impôts & 12000&2000&4000&2000&2000&2000\\
+		 \hline
+		 Charges de personnel & 57200&3000&20000&14000&14500&5700\\
+		 \hline
+		 Dotations aux amortissements & 22300&10000&1000&1400&9000&900\\
+		 \hline
+		 Total de la répartition primaire & 50000&60000&22750&36600&28100\\
+		 \hline
+		 Prestations annexes & & 20\% & 30\%& 40\%&10\%\\
+		 \hline
+		 Total de la répartition secondaire & & 70000&44750&56600&33100\\
+		 \hline
+		 Unité d'\oe{}uvre ou assiette des frais & & m$^2$ de bois découpés & Heures machines & Chiffre d'affaires global & Coût de production global \\
+		 \hline
+		 Nombre d'unités d'\oe{}uvre ou montant de l'assiette des frais & & 5000&\ldots&\ldots&\ldots\\
+		 \hline
+		 Coût d'une unité d'\oe{}uvre ou taux de frais & \ldots&\ldots&14\euro~par m$^2$ de bois découpé&lcdots&\ldots&\ldots\\
+		 \hline
+
+	 \end{tabular}
+		 \caption{Répartition des charges indirectes}
+		 \end{center}
+	 \end{table}
+	 \newpage
+	 \section{L'attribution aux coûts (imputation}
+	 On veut déterminer le coût de revient d'une chaine afin de connaître son prix de vente minimal.
+
+	 Si on avait qu'un seul produit on additionnerait toutes les charges et on diviserait par le nombre de produit.
+
+	 Le problème est qu'en fait comme la plupart des entreprises notre menuiserie fabrique des produits très différents les uns des autres (tables, escaliers, 
+	 chaises, parquets, \ldots). On va donc essayer de mesurer le coût d'activité de chaque centre en connaissant la consommation d'activité de chaque produit.
+	 \subsection{Les unités d'\oe{}uvre}
+	 \subsubsection{Définition}
+	 L'activité d'un centre d'analyse est mesurée si cela est possible par une unité physique appelée ``unité d'\oe{}uvre (\oe{}uvre synonyme de activité)
+	 \paragraph{Exemple} Dans la menuiserie
+	 \begin{itemize}
+		 \item Atelier découpe: L'unité d'\oe{}uvre peut-être le volume de bois découpé afin de mesurer son activité.
+		 \item Atelier finition : l'activité de ce centre d'analyse peut-être meusrée par le temps de travail des employés qui
+			 procèdent aux finitions sur les meubles
+	 \end{itemize}
+	 \subsection{Le coût d'une unité d'\oe{}uvre}
+	 \paragraph{Exemple} Quel est le coût de l'unité d'\oe{}uvre dans l'atelier ''découpé``, sachant que ce centre a découpé 5000m$^2$ de bois
+	 au cours du mois de novembre.
+	 Le total des charges du centre ''découpe`` est d'un montant de 70000\euro~\\
+	 $\Rightarrow$ Coût d'une unité d'\oe{}uvre: $\frac{70000}{5000}=14$\euro\\
+	 Ainsi on a la formule: $$coût_{unité~oeuvre~centre~analyse} = \frac{Total_{charges~centre}}{Nombre~unité~oeuvre}$$
+	 \subsubsection{L'attribution (l'imputation)}
+	 \textit{Sachant que l'atelier a découpé 600m$^2$ de bois pour obtenir les chaises, que peut on en conclure ?}
+
+	 $\Rightarrow 14\euro \times 600 = 8400\euro$ de charges indirectes sont attribués au coût des chaises en provenance de l'atelier découpe.
+	 \subsection{Les taux de frais}
+	 \subsubsection{Assiette de frais}
+	 Il arrive pour certains centres de ne pas pouvoir mesurer leur activité par une unité physique. 
+	 \paragraph{Exemple} Centre de distribution
+	 On va prendre comme base de calcul, une valeur monétaire : ex : le chiffre d'affaires, le montant des achats, \ldots
+	 toute valeur monétaire ayant une forte corrélation avec l'activité du centre. On ne parle plus dans ce cas d'unité d'\oe{}uvre mais d'assiette de frais.
+	 \subsubsection{Le taux de frais}
+	 On établi le même raisonnement qu'avec les unités d'\oe{}uvre. On a la formule:
+	 $$Taux_{frais~centre~analyse} = \frac{total_{charges~du~centre}}{assiette~de~frais}$$
+	 \section{La pris en compte des stocks}
+	 Il faut distinguer: 
+	 \begin{enumerate}
+		 \item Coût de production de la période
+		 \item Coût d'acquisition de la matière première utilisée
+		 \item Coût de production des produits vendus 
+		 \item Cout d'acquisition de la matière première achetée \\
+	 \end{enumerate}
+	 \begin{tikzpicture}
+		\draw (0,0) rectangle (2.7,0.7) ;
+		 \node at(1.3,0.4) {Fournisseurs} ;
+		 \node at(3.1,0.7) {\textbf{(4)}} ;
+		 \draw[>=latex, ->, thick] (2.7,0.4) -- (4.0,0.40);
+		 \node at(5.0,0.4) {Stock MP} ;
+		 \node at(6.4,0.7) {\textbf{(2)}} ;
+		 \draw[>=latex, ->, thick] (6.0,0.4) -- (7.0,0.40);
+		\draw (7,0) rectangle (9.3,0.7) ;
+		\node at(9.7,0.7) {\textbf{(1)}} ;
+		 \draw[>=latex, ->, thick] (9.3,0.4) -- (10.8,0.40);
+		 \node at(8.0,0.4) {Atelier} ;
+		 \node at(15.6,0.7) {\textbf{(3)}} ;
+		 \draw[>=latex, ->, thick] (15.2,0.4) -- (17.0,0.40);
+		\draw (17,0) rectangle (19,0.7) ;
+		 \node at(13,0.4) {Stock de produits finis} ;
+		 \node at(18.0,0.4) {Client} ;
+	 \end{tikzpicture}
+	 \subsection{Les différentes méthodes de valorisation des stocks}
+	 Dans notre menuiserie nous utilisons 4 planches de chêne pour une série de chaises. 
+	 On achète une planche tous les jours : 
+	 \begin{itemize}
+		 \item Le 1/12 : 100\euro~la planche
+		 \item Le 2/12 : 101\euro~la planche
+		 \item Le 3/12 : 102\euro~la planche
+		 \item Le 4/12 : 103\euro~la planche
+		 \item etc\ldots
+	 \end{itemize}
+	 Le 15 nous prenons 4 planches pour notre série.
+	 \paragraph{Question} quelle valeur attribuer à ces 4 planches ?  3 méthodes principales:
+	 \begin{itemize}
+		 \item Méthode du premier entrée, premier sortie\footnote{PEPS}
+		 \item Méthode du dernier entrée, premier sortie\footnote{LIFO}
+		 \item Méthode du coût unitaire moyen pondéré\footnote{CUMP}
+	 \end{itemize}
+	 \paragraph{Exemple}
+	 Stock initiali : 1$^{er}$ Juin 400 m$^2$ dont coût d'acquisition : 10400\euro
+	 \subparagraph{Entrées}
+	 \begin{itemize}
+		 \item 5 Juin : 800 m$^2$ (CU: 29,02\euro)
+		 \item 19 Juin : 1000m$^2$ (CU: 31\euro)
+	 \end{itemize}
+	 \subparagraph{Sorties}
+	 \begin{itemize}
+		 \item Le 10 Juin: 300m$^2$ destinés à la fabrication de table
+		 \item Le 21 juin : 1200m$^2$ destinés à la fabrication d'armoire
+	 \end{itemize}
+	 \subparagraph{Question : Quelle est la valeur de la matière première utilisée ?}
+	 \subsubsection{Méthode du premier entrée, premier sorti}
+	 \begin{tabular}{|c|c|c|c| |c|c|c|c|}
+		 \hline
+		 \multicolumn{4}{|c||}{Entrées} & \multicolumn{4}{c|}{Sorties}\\
+		 \hline
+		 Date & Quantité & CU & Montant & Date & QUantité & CU & Montant\\
+		 \hline
+		 1/06 & 400 & 26 & 10400 & 10/06&300&26&7800\\
+		 5/06&800&29.02&23216&21/06&100&26&\\
+		 &&&&&800&29.02&35116\\
+		 19/06&1000&31&31000&&300&31&\\
+		 &&&&30/06(SF)&700&31&21700\\
+		 \hline
+		 &2200&&64616&&2200&&64616 \\
+		 \hline
+	 \end{tabular}
+	 \paragraph{Conclusion} 
+	 \begin{itemize}
+		 \item Les 300m$^2$ destinés à la fabrication de tables sont évalués à 7800\euro
+		 \item Les 1200m$^2$ destinés à la fabrication d'armoires sont évalués à 35116\euro
+		 \item Le stock final est évalué à 21700\euro 
+	 \end{itemize}
+	 \subsubsection{Méthode du dernier entrée, premier sorti}
+	 \begin{tabular}{|c|c|c|c| |c|c|c|c|}
+		 \hline
+		 \multicolumn{4}{|c||}{Entrées} & \multicolumn{4}{c|}{Sorties}\\
+		 \hline
+		 Date & Quantité & CU & Montant & Date & QUantité & CU & Montant\\
+		 \hline
+		 1/06 & 400 & 26 & 10400 & 10/06&300&29.02&8706\\
+		 5/06&800&29.02&23216&21/06&1000&31&\\
+		 &&&&&200&29.02&36804\\
+		 19/06&1000&31&31000&&&&\\
+		 &&&&30/06(SF)&300&29.02&19106\\
+		 &&&&&400&26&\\
+		 \hline
+		 &2200&&64616&&2200&&64616 \\
+		 \hline
+	 \end{tabular}
+	 \paragraph{Conclusion}
+	 \begin{itemize}
+		 \item Les 300 m$^2$ destinés à la fabrication de tables sont évalués à 8706\euro (au lieu de 7800\euro avec PEPS)
+		 \item Les 1200 m$^2$ destinés à la fabrication d'armoires sont évalués à 36804\euro (au lieu de 35116\euro avec PEPS)
+		 \item Le stock final est évalué à 19106\euro (au lieu de 21700\euro avec PEPS)
+	 \end{itemize}
+	 \subsubsection{Méthode du coût unitaire moyen pondéré}
+	 Les sorties sont évalués au $CUMP = \frac{SI_{en~valeur} + entree~du~mois_{en~valeur}}{SI_{en~quantité} + entrees~du~mois_{en~quantité}}$\\
+	 \begin{tabular}{|c|c|c|c| |c|c|c|c|}
+		 \hline
+		 \multicolumn{4}{|c||}{Entrées} & \multicolumn{4}{c|}{Sorties}\\
+		 \hline
+		 Date & Quantité & CU & Montant & Date & QUantité & CU & Montant\\
+		 \hline
+		 1/06(SI) & 400 & &10400&10/06&300&29.37&\textbf{8811}\\
+		 5/06&800&&23216&21/06&1200&29.37&\textbf{35244}\\
+		 19/06&1000&&31000&30/06(SF)&700&29.37&\textbf{20559}\\
+		 \hline
+		 &2200&29.37&64616&&2200&&\textbf{64616}\\
+		 \hline
+	 \end{tabular}
+	 \paragraph{Conclusion}
+	 Les planches utilisées ont un coût d'acquisition à nouveau différent. Il en est de même pour l'évaluation du stock final.
+	 \paragraph{Remarque}
+	 On ne peut évaluer ici la valeur des sorties que rétroactivement, c'est-à-dire une fois que l'on connaît toutes les entrées du mois.
+	 \subsection{Conséquences du choix de la méthode de valorisation des sorties}
+	 \begin{tabular}{|c|c|c|c|}
+		 \hline
+		 & \textbf{PEPS} & \textbf{CUMP}& \textbf{LIFO}\\
+		 \hline
+		 Sortie de stock & 42916 & 44056 & 45510\\
+		 \hline
+		 Stock final & 21700 & 20559 & 19106\\
+		 \hline
+	 \end{tabular}
+	 \\
+	 Dans notre exemple, nous avons eu une augmentation du prix et donc une hausse du coût d'acquisition (29.02\euro $\rightarrow$ 31\euro)
+
+	 Dans cette situation inflationniste, la méthode PEPS minore les coûts de sortie et majore les valeurs du stock final (méthode donc à adopter si on vend notre
+	 entreprise en période inflationniste)
+
+	 Pour la méthode LIFO, c'est le contraire, elle minore le stock final. En période de baisse des prix, le choix des méthodes aurait
+	 des conséquences opposées.
+
+
+\end{document}

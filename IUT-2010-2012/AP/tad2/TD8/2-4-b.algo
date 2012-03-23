@@ -1,0 +1,6 @@
+allouer(nouveau);
+si nouveau = NULL alors
+	declencher(listePleine);
+fin si;
+nouveau$\uparrow$.valeur <- e;
+nouveau$\uparrow$.suivant <- l;

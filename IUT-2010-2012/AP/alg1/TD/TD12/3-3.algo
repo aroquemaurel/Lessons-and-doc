@@ -1,0 +1,48 @@
+-- Rechercher dans le tableau tab de n elements le rang s'il existe d'un element x 
+-- si l'element existe trouve=VRAI et le rang est celui de l'une de ses occurences 
+-- sinon trouve=FAUX
+
+-- Necessite 
+--1 <= n  N declenche trancheInvalide
+-- \forall i \in [1..n-1], tab[i] <= tab[i+1]
+
+-- Entraine
+-- \forall i \in [1..n], tab[i] /= x => trouve = FAUX
+-- \exists i \in [1..n], tab[i] = x => trouve = VRAI 
+ 
+
+procedure rechercherParDihotomie(entree tab <TabEntier>,
+								entree n <Entier>,
+								entree x <Entier>,
+								sortie trouve <Booleen>,
+								sortie rang <Entier>)
+
+glossaire
+	iDeb <Entier>; --indice debut tranche
+	iFin <Entier>; --indice fin tranche
+	iMil <Entier>; --indice de l'element du milieu
+
+debut
+	si (n < 1) ou (n > N) alors
+		declancher trancheInvalide;
+	fin si;
+
+	iDeb <- 1;
+	iFin <- n;
+	iMil <- (iDeb + iFin) div 2; -- POINT D'ARRET 1
+
+	tantque iDeb <= iFin et tab[iMil] /= x faire
+		si tab[iMil] > x alors
+			iFin <- iMil - 1; -- POINT D'ARRET 2
+		sinon
+			iDeb <- iMil  +1; -- POINT D'ARRET 3
+		fin si;
+		iMil <- (iDeb + iFin) div 2; -- POINT D'ARRET 4
+	fin tantque;
+	si iDeb > iFin alors
+		trouve <- FAUX; --POINT D'ARRET 5
+	sinon -- POINT D'ARRET 6
+		trouve <- VRAI;
+		rang <- iMil;
+	fin si;
+fin

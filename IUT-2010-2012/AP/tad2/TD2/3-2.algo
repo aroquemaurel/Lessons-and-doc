@@ -1,0 +1,53 @@
+procedure additionner (entree p <Liste[Monome]>,
+					   entree q <Liste[Monome]>,
+					   sortie somme <Liste[Monome]>)
+	declenche listePleine
+
+glossaire
+	i <Entier>; --indice de parcours de p 
+	j <Entier>; --indice de parcours de q
+	k <Entier>; --indice de parcours de somme
+	e1 <Monome>;
+	e2 <Monome>;
+	e3 <Monome>;
+debut
+	creerListeVide(somme);
+	k <- 1;
+	i <- 1;
+	j <- 1;
+	tantque i <= longueur(p) et j <= longueur(q) faire
+		e1 <- ieme(p, i);
+		e2 <- ieme(q, j);
+		si exposant(e1) = exposant(e2) alors
+			e3 <- somme(e1, e2);
+			si coefficient(e3) /= 0 alors
+				inserer(somme, k, e3);
+				k <- k + 1;
+			fin si;
+			i <- i + 1;
+			j <- j + 1;
+		sinon
+			si exposant(e1) < exposant(e2) alors
+				inserer(somme, k, e1);	
+				k <- k + 1;
+				i <- i + 1;
+			sinon 
+				inserer(somme, k, e2);
+				k <- k + 1;
+				j <- j + 1;
+			fin si;
+		fin si;
+	fin tantque;
+
+	tantque i <= longueur(p) faire
+		inserer(somme, k,ieme(p,i));
+		i <- i + 1;
+	fin tantque;
+		
+	tantque j <= longueur(q) faire
+		inserer(somme, k, ieme(q,j));
+		j <- j + 1;
+	fin tantque;
+fin	
+
+-- logiscop 

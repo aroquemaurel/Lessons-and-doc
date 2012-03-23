@@ -1,0 +1,1 @@
+DELETE FROM plat WHERE idV='v12'; 

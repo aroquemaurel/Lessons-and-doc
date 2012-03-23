@@ -1,0 +1,10 @@
+procedure copier(sortie p1 <Point>, entree p1 <Point>)
+debut
+	p1 $\uparrow$ <- p2 $\uparrow$; -- copie des enregistrement
+fin
+
+fonction egal(entier p2 <Point>, entree p1 <Point>)
+		retourne <Booleen>
+debut
+	retourner (p1 $\uparrow$ = p2$\uparrow$) 
+fin

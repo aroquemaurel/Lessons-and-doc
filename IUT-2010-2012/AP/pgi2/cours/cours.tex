@@ -1,0 +1,350 @@
+\documentclass[12pt,a4paper,openany]{article}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+%\usepackage[frenchb]{babel}
+%\usepackage{layout}
+%\usepackage{setspace}
+%\usepackage{soul}
+%\usepackage{ulem}
+%\usepackage{eurosym}
+%\usepackage{bookman}
+%\usepackage{charter}
+%\usepackage{newcent}
+%\usepackage{lmodern}
+%\usepackage{mathpazo}
+%\usepackage{mathptmx}
+%\usepackage{url}
+%\usepackage{verbatim}
+%\usepackage{moreverb}
+%\usepackage{wrapfig}
+%\usepackage{amsmath}
+%\usepackage{mathrsfs}
+%\usepackage{asmthm}
+%\usepackage{makeidx}
+%\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+%\usepackage{multido}
+%\usepackage{amssymb}
+
+\input{/home/satenske/cours/listings.tex}
+
+\title{Cours\\ Programmation Internet}
+\date{PGI\\ Semestre 2}
+
+\lhead{Cours: Programmation Internet}
+\chead{}
+\rhead{\thepage}
+
+\lfoot{Université paul sabatier Toulouse III}
+\cfoot{\thepage}
+\rfoot{pgi2}
+
+\pagestyle{fancy}
+\begin{document}
+	\maketitle
+	\chapter{HTML}
+		\begin{itemize}
+			\item Balises
+			\item Doctype
+			\item Formulaires
+		\end{itemize}
+%		\lstinputlisting[language=html]{test.html}	
+		\paragraph{CMS} Content Managment System. Créer des sites sans utiliser 
+		du code HTML, automatisé, souvent logiciels libre, rapide et plus facile.
+		\section{Formulaires}
+		\paragraph{} Permet d'entrer des données par l'utilisateurs, lié à une 
+		page dynamique, forum; chat etc...\\
+		%\input{1.tex}
+		La saisie de formulaire se traite grâce au PHP, cependant leurs création
+		reste du HTML.\\
+		deux méthodes, GET et POST.\\
+		\subparagraph{GET} Accessible par l'URL. L'inconveignant étant la taille
+		maximum de caractère (buffer clavier)
+		\subparagraph{POST} Accessible grâce aux formulaires. L'inconveignant 
+		étant de resaisir les informations en cas d'erreur (sauf si utilisation 
+		de PHP ou JavaScript) \\
+		Les champs name sont toujours associer à un nom de variable en PHP,
+		toujours le renseigner, donner des noms claires.
+		
+		\subsection{Champ de texte monolignes}
+		\lstinputlisting[language=html]{1.html}	
+		\subsection{Champ de texte multilignes}
+		Textarea, permet d'insérer plusieurs lignes de code, avec éventuellement 
+		une scrollbar. (exemple: commentaire, message forum...)
+		\lstinputlisting[language=html]{2.html}	
+		\subsection{Champ de fichiers}
+		Permet de poster un fichier sur le serveur, possibilité de limiter le 
+		poids de fichier.\\
+		ATTENTIION: Toujours vérifier l'extension de fichier et la taille du fichier!
+		\lstinputlisting[language=html]{3.html}	
+		\subsection{Champ caché}
+		Permet de faire passer un champ que ne voit pas l'utilisateur, récupération 
+		de la donnée passé grâce au PHP
+		\lstinputlisting[language=html]{4.html}	
+		\subsection{Bouton radio}
+		Le bouton radio permet à l'utilisateur de ne choisir qu'un choix parmis 
+		une liste de choix (exemple Monsieur/Madame)
+		\lstinputlisting[language=html]{5.html}	
+		\subsection{Bouton simple}
+		\lstinputlisting[language=html]{6.html}	
+		\subsection{Liste}
+		\lstinputlisting[language=html]{7.html}	
+
+	\section{En-tête de document (head)}
+	La valise <head> contient de nombreux renseignement sur la page, sur l'auteur 
+	ainsi que la plupart des scripts.
+	\subsection{Titre}
+		\lstinputlisting[language=html]{8.html}	
+	\subsection{Insértion JavaScript}
+		\lstinputlisting[language=html]{9.html}	
+	\subsection{Style CSS}	
+		\lstinputlisting[language=html]{10.html}	
+	\subsection{Méta-données}
+		La plupart sont utilisées pour le référencement.
+		\lstinputlisting[language=html, caption="Encodage de caractère]{11.html}	
+		\begin{itemize}
+		\item meta description: description de la page
+		\item meta keyword: mots clefs de la page
+		\item meta rating: public visé
+		\item meta robots: pours les bots de référencement
+		\end{itemize}
+		\lstinputlisting[language=html]{12.html}	
+	\chapter{CSS}
+		CSS =  pour compléter pour le HTML: permet de mettre en forme la page.
+		Le HTML ne devrait être utilisé que pour le contenu et le html que pour
+		le fond.\\
+		\section{Insertion CSS}	
+		Trois façon de l'insérer comme dit précédemment. 
+		\subsection{FIchier à part}
+		\lstinputlisting[language=html]{13.html}	
+		\subsection{Dans l'en-tête}
+		\lstinputlisting[language=html]{14.html}	
+		\subsection{Dans le HTML}
+		\lstinputlisting[language=html]{15.html}	
+		\section{Syntaxe}
+			Le CSS possède sa propre << syntaxe >>.\\
+			Dans un CSS, on trouve trois élements différents: 
+			\begin{itemize}
+				\item Noms de balise
+				\item Des propriétés CSS
+				\item Des valeurs
+			\end{itemize}
+			\subsection{une Feuille de style}
+		\lstinputlisting[language=css]{1.css}	
+		\lstinputlisting[language=css]{2.css}	
+		\subsection{Exemple de propriétés}
+		\begin{itemize}
+			\item Font-family
+			\item Font-size
+			\item Font-style
+			\item Font-variangt
+			\item Color
+		\end{itemize}	
+		\subsection{Commentaires}
+			Les commentaires en css se font grâce à /* et */
+		\subsection{Attributs}
+			Les attributs s'utilisent pour donner un style à une ou plusieurs 
+			balise. On donne un nom a la ou les balises.
+			\subsubsection{id}
+				id ne peut s'utiliser qu'une seule fois dans le site.  
+		\lstinputlisting[language=html]{16.html}	
+		\lstinputlisting[language=css]{3.css}	
+			\subsubsection{class}
+				Class peut s'utiliser autant de fois que l'on veut dans le site.
+		\lstinputlisting[language=html]{17.html}	
+		\lstinputlisting[language=css]{4.css}	
+			\subsection{Balises universel}
+				Elles n'ont aucune utilité dans le html, elle ne servent qu'a 
+				donner un style css à des blocs.
+				\subsubsection{span}
+				span est une balise de type inline, elle est utilisée pour mettre
+				en forme du texte, elle doit être imbriquée dans une balise de type
+				block.
+				\subsubsection{div}
+				div est une balise de type block, retour à la ligne automatique.\\
+				Elle à été créer pour remplacer les tableaux, la plus utilisée.
+				Elle sert à mettre en forme le site web, avec on peut mettre en 
+				forme les blocs, les situer à x pixels du bord, centrer, etc...
+				\newpage
+				\subsection{Exemple}
+		\lstinputlisting[language=html, caption="Fichier HTML"]{18.html}	
+		\lstinputlisting[language=css, caption="Fichier CSS correspondant"]{5.css}	
+				\subsection{Découpage}
+%				\input{decoupe.tex}
+				\subsection{Liste des propriétés}
+					\begin{tabular}{|c|c|}
+						\hline
+							\textbf{Propriété} & \textbf{Valeurs possibles} \\
+						\hline
+							background-color & couleur (hexa, rgb, nom anglais)\\
+						\hline
+							background-image & url('urldelimage');\\
+						\hline
+							background-repeat & repeat-x, repeat-y, no-repeat\\
+						\hline
+							background & Super Propriété\\
+						\hline		
+					\end{tabular}\\ \\
+
+					\begin{tabular}{|c|c|}
+						\hline
+							\textbf{Propriété} & \textbf{Valeurs possibles} \\
+						\hline
+							text-decoration & none, underline, overline, ...\\
+						\hline
+					\end{tabular}\\ \\
+	\section{PHP \& MySQL}
+		PHP est un langage serveur qui est interprété
+		servant à dynamiser une page web. \\
+		En effet, avec uniquement (X)HTML, les sites sont statiques, le visiteur
+		ne peut pas interagire avec la page. \\
+		Cela devient possible grâce à PHP (Ex: page protégé par mot de passe)\\
+		c'est encore plus puissant si on couple PHP avec une base de données 
+		(exemple MySQL), on peut ainsi faire des forums, 
+		chat, news automatisés...\\
+		\paragraph{Exemple de concurrents PHP} PHP peut être remplacé par ASP, 
+		Ruby, JEE, Python ... \\
+		\paragraph{Exemple de concurrents MySQL} MySQL peut être remplacé 
+			par Oracle, PortgreSQL...
+%		\input{schemaCS.tex}	
+		\subsection{Syntaxe}
+			Le code doit toujours être placé entre les balises <?php ?> dans une 
+			page .php, le html peut se méler au php\\
+			Toutes les instructions se terminent par ;\\
+			Les commenaires se font avec // où /* */ \\
+		\lstinputlisting[language=php, caption="Exemple hello wolrd"]{1.php}	
+		\subsection{Variables}
+			Toutes les variables doivent commencer par un \$, l'affectation
+			se fait comme en C/C++.\\
+			Pas de déclaration, les types sont gérés automatiquement.
+		\lstinputlisting[language=php]{2.php}	
+			\subsection{Opérations arithmétiques}
+				\begin{tabular}{|c|c|}
+					\hline
+						+ & Addition\\
+					\hline
+						- & Soustraction  \\
+					\hline
+						/ & Division\\
+					\hline	
+						\% & Modulo\\
+					\hline	
+				\end{tabular}\\ \\
+		\lstinputlisting[language=php, caption=Exemple]{3.php}	
+		\subsection{Conditions}
+			Les conditions ressemblent beaucoup au C/C++.
+			\subsubsection{Opération de comparaison}
+				\begin{tabular}{|c|c|c|}
+					\hline	
+						== & & Égalité\\
+					\hline	
+						!= & & Différence\\
+					\hline	
+						< & & Inférieur\\
+					\hline	
+						> & & Supérieur\\
+					\hline	
+						>= & & Supérieur ou égal\\
+					\hline	
+						<= & & Inférieur ou égal\\
+					\hline	
+				\end{tabular}\\ \\
+			\subsubsection{Opérateurs logiques}
+				\begin{tabular}{|c|c|c|}
+					\hline
+						|| & OR & ou\\
+					\hline
+						\&\& & AND & et \\
+					\hline
+						! & & Négation\\
+					\hline
+				\end{tabular}\\ \\
+			\subsubsection{Concaténation}
+			\lstinputlisting[language=php, caption=Concaténation]{10.php}	
+					
+			\subsubsection{if}
+			\lstinputlisting[language=php, caption=if]{4.php}	
+			\subsubsection{switch}
+			\lstinputlisting[language=php, caption=switch]{5.php}	
+
+		\subsection{Boucles}
+			\subsubsection{While}
+			\lstinputlisting[language=php, caption=while]{6.php}	
+			\subsubsection{do...While}
+			\lstinputlisting[language=php, caption=do...while]{7.php}	
+			\subsubsection{for}
+			\lstinputlisting[language=php, caption=for]{8.php}	
+			\subsubsection{foreach}
+			\lstinputlisting[language=php, caption=foreach]{9.php}	
+					
+		\subsection{Fonction}
+			\subsubsection{Déclaration}
+			\lstinputlisting[language=php, caption=Déclaration fonction]{11.php}	
+			\lstinputlisting[language=php, caption=fonction]{12.php}	
+			Pour déclarer une une procédure, il suffit de ne pas mettre 
+			d'instruction return.
+			\paragraph{Remarque} L'appel de la fonction doit se situer après la
+			déclaration de la fonction.
+			\subsubsection{include};
+			\lstinputlisting[language=php, caption=Include]{13.php}	
+			La fonction include permet d'insérer le code contenu dans un autre
+			fichier.\\
+			Permet par exemple d'insérer les corps des fonctions.\\
+			\paragraph{Remarque} Il est possible d'inclure un fichier ne contenant
+			que du HTML, cela peut être utile pour inclure un menu par exemple, 
+			qui s'affiche sur toutes les pages, ainsi pour modifier le menu on 
+			n'aura a modifier que le fichier contenant le menu.
+		\subsection{Tableau}
+			\subsubsection{Tableau à index numérique}
+			\paragraph{} Ce sont les tableaux classiques.
+			\lstinputlisting[language=php, caption=Index numérique]{14.php}	
+			\paragraph{Remarque}Un tableau à index numérique commence à l'indice 0
+			\subsubsection{Tableau à index associatif}
+			\paragraph{} Très utilisé avec les bases de données.
+			\lstinputlisting[language=php, caption=Index associatif]{15.php}	
+			\paragraph{array\_key\_exist} Pour savoir si un array existe
+			\paragraph{in\_array} Pour savoir si c'est dans un array 
+		\subsection{Formulaires}
+			\lstinputlisting[language=HTML, caption=Formulaire]{19.html}	
+			\lstinputlisting[language=php, caption=Traitement]{16.php}	
+			\subsubsection{Passage de variable dans l'URL}
+			\lstinputlisting[language=HTML, caption=GET]{20.html}	
+			\lstinputlisting[language=php, caption=GET]{17.php}	
+		\subsection{Fichier}
+			\subsubsection{fopen}
+			\lstinputlisting[language=php, caption=fopen]{18.php}	
+			\subsubsection{fclose}
+			\lstinputlisting[language=php, caption=fclose]{19.php}	
+			\subsubsection{Mode d'ouverture}
+			%%%%%%%%% A COMPLETER %%%%%%%%%%%%
+				\begin{itemize}
+					\item r lecture seule
+					\item r+ lecture + ecriture
+					\item w ecriture
+					\item w+
+					\item a
+					\item a+
+				\end{itemize}
+			\subsubsection{fgets}
+			\lstinputlisting[language=php, caption=fgets]{20.php}	
+			\lstinputlisting[language=php, caption=fread]{21.php}	
+
+			\subsubsection{Autres fonction}
+				\begin{itemize}
+					\item feof
+					\item filesize
+					\item file\_exists
+					\item unlink
+				\end{itemize}	
+			
+			
+
+\end{document}
+
+

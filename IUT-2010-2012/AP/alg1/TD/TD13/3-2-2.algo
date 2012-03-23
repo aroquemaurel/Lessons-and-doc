@@ -1,0 +1,4 @@
+-- evalue la longueur et la valeur du plus long plateau d'une suite 
+procedure rechercherPlusLongPlateau(entree suite <TabSuite>,
+									sortie plateau <Couple>);
+

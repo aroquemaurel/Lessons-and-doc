@@ -1,0 +1,2778 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml"><head><link media="all" href="jointures_fichiers/widget52.css" type="text/css" rel="stylesheet">
+
+
+
+
+
+
+
+    
+
+        
+
+
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta name="keywords" content="langage, sql, bases, relationnelles, non, organisation, des, données...">
+        <meta name="description" content="Langage SQL, bases relationnelles ou non, organisation des données...">
+        <meta name="robots" content="index,follow">
+        <meta name="verify-v1" content="UL/4+QUCNTv1xBkNcC4sv4EjPUAoVj1yE+fMZClqLsc=">
+
+        <title>
+            Introduction aux jointures SQL
+        </title>
+
+        <link rel="shortcut icon" type="image/x-icon" href="http://www.siteduzero.com/Templates/images/designs/2/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="News du Site du Zéro" href="http://www.siteduzero.com/Templates/xml/news_fr.xml">
+        
+        <link rel="alternate" type="application/rss+xml" title="Derniers tutoriels du Site du Zéro" href="http://www.siteduzero.com/Templates/xml/tutoriels_fr.xml">
+        
+
+        <link rel="index" href="http://www.siteduzero.com/plan.html">
+        <link rel="start" title="Accueil" href="http://www.siteduzero.com/">
+        <link rel="search" type="application/opensearchdescription+xml" title="Site Du Zero" href="http://www.siteduzero.com/Templates/xml/xpi/fr/siteduzero.xpi">
+        <link rel="search" href="http://www.siteduzero.com/recherche.html" title="Rechercher">
+        <link rel="help" title="Accessibilité" href="http://www.siteduzero.com/accessibilite.html">
+        <link rel="accesskeys" title="Raccourcis et Accesskeys" href="http://www.siteduzero.com/accessibilite.html">
+
+
+        <link href="jointures_fichiers/design.css" rel="stylesheet" type="text/css" media="screen, handheld, tv, projection">
+        <link href="jointures_fichiers/zcode.css" rel="stylesheet" type="text/css" media="screen, handheld, tv, projection">
+        <link href="jointures_fichiers/impression.css" rel="stylesheet" type="text/css" media="print">
+
+
+        
+
+        
+
+        <!--[if lt IE 8]>
+            <link href="/css/ie_old.min.css?1297850855" rel="stylesheet" type="text/css" media="screen" />
+        <![endif]-->
+
+        
+            <style type="text/css">
+                .spoiler3
+                {
+                        visibility: hidden;
+                }
+                .spoiler3_hidden
+                {
+                        display: none;
+                }
+            </style>
+        
+        <script src="jointures_fichiers/ga.js" async="" type="text/javascript"></script><script type="text/javascript" src="jointures_fichiers/jquery.js"></script>
+        <script type="text/javascript" src="jointures_fichiers/jqueryui.js"></script>
+    </head><body><div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; z-index: 100000;"><iframe src="jointures_fichiers/sh32.html" style="height: 1px; width: 1px; position: absolute; z-index: 100000; border: 0pt none; left: 0pt; top: 0pt;" id="_atssh977"></iframe></div>
+		
+            <div id="acces_rapide">
+                <a href="#menu">Aller au menu</a> - <a href="#corps">Aller au contenu</a>
+            </div>
+
+            <div id="top">
+                <ul class="intersites">
+                    
+                    <li class="selected"><a href="http://www.siteduzero.com/">Informatique</a></li>
+                    <li><a href="#" id="bientot_lien">Bientôt...</a></li>
+                </ul>
+
+		<ul class="stats_sites">
+                    
+                    <li class="last_items"><a href="http://www.siteduzero.com/connectes.html">2 944 Zéros connectés</a> - </li>
+                    <li class="last_items"><a href="http://www.siteduzero.com/membres-292.html">226 804 Membres inscrits</a></li>
+		</ul>
+            </div>
+
+            <div id="header">
+                <div class="header_gauche">
+                    <a href="http://www.siteduzero.com/"><img src="jointures_fichiers/logo_sdz_fr.png" alt=""></a>
+                </div>
+
+                <div class="header_droit">
+                    <div class="fr">
+                        <div id="logbox">
+                            
+                                <div class="bloc_inscription">
+                                    <a href="http://www.siteduzero.com/membres-315.html">
+                                        <strong class="liens_invites">Inscription</strong><br>
+                                        Inscription rapide en 2 minutes
+                                    </a>
+                                </div>
+                                <div class="bloc_connexion">
+                                    <a href="http://www.siteduzero.com/connexion.html">
+                                        <strong class="liens_invites">Connexion</strong><br>
+                                        Utilisez votre compte
+                                    </a>
+                                    <a class="rpxnow" onclick="return false;" href="https://site-du-zero.rpxnow.com/openid/v2/signin?token_url=http%3A%2F%2Fwww.siteduzero.com%2Fmembres-348-1.html%3Freferer%3Dtutoriel-3-214617-introduction-aux-jointures-sql.html"><img src="jointures_fichiers/rpx_icons.png" alt="connexion_rpx"></a>
+                                    <script type="text/javascript">
+                                        var rpxJsHost = (("https:" == document.location.protocol) ? "https://" : "http://static.");
+                                        document.write(unescape("%3Cscript src='" + rpxJsHost +
+                                        "rpxnow.com/js/lib/rpx.js' type='text/javascript'%3E%3C/script%3E"));
+                                    </script><script src="jointures_fichiers/rpx.js" type="text/javascript"></script>
+                                    <script type="text/javascript">
+                                        RPXNOW.overlay = true;
+                                        RPXNOW.language_preference = 'fr';
+                                    </script>
+                                </div>
+                            
+                        </div>
+
+                        
+                    </div>
+
+                    <div id="publicite_header">
+                        <div id="publicite_banniere" class="publicite">
+                            <script type="text/javascript">
+                                <!--
+                                ord=Math.random();
+                                ord=ord*10000000000000000000;
+                                document.write('<scr'+'ipt type="text/javascript" src="pub.js.php?cb='+ord+'&amp;l=468&amp;h=60&amp;age=0&amp;pays=0&amp;cid=404"><\/scr'+'ipt>');
+                                -->
+                            </script><script type="text/javascript" src="jointures_fichiers/pub.html"></script>
+                        </div>
+
+                    </div>
+                    </div>
+                </div>
+
+                    <div id="speedbarre">
+                            <ul class="smenu">
+                                <li id="speed_accueil" class="home">
+                                    <a class="" href="http://www.siteduzero.com/" accesskey="1">
+                                        <span title="Accueil">Accueil</span>
+                                    </a>
+                                </li>
+                                
+                                <li class="" id="speed_cours">
+                                    <a class="" href="http://www.siteduzero.com/tutoriel.html">
+                                        <span>Cours</span>
+                                    </a>
+                                    <span class="speedbarre_arrow"></span>
+                                </li>
+                                <li class="" id="speed_forum">
+                                    <a class="" href="http://www.siteduzero.com/forum.html">
+                                        <span>Forums</span>
+                                    </a>
+                                    <span class="speedbarre_arrow"></span>
+                                </li>
+                                
+                                    <li class="" id="speed_concours">
+                                        <a class="" href="http://www.siteduzero.com/participez.html">
+                                            <span>Participez</span>
+                                        </a>
+                                        <span class="speedbarre_arrow"></span>
+                                    </li>
+                                    <li class="" id="speed_etudes">
+                                        <a href="http://www.siteduzero.com/etudes.html" class="last_item">
+                                            <span>Études</span>
+                                        </a>
+                                        <span class="speedbarre_arrow"></span>
+                                    </li>
+                                    <li class="" id="speed_job">
+                                        <a href="http://www.siteduzero.com/emploi.html" class="last_item">
+                                            <span>Emploi</span>
+                                        </a>
+                                        <span class="speedbarre_arrow"></span>
+                                    </li>
+
+                                    <li class="" id="speed_boutique">
+                                    <a href="http://www.siteduzero.com/boutique.html" class="last_item">
+                                            <span>Boutique</span>
+                                        </a>
+                                        <span class="speedbarre_arrow"></span>
+                                    </li>
+                                
+                            </ul>
+
+                            <div id="speedbar_expand" class="menuh" style="display: none;">
+                                <div class="menuh_content">
+                                    <div id="menuh_tutorials" style="display: none;">
+                                        
+
+                                        <div id="menu_tutorials">
+                                            <div class="menu_prim">
+                                                <h5>Les cours phares</h5>
+                                                <div class="menuh_list_category">
+                                                    <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-67-site-web.html"><img src="jointures_fichiers/67.png" alt=""></a></div>
+                                                    <h6><a href="http://www.siteduzero.com/tutoriel-1-67-site-web.html"><strong>Site Web</strong></a></h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-13666-apprenez-a-creer-votre-site-web.html"><span style="display: block;">XHTML / CSS</span></a></li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-309961-dynamisez-vos-sites-web-avec-javascript.html">Javascript</a></li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-14668-concevez-votre-site-web-avec-php-et-mysql.html">PHP / MySQL</a>
+                                                            <a href="http://www.siteduzero.com/boutique-614-107-concevez-votre-site-web-avec-php-et-mysql.html">
+                                                                <span class="in_book"><img src="jointures_fichiers/ico_livre.png" alt=""></span>
+                                                                <span style="display: none;">Ce cours existe en livre :<br>(Concevez votre site web avec PHP et MySQL)</span>
+                                                            </a>
+                                                        </li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-112219-apprenez-a-creer-des-applications-web-dynamiques-avec-jee.html">Java EE (J2EE)</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="menuh_list_category">
+                                                    <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-57-programmation.html"><img src="jointures_fichiers/57.png" alt=""></a></div>
+                                                    <h6><a href="http://www.siteduzero.com/tutoriel-1-57-programmation.html"><strong>Programmation</strong></a></h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-14189-apprenez-a-programmer-en-c.html">Langage C</a>
+                                                            <a href="http://www.siteduzero.com/boutique-614-65-apprenez-a-programmer-en-c.html">
+                                                                <span class="in_book"><img src="jointures_fichiers/ico_livre.png" alt=""></span>
+                                                                <span style="display: none;">Ce cours existe en livre :<br>(Apprenez à programmer en C)</span>
+                                                            </a>
+                                                        </li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-11406-apprenez-a-programmer-en-c.html">Langage C++</a></li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-10601-programmation-en-java.html">Java</a></li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-119239-programmation-en-java-api.html">Java (API)</a></li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-223267-apprendre-python.html">Python</a></li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-134798-visual_basic_net.html">VB .NET </a></li>
+                                                    </ul>
+                                                </div>
+
+
+                                                <div class="menuh_list_category">
+                                                    <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-60-systemes-d-exploitation.html"><img src="jointures_fichiers/60.png" alt=""></a></div>
+                                                    <h6><a href="http://www.siteduzero.com/tutoriel-1-60-systemes-d-exploitation.html"><strong>Systèmes d'exploitation</strong></a></h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-12827-reprenez-le-controle-a-l-aide-de-linux.html">Linux</a>
+                                                            <a href="http://www.siteduzero.com/boutique-614-171-reprenez-le-controle-a-l-aide-de-linux.html">
+                                                                <span class="in_book"><img src="jointures_fichiers/ico_livre.png" alt=""></span>
+                                                                <span style="display: none;">Ce cours existe en livre :<br>(Reprenez le contrôle a l'aide de Linux)</span>
+                                                            </a>
+                                                        </li>                                                    
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-273305-freebsd-et-l-envers-du-decor.html">FreeBSD</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="menuh_list_category">
+                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-56-graphisme.html"><img src="jointures_fichiers/56.png" alt=""></a></div>
+                                                    <h6><a href="http://www.siteduzero.com/tutoriel-1-56-graphisme.html"><strong>Graphisme</strong></a></h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-351765-debuter-sur-adobe-photoshop.html">Photoshop</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="menuh_list_category">
+                                                    <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-58-infographie-3d.html"><img src="jointures_fichiers/58.png" alt=""></a></div>
+                                                    <h6><a href="http://www.siteduzero.com/tutoriel-1-58-infographie-3d.html"><strong>Infographie 3D</strong></a></h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-11714-debutez-dans-la-3d-avec-blender.html">Blender</a></li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-228998-apprenez-a-modeliser-en-3d-avec-autodesk-maya.html">Maya </a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="menuh_list_category">
+                                                    <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-55-bureautique.html"><img src="jointures_fichiers/55.png" alt=""></a></div>
+                                                    <h6><a href="http://www.siteduzero.com/tutoriel-1-55-bureautique.html"><strong>Bureautique</strong></a></h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-258577-redigez-des-documents-de-qualite-professionnelle-avec-latex.html">LaTeX</a>
+                                                            <a href="http://www.siteduzero.com/boutique-614-207-redigez-des-documents-de-qualite-professionnelle-avec-latex.html">
+                                                                <span class="in_book"><img src="jointures_fichiers/ico_livre.png" alt=""></span>
+                                                                <span style="display: none;">Ce cours existe en livre :<br>(Rédigez des documents de qualité avec LaTeX)</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="menu_princi menuhcattuto ">
+                                                <h5>Tous les cours par catégories</h5>
+                                                <div class="menuh_princi_col">
+                                                    
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-67-site-web.html"><img src="jointures_fichiers/67.png" alt=""></a></div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-67-site-web.html">Site Web <span style="font-weight: normal;">(206 Cours)</span></a></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-69-xhtml-css.html">XHTML / CSS</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-1-210-php.html">PHP</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-71-divers.html">Divers</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-73-forums.html">Forums</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-77-hebergement.html">Hébergement</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-70-javascript.html">Javascript</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-74-serveur.html">Serveur</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-309-ide.html">IDE</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-60-systemes-d-exploitation.html"><img src="jointures_fichiers/60.png" alt=""></a></div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-60-systemes-d-exploitation.html">Systèmes d'exploitation <span style="font-weight: normal;">(96 Cours)</span></a></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-96-linux.html">Linux</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-147-macos.html">MacOS</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-1-97-windows.html">Windows</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-408-bsd.html">BSD</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-54-mapping.html"><img src="jointures_fichiers/54.png" alt=""></a></div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-54-mapping.html">Mapping <span style="font-weight: normal;">(31 Cours)</span></a></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-63-half-life.html">Half-Life</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-66-half-life.html">Half-Life²</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-173-warcraft.html">Warcraft</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-188-autres.html">Autres</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-55-bureautique.html"><img src="jointures_fichiers/55.png" alt=""></a></div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-55-bureautique.html">Bureautique <span style="font-weight: normal;">(29 Cours)</span></a></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-1-290-microsoft-office.html">Microsoft Office</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-1-291-openoffice-org.html">OpenOffice.org</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-87-firefox.html">Firefox</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-195-irc.html">IRC</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-192-divers.html">Divers</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-59-jeux-video.html"><img src="jointures_fichiers/59.png" alt=""></a></div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-59-jeux-video.html">Jeux Vidéo <span style="font-weight: normal;">(22 Cours)</span></a></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-102-hl-ses-mods.html">HL &amp; ses mods</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-185-autres-jeux.html">Autres jeux</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-61-materiel.html"><img src="jointures_fichiers/61.png" alt=""></a></div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-61-materiel.html">Matériel <span style="font-weight: normal;">(11 Cours)</span></a></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-101-general.html">Général</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+
+                                                    <div class="menuh_list_category">
+                                                        <div class="ico"><img src="jointures_fichiers/tuto_cat_thb.png" alt=""></div>
+                                                        <h6>Autres</h6>
+                                                        <ul>
+                                                            
+                                                                <li>
+                                                                    <a style="display: block;" href="http://www.siteduzero.com/tutoriel-2-404-bases-de-donnees.html">Bases de données</a>
+                                                                </li>
+                                                            
+                                                                <li>
+                                                                    <a style="display: block;" href="http://www.siteduzero.com/tutoriel-2-403-mobiles.html">Mobiles</a>
+                                                                </li>
+                                                            
+                                                                <li>
+                                                                    <a style="display: block;" href="http://www.siteduzero.com/tutoriel-2-141-site-du-zero.html">Site du Zéro</a>
+                                                                </li>
+                                                            
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                                <div class="menuh_princi_col">
+                                                    
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-57-programmation.html">
+                                                                    <img src="jointures_fichiers/57.png" alt=""></a>
+                                                                </div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-57-programmation.html">Programmation</a> <span style="font-weight: normal;">(244 Cours)</span></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-91-as-flash-flex.html">AS / Flash / Flex</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-217-algorithmique.html">Algorithmique</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-254-basic-et-derives.html">Basic et dérivés</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-1-344-bibliotheques.html">Bibliothèques</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-262-c.html">C</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-261-c.html">C++</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-201-c-net.html">C# / .NET</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-1-258-calculatrices.html">Calculatrices</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-242-ide.html">IDE</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-336-erlang.html">Erlang</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-227-general.html">Général</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-178-java.html">Java</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-93-mirc.html">mIRC</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-196-python.html">Python</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-355-caml-ocaml.html">Caml / OCaml</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-386-cocoa-objective-c.html">Cocoa / Objective-C</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-253-autres-langages.html">Autres langages</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-56-graphisme.html">
+                                                                    <img src="jointures_fichiers/56.png" alt=""></a>
+                                                                </div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-56-graphisme.html">Graphisme</a> <span style="font-weight: normal;">(27 Cours)</span></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-176-dessin.html">Dessin</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-177-divers.html">Divers</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-79-flash.html">Flash</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-157-gimp.html">Gimp</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-153-dessin-vectoriel.html">Dessin vectoriel</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-190-photofiltre.html">PhotoFiltre</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-78-photoshop.html">Photoshop</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-197-pov-ray.html">POV-Ray</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-58-infographie-3d.html">
+                                                                    <img src="jointures_fichiers/58.png" alt=""></a>
+                                                                </div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-58-infographie-3d.html">Infographie 3D</a> <span style="font-weight: normal;">(25 Cours)</span></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-95-3d-studio-max.html">3D Studio Max</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-152-blender.html">Blender</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-296-maya.html">Maya</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-62-multimedia.html">
+                                                                    <img src="jointures_fichiers/62.png" alt=""></a>
+                                                                </div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-62-multimedia.html">Multimédia</a> <span style="font-weight: normal;">(24 Cours)</span></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-99-audio.html">Audio</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-100-video.html">Vidéo</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-382-after-effects.html">After Effects</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-182-reseaux.html">
+                                                                    <img src="jointures_fichiers/182.png" alt=""></a>
+                                                                </div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-182-reseaux.html">Réseaux</a> <span style="font-weight: normal;">(18 Cours)</span></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-183-general.html">Général</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-189-securite.html">Sécurité</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+
+                                                    <div class="menuh_list_category">
+                                                        <div id="create_tutorials_button">
+                                                            
+                                                                <div><a href="http://www.siteduzero.com/connexion.html"><img src="jointures_fichiers/redigercours.png" alt=""></a></div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div id="menuh_forum" style="display: none;">
+                                        <div class="menu_princi">
+                                            <a class="button_all_forums" href="http://www.siteduzero.com/forum.html">Accueil des forums</a>
+                                            <div class="menuh_princi_col">
+                                                
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-121-site-web.html"><img src="jointures_fichiers/121.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-121-site-web.html">Site Web</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-122-xhtml-css.html">XHTML / CSS</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-338-javascript.html">Javascript</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-123-php.html">PHP</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-128-mapping.html"><img src="jointures_fichiers/128.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-128-mapping.html">Mapping</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-129-goldsource-hl1.html">GoldSource (HL1)</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-130-source-hl2.html">Source (HL2)</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-24-communaute-des-zeros.html"><img src="jointures_fichiers/24.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-24-communaute-des-zeros.html">Communauté des zéros</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-28-discussions-generales.html">Discussions générales</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-278-vos-etudes.html">Vos études</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-239-presentation-de-vos-projets.html">Présentation de vos projets</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-200-recrutements-pour-vos-projets.html">Recrutements pour vos projets</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-440-sciences.html"><img src="jointures_fichiers/440.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-440-sciences.html">Sciences</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-441-mathematiques.html">Mathématiques</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-442-physique-chimie.html">Physique - Chimie</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-443-biologie-et-geologie.html">Biologie et Géologie</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-444-autres-sciences.html">Autres sciences</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                            </div>
+
+                                            <div class="menuh_princi_col">
+                                                
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-125-programmation.html"><img src="jointures_fichiers/125.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-125-programmation.html">Programmation</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-126-langage-c.html">Langage C</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-237-langage-c.html">Langage C++</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-305-langage-java.html">Langage Java</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-407-langage-python.html">Langage Python</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-406-bases-de-donnees.html">Bases de données</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-127-autres-langages-outils-et-approches.html">Autres langages, outils et approches</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-219-materiel-et-logiciels.html"><img src="jointures_fichiers/219.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-219-materiel-et-logiciels.html">Matériel et logiciels</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-339-discussions-informatiques.html">Discussions informatiques</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-220-linux-mac-et-bsd.html">Linux, Mac et *BSD</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-221-windows.html">Windows</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-116-jeux-video.html">Jeux vidéo</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-117-graphisme.html">Graphisme</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-223-materiel.html">Matériel</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-310-concours.html"><img src="jointures_fichiers/310.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-310-concours.html">Concours</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-435-innov-game-2011-a-la-gloire-de.html">Innov'Game 2011 : A la gloire de</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-447-atelier-de-noel-faites-votre-jeu.html">Atelier de noël : "Faites votre jeu"</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-143-le-site-du-zero.html"><img src="jointures_fichiers/143.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-143-le-site-du-zero.html">Le Site du Zéro</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-144-suggestions-et-commentaires.html">Suggestions et Commentaires</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-145-designs-du-site-du-zero.html">Designs du Site du Zéro</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-429-tutoriels-du-site-du-zero.html">Tutoriels du Site du Zéro</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                            </div>
+                                        </div>
+
+                                        
+                                    <div class="clear"></div>
+                                    </div>
+                                    <div id="menuh_collaborate" style="display: none;">
+                                        <div class="menuh_list_category">
+                                            
+                                                <div class="ico"><a href="http://www.siteduzero.com/membres-315.html"><img src="jointures_fichiers/tuto_cat_thb.png" alt=""></a></div>
+                                                <h6><a href="http://www.siteduzero.com/membres-315.html">Cours</a></h6>
+                                                <ul>
+                                                    <li style="font-style: italic;">Pour rédiger et participer à la rédaction d'un tutoriel, <a style="display: inline; font-style: normal;" href="http://www.siteduzero.com/membres-315.html">rejoignez-nous !</a></li>
+                                                </ul>
+                                            
+                                        </div>
+
+                                        <div class="menuh_list_category">
+                                            
+                                                <div class="ico"><a href="http://www.siteduzero.com/membres-315.html"><img src="jointures_fichiers/defaut_thb.png" alt=""></a></div>
+                                                <h6><a href="http://www.siteduzero.com/membres-315.html">News</a></h6>
+                                                <ul>
+                                                    <li style="font-style: italic;">Pour partager ou participer à la rédaction d'une news, <a style="display: inline; font-style: normal;" href="http://www.siteduzero.com/membres-315.html"> rejoignez-nous !</a></li>
+                                                </ul>
+                                            
+                                        </div>
+
+                                        <div class="menuh_list_category">
+                                            <div class="ico"><a href="http://www.siteduzero.com/concours.html"><img src="jointures_fichiers/cup_thb.png" alt=""></a></div>
+                                            <h6><a href="http://www.siteduzero.com/concours.html">Concours</a></h6>
+                                            <ul>
+                                                
+                                                        <li><a href="http://www.siteduzero.com/concours-654-122-innov-game-2011-a-la-gloire-de.html">Innov'Game 2011 : A la gloire de</a></li>
+                                                    
+                                            </ul>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+
+
+                                    <div id="menuh_job" style="display: none;">
+                                        <div class="menu_princi">
+                                            <div class="menuh_princi_col">
+                                                <div class="menuh_list_category">
+                                                    <h6>Dernières annonces</h6>
+                                                    <div class="menuh_list_category_job">
+                                                        
+                                                            <a title="Consulter le poste : Consultant en Architecture S…" href="http://www.siteduzero.com/emploi/45/consultant-en-architecture-si-logicielle" class="corpsmenu">
+                                                                <span class="last_jobs">
+                                                                    <span title="CDI" class="job_type jobtypes1">CDI</span>
+                                                                </span>
+                                                                <span>
+                                                                    <span class="job_title">Consultant en Architecture S…</span>
+                                                                    <span style="color: rgb(0, 0, 0);">Solucom</span>
+                                                                </span>
+                                                            </a>
+                                                        
+                                                            <a title="Consulter le poste : Consultant en Architecture S…" href="http://www.siteduzero.com/emploi/46/consultant-en-architecture-si-technique" class="corpsmenu">
+                                                                <span class="last_jobs">
+                                                                    <span title="CDI" class="job_type jobtypes1">CDI</span>
+                                                                </span>
+                                                                <span>
+                                                                    <span class="job_title">Consultant en Architecture S…</span>
+                                                                    <span style="color: rgb(0, 0, 0);">Solucom</span>
+                                                                </span>
+                                                            </a>
+                                                        
+                                                            <a title="Consulter le poste : Consultant en Gouvernance SI…" href="http://www.siteduzero.com/emploi/47/consultant-en-gouvernance-si" class="corpsmenu">
+                                                                <span class="last_jobs">
+                                                                    <span title="CDI" class="job_type jobtypes1">CDI</span>
+                                                                </span>
+                                                                <span>
+                                                                    <span class="job_title">Consultant en Gouvernance SI…</span>
+                                                                    <span style="color: rgb(0, 0, 0);">Solucom</span>
+                                                                </span>
+                                                            </a>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                
+                                                <div class="menuh_princi_col">
+                                                    <div class="menuh_list_category">
+                                                        <h6>Annonces à la une</h6>
+                                                        <div class="menuh_list_category_job">
+                                                            
+                                                                <a title="Consulter le poste : Stage : Télétravail et sé…" href="http://www.siteduzero.com/emploi/22/stage-teletravail-et-securite-des-postes-mobiles" class="corpsmenu">
+
+                                                                    <span class="last_jobs">
+                                                                        <span title="Stage" class="job_type jobtypes3">Stage</span>
+                                                                    </span>
+                                                                    <span>
+                                                                        <span class="job_title">Stage : Télétravail et sé…</span>
+                                                                        <span style="color: rgb(0, 0, 0);">NetXP</span>
+                                                                    </span>
+                                                                </a>
+                                                            
+                                                                <a title="Consulter le poste : Ingénieur Etudes et Dévelo…" href="http://www.siteduzero.com/emploi/4/ingenieur-etudes-et-developpements-c" class="corpsmenu">
+
+                                                                    <span class="last_jobs">
+                                                                        <span title="CDI" class="job_type jobtypes1">CDI</span>
+                                                                    </span>
+                                                                    <span>
+                                                                        <span class="job_title">Ingénieur Etudes et Dévelo…</span>
+                                                                        <span style="color: rgb(0, 0, 0);">TEAM TRADE GROUPE</span>
+                                                                    </span>
+                                                                </a>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <div class="menuh_list_category">
+                                                        <div>
+                                                            <div><a href="http://www.siteduzero.com/emploi.html"><img src="jointures_fichiers/speed_barre_btn_recherche_emploi.png" alt=""></a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="menuh_more2">
+                                                        <a href="http://www.siteduzero.com/emploi/liste.html">Toutes les annonces<img src="jointures_fichiers/fleche_droite.png" alt="►"></a>
+                                                </div>
+                                            </div>
+                                        <div class="clear"></div>
+                                    </div>
+
+                                    <div id="menuh_study" style="display: none; padding-left: 15px;">
+                                        <div class="menu_princi">
+                                            <div class="ico_study"><img src="jointures_fichiers/ico_etude.png" alt="icon etude" width="50"></div>
+                                            <div class="menuh_princi_col">
+                                                <div class="menuh_list_category">
+                                                    <h6>Recrutement à Bac / Bac +1</h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-280-bts.html">BTS</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-269-ecoles-d-ing%C3%A9nieurs-en-informatique.html">Ecoles d'ingénieurs en informatique</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-274-ecoles-d-ing%C3%A9nieurs-generalistes.html">Ecoles d'ingénieurs généralistes</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-283-iut.html">IUT</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-300-universites.html">Universités</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-287-autre-formation-diplomantes.html">Autres formations diplômantes</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-448-cpge.html">CPGE</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="menuh_list_category">
+                                                    <h6>Recrutement à Bac +2</h6>
+                                                    <ul>
+                                                       <li><a href="http://www.siteduzero.com/etudes-550-270-ecoles-d-ing%C3%A9nieurs-en-informatique.html">Ecoles d'ingénieurs en informatique</a></li>
+                                                       <li><a href="http://www.siteduzero.com/etudes-550-273-ecoles-d-ing%C3%A9nieurs-generalistes.html">Ecoles d'ingénieurs généralistes</a></li>
+                                                       <li><a href="http://www.siteduzero.com/etudes-550-289-autre-formation-diplomantes.html">Autres formations diplômantes</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div class="menuh_princi_col">
+                                                <div class="menuh_list_category">
+                                                    <h6>Recrutement à Bac +3 / Bac +4</h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-388-ecoles-d-ing%C3%A9nieurs-en-informatique.html">Ecoles d'ingénieurs en informatique</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-389-ecoles-d-ing%C3%A9nieurs-generalistes.html">Ecoles d'ingénieurs généralistes</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-390-autre-formation-diplomantes.html">Autres formations diplômantes</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="menuh_list_category">
+                                                    <h6>Recrutement à Bac +5</h6>
+                                                    <ul>
+                                                       <li><a href="http://www.siteduzero.com/etudes-550-299-doctorats.html">Doctorats</a></li>
+                                                       <li><a href="http://www.siteduzero.com/etudes-550-391-autre-formation-diplomantes.html">Autres formations diplômantes</a></li>
+                                                    </ul>
+                                                    <div class="menuh_list_category">
+                                                        <div id="find_training">
+                                                            <div><a href="http://www.siteduzero.com/etudes.html"><img src="jointures_fichiers/ico_recherche_cours.png" alt=""><strong>Trouvez une formation</strong></a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+
+                                    <div id="menuh_shop" style="display: none;">
+                                        <div class="flagship_products">
+                                            <a href="http://www.siteduzero.com/boutique-614-384-peluche-zozor.html"><img src="jointures_fichiers/peluche_zozor.png" alt="peluche zozor"></a>
+                                            <h5>Zozor en peluche</h5>
+                                            <div class="price" style="margin-top: 46px;">
+                                                19 €
+                                            </div>
+                                            <span><a class="bouton_action fl" href="http://www.siteduzero.com/boutique-614-384-peluche-zozor.html">Acheter</a></span>
+                                        </div>
+                                        <div class="flagship_products">
+                                            <a href="http://www.siteduzero.com/boutique-614-188-cle-usb-du-site-du-zero-8-go.html"><img src="jointures_fichiers/image_usb_speedbarre.jpg" alt="cle usb"></a>
+                                            <h5>Clé USB du site du Zéro</h5>
+                                            <a href="http://www.siteduzero.com/boutique-614-184-cle-usb-du-site-du-zero-4-go.html">4 Go</a>
+                                            - <a href="http://www.siteduzero.com/boutique-614-188-cle-usb-du-site-du-zero-8-go.html">8 Go</a>
+                                            - <a href="http://www.siteduzero.com/boutique-614-191-cle-usb-du-site-du-zero-16-go.html">16 Go</a><br>
+                                            <div class="price">
+                                                <span class="min_price">À partir de</span><br>
+                                                15,20 €
+                                            </div>
+                                            <span><a class="bouton_action fl" href="http://www.siteduzero.com/boutique-614-188-cle-usb-du-site-du-zero-8-go.html">Acheter</a></span>
+                                        </div>
+
+                                    <div class="other_products">
+                                        <span>Concevez votre site web avec PHP et MySQL<br>
+                                        <a href="http://www.siteduzero.com/boutique-614-107-concevez-votre-site-web-avec-php-et-mysql.html">En savoir plus ►</a></span>
+                                        <a href="http://www.siteduzero.com/boutique-614-107-concevez-votre-site-web-avec-php-et-mysql.html">
+                                        <img style="margin: 13px 0pt 0pt 22px;" alt="Concevez votre site web avec php et mysql" src="jointures_fichiers/livre_cours_php_2d.png"></a>
+                                    </div>
+
+                                    <div class="other_products">
+                                        <span>Apprenez à programmer en C <br>
+                                        <a href="http://www.siteduzero.com/boutique-614-65-apprenez-a-programmer-en-c.html">En savoir plus ►</a></span>
+                                        <a href="http://www.siteduzero.com/boutique-614-65-apprenez-a-programmer-en-c.html">
+                                        <img style="margin: 13px 0pt 0pt 22px;" alt="Apprenez à programmer en C" src="jointures_fichiers/livre_cours_c_2d.png"></a>
+                                    </div>
+                                    <div class="other_products">
+                                        <span>Reprenez le contrôle à l'aide de Linux <br>
+                                        <a href="http://www.siteduzero.com/boutique-614-171-reprenez-le-controle-a-l-aide-de-linux.html">En savoir plus ►</a></span>
+                                        <a href="http://www.siteduzero.com/boutique-614-171-reprenez-le-controle-a-l-aide-de-linux.html">
+                                        <img style="margin: 13px 0pt 0pt 22px;" alt="Reprenez le contrôle à l'aide de Linux" src="jointures_fichiers/livre_cours_linux_2d.png"></a>
+                                    </div>
+
+                                    <div class="other_products">
+                                        <span>Rédigez des documents de qualité avec LaTeX<br>
+                                        <a href="http://www.siteduzero.com/boutique-614-207-redigez-des-documents-de-qualite-avec-latex.html">En savoir plus ►</a></span>
+                                        <a href="http://www.siteduzero.com/boutique-614-207-redigez-des-documents-de-qualite-avec-latex.html">
+                                        <img style="margin: 13px 0pt 0pt 22px;" alt="Rédigez des documents de qualité avec LaTeX" src="jointures_fichiers/livre_cours_latex_2d.png"></a>
+                                    </div>
+                                      
+                                    <div class="menuh_more">
+                                        <a href="http://www.siteduzero.com/boutique.html">Tous les produits <img src="jointures_fichiers/fleche_droite_002.png" alt="►"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="search_bar">
+                        <div class="ard"></div>
+                        <form method="get" action="recherche.html" id="recherche">
+                            <p>
+                                <input name="src" id="champ_recherche" accesskey="4" value="Rechercher" type="text">
+                                <select name="c" id="section_recherche">
+                                    <option value="3" selected="selected">Cours</option>
+                                    <option value="6">Forums</option>
+                                    <option value="4">News</option>
+                                    <option value="mbr">Membres</option>
+                                    <option value="formation">Études</option>
+                                    <option value="codeweb">Code web</option>
+                                    <option value="mp">MP</option>
+                                </select>
+                                <input class="button_go_search" value="Go" type="submit">
+                                <a class="button_more_search" href="http://www.siteduzero.com/recherche.html">+</a>
+                            </p>
+                        </form>
+                        </div>
+
+                    </div>
+
+<script type="text/javascript">
+
+    
+        //On Hover
+
+    var keyCodeEscape = 27;
+    $(document).keyup(function(f) {
+        if (f.keyCode == keyCodeEscape)
+        {
+            hideBlocMenu();
+        }
+    });
+
+
+    /* Var for speedbar*/
+    showDelay = 300;
+    hiddenDelay = 367;
+    fadeInDelay = 100
+    fadeOutDelay = 100
+    timer = null;
+    hideTimeOut = null
+    // speedbar function
+    function speedShowDelay(){
+        if($('.menuh_content > div').is(':visible'))
+        {
+            showDelay = null;
+        }
+        else
+        {
+            showDelay = 300;
+        }
+    }
+    
+    $("body").mouseleave(function(){
+        $('.menuh_content > div').hide();
+        $('#speedbarre .smenu>li a').removeClass("smenu_hover");
+    });
+    
+    function showMenu(id, id2){
+
+        $(id2).click(function(){
+            clearInterval(timer);
+            hideBlocMenu();
+            return;
+        });
+
+        speedShowDelay();
+
+        $("body").unbind('click');
+
+        clearInterval(timer);
+        if(!$(id).is(':visible'))
+        {
+            $('.menuh_content > div').hide();
+
+            $('#speedbarre .smenu>li a').removeClass("smenu_hover");
+            $('#speedbarre .smenu > li > .speedbarre_arrow').hide();
+
+            timer=setInterval(function(){
+                $(id+' ,#speedbar_expand').fadeIn(fadeInDelay);
+                $(id2+' a').addClass('smenu_hover')
+                clearInterval(timer);
+
+                },showDelay);
+        }
+    }
+
+    function hideMenu(id, id2){
+
+        clearInterval(timer);
+        clearTimeout(hideTimeOut);
+
+        $("body").bind('click',function(){
+            hideBlocMenu();
+        });
+
+        timer=setInterval(function(){
+            $(id).fadeOut(fadeOutDelay,function(){
+                $('#speedbar_expand').hide();
+                $(id2+' a').removeClass("smenu_hover");
+            });
+            clearInterval(timer);
+        },hiddenDelay)
+    }
+
+    function hideBlocMenu(){
+        $('.menuh_content > div').fadeOut(fadeOutDelay, function(){
+            $('#speedbar_expand').hide();
+            $('#speedbarre .smenu>li a').removeClass("smenu_hover");})
+    }
+
+        /* speedbar */
+
+
+    $("#speed_cours").addClass('hideOnLoad');
+    $("#speed_forum").addClass('hideOnLoad');
+    $("#speed_concours").addClass('hideOnLoad');
+    $("#speed_job").addClass('hideOnLoad');
+    $("#speed_etudes").addClass('hideOnLoad');
+    $("#speed_boutique").addClass('hideOnLoad');
+
+
+
+    $(document).mousemove(function(){
+        $("#speed_cours").removeClass('hideOnLoad');
+        $("#speed_forum").removeClass('hideOnLoad');
+        $("#speed_concours").removeClass('hideOnLoad');
+        $("#speed_job").removeClass('hideOnLoad');
+        $("#speed_etudes").removeClass('hideOnLoad');
+        $("#speed_boutique").removeClass('hideOnLoad');
+    })
+
+
+    //TUTORIALS
+    $("#speed_cours, #menuh_tutorials").hover(function(){
+        clearTimeout(hideTimeOut);
+        id = '#menuh_tutorials';
+        id2 = '#speed_cours';
+        if(!$(id2).hasClass('hideOnLoad'))
+        {
+            hideTimeOut = setTimeout(function(){
+                showMenu(id, id2);
+            },100);
+        }
+
+    ;},function(){
+
+        id = '#menuh_tutorials';
+        id2 = '#speed_cours';
+        hideMenu(id, id2);
+    });
+    //FORUMS
+    $("#speed_forum, #menuh_forum").hover(function(){
+        clearTimeout(hideTimeOut);
+        id = '#menuh_forum';
+        id2 = '#speed_forum';
+
+        if(!$(id2).hasClass('hideOnLoad'))
+        {
+            hideTimeOut = setTimeout(function(){
+                showMenu(id, id2);
+            },100);
+        }
+
+    ;},function(){
+
+        id = '#menuh_forum';
+        id2 = '#speed_forum';
+        hideMenu(id, id2);
+    });
+
+    //COLLABORATE
+    $("#speed_concours, #menuh_collaborate").hover(function(){
+        clearTimeout(hideTimeOut);
+        id = '#menuh_collaborate';
+        id2 = '#speed_concours';
+        if(!$(id2).hasClass('hideOnLoad'))
+        {
+            hideTimeOut = setTimeout(function(){
+                showMenu(id, id2);
+            },100);
+        }
+
+    ;},function(){
+
+        id = '#menuh_collaborate';
+        id2 = '#speed_concours';
+        hideMenu(id, id2);
+    });
+
+    //JOB
+    $("#speed_job, #menuh_job").hover(function(){
+        clearTimeout(hideTimeOut);
+        id = '#menuh_job';
+        id2 = '#speed_job';
+        if(!$(id2).hasClass('hideOnLoad'))
+        {
+            hideTimeOut = setTimeout(function(){
+                showMenu(id, id2);
+            },100);
+        }
+
+    ;},function(){
+
+        id = '#menuh_job';
+        id2 = '#speed_job';
+        hideMenu(id, id2);
+    });
+
+    //STUDY
+    $("#speed_etudes, #menuh_study").hover(function(){
+        clearTimeout(hideTimeOut);
+        id = '#menuh_study';
+        id2 = '#speed_etudes';
+        if(!$(id2).hasClass('hideOnLoad'))
+        {
+            hideTimeOut = setTimeout(function(){
+                showMenu(id, id2);
+            },100);
+        }
+
+    ;},function(){
+
+        id = '#menuh_study';
+        id2 = '#speed_etudes';
+        hideMenu(id, id2);
+    });
+
+    //SHOP
+    $("#speed_boutique, #menuh_shop").hover(function(){
+        clearTimeout(hideTimeOut);
+        id = '#menuh_shop';
+        id2 = '#speed_boutique';
+        if(!$(id2).hasClass('hideOnLoad'))
+        {
+            hideTimeOut = setTimeout(function(){
+                showMenu(id, id2);
+            },100);
+        }
+
+    ;},function(){
+
+        id = '#menuh_shop';
+        id2 = '#speed_boutique';
+        hideMenu(id, id2);
+    });
+
+    
+
+</script>
+            
+            <div class="contenu">
+                <div id="menu">
+                    
+
+                    <div class="box_menu">
+                        <h5>Cours</h5>
+
+                        <div class="corpsmenu">
+                            <ul>
+                                
+                                    <li style="border-bottom: 0pt none; padding: 0pt 0pt 2px; background-color: rgb(226, 240, 255);">
+                                        <a href="http://www.siteduzero.com/tutoriel-3-361996-par-ou-commencer.html"><img style="padding-left: 5px;" src="jointures_fichiers/compass.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu" style="margin-left: 43px;">
+                                            <a href="http://www.siteduzero.com/tutoriel-3-361996-par-ou-commencer.html"><strong class="menu_cours_section">Nouveau ?</strong></a>
+                                            <ul>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-361996-par-ou-commencer.html">Suivez le guide !</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.siteduzero.com/tutoriel-1-67-site-web.html"><img src="jointures_fichiers/67.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu">
+                                            <a href="http://www.siteduzero.com/tutoriel-1-67-site-web.html"><strong class="menu_cours_section">Site Web</strong></a>
+                                            <ul>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-13666-apprenez-a-creer-votre-site-web.html">XHTML / CSS</a></li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-309961-dynamisez-vos-sites-web-avec-javascript.html">Javascript</a></li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-14668-concevez-votre-site-web-avec-php-et-mysql.html">PHP / MySQL</a></li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-112219-apprenez-a-creer-des-applications-web-dynamiques-avec-jee.html">Java EE (J2EE)</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.siteduzero.com/tutoriel-1-57-programmation.html"><img src="jointures_fichiers/57.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu">
+                                            <a href="http://www.siteduzero.com/tutoriel-1-57-programmation.html"><strong class="menu_cours_section">Programmation</strong></a>
+                                            <ul>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-14189-apprenez-a-programmer-en-c.html">Langage C</a></li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-11406-apprenez-a-programmer-en-c.html">Langage C++</a></li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-10601-programmation-en-java.html">Java</a></li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-119239-programmation-en-java-api.html">Java (API)</a></li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-223267-apprendre-python.html">Python </a></li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-134798-visual_basic_net.html">VB .NET</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>                                        
+                                        <a href="http://www.siteduzero.com/tutoriel-1-60-systemes-d-exploitation.html"><img src="jointures_fichiers/60.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu">
+                                            <a href="http://www.siteduzero.com/tutoriel-1-60-systemes-d-exploitation.html"><strong class="menu_cours_section">Systèmes d'exploitation</strong></a>
+                                            <ul>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-12827-reprenez-le-controle-a-l-aide-de-linux.html">Linux</a></li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-273305-freebsd-et-l-envers-du-decor.html">FreeBSD</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.siteduzero.com/tutoriel-1-56-graphisme.html"><img src="jointures_fichiers/56.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu">
+                                            <a href="http://www.siteduzero.com/tutoriel-1-56-graphisme.html"><strong class="menu_cours_section">Graphisme</strong></a>
+                                            <ul>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-351765-debuter-sur-adobe-photoshop.html">Photoshop</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.siteduzero.com/tutoriel-1-58-infographie-3d.html"><img src="jointures_fichiers/58.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu">
+                                            <a href="http://www.siteduzero.com/tutoriel-1-58-infographie-3d.html"><strong class="menu_cours_section">Infographie 3D</strong></a>
+                                            <ul>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-11714-debutez-dans-la-3d-avec-blender.html">Blender</a></li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-228998-apprenez-a-modeliser-en-3d-avec-autodesk-maya.html">Maya</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <a href="http://www.siteduzero.com/tutoriel-1-55-bureautique.html"><img src="jointures_fichiers/55.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu">
+                                            <a href="http://www.siteduzero.com/tutoriel-1-55-bureautique.html"><strong class="menu_cours_section">Bureautique</strong></a>
+                                            <ul>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-258577-redigez-des-documents-de-qualite-professionnelle-avec-latex.html">LaTeX </a></li>
+                                            </ul>
+                                        </div>
+                                        
+                                    </li>
+                                    
+                                    
+                                    <li class="last_idem_liste">
+                                        <img src="jointures_fichiers/die.png" class="fl" alt="">
+                                        <div class="liste_cours_menu">
+                                            <strong class="menu_cours_section">Tutoriel du jour</strong><br>
+                                            <a href="http://www.siteduzero.com/tutoriel-3-209964-dissimuler-un-texte-dans-une-image.html">Dissimuler un texte dans une image</a><br>
+                                        </div>
+                                        <div id="menu_ajout_cours">
+                                            
+                                                <a href="http://www.siteduzero.com/tutoriel-3-256867-devenez-auteur-de-cours-sur-le-site-du-zero-et-le-livre-du-zero.html">
+                                            
+                                            Rédigez un cours <img src="jointures_fichiers/add.png" alt="">&nbsp;</a>
+                                        </div>
+                                        <a href="http://www.siteduzero.com/tutoriel.html" class="fr">Tous les cours  <img src="jointures_fichiers/fleche_droite.png" alt="">&nbsp;</a><br>
+                                    </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="corps">
+                    <div id="zozor_position">
+                        <div id="zozor">
+                            <div class="centre"><img src="jointures_fichiers/zozor6.png" alt=" Zozor" title=" Zozor"></div>
+                       </div>
+                    </div>
+
+                    <div id="container_bulle_zozor">
+                        
+                    </div>
+
+                    <div id="arbre">
+                        
+			&gt;  <a href="http://www.siteduzero.com/">Le Site du Zéro</a>
+		
+			&gt;  <a href="http://www.siteduzero.com/tutoriel.html">Cours</a>
+			 &gt;  <a href="http://www.siteduzero.com/tutoriel-1-352-tutoriels.html">Tutoriels</a>
+		 &gt;  <a href="http://www.siteduzero.com/tutoriel-2-404-bases-de-donnees.html">Bases de données</a>
+		&gt;  <a href="http://www.siteduzero.com/tutoriel-3-214617-introduction-aux-jointures-sql.html">Introduction aux jointures SQL</a> 
+
+&gt; Lecture du tutoriel
+
+                    </div>
+
+                    
+
+
+
+<h1>
+    Introduction aux jointures SQL
+    
+</h1>
+
+
+<div id="onglets_tutos" class="onglets_tutos">
+  <ul>
+    
+      <li class="selected">
+      <a href="http://www.siteduzero.com/tutoriel-3-214617-introduction-aux-jointures-sql.html">Tutoriel</a></li>
+    
+      <li>
+      <a href="http://www.siteduzero.com/tutoriel-50-214617-p1-introduction-aux-jointures-sql.html#r64704">29 commentaires</a></li>
+    
+      <li>
+      <a href="http://www.siteduzero.com/tutoriel-21-214617-introduction-aux-jointures-sql.html">Historique</a></li>
+    
+  </ul>
+</div>
+<hr class="bas_onglets">
+
+
+
+
+<div class="cadre_auteur_date">
+    <form action="tutoriel-54-214617.html" method="post">
+        <div class="dnone"><input value="acccb602a53c0042582787a018b8726934cca9f6" name="challenge" type="hidden"></div>
+
+        <div class="infobox">
+<h3 class="special">Informations sur le tutoriel</h3>
+<div class="conteneur_infobox">
+<table>
+  <tbody><tr>
+    <td>
+    <div class="boite_avatar_100px">
+      <img src="jointures_fichiers/1612.jpg" style="width: 100px; height: 100px; display: block;" alt="Avatar" class="avatar" id="avatar4409">  
+     </div>
+    </td>
+    <td>
+     
+      <strong>Auteur</strong> :
+      
+    
+	    <a class="auteur_tut" href="http://www.siteduzero.com/membres-294-4409.html">patami</a>
+    
+      <br>
+    
+      
+		  <strong>Difficulté</strong> :
+		  
+			<img src="jointures_fichiers/niveau_1.png" alt="Facile">
+		  
+		  <br>
+	  <br>
+      <br>
+      <a href="#tuto_details" onclick="toggle('infos_detaillees'); return false;">Plus d'informations <img src="jointures_fichiers/fleche_bas.png" alt="Plus d'informations" title="Plus d'informations" id="image_detail"></a>
+
+      <div style="display: none;" id="infos_detaillees">
+	<br>			
+<strong>Créé</strong> : Le 27/01/2010 à 20:29:25<br>
+<strong>Modifié</strong> : Le 18/04/2010 à 14:47:13<br>
+
+<strong>Avancement</strong> : 100%<br>
+
+<strong>Licence</strong> : Copie non autorisée<br><br>
+
+
+<a href="http://www.siteduzero.com/tutoriel-50-214617-64704-introduction-aux-jointures-sql.html#r64704">29 commentaires</a><br>
+
+
+      </div>
+
+    </td>
+  </tr>
+</tbody></table>
+</div>
+</div>
+
+
+    <div class="infobox">
+        <h3 class="special">Popularité</h3>
+        <div class="conteneur_infobox">
+            <strong>Visualisations</strong> : 181&nbsp;113<br><br>
+            <div style="padding-top: 1px; float: left;"><strong>Appréciation<br>des lecteurs</strong> : </div>
+            <div class="tut_appreciation">
+                <div class="tut_appreciation_smiley" id="smiley-1-12534--102954" style="background-position: -19px 50%;"><img src="jointures_fichiers/empty.gif" alt=""></div>
+                <span id="eval_nb-1">1</span>
+            </div>
+            <div class="tut_appreciation">
+                <div class="tut_appreciation_smiley" id="smiley-2-12534--102954" style="background-position: -57px 50%;"><img src="jointures_fichiers/empty.gif" alt=""></div>
+                <span id="eval_nb-2">0</span>
+            </div>
+            <div class="tut_appreciation">
+                <div class="tut_appreciation_smiley" id="smiley-3-12534--102954" style="background-position: -95px 50%;"><img src="jointures_fichiers/empty.gif" alt=""></div>
+                <span id="eval_nb-3">1</span>
+            </div>
+            <div class="tut_appreciation">
+                <div class="tut_appreciation_smiley eval_always_color" id="smiley-4-12534--102954" style="background-position: -114px 50%;"><img src="jointures_fichiers/empty.gif" alt=""></div>
+                <span id="eval_nb-4">14</span>
+            </div>
+            
+            <div style="clear: both;"></div>
+                
+                    <p id="tut_vot_ldz" style="text-align: center;"><img src="jointures_fichiers/thb_livre_cours_c.png" id="tut_vot_ldz_img" alt="">
+                    
+                                <b>5 personnes</b> souhaitent voir ce tutoriel publié en livre ! <br> <a href="http://www.siteduzero.com/vote/ldz/12534.html" id="tut_vot_ldz_link">Vous aussi ?</a>
+                            
+            </p>
+        </div>
+    </div>
+
+
+<div class="infobox" id="pave_pub_tuto" style="">
+<h3 class="special">Publicité</h3>
+<div class="conteneur_infobox">
+<table style="width: 100%;">
+  <tbody><tr>
+    <td colspan="2" id="menu_pub_tuto">
+        
+        <script type="text/javascript" src="jointures_fichiers/adserverPub.js"></script><script src="jointures_fichiers/a.js"></script>
+        <noscript>
+            <a href="http://www.smartadserver.com/call/pubjumpi/22332/152674/1825/M/[timestamp]/?">
+            <img src="http://www.smartadserver.com/call/pubi/22332/152674/1825/M/[timestamp]/?"
+            border="0" alt="" /></a>
+        </noscript>
+        
+    </td>
+  </tr>
+</tbody></table>
+</div>
+</div>
+
+        
+	<div class="infobox">
+		<h3 class="special">Historique des mises à jour</h3>
+		<div class="conteneur_infobox">
+			<ul>
+				
+					<li>
+						<em>Le 18/04/2010 à 14:47:14</em><br>
+						Restructuration du tuto.
+					</li>
+			  
+					<li>
+						<em>Le 12/02/2010 à 01:16:51</em><br>
+						Ticket #1623
+					</li>
+			  
+					<li>
+						<em>Le 02/02/2010 à 03:38:51</em><br>
+						Introduction aux jointures SQL.
+					</li>
+			  
+			</ul>
+		</div>
+	</div>
+
+
+        
+            <div class="infobox expandable">
+                <h3 class="special">Partager</h3>
+                <div class="conteneur_infobox addthis_toolbox" style="text-decoration: none;" addthis:url="http://www.siteduzero.com/tutoriel-3-214617-introduction-aux-jointures-sql.html" addthis:title="Introduction aux jointures SQL">
+                    <div class="vertical">
+                        <a class="addthis_button_print at300b" title="Imprimer"><span class="at300bs at15t_print"></span>Imprimer</a>
+                        <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=pdfonline&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-214617-introduction-aux-jointures-sql.html&amp;title=Introduction%20aux%20jointures%20SQL&amp;ate=AT-simpleit/-/fs-0/4d5c41e7665ed948/1&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-2-404-bases-de-donnees.html&amp;tt=0" class="addthis_button_pdfonline at300b" title="Convertir au format PDF"><span class="at300bs at15t_pdfonline"></span>Convertir en PDF</a>
+                        <a class="addthis_button_email at300b" title="Partager via Email"><span class="at300bs at15t_email"></span>Email</a>
+                        <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=twitter&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-214617-introduction-aux-jointures-sql.html&amp;title=Introduction%20aux%20jointures%20SQL&amp;ate=AT-simpleit/-/fs-0/4d5c41e7665ed948/2&amp;sms_ss=1&amp;at_xt=1&amp;template=%7B%7Btitle%7D%7D%20%7B%7Burl%7D%7D%20%23SdZ&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-2-404-bases-de-donnees.html&amp;tt=0" class="addthis_button_twitter at300b" title="Partager via Twitter"><span class="at300bs at15t_twitter"></span>Twitter</a>
+                        <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=facebook&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-214617-introduction-aux-jointures-sql.html&amp;title=Introduction%20aux%20jointures%20SQL&amp;ate=AT-simpleit/-/fs-0/4d5c41e7665ed948/3&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-2-404-bases-de-donnees.html&amp;tt=0" class="addthis_button_facebook at300b" title="Partager via Facebook"><span class="at300bs at15t_facebook"></span>Facebook</a>
+                        <a class="expend" href="#plus"><span class="more">&nbsp;</span>Plus de services</a>
+                        <div style="display: none;" class="slidable">
+                            <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=myspace&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-214617-introduction-aux-jointures-sql.html&amp;title=Introduction%20aux%20jointures%20SQL&amp;ate=AT-simpleit/-/fs-0/4d5c41e7665ed948/4&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-2-404-bases-de-donnees.html&amp;tt=0" class="addthis_button_myspace at300b" title="Partager via MySpace"><span class="at300bs at15t_myspace"></span>MySpace</a>
+                            <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=googlebuzz&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-214617-introduction-aux-jointures-sql.html&amp;title=Introduction%20aux%20jointures%20SQL&amp;ate=AT-simpleit/-/fs-0/4d5c41e7665ed948/5&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-2-404-bases-de-donnees.html&amp;tt=0" class="addthis_button_googlebuzz at300b" title="Partager via Google Buzz"><span class="at300bs at15t_googlebuzz"></span>Google Buzz</a>
+                            <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=blogger&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-214617-introduction-aux-jointures-sql.html&amp;title=Introduction%20aux%20jointures%20SQL&amp;ate=AT-simpleit/-/fs-0/4d5c41e7665ed948/6&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-2-404-bases-de-donnees.html&amp;tt=0" class="addthis_button_blogger at300b" title="Partager via Blogger"><span class="at300bs at15t_blogger"></span>Blogger</a>
+                            <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=buzz&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-214617-introduction-aux-jointures-sql.html&amp;title=Introduction%20aux%20jointures%20SQL&amp;ate=AT-simpleit/-/fs-0/4d5c41e7665ed948/7&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-2-404-bases-de-donnees.html&amp;tt=0" class="addthis_button_buzz at300b" title="Partager via Yahoo! Buzz"><span class="at300bs at15t_buzz"></span>Y! Buzz</a>
+                            <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=live&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-214617-introduction-aux-jointures-sql.html&amp;title=Introduction%20aux%20jointures%20SQL&amp;ate=AT-simpleit/-/fs-0/4d5c41e7665ed948/8&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-2-404-bases-de-donnees.html&amp;tt=0" class="addthis_button_live at300b" title="Partager via MSN Live"><span class="at300bs at15t_live"></span>MSN Live</a>
+                            <a class="addthis_button_expanded at300m" title="Partager via un autre service"><span class="at300bs at15t_expanded"></span>Encore plus de services</a>
+                        </div>
+                    </div>
+                <div class="atclear"></div></div>
+            </div>
+        
+    </form>
+</div>
+
+
+<div id="chap_intro">Ce tutoriel a pour but de vous faire découvrir les jointures en SQL. Pour le comprendre, il est nécessaire d'avoir lu la partie <span class="italique">Les bases de données</span> du tutoriel officiel de PHP/MySQL.<br>
+<br>
+<div class="rmq attention">Attention : pour faciliter votre 
+compréhension des différents concepts, je vous conseille de lire ce 
+tutoriel en entier et dans l'ordre proposé, vous risqueriez sinon de 
+rater certains enchaînements logiques.</div></div>
+
+
+    <div class="sommaire_chap">
+        <span>Sommaire du tutoriel :</span>
+        <div class="icone_chap">
+            
+                <img src="jointures_fichiers/212737.png" alt="Icône du chapitre" class="icone_chapitre">
+            
+        </div>
+
+        <div class="droite_chapitre">
+            <ul class="liste_sommaire_chap">
+                
+                    <li>
+                        <a href="#ss_part_1">Pré-requis : les bases de données relationnelles</a>
+                    </li>
+                
+                    <li>
+                        <a href="#ss_part_2">Les jointures, quel intérêt ?</a>
+                    </li>
+                
+                    <li>
+                        <a href="#ss_part_3">Les jointures internes</a>
+                    </li>
+                
+                    <li>
+                        <a href="#ss_part_4">Les jointures externes</a>
+                    </li>
+                
+                    <li>
+                        <a href="#ss_part_5">Restons lisibles !</a>
+                    </li>
+                
+                    <li>
+                        <a href="#ss_part_6">Pour aller plus loin</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    <div class="liens_bas_tuto">
+        
+    </div>
+
+
+<hr>
+
+
+                <h2>
+                    <a id="ss_part_1" class="titre_sous_partie">Pré-requis : les bases de données relationnelles</a>
+                    
+                </h2>
+
+                <div class="ss_part_texte"><div class="justifie">Avant 
+d'utiliser les jointures, il faut que votre base de données 
+relationnelle soit correctement conçue. Vous apprendrez dans cette 
+partie quelques règles de base (loin d'être exhaustives) dans la 
+conception des bases de données.<br>
+<br>
+Pour ce faire, utilisons un exemple.<br>
+<br>
+<span class="citation">Citation</span><div class="citation2">Vous êtes informaticien dans une <a href="http://fr.wikipedia.org/wiki/Agence_de_presse">agence de presse</a>
+ et vous devez stocker les articles des journalistes de l'agence dans 
+une base de données relationnelle. Vous devez stocker pour chaque 
+article son titre, son contenu et sa date, ainsi que le nom, le prénom 
+et l'adresse e-mail de l'auteur. Plusieurs journaux achètent des 
+articles à l'agence de presse en question. Celle-ci voudrait savoir 
+quels journaux ont acheté quels articles. L'agence désire par ailleurs 
+connaître, en plus de leur nom, l'adresse des journaux.</div><br>
+<br>
+<div class="rmq information"><strong><span class="souligne">Règle n°1</span></strong> : Regroupez dans une même table (= tableau de données) toutes les caractéristiques d'un élément.</div><br>
+<br>
+<div class="rmq information"><strong><span class="souligne">Règle n°2</span></strong>
+ : Si une information se répète plusieurs fois dans une même table, il 
+est préférable de créer une table dédiée à ce type d'information avec 
+une relation entre les deux tables.</div><br>
+<br>
+Ces règles n'étant pas faciles à comprendre de prime abord, appliquons-les à notre exemple.<br>
+<br>
+On aurait a priori tendance à créer une table "articles" ayant la 
+structure suivante (notez l'absence de caractères spéciaux, d'espaces et
+ d'accents dans les noms des champs) :<br>
+<br>
+<table class="tab_user">                            
+
+
+
+
+
+
+
+
+<thead><tr><th>articles</th></tr></thead><tbody><tr>        
+<td>id_article</td>    
+</tr><tr>        
+<td>titre_article</td>    
+</tr><tr>        
+<td>nom_auteur</td>    
+</tr><tr>        
+<td>prenom_auteur</td>    
+</tr><tr>        
+<td>email_auteur</td>    
+</tr><tr>        
+<td>texte_article</td>    
+</tr><tr>        
+<td>date_article</td>    
+</tr></tbody></table><br>
+<br>
+Ce qui donne, avec quelques données (exemple) :<br>
+<br>
+<table class="tab_user">                     
+
+
+
+
+
+<thead><tr><th><div class="centre">id_article</div></th><th><div class="centre">titre_article</div></th><th><div class="centre">nom_auteur</div></th><th><div class="centre">prenom_auteur</div></th><th><div class="centre">email_auteur</div></th><th><div class="centre">texte_article</div></th><th><div class="centre">date_article</div></th></tr></thead><tbody><tr>        
+<td><div class="centre">1</div></td>        
+<td>Wall Street repasse dans le vert</td>        
+<td>Dupont</td>        
+<td>Jacques</td>        
+<td>jacques_dupont@email.com</td>        
+<td>blabla</td>        
+<td>26/01/2010</td>    
+</tr><tr>        
+<td><div class="centre">2</div></td>        
+<td>La Fed garde son taux directeur inchangé</td>        
+<td>Dubois</td>        
+<td>Marcel</td>        
+<td>mdubois@email.com</td>        
+<td>blibli</td>        
+<td>27/01/2010</td>    
+</tr><tr>        
+<td><div class="centre">3</div></td>        
+<td>Des pensionnés très occupés !</td>        
+<td>Dupont</td>        
+<td>Jacques</td>        
+<td>jacques_dupont@email.com</td>        
+<td>bloblo</td>        
+<td>28/01/2010</td>    
+</tr><tr>        
+<td><div class="centre">4</div></td>        
+<td>L'entretien du réseau routier laisse à désirer</td>        
+<td>Leroy</td>        
+<td>Nicole</td>        
+<td>nicole.leroy@email.com</td>        
+<td>blublu</td>        
+<td>28/01/2010</td>    
+</tr></tbody></table><br>
+<br>
+On remarque cependant qu’il y a <span class="souligne">répétition</span> des informations sur l'auteur. En effet, un auteur peut avoir écrit plusieurs articles !<br>
+<br>
+On va donc créer une table "auteurs" en relation avec la table 
+"articles" pour éviter d'avoir une répétition inutile de toutes les 
+informations sur les auteurs. Cela permet en pratique, si vous voulez 
+modifier un élément (par exemple l'adresse e-mail de l'auteur), de ne 
+devoir le faire qu’une seule fois !<br>
+<br>
+La structure de la table auteurs est la suivante :<br>
+<br>
+<table class="tab_user">                            
+
+
+
+
+
+<thead><tr><th>auteurs</th></tr></thead><tbody><tr>        
+<td>id_auteur</td>    
+</tr><tr>        
+<td>nom_auteur</td>    
+</tr><tr>        
+<td>prenom_auteur</td>    
+</tr><tr>        
+<td>email_auteur</td>    
+</tr></tbody></table><br>
+<br>
+Ce qui donne en données :<br>
+<br>
+<table class="tab_user">                     
+
+
+
+
+<thead><tr><th><div class="centre">id_auteur</div></th><th><div class="centre">nom_auteur</div></th><th><div class="centre">prenom_auteur</div></th><th><div class="centre">email_auteur</div></th></tr></thead><tbody><tr>        
+<td><span class="rouge"><div class="centre">1</div></span></td>    
+<td>Dubois</td>        
+<td>Marcel</td>        
+<td>mdubois@email.com</td>          
+</tr><tr>        
+<td><span class="vertf"><div class="centre">2</div></span></td>   
+<td>Dupont</td>        
+<td>Jacques</td>        
+<td>jacques_dupont@email.com</td>   
+</tr><tr>        
+<td><span class="bleu"><div class="centre">3</div></span></td>             
+<td>Leroy</td>        
+<td>Nicole</td>        
+<td>nicole.leroy@email.com</td>          
+</tr></tbody></table><br>
+<br>
+La nouvelle structure de la table "articles" est la suivante :<br>
+<br>
+<table class="tab_user">                            
+
+
+
+
+
+
+<thead><tr><th>articles</th></tr></thead><tbody><tr>        
+<td>id_article</td>    
+</tr><tr>        
+<td>titre_article</td>    
+</tr><tr>        
+<td>id_auteur</td>    
+</tr><tr>        
+<td>texte_article</td>    
+</tr><tr>        
+<td>date_article</td>    
+</tr></tbody></table><br>
+<br>
+Ce qui donne en données :<br>
+<br>
+<table class="tab_user">                     
+
+
+
+
+
+<thead><tr><th><div class="centre">id_article</div></th><th><div class="centre">titre_article</div></th><th><div class="centre">id_auteur</div></th><th><div class="centre">texte_article</div></th><th><div class="centre">date_article</div></th></tr></thead><tbody><tr>        
+<td><div class="centre">1</div></td>        
+<td>Wall Street repasse dans le vert</td>        
+<td><span class="vertf"><div class="centre">2</div></span></td>              
+<td>blabla</td>        
+<td>26/01/2010</td>    
+</tr><tr>        
+<td><div class="centre">2</div></td>        
+<td>La Fed garde son taux directeur inchangé</td>        
+<td><span class="rouge"><div class="centre">1</div></span></td>       
+<td>blibli</td>        
+<td>27/01/2010</td>    
+</tr><tr>        
+<td><div class="centre">3</div></td>        
+<td>Des pensionnés très occupés !</td>        
+<td><span class="vertf"><div class="centre">2</div></span></td>        
+<td>bloblo</td>        
+<td>28/01/2010</td>    
+</tr><tr>        
+<td><div class="centre">4</div></td>        
+<td>L'entretien du réseau routier laisse à désirer</td>        
+<td><span class="bleu"><div class="centre">3</div></span></td>        
+<td>blublu</td>        
+<td>28/01/2010</td>    
+</tr></tbody></table><br>
+<br>
+<br>
+On a donc créé une relation numérique entre deux tables pour éviter la 
+répétition d'informations. On comprend l'importance du champ "id" de 
+chaque table qui doit absolument prendre une valeur différente/unique 
+pour chaque ligne de la table. <br>
+<br>
+Le champ de type "id" (première colonne), qui contient un identifiant 
+unique pour chaque élément (ligne) de la table, est appelé clé primaire 
+(Primary Key = PK).<br>
+<br>
+Dans la table articles, on a un autre type de champ "id", qui peut en 
+effet prendre plusieurs fois la même valeur. C'est ce qu'on appelle une 
+clé étrangère (Foreign Key = FK). Il correspond à la clé primaire d'une 
+autre table et permet de créer une relation avec celle-ci. <br>
+<br>
+Dans notre cas, le champ (clé étrangère) "id_auteur" de la table 
+articles correspond au champ (clé primaire) "id_auteur" de la table 
+auteurs. On nomme généralement de la même façon la clé primaire et la 
+clé étrangère relative. La relation PK – FK est appelée relation 1 – N.<br>
+<br>
+<br>
+<div class="rmq information"><strong><span class="souligne">Règle n°3</span></strong>
+ : Il peut arriver que vous rencontriez une relation N – N, c'est-à-dire
+ une relation où l'on a une répétition des éléments d'une table A dans 
+une autre table B, et également une répétition de plusieurs éléments de 
+la table B dans la table A. Pour optimiser les tables et éviter ces 
+répétitions, il faut dans ce cas créer une table intermédiaire dans 
+laquelle on stockera uniquement des "id".</div><br>
+<br>
+<span class="souligne">Mise en pratique :</span><br>
+<br>
+Reprenons notre exemple. En plus des tables articles et auteurs, créons la table "journaux".<br>
+<br>
+<table class="tab_user">                            
+
+
+
+
+<thead><tr><th>journaux</th></tr></thead><tbody><tr>        
+<td>id_journal</td>    
+</tr><tr>        
+<td>nom_journal</td>    
+</tr><tr>        
+<td>adresse_journal</td>    
+</tr></tbody></table><br>
+<br>
+<table class="tab_user">                     
+
+
+
+
+
+<thead><tr><th><div class="centre">id_journal</div></th><th><div class="centre">nom_journal</div></th><th><div class="centre">adresse_journal</div></th></tr></thead><tbody><tr>        
+<td><div class="centre">1</div></td>        
+<td>Le Monde</td>        
+<td>Paris</td>
+</tr><tr>        
+<td><div class="centre">2</div></td>        
+<td>Le Figaro</td>        
+<td>Paris</td>   
+</tr><tr>        
+<td><div class="centre">3</div></td>        
+<td>Le Soir</td>        
+<td>Bruxelles</td>    
+</tr><tr>        
+<td><div class="centre">4</div></td>        
+<td>Libération</td>        
+<td>Paris</td>   
+</tr></tbody></table><br>
+<br>
+On veut stocker les articles achetés par ces journaux à l'agence de 
+presse. Un journal peut avoir acheté plusieurs articles, et un article 
+peut avoir été acheté par plusieurs journaux. On a donc une relation N –
+ N.<br>
+<br>
+Il ne nous est pas possible de stocker plusieurs articles pour un même 
+journal (on a une seule ligne par journal dans la table journaux), il 
+n'est pas non plus possible de faire l'inverse (on ne peut pas stocker 
+plusieurs journaux pour un même article, on a également une seule ligne 
+par article dans la table articles). On est donc obligés de créer une 
+table intermédiaire pour stocker toutes nos relations (sous forme d'id).
+ Grâce à ce subterfuge, on retrouve des relations 1 – N à la place de la
+ relation N – N. <br>
+<br>
+Notre table stockant les relations pourrait ressembler à ceci (données aléatoires) :<br>
+<br>
+<table class="tab_user">                            
+
+
+
+
+<thead><tr><th>jonction_articles_journaux</th></tr></thead><tbody><tr>        
+<td>id_jonction_art_journ</td>    
+</tr><tr>        
+<td>id_article</td>    
+</tr><tr>        
+<td>id_journal</td>    
+</tr></tbody></table><br>
+<br>
+<table class="tab_user">                     
+
+
+
+
+
+
+
+
+
+<thead><tr><th><div class="centre">id_jonction_art_journ</div></th><th><div class="centre">id_article</div></th><th><div class="centre">id_journal</div></th></tr></thead><tbody><tr>        
+<td><div class="centre">1</div></td>        
+<td><div class="centre">1</div></td>        
+<td><div class="centre">2</div></td>
+</tr><tr>        
+<td><div class="centre">2</div></td>        
+<td><div class="centre">1</div></td>        
+<td><div class="centre">4</div></td>
+</tr><tr>        
+<td><div class="centre">3</div></td>        
+<td><div class="centre">2</div></td>        
+<td><div class="centre">2</div></td>
+</tr><tr>        
+<td><div class="centre">4</div></td>        
+<td><div class="centre">3</div></td>        
+<td><div class="centre">1</div></td>
+</tr><tr>        
+<td><div class="centre">5</div></td>        
+<td><div class="centre">3</div></td>        
+<td><div class="centre">2</div></td>
+</tr><tr>        
+<td><div class="centre">6</div></td>        
+<td><div class="centre">3</div></td>        
+<td><div class="centre">3</div></td>
+</tr><tr>        
+<td><div class="centre">7</div></td>        
+<td><div class="centre">4</div></td>        
+<td><div class="centre">1</div></td>
+</tr><tr>        
+<td><div class="centre">8</div></td>        
+<td><div class="centre">4</div></td>        
+<td><div class="centre">3</div></td>
+</tr></tbody></table><br>
+<br>
+<br>
+<div class="rmq information"><strong><span class="souligne">Règle n°4</span></strong>
+ : Il existe également la relation 1 – 1, qui résulte d'une erreur dans 
+la conception de la base de données. Elle signifie en effet que chaque 
+élément d'une table A est en relation avec son équivalent dans la table 
+B. Donc, l'élément d'id 1 de la table A est en relation directe avec 
+l'élément d'id 1 de la table B.</div> <br>
+<br>
+Dans notre exemple, ça aurait pu donner ceci :<br>
+<br>
+<table class="tab_user">                     
+
+
+
+
+
+<thead><tr><th><div class="centre">id_article</div></th><th><div class="centre">titre_article</div></th><th><div class="centre">id_auteur</div></th></tr></thead><tbody><tr>        
+<td><div class="centre">1</div></td>        
+<td>Wall Street repasse dans le vert</td>        
+<td><div class="centre">2</div></td>                  
+</tr><tr>        
+<td><div class="centre">2</div></td>        
+<td>La Fed garde son taux directeur inchangé</td>        
+<td><div class="centre">1</div></td>          
+</tr><tr>        
+<td><div class="centre">3</div></td>        
+<td>Des pensionnés très occupés !</td>        
+<td><div class="centre">2</div></td>           
+</tr><tr>        
+<td><div class="centre">4</div></td>        
+<td>L'entretien du réseau routier laisse à désirer</td>        
+<td><div class="centre">3</div></td>           
+</tr></tbody></table><br>
+<br>
+<table class="tab_user">                     
+
+
+
+
+
+<thead><tr><th><div class="centre">id_article</div></th><th><div class="centre">texte_article</div></th><th><div class="centre">date_article</div></th></tr></thead><tbody><tr>        
+<td><div class="centre">1</div></td>            
+<td>blabla</td>        
+<td>26/01/2010</td>    
+</tr><tr>        
+<td><div class="centre">2</div></td>       
+<td>blibli</td>        
+<td>27/01/2010</td>    
+</tr><tr>        
+<td><div class="centre">3</div></td>        
+<td>bloblo</td>        
+<td>28/01/2010</td>    
+</tr><tr>        
+<td><div class="centre">4</div></td>        
+<td>blublu</td>        
+<td>28/01/2010</td>    
+</tr></tbody></table><br>
+<br>
+Il s'agit en fait d'une relation entre clés primaires (PK – PK). Chaque 
+élément ayant sa correspondance dans l'autre table, on peut les 
+regrouper dans une seule table !<br>
+<br>
+<br>
+Pour terminer, voici la structure de la base de données, avec ses 
+relations. Sous Microsoft Access, les relations 1 – N sont notées 1 – <img src="jointures_fichiers/214416.png" alt="Image utilisateur">.<br>
+<br>
+<img src="jointures_fichiers/214417.png" alt="Image utilisateur"><br>
+<br>
+Notez que chaque champ de table a diverses propriétés, notamment un type
+ (textuel, numérique, date, booléen, ...) ou une taille (nombre de 
+caractères). Nous n'aborderons pas ces détails ici.<br>
+<br>
+</div></div>
+                <hr>
+            
+                <h2>
+                    <a id="ss_part_2" class="titre_sous_partie">Les jointures, quel intérêt ?</a>
+                    
+                </h2>
+
+                <div class="ss_part_texte"><div class="justifie"><div class="rmq question">Encore un truc inutile pour que mon code paraisse plus savant ?</div><br>
+Pas du tout !<br>
+<br>
+<br>
+<div class="rmq information">Les jointures sont tout d'abord un moyen d'optimiser vos scripts, en améliorant leur vitesse d'exécution.</div><br>
+<br>
+Pour le comprendre, reprenons l'exemple de l'agence de presse, et 
+concentrons-nous sur la relation entre la table "articles" et la table 
+"auteurs". Nous avons donc une relation entre les deux tables via le 
+champ "id_auteur".<br>
+<br>
+Dans notre script, nous désirons afficher une liste des articles avec, en plus du titre de l'article, le nom de l'auteur.<br>
+<br>
+Un codeur ne connaissant pas les jointures va procéder comme suit :<br>
+<br>
+<span class="code">Code : PHP - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 html+php"><table class="syntaxtable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="syntax"><pre><span class="cp">&lt;?</span>
+<span class="nv">$req_articles</span> <span class="o">=</span> <span class="nb">mysql_query</span><span class="p">(</span><span class="s1">'SELECT `titre_article`,`id_auteur` FROM `articles` '</span><span class="p">);</span>
+<span class="k">while</span> <span class="p">(</span><span class="nv">$data_articles</span> <span class="o">=</span> <span class="nb">mysql_fetch_array</span><span class="p">(</span><span class="nv">$req_articles</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="nv">$req_auteurs</span> <span class="o">=</span> <span class="nb">mysql_query</span><span class="p">(</span><span class="s1">'SELECT `nom_auteur` FROM `auteurs` WHERE `id_auteur` = "'</span><span class="o">.</span><span class="nv">$data_articles</span><span class="p">[</span><span class="s1">'id_auteur'</span><span class="p">]</span><span class="o">.</span><span class="s1">'" '</span><span class="p">);</span>
+    <span class="nv">$data_auteurs</span> <span class="o">=</span> <span class="nb">mysql_fetch_array</span><span class="p">(</span><span class="nv">$req_auteurs</span><span class="p">);</span>
+
+    <span class="k">echo</span> <span class="nv">$data_articles</span><span class="p">[</span><span class="s1">'titre_article'</span><span class="p">]</span><span class="o">.</span><span class="s1">' rédigé par '</span><span class="o">.</span><span class="nv">$data_auteurs</span><span class="p">[</span><span class="s1">'nom_auteur'</span><span class="p">]</span><span class="o">.</span><span class="s1">'&lt;br /&gt;'</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+Bref, il sélectionne l'id de l'auteur dans la table "articles", puis 
+l'utilise dans une seconde requête sql qui cherche l'auteur 
+correspondant dans la table "auteurs".<br>
+<br>
+<div class="rmq attention">Mettre une requête sql dans une boucle est 
+une très mauvaise idée, cela réduit (de manière plus ou moins importante
+ selon la requête) les performances de votre script !</div><br>
+<br>
+<strong>Grâce aux jointures, vous apprendrez à sélectionner toutes les informations dont vous avez besoin en une seule requête !</strong><br>
+<br>
+<br>
+<br>
+<div class="rmq information">Par ailleurs, comme vous pourrez le 
+découvrir à la lecture de ce tutoriel, les jointures offrent un confort 
+et une puissance bien utiles lorsque vos scripts se complexifient.</div><br>
+<br>
+</div><br>
+<br>
+</div>
+                <hr>
+            
+                <h2>
+                    <a id="ss_part_3" class="titre_sous_partie">Les jointures internes</a>
+                    
+                </h2>
+
+                <div class="ss_part_texte"><div class="justifie"><br>
+<br>
+Nous commencerons par l'étude de l'ancienne syntaxe des jointures 
+internes, durant laquelle nous aborderons plusieurs notions utiles pour 
+la suite du tutoriel. Nous passerons ensuite à l'étude de la nouvelle 
+syntaxe, qu'il est désormais préférable d'utiliser.<br>
+<br>
+<div class="rmq attention"><br>
+Dans ce tutoriel, par soucis de simplification, nous sélectionnerons 
+souvent tous les champs (en faisant un SELECT * ) dans les requêtes 
+exemples. En pratique, il est conseillé de ne sélectionner que les 
+champs dont vous avez besoin (afin de ne pas alourdir inutilement votre 
+sélection).</div><br>
+<br>
+<br>
+<h3>Ancienne syntaxe</h3><br>
+<br>
+<h4>Requêtes multi-tables</h4><br>
+<br>
+Considérons un exemple simplifié : nous avons 2 tables "clients" et "commandes".<br>
+<br>
+<span class="souligne">Structure</span> :<br>
+<br>
+<table class="tab_user">            
+
+
+
+<thead><tr><th>clients</th></tr></thead><tbody><tr>        
+<td>id_client</td>    
+</tr><tr>        
+<td>nom_client</td>    
+</tr></tbody></table><br>
+<br>
+<table class="tab_user">                
+
+
+
+
+<thead><tr><th>commandes</th></tr></thead><tbody><tr>        
+<td>id_commande</td>    
+</tr><tr>        
+<td>id_client</td>    
+</tr><tr>        
+<td>date_commande</td>    
+</tr></tbody></table><br>
+<br>
+Nous avons conçu notre base de données avec une relation 1 - N entre les
+ 2 tables (via le champ "id_client"). Les clients peuvent en effet avoir
+ passé plusieurs commandes.<br>
+<br>
+<span class="souligne">Données</span> :<br>
+<br>
+<table class="tab_user">                        
+
+
+
+
+
+
+<thead><tr><th>id_client</th><th>nom_client</th></tr></thead><tbody><tr>        
+<td><div class="centre">1</div></td>        
+<td>Jacques Dupont</td>    
+</tr><tr>        
+<td><div class="centre">2</div></td>        
+<td>Marcel Dubois</td>    
+</tr><tr>        
+<td><div class="centre">3</div></td>        
+<td>Nathalie Leroy</td>    
+</tr><tr>        
+<td><div class="centre">4</div></td>        
+<td>Marc Degraux</td>    
+</tr><tr>        
+<td><div class="centre">5</div></td>        
+<td>Julie Duchemin</td>    
+</tr></tbody></table><br>
+<br>
+<table class="tab_user">                                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<thead><tr><th>id_commande</th><th>id_client</th><th>date_commande</th></tr></thead><tbody><tr>        
+<td><div class="centre">1</div></td>        
+<td><div class="centre">4</div></td>        
+<td><div class="centre">26/01/2010</div></td>    
+</tr><tr>        
+<td><div class="centre">2</div></td>        
+<td><div class="centre">1</div></td>        
+<td><div class="centre">26/01/2010</div></td>    
+</tr><tr>        
+<td><div class="centre">3</div></td>        
+<td><div class="centre">1</div></td>        
+<td><div class="centre">28/01/2010</div></td>    
+</tr><tr>        
+<td><div class="centre">4</div></td>        
+<td><div class="centre">3</div></td>        
+<td><div class="centre">28/01/2010</div></td>    
+</tr><tr>        
+<td><div class="centre">5</div></td>        
+<td><div class="centre">4</div></td>        
+<td><div class="centre">28/01/2010</div></td>    
+</tr><tr>        
+<td><div class="centre">6</div></td>        
+<td><div class="centre">3</div></td>        
+<td><div class="centre">29/01/2010</div></td>    
+</tr><tr>        
+<td><div class="centre">7</div></td>        
+<td><div class="centre">5</div></td>        
+<td><div class="centre">29/01/2010</div></td>    
+</tr><tr>        
+<td><div class="centre">8</div></td>        
+<td><div class="centre">4</div></td>        
+<td><div class="centre">30/01/2010</div></td>    
+</tr><tr>        
+<td><div class="centre">9</div></td>        
+<td><div class="centre">1</div></td>        
+<td><div class="centre">01/02/2010</div></td>    
+</tr><tr>        
+<td><div class="centre">10</div></td>        
+<td><div class="centre">4</div></td>        
+<td><div class="centre">01/02/2010</div></td>    
+</tr><tr>        
+<td><div class="centre">11</div></td>        
+<td><div class="centre">5</div></td>        
+<td><div class="centre">01/02/2010</div></td>    
+</tr><tr>        
+<td><div class="centre">12</div></td>        
+<td><div class="centre">3</div></td>        
+<td><div class="centre">01/02/2010</div></td>    
+</tr></tbody></table><br>
+<br>
+N'essayez pas de chercher une logique dans les id_client, ceci est un 
+exemple aléatoire, chaque client peut commander à n'importe quel moment 
+(et même plusieurs fois le même jour). On notera que jusqu'à présent 
+Marcel Dubois (id_client = 2) n'a pas passé de commande.<br>
+<br>
+<br>
+Effectuons maintenant une requête multi-tables, en l'occurence la 
+sélection des données de nos 2 tables en même temps (on va donc <strong>joindre</strong> nos 2 tables).<br>
+<br>
+<span class="code">Code : SQL - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 sql"><table class="syntaxtable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="syntax"><pre><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="o">`</span><span class="n">clients</span><span class="o">`</span><span class="p">,</span><span class="o">`</span><span class="n">commandes</span><span class="o">`</span>
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+Vu que nous n'avons pas spécifié de critère de jointure dans notre 
+requête (c'est-à-dire la manière dont on doit joindre les 2 tables), 
+nous obtenons comme résultat l'ensemble des relations/combinaisons 
+possibles entre les deux tables.<br>
+<br>
+Ainsi, chaque ligne de la table "clients" est associée à chaque ligne de
+ la table "commandes". En tout dans notre exemple on obtient donc comme 
+résultat 60 lignes (5 lignes de la table clients multipliées par 12 
+lignes de la table commandes) qui sont les 60 relations/combinaisons 
+possibles entre les lignes de nos 2 tables.<br>
+<br>
+En données cela donne :<br>
+<div class="centre"><br>
+<a href="http://uploads.siteduzero.com/files/214001_215000/214493.png"><img src="jointures_fichiers/214493.png" alt="Image utilisateur"><br>
+(cliquez pour agrandir)</a><br>
+</div><br>
+<br>
+<h4>Utilisation du WHERE</h4><br>
+<br>
+Heureusement notre exemple comporte peu de données. Mais si vous 
+travaillez avec beaucoup de données, l'absence de critère de jointure 
+peut faire souffrir votre serveur pour, au final, vous retrouver avec un
+ résultat peu utile. Nous allons voir comment définir un critère de 
+jointure.<br>
+<br>
+Un des critères de jointure auquel on pense est évidemment la relation 
+que nous avons définie entre nos deux tables lors de la conception de la
+ base de données, à savoir la relation via le champ "id_client".<br>
+<br>
+Notre requête SQL avec critère de jointure se construit comme suit :<br>
+<br>
+<span class="code">Code : SQL - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 sql"><table class="syntaxtable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="syntax"><pre><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="o">`</span><span class="n">clients</span><span class="o">`</span><span class="p">,</span><span class="o">`</span><span class="n">commandes</span><span class="o">`</span> <span class="k">WHERE</span> <span class="o">`</span><span class="n">clients</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">id_client</span><span class="o">`</span> <span class="o">=</span> <span class="o">`</span><span class="n">commandes</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">id_client</span><span class="o">`</span>
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+<div class="rmq attention">Etant donné qu'il existe 2 champs portant un même nom (id_client) dans notre requête, il est <span class="souligne">obligatoire</span> de spécifier leur table respective (en indiquant le nom de celle-ci suivi d'un point avant le nom du champ).</div><br>
+<br>
+On obtient comme résultat :<br>
+<br>
+<div class="centre"><img src="jointures_fichiers/214526.png" alt="Image utilisateur"></div><br>
+<br>
+On a effectué ce qu'on appelle une <strong>jointure interne</strong> entre nos deux tables.<br>
+<br>
+On constate qu'il ne reste que 12 lignes sur 60 une fois qu'on a introduit notre critère de jointure.<br>
+<br>
+Notons notamment la disparition des lignes contenant "Marcel Dubois" 
+(id_client = 2). Cela s'explique par le fait que Marcel Dubois n'a passé
+ aucune commande, il n'est donc pas présent dans la table commandes.<br>
+<br>
+<div class="rmq information">La jointure interne a pour particularité de
+ n'afficher que les lignes qui respectent le critère de jointure ; il 
+est donc possible qu'une ligne de la table "clients" qui n'a de relation
+ avec aucune ligne de la table "commandes" ne soit pas du tout affichée 
+dans le résultat de la requête (comme c'est le cas dans notre exemple 
+avec l'id_client 2, Marcel Dubois) ! <br>
+Nous verrons dans la section suivante (jointures externes) qu'il est 
+néanmoins possible d'afficher malgré tout ces lignes sans relations.</div><br>
+<br>
+<br>
+<br>
+<h3>Nouvelle syntaxe</h3><br>
+<br>
+Afin d'améliorer la lisibilité des requêtes (notamment bien séparer ce 
+qui relève du filtrage et ce qui relève de la jointure), et dans une 
+certaine mesure de les optimiser, une nouvelle syntaxe a été introduite 
+pour les jointures.<br>
+<br>
+Notre requête : <br>
+<br>
+<span class="code">Code : SQL - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 sql"><table class="syntaxtable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="syntax"><pre><span class="k">SELECT</span> <span class="o">*</span> 
+<span class="k">FROM</span> <span class="o">`</span><span class="n">clients</span><span class="o">`</span><span class="p">,</span><span class="o">`</span><span class="n">commandes</span><span class="o">`</span>
+<span class="k">WHERE</span> <span class="o">`</span><span class="n">clients</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">id_client</span><span class="o">`</span> <span class="o">=</span> <span class="o">`</span><span class="n">commandes</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">id_client</span><span class="o">`</span>
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+Donne en nouvelle syntaxe :<br>
+<br>
+<span class="code">Code : SQL - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 sql"><table class="syntaxtable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="syntax"><pre><span class="k">SELECT</span> <span class="o">*</span> 
+<span class="k">FROM</span> <span class="o">`</span><span class="n">clients</span><span class="o">`</span>
+<span class="k">INNER</span> <span class="k">JOIN</span> <span class="o">`</span><span class="n">commandes</span><span class="o">`</span>
+<span class="k">ON</span> <span class="o">`</span><span class="n">clients</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">id_client</span><span class="o">`</span> <span class="o">=</span> <span class="o">`</span><span class="n">commandes</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">id_client</span><span class="o">`</span>
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+Bref, il n'y a plus qu'une seule table dans le <strong>FROM</strong>, et pour chaque table que l'on désire joindre on doit utiliser <strong>INNER JOIN</strong> suivi du nom de la table, puis <strong>ON</strong> suivi du critère de jointure.<br>
+<br>
+<div class="rmq information">A noter que le terme <strong>INNER</strong> est facultatif, on peut simplement écrire <strong>JOIN</strong>.</div><br>
+<br>
+<div class="rmq attention">Les critères de sélection <strong>WHERE</strong>, <strong>LIMIT</strong> et <strong>ORDER BY</strong> se placent après les jointures !</div><br>
+<br>
+Exemple de double jointure avec critères de sélection :<br>
+<br>
+<span class="code">Code : SQL - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 sql"><table class="syntaxtable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="syntax"><pre><span class="k">SELECT</span> <span class="o">*</span> 
+<span class="k">FROM</span> <span class="o">`</span><span class="n">clients</span><span class="o">`</span>
+<span class="k">JOIN</span> <span class="o">`</span><span class="n">commandes</span><span class="o">`</span>
+<span class="k">ON</span> <span class="o">`</span><span class="n">clients</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">id_client</span><span class="o">`</span> <span class="o">=</span> <span class="o">`</span><span class="n">commandes</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">id_client</span><span class="o">`</span>
+<span class="k">JOIN</span> <span class="o">`</span><span class="n">produits</span><span class="o">`</span>
+<span class="k">ON</span> <span class="o">`</span><span class="n">commandes</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">id_commande</span><span class="o">`</span> <span class="o">=</span> <span class="o">`</span><span class="n">produits</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">id_commande</span><span class="o">`</span>
+<span class="k">WHERE</span> <span class="o">`</span><span class="n">clients</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">code_postal</span><span class="o">`</span> <span class="o">=</span> <span class="ss">"75000"</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="o">`</span><span class="n">commandes</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">date_commande</span><span class="o">`</span> <span class="k">ASC</span>
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+</div></div>
+                <hr>
+            
+                <h2>
+                    <a id="ss_part_4" class="titre_sous_partie">Les jointures externes</a>
+                    
+                </h2>
+
+                <div class="ss_part_texte"><div class="rmq information">Les
+ jointures externes sont plus "complètes" que les jointures internes. En
+ plus de sélectionner l'ensemble des lignes des 2 tables respectant le 
+critère de jointure comme le font les jointures internes, elles 
+sélectionnent les données d'une des tables qui ne respectent pas le 
+critère de jointure.</div><br>
+<br>
+<h3>LEFT JOIN</h3><br>
+<br>
+Exemple :<br>
+<br>
+<span class="code">Code : SQL - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 sql"><table class="syntaxtable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="syntax"><pre><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">TableGauche</span>
+<span class="k">LEFT</span> <span class="k">JOIN</span> <span class="n">TableDroite</span>
+<span class="k">ON</span> <span class="n">crit</span>è<span class="n">re</span> <span class="n">de</span> <span class="n">jointure</span>
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+Le <strong>LEFT JOIN</strong> (ou LEFT OUTER JOIN) implique que l'on 
+sélectionne toutes les lignes respectant le critère de jointure, puis on
+ ajoute toutes les lignes de la table "<strong>TableGauche</strong>" qui ont été rejetées car elles ne respectaient pas le critère de jointure.<br>
+<br>
+Appliquons le LEFT JOIN à l'exemple utilisé pour les jointures internes :<br>
+<br>
+<span class="code">Code : SQL - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 sql"><table class="syntaxtable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="syntax"><pre><span class="k">SELECT</span> <span class="o">*</span> 
+<span class="k">FROM</span> <span class="o">`</span><span class="n">clients</span><span class="o">`</span>
+<span class="k">LEFT</span> <span class="k">JOIN</span> <span class="o">`</span><span class="n">commandes</span><span class="o">`</span>
+<span class="k">ON</span> <span class="o">`</span><span class="n">clients</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">id_client</span><span class="o">`</span> <span class="o">=</span> <span class="o">`</span><span class="n">commandes</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">id_client</span><span class="o">`</span>
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+En données, cela donne :<br>
+<br>
+<div class="centre"><img src="jointures_fichiers/214575.png" alt="Image utilisateur"></div><br>
+<br>
+Bref, on a le même résultat qu'avec INNER JOIN, auquel on a juste ajouté
+ les éléments de la table de gauche (en l'occurence "clients") qui ne 
+respectaient pas le critère de jointure.<br>
+On voit donc réapparaître Marcel Dubois (id_client = 2) qui n'avait 
+passé aucune commande, et n'était donc pas présent dans la table 
+"commandes", et ne respectait donc pas au moins une fois le critère de 
+jointure (ce qui l'avait exclu des résultats de la jointure interne).<br>
+<br>
+<br>
+<div class="rmq information">La clause <strong>USING(liste_champs)</strong> permet de définir les champs communs à prendre en considération (critère de jointure).</div><br>
+<br>
+Exemple :<br>
+<br>
+<span class="code">Code : SQL - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 sql"><table class="syntaxtable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="syntax"><pre><span class="k">SELECT</span> <span class="o">*</span> 
+<span class="k">FROM</span> <span class="o">`</span><span class="n">tablea</span><span class="o">`</span> 
+<span class="k">LEFT</span> <span class="k">JOIN</span> <span class="o">`</span><span class="n">tableb</span><span class="o">`</span> 
+<span class="k">USING</span> <span class="p">(</span><span class="o">`</span><span class="n">champ1</span><span class="o">`</span><span class="p">,</span><span class="o">`</span><span class="n">champ2</span><span class="o">`</span><span class="p">,</span><span class="o">`</span><span class="n">champ3</span><span class="o">`</span><span class="p">)</span>
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+est équivalent à :<br>
+<br>
+<span class="code">Code : SQL - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 sql"><table class="syntaxtable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="syntax"><pre><span class="k">SELECT</span> <span class="o">*</span> 
+<span class="k">FROM</span> <span class="o">`</span><span class="n">tablea</span><span class="o">`</span>
+<span class="k">LEFT</span> <span class="k">JOIN</span> <span class="o">`</span><span class="n">tableb</span><span class="o">`</span>
+<span class="k">ON</span> <span class="o">`</span><span class="n">tablea</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">champ1</span><span class="o">`</span> <span class="o">=</span> <span class="o">`</span><span class="n">tableb</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">champ1</span><span class="o">`</span> <span class="k">AND</span> <span class="o">`</span><span class="n">tablea</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">champ2</span><span class="o">`</span> <span class="o">=</span> <span class="o">`</span><span class="n">tableb</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">champ2</span><span class="o">`</span> <span class="k">AND</span> <span class="o">`</span><span class="n">tablea</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">champ3</span><span class="o">`=</span> <span class="o">`</span><span class="n">tableb</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">champ3</span><span class="o">`</span>
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+<br>
+<h3>RIGHT JOIN</h3><br>
+<br>
+Le <strong>RIGHT JOIN</strong> (ou RIGHT OUTER JOIN) implique que l'on 
+sélectionne toutes les lignes respectant le critère de jointure, puis on
+ ajoute toutes les lignes de la table "<strong>TableDroite</strong>" qui ont été rejetées car elles ne respectaient pas le critère de jointure. <br>
+<br>
+<br>
+<h3>FULL JOIN</h3><br>
+<br>
+Le <strong>FULL JOIN</strong> (ou FULL OUTER JOIN) implique que l'on 
+sélectionne toutes les lignes respectant le critère de jointure, puis on
+ ajoute toutes les lignes de la table "TableGauche" <span class="souligne">et</span> de la table "TableDroite" qui ont été rejetées car elles ne respectaient pas le critère de jointure.<br>
+<br>
+A noter que le FULL JOIN n'existe pour le moment pas sous MySQL.</div>
+                <hr>
+            
+                <h2>
+                    <a id="ss_part_5" class="titre_sous_partie">Restons lisibles !</a>
+                    
+                </h2>
+
+                <div class="ss_part_texte"><h3>Les Alias</h3><br>
+<br>
+Pour comprendre l'utilité des alias, prenons une requête multi-tables :<br>
+<br>
+<span class="code">Code : SQL - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 sql"><table class="syntaxtable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="syntax"><pre><span class="k">SELECT</span> <span class="o">*</span> 
+<span class="k">FROM</span> <span class="o">`</span><span class="n">clients</span><span class="o">`</span><span class="p">,</span><span class="o">`</span><span class="n">commandes</span><span class="o">`</span> 
+<span class="k">WHERE</span> <span class="o">`</span><span class="n">clients</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">id_client</span><span class="o">`</span> <span class="o">=</span> <span class="o">`</span><span class="n">commandes</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">id_client</span><span class="o">`</span>
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+Cette requête-ci est facile à lire. Cependant, certaines requêtes 
+peuvent vite devenir assez longues lorsque l'on travaille avec plus de 
+deux tables. Pour améliorer la lisibilité de la requête, il existe ce 
+qu'on appelle les alias, qui sont des surnoms que l'on donne aux tables.<br>
+<br>
+A noter qu'une fois un alias attribué à une table on peut toujours utiliser son nom complet, les deux fonctionnent.<br>
+<br>
+Pour attribuer un alias à une table, il suffit simplement de l'ajouter 
+dans le FROM juste après le nom de la table (avec un espace entre le nom
+ complet de la table et son alias). Le but étant d'alléger le code, les 
+alias comptent généralement peu de caractères. <br>
+<br>
+Avec notre exemple, cela pourrait donner :<br>
+<br>
+<span class="code">Code : SQL - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 sql"><table class="syntaxtable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="syntax"><pre><span class="k">SELECT</span> <span class="o">*</span> 
+<span class="k">FROM</span> <span class="o">`</span><span class="n">clients</span><span class="o">`</span> <span class="n">CL</span><span class="p">,</span><span class="o">`</span><span class="n">commandes</span><span class="o">`</span> <span class="n">COM</span> 
+<span class="k">WHERE</span> <span class="n">CL</span><span class="p">.</span><span class="o">`</span><span class="n">id_client</span><span class="o">`</span> <span class="o">=</span> <span class="n">COM</span><span class="p">.</span><span class="o">`</span><span class="n">id_client</span><span class="o">`</span>
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+Même principe avec la nouvelle syntaxe :<br>
+<br>
+<span class="code">Code : SQL - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 sql"><table class="syntaxtable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="syntax"><pre><span class="k">SELECT</span> <span class="o">*</span> 
+<span class="k">FROM</span> <span class="o">`</span><span class="n">clients</span><span class="o">`</span> <span class="n">CL</span>
+<span class="k">JOIN</span> <span class="o">`</span><span class="n">commandes</span><span class="o">`</span> <span class="n">COM</span> 
+<span class="k">ON</span> <span class="n">CL</span><span class="p">.</span><span class="o">`</span><span class="n">id_client</span><span class="o">`</span> <span class="o">=</span> <span class="n">COM</span><span class="p">.</span><span class="o">`</span><span class="n">id_client</span><span class="o">`</span>
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+<br>
+<div class="rmq attention">Si l'alias n'est qu'un outil pour améliorer 
+la lisibilité de la requête dans le cas des tables, il est par contre 
+essentiel dans le cas des champs.</div><br>
+<br>
+Dans les requêtes multi-tables, il peut arriver que deux champs de 
+tables différentes portent le même nom. Cela ne pose pas de problème 
+dans la requête elle-même étant donné que l'on précise à chaque fois la 
+table à laquelle appartient le champ, mais cela peut par contre être 
+problématique dans l'exploitation PHP du résultat de la requête.<br>
+<br>
+Exemple :<br>
+<br>
+<span class="code">Code : SQL - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 sql"><table class="syntaxtable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="syntax"><pre><span class="k">SELECT</span> <span class="n">A</span><span class="p">.</span><span class="o">`</span><span class="n">quantite</span><span class="o">`</span><span class="p">,</span><span class="n">B</span><span class="p">.</span><span class="o">`</span><span class="n">quantite</span><span class="o">`</span> 
+<span class="k">FROM</span> <span class="o">`</span><span class="n">tablea</span><span class="o">`</span> <span class="n">A</span><span class="p">,</span> <span class="o">`</span><span class="n">tableb</span><span class="o">`</span> <span class="n">B</span>
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+Dans cet exemple, nous avons 2 tables ("tablea" et "tableb") qui contiennent deux champs portant le même nom ("quantite").<br>
+<br>
+Lorsque nous utilisons notre habituel mysql_fetch_array (ou 
+mysql_fetch_object) pour récupérer les données issues de la requête, 
+nous ne sommes pas en mesure (sans diminuer la lisibilité du code) de 
+différentier les 2 champs.<br>
+<br>
+Pour remédier à ce problème, il suffit d'attribuer un alias au champ dans la requête :<br>
+<br>
+<span class="code">Code : SQL - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 sql"><table class="syntaxtable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="syntax"><pre><span class="k">SELECT</span> <span class="n">A</span><span class="p">.</span><span class="o">`</span><span class="n">quantite</span><span class="o">`</span><span class="p">,</span><span class="n">B</span><span class="p">.</span><span class="o">`</span><span class="n">quantite</span><span class="o">`</span> <span class="k">AS</span> <span class="o">`</span><span class="n">quantite_bis</span><span class="o">`</span>
+<span class="k">FROM</span> <span class="o">`</span><span class="n">tablea</span><span class="o">`</span> <span class="n">A</span><span class="p">,</span> <span class="o">`</span><span class="n">tableb</span><span class="o">`</span> <span class="n">B</span>
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+Ainsi, pour faire appel au champ "quantite" de la table "tableb", on utilisera désormais son alias :<br>
+<br>
+<span class="code">Code : PHP - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 html+php"><table class="syntaxtable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="syntax"><pre><span class="cp">&lt;?</span>
+<span class="nv">$req</span> <span class="o">=</span> <span class="nb">mysql_query</span><span class="p">(</span><span class="s1">'SELECT A.`quantite`,B.`quantite` AS `quantite_bis` FROM `tablea` A, `tableb` B'</span><span class="p">);</span>
+<span class="k">while</span> <span class="p">(</span><span class="nv">$data</span> <span class="o">=</span> <span class="nb">mysql_fetch_array</span><span class="p">(</span><span class="nv">$req</span><span class="p">))</span>
+<span class="p">{</span>
+<span class="k">echo</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">'quantite'</span><span class="p">];</span> <span class="c1">//affiche le contenu du champ "quantite" de la table "tablea"</span>
+
+<span class="k">echo</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">'quantite_bis'</span><span class="p">];</span> <span class="c1">//affiche le contenu du champ "quantite" de la table "tableb"</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</pre></div>
+</td></tr></tbody></table></div><br>
+</div>
+                <hr>
+            
+                <h2>
+                    <a id="ss_part_6" class="titre_sous_partie">Pour aller plus loin</a>
+                    
+                </h2>
+
+                <div class="ss_part_texte"><h3>Conditions de jointure</h3><br>
+<br>
+Dans les conditions de jointure on peut utiliser une égalité, mais également d'autres opérateurs de comparaison :<br>
+<br>
+<table class="tab_user">
+
+
+
+
+
+
+
+
+
+
+<thead><tr><th>Opérateur</th><th>Signification</th></tr></thead><tbody><tr>
+<td><div class="centre">&gt;</div></td>
+<td>supérieur</td>
+</tr><tr>
+<td><div class="centre">&gt;=</div></td>
+<td>supérieur ou égal</td>
+</tr><tr>
+<td><div class="centre">&lt;</div></td>
+<td>inférieur</td>
+</tr><tr>
+<td><div class="centre">&lt;=</div></td>
+<td>inférieur ou égal</td>
+</tr><tr>
+<td><div class="centre">&lt;&gt;</div></td>
+<td>différent de</td>
+</tr><tr>
+<td><div class="centre">IN</div></td>
+<td>dans un ensemble</td>
+</tr><tr>
+<td><div class="centre">LIKE</div></td>
+<td>correspondance partielle</td>
+</tr><tr>
+<td><div class="centre">BETWEEN .. AND ..</div></td>
+<td>entre deux valeurs</td>
+</tr><tr>
+<td><div class="centre">EXISTS</div></td>
+<td>dans une table</td>
+</tr></tbody></table><br>
+<div class="centre"><a href="http://sqlpro.developpez.com/cours/sqlaz/jointures/#LIV-B"><span class="italique">Source</span></a></div><br>
+<br>
+<h3>La jointure croisée</h3><br>
+<br>
+La jointure croisée est simplement la nouvelle syntaxe pour les requêtes
+ multi-tables sans critère de sélection WHERE que nous avons abordées au
+ tout début de la partie sur les jointures internes.<br>
+<br>
+<span class="code">Code : SQL - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 sql"><table class="syntaxtable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="syntax"><pre><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="o">`</span><span class="n">table1</span><span class="o">`</span><span class="p">,</span><span class="o">`</span><span class="n">table2</span><span class="o">`</span>
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+devient :<br>
+<br>
+<span class="code">Code : SQL - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 sql"><table class="syntaxtable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="syntax"><pre><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="o">`</span><span class="n">table1</span><span class="o">`</span> <span class="k">CROSS</span> <span class="k">JOIN</span> <span class="o">`</span><span class="n">table2</span><span class="o">`</span>
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+<br>
+<h3>La jointure naturelle</h3><br>
+<br>
+Elle permet d'éviter de devoir spécifier le critère de jointure. Le 
+compilateur SQL se charge de rechercher dans les 2 tables les champs qui
+ ont un nom identique.<br>
+<br>
+<span class="code">Code : SQL - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 sql"><table class="syntaxtable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="syntax"><pre><span class="k">SELECT</span> <span class="o">*</span> 
+<span class="k">FROM</span> <span class="o">`</span><span class="n">clients</span><span class="o">`</span> 
+<span class="k">NATURAL</span> <span class="k">JOIN</span> <span class="o">`</span><span class="n">commandes</span><span class="o">`</span>
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+équivaut donc à :<br>
+<br>
+<span class="code">Code : SQL - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 sql"><table class="syntaxtable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="syntax"><pre><span class="k">SELECT</span> <span class="o">*</span> 
+<span class="k">FROM</span> <span class="o">`</span><span class="n">clients</span><span class="o">`</span> 
+<span class="k">JOIN</span> <span class="o">`</span><span class="n">commandes</span><span class="o">`</span>
+<span class="k">ON</span> <span class="o">`</span><span class="n">clients</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">id_client</span><span class="o">`</span> <span class="o">=</span> <span class="o">`</span><span class="n">commandes</span><span class="o">`</span><span class="p">.</span><span class="o">`</span><span class="n">id_client</span><span class="o">`</span>
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+<div class="rmq information">A noter que NATURAL JOIN est une jointure 
+naturelle interne. Vous pouvez également faire une jointure naturelle 
+externe NATURAL LEFT JOIN ou NATURAL RIGHT JOIN !</div><br>
+<br>
+<br>
+<h3>Auto-jointures</h3><br>
+<br>
+Il est possible de joindre une table à elle-même. Pour ce faire, il conviendra d'utiliser les alias.<br>
+<br>
+Exemple :<br>
+<br>
+<span class="code">Code : SQL - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 sql"><table class="syntaxtable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="syntax"><pre><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="o">`</span><span class="n">tablea</span><span class="o">`</span> <span class="n">T1</span>
+<span class="k">JOIN</span> <span class="o">`</span><span class="n">tablea</span><span class="o">`</span> <span class="n">T2</span>
+<span class="k">ON</span> <span class="n">T1</span><span class="p">.</span><span class="n">champ</span> <span class="o">=</span> <span class="n">T2</span><span class="p">.</span><span class="n">champ</span>
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+<br>
+<h3>Quelques références</h3><br>
+<ul>	
+<li><a href="http://dev.mysql.com/doc/refman/5.0/en/join.html">http://dev.mysql.com/doc/refman/5.0/en/join.html</a></li>	
+<li><a href="http://sqlpro.developpez.com/cours/sqlaz/jointures/">http://sqlpro.developpez.com/cours/sqlaz/jointures/</a></li>	
+<li><a href="http://mhubiche.developpez.com/Access/tutoJointures/">http://mhubiche.developpez.com/Access/tutoJointures/</a></li>
+</ul></div>
+                <hr>
+            
+
+<div id="chap_conclusion">Voilà, j'espère que ce tutoriel vous sera 
+utile et vous a donné envie d'en savoir plus sur les jointures. De tout 
+ceci, retenez une chose : exploitez un maximum les possibilités offertes
+ par SQL avant d'avoir recours à PHP, cela rendra vos scripts d'autant 
+plus efficaces. Je vous invite d'ailleurs à lire les autres tutoriels 
+SQL présents sur le Site du Zéro ! <img src="jointures_fichiers/clin.png" alt=";)" class="smilies"></div>
+
+
+
+    <div class="liens_bas_tuto">
+        
+    </div>
+
+
+<div class="infobox cadre_auteur_date" id="tuto_details">
+    <h3 class="special">Informations sur le tutoriel</h3>
+    <div class="conteneur_infobox">
+        <a href="#onglets_tutos">Retour en haut <img src="jointures_fichiers/fleche_haut.png" alt="Retour en haut" title="Retour en haut"></a>
+        <br>
+        <br>			
+<strong>Créé</strong> : Le 27/01/2010 à 20:29:25<br>
+<strong>Modifié</strong> : Le 18/04/2010 à 14:47:13<br>
+
+<strong>Avancement</strong> : 100%<br>
+
+<strong>Licence</strong> : Copie non autorisée<br><br>
+
+
+<a href="http://www.siteduzero.com/tutoriel-50-214617-64704-introduction-aux-jointures-sql.html#r64704">29 commentaires</a><br>
+
+
+    </div>
+</div>
+
+<div class="clearer"></div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+            <div id="footer">
+                <ul>
+                    <li>
+                        Le Site du Zéro
+                        <ul>
+                            <li><a href="http://www.siteduzero.com/plan.html">Plan du site</a></li>
+                            <li><a href="http://www.siteduzero.com/membres-304.html">L'équipe</a></li>
+                            <li><a href="http://www.siteduzero.com/mentions.html">Mentions légales</a></li>
+                            <li><a href="http://www.siteduzero.com/accessibilite.html" accesskey="0">Accessibilité</a></li>
+                            <li><a href="http://www.siteduzero.com/livreor.html">Livre d'or</a></li>
+                            <li><a href="http://suggestions.siteduzero.com/">Suggestions <sup style="color: green;">Nouveau !</sup></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        Simple IT
+                        <ul>
+                            <li><a href="http://www.siteduzero.com/simpleit.html">Qui sommes-nous ? </a></li>
+                            
+                                <li><a href="http://www.siteduzero.com/formations.html">Formation professionnelle</a></li>
+                                <li><a href="http://www.siteduzero.com/recrutement.html">Recrutement</a></li>
+                            
+                            <li><a href="http://www.simple-it.fr/blog/">Notre blog</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        Contacts
+                        <ul>
+                            <li><a href="http://www.siteduzero.com/publicite-440.html">Espace annonceurs</a></li>
+                            <li><a href="http://www.siteduzero.com/presse.html">Espace presse</a></li>
+                            <li><strong><a href="http://www.siteduzero.com/contact.html" accesskey="7">Nous contacter</a></strong></li>
+                            <li><a href="http://www.siteduzero.com/promouvoir.html">Promouvoir le site</a></li>
+                            <li><a href="http://suggestions.siteduzero.com/forums/97879-rapports-de-bugs">Signaler un bug</a></li>
+                        </ul>
+                    </li>
+                    
+                        <li>
+                            Partenaires 
+                            <ul>
+                                <li><a href="http://www.planethoster.net/Site-du-Zero">Hébergement web</a></li>
+                                <li><a href="http://www.zcorrecteurs.fr/">Correction tutoriels</a></li>
+                            </ul>
+                        </li>
+                    
+                    <li>
+                        Suivez-nous
+                        <ul class="dernier">
+                            <li><a href="http://www.siteduzero.com/Templates/xml/news_fr.xml"><img src="jointures_fichiers/rss_mini.png" alt="Flux RSS"> Flux RSS News</a>, <a href="http://www.siteduzero.com/Templates/xml/tutoriels_fr.xml">Cours</a>, <a href="http://www.simple-it.fr/blog/index.php?feed/atom">Blog</a></li>
+                            <li><a href="http://www.siteduzero.com/twitter.html"><img src="jointures_fichiers/twitter_mini.png" alt="Twitter"> Twitter</a></li>
+                            <li><a href="http://www.facebook.com/siteduzero"><img src="jointures_fichiers/fb_mini.png" alt="Facebook"> Facebook</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                
+            </div>
+
+            
+
+
+            
+            <script type="text/javascript" src="jointures_fichiers/scripts_lang.js"></script>
+            <script type="text/javascript" src="jointures_fichiers/scripts.js"></script>
+            <script type="text/javascript" src="jointures_fichiers/lib.js"></script>
+
+            
+                <script type="text/javascript">
+    var addthis_config = {  ui_508_compliant: true,
+                            ui_cobrand: "Site du Zéro",
+                            ui_header_color: "#ffffff",
+                            ui_header_background: "#7AB7FC",
+                            username: "simpleit",
+                            services_exclude: 'print,pdfonline,email,twitter,facebook,myspace,googlebuzz,blogger,buzz,live',
+                            data_track_clickback: true  };
+                        
+    var addthis_share = {templates: { twitter:'{{title}} {{url}} #SdZ' } };
+
+    $('div.slidable').hide();
+    $('a.expend').show();
+    $('a.expend').removeAttr('style');
+    
+    $('.expend').click(function(e)
+    {
+        e.preventDefault();
+        $(this).hide('fast');
+        $(this).next('div.slidable').slideToggle('fast');
+    });
+   
+</script>
+<script type="text/javascript" src="jointures_fichiers/addthis_widget.js"></script>
+            
+
+            <div class="droite printnone">
+                <a href="http://www.xiti.com/xiti.asp?s=129196" title="WebAnalytics">
+                    <script type="text/javascript">
+                        <!--
+                        Xt_param = 's=129196&p=%2Ftutoriel-3-214617-introduction-aux-jointures-sql.html';
+                        try {Xt_r = top.document.referrer;}
+                        catch(e) {Xt_r = document.referrer; }
+                        Xt_h = new Date();
+                        Xt_i = '<img width="80" height="15" border="0" ';
+                        Xt_i += 'src="http://logv23.xiti.com/g.xiti?'+Xt_param;
+                        Xt_i += '&hl='+Xt_h.getHours()+'x'+Xt_h.getMinutes()+'x'+Xt_h.getSeconds();
+                        if(parseFloat(navigator.appVersion)>=4)
+                        {
+                        Xt_s=screen;Xt_i+='&r='+Xt_s.width+'x'+Xt_s.height+'x'+Xt_s.pixelDepth+'x'+Xt_s.colorDepth;
+                        }
+                        document.write(Xt_i+'&ref='+Xt_r.replace(/[<>"]/g, '').replace(/&/g, '$')+'">');
+                        //-->
+                    </script><img src="jointures_fichiers/g.gif" height="15" width="80" border="0">
+                    <object>
+                        <noscript>
+                            <p><img width="80" height="15" src="http://logv23.xiti.com/g.xiti?s=129196&amp;p=&amp;" alt="WebAnalytics" /></p>
+                        </noscript>
+                    </object>
+                </a>
+                <script type="text/javascript">
+                    var _gaq = _gaq || [];
+                    _gaq.push(['_setAccount', 'UA-19807070-2']);
+                    _gaq.push(['_trackPageview']);
+
+                    (function() {
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                    })();
+                </script>
+            </div>
+
+            <!-- /#2 944/#0.0916/#0.0339/# -->
+	
+    <div aria-labelledby="ui-dialog-title-dialog_bientot" role="dialog" tabindex="-1" class="ui-dialog ui-widget ui-widget-content ui-corner-all " style="display: none; position: absolute; overflow: hidden; z-index: 1000; outline: 0px none;"><div style="-moz-user-select: none;" unselectable="on" class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span style="-moz-user-select: none;" unselectable="on" id="ui-dialog-title-dialog_bientot" class="ui-dialog-title">Bientôt sur le Site du Zéro.</span><a style="-moz-user-select: none;" unselectable="on" role="button" class="ui-dialog-titlebar-close ui-corner-all" href="#"><span style="-moz-user-select: none;" unselectable="on" class="ui-icon ui-icon-closethick">close</span></a></div><div class="ui-dialog-content ui-widget-content" id="dialog_bientot" style="">
+                <p>Le Site du Zéro vous proposera bientôt de nouveaux cours partant de Zéro dans d'autres domaines que l'informatique ! </p>
+                 <a style="color: rgb(38, 119, 201); text-decoration: none;" href="http://www.siteduzero.com/tutoriel-1-433-sciences.html">Découvrir les cours scientifiques</a>
+            </div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><button class="ui-state-default ui-corner-all" type="button">Ok</button></div></div><div class="" style="display: none;" id="tooltip"><h3></h3><div class="body"></div><div class="url"></div></div></body></html>

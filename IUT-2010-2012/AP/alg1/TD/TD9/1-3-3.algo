@@ -1,0 +1,8 @@
+--afficher le titre du mois
+procedure afficherMois (entree mois <Entier>,
+						entree annee <Entier>,
+						entree nbJourVide <Entier>)
+debut
+	afficherTitreMois(mois, annee);
+	afficherJourMois(nbJourVide, nbJoursMois(mois, annee));
+fin

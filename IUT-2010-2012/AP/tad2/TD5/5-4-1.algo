@@ -1,0 +1,31 @@
+fonction mult (entree p <Peano>, entree q <Peano)
+	retourne <Peano>
+	declenche debordement
+glossaire
+	i <Entier>;
+	j <Entier>;
+	k <Entier>;
+	r <Peano>;
+
+debut
+	k <- 1;
+	i <-1;
+	tantque p[i] /= '!' faire
+		j <-1;
+		tantque q[j] /= '!' faire
+			si k > N alors
+				declencher debordement;
+			fin si;
+			s[k] <- '*';
+			j <- j + 1;
+			k <- k + j;
+		fin tantque;
+		i <- i + j;
+	fin tantque;
+	si k > N alors
+		declencher debordement;
+	fin si;
+	s[k] <- '!' alors
+	retourner s;
+fin		
+

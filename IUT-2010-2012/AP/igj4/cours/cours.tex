@@ -1,0 +1,80 @@
+\documentclass[12pt,a4paper,openany]{report}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+
+\newcommand{\titre}{Interfaces Grahiques en Java}
+
+\newcommand{\module}{}
+\newcommand{\sigle}{igj}
+
+\newcommand{\semestre}{4}
+
+\input{/home/satenske/cours/listings.tex} %prise en charge du langage algo
+\input{/home/satenske/cours/entete_iut-cours.tex}
+
+\begin{document}
+	\maketitle
+	\section{Généralités}
+		Pour convcevoir une interface graphique il faut:
+		\begin{itemize}
+			\item Disposer de composants graphiques (Fenêtres, boutons, champs, \ldots)
+			\item Disposer d'un mécanisme pour agencer les composants graphiques
+			\item Associer un traitement à un composant
+		\end{itemize}
+	\section{Les composants de l'AWT}
+	\begin{itemize}
+		\item Package \texttt{java.awt}
+		\item 3 ensemble de classes
+			\begin{itemize}
+				\item Les composants simples (Héritant de \texttt{Component}
+				\item Les composants de réceptacle (Héritant de \texttt{Container}
+				\item Les composants de menu (Héritant de \texttt{MenuComponent}
+			\end{itemize}
+		\item Possibilité d'imbriquer des composants de réceptacle
+			\begin{itemize}
+				\item Notion de parenté
+			\end{itemize}
+	\end{itemize}
+	\subsection{Exemple de composant graphique : \texttt{TextField}}
+	\begin{tabular}{cc}
+		Méthode & Description\\
+		\texttt{String getSelectedText()} & Renvoie le texte sélectionné\\
+		\texttt{int getSelectionStart()} & Renvoie la position de début de sélection \\
+		\texttt{int getSelectionEnd()} & Renvoie la position de fin de séléction\\
+		\texttt{String getText()} & Renvoie le texte contenu dans l'objet\\
+		\texttt{boolean isEditable()} & Indique si le texte est modifiable \\
+		\texttt{void setEditable(boolean b)} & Autoriser ou interdire la modification de texte\\
+	\end{tabular}
+	\section{Les gestionnaires de mise en page}
+	Un gestionnaire de mise en page est un \texttt{LayoutManager}, c'est un objet associé à un \texttt{Container}.
+	\subsection{Différents gestionnaires}
+	\begin{itemize}
+		\item FlowLayout : Ajout les composants les uns après les autres
+		\item BorderLayout : Ajoute les composants en fonction d'une position géographique
+		\item GridLayout : Ajoute les composants les uns après les autres dans un quadrillage de n lignes et m colonnes\footnote{Taille identique}
+		\item GridBagLayout :Ajoute les composants les uns après les autres dans un quadrillage de n lignes et m colonnes\footnote{Taille non identique} 
+		\item CardLayout : Permet de positionner des onglets pour visualiser plusieurs feuilles
+	\end{itemize}
+	\section{La gestion des événements}
+	\begin{itemize}
+		\item Un objet de type \þexttt{EventObject} est généré par un source à chaque fois qu'un événement se produit.
+	\end{itemize}
+	\section{Les composants SWING}
+	\section{Le contexte graphique}
+	\section{Les appelts}
+	\section{Les environnements de développements intégrés}
+	
+\end{document}
+
+

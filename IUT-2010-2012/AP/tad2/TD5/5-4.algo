@@ -1,0 +1,7 @@
+se positionner sur le premier caractere '*' de p;
+tantque il reste une etoile dans p faire
+	recopier les caractere '*' de q dans le produit;
+	passer au caractere '*' suivant de p;
+fin tantque;
+
+

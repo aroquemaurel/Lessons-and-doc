@@ -1,0 +1,17 @@
+debut
+	ecrire("Taper le premier operande ou 0 pour arreter");
+	lire le premier operande;
+	
+	tantque l entier lu est different de l entier zero faire
+		lire le second operande ;
+		lire le resultat calcule;
+		
+		si la preuve par 9 des 3 derniers entiers lu est valide alors
+			ecrire que la multiplicatoin semble correct
+		sinon
+			ecrire qu il y a un probleme;
+		fin si;
+
+		lire le premier operande;
+	fin tantque;
+fin

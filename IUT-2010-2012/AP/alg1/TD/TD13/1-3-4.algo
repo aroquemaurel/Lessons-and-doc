@@ -1,0 +1,5 @@
+-- augmente d'une unite le nombre d'occurence du couple se trouvant au rang "rang"
+-- dans un tableau de nbOccs elements
+procedure ajouterOccurence (maj tabOccs <TabCouples>,
+							entree nbOccs <Entier>, -- ne sert a rien ^_^
+							entree rang <Entier>);

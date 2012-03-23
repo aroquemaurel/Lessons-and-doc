@@ -1,0 +1,23 @@
+procedure chercherEmplacementClé(entree table <Table[T1,T2]>, entree emplacementSupposé <Entier>, 
+								entree clé <T1>, sortie trouvé <Booleen>, 
+								sortie emplacementClé <Entier>)
+glossaire
+	i <Entier>; -- indice de parcours de table
+debut
+	si table[emplacementSupposé].clé = clé alors
+		trouve <- VRAI;
+		emplacementClé <- emplacementSupposé;
+	sinon
+		-- recherche la clé dans la table table à partir du rang emplacementSupposé + 1
+		i <- (emplacementSupposé + 1) mod TAILLE_TABLEAU
+		trouve <- FAUX;
+		tantque i /= emplacementSupposé et non trouvé faire
+			si table[i].clé = clé alors
+				trouvé <- VRAI;
+				rang <- i;
+			sinon
+				i <- (i+1) mod TAILLE_TABLEAU;
+			fin si;
+		fin tantque;
+	fin si;
+fin

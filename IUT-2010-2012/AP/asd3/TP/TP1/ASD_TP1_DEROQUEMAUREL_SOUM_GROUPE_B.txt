@@ -1,0 +1,89 @@
+Question 1 :
+	 _________________________________________________________
+	|     class TestUnitaire                                  |
+	|_________________________________________________________|
+	|- typedef bool (*test)()                                 |
+	|- test functionOfTest                                    |
+	|- string erreurTest                                      |
+	+---------------------------------------------------------+
+	|Constructeur :                                           |
+	|+ TestUnitaire(test ptrFunction, string message)         |
+	|Accsseurs :                                              |
+	|+ test getFunctionOfTest()                               |
+	|+ string getErrorOfTest()                                |
+	|_________________________________________________________|
+
+	
+	 _______________________________________
+	|     vector<TestUnitaire> lesTests     |
+	+--------+------------------------------+
+    |   1    |         TestUnitaire         |
+	|--------+------------------------------+
+    |   2    |              //              |
+	|--------+------------------------------+
+    |   3    |              //              |
+	|--------+------------------------------+
+    |   4    |              //              |
+	|--------+------------------------------+
+    |   5    |              //              |
+	|--------+------------------------------+
+    |   6    |              //              |
+	|--------+------------------------------+
+	|________|______________________________|
+
+
+	 _______________________________________
+	|     vector<bool> resultat             |
+	+--------+------------------------------+
+    |   1    |             bool             |
+	|--------+------------------------------+
+    |   2    |              //              |
+	|--------+------------------------------+
+    |   3    |              //              |
+	|--------+------------------------------+
+    |   4    |              //              |
+	|--------+------------------------------+
+    |   5    |              //              |
+	|--------+------------------------------+
+    |   6    |              //              |
+	|--------+------------------------------+
+	|________|______________________________|
+
+
+Question 2 :
+	La classe TestUnitaire founit des outils pour tester chaque fonction et repérer l'erreur correspondante.
+	La classe associe un pointeur sur la fonction défaillante et un message d'erreur approprié.
+		- functionOfTest désigne un pointeur vers la fonction qui pose problème (accesseur : getFunctionOfTest())
+		- errorTest contient le message de l'erreur à afficher (accesseur : getErrorTest())
+
+Question 3 :
+	La procédure runAllTest initialise les TestUnitaires, les effectuent et nous signale une erreur le cas échéant.
+	Elle inistilise le vector lesTest avec la fonction initializeAllTests et rempli le vector resultat de 'false'.
+	Ensuite, pour chaque TestUnitaire, ont vérifie que les focntions ne posent pas de problème et modifie le vector resultat en conséquence.
+		true => pas de soucis
+		false => erreur à traiter
+	Elle vérifie que tous les tests ont réussis (testsAllOkay(resultat))
+		les tests ont réussi => "Tous les tests sont Okay"
+		dans le cas contraire => Affiche le message d'erreur correspondant aux différentes erreurs rencontrées à l'aide de la fonction getErrorTest()
+
+Question 4 :
+	1. Ajouter un fonction de test dans le main.cpp
+	2. Ajouter une entrée dans 
+		initializeAllTests(vector<TestUnitaire>& lesTests) {
+			// ...
+		   lesTests.push_back(TestUnitaire(&nomDeMaFonctionDeTest, string ("test Mon message message d'erreur très utile pour déterminer le problème =)"));
+		}
+	3. Recompiler et tester sa fontion de test en faisant une erreur volontaire et vérifier que le test échoue, puis corriger l'erreur et verifier que le test réussi.
+	4. En casd'erreur non volontaire, corriger cette erreur dans notre fonction de test.
+
+Question 5 :
+	On garde les deux vecteurs (vector<bool> resultat et vector<TestUnitaire> lesTests). De même pour la classe TestUnitaire.
+	Puis toutes les fonctions d'automatisation des tests :
+		void initializeAllTests(vector<TestUnitaire>& lesTests)
+		bool testsAllOkay(vector<bool>& resultats)
+		void runAllTests()
+		int main(int argc, char *argv[])
+
+	Pour ajouter un test, cf. Question 4
+		
+			

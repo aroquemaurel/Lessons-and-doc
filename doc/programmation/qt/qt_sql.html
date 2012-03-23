@@ -1,0 +1,2054 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml"><head><link media="all" href="qt_sql_fichiers/widget52.css" type="text/css" rel="stylesheet">
+
+
+
+
+
+
+
+    
+
+        
+
+
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta name="keywords" content="tutoriels, concernant, bibliothèque">
+        <meta name="description" content="Tutoriels concernant la bibliothèque Qt">
+        <meta name="robots" content="index,follow">
+        <meta name="verify-v1" content="UL/4+QUCNTv1xBkNcC4sv4EjPUAoVj1yE+fMZClqLsc=">
+
+        <title>
+            Maîtrisez les bases de données avec QtSQL
+        </title>
+
+        <link rel="shortcut icon" type="image/x-icon" href="http://www.siteduzero.com/Templates/images/designs/2/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="News du Site du Zéro" href="http://www.siteduzero.com/Templates/xml/news_fr.xml">
+        
+        <link rel="alternate" type="application/rss+xml" title="Derniers tutoriels du Site du Zéro" href="http://www.siteduzero.com/Templates/xml/tutoriels_fr.xml">
+        
+
+        <link rel="index" href="http://www.siteduzero.com/plan.html">
+        <link rel="start" title="Accueil" href="http://www.siteduzero.com/">
+        <link rel="search" type="application/opensearchdescription+xml" title="Site Du Zero" href="http://www.siteduzero.com/Templates/xml/xpi/fr/siteduzero.xpi">
+        <link rel="search" href="http://www.siteduzero.com/recherche.html" title="Rechercher">
+        <link rel="help" title="Accessibilité" href="http://www.siteduzero.com/accessibilite.html">
+        <link rel="accesskeys" title="Raccourcis et Accesskeys" href="http://www.siteduzero.com/accessibilite.html">
+
+
+        <link href="qt_sql_fichiers/design.css" rel="stylesheet" type="text/css" media="screen, handheld, tv, projection">
+        <link href="qt_sql_fichiers/zcode.css" rel="stylesheet" type="text/css" media="screen, handheld, tv, projection">
+        <link href="qt_sql_fichiers/impression.css" rel="stylesheet" type="text/css" media="print">
+
+
+        
+
+        
+
+        <!--[if lt IE 8]>
+            <link href="/css/ie_old.min.css?1297850855" rel="stylesheet" type="text/css" media="screen" />
+        <![endif]-->
+
+        
+            <style type="text/css">
+                .spoiler3
+                {
+                        visibility: hidden;
+                }
+                .spoiler3_hidden
+                {
+                        display: none;
+                }
+            </style>
+        
+        <script src="qt_sql_fichiers/ga.js" async="" type="text/javascript"></script><script type="text/javascript" src="qt_sql_fichiers/jquery.js"></script>
+        <script type="text/javascript" src="qt_sql_fichiers/jqueryui.js"></script>
+    </head><body><div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; z-index: 100000;"><iframe src="qt_sql_fichiers/sh32.html" style="height: 1px; width: 1px; position: absolute; z-index: 100000; border: 0pt none; left: 0pt; top: 0pt;" id="_atssh122"></iframe></div>
+		
+            <div id="acces_rapide">
+                <a href="#menu">Aller au menu</a> - <a href="#corps">Aller au contenu</a>
+            </div>
+
+            <div id="top">
+                <ul class="intersites">
+                    
+                    <li class="selected"><a href="http://www.siteduzero.com/">Informatique</a></li>
+                    <li><a href="#" id="bientot_lien">Bientôt...</a></li>
+                </ul>
+
+		<ul class="stats_sites">
+                    
+                    <li class="last_items"><a href="http://www.siteduzero.com/connectes.html">2 980 Zéros connectés</a> - </li>
+                    <li class="last_items"><a href="http://www.siteduzero.com/membres-292.html">226 804 Membres inscrits</a></li>
+		</ul>
+            </div>
+
+            <div id="header">
+                <div class="header_gauche">
+                    <a href="http://www.siteduzero.com/"><img src="qt_sql_fichiers/logo_sdz_fr.png" alt=""></a>
+                </div>
+
+                <div class="header_droit">
+                    <div class="fr">
+                        <div id="logbox">
+                            
+                                <div class="bloc_inscription">
+                                    <a href="http://www.siteduzero.com/membres-315.html">
+                                        <strong class="liens_invites">Inscription</strong><br>
+                                        Inscription rapide en 2 minutes
+                                    </a>
+                                </div>
+                                <div class="bloc_connexion">
+                                    <a href="http://www.siteduzero.com/connexion.html">
+                                        <strong class="liens_invites">Connexion</strong><br>
+                                        Utilisez votre compte
+                                    </a>
+                                    <a class="rpxnow" onclick="return false;" href="https://site-du-zero.rpxnow.com/openid/v2/signin?token_url=http%3A%2F%2Fwww.siteduzero.com%2Fmembres-348-1.html%3Freferer%3Dtutoriel-3-267200-maitrisez-les-bases-de-donnees-avec-qtsql.html"><img src="qt_sql_fichiers/rpx_icons.png" alt="connexion_rpx"></a>
+                                    <script type="text/javascript">
+                                        var rpxJsHost = (("https:" == document.location.protocol) ? "https://" : "http://static.");
+                                        document.write(unescape("%3Cscript src='" + rpxJsHost +
+                                        "rpxnow.com/js/lib/rpx.js' type='text/javascript'%3E%3C/script%3E"));
+                                    </script><script src="qt_sql_fichiers/rpx.js" type="text/javascript"></script>
+                                    <script type="text/javascript">
+                                        RPXNOW.overlay = true;
+                                        RPXNOW.language_preference = 'fr';
+                                    </script>
+                                </div>
+                            
+                        </div>
+
+                        
+                    </div>
+
+                    <div id="publicite_header">
+                        <div id="publicite_banniere" class="publicite">
+                            <script type="text/javascript">
+                                <!--
+                                ord=Math.random();
+                                ord=ord*10000000000000000000;
+                                document.write('<scr'+'ipt type="text/javascript" src="pub.js.php?cb='+ord+'&amp;l=468&amp;h=60&amp;age=0&amp;pays=0&amp;cid=348"><\/scr'+'ipt>');
+                                -->
+                            </script><script type="text/javascript" src="qt_sql_fichiers/pub_002.html"></script>
+                        </div>
+
+                    </div>
+                    </div>
+                </div>
+
+                    <div id="speedbarre">
+                            <ul class="smenu">
+                                <li id="speed_accueil" class="home">
+                                    <a href="http://www.siteduzero.com/" accesskey="1">
+                                        <span title="Accueil">Accueil</span>
+                                    </a>
+                                </li>
+                                
+                                <li class="" id="speed_cours">
+                                    <a href="http://www.siteduzero.com/tutoriel.html">
+                                        <span>Cours</span>
+                                    </a>
+                                    <span class="speedbarre_arrow"></span>
+                                </li>
+                                <li class="" id="speed_forum">
+                                    <a class="" href="http://www.siteduzero.com/forum.html">
+                                        <span>Forums</span>
+                                    </a>
+                                    <span class="speedbarre_arrow"></span>
+                                </li>
+                                
+                                    <li class="" id="speed_concours">
+                                        <a href="http://www.siteduzero.com/participez.html">
+                                            <span>Participez</span>
+                                        </a>
+                                        <span class="speedbarre_arrow"></span>
+                                    </li>
+                                    <li class="" id="speed_etudes">
+                                        <a href="http://www.siteduzero.com/etudes.html" class="last_item">
+                                            <span>Études</span>
+                                        </a>
+                                        <span class="speedbarre_arrow"></span>
+                                    </li>
+                                    <li class="" id="speed_job">
+                                        <a href="http://www.siteduzero.com/emploi.html" class="last_item">
+                                            <span>Emploi</span>
+                                        </a>
+                                        <span class="speedbarre_arrow"></span>
+                                    </li>
+
+                                    <li class="" id="speed_boutique">
+                                    <a href="http://www.siteduzero.com/boutique.html" class="last_item">
+                                            <span>Boutique</span>
+                                        </a>
+                                        <span class="speedbarre_arrow"></span>
+                                    </li>
+                                
+                            </ul>
+
+                            <div id="speedbar_expand" class="menuh" style="display: none;">
+                                <div class="menuh_content">
+                                    <div id="menuh_tutorials" style="display: none;">
+                                        
+
+                                        <div id="menu_tutorials">
+                                            <div class="menu_prim">
+                                                <h5>Les cours phares</h5>
+                                                <div class="menuh_list_category">
+                                                    <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-67-site-web.html"><img src="qt_sql_fichiers/67.png" alt=""></a></div>
+                                                    <h6><a href="http://www.siteduzero.com/tutoriel-1-67-site-web.html"><strong>Site Web</strong></a></h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-13666-apprenez-a-creer-votre-site-web.html"><span style="display: block;">XHTML / CSS</span></a></li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-309961-dynamisez-vos-sites-web-avec-javascript.html">Javascript</a></li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-14668-concevez-votre-site-web-avec-php-et-mysql.html">PHP / MySQL</a>
+                                                            <a href="http://www.siteduzero.com/boutique-614-107-concevez-votre-site-web-avec-php-et-mysql.html">
+                                                                <span class="in_book"><img src="qt_sql_fichiers/ico_livre.png" alt=""></span>
+                                                                <span style="display: none;">Ce cours existe en livre :<br>(Concevez votre site web avec PHP et MySQL)</span>
+                                                            </a>
+                                                        </li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-112219-apprenez-a-creer-des-applications-web-dynamiques-avec-jee.html">Java EE (J2EE)</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="menuh_list_category">
+                                                    <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-57-programmation.html"><img src="qt_sql_fichiers/57.png" alt=""></a></div>
+                                                    <h6><a href="http://www.siteduzero.com/tutoriel-1-57-programmation.html"><strong>Programmation</strong></a></h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-14189-apprenez-a-programmer-en-c.html">Langage C</a>
+                                                            <a href="http://www.siteduzero.com/boutique-614-65-apprenez-a-programmer-en-c.html">
+                                                                <span class="in_book"><img src="qt_sql_fichiers/ico_livre.png" alt=""></span>
+                                                                <span style="display: none;">Ce cours existe en livre :<br>(Apprenez à programmer en C)</span>
+                                                            </a>
+                                                        </li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-11406-apprenez-a-programmer-en-c.html">Langage C++</a></li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-10601-programmation-en-java.html">Java</a></li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-119239-programmation-en-java-api.html">Java (API)</a></li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-223267-apprendre-python.html">Python</a></li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-134798-visual_basic_net.html">VB .NET </a></li>
+                                                    </ul>
+                                                </div>
+
+
+                                                <div class="menuh_list_category">
+                                                    <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-60-systemes-d-exploitation.html"><img src="qt_sql_fichiers/60.png" alt=""></a></div>
+                                                    <h6><a href="http://www.siteduzero.com/tutoriel-1-60-systemes-d-exploitation.html"><strong>Systèmes d'exploitation</strong></a></h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-12827-reprenez-le-controle-a-l-aide-de-linux.html">Linux</a>
+                                                            <a href="http://www.siteduzero.com/boutique-614-171-reprenez-le-controle-a-l-aide-de-linux.html">
+                                                                <span class="in_book"><img src="qt_sql_fichiers/ico_livre.png" alt=""></span>
+                                                                <span style="display: none;">Ce cours existe en livre :<br>(Reprenez le contrôle a l'aide de Linux)</span>
+                                                            </a>
+                                                        </li>                                                    
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-273305-freebsd-et-l-envers-du-decor.html">FreeBSD</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="menuh_list_category">
+                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-56-graphisme.html"><img src="qt_sql_fichiers/56.png" alt=""></a></div>
+                                                    <h6><a href="http://www.siteduzero.com/tutoriel-1-56-graphisme.html"><strong>Graphisme</strong></a></h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-351765-debuter-sur-adobe-photoshop.html">Photoshop</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="menuh_list_category">
+                                                    <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-58-infographie-3d.html"><img src="qt_sql_fichiers/58.png" alt=""></a></div>
+                                                    <h6><a href="http://www.siteduzero.com/tutoriel-1-58-infographie-3d.html"><strong>Infographie 3D</strong></a></h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-11714-debutez-dans-la-3d-avec-blender.html">Blender</a></li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-228998-apprenez-a-modeliser-en-3d-avec-autodesk-maya.html">Maya </a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="menuh_list_category">
+                                                    <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-55-bureautique.html"><img src="qt_sql_fichiers/55.png" alt=""></a></div>
+                                                    <h6><a href="http://www.siteduzero.com/tutoriel-1-55-bureautique.html"><strong>Bureautique</strong></a></h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-258577-redigez-des-documents-de-qualite-professionnelle-avec-latex.html">LaTeX</a>
+                                                            <a href="http://www.siteduzero.com/boutique-614-207-redigez-des-documents-de-qualite-professionnelle-avec-latex.html">
+                                                                <span class="in_book"><img src="qt_sql_fichiers/ico_livre.png" alt=""></span>
+                                                                <span style="display: none;">Ce cours existe en livre :<br>(Rédigez des documents de qualité avec LaTeX)</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="menu_princi menuhcattuto ">
+                                                <h5>Tous les cours par catégories</h5>
+                                                <div class="menuh_princi_col">
+                                                    
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-67-site-web.html"><img src="qt_sql_fichiers/67.png" alt=""></a></div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-67-site-web.html">Site Web <span style="font-weight: normal;">(206 Cours)</span></a></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-69-xhtml-css.html">XHTML / CSS</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-1-210-php.html">PHP</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-71-divers.html">Divers</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-73-forums.html">Forums</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-77-hebergement.html">Hébergement</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-70-javascript.html">Javascript</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-74-serveur.html">Serveur</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-309-ide.html">IDE</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-60-systemes-d-exploitation.html"><img src="qt_sql_fichiers/60.png" alt=""></a></div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-60-systemes-d-exploitation.html">Systèmes d'exploitation <span style="font-weight: normal;">(96 Cours)</span></a></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-96-linux.html">Linux</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-147-macos.html">MacOS</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-1-97-windows.html">Windows</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-408-bsd.html">BSD</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-54-mapping.html"><img src="qt_sql_fichiers/54.png" alt=""></a></div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-54-mapping.html">Mapping <span style="font-weight: normal;">(31 Cours)</span></a></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-63-half-life.html">Half-Life</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-66-half-life.html">Half-Life²</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-173-warcraft.html">Warcraft</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-188-autres.html">Autres</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-55-bureautique.html"><img src="qt_sql_fichiers/55.png" alt=""></a></div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-55-bureautique.html">Bureautique <span style="font-weight: normal;">(29 Cours)</span></a></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-1-290-microsoft-office.html">Microsoft Office</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-1-291-openoffice-org.html">OpenOffice.org</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-87-firefox.html">Firefox</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-195-irc.html">IRC</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-192-divers.html">Divers</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-59-jeux-video.html"><img src="qt_sql_fichiers/59.png" alt=""></a></div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-59-jeux-video.html">Jeux Vidéo <span style="font-weight: normal;">(22 Cours)</span></a></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-102-hl-ses-mods.html">HL &amp; ses mods</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-185-autres-jeux.html">Autres jeux</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-61-materiel.html"><img src="qt_sql_fichiers/61.png" alt=""></a></div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-61-materiel.html">Matériel <span style="font-weight: normal;">(11 Cours)</span></a></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-101-general.html">Général</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+
+                                                    <div class="menuh_list_category">
+                                                        <div class="ico"><img src="qt_sql_fichiers/tuto_cat_thb.png" alt=""></div>
+                                                        <h6>Autres</h6>
+                                                        <ul>
+                                                            
+                                                                <li>
+                                                                    <a style="display: block;" href="http://www.siteduzero.com/tutoriel-2-404-bases-de-donnees.html">Bases de données</a>
+                                                                </li>
+                                                            
+                                                                <li>
+                                                                    <a style="display: block;" href="http://www.siteduzero.com/tutoriel-2-403-mobiles.html">Mobiles</a>
+                                                                </li>
+                                                            
+                                                                <li>
+                                                                    <a style="display: block;" href="http://www.siteduzero.com/tutoriel-2-141-site-du-zero.html">Site du Zéro</a>
+                                                                </li>
+                                                            
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                                <div class="menuh_princi_col">
+                                                    
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-57-programmation.html">
+                                                                    <img src="qt_sql_fichiers/57.png" alt=""></a>
+                                                                </div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-57-programmation.html">Programmation</a> <span style="font-weight: normal;">(244 Cours)</span></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-91-as-flash-flex.html">AS / Flash / Flex</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-217-algorithmique.html">Algorithmique</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-254-basic-et-derives.html">Basic et dérivés</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-1-344-bibliotheques.html">Bibliothèques</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-262-c.html">C</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-261-c.html">C++</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-201-c-net.html">C# / .NET</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-1-258-calculatrices.html">Calculatrices</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-242-ide.html">IDE</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-336-erlang.html">Erlang</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-227-general.html">Général</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-178-java.html">Java</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-93-mirc.html">mIRC</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-196-python.html">Python</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-355-caml-ocaml.html">Caml / OCaml</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-386-cocoa-objective-c.html">Cocoa / Objective-C</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-253-autres-langages.html">Autres langages</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-56-graphisme.html">
+                                                                    <img src="qt_sql_fichiers/56.png" alt=""></a>
+                                                                </div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-56-graphisme.html">Graphisme</a> <span style="font-weight: normal;">(27 Cours)</span></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-176-dessin.html">Dessin</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-177-divers.html">Divers</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-79-flash.html">Flash</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-157-gimp.html">Gimp</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-153-dessin-vectoriel.html">Dessin vectoriel</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-190-photofiltre.html">PhotoFiltre</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-78-photoshop.html">Photoshop</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-197-pov-ray.html">POV-Ray</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-58-infographie-3d.html">
+                                                                    <img src="qt_sql_fichiers/58.png" alt=""></a>
+                                                                </div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-58-infographie-3d.html">Infographie 3D</a> <span style="font-weight: normal;">(25 Cours)</span></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-95-3d-studio-max.html">3D Studio Max</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-152-blender.html">Blender</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-296-maya.html">Maya</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-62-multimedia.html">
+                                                                    <img src="qt_sql_fichiers/62.png" alt=""></a>
+                                                                </div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-62-multimedia.html">Multimédia</a> <span style="font-weight: normal;">(24 Cours)</span></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-99-audio.html">Audio</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-100-video.html">Vidéo</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-382-after-effects.html">After Effects</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-182-reseaux.html">
+                                                                    <img src="qt_sql_fichiers/182.png" alt=""></a>
+                                                                </div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-182-reseaux.html">Réseaux</a> <span style="font-weight: normal;">(18 Cours)</span></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-183-general.html">Général</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-189-securite.html">Sécurité</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+
+                                                    <div class="menuh_list_category">
+                                                        <div id="create_tutorials_button">
+                                                            
+                                                                <div><a href="http://www.siteduzero.com/connexion.html"><img src="qt_sql_fichiers/redigercours.png" alt=""></a></div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div id="menuh_forum" style="display: none;">
+                                        <div class="menu_princi">
+                                            <a class="button_all_forums" href="http://www.siteduzero.com/forum.html">Accueil des forums</a>
+                                            <div class="menuh_princi_col">
+                                                
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-121-site-web.html"><img src="qt_sql_fichiers/121.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-121-site-web.html">Site Web</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-122-xhtml-css.html">XHTML / CSS</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-338-javascript.html">Javascript</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-123-php.html">PHP</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-128-mapping.html"><img src="qt_sql_fichiers/128.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-128-mapping.html">Mapping</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-129-goldsource-hl1.html">GoldSource (HL1)</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-130-source-hl2.html">Source (HL2)</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-24-communaute-des-zeros.html"><img src="qt_sql_fichiers/24.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-24-communaute-des-zeros.html">Communauté des zéros</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-28-discussions-generales.html">Discussions générales</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-278-vos-etudes.html">Vos études</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-239-presentation-de-vos-projets.html">Présentation de vos projets</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-200-recrutements-pour-vos-projets.html">Recrutements pour vos projets</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-440-sciences.html"><img src="qt_sql_fichiers/440.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-440-sciences.html">Sciences</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-441-mathematiques.html">Mathématiques</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-442-physique-chimie.html">Physique - Chimie</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-443-biologie-et-geologie.html">Biologie et Géologie</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-444-autres-sciences.html">Autres sciences</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                            </div>
+
+                                            <div class="menuh_princi_col">
+                                                
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-125-programmation.html"><img src="qt_sql_fichiers/125.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-125-programmation.html">Programmation</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-126-langage-c.html">Langage C</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-237-langage-c.html">Langage C++</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-305-langage-java.html">Langage Java</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-407-langage-python.html">Langage Python</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-406-bases-de-donnees.html">Bases de données</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-127-autres-langages-outils-et-approches.html">Autres langages, outils et approches</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-219-materiel-et-logiciels.html"><img src="qt_sql_fichiers/219.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-219-materiel-et-logiciels.html">Matériel et logiciels</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-339-discussions-informatiques.html">Discussions informatiques</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-220-linux-mac-et-bsd.html">Linux, Mac et *BSD</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-221-windows.html">Windows</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-116-jeux-video.html">Jeux vidéo</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-117-graphisme.html">Graphisme</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-223-materiel.html">Matériel</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-310-concours.html"><img src="qt_sql_fichiers/310.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-310-concours.html">Concours</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-435-innov-game-2011-a-la-gloire-de.html">Innov'Game 2011 : A la gloire de</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-447-atelier-de-noel-faites-votre-jeu.html">Atelier de noël : "Faites votre jeu"</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-143-le-site-du-zero.html"><img src="qt_sql_fichiers/143.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-143-le-site-du-zero.html">Le Site du Zéro</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-144-suggestions-et-commentaires.html">Suggestions et Commentaires</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-145-designs-du-site-du-zero.html">Designs du Site du Zéro</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-429-tutoriels-du-site-du-zero.html">Tutoriels du Site du Zéro</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                            </div>
+                                        </div>
+
+                                        
+                                    <div class="clear"></div>
+                                    </div>
+                                    <div id="menuh_collaborate" style="display: none;">
+                                        <div class="menuh_list_category">
+                                            
+                                                <div class="ico"><a href="http://www.siteduzero.com/membres-315.html"><img src="qt_sql_fichiers/tuto_cat_thb.png" alt=""></a></div>
+                                                <h6><a href="http://www.siteduzero.com/membres-315.html">Cours</a></h6>
+                                                <ul>
+                                                    <li style="font-style: italic;">Pour rédiger et participer à la rédaction d'un tutoriel, <a style="display: inline; font-style: normal;" href="http://www.siteduzero.com/membres-315.html">rejoignez-nous !</a></li>
+                                                </ul>
+                                            
+                                        </div>
+
+                                        <div class="menuh_list_category">
+                                            
+                                                <div class="ico"><a href="http://www.siteduzero.com/membres-315.html"><img src="qt_sql_fichiers/defaut_thb.png" alt=""></a></div>
+                                                <h6><a href="http://www.siteduzero.com/membres-315.html">News</a></h6>
+                                                <ul>
+                                                    <li style="font-style: italic;">Pour partager ou participer à la rédaction d'une news, <a style="display: inline; font-style: normal;" href="http://www.siteduzero.com/membres-315.html"> rejoignez-nous !</a></li>
+                                                </ul>
+                                            
+                                        </div>
+
+                                        <div class="menuh_list_category">
+                                            <div class="ico"><a href="http://www.siteduzero.com/concours.html"><img src="qt_sql_fichiers/cup_thb.png" alt=""></a></div>
+                                            <h6><a href="http://www.siteduzero.com/concours.html">Concours</a></h6>
+                                            <ul>
+                                                
+                                                        <li><a href="http://www.siteduzero.com/concours-654-122-innov-game-2011-a-la-gloire-de.html">Innov'Game 2011 : A la gloire de</a></li>
+                                                    
+                                            </ul>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+
+
+                                    <div id="menuh_job" style="display: none;">
+                                        <div class="menu_princi">
+                                            <div class="menuh_princi_col">
+                                                <div class="menuh_list_category">
+                                                    <h6>Dernières annonces</h6>
+                                                    <div class="menuh_list_category_job">
+                                                        
+                                                            <a title="Consulter le poste : Consultant en Architecture S…" href="http://www.siteduzero.com/emploi/45/consultant-en-architecture-si-logicielle" class="corpsmenu">
+                                                                <span class="last_jobs">
+                                                                    <span title="CDI" class="job_type jobtypes1">CDI</span>
+                                                                </span>
+                                                                <span>
+                                                                    <span class="job_title">Consultant en Architecture S…</span>
+                                                                    <span style="color: rgb(0, 0, 0);">Solucom</span>
+                                                                </span>
+                                                            </a>
+                                                        
+                                                            <a title="Consulter le poste : Consultant en Architecture S…" href="http://www.siteduzero.com/emploi/46/consultant-en-architecture-si-technique" class="corpsmenu">
+                                                                <span class="last_jobs">
+                                                                    <span title="CDI" class="job_type jobtypes1">CDI</span>
+                                                                </span>
+                                                                <span>
+                                                                    <span class="job_title">Consultant en Architecture S…</span>
+                                                                    <span style="color: rgb(0, 0, 0);">Solucom</span>
+                                                                </span>
+                                                            </a>
+                                                        
+                                                            <a title="Consulter le poste : Consultant en Gouvernance SI…" href="http://www.siteduzero.com/emploi/47/consultant-en-gouvernance-si" class="corpsmenu">
+                                                                <span class="last_jobs">
+                                                                    <span title="CDI" class="job_type jobtypes1">CDI</span>
+                                                                </span>
+                                                                <span>
+                                                                    <span class="job_title">Consultant en Gouvernance SI…</span>
+                                                                    <span style="color: rgb(0, 0, 0);">Solucom</span>
+                                                                </span>
+                                                            </a>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                
+                                                <div class="menuh_princi_col">
+                                                    <div class="menuh_list_category">
+                                                        <h6>Annonces à la une</h6>
+                                                        <div class="menuh_list_category_job">
+                                                            
+                                                                <a title="Consulter le poste : Stage : Télétravail et sé…" href="http://www.siteduzero.com/emploi/22/stage-teletravail-et-securite-des-postes-mobiles" class="corpsmenu">
+
+                                                                    <span class="last_jobs">
+                                                                        <span title="Stage" class="job_type jobtypes3">Stage</span>
+                                                                    </span>
+                                                                    <span>
+                                                                        <span class="job_title">Stage : Télétravail et sé…</span>
+                                                                        <span style="color: rgb(0, 0, 0);">NetXP</span>
+                                                                    </span>
+                                                                </a>
+                                                            
+                                                                <a title="Consulter le poste : Ingénieur Etudes et Dévelo…" href="http://www.siteduzero.com/emploi/4/ingenieur-etudes-et-developpements-c" class="corpsmenu">
+
+                                                                    <span class="last_jobs">
+                                                                        <span title="CDI" class="job_type jobtypes1">CDI</span>
+                                                                    </span>
+                                                                    <span>
+                                                                        <span class="job_title">Ingénieur Etudes et Dévelo…</span>
+                                                                        <span style="color: rgb(0, 0, 0);">TEAM TRADE GROUPE</span>
+                                                                    </span>
+                                                                </a>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <div class="menuh_list_category">
+                                                        <div>
+                                                            <div><a href="http://www.siteduzero.com/emploi.html"><img src="qt_sql_fichiers/speed_barre_btn_recherche_emploi.png" alt=""></a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="menuh_more2">
+                                                        <a href="http://www.siteduzero.com/emploi/liste.html">Toutes les annonces<img src="qt_sql_fichiers/fleche_droite.png" alt="►"></a>
+                                                </div>
+                                            </div>
+                                        <div class="clear"></div>
+                                    </div>
+
+                                    <div id="menuh_study" style="display: none; padding-left: 15px;">
+                                        <div class="menu_princi">
+                                            <div class="ico_study"><img src="qt_sql_fichiers/ico_etude.png" alt="icon etude" width="50"></div>
+                                            <div class="menuh_princi_col">
+                                                <div class="menuh_list_category">
+                                                    <h6>Recrutement à Bac / Bac +1</h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-280-bts.html">BTS</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-269-ecoles-d-ing%C3%A9nieurs-en-informatique.html">Ecoles d'ingénieurs en informatique</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-274-ecoles-d-ing%C3%A9nieurs-generalistes.html">Ecoles d'ingénieurs généralistes</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-283-iut.html">IUT</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-300-universites.html">Universités</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-287-autre-formation-diplomantes.html">Autres formations diplômantes</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-448-cpge.html">CPGE</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="menuh_list_category">
+                                                    <h6>Recrutement à Bac +2</h6>
+                                                    <ul>
+                                                       <li><a href="http://www.siteduzero.com/etudes-550-270-ecoles-d-ing%C3%A9nieurs-en-informatique.html">Ecoles d'ingénieurs en informatique</a></li>
+                                                       <li><a href="http://www.siteduzero.com/etudes-550-273-ecoles-d-ing%C3%A9nieurs-generalistes.html">Ecoles d'ingénieurs généralistes</a></li>
+                                                       <li><a href="http://www.siteduzero.com/etudes-550-289-autre-formation-diplomantes.html">Autres formations diplômantes</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div class="menuh_princi_col">
+                                                <div class="menuh_list_category">
+                                                    <h6>Recrutement à Bac +3 / Bac +4</h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-388-ecoles-d-ing%C3%A9nieurs-en-informatique.html">Ecoles d'ingénieurs en informatique</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-389-ecoles-d-ing%C3%A9nieurs-generalistes.html">Ecoles d'ingénieurs généralistes</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-390-autre-formation-diplomantes.html">Autres formations diplômantes</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="menuh_list_category">
+                                                    <h6>Recrutement à Bac +5</h6>
+                                                    <ul>
+                                                       <li><a href="http://www.siteduzero.com/etudes-550-299-doctorats.html">Doctorats</a></li>
+                                                       <li><a href="http://www.siteduzero.com/etudes-550-391-autre-formation-diplomantes.html">Autres formations diplômantes</a></li>
+                                                    </ul>
+                                                    <div class="menuh_list_category">
+                                                        <div id="find_training">
+                                                            <div><a href="http://www.siteduzero.com/etudes.html"><img src="qt_sql_fichiers/ico_recherche_cours.png" alt=""><strong>Trouvez une formation</strong></a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+
+                                    <div id="menuh_shop" style="display: none;">
+                                        <div class="flagship_products">
+                                            <a href="http://www.siteduzero.com/boutique-614-384-peluche-zozor.html"><img src="qt_sql_fichiers/peluche_zozor.png" alt="peluche zozor"></a>
+                                            <h5>Zozor en peluche</h5>
+                                            <div class="price" style="margin-top: 46px;">
+                                                19 €
+                                            </div>
+                                            <span><a class="bouton_action fl" href="http://www.siteduzero.com/boutique-614-384-peluche-zozor.html">Acheter</a></span>
+                                        </div>
+                                        <div class="flagship_products">
+                                            <a href="http://www.siteduzero.com/boutique-614-188-cle-usb-du-site-du-zero-8-go.html"><img src="qt_sql_fichiers/image_usb_speedbarre.jpg" alt="cle usb"></a>
+                                            <h5>Clé USB du site du Zéro</h5>
+                                            <a href="http://www.siteduzero.com/boutique-614-184-cle-usb-du-site-du-zero-4-go.html">4 Go</a>
+                                            - <a href="http://www.siteduzero.com/boutique-614-188-cle-usb-du-site-du-zero-8-go.html">8 Go</a>
+                                            - <a href="http://www.siteduzero.com/boutique-614-191-cle-usb-du-site-du-zero-16-go.html">16 Go</a><br>
+                                            <div class="price">
+                                                <span class="min_price">À partir de</span><br>
+                                                15,20 €
+                                            </div>
+                                            <span><a class="bouton_action fl" href="http://www.siteduzero.com/boutique-614-188-cle-usb-du-site-du-zero-8-go.html">Acheter</a></span>
+                                        </div>
+
+                                    <div class="other_products">
+                                        <span>Concevez votre site web avec PHP et MySQL<br>
+                                        <a href="http://www.siteduzero.com/boutique-614-107-concevez-votre-site-web-avec-php-et-mysql.html">En savoir plus ►</a></span>
+                                        <a href="http://www.siteduzero.com/boutique-614-107-concevez-votre-site-web-avec-php-et-mysql.html">
+                                        <img style="margin: 13px 0pt 0pt 22px;" alt="Concevez votre site web avec php et mysql" src="qt_sql_fichiers/livre_cours_php_2d.png"></a>
+                                    </div>
+
+                                    <div class="other_products">
+                                        <span>Apprenez à programmer en C <br>
+                                        <a href="http://www.siteduzero.com/boutique-614-65-apprenez-a-programmer-en-c.html">En savoir plus ►</a></span>
+                                        <a href="http://www.siteduzero.com/boutique-614-65-apprenez-a-programmer-en-c.html">
+                                        <img style="margin: 13px 0pt 0pt 22px;" alt="Apprenez à programmer en C" src="qt_sql_fichiers/livre_cours_c_2d.png"></a>
+                                    </div>
+                                    <div class="other_products">
+                                        <span>Reprenez le contrôle à l'aide de Linux <br>
+                                        <a href="http://www.siteduzero.com/boutique-614-171-reprenez-le-controle-a-l-aide-de-linux.html">En savoir plus ►</a></span>
+                                        <a href="http://www.siteduzero.com/boutique-614-171-reprenez-le-controle-a-l-aide-de-linux.html">
+                                        <img style="margin: 13px 0pt 0pt 22px;" alt="Reprenez le contrôle à l'aide de Linux" src="qt_sql_fichiers/livre_cours_linux_2d.png"></a>
+                                    </div>
+
+                                    <div class="other_products">
+                                        <span>Rédigez des documents de qualité avec LaTeX<br>
+                                        <a href="http://www.siteduzero.com/boutique-614-207-redigez-des-documents-de-qualite-avec-latex.html">En savoir plus ►</a></span>
+                                        <a href="http://www.siteduzero.com/boutique-614-207-redigez-des-documents-de-qualite-avec-latex.html">
+                                        <img style="margin: 13px 0pt 0pt 22px;" alt="Rédigez des documents de qualité avec LaTeX" src="qt_sql_fichiers/livre_cours_latex_2d.png"></a>
+                                    </div>
+                                      
+                                    <div class="menuh_more">
+                                        <a href="http://www.siteduzero.com/boutique.html">Tous les produits <img src="qt_sql_fichiers/fleche_droite_002.png" alt="►"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="search_bar">
+                        <div class="ard"></div>
+                        <form method="get" action="recherche.html" id="recherche">
+                            <p>
+                                <input name="src" id="champ_recherche" accesskey="4" value="Rechercher" type="text">
+                                <select name="c" id="section_recherche">
+                                    <option value="3" selected="selected">Cours</option>
+                                    <option value="6">Forums</option>
+                                    <option value="4">News</option>
+                                    <option value="mbr">Membres</option>
+                                    <option value="formation">Études</option>
+                                    <option value="codeweb">Code web</option>
+                                    <option value="mp">MP</option>
+                                </select>
+                                <input class="button_go_search" value="Go" type="submit">
+                                <a class="button_more_search" href="http://www.siteduzero.com/recherche.html">+</a>
+                            </p>
+                        </form>
+                        </div>
+
+                    </div>
+
+<script type="text/javascript">
+
+    
+        //On Hover
+
+    var keyCodeEscape = 27;
+    $(document).keyup(function(f) {
+        if (f.keyCode == keyCodeEscape)
+        {
+            hideBlocMenu();
+        }
+    });
+
+
+    /* Var for speedbar*/
+    showDelay = 300;
+    hiddenDelay = 367;
+    fadeInDelay = 100
+    fadeOutDelay = 100
+    timer = null;
+    hideTimeOut = null
+    // speedbar function
+    function speedShowDelay(){
+        if($('.menuh_content > div').is(':visible'))
+        {
+            showDelay = null;
+        }
+        else
+        {
+            showDelay = 300;
+        }
+    }
+    
+    $("body").mouseleave(function(){
+        $('.menuh_content > div').hide();
+        $('#speedbarre .smenu>li a').removeClass("smenu_hover");
+    });
+    
+    function showMenu(id, id2){
+
+        $(id2).click(function(){
+            clearInterval(timer);
+            hideBlocMenu();
+            return;
+        });
+
+        speedShowDelay();
+
+        $("body").unbind('click');
+
+        clearInterval(timer);
+        if(!$(id).is(':visible'))
+        {
+            $('.menuh_content > div').hide();
+
+            $('#speedbarre .smenu>li a').removeClass("smenu_hover");
+            $('#speedbarre .smenu > li > .speedbarre_arrow').hide();
+
+            timer=setInterval(function(){
+                $(id+' ,#speedbar_expand').fadeIn(fadeInDelay);
+                $(id2+' a').addClass('smenu_hover')
+                clearInterval(timer);
+
+                },showDelay);
+        }
+    }
+
+    function hideMenu(id, id2){
+
+        clearInterval(timer);
+        clearTimeout(hideTimeOut);
+
+        $("body").bind('click',function(){
+            hideBlocMenu();
+        });
+
+        timer=setInterval(function(){
+            $(id).fadeOut(fadeOutDelay,function(){
+                $('#speedbar_expand').hide();
+                $(id2+' a').removeClass("smenu_hover");
+            });
+            clearInterval(timer);
+        },hiddenDelay)
+    }
+
+    function hideBlocMenu(){
+        $('.menuh_content > div').fadeOut(fadeOutDelay, function(){
+            $('#speedbar_expand').hide();
+            $('#speedbarre .smenu>li a').removeClass("smenu_hover");})
+    }
+
+        /* speedbar */
+
+
+    $("#speed_cours").addClass('hideOnLoad');
+    $("#speed_forum").addClass('hideOnLoad');
+    $("#speed_concours").addClass('hideOnLoad');
+    $("#speed_job").addClass('hideOnLoad');
+    $("#speed_etudes").addClass('hideOnLoad');
+    $("#speed_boutique").addClass('hideOnLoad');
+
+
+
+    $(document).mousemove(function(){
+        $("#speed_cours").removeClass('hideOnLoad');
+        $("#speed_forum").removeClass('hideOnLoad');
+        $("#speed_concours").removeClass('hideOnLoad');
+        $("#speed_job").removeClass('hideOnLoad');
+        $("#speed_etudes").removeClass('hideOnLoad');
+        $("#speed_boutique").removeClass('hideOnLoad');
+    })
+
+
+    //TUTORIALS
+    $("#speed_cours, #menuh_tutorials").hover(function(){
+        clearTimeout(hideTimeOut);
+        id = '#menuh_tutorials';
+        id2 = '#speed_cours';
+        if(!$(id2).hasClass('hideOnLoad'))
+        {
+            hideTimeOut = setTimeout(function(){
+                showMenu(id, id2);
+            },100);
+        }
+
+    ;},function(){
+
+        id = '#menuh_tutorials';
+        id2 = '#speed_cours';
+        hideMenu(id, id2);
+    });
+    //FORUMS
+    $("#speed_forum, #menuh_forum").hover(function(){
+        clearTimeout(hideTimeOut);
+        id = '#menuh_forum';
+        id2 = '#speed_forum';
+
+        if(!$(id2).hasClass('hideOnLoad'))
+        {
+            hideTimeOut = setTimeout(function(){
+                showMenu(id, id2);
+            },100);
+        }
+
+    ;},function(){
+
+        id = '#menuh_forum';
+        id2 = '#speed_forum';
+        hideMenu(id, id2);
+    });
+
+    //COLLABORATE
+    $("#speed_concours, #menuh_collaborate").hover(function(){
+        clearTimeout(hideTimeOut);
+        id = '#menuh_collaborate';
+        id2 = '#speed_concours';
+        if(!$(id2).hasClass('hideOnLoad'))
+        {
+            hideTimeOut = setTimeout(function(){
+                showMenu(id, id2);
+            },100);
+        }
+
+    ;},function(){
+
+        id = '#menuh_collaborate';
+        id2 = '#speed_concours';
+        hideMenu(id, id2);
+    });
+
+    //JOB
+    $("#speed_job, #menuh_job").hover(function(){
+        clearTimeout(hideTimeOut);
+        id = '#menuh_job';
+        id2 = '#speed_job';
+        if(!$(id2).hasClass('hideOnLoad'))
+        {
+            hideTimeOut = setTimeout(function(){
+                showMenu(id, id2);
+            },100);
+        }
+
+    ;},function(){
+
+        id = '#menuh_job';
+        id2 = '#speed_job';
+        hideMenu(id, id2);
+    });
+
+    //STUDY
+    $("#speed_etudes, #menuh_study").hover(function(){
+        clearTimeout(hideTimeOut);
+        id = '#menuh_study';
+        id2 = '#speed_etudes';
+        if(!$(id2).hasClass('hideOnLoad'))
+        {
+            hideTimeOut = setTimeout(function(){
+                showMenu(id, id2);
+            },100);
+        }
+
+    ;},function(){
+
+        id = '#menuh_study';
+        id2 = '#speed_etudes';
+        hideMenu(id, id2);
+    });
+
+    //SHOP
+    $("#speed_boutique, #menuh_shop").hover(function(){
+        clearTimeout(hideTimeOut);
+        id = '#menuh_shop';
+        id2 = '#speed_boutique';
+        if(!$(id2).hasClass('hideOnLoad'))
+        {
+            hideTimeOut = setTimeout(function(){
+                showMenu(id, id2);
+            },100);
+        }
+
+    ;},function(){
+
+        id = '#menuh_shop';
+        id2 = '#speed_boutique';
+        hideMenu(id, id2);
+    });
+
+    
+
+</script>
+            
+            <div class="contenu">
+                <div id="menu">
+                    
+
+                    <div class="box_menu">
+                        <h5>Cours</h5>
+
+                        <div class="corpsmenu">
+                            <ul>
+                                
+                                    <li style="border-bottom: 0pt none; padding: 0pt 0pt 2px; background-color: rgb(226, 240, 255);">
+                                        <a href="http://www.siteduzero.com/tutoriel-3-361996-par-ou-commencer.html"><img style="padding-left: 5px;" src="qt_sql_fichiers/compass.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu" style="margin-left: 43px;">
+                                            <a href="http://www.siteduzero.com/tutoriel-3-361996-par-ou-commencer.html"><strong class="menu_cours_section">Nouveau ?</strong></a>
+                                            <ul>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-361996-par-ou-commencer.html">Suivez le guide !</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.siteduzero.com/tutoriel-1-67-site-web.html"><img src="qt_sql_fichiers/67.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu">
+                                            <a href="http://www.siteduzero.com/tutoriel-1-67-site-web.html"><strong class="menu_cours_section">Site Web</strong></a>
+                                            <ul>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-13666-apprenez-a-creer-votre-site-web.html">XHTML / CSS</a></li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-309961-dynamisez-vos-sites-web-avec-javascript.html">Javascript</a></li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-14668-concevez-votre-site-web-avec-php-et-mysql.html">PHP / MySQL</a></li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-112219-apprenez-a-creer-des-applications-web-dynamiques-avec-jee.html">Java EE (J2EE)</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.siteduzero.com/tutoriel-1-57-programmation.html"><img src="qt_sql_fichiers/57.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu">
+                                            <a href="http://www.siteduzero.com/tutoriel-1-57-programmation.html"><strong class="menu_cours_section">Programmation</strong></a>
+                                            <ul>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-14189-apprenez-a-programmer-en-c.html">Langage C</a></li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-11406-apprenez-a-programmer-en-c.html">Langage C++</a></li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-10601-programmation-en-java.html">Java</a></li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-119239-programmation-en-java-api.html">Java (API)</a></li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-223267-apprendre-python.html">Python </a></li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-134798-visual_basic_net.html">VB .NET</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>                                        
+                                        <a href="http://www.siteduzero.com/tutoriel-1-60-systemes-d-exploitation.html"><img src="qt_sql_fichiers/60.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu">
+                                            <a href="http://www.siteduzero.com/tutoriel-1-60-systemes-d-exploitation.html"><strong class="menu_cours_section">Systèmes d'exploitation</strong></a>
+                                            <ul>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-12827-reprenez-le-controle-a-l-aide-de-linux.html">Linux</a></li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-273305-freebsd-et-l-envers-du-decor.html">FreeBSD</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.siteduzero.com/tutoriel-1-56-graphisme.html"><img src="qt_sql_fichiers/56.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu">
+                                            <a href="http://www.siteduzero.com/tutoriel-1-56-graphisme.html"><strong class="menu_cours_section">Graphisme</strong></a>
+                                            <ul>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-351765-debuter-sur-adobe-photoshop.html">Photoshop</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.siteduzero.com/tutoriel-1-58-infographie-3d.html"><img src="qt_sql_fichiers/58.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu">
+                                            <a href="http://www.siteduzero.com/tutoriel-1-58-infographie-3d.html"><strong class="menu_cours_section">Infographie 3D</strong></a>
+                                            <ul>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-11714-debutez-dans-la-3d-avec-blender.html">Blender</a></li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-228998-apprenez-a-modeliser-en-3d-avec-autodesk-maya.html">Maya</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <a href="http://www.siteduzero.com/tutoriel-1-55-bureautique.html"><img src="qt_sql_fichiers/55.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu">
+                                            <a href="http://www.siteduzero.com/tutoriel-1-55-bureautique.html"><strong class="menu_cours_section">Bureautique</strong></a>
+                                            <ul>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-258577-redigez-des-documents-de-qualite-professionnelle-avec-latex.html">LaTeX </a></li>
+                                            </ul>
+                                        </div>
+                                        
+                                    </li>
+                                    
+                                    
+                                    <li class="last_idem_liste">
+                                        <img src="qt_sql_fichiers/die.png" class="fl" alt="">
+                                        <div class="liste_cours_menu">
+                                            <strong class="menu_cours_section">Tutoriel du jour</strong><br>
+                                            <a href="http://www.siteduzero.com/tutoriel-3-209964-dissimuler-un-texte-dans-une-image.html">Dissimuler un texte dans une image</a><br>
+                                        </div>
+                                        <div id="menu_ajout_cours">
+                                            
+                                                <a href="http://www.siteduzero.com/tutoriel-3-256867-devenez-auteur-de-cours-sur-le-site-du-zero-et-le-livre-du-zero.html">
+                                            
+                                            Rédigez un cours <img src="qt_sql_fichiers/add.png" alt="">&nbsp;</a>
+                                        </div>
+                                        <a href="http://www.siteduzero.com/tutoriel.html" class="fr">Tous les cours  <img src="qt_sql_fichiers/fleche_droite.png" alt="">&nbsp;</a><br>
+                                    </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="corps">
+                    <div id="zozor_position">
+                        <div id="zozor">
+                            <div class="centre"><img src="qt_sql_fichiers/zozor6.png" alt=" Zozor" title=" Zozor"></div>
+                       </div>
+                    </div>
+
+                    <div id="container_bulle_zozor">
+                        
+                    </div>
+
+                    <div id="arbre">
+                        
+			&gt;  <a href="http://www.siteduzero.com/">Le Site du Zéro</a>
+		
+			&gt;  <a href="http://www.siteduzero.com/tutoriel.html">Cours</a>
+			 &gt;  <a href="http://www.siteduzero.com/tutoriel-1-352-tutoriels.html">Tutoriels</a>
+		 &gt;  <a href="http://www.siteduzero.com/tutoriel-1-57-programmation.html">Programmation</a>
+		 &gt;  <a href="http://www.siteduzero.com/tutoriel-1-344-bibliotheques.html">Bibliothèques</a>
+		 &gt;  <a href="http://www.siteduzero.com/tutoriel-2-348-qt.html">Qt</a>
+		&gt;  <a href="http://www.siteduzero.com/tutoriel-3-267200-maitrisez-les-bases-de-donnees-avec-qtsql.html">Maîtrisez les bases de données avec QtSQL</a> 
+
+&gt; Lecture du tutoriel
+
+                    </div>
+
+                    
+
+
+
+<h1>
+    Maîtrisez les bases de données avec QtSQL
+    
+</h1>
+
+
+<div id="onglets_tutos" class="onglets_tutos">
+  <ul>
+    
+      <li class="selected">
+      <a href="http://www.siteduzero.com/tutoriel-3-267200-maitrisez-les-bases-de-donnees-avec-qtsql.html">Tutoriel</a></li>
+    
+      <li>
+      <a href="http://www.siteduzero.com/tutoriel-50-267200-p2-maitrisez-les-bases-de-donnees-avec-qtsql.html#r69265">31 commentaires</a></li>
+    
+      <li>
+      <a href="http://www.siteduzero.com/tutoriel-21-267200-maitrisez-les-bases-de-donnees-avec-qtsql.html">Historique</a></li>
+    
+  </ul>
+</div>
+<hr class="bas_onglets">
+
+
+
+
+<div class="cadre_auteur_date">
+    <form action="tutoriel-54-267200.html" method="post">
+        <div class="dnone"><input value="acccb602a53c0042582787a018b8726934cca9f6" name="challenge" type="hidden"></div>
+
+        <div class="infobox">
+<h3 class="special">Informations sur le tutoriel</h3>
+<div class="conteneur_infobox">
+<table>
+  <tbody><tr>
+    <td>
+    <div class="boite_avatar_100px">
+      <img src="qt_sql_fichiers/247123.png" style="width: 96px; height: 96px; display: block;" alt="Avatar" class="avatar" id="avatar230910">  
+     </div>
+    </td>
+    <td>
+     
+      <strong>Auteur</strong> :
+      
+    
+	    <a class="auteur_tut" href="http://www.siteduzero.com/membres-294-230910.html">Perkele</a>
+    
+      <br>
+    
+      
+		  <strong>Difficulté</strong> :
+		  
+			<img src="qt_sql_fichiers/niveau_1.png" alt="Facile">
+		  
+		  <br>
+	  
+		<strong>Temps d'étude estimé</strong> : 
+		
+			2 
+			heures
+		<br>
+	<strong>Licence</strong> : <a href="http://creativecommons.org/licenses/by-sa/2.0/fr/"><img src="qt_sql_fichiers/7.png" alt="Creative Commons BY-SA" title="Creative Commons BY-SA"></a><br><br>
+      <br>
+      <a href="#tuto_details" onclick="toggle('infos_detaillees'); return false;">Plus d'informations <img src="qt_sql_fichiers/fleche_bas.png" alt="Plus d'informations" title="Plus d'informations" id="image_detail"></a>
+
+      <div style="display: none;" id="infos_detaillees">
+	<br>			
+<strong>Créé</strong> : Le 27/06/2010 à 19:31:08<br>
+<strong>Modifié</strong> : Le 28/06/2010 à 18:13:48<br>
+
+<strong>Avancement</strong> : 100%<br>
+
+<br>
+
+
+<a href="http://www.siteduzero.com/tutoriel-50-267200-69265-maitrisez-les-bases-de-donnees-avec-qtsql.html#r69265">31 commentaires</a><br>
+
+
+      </div>
+
+    </td>
+  </tr>
+</tbody></table>
+</div>
+</div>
+
+
+    <div class="infobox">
+        <h3 class="special">Popularité</h3>
+        <div class="conteneur_infobox">
+            <strong>Visualisations</strong> : 2&nbsp;613<br><br>
+            <div style="padding-top: 1px; float: left;"><strong>Appréciation<br>des lecteurs</strong> : </div>
+            <div class="tut_appreciation">
+                <div class="tut_appreciation_smiley" id="smiley-1-14578--102954" style="background-position: -19px 50%;"><img src="qt_sql_fichiers/empty.gif" alt=""></div>
+                <span id="eval_nb-1">0</span>
+            </div>
+            <div class="tut_appreciation">
+                <div class="tut_appreciation_smiley" id="smiley-2-14578--102954" style="background-position: -57px 50%;"><img src="qt_sql_fichiers/empty.gif" alt=""></div>
+                <span id="eval_nb-2">5</span>
+            </div>
+            <div class="tut_appreciation">
+                <div class="tut_appreciation_smiley eval_always_color" id="smiley-3-14578--102954" style="background-position: -76px 50%;"><img src="qt_sql_fichiers/empty.gif" alt=""></div>
+                <span id="eval_nb-3">0</span>
+            </div>
+            <div class="tut_appreciation">
+                <div class="tut_appreciation_smiley" id="smiley-4-14578--102954" style="background-position: -133px 50%;"><img src="qt_sql_fichiers/empty.gif" alt=""></div>
+                <span id="eval_nb-4">6</span>
+            </div>
+            
+            <div style="clear: both;"></div>
+                
+                    <p id="tut_vot_ldz" style="text-align: center;"><img src="qt_sql_fichiers/thb_livre_cours_c.png" id="tut_vot_ldz_img" alt="">
+                    
+                                <b>3 personnes</b> souhaitent voir ce tutoriel publié en livre ! <br> <a href="http://www.siteduzero.com/vote/ldz/14578.html" id="tut_vot_ldz_link">Vous aussi ?</a>
+                            
+            </p>
+        </div>
+    </div>
+
+
+<div class="infobox" id="pave_pub_tuto" style="display: none;">
+<h3 class="special">Publicité</h3>
+<div class="conteneur_infobox">
+<table style="width: 100%;">
+  <tbody><tr>
+    <td colspan="2" id="menu_pub_tuto">
+        
+            <script type="text/javascript">
+                    <!--
+                    ord=Math.random();
+                    ord=ord*10000000000000000000;
+                    var test = true;
+                    document.write('<scr'+'ipt type="text/javascript" src="pub.js.php?cb='+ord+'&amp;l=300&amp;h=250&amp;age=0&amp;afficher_bloc_pub=pave_pub_tuto&amp;cid=348&amp;pays=0"><\/scr'+'ipt>');
+                    -->
+            </script><script type="text/javascript" src="qt_sql_fichiers/pub.html"></script>
+        
+    </td>
+  </tr>
+</tbody></table>
+</div>
+</div>
+
+        
+	<div class="infobox">
+		<h3 class="special">Historique des mises à jour</h3>
+		<div class="conteneur_infobox">
+			<ul>
+				
+					<li>
+						<em>Le 05/08/2010 à 14:40:44</em><br>
+						Ajout d'une majuscule à une fonction.
+					</li>
+			  
+					<li>
+						<em>Le 07/07/2010 à 20:44:01</em><br>
+						Changement de licence
+					</li>
+			  
+					<li>
+						<em>Le 29/06/2010 à 11:22:37</em><br>
+						ticket #2351
+					</li>
+			  
+			</ul>
+		</div>
+	</div>
+
+
+        
+            <div class="infobox expandable">
+                <h3 class="special">Partager</h3>
+                <div class="conteneur_infobox addthis_toolbox" style="text-decoration: none;" addthis:url="http://www.siteduzero.com/tutoriel-3-267200-maitrisez-les-bases-de-donnees-avec-qtsql.html" addthis:title="Maîtrisez les bases de données avec QtSQL">
+                    <div class="vertical">
+                        <a class="addthis_button_print at300b" title="Imprimer"><span class="at300bs at15t_print"></span>Imprimer</a>
+                        <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=pdfonline&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-267200-maitrisez-les-bases-de-donnees-avec-qtsql.html&amp;title=Ma%C3%AEtrisez%20les%20bases%20de%20donn%C3%A9es%20avec%20QtSQL&amp;ate=AT-simpleit/-/fs-0/4d5c41c63ba01b32/1&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-2-348-qt.html&amp;tt=0" class="addthis_button_pdfonline at300b" title="Convertir au format PDF"><span class="at300bs at15t_pdfonline"></span>Convertir en PDF</a>
+                        <a class="addthis_button_email at300b" title="Partager via Email"><span class="at300bs at15t_email"></span>Email</a>
+                        <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=twitter&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-267200-maitrisez-les-bases-de-donnees-avec-qtsql.html&amp;title=Ma%C3%AEtrisez%20les%20bases%20de%20donn%C3%A9es%20avec%20QtSQL&amp;ate=AT-simpleit/-/fs-0/4d5c41c63ba01b32/2&amp;sms_ss=1&amp;at_xt=1&amp;template=%7B%7Btitle%7D%7D%20%7B%7Burl%7D%7D%20%23SdZ&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-2-348-qt.html&amp;tt=0" class="addthis_button_twitter at300b" title="Partager via Twitter"><span class="at300bs at15t_twitter"></span>Twitter</a>
+                        <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=facebook&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-267200-maitrisez-les-bases-de-donnees-avec-qtsql.html&amp;title=Ma%C3%AEtrisez%20les%20bases%20de%20donn%C3%A9es%20avec%20QtSQL&amp;ate=AT-simpleit/-/fs-0/4d5c41c63ba01b32/3&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-2-348-qt.html&amp;tt=0" class="addthis_button_facebook at300b" title="Partager via Facebook"><span class="at300bs at15t_facebook"></span>Facebook</a>
+                        <a class="expend" href="#plus"><span class="more">&nbsp;</span>Plus de services</a>
+                        <div style="display: none;" class="slidable">
+                            <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=myspace&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-267200-maitrisez-les-bases-de-donnees-avec-qtsql.html&amp;title=Ma%C3%AEtrisez%20les%20bases%20de%20donn%C3%A9es%20avec%20QtSQL&amp;ate=AT-simpleit/-/fs-0/4d5c41c63ba01b32/4&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-2-348-qt.html&amp;tt=0" class="addthis_button_myspace at300b" title="Partager via MySpace"><span class="at300bs at15t_myspace"></span>MySpace</a>
+                            <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=googlebuzz&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-267200-maitrisez-les-bases-de-donnees-avec-qtsql.html&amp;title=Ma%C3%AEtrisez%20les%20bases%20de%20donn%C3%A9es%20avec%20QtSQL&amp;ate=AT-simpleit/-/fs-0/4d5c41c63ba01b32/5&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-2-348-qt.html&amp;tt=0" class="addthis_button_googlebuzz at300b" title="Partager via Google Buzz"><span class="at300bs at15t_googlebuzz"></span>Google Buzz</a>
+                            <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=blogger&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-267200-maitrisez-les-bases-de-donnees-avec-qtsql.html&amp;title=Ma%C3%AEtrisez%20les%20bases%20de%20donn%C3%A9es%20avec%20QtSQL&amp;ate=AT-simpleit/-/fs-0/4d5c41c63ba01b32/6&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-2-348-qt.html&amp;tt=0" class="addthis_button_blogger at300b" title="Partager via Blogger"><span class="at300bs at15t_blogger"></span>Blogger</a>
+                            <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=buzz&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-267200-maitrisez-les-bases-de-donnees-avec-qtsql.html&amp;title=Ma%C3%AEtrisez%20les%20bases%20de%20donn%C3%A9es%20avec%20QtSQL&amp;ate=AT-simpleit/-/fs-0/4d5c41c63ba01b32/7&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-2-348-qt.html&amp;tt=0" class="addthis_button_buzz at300b" title="Partager via Yahoo! Buzz"><span class="at300bs at15t_buzz"></span>Y! Buzz</a>
+                            <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=live&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-267200-maitrisez-les-bases-de-donnees-avec-qtsql.html&amp;title=Ma%C3%AEtrisez%20les%20bases%20de%20donn%C3%A9es%20avec%20QtSQL&amp;ate=AT-simpleit/-/fs-0/4d5c41c63ba01b32/8&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-2-348-qt.html&amp;tt=0" class="addthis_button_live at300b" title="Partager via MSN Live"><span class="at300bs at15t_live"></span>MSN Live</a>
+                            <a class="addthis_button_expanded at300m" title="Partager via un autre service"><span class="at300bs at15t_expanded"></span>Encore plus de services</a>
+                        </div>
+                    </div>
+                <div class="atclear"></div></div>
+            </div>
+        
+    </form>
+</div>
+
+
+<div id="chap_intro">Dans ce tutoriel, nous allons voir ensemble l'utilisation des bases de données dans un projet Qt.<br>
+<br>
+Pour suivre ce tutoriel, il est donc nécessaire d'avoir des bases en 
+C++, de connaître un minimum le framework Qt, de savoir utiliser un <acronym title="Système de Gestion de Bases de Données">S.G.B.D.</acronym>, et d'avoir des bases en SQL.<br>
+Si ce n'est pas le cas, vous pouvez lire le <a href="http://www.siteduzero.com/tutoriel-3-11406-apprenez-a-programmer-en-c.html">tutoriel de C++</a> en totalité, ainsi que <a href="http://www.siteduzero.com/tutoriel-3-14668-un-site-dynamique-avec-php.html#part_14671">la partie 3 du tutoriel de PHP</a> qui sont présents sur ce site.<br>
+</div>
+
+
+    <div class="sommaire_chap">
+        <span>Sommaire du tutoriel :</span>
+        <div class="icone_chap">
+            
+                <img src="qt_sql_fichiers/267134.gif" alt="Icône du chapitre" class="icone_chapitre">
+            
+        </div>
+
+        <div class="droite_chapitre">
+            <ul class="liste_sommaire_chap">
+                
+                    <li>
+                        <a href="#ss_part_1">Préparation avant codage</a>
+                    </li>
+                
+                    <li>
+                        <a href="#ss_part_2">[Qt] Se connecter, faire des requêtes, et les traiter</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    <div class="liens_bas_tuto">
+        
+    </div>
+
+
+<hr>
+
+
+                <h2>
+                    <a id="ss_part_1" class="titre_sous_partie">Préparation avant codage</a>
+                    
+                </h2>
+
+                <div class="ss_part_texte"><h3>Obtenir une Base de Données</h3><br>
+<br>
+Pour commencer à utiliser une BDD, il faut bien en avoir une, non ? <img src="qt_sql_fichiers/smile.png" alt=":)" class="smilies"><br>
+Si vous en possédez une, vous pouvez passer votre chemin, et aller directement à la partie suivante.<br>
+<br>
+Tout d'abord, si vous voulez juste tester pour voir comment cela marche,
+ et seulement sur votre PC, le plus simple est directement d'en 
+installer une chez vous. Le <acronym title="Système de Gestion de Bases de Données">SGBD</acronym> que j'utiliserai dans le tutoriel est MySQL, vous pouvez l'installer en le téléchargeant sur <a href="http://www.mysql.fr/downloads/mysql/">le site officiel</a> et en l'installant. Si vous êtes sous GNU/Linux, il se trouve à coup sûr dans vos dépôts.<br>
+Attention ! Il vous faut aussi installer la librairie côté client du SGBD choisi !<br>
+<br>
+C'est bon ? vous avez tout ?<br>
+C'est parti pour l'aventure ! <img src="qt_sql_fichiers/heureux.png" alt=":D" class="smilies"></div>
+                <hr>
+            
+                <h2>
+                    <a id="ss_part_2" class="titre_sous_partie">[Qt] Se connecter, faire des requêtes, et les traiter</a>
+                    
+                </h2>
+
+                <div class="ss_part_texte">Dans cette partie, nous allons apprendre à nous servir de toutes ces magnifiques choses, ne perdons donc pas de temps, allons-y.<br>
+<br>
+Voici donc le code de base que je vous propose pour commencer à étudier le module QtSql. <img src="qt_sql_fichiers/smile.png" alt=":)" class="smilies"><br>
+<span class="code">Code : C++ - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 cpp"><table class="syntaxtable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="syntax"><pre><span class="cp">#include &lt;QCoreApplication&gt;</span>
+<span class="cp">#include &lt;QtSql&gt;</span>
+<span class="cp">#include &lt;iostream&gt;</span>
+
+<span class="cp">#define q2c(string) string.toStdString()</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">countArg</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">listArg</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">QCoreApplication</span> <span class="n">app</span><span class="p">(</span><span class="n">countArg</span><span class="p">,</span> <span class="n">listArg</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">flush</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">app</span><span class="p">.</span><span class="n">exec</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></tbody></table></div><br>
+Voici ce qui est à noter dans le code :<br>
+<ul>
+<li>Peut-être l'avez-vous remarqué avec « QCoreApplication », mais je n'utiliserai pas d'interface graphique pour faire ce code ;</li>
+<li>La macro-définition q2c est simplement faite pour faciliter la conversion de QString vers std::string ; <img src="qt_sql_fichiers/smile.png" alt=":)" class="smilies"></li>
+<li>Quand l'on écrit directement avec std::cout, le texte ne sera pas 
+dans la console, pour cela, il faut utiliser std::flush pour forcer 
+l'affichage.</li>
+</ul><br>
+Étant donné que nous n'utilisons pas de GUI (il vous faudrait plus de temps à modifier l'ancien qu'à écrire le nouveau <img src="qt_sql_fichiers/hihi.png" alt="^^" class="smilies"> ), ne générez pas votre .pro avec <span class="code2 console">qmake&nbsp;-project</span>, utilisez celui-ci :<br>
+<span class="code">Code : Autre - <a href="#" class="select_code">Sélectionner</a></span><div class="code2"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><div class="syntax"><pre>QT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+=&nbsp;sql&nbsp;#&nbsp;On&nbsp;rajoute&nbsp;SQL
+QT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-=&nbsp;gui&nbsp;#&nbsp;On&nbsp;enlève&nbsp;la&nbsp;GUI
+TARGET&nbsp;=&nbsp;test&nbsp;#&nbsp;La&nbsp;cible&nbsp;de&nbsp;compilation,&nbsp;le&nbsp;résultat
+CONFIG&nbsp;&nbsp;&nbsp;+=&nbsp;console&nbsp;#&nbsp;On&nbsp;rajoute&nbsp;la&nbsp;console
+TEMPLATE&nbsp;=&nbsp;app&nbsp;#&nbsp;On&nbsp;veut&nbsp;une&nbsp;application,&nbsp;oui
+SOURCES&nbsp;+=&nbsp;main.cpp&nbsp;#&nbsp;La&nbsp;liste&nbsp;des&nbsp;fichiers&nbsp;de&nbsp;source</pre></div></td></tr></tbody></table></div><br>
+<br>
+Et si vous compilez puis exécutez... vous tomberez sur une console vide.
+ Et c'est normal, nous n'avons rien codé, pour l'instant ! <img src="qt_sql_fichiers/heureux.png" alt=":D" class="smilies"><br>
+<br>
+<h3>Connexion à la BDD</h3><br>
+Pour commencer, il faut faire la connexion. Pour ce faire, on va créer un objet de la classe QSqlDatabase.<br>
+Comme valeur, on va lui assigner le retour de la méthode statique 
+addDatabase() qui reçoit en paramètre sous forme de chaîne de caractères
+ l'une des valeurs du tableau se trouvant <a href="http://doc.trolltech.com/latest/qsqldatabase.html#QSqlDatabase-3">dans la documentation</a>.<br>
+Dans ce tutoriel, étant donné que je prendrai en exemple une base de données MySQL, nous prendrons la valeur QMYSQL.<br>
+<br>
+Pour résumer ce que je viens de dire, rajoutez ceci dans le code :<br>
+<span class="code">Code : C++ - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 cpp"><table class="syntaxtable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="syntax"><pre><span class="n">QSqlDatabase</span> <span class="n">db</span> <span class="o">=</span> <span class="n">QSqlDatabase</span><span class="o">::</span><span class="n">addDatabase</span><span class="p">(</span><span class="s">"QMYSQL"</span><span class="p">);</span>
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+Maintenant, nous allons préciser l'hôte, le nom d'utilisateur, le mot de
+ passe, et la base de données que l'on utilisera. Pour ce faire, on 
+utilisera respectivement les méthodes setHostName(), setUserName(), 
+setPassword() et setDatabaseName(), qui prennent chacunes un QString 
+renseignant l'information que l'on modifie.<br>
+Pour continuer, nous allons utiliser open(), qui ouvre la connexion, et 
+renvoie un booléen : true si la connexion a réussie, false si elle a 
+échouée. Nous l'utiliserons donc dans une condition.<br>
+Pour fermer la base de données, on utilisera la méthode close().<br>
+<br>
+Si je résume, encore une fois, voici notre code :<br>
+<span class="code">Code : C++ - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 cpp"><table class="syntaxtable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="syntax"><pre><span class="n">QSqlDatabase</span> <span class="n">db</span> <span class="o">=</span> <span class="n">QSqlDatabase</span><span class="o">::</span><span class="n">addDatabase</span><span class="p">(</span><span class="s">"QMYSQL"</span><span class="p">);</span>
+<span class="n">db</span><span class="p">.</span><span class="n">setHostName</span><span class="p">(</span><span class="s">"localhost"</span><span class="p">);</span>
+<span class="n">db</span><span class="p">.</span><span class="n">setUserName</span><span class="p">(</span><span class="s">"root"</span><span class="p">);</span>
+<span class="n">db</span><span class="p">.</span><span class="n">setPassword</span><span class="p">(</span><span class="s">""</span><span class="p">);</span>
+<span class="n">db</span><span class="p">.</span><span class="n">setDatabaseName</span><span class="p">(</span><span class="s">"tuto"</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="n">db</span><span class="p">.</span><span class="n">open</span><span class="p">())</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Vous êtes maintenant connecté à "</span> <span class="o">&lt;&lt;</span> <span class="n">q2c</span><span class="p">(</span><span class="n">db</span><span class="p">.</span><span class="n">hostName</span><span class="p">())</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">db</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"La connexion a échouée, désolé"</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+Vous pouvez donc déjà tester la connexion en utilisant le code ci-dessus.<br>
+Ça marche ? Oui ? Parfait. <img src="qt_sql_fichiers/smile.png" alt=":)" class="smilies"><br>
+<br>
+Si ce n'est pas le cas, vérifiez que les identifiants sont corrects ou 
+que vous êtes, dans le cas d'un serveur externe, autorisés à accéder à 
+la BDD. Pensez aussi à placer les DLL de l'API de votre SGBD ainsi que 
+ceux de QtSQL.<br>
+Remarque : La méthode QSqlDatabase::lastError retourne un objet de type 
+QSqlError, et dedans, il y a une méthode text() qui explique la source 
+du problème !<br>
+Vous pouvez donc le connaître ainsi :<br>
+<span class="code">Code : C++ - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 cpp"><table class="syntaxtable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="syntax"><pre><span class="c1">//...</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"La connexion a échouée, désolé :("</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="n">q2c</span><span class="p">(</span><span class="n">db</span><span class="p">.</span><span class="n">lastError</span><span class="p">().</span><span class="n">text</span><span class="p">())</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+<h3>Effectuer une requête</h3><br>
+Tout d'abord, sachez qu'une requête est représentée par la classe 
+QSqlQuery. Elle peut prendre un paramètre au constructeur, ou aucun (ce 
+que je vous conseille, pour n'utiliser qu'un objet de la classe 
+QSqlQuery et ne pas en recréer à chaque requête).<br>
+<br>
+Vous créez un objet QSqlQuery, et pour faire une requête, il vous 
+suffira d'utiliser la méthode exec(), en lui passant la requête en 
+paramètre.<br>
+Sachez qu'exec() retourne un booléen : true si la requête a réussie, 
+false si elle a échouée. Si c'est une requête qui n'attend pas de 
+réponse (dans le cas de la requête UPDATE, par exemple), cela suffit. Si
+ par contre elle attend une réponse (dans le cas de SELECT, par 
+exemple), on utilisera cette méthode d'une façon un peu différente que 
+nous verrons dans le paragraphe suivant.<br>
+En cas d'erreur de la requête, QSqlQuery::lastError() vous retournera un objet de type QSqlError.<br>
+Il vous suffira d'utiliser QSqlError::text() pour l'avoir dans un QString, et pouvoir l'afficher !<br>
+<br>
+Par exemple, imaginez que vous avez une table config, contenant deux champs : type et contenu. <span class="italique">type</span> serait la configuration que l'on fait (titre, taille, ...) et <span class="italique">contenu</span> serait la valeur de la configuration ("Mon super programme", "165x253", ...).<br>
+Vous voudriez modifier le titre, pour le changer en « Mon programme avec BDD v2.0 ». Voici comment vous devrez faire :<br>
+<span class="code">Code : C++ - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 cpp"><table class="syntaxtable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="syntax"><pre><span class="n">QSqlQuery</span> <span class="n">query</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="n">query</span><span class="p">.</span><span class="n">exec</span><span class="p">(</span><span class="s">"UPDATE `config` SET `contenu`='Mon programme avec BDD v2.0' WHERE `type`='titre'"</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Le titre a bien été changé ! :)"</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Une erreur s'est produite. :("</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="n">q2c</span><span class="p">(</span><span class="n">query</span><span class="p">.</span><span class="n">lastError</span><span class="p">().</span><span class="n">text</span><span class="p">())</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+<h3>Récupérer les données</h3><br>
+Donc, comme je viens de le dire, dans le cas d'une requête attendant une
+ réponse, tel que SELECT, on utilisera, combinée à la méthode exec(), la
+ méthode next() qui retourne la valeur suivante de la requête. Tant 
+qu'il reste des lignes dans la réponse, next() retournera true, et 
+modifiera la ligne actuelle dans notre objet.<br>
+Pour accéder à une colonne de la ligne, il vous faudra passer par son ID
+ (le numéro qui donne son ordre dans la liste, le premier étant 0), avec
+ QSqlQuery::value(), vous avez plusieurs solutions :<br>
+<ul>
+<li>Vous savez que la requête ne retournera qu'une colonne, dans ce cas, vous utiliserez le premier ID possible (0) ;</li>
+<li>Vous connaissez le nom du champ, vous allez utiliser 
+QSqlRecord::indexOf() qui prend en paramètre le nom du champ dans un 
+QString ;</li>
+</ul><br>
+<br>
+Maintenant, je veux afficher les valeurs de tous les champs, et 
+récupérer leurs noms : en passant son ID à la fonction 
+QSqlRecord::fieldname(), on peut récupérer son nom.<br>
+Si on veut récupérer la totalité des colonnes, il suffit de faire une 
+boucle « tant que x est plus petit que QSqlRecord::count() ». x sera 
+l'ID de la colonne.<br>
+<br>
+<div class="rmq question">Attends une minute, mon bonhomme ! C'est quoi, cette classe QSqlRecord ? Je dois faire un objet ?</div><br>
+Non, il y a plus simple !<br>
+La méthode QSqlQuery::record() retournera l'objet QSqlRecord à utiliser !<br>
+Vous pourrez donc faire : <span class="code2 cpp"><span class="n">query</span><span class="p">.</span><span class="n">record</span><span class="p">().</span><span class="n">indexOf</span><span class="p">(</span><span class="s">"colonne1"</span><span class="p">);</span>
+</span><br>
+<br>
+Par exemple, pour afficher le contenu de notre table « config », cela suffira :<br>
+<span class="code">Code : C++ - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 cpp"><table class="syntaxtable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="syntax"><pre><span class="n">QSqlQuery</span> <span class="n">query</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="n">query</span><span class="p">.</span><span class="n">exec</span><span class="p">(</span><span class="s">"SELECT * FROM config"</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">query</span><span class="p">.</span><span class="n">next</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"    Nouvelle entrée"</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">query</span><span class="p">.</span><span class="n">record</span><span class="p">().</span><span class="n">count</span><span class="p">();</span> <span class="o">++</span><span class="n">x</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"        "</span> <span class="o">&lt;&lt;</span> <span class="n">q2c</span><span class="p">(</span><span class="n">query</span><span class="p">.</span><span class="n">record</span><span class="p">().</span><span class="n">fieldName</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">&lt;&lt;</span> <span class="s">" = "</span> <span class="o">&lt;&lt;</span> <span class="n">q2c</span><span class="p">(</span><span class="n">query</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+Qui a dit que les BDD avec Qt, c'était dur ? <img src="qt_sql_fichiers/heureux.png" alt=":D" class="smilies"><br>
+<br>
+<h3>Les requêtes préparées</h3><br>
+Tout d'abord, qu'est-ce-qu'une requête préparée ? C'est une requête 
+comme une autre, sauf qu'au lieu de mettre directement les valeurs, on 
+va mettre des marqueurs (<strong>?</strong> ou un marqueur nominatif), et les remplacer plus tard.<br>
+Ainsi, la requête sera réutilisable pour différentes valeurs.<br>
+<br>
+Pour en créer une, on utilise toujours l'objet QSqlQuery. Sauf que nous 
+n'écrirons pas la requête dans la méthode QSqlQuery::exec(), mais dans 
+la méthode QSqlQuery::prepare().<br>
+Pour remplacer un marqueur, il y a deux possibilités :<br>
+<ul>
+<li>C'est un marqueur nominatif, on va utiliser la méthode QSqlQuery::bindValue en mettant le nom du marqueur puis la valeur ;</li>
+<li>C'est un point d'interrogation, on utilisera 
+QSqlQuery::addBindValue() en passant la valeur : il faudra l'utiliser 
+dans l'ordre des <strong>?</strong> !</li>
+</ul><br>
+Si je résume :<br>
+<span class="code">Code : C++ - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 cpp"><table class="syntaxtable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="syntax"><pre><span class="n">QSqlQuery</span> <span class="n">q</span><span class="p">;</span>
+<span class="c1">//Marqueurs ?</span>
+<span class="n">q</span><span class="p">.</span><span class="n">prepare</span><span class="p">(</span><span class="s">"UPDATE matable SET monchamp=?, monchamp2=?"</span><span class="p">);</span>
+<span class="n">q</span><span class="p">.</span><span class="n">addBindValue</span><span class="p">(</span><span class="s">"Coucou"</span><span class="p">);</span>
+<span class="n">q</span><span class="p">.</span><span class="n">addBindValue</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
+
+<span class="c1">//Marqueurs nominatifs</span>
+<span class="n">q</span><span class="p">.</span><span class="n">prepare</span><span class="p">(</span><span class="s">"UPDATE matable SET monchamp=:premierevaleur, monchamp2=:deuxiemevaleur"</span><span class="p">);</span>
+<span class="n">q</span><span class="p">.</span><span class="n">bindValue</span><span class="p">(</span><span class="s">":premierevaleur"</span><span class="p">,</span> <span class="s">"Coucou"</span><span class="p">);</span>
+<span class="n">q</span><span class="p">.</span><span class="n">bindValue</span><span class="p">(</span><span class="s">":deuxiemevaleur"</span><span class="p">,</span> <span class="mi">42</span><span class="p">);</span>
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+À noter que les marqueurs nominatifs commencent par le caractère <strong>:</strong> (<strong>Doubles-points</strong>).<br>
+<br>
+Vous avez aussi une deuxième possibilité :<br>
+On veut executer cette même requête plusieurs fois. On va utiliser 
+QSqlQuery::addBindValue() pour les deux types de marqueurs, sauf que 
+l'on passera un QVariantList en paramètre.<br>
+Attention ! Un QVariantList passé correspond aux valeurs d'un marqueur 
+dans les différentes requêtes, et non aux valeurs des marqueurs dans 
+chacunes des requêtes !<br>
+Mais un exemple vaut mieux qu'un avertissement, voici celui de la documentation :<br>
+<span class="code">Code : C++ - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 cpp"><table class="syntaxtable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="syntax"><pre><span class="n">QSqlQuery</span> <span class="n">q</span><span class="p">;</span>
+<span class="n">q</span><span class="p">.</span><span class="n">prepare</span><span class="p">(</span><span class="s">"insert into myTable values (?, ?)"</span><span class="p">);</span>
+
+<span class="n">QVariantList</span> <span class="n">ints</span><span class="p">;</span>
+<span class="n">ints</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span> <span class="o">&lt;&lt;</span> <span class="mi">3</span> <span class="o">&lt;&lt;</span> <span class="mi">4</span><span class="p">;</span>
+<span class="n">q</span><span class="p">.</span><span class="n">addBindValue</span><span class="p">(</span><span class="n">ints</span><span class="p">);</span>
+
+<span class="n">QVariantList</span> <span class="n">names</span><span class="p">;</span>
+<span class="n">names</span> <span class="o">&lt;&lt;</span> <span class="s">"Harald"</span> <span class="o">&lt;&lt;</span> <span class="s">"Boris"</span> <span class="o">&lt;&lt;</span> <span class="s">"Trond"</span> <span class="o">&lt;&lt;</span> <span class="n">QVariant</span><span class="p">(</span><span class="n">QVariant</span><span class="o">::</span><span class="n">String</span><span class="p">);</span>
+<span class="n">q</span><span class="p">.</span><span class="n">addBindValue</span><span class="p">(</span><span class="n">names</span><span class="p">);</span>
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+<div class="rmq question">Bonhomme, c'est bien beau tout ça, mais ça m'aide pas à exécuter une requête ! J'utilise exec() tout seul ?</div><br>
+Et bien, c'est presque la solution ! Il va falloir utiliser QSqlQuery::execBatch(). <img src="qt_sql_fichiers/smile.png" alt=":)" class="smilies"><br>
+<br>
+Pour compléter le code ci-dessus, voici comment on exécuterai la requête : <br>
+<span class="code">Code : C++ - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 cpp"><table class="syntaxtable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="syntax"><pre><span class="n">QSqlQuery</span> <span class="n">q</span><span class="p">;</span>
+<span class="n">q</span><span class="p">.</span><span class="n">prepare</span><span class="p">(</span><span class="s">"insert into myTable values (?, ?)"</span><span class="p">);</span>
+
+<span class="n">QVariantList</span> <span class="n">ints</span><span class="p">;</span>
+<span class="n">ints</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span> <span class="o">&lt;&lt;</span> <span class="mi">3</span> <span class="o">&lt;&lt;</span> <span class="mi">4</span><span class="p">;</span>
+<span class="n">q</span><span class="p">.</span><span class="n">addBindValue</span><span class="p">(</span><span class="n">ints</span><span class="p">);</span>
+
+<span class="n">QVariantList</span> <span class="n">names</span><span class="p">;</span>
+<span class="n">names</span> <span class="o">&lt;&lt;</span> <span class="s">"Harald"</span> <span class="o">&lt;&lt;</span> <span class="s">"Boris"</span> <span class="o">&lt;&lt;</span> <span class="s">"Trond"</span> <span class="o">&lt;&lt;</span> <span class="n">QVariant</span><span class="p">(</span><span class="n">QVariant</span><span class="o">::</span><span class="n">String</span><span class="p">);</span>
+<span class="n">q</span><span class="p">.</span><span class="n">addBindValue</span><span class="p">(</span><span class="n">names</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">q</span><span class="p">.</span><span class="n">execBatch</span><span class="p">())</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Ça marche ! :)"</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Ça marche pas ! :("</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+Pour le reste (gestion des erreurs, récupération des données), le fonctionnement est le même.</div>
+                <hr>
+            
+
+<div id="chap_conclusion">Il y a tant de choses que j'aurais pu rajouter
+ dans ce tutoriel, tant de choses à apprendre, tant d'astuces à 
+utiliser, tant de choses qui fait que ce tutoriel n'est pas complet.<br>
+Par contre, la documentation, elle, est très complète, n'hésitez pas à regarder dedans !<br>
+<br>
+<ul>
+<li><a href="http://doc.trolltech.com/latest">Documentation de Qt</a> ;</li>
+<li><a href="http://doc.trolltech.com/latest/qtsql.html">Documentation du module QtSql</a> ;</li>
+<li><a href="http://doc.trolltech.com/latest/qsqldatabase.html">Documentation de la classe QSqlDatabase</a> ;</li>
+<li><a href="http://doc.trolltech.com/latest/qsqlquery.html">Documentation de la classe QSqlQuery</a> ;</li>
+<li><a href="http://doc.trolltech.com/latest/qsqlrecord.html">Documentation de la classe QSqlRecord</a> ;</li>
+<li><a href="http://doc.trolltech.com/latest/qsqlerror.html">Documentation de la classe QSqlError</a>.</li>
+</ul></div>
+
+
+
+    <div class="liens_bas_tuto">
+        
+    </div>
+
+
+<div class="infobox cadre_auteur_date" id="tuto_details">
+    <h3 class="special">Informations sur le tutoriel</h3>
+    <div class="conteneur_infobox">
+        <a href="#onglets_tutos">Retour en haut <img src="qt_sql_fichiers/fleche_haut.png" alt="Retour en haut" title="Retour en haut"></a>
+        <br>
+        <br>			
+<strong>Créé</strong> : Le 27/06/2010 à 19:31:08<br>
+<strong>Modifié</strong> : Le 28/06/2010 à 18:13:48<br>
+
+<strong>Avancement</strong> : 100%<br>
+
+<br>
+
+
+<a href="http://www.siteduzero.com/tutoriel-50-267200-69265-maitrisez-les-bases-de-donnees-avec-qtsql.html#r69265">31 commentaires</a><br>
+
+
+    </div>
+</div>
+
+<div class="clearer"></div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+            <div id="footer">
+                <ul>
+                    <li>
+                        Le Site du Zéro
+                        <ul>
+                            <li><a href="http://www.siteduzero.com/plan.html">Plan du site</a></li>
+                            <li><a href="http://www.siteduzero.com/membres-304.html">L'équipe</a></li>
+                            <li><a href="http://www.siteduzero.com/mentions.html">Mentions légales</a></li>
+                            <li><a href="http://www.siteduzero.com/accessibilite.html" accesskey="0">Accessibilité</a></li>
+                            <li><a href="http://www.siteduzero.com/livreor.html">Livre d'or</a></li>
+                            <li><a href="http://suggestions.siteduzero.com/">Suggestions <sup style="color: green;">Nouveau !</sup></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        Simple IT
+                        <ul>
+                            <li><a href="http://www.siteduzero.com/simpleit.html">Qui sommes-nous ? </a></li>
+                            
+                                <li><a href="http://www.siteduzero.com/formations.html">Formation professionnelle</a></li>
+                                <li><a href="http://www.siteduzero.com/recrutement.html">Recrutement</a></li>
+                            
+                            <li><a href="http://www.simple-it.fr/blog/">Notre blog</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        Contacts
+                        <ul>
+                            <li><a href="http://www.siteduzero.com/publicite-440.html">Espace annonceurs</a></li>
+                            <li><a href="http://www.siteduzero.com/presse.html">Espace presse</a></li>
+                            <li><strong><a href="http://www.siteduzero.com/contact.html" accesskey="7">Nous contacter</a></strong></li>
+                            <li><a href="http://www.siteduzero.com/promouvoir.html">Promouvoir le site</a></li>
+                            <li><a href="http://suggestions.siteduzero.com/forums/97879-rapports-de-bugs">Signaler un bug</a></li>
+                        </ul>
+                    </li>
+                    
+                        <li>
+                            Partenaires 
+                            <ul>
+                                <li><a href="http://www.planethoster.net/Site-du-Zero">Hébergement web</a></li>
+                                <li><a href="http://www.zcorrecteurs.fr/">Correction tutoriels</a></li>
+                            </ul>
+                        </li>
+                    
+                    <li>
+                        Suivez-nous
+                        <ul class="dernier">
+                            <li><a href="http://www.siteduzero.com/Templates/xml/news_fr.xml"><img src="qt_sql_fichiers/rss_mini.png" alt="Flux RSS"> Flux RSS News</a>, <a href="http://www.siteduzero.com/Templates/xml/tutoriels_fr.xml">Cours</a>, <a href="http://www.simple-it.fr/blog/index.php?feed/atom">Blog</a></li>
+                            <li><a href="http://www.siteduzero.com/twitter.html"><img src="qt_sql_fichiers/twitter_mini.png" alt="Twitter"> Twitter</a></li>
+                            <li><a href="http://www.facebook.com/siteduzero"><img src="qt_sql_fichiers/fb_mini.png" alt="Facebook"> Facebook</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                
+            </div>
+
+            
+
+
+            
+            <script type="text/javascript" src="qt_sql_fichiers/scripts_lang.js"></script>
+            <script type="text/javascript" src="qt_sql_fichiers/scripts.js"></script>
+            <script type="text/javascript" src="qt_sql_fichiers/lib.js"></script>
+
+            
+                <script type="text/javascript">
+    var addthis_config = {  ui_508_compliant: true,
+                            ui_cobrand: "Site du Zéro",
+                            ui_header_color: "#ffffff",
+                            ui_header_background: "#7AB7FC",
+                            username: "simpleit",
+                            services_exclude: 'print,pdfonline,email,twitter,facebook,myspace,googlebuzz,blogger,buzz,live',
+                            data_track_clickback: true  };
+                        
+    var addthis_share = {templates: { twitter:'{{title}} {{url}} #SdZ' } };
+
+    $('div.slidable').hide();
+    $('a.expend').show();
+    $('a.expend').removeAttr('style');
+    
+    $('.expend').click(function(e)
+    {
+        e.preventDefault();
+        $(this).hide('fast');
+        $(this).next('div.slidable').slideToggle('fast');
+    });
+   
+</script>
+<script type="text/javascript" src="qt_sql_fichiers/addthis_widget.js"></script>
+            
+
+            <div class="droite printnone">
+                <a href="http://www.xiti.com/xiti.asp?s=129196" title="WebAnalytics">
+                    <script type="text/javascript">
+                        <!--
+                        Xt_param = 's=129196&p=%2Ftutoriel-3-267200-maitrisez-les-bases-de-donnees-avec-qtsql.html';
+                        try {Xt_r = top.document.referrer;}
+                        catch(e) {Xt_r = document.referrer; }
+                        Xt_h = new Date();
+                        Xt_i = '<img width="80" height="15" border="0" ';
+                        Xt_i += 'src="http://logv23.xiti.com/g.xiti?'+Xt_param;
+                        Xt_i += '&hl='+Xt_h.getHours()+'x'+Xt_h.getMinutes()+'x'+Xt_h.getSeconds();
+                        if(parseFloat(navigator.appVersion)>=4)
+                        {
+                        Xt_s=screen;Xt_i+='&r='+Xt_s.width+'x'+Xt_s.height+'x'+Xt_s.pixelDepth+'x'+Xt_s.colorDepth;
+                        }
+                        document.write(Xt_i+'&ref='+Xt_r.replace(/[<>"]/g, '').replace(/&/g, '$')+'">');
+                        //-->
+                    </script><img src="qt_sql_fichiers/g.gif" height="15" width="80" border="0">
+                    <object>
+                        <noscript>
+                            <p><img width="80" height="15" src="http://logv23.xiti.com/g.xiti?s=129196&amp;p=&amp;" alt="WebAnalytics" /></p>
+                        </noscript>
+                    </object>
+                </a>
+                <script type="text/javascript">
+                    var _gaq = _gaq || [];
+                    _gaq.push(['_setAccount', 'UA-19807070-2']);
+                    _gaq.push(['_trackPageview']);
+
+                    (function() {
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                    })();
+                </script>
+            </div>
+
+            <!-- /#2 980/#0.0974/#0.025/# -->
+	
+    <div aria-labelledby="ui-dialog-title-dialog_bientot" role="dialog" tabindex="-1" class="ui-dialog ui-widget ui-widget-content ui-corner-all " style="display: none; position: absolute; overflow: hidden; z-index: 1000; outline: 0px none;"><div style="-moz-user-select: none;" unselectable="on" class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span style="-moz-user-select: none;" unselectable="on" id="ui-dialog-title-dialog_bientot" class="ui-dialog-title">Bientôt sur le Site du Zéro.</span><a style="-moz-user-select: none;" unselectable="on" role="button" class="ui-dialog-titlebar-close ui-corner-all" href="#"><span style="-moz-user-select: none;" unselectable="on" class="ui-icon ui-icon-closethick">close</span></a></div><div class="ui-dialog-content ui-widget-content" id="dialog_bientot" style="">
+                <p>Le Site du Zéro vous proposera bientôt de nouveaux cours partant de Zéro dans d'autres domaines que l'informatique ! </p>
+                 <a style="color: rgb(38, 119, 201); text-decoration: none;" href="http://www.siteduzero.com/tutoriel-1-433-sciences.html">Découvrir les cours scientifiques</a>
+            </div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><button class="ui-state-default ui-corner-all" type="button">Ok</button></div></div><div style="display: none;" id="tooltip"><h3></h3><div class="body"></div><div class="url"></div></div></body></html>

@@ -1,0 +1,475 @@
+\documentclass{article}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+%\usepackage[frenchb]{babel}
+%\usepackage{layout}
+%\usepackage{setspace}
+%\usepackage{soul}
+%\usepackage{ulem}
+%\usepackage{eurosym}
+%\usepackage{bookman}
+%\usepackage{charter}
+%\usepackage{newcent}
+%\usepackage{lmodern}
+%\usepackage{mathpazo}
+%\usepackage{mathptmx}
+%\usepackage{url}
+%\usepackage{verbatim}
+%\usepackage{moreverb}
+%\usepackage{wrapfig}
+%\usepackage{amsmath}
+%\usepackage{mathrsfs}
+%\usepackage{asmthm}
+%\usepackage{makeidx}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+
+\include{listing_algo} %prise en charge du langage algo
+
+\title{TD 14\\ Tri à bulles (Bubble sort)}
+\date{Algorithmique\\ Semestre 1}
+
+\lhead{TD 14: Tri à bulles (Bubble sort)}
+\chead{}
+\rhead{\thepage}
+
+\lfoot{Université paul sabatier Toulouse III}
+\cfoot{\thepage}
+\rfoot{Alg1}
+
+\pagestyle{fancy}
+
+\begin{document}
+	\maketitle
+	\section{}
+		\subsection{Algo niveau 1}
+			\lstinputlisting[caption=sous-programme ramenerValeurMax Niveau 1]{1-niveau1.algo}
+		\subsection{Algo niveau 2}
+			\lstinputlisting[caption=sous-programme ramenerValeurMax Niveau 2]{1-niveau2.algo}
+		\subsection{Trace du sous-programme}
+			\begin{tabular}{|c|c|c|c|c|c|}
+				\hline
+					2 & -12 & 7 & 3 & 7 & 5\\
+				\hline
+			\end{tabular}\\ \\ 
+			\begin{tabular}{|c|c|c|c|c|c|}
+				\hline
+					-12 & 2 & 7 & 3 & 7 & 5\\
+				\hline
+			\end{tabular}\\ \\ 
+			\begin{tabular}{|c|c|c|c|c|c|}
+				\hline
+					-12 & 2 & 7 & 3 & 7 & 5\\
+				\hline
+			\end{tabular}\\ \\ 
+			\begin{tabular}{|c|c|c|c|c|c|}
+				\hline
+					-12 & 2 & 3 & 7 & 7 & 5\\
+				\hline
+			\end{tabular}\\ \\ 
+			\begin{tabular}{|c|c|c|c|c|c|}
+				\hline
+					-12 & 2 & 3 & 7 & 7 & 5\\
+				\hline
+			\end{tabular}\\ \\ 
+			\begin{tabular}{|c|c|c|c|c|c|}
+				\hline
+					-12 & 2 & 3 & 7 & 5 & 5\\
+				\hline
+			\end{tabular}\\ \\ 
+			\begin{tabular}{|c|c|c|c|c|c|}
+				\hline
+					2 & -12 & 7 & 3 & 7 & 5\\
+				\hline
+			\end{tabular} 
+		\section{En-tête de ramenerValeurMax}	
+			\lstinputlisting[caption=En-tête de ramenerValeurMax]{1-entete.algo}
+		\subsection{Trace}		
+			\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+				\hline
+					\textbf{situation} & 
+					\textbf{1} &
+					\textbf{2} &
+					\textbf{3} &
+					\textbf{4} &
+					\textbf{5} &
+					\textbf{6} &
+					\textbf{7} &
+					\textbf{...} &
+					\textbf{$n$} &
+					\textbf{$i$} &
+					\textbf{$aux$} &
+					\textbf{$i \ne n$} &
+					\textbf{$tab[i] > tab[i+1]$} \\
+				\hline
+					0 & %situation
+					2 & %1
+					-12 &%2
+					7 &%3
+					3 &%4
+					5 &%5
+					7 &%6
+					? &%7
+					&%...
+					6 &%n
+					?& %i
+					? &%aux
+					?& %i /= n
+					i\\%tab[i] > tab[i+n]
+				\hline
+					1 & %situation
+					 & %1
+					 &%2
+					 &%3
+					 &%4
+					 &%5
+					 &%6
+					 &%7
+					 &%...
+					 &%n
+					1& %i
+					 &%aux
+					& %i /= n
+					\\%tab[i] > tab[i+n]
+				\hline
+					2 & %situation
+					 & %1
+					 &%2
+					 &%3
+					 &%4
+					 &%5
+					 &%6
+					 &%7
+					 &%...
+					 &%n
+					& %i
+					 &%aux
+					$1\ne 6$ %i /= n
+					\\%tab[i] > tab[i+n]
+				\hline
+					 3& %situation
+					 & %1
+					 &%2
+					 &%3
+					 &%4
+					 &%5
+					 &%6
+					 &%7
+					 &%...
+					 &%n
+					& %i
+					 &%aux
+					?& %i /= n
+					2 > -12 \\%tab[i] > tab[i+n]
+				\hline
+					 4& %situation
+					 -12& %1
+					 &%2
+					 &%3
+					 &%4
+					 &%5
+					 &%6
+					 &%7
+					 &%...
+					 &%n
+					& %i
+					2 &%aux
+					& %i /= n
+					? \\%tab[i] > tab[i+n]
+				\hline
+					 5& %situation
+					 & %1
+					 &%2
+					 &%3
+					 &%4
+					 &%5
+					 &%6
+					 &%7
+					 &%...
+					 &%n
+					2& %i
+					 &%aux
+					& %i /= n
+					\\
+					 %tab[i] > tab[i+n]
+				\hline
+					 2& %situation
+					 & %1
+					 &%2
+					 &%3
+					 &%4
+					 &%5
+					 &%6
+					 &%7
+					 &%...
+					 &%n
+					& %i
+					 &%aux
+					$2 \ne 6$& %i /= n
+					 \\%TAB[I] > tab[i+n]
+				\hline
+					 3& %situation
+					 & %1
+					 &%2
+					 &%3
+					 &%4
+					 &%5
+					 &%6
+					 &%7
+					 &%...
+					 &%n
+					& %i
+					 &%aux
+					& %i /= n
+					$2 \ne 7$ \\%tab[i] > tab[i+n]
+				\hline
+					 5& %situation
+					 & %1
+					 &%2
+					 &%3
+					 &%4
+					 &%5
+					 &%6
+					 &%7
+					 &%...
+					 &%n
+					& %i
+					 &%aux
+					$3 \ne 6$& %i /= n
+					 \\%tab[i] > tab[i+n]
+				\hline
+					2 & %situation
+					 & %1
+					 &%2
+					 &%3
+					 &%4
+					 &%5
+					 &%6
+					 &%7
+					 &%...
+					 &%n
+					& %i
+					 &%aux
+					& %i /= n
+					7> 3 \\%tab[i] > tab[i+n]
+				\hline
+					 3& %situation
+					 & %1
+					 &%2
+					 3&%3
+					 7&%4
+					 &%5
+					 &%6
+					 &%7
+					 &%...
+					 &%n
+					& %i
+					7 &%aux
+					& %i /= n
+					 \\%tab[i] > tab[i+n]
+				\hline
+					 4& %situation
+					 & %1
+					 &%2
+					 &%3
+					 &%4
+					 &%5
+					 &%6
+					 &%7
+					 &%...
+					 &%n
+					4& %i
+					 &%aux
+					& %i /= n
+					 \\%tab[i] > tab[i+n]
+				\hline
+					 5& %situation
+					 & %1
+					 &%2
+					 &%3
+					 &%4
+					 &%5
+					 &%6
+					 &%7
+					 &%...
+					 &%n
+					& %i
+					 &%aux
+					$4 \ne 6$& %i /= n
+					 \\%tab[i] > tab[i+n]
+				\hline
+					 2& %situation
+					 & %1
+					 &%2
+					 &%3
+					 &%4
+					 &%5
+					 &%6
+					 &%7
+					 &%...
+					 &%n
+					& %i
+					 &%aux
+					& %i /= n
+					 \\%tab[i] > tab[i+n]
+				\hline
+					 3& %situation
+					 & %1
+					 &%2
+					 &%3
+					 &%4
+					 &%5
+					 &%6
+					 &%7
+					 &%...
+					 &%n
+					5& %i
+					 &%aux
+					& %i /= n
+					 \\%tab[i] > tab[i+n]
+				\hline
+					 5& %situation
+					 & %1
+					 &%2
+					 &%3
+					 &%4
+					 &%5
+					 &%6
+					 &%7
+					 &%...
+					 &%n
+					& %i
+					 &%aux
+					$5 \ne 6$& %i /= n
+					 \\%tab[i] > tab[i+n]
+				\hline
+					 2& %situation
+					 & %1
+					 &%2
+					 &%3
+					 &%4
+					 &%5
+					 &%6
+					 &%7
+					 &%...
+					 &%n
+					& %i
+					 &%aux
+					& %i /= n
+					7>5 \\%tab[i] > tab[i+n]
+				\hline
+					 3& %situation
+					 & %1
+					 &%2
+					 &%3
+					 &%4
+					 5&%5
+					 7&%6
+					 &%7
+					 &%...
+					 &%n
+					& %i
+					7 &%aux
+					& %i /= n
+					 \\%tab[i] > tab[i+n]
+				\hline
+					 4& %situation
+					 & %1
+					 &%2
+					 &%3
+					 &%4
+					 &%5
+					 &%6
+					 &%7
+					 &%...
+					 &%n
+					6& %i
+					 &%aux
+					& %i /= n
+					 \\%tab[i] > tab[i+n]
+				\hline
+					 5& %situation
+					 & %1
+					 &%2
+					 &%3
+					 &%4
+					 &%5
+					 &%6
+					 &%7
+					 &%...
+					 &%n
+					& %i
+					 &%aux
+					$6 \ne 6$& %i /= n
+					 \\%tab[i] > tab[i+n]
+				\hline
+					 2& %situation
+					 -12& %1
+					 2&%2
+					 3&%3
+					 7&%4
+					 5&%5
+					 7&%6
+					 &%7
+					 &%...
+					 &%n
+					& %i
+					 &%aux
+					& %i /= n
+					 \\%tab[i] > tab[i+n]
+				\hline
+							
+					\end{tabular} 
+					%6						
+	\subsection{}
+			\lstinputlisting[caption=En-tête ramenerValeurMax]{2.algo}
+	\section{}
+			\lstinputlisting[caption=utilisation de ramenerValeurMax]{3.algo}
+			\newpage
+	\section{}
+		\subsection{Algo général}
+			\lstinputlisting[caption=Algorithme général du tri à bulles]{4-1.algo}
+		\subsection{Programme}	
+			\lstinputlisting[caption=Programme trierParBulles]{4-2.algo}
+		\section{}
+			\begin{tabular}{|c|c|c|c|c|c|c|c|}
+				\hline
+					\textbf{Situations} &
+					\textbf{nbElements} &
+					\textbf{1} &
+					\textbf{2} &
+					\textbf{3} &
+					\textbf{4} &
+					\textbf{5} &
+					\textbf{6}\\ 
+				\hline
+					1 & 6 & 2 &-12 & 7 & 3 & 7 & 5\\
+				\hline
+					2 & 6 & -12 &2 & 3 & 7 & 7 & 7\\
+				\hline
+					3 & 5 & -12 &2 & 3 & 7 & 7 & 7\\
+				\hline
+					2 & 5 & -12 &2 & 3 & 3 & 5 & 7\\
+				\hline
+			\end{tabular}
+		\section{}	
+		\section{Postcondition}	
+			$$ \forall i \in [1,n-1], tab[i] < tab[i+1]$$ 
+		\section{Comparaisons}
+		\begin{eqnarray*}
+			&&(n-1)+(1-2)+(1-3)+\dots+1\\
+			&=&\sum^{n-1}_{c=1}{(n-1)} \\
+			&=&\sum^{n-1}_{i=n}-\sum^{n-1}_{i=1}{i} \\
+			&=& \frac{(n-1)(n+2)}{2} - (n-1) = 
+			\frac{n(n-1)}{2}=O(n^{2})
+		\end{eqnarray*} 
+			Donc complexité en $O(n^{2})$
+	
+	\end{document}

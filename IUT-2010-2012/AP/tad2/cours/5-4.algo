@@ -1,0 +1,10 @@
+glossaire
+	p1 <Point>;
+	p2 <Point>;
+debut
+	p1 <- p2; --ou "<-" (p1, p2) Autorise :-)
+		$\vdots$
+		si p1 = p2 alors -- :-)
+			$\vdots$
+		fin si;
+fin

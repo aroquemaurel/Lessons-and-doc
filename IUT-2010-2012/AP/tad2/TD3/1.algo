@@ -1,0 +1,22 @@
+-- construire une pile vide p
+procedure creerPileVide (sortie p <Pile[T]);
+
+-- retourne VRAI si la pile p est vide 
+fonction estVide (entree p <Pile[T]>)
+	retourne <Booleen>;
+
+-- renvoie le dernier element de p
+-- Necessite Pile non vide
+fonction dernier (entree p <Pile[T]>)
+	retourne <T>
+	declenche pileVide;
+
+-- Ajoute e au debut de la pile p
+-- Necessite pile non pleine
+procedure empiler (maj p <Pile[T]>, entree e <T>)
+	declenche pilePleine;
+
+-- depile une pile p	
+-- Necessite pile non vide
+procedure depiler(maj p <Pile[T]>)
+	declenche pileVide;

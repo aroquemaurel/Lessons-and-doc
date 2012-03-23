@@ -1,0 +1,70 @@
+\documentclass{article}
+
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+
+\newcommand{\titre}{Atelier de création multimédia}
+\newcommand{\numTD}{6}
+
+\newcommand{\module}{Production de logiciel}
+\newcommand{\sigle}{prl}
+
+\newcommand{\semestre}{3}
+
+\input{/home/satenske/cours/listings.tex} %prise en charge du langage algo
+\input{/home/satenske/cours/entete_iut-td.tex}
+
+\begin{document}
+	\maketitle
+	\section{}
+	\begin{tabular}{|c|l|c|c|}
+		\hline
+		\textbf{Classe} & \textbf{Méthode} & \textbf{Origine flux interaction} & \textbf{Diagramme}\\
+		\hline
+		Élève & creerNouveauEleve() & interaction & C723 \\
+		\hline
+		Binôme& CreerBinomie()	& interaction & C723\\
+		& ajouterEleve(eleve)	& interaction & C723\\
+	\hline
+		Activité & creerNouvelleActivite()	& interaction & C723 \\
+		&ajouterBinome(binome)	& interaction & C723 \\
+		&autoriserConnexion()	& interaction & C711\\
+	\hline
+		Classe & creerClasse()	& interaction & C723 \\
+		&ajouterActivite()		& interaction & C723 \\
+		&autoriserConnexion		& interaction & C711\\
+	\hline
+		EspaceDeTravail & sortirDocument: document & interaction + flux & C61 et C712 \\
+						& sauverDocument() & interaction + flux & C61 et 712\\
+	\hline
+		DocumentSimple	& creerDocumentSimple(documentCompose) & interaction & C722\\
+	\hline
+		DocumentCompose & creerDocumentCompose() & interaction & C712 \\
+	\hline
+						& detruireDocumentCompose & interaction & C712 \\
+						& ajouterDocumentSimple(documentSimple) & interaction & C712\\
+						& retirerDocumentSimple & interaction	& C712 \\
+						& proposerDocument		& interaction	& C722\\
+	\hline
+	FS					& ajouterDocumentSimple(ajouterDocumentSimple(documentSimple + FS) & interaction & C722\\
+						& associerDocumentSImple(documentSimple) & interaction& & C722\\
+						& ajouterMotClé(motClé) & interaction& C722 \\
+	FDS					& ajouterDocumentSimple(documentSimple + FS) & interaction + flux & C62 C721 C722\\
+						& changerDocument:liste(DocumentSimple + FS & Flux & C61\\ 
+	\hline
+
+	\end{tabular}
+
+
+\end{document}

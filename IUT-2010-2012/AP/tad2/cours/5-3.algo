@@ -1,0 +1,7 @@
+-- t1 <- t2
+procedure "<-" (sortie t1 <T>, entree t2 <T>);
+
+-- t1 = t2
+fonction "=" (entree <T>, entree t2 <T>)
+	retourne <Booleen>;
+

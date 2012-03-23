@@ -1,0 +1,203 @@
+% /solutions/conference-talks/conference-ornate-20min.fr.tex, 22/02/2006 De Sousa
+
+\documentclass{beamer}
+
+% Ce fichier est un exemple d'exposé
+
+% - pour des conférences,
+% - d'une durée approximative de 20 minutes,
+% - avec un style ornemental.
+
+
+% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% Traduction de Philippe De Sousa <philippejjg@free.fr>
+%
+% En principe, ce fichier peut être redistribué et/ou modifié conformément
+% aux termes de la GNU Public License, version 2.
+%
+% Cependant, ce fichier est supposé comme étant un "exemple-type" qui peut être modifié
+% selon vos propres besoins. Pour cette raison, si vous utilisez ce fichier en tant qu'
+% "exemple-type" et non spécifiquement pour le distribuer en tant que partie d'un
+% package ou programme, je vous donne la permission exceptionnelle de copier librement et
+% de modifier ce fichier et même d'effacer ce message de copyright.
+
+
+\mode<presentation> {
+  \usetheme{Darmstadt}
+  % ou autre ...
+
+  \setbeamercovered{invisible}
+  % ou autre chose (il est également possible de supprimer cette ligne)
+}
+
+
+\usepackage[french]{babel}
+% or autre comme par exemple \usepackage[english]{babel}
+
+\usepackage[latin1]{inputenc}
+% or autre
+
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+% Or autre. Notez que le codage et la fonte doivent être assortis. Si T1
+% ne paraît pas très esthétique, essayer d'effacer la ligne contenant fontenc.
+
+
+\title[Uranium could be the future of hard drives] % (facultatif, à utiliser uniquement si le titre de l'article est trop long)
+{The hard drive to uranium}
+
+\subtitle {}
+
+\author[Antoine de \bsc{Roquemaurel}] % (facultatif, à utiliser seulement avec plusieurs auteurs)
+{Antoine de \bsc{Roquemaurel}}
+% - Composez les noms dans l'ordre dans lequel ils apparaîtrons dans l'article
+% - Utilisez la commande \inst{?} uniquement si les auteurs ont des affiliations
+%   différentes.
+
+\institute[Universités de Quelque Part et d'Ailleurs] % (facultatif mais généralement nécessaire)
+{
+  IUT Informatique\\
+  Université Paul Sabatier -- Toulouse III 
+}
+% - Utilisez la commande \inst uniquement s'il y a plusieurs affectations
+% - Faîtes quelque chose de simple, personne ne s'intéresse à votre adresse
+
+\date[14/11/2011] % (facultatif, peut être une abréviation du nom de la conférence)
+{\today}
+% - Utilisez à la fois le nom de la conférence et son abréviation.
+% - N'a pas réellement d'importance pour l'assistance qui sera présente lors de la conférence,
+%   mais en a surtout pour les personnes (y compris vous-même) qui liront les transparents en ligne.
+
+\subject{The uranium hard disk}
+% Inséré uniquement dans la page d'information du fichier PDF. Peut être
+% supprimé.
+
+
+% Si vous avez un fichier nommé "université-logo-nomfichier.xxx", où xxx
+% est un format graphique accepté par latex ou pdflatex (comme par exemple .png),
+% alors vous pouvez insérer votre logo ainsi :
+
+% \pgfdeclareimage[height=0.5cm]{le-logo}{université-logo-nomfichier}
+% \logo{\pgfuseimage{le-logo}}
+
+
+
+% À supprimer si vous ne voulez pas que la table des matières apparaisse
+% au début de chaque sous-section : 
+\AtBeginSection[] {
+  \begin{frame}<beamer>{Lignes directrices}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+% Si vous souhaitez recouvrir vos transparents un à un,
+% utilisez la commande suivante (pour plus d'info, voir la page 74 du manuel
+% d'utilisation de Beamer (version 3.06) par Till Tantau) :
+
+%\beamerdefaultoverlayspecification{<+->}
+
+
+
+\setbeamertemplate{footline}{
+	\leavevmode%
+	\hbox{\hspace*{-0.6cm}
+	\begin{beamercolorbox}[wd=.18\paperwidth,ht=2.2ex,dp=1ex,center,ignorebg]{author in head/foot}%
+		\usebeamerfont{}\hspace{17.5px}\vspace{-0.2cm}\includegraphics[height=1cm]{logo.jpg}%~~(\insertshortinstitute)
+	\end{beamercolorbox}%
+
+	\begin{beamercolorbox}[wd=.63\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot}%
+		\usebeamerfont{section in head/foot} \insertauthor
+	\end{beamercolorbox}%
+
+	\begin{beamercolorbox}[wd=.23\paperwidth,ht=2.25ex,dp=1ex,right]{section in head/foot}%
+		\usebeamerfont{section in head/foot}\insertshortdate{}\hspace*{2em}
+		\insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+	\end{beamercolorbox}}%
+					\vskip0pt%
+}
+
+\begin{document}
+\begin{frame}
+  \titlepage
+\end{frame}
+\begin{frame}{Uranium could be the future of hard drives}
+	\vspace{-20px}
+	\begin{wrapfigure}{l}{48mm}\includegraphics[width=4.8cm]{hardDisk.jpg} \end{wrapfigure}
+		$\cdot$ Magnetic mass storage
+		$\cdot$ Since the begin of the computer we need more capacity\\
+		$\cdot$ Magnetic hard disk have limits \\
+\end{frame}
+\begin{frame}{Guidelines}
+  \tableofcontents[pausesections]
+\end{frame}
+
+\section{The magnetic hard disk}
+\begin{frame}
+	\begin{itemize}
+		\item Aluminum trays
+		\item Magnetic layer on trays	
+		\item The data are stored in binary on magnetic layer	
+	\end{itemize}
+	\begin{center}
+	\includegraphics[width=6cm]{plateaux.jpg}
+	\end{center}
+
+\end{frame}
+\section{The uranium hard disk}
+\subsection{The Di-Uranium molecule} 
+\begin{frame}
+\begin{itemize}
+	\item Uranium naturally strong magnetic properties
+	\item The molecule create can maintain a constant magnetic state, so we can store information 
+\end{itemize}
+\begin{center} \includegraphics[width=3cm, caption=Di-Uranium molecule]{diuranium.jpg} \end{center}
+\end{frame}
+\subsection{Advantages}
+\begin{frame}
+	\begin{exampleblock}{Advantages}
+		\begin{itemize}
+			\item Capacity \textbf{1000 times} most important 
+			\item Speed 
+		\end{itemize}
+	\end{exampleblock}
+	\begin{alertblock}{Disadvantages}
+		\begin{itemize}
+			\item Must be maintained at a temperature of $2^{\circ}K~(-271^{\circ}C)$ 
+			\item ecology
+		\end{itemize}
+	\end{alertblock}
+\end{frame}
+\section{The application}
+\begin{frame}
+	\begin{itemize}
+		\item If the hard disk could work, it could be good to servers (Google, Facebook, \ldots) 
+		\item It's usefull to power calculations
+	\end{itemize}
+			
+	\begin{itemize}
+		\item It's useless to individuals!
+	\end{itemize}
+\end{frame}
+
+\section*{}
+\begin{frame}
+		\begin{block}{Conclusion}
+\begin{itemize}
+	\item It's impossible to use the disk due to the temperature
+	\item This would not work but it shows that research advances
+		\begin{itemize}
+			\item Maybe in several years, they can create a hard disk with gigantic capacities
+		\end{itemize}
+	\end{itemize}
+	\end{block}
+\end{frame}
+\begin{frame}{Questions}
+	Do you have any questions ?
+\end{frame}
+
+% Tout ce qui suit est facultatif et n'est typiquement pas nécessaire.
+\appendix
+\end{document}

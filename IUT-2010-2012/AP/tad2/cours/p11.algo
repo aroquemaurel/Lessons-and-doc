@@ -1,0 +1,7 @@
+type PtrCellule : pointeur sur <Cellule>;
+type Cellule : enregistrement 
+	valeur <Entier>,
+	suivant <Entier>;-- L'adresse de la cellule suivante
+
+glossaire
+	p <PtrCellule>; 
