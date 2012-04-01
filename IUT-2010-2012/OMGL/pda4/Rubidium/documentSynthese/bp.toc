@@ -1,0 +1,14 @@
+\select@language {french}
+\contentsline {chapter}{Avant-propos}{i}{section*.1}
+\contentsline {chapter}{\numberline {1}Sprint z\IeC {\'e}ro}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Cr\IeC {\'e}ation de l'\IeC {\'e}quipe de d\IeC {\'e}veloppement}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Choix des technologies utilis\IeC {\'e}es}{1}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}D\IeC {\'e}veloppement}{1}{subsection.1.2.1}
+\contentsline {paragraph}{\texttt {Windev}}{1}{section*.3}
+\contentsline {paragraph}{\texttt {Java} avec \texttt {Swing}}{2}{section*.4}
+\contentsline {paragraph}{\texttt {C++} avec \texttt {Qt}}{2}{section*.5}
+\contentsline {subsection}{\numberline {1.2.2}Organisation}{2}{subsection.1.2.2}
+\contentsline {section}{\numberline {1.3}Planning poker}{3}{section.1.3}
+\contentsline {section}{\numberline {1.4}Conception}{3}{section.1.4}
+\contentsline {chapter}{\numberline {2}Sprint 1}{4}{chapter.2}
+\contentsline {chapter}{\numberline {A}Les diff\IeC {\'e}rentes t\IeC {\^a}ches}{2}{appendix.A}
