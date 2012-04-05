@@ -34,7 +34,7 @@
 \contentsline {subsection}{\numberline {4.1.1}Quota surveillance}{9}{subsection.4.1.1}
 \contentsline {subsection}{\numberline {4.1.2}Surveiller}{9}{subsection.4.1.2}
 \contentsline {subsection}{\numberline {4.1.3}Initialisation des enseignants}{10}{subsection.4.1.3}
-\contentsline {subsection}{\numberline {4.1.4}Imprimer la liste des controles}{10}{subsection.4.1.4}
+\contentsline {subsection}{\numberline {4.1.4}Imprimer la liste des contr\IeC {\^o}les}{10}{subsection.4.1.4}
 \contentsline {subsection}{\numberline {4.1.5}Imprimer liste de mes contr\IeC {\^o}les surveill\IeC {\'e}s}{10}{subsection.4.1.5}
 \contentsline {subsection}{\numberline {4.1.6}Imprimer liste effective des contr\IeC {\^o}les de tous les enseignants}{10}{subsection.4.1.6}
 \contentsline {section}{\numberline {4.2}Difficult\IeC {\'e}s du sprint}{11}{section.4.2}

@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.3.27)  1 APR 2012 22:31
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.3.27)  1 APR 2012 22:41
 entering extended mode
  %&-line parsing enabled.
-**bp.tex
-(./bp.tex
+**syntheseRubidium.tex
+(./syntheseRubidium.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
 yphenation, loaded.
@@ -968,12 +968,12 @@ Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
 \dtl@sortresult=\count169
 )
 \glossaireVar=\write5
-) (./bp.aux
-(./includes/avantPropos.aux) (./includes/sprint0.aux) (./includes/sprint1.aux)
-(./includes/sprint2.aux) (./includes/sprint3.aux) (./includes/bilan.aux)
-(./includes/annexes/statistiques.aux) (./includes/annexes/tachesRedmine.aux)
-(./includes/annexes/ihm.aux))
-\openout1 = `bp.aux'.
+)
+(./syntheseRubidium.aux (./includes/avantPropos.aux) (./includes/sprint0.aux)
+(./includes/sprint1.aux) (./includes/sprint2.aux) (./includes/sprint3.aux)
+(./includes/bilan.aux) (./includes/annexes/statistiques.aux)
+(./includes/annexes/tachesRedmine.aux) (./includes/annexes/ihm.aux))
+\openout1 = `syntheseRubidium.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
 LaTeX Font Info:    ... okay on input line 47.
@@ -990,7 +990,8 @@ LaTeX Font Info:    ... okay on input line 47.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 47.
 LaTeX Font Info:    ... okay on input line 47.
 LaTeX Font Info:    Try loading font information for T1+lmr on input line 47.
- (/usr/share/texmf/tex/latex/lm/t1lmr.fd
+
+(/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
@@ -1062,21 +1063,20 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
 LaTeX Info: Redefining \ref on input line 47.
 LaTeX Info: Redefining \pageref on input line 47.
- (./bp.out)
-(./bp.out)
+
+(./syntheseRubidium.out) (./syntheseRubidium.out)
 \@outlinefile=\write6
-\openout6 = `bp.out'.
+\openout6 = `syntheseRubidium.out'.
 
 \AtBeginShipoutBox=\box44
- ABD: EveryShipout initializing macros
+
+ABD: EveryShipout initializing macros
 \c@lstlisting=\count176
 LaTeX Font Info:    Try loading font information for OT1+lmr on input line 50.
-
-(/usr/share/texmf/tex/latex/lm/ot1lmr.fd
+ (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OML+lmm on input line 50.
-
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1133,12 +1133,13 @@ has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.52 	\include{includes/avantPropos}
-                                     <./images/qt.png>] (./bp.toc [2
+                                     <./images/qt.png>] (./syntheseRubidium.toc
+[2
 
 
 ])
 \tf@toc=\write7
-\openout7 = `bp.toc'.
+\openout7 = `syntheseRubidium.toc'.
 
 
 
@@ -1272,6 +1273,13 @@ Overfull \vbox (1.17876pt too high) has occurred while \output is active []
 
 
 ]
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 44.
+ (/usr/share/texmf/tex/latex/lm/omslmr.fd
+File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 44.
+
 Overfull \hbox (7.88203pt too wide) in paragraph at lines 74--84
 [][] 
  []
@@ -1300,7 +1308,7 @@ Overfull \hbox (35.9038pt too wide) in paragraph at lines 1--1
  []
 
 
-Overfull \hbox (1.53903pt too wide) in paragraph at lines 12--14
+Overfull \hbox (1.53903pt too wide) in paragraph at lines 15--17
 []\T1/lmr/m/n/12 Nous avons pus ef-fectuer des statis-tiques sur nos prévi-sion
 s de chaque sprint, celle-ci sont disponibles
  []
@@ -1328,7 +1336,7 @@ Package pdfpages Warning: Option `page' is unknow to \includepdf.
 
 
 
-] <documents/graphiques.pdf, id=270, page=1, 845.1575pt x 597.23125pt>
+] <documents/graphiques.pdf, id=271, page=1, 845.1575pt x 597.23125pt>
 File: documents/graphiques.pdf Graphic file (type pdf)
 
 <use documents/graphiques.pdf, page 1>
@@ -1342,7 +1350,7 @@ File: documents/graphiques.pdf Graphic file (type pdf)
 File: documents/graphiques.pdf Graphic file (type pdf)
 
 <use documents/graphiques.pdf, page 1> [14 <./documents/graphiques.pdf>]
-<documents/graphiques.pdf, id=311, page=2, 845.1575pt x 597.23125pt>
+<documents/graphiques.pdf, id=312, page=2, 845.1575pt x 597.23125pt>
 File: documents/graphiques.pdf Graphic file (type pdf)
 
 <use documents/graphiques.pdf, page 2>
@@ -1365,7 +1373,7 @@ Overfull \hbox (23.60016pt too wide) in paragraph at lines 1--1
 
 
 
-] <documents/tachesRedmine.pdf, id=324, page=1, 845.0471pt x 597.51233pt>
+] <documents/tachesRedmine.pdf, id=325, page=1, 845.0471pt x 597.51233pt>
 File: documents/tachesRedmine.pdf Graphic file (type pdf)
 
 <use documents/tachesRedmine.pdf, page 1>
@@ -1390,11 +1398,11 @@ Overfull \hbox (23.60016pt too wide) in paragraph at lines 1--1
 [][] 
  []
 
-<images/ihm_avantConnexion.png, id=333, 841.1425pt x 564.1075pt>
+<images/ihm_avantConnexion.png, id=334, 841.1425pt x 564.1075pt>
 File: images/ihm_avantConnexion.png Graphic file (type png)
 
 <use images/ihm_avantConnexion.png>
-<images/ihm_connexion.png, id=334, 852.18375pt x 572.1375pt>
+<images/ihm_connexion.png, id=335, 852.18375pt x 572.1375pt>
 File: images/ihm_connexion.png Graphic file (type png)
 
 <use images/ihm_connexion.png> [18
@@ -1408,11 +1416,11 @@ has been already used, duplicate ignored
                                                   \fi \fi 
 l.16 
       <./images/ihm_avantConnexion.png>]
-<images/ihm_apresConnexion.png, id=341, 839.135pt x 566.115pt>
+<images/ihm_apresConnexion.png, id=342, 839.135pt x 566.115pt>
 File: images/ihm_apresConnexion.png Graphic file (type png)
 
 <use images/ihm_apresConnexion.png>
-<images/ihm_ajoutTypeControle.png, id=342, 845.1575pt x 556.0775pt>
+<images/ihm_ajoutTypeControle.png, id=343, 845.1575pt x 556.0775pt>
 File: images/ihm_ajoutTypeControle.png Graphic file (type png)
 
 <use images/ihm_ajoutTypeControle.png>
@@ -1448,7 +1456,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
                                                   \fi \fi 
 l.63 	\include{includes/annexes/ihm}
                                      <./images/ihm_ajoutTypeControle.png>]
-(./bp.aux (./includes/avantPropos.aux) (./includes/sprint0.aux)
+(./syntheseRubidium.aux (./includes/avantPropos.aux) (./includes/sprint0.aux)
 (./includes/sprint1.aux) (./includes/sprint2.aux) (./includes/sprint3.aux)
 (./includes/bilan.aux) (./includes/annexes/statistiques.aux)
 (./includes/annexes/tachesRedmine.aux) (./includes/annexes/ihm.aux))
@@ -1457,26 +1465,27 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 18726 strings out of 495061
- 309817 string characters out of 1182621
+ 18745 strings out of 495061
+ 310308 string characters out of 1182621
  410337 words of memory out of 3000000
- 21267 multiletter control sequences out of 15000+50000
+ 21282 multiletter control sequences out of 15000+50000
  85578 words of font info for 63 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 56i,16n,55p,424b,529s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf-texlive/font
-s/enc/dvips/base/8r.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></us
-r/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/pu
-blic/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/sha
-re/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/l
-m/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf
-/fonts/type1/public/lm/lmro12.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk1
-0.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/texmf-texl
-ive/fonts/type1/urw/avantgar/uagk8a.pfb></usr/share/texmf-texlive/fonts/type1/u
-rw/times/utmr8a.pfb>
-Output written on bp.pdf (24 pages, 821492 bytes).
+ 56i,16n,55p,438b,529s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/en
+c/dvips/lm/lm-ec.enc}{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</us
+r/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/pu
+blic/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/sh
+are/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/
+lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf
+/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmro1
+2.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/font
+s/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb
+></usr/share/texmf-texlive/fonts/type1/urw/avantgar/uagk8a.pfb></usr/share/texm
+f-texlive/fonts/type1/urw/times/utmr8a.pfb>
+Output written on syntheseRubidium.pdf (24 pages, 825573 bytes).
 PDF statistics:
- 417 PDF objects out of 1000 (max. 8388607)
+ 422 PDF objects out of 1000 (max. 8388607)
  84 named destinations out of 1000 (max. 500000)
  254 words of extra memory for PDF output out of 10000 (max. 10000000)
 

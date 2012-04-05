@@ -1,81 +1,60 @@
 \chapter{Sprint 1}
-Au cours de ce sprint nous n'avons prévu que 3 User Stories, en effet, le sprint 1 devait être finit pour le 08 Mars 2012, or
-nous devions effectués toutes les étapes de conception préliminaire\footnote{cf chapitre \ref{sprintzero} page \pageref{sprintzero}.} 
+Au cours de ce sprint nous n'avons prévu que 3 User Stories, en effet, le sprint 1 devait être 
+finit pour le 08 Mars 2012, or nous devions effectués toutes les étapes de conception 
+préliminaire\footnote{cf chapitre~\ref{sprintzero}~page~\pageref{sprintzero}}.
 
+Nous avions donc prévus d'effectuer les \USs{} suivantes:
+\section{\USs{} prévues}
+\subsection{Saisir contrôle}		
+\begin{tabular}{ll}
+	\textbf{En tant que}	&	responsable de matière\\
+	\textbf{Je désire}&	saisir la date d'un contrôle, son type et sa durée\\
+	\textbf{Afin de}	&	planifier les contrôles\\
+	&\\
+	\textbf{BVP} & Must\\
+	\textbf{Poids} & 5\\
+\end{tabular}
+\subsection{Saisir salle}		
+\begin{tabular}{ll}
+	\textbf{En tant que}	&	responsable de planning\\
+	\textbf{Je désire}& Renseigner une salle de surveillance\\	
+	\textbf{Afin de}	& Préciser sa capacité et le nombre de surveillants nécessaires\\	
+	&\\
+	\textbf{BVP} & Would\\
+	\textbf{Poids} & 5\\
+\end{tabular}
+\subsection{Visualiser contrôles de l'année en cours}
+\begin{tabular}{ll}
+	\textbf{En tant que}	&	Tout le monde\\
+	\textbf{Je désire}&	Visualiser les contrôles de l'année universitaire en cours\\
+	\textbf{Afin de}	&	\\
+	&\\
+	\textbf{BVP} & Could\\
+	\textbf{Poids} & 3\\
+\end{tabular}
 
-%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%
+\subsection{Quota surveillance} \label{usQuotaSurveillance}
+Cependant nous avions mal évalués le poids des stories, ainsi, nous avons put faire la 
+\story{Quota surveillance} qui été initialement prévue pour le sprint 2. 
 
+\begin{tabular}{ll}
+	\textbf{En tant que}	&	Enseignant \\
+	\textbf{Je désire}&	Connaitre le nombre d'heures de surveillance effective\\
+	\textbf{Afin de}	&	savoir si mon quota est atteint\\
+	&\\
+	\textbf{BVP} & Should\\
+	\textbf{Poids} & 2\\
+\end{tabular}
 
+\section{Difficultés du sprint}
+Lors de ce sprint, nous avons eu plusieurs difficultés. Principalement, la prise en main de la bibliothèque
+\texttt{Qt}, mais aussi de l'EDI.
+Également, le sprint zéro, avec toute la conception nous a demandés du temps, nous n'avons donc pas pus
+faire beaucoup de stories. 
 
-L'user-story « Quota surveillance » (sprint 2) a pu être réalisée lors de ce sprint (avancement).
-Nous avons déterminé à partir de ces besoins ainsi que des user-stories prévues les technical-stories suivantes : 
+\section{Bilan du sprint}
+À la fin du sprint, l'équipe à pus se familiariser avec les technologies utilisés. Également, nous avons
+pus créer l'architecture du logiciel, étape très importante, cela nous permettra de continuer le logiciel
+plus facilement et efficacement.
 
-
-US prévues pour le sprint : 
-
-Saisir contrôle								[Must - 5]
-En tant que		responsable de matière,
-Je désire	saisir la date d'un contrôle, son type et sa durée
-Afin de		planifier les contrôles
-
-
-
-Saisir salle								[Would - 5]
-En tant que		responsable des plannings, 
-Je désire	renseigner une salle de surveillance
-Afin de		préciser sa capacité et le nombre de surveillants nécessaires
-
-
-
-Visualiser contrôles de l'années en cours				[Could - 3]
-En tant que		tout le monde,
-Je souhaite		visualiser les contrôles de l'année universitaire en cours
-Afin de
-
-
-Technical stories induites : 
-
-Conception de l'IHM
-Conception de la BD
-Création de la BD
-Exceptions personnalisées
-
-
-Tâches : (hiérarchie)
-
-User-story
-Technical-story
-Tâche
-
-
-Conception de  l'IHM
-Création de la fenêtre principale
-Connexion de l'utilisateur
-Saisir contrôle (entrée : type de contrôle, matière, salle, pôle, date, heure\ldots)
-Editer spec contrôles
-Ajouter type de contrôle
-Ajouter matière
-Ajouter salle
-Ajouter pôle
-Imprimer (création de l'interface)
-Changer mot de passe (interface)
-Dock filtre (interface : dock permettant d'ajouter des filtres sur la liste des contrôles)
-[root] Ajouter utilisateur 
-Visualiser contrôle
-
-Conception de la BD
-Création de la BD
-Listing des requêtes
-Code des requêtes
-Création jeu d'essai BD
-
-Exceptions personnalisées
-
-Difficultés rencontrées :
-
-Formation à la bibliothèque utilisée (Qt).
-Mise en place de l'architecture.
-
-Bilan du sprint :
 
