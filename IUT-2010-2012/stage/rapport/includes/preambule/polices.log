@@ -1,0 +1,38 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.8.25)  17 FEB 2012 09:56
+entering extended mode
+ %&-line parsing enabled.
+**polices.tex
+(./polices.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, loaded.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 15.
+(/usr/share/texmf-texlive/tex/latex/psnfss/t1phv.fd
+File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
+))
+*x
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+<*> x
+     
+? x
+ 
+Here is how much of TeX's memory you used:
+ 69 strings out of 495061
+ 1098 string characters out of 1182621
+ 45108 words of memory out of 3000000
+ 3340 multiletter control sequences out of 15000+50000
+ 8539 words of font info for 17 fonts, out of 3000000 for 9000
+ 28 hyphenation exceptions out of 8191
+ 14i,0n,17p,142b,117s stack positions out of 5000i,500n,10000p,200000b,50000s
+No pages of output.
+PDF statistics:
+ 0 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
