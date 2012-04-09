@@ -1,0 +1,2145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml"><head><link media="all" href="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/widget53.css" type="text/css" rel="stylesheet">
+
+
+
+
+
+
+
+    
+
+        
+
+
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta name="keywords" content="tutoriels, concernant, linux, général">
+        <meta name="description" content="Tutoriels concernant Linux en général">
+        <meta name="robots" content="index,follow">
+        <meta name="verify-v1" content="UL/4+QUCNTv1xBkNcC4sv4EjPUAoVj1yE+fMZClqLsc=">
+
+        <title>
+            Installer un serveur DNS avec djbdns sous debian
+        </title>
+
+        <link rel="shortcut icon" type="image/x-icon" href="http://www.siteduzero.com/Templates/images/designs/2/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="News du Site du Zéro" href="http://www.siteduzero.com/Templates/xml/news_fr.xml">
+        
+        <link rel="alternate" type="application/rss+xml" title="Derniers tutoriels du Site du Zéro" href="http://www.siteduzero.com/Templates/xml/tutoriels_fr.xml">
+        
+
+        <link rel="index" href="http://www.siteduzero.com/plan.html">
+        <link rel="start" title="Accueil" href="http://www.siteduzero.com/">
+        <link rel="search" type="application/opensearchdescription+xml" title="Site Du Zero" href="http://www.siteduzero.com/Templates/xml/xpi/fr/siteduzero.xpi">
+        <link rel="search" href="http://www.siteduzero.com/recherche.html" title="Rechercher">
+        <link rel="help" title="Accessibilité" href="http://www.siteduzero.com/accessibilite.html">
+        <link rel="accesskeys" title="Raccourcis et Accesskeys" href="http://www.siteduzero.com/accessibilite.html">
+
+
+        <link href="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/design.css" rel="stylesheet" type="text/css" media="screen, handheld, tv, projection">
+        <link href="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/zcode.css" rel="stylesheet" type="text/css" media="screen, handheld, tv, projection">
+        <link href="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/impression.css" rel="stylesheet" type="text/css" media="print">
+
+
+        
+
+        
+
+        <!--[if lt IE 8]>
+            <link href="/css/ie_old.min.css?1299748133" rel="stylesheet" type="text/css" media="screen" />
+        <![endif]-->
+
+        
+            <script src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/ga.js" async="" type="text/javascript"></script><script type="text/javascript">
+                document.write('<style type="text/css">');
+                document.write('.spoiler3{visibility: hidden;}');           // cache le contenu
+                document.write('.spoiler3_hidden{display: none;}');         // ferme le cadre "secret"
+
+                document.write('.spoiler_hidden a{visibility: visible;}');  // montre le lien pour afficher le contenu
+                document.write('.spoiler a{visibility: visible;');          // montre le lien pour afficher le contenu
+                document.write('</style>');
+            </script><style type="text/css">.spoiler3{visibility: hidden;}.spoiler3_hidden{display: none;}.spoiler_hidden a{visibility: visible;}.spoiler a{visibility: visible;</style>
+        
+        <!--
+        
+            <style type="text/css">
+                .spoiler3
+                {
+                        visibility: hidden;
+                }
+                .spoiler3_hidden
+                {
+                        display: none;
+                }
+            </style>
+        
+        -->
+        
+        <script type="text/javascript" src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/jquery.js"></script>
+        <script type="text/javascript" src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/jqueryui.js"></script>
+    </head><body><div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; z-index: 100000;"><iframe src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/sh33.html" style="height: 1px; width: 1px; position: absolute; z-index: 100000; border: 0pt none; left: 0pt; top: 0pt;" id="_atssh88"></iframe></div>
+		
+            <div id="acces_rapide">
+                <a href="#menu">Aller au menu</a> - <a href="#corps">Aller au contenu</a>
+            </div>
+
+            <div id="top">
+                <ul class="intersites">
+                    
+                    <li class="selected"><a href="http://www.siteduzero.com/">Informatique</a></li>
+                    <li><a href="#" id="bientot_lien">Bientôt...</a></li>
+                </ul>
+
+		<ul class="stats_sites">
+                    
+                    <li class="last_items"><a href="http://www.siteduzero.com/connectes.html">2 461 Zéros connectés</a> - </li>
+                    <li class="last_items"><a href="http://www.siteduzero.com/membres-292.html">231 625 Membres inscrits</a></li>
+		</ul>
+            </div>
+
+            <div id="header">
+                <div class="header_gauche">
+                    <a href="http://www.siteduzero.com/"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/logo_sdz_fr.png" alt=""></a>
+                </div>
+
+                <div class="header_droit">
+                    <div class="fr">
+                        <div id="logbox">
+                            
+                                <div class="bloc_inscription">
+                                    <a href="http://www.siteduzero.com/membres-315.html">
+                                        <strong class="liens_invites">Inscription</strong><br>
+                                        Inscription rapide en 2 minutes
+                                    </a>
+                                </div>
+                                <div class="bloc_connexion">
+                                    <a href="http://www.siteduzero.com/connexion.html">
+                                        <strong class="liens_invites">Connexion</strong><br>
+                                        Utilisez votre compte
+                                    </a>
+                                    <a class="rpxnow" onclick="return false;" href="https://site-du-zero.rpxnow.com/openid/v2/signin?token_url=http%3A%2F%2Fwww.siteduzero.com%2Fmembres-348-1.html%3Freferer%3Dtutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/rpx_icons.png" alt="connexion_rpx"></a>
+                                    <script type="text/javascript">
+                                        var rpxJsHost = (("https:" == document.location.protocol) ? "https://" : "http://static.");
+                                        document.write(unescape("%3Cscript src='" + rpxJsHost +
+                                        "rpxnow.com/js/lib/rpx.js' type='text/javascript'%3E%3C/script%3E"));
+                                    </script><script src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/rpx.js" type="text/javascript"></script>
+                                    <script type="text/javascript">
+                                        RPXNOW.overlay = true;
+                                        RPXNOW.language_preference = 'fr';
+                                    </script>
+                                </div>
+                            
+                        </div>
+
+                        
+                    </div>
+
+                    <div id="publicite_header">
+                        <div id="publicite_banniere" class="publicite">
+                            <script type="text/javascript">
+                                <!--
+                                ord=Math.random();
+                                ord=ord*10000000000000000000;
+                                document.write('<scr'+'ipt type="text/javascript" src="pub.js.php?cb='+ord+'&amp;l=468&amp;h=60&amp;age=0&amp;pays=0&amp;cid=96"><\/scr'+'ipt>');
+                                -->
+                            </script><script type="text/javascript" src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/pub_002.html"></script>
+                        </div>
+
+                    </div>
+                    </div>
+                </div>
+
+                    <div id="speedbarre">
+                            <ul class="smenu">
+                                <li id="speed_accueil" class="home">
+                                    <a class="" href="http://www.siteduzero.com/" accesskey="1">
+                                        <span title="Accueil">Accueil</span>
+                                    </a>
+                                </li>
+                                
+                                <li class="hideOnLoad" id="speed_cours">
+                                    <a class="" href="http://www.siteduzero.com/tutoriel.html">
+                                        <span>Cours</span>
+                                    </a>
+                                    <span class="speedbarre_arrow"></span>
+                                </li>
+                                <li class="hideOnLoad" id="speed_forum">
+                                    <a class="" href="http://www.siteduzero.com/forum.html">
+                                        <span>Forums</span>
+                                    </a>
+                                    <span class="speedbarre_arrow"></span>
+                                </li>
+                                
+                                    <li class="hideOnLoad" id="speed_concours">
+                                        <a class="" href="http://www.siteduzero.com/participez.html">
+                                            <span>Participez</span>
+                                        </a>
+                                        <span class="speedbarre_arrow"></span>
+                                    </li>
+                                    <li class="hideOnLoad" id="speed_etudes">
+                                        <a href="http://www.siteduzero.com/etudes.html" class="last_item">
+                                            <span>Études</span>
+                                        </a>
+                                        <span class="speedbarre_arrow"></span>
+                                    </li>
+                                    <li class="hideOnLoad" id="speed_job">
+                                        <a href="http://www.siteduzero.com/emploi.html" class="last_item">
+                                            <span>Emploi</span>
+                                        </a>
+                                        <span class="speedbarre_arrow"></span>
+                                    </li>
+
+                                    <li class="hideOnLoad" id="speed_boutique">
+                                    <a href="http://www.siteduzero.com/boutique.html" class="last_item">
+                                            <span>Boutique</span>
+                                        </a>
+                                        <span class="speedbarre_arrow"></span>
+                                    </li>
+                                
+                            </ul>
+
+                            <div id="speedbar_expand" class="menuh" style="display: none;">
+                                <div class="menuh_content">
+                                    <div id="menuh_tutorials" style="display: none;">
+                                        
+
+                                        <div id="menu_tutorials">
+                                            <div class="menu_prim">
+                                                <h5>Les cours phares</h5>
+                                                <div class="menuh_list_category">
+                                                    <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-67-site-web.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/67.png" alt=""></a></div>
+                                                    <h6><a href="http://www.siteduzero.com/tutoriel-1-67-site-web.html"><strong>Site Web</strong></a></h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-13666-apprenez-a-creer-votre-site-web.html"><span style="display: block;">XHTML / CSS</span></a></li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-309961-dynamisez-vos-sites-web-avec-javascript.html">Javascript</a></li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-14668-concevez-votre-site-web-avec-php-et-mysql.html">PHP / MySQL</a>
+                                                            <a href="http://www.siteduzero.com/boutique-614-107-concevez-votre-site-web-avec-php-et-mysql.html">
+                                                                <span class="in_book"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/ico_livre.png" alt=""></span>
+                                                                <span style="display: none;">Ce cours existe en livre :<br>Concevez votre site web avec PHP et MySQL</span>
+                                                            </a>
+                                                        </li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-112219-apprenez-a-creer-des-applications-web-dynamiques-avec-jee.html">Java EE (J2EE)</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="menuh_list_category">
+                                                    <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-57-programmation.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/57.png" alt=""></a></div>
+                                                    <h6><a href="http://www.siteduzero.com/tutoriel-1-57-programmation.html"><strong>Programmation</strong></a></h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-14189-apprenez-a-programmer-en-c.html">Langage C</a>
+                                                            <a href="http://www.siteduzero.com/boutique-614-65-apprenez-a-programmer-en-c.html">
+                                                                <span class="in_book"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/ico_livre.png" alt=""></span>
+                                                                <span style="display: none;">Ce cours existe en livre :<br>Apprenez à programmer en C</span>
+                                                            </a>
+                                                        </li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-11406-apprenez-a-programmer-en-c.html">Langage C++</a></li>
+                                                        <li>
+                                                            <a href="http://www.siteduzero.com/tutoriel-3-10601-programmation-en-java.html">
+                                                                Java
+                                                            </a>
+                                                            <a href="http://server1.evonia.fr/tracking/ads_stats2-32325f35385f323533__77c00fc1a6__2748__2-0/http://www.siteduzero.com/boutique-614-430-apprenez-a-programmer-en-java.html">
+                                                                <span class="in_book"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/ico_livre_preco.png" alt=""></span>
+                                                                <span style="display: none;">Ce livre est en précommande :<br>Apprenez à programmer en Java</span>
+                                                            </a>
+                                                        </li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-119239-programmation-en-java-api.html">Java (API)</a></li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-223267-apprendre-python.html">Python</a></li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-134798-visual_basic_net.html">VB .NET </a></li>
+                                                    </ul>
+                                                </div>
+
+
+                                                <div class="menuh_list_category">
+                                                    <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-60-systemes-d-exploitation.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/60.png" alt=""></a></div>
+                                                    <h6><a href="http://www.siteduzero.com/tutoriel-1-60-systemes-d-exploitation.html"><strong>Systèmes d'exploitation</strong></a></h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-12827-reprenez-le-controle-a-l-aide-de-linux.html">Linux</a>
+                                                            <a href="http://www.siteduzero.com/boutique-614-171-reprenez-le-controle-a-l-aide-de-linux.html">
+                                                                <span class="in_book"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/ico_livre.png" alt=""></span>
+                                                                <span style="display: none;">Ce cours existe en livre :<br>Reprenez le contrôle a l'aide de Linux</span>
+                                                            </a>
+                                                        </li>                                                    
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-273305-freebsd-et-l-envers-du-decor.html">FreeBSD</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="menuh_list_category">
+                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-56-graphisme.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/56.png" alt=""></a></div>
+                                                    <h6><a href="http://www.siteduzero.com/tutoriel-1-56-graphisme.html"><strong>Graphisme</strong></a></h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-351765-debuter-sur-adobe-photoshop.html">Photoshop</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="menuh_list_category">
+                                                    <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-58-infographie-3d.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/58.png" alt=""></a></div>
+                                                    <h6><a href="http://www.siteduzero.com/tutoriel-1-58-infographie-3d.html"><strong>Infographie 3D</strong></a></h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-11714-debutez-dans-la-3d-avec-blender.html">Blender</a></li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-228998-apprenez-a-modeliser-en-3d-avec-autodesk-maya.html">Maya </a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="menuh_list_category">
+                                                    <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-55-bureautique.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/55.png" alt=""></a></div>
+                                                    <h6><a href="http://www.siteduzero.com/tutoriel-1-55-bureautique.html"><strong>Bureautique</strong></a></h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-258577-redigez-des-documents-de-qualite-professionnelle-avec-latex.html">LaTeX</a>
+                                                            <a href="http://www.siteduzero.com/boutique-614-207-redigez-des-documents-de-qualite-professionnelle-avec-latex.html">
+                                                                <span class="in_book"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/ico_livre.png" alt=""></span>
+                                                                <span style="display: none;">Ce cours existe en livre :<br>Rédigez des documents de qualité avec LaTeX</span>
+                                                            </a>
+                                                        </li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-417000-redigez-facilement-des-documents-avec-word.html">Word<img style="margin-left: 10px;" alt="" src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/iconouveau.png"></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="menu_princi menuhcattuto ">
+                                                <h5>Tous les cours par catégories</h5>
+                                                <div class="menuh_princi_col">
+                                                    
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-67-site-web.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/67.png" alt=""></a></div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-67-site-web.html">Site Web <span style="font-weight: normal;">(206 Cours)</span></a></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-69-xhtml-css.html">XHTML / CSS</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-1-210-php.html">PHP</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-71-divers.html">Divers</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-73-forums.html">Forums</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-77-hebergement.html">Hébergement</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-70-javascript.html">Javascript</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-74-serveur.html">Serveur</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-309-ide.html">IDE</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-60-systemes-d-exploitation.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/60.png" alt=""></a></div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-60-systemes-d-exploitation.html">Systèmes d'exploitation <span style="font-weight: normal;">(96 Cours)</span></a></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-96-linux.html">Linux</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-147-macos.html">MacOS</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-1-97-windows.html">Windows</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-408-bsd.html">BSD</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-54-mapping.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/54.png" alt=""></a></div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-54-mapping.html">Mapping <span style="font-weight: normal;">(31 Cours)</span></a></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-63-half-life.html">Half-Life</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-66-half-life.html">Half-Life²</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-173-warcraft.html">Warcraft</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-188-autres.html">Autres</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-55-bureautique.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/55.png" alt=""></a></div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-55-bureautique.html">Bureautique <span style="font-weight: normal;">(29 Cours)</span></a></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-1-290-microsoft-office.html">Microsoft Office</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-1-291-openoffice-org.html">OpenOffice.org</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-87-firefox.html">Firefox</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-195-irc.html">IRC</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-192-divers.html">Divers</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-59-jeux-video.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/59.png" alt=""></a></div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-59-jeux-video.html">Jeux Vidéo <span style="font-weight: normal;">(22 Cours)</span></a></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-102-hl-ses-mods.html">HL &amp; ses mods</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-185-autres-jeux.html">Autres jeux</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-61-materiel.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/61.png" alt=""></a></div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-61-materiel.html">Matériel <span style="font-weight: normal;">(11 Cours)</span></a></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-101-general.html">Général</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+
+                                                    <div class="menuh_list_category">
+                                                        <div class="ico"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/tuto_cat_thb.png" alt=""></div>
+                                                        <h6>Autres</h6>
+                                                        <ul>
+                                                            
+                                                                <li>
+                                                                    <a style="display: block;" href="http://www.siteduzero.com/tutoriel-2-404-bases-de-donnees.html">Bases de données</a>
+                                                                </li>
+                                                            
+                                                                <li>
+                                                                    <a style="display: block;" href="http://www.siteduzero.com/tutoriel-2-403-mobiles.html">Mobiles</a>
+                                                                </li>
+                                                            
+                                                                <li>
+                                                                    <a style="display: block;" href="http://www.siteduzero.com/tutoriel-2-141-site-du-zero.html">Site du Zéro</a>
+                                                                </li>
+                                                            
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                                <div class="menuh_princi_col">
+                                                    
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-57-programmation.html">
+                                                                    <img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/57.png" alt=""></a>
+                                                                </div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-57-programmation.html">Programmation</a> <span style="font-weight: normal;">(244 Cours)</span></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-91-as-flash-flex.html">AS / Flash / Flex</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-217-algorithmique.html">Algorithmique</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-254-basic-et-derives.html">Basic et dérivés</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-1-344-bibliotheques.html">Bibliothèques</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-262-c.html">C</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-261-c.html">C++</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-201-c-net.html">C# / .NET</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-1-258-calculatrices.html">Calculatrices</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-242-ide.html">IDE</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-336-erlang.html">Erlang</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-227-general.html">Général</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-178-java.html">Java</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-93-mirc.html">mIRC</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-196-python.html">Python</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-355-caml-ocaml.html">Caml / OCaml</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-386-cocoa-objective-c.html">Cocoa / Objective-C</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-253-autres-langages.html">Autres langages</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-56-graphisme.html">
+                                                                    <img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/56.png" alt=""></a>
+                                                                </div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-56-graphisme.html">Graphisme</a> <span style="font-weight: normal;">(27 Cours)</span></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-176-dessin.html">Dessin</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-177-divers.html">Divers</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-79-flash.html">Flash</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-157-gimp.html">Gimp</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-153-dessin-vectoriel.html">Dessin vectoriel</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-190-photofiltre.html">PhotoFiltre</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-78-photoshop.html">Photoshop</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-197-pov-ray.html">POV-Ray</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-58-infographie-3d.html">
+                                                                    <img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/58.png" alt=""></a>
+                                                                </div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-58-infographie-3d.html">Infographie 3D</a> <span style="font-weight: normal;">(25 Cours)</span></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-95-3d-studio-max.html">3D Studio Max</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-152-blender.html">Blender</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-296-maya.html">Maya</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-62-multimedia.html">
+                                                                    <img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/62.png" alt=""></a>
+                                                                </div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-62-multimedia.html">Multimédia</a> <span style="font-weight: normal;">(24 Cours)</span></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-99-audio.html">Audio</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-100-video.html">Vidéo</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-382-after-effects.html">After Effects</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-182-reseaux.html">
+                                                                    <img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/182.png" alt=""></a>
+                                                                </div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-182-reseaux.html">Réseaux</a> <span style="font-weight: normal;">(18 Cours)</span></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-183-general.html">Général</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-189-securite.html">Sécurité</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+
+                                                    <div class="menuh_list_category">
+                                                        <div id="create_tutorials_button">
+                                                            
+                                                                <div><a href="http://www.siteduzero.com/connexion.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/redigercours.png" alt=""></a></div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div id="menuh_forum" style="display: none;">
+                                        <div class="menu_princi">
+                                            <a class="button_all_forums" href="http://www.siteduzero.com/forum.html">Accueil des forums</a>
+                                            <div class="menuh_princi_col">
+                                                
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-121-site-web.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/121.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-121-site-web.html">Site Web</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-122-xhtml-css.html">XHTML / CSS</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-338-javascript.html">Javascript</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-123-php.html">PHP</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-128-mapping.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/128.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-128-mapping.html">Mapping</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-129-goldsource-hl1.html">GoldSource (HL1)</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-130-source-hl2.html">Source (HL2)</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-24-communaute-des-zeros.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/24.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-24-communaute-des-zeros.html">Communauté des zéros</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-28-discussions-generales.html">Discussions générales</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-278-vos-etudes.html">Vos études</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-239-presentation-de-vos-projets.html">Présentation de vos projets</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-200-recrutements-pour-vos-projets.html">Recrutements pour vos projets</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-440-sciences.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/440.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-440-sciences.html">Sciences</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-441-mathematiques.html">Mathématiques</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-442-physique-chimie.html">Physique - Chimie</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-443-biologie-et-geologie.html">Biologie et Géologie</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-444-autres-sciences.html">Autres sciences</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                            </div>
+
+                                            <div class="menuh_princi_col">
+                                                
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-125-programmation.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/125.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-125-programmation.html">Programmation</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-126-langage-c.html">Langage C</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-237-langage-c.html">Langage C++</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-305-langage-java.html">Langage Java</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-407-langage-python.html">Langage Python</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-406-bases-de-donnees.html">Bases de données</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-127-autres-langages-outils-et-approches.html">Autres langages, outils et approches</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-219-materiel-et-logiciels.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/219.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-219-materiel-et-logiciels.html">Matériel et logiciels</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-339-discussions-informatiques.html">Discussions informatiques</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-220-linux-mac-et-bsd.html">Linux, Mac et *BSD</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-221-windows.html">Windows</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-116-jeux-video.html">Jeux vidéo</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-117-graphisme.html">Graphisme</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-223-materiel.html">Matériel</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-310-concours.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/310.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-310-concours.html">Concours</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-435-innov-game-2011-a-la-gloire-de.html">Innov'Game 2011 : A la gloire de</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-447-atelier-de-noel-faites-votre-jeu.html">Atelier de noël : "Faites votre jeu"</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-143-le-site-du-zero.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/143.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-143-le-site-du-zero.html">Le Site du Zéro</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-144-suggestions-et-commentaires.html">Suggestions et Commentaires</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-145-designs-du-site-du-zero.html">Designs du Site du Zéro</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-429-tutoriels-du-site-du-zero.html">Tutoriels du Site du Zéro</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                            </div>
+                                        </div>
+
+                                        
+                                    <div class="clear"></div>
+                                    </div>
+                                    <div id="menuh_collaborate" style="display: none;">
+                                        <div class="menuh_list_category">
+                                            
+                                                <div class="ico"><a href="http://www.siteduzero.com/membres-315.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/tuto_cat_thb.png" alt=""></a></div>
+                                                <h6><a href="http://www.siteduzero.com/membres-315.html">Cours</a></h6>
+                                                <ul>
+                                                    <li style="font-style: italic;">Pour rédiger et participer à la rédaction d'un tutoriel, <a style="display: inline; font-style: normal;" href="http://www.siteduzero.com/membres-315.html">rejoignez-nous !</a></li>
+                                                </ul>
+                                            
+                                        </div>
+
+                                        <div class="menuh_list_category">
+                                            
+                                                <div class="ico"><a href="http://www.siteduzero.com/membres-315.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/defaut_thb.png" alt=""></a></div>
+                                                <h6><a href="http://www.siteduzero.com/membres-315.html">News</a></h6>
+                                                <ul>
+                                                    <li style="font-style: italic;">Pour partager ou participer à la rédaction d'une news, <a style="display: inline; font-style: normal;" href="http://www.siteduzero.com/membres-315.html"> rejoignez-nous !</a></li>
+                                                </ul>
+                                            
+                                        </div>
+
+                                        <div class="menuh_list_category">
+                                            <div class="ico"><a href="http://www.siteduzero.com/concours.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/cup_thb.png" alt=""></a></div>
+                                            <h6><a href="http://www.siteduzero.com/concours.html">Concours</a></h6>
+                                            <ul>
+                                                
+                                                        <li><a href="http://www.siteduzero.com/concours-654-122-innov-game-2011-a-la-gloire-de.html">Innov'Game 2011 : A la gloire de</a></li>
+                                                    
+                                            </ul>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+
+
+                                    <div id="menuh_job" style="display: none;">
+                                        <div class="menu_princi">
+                                            <div class="menuh_princi_col">
+                                                <div class="menuh_list_category">
+                                                    <h6>Dernières annonces</h6>
+                                                    <div class="menuh_list_category_job">
+                                                        
+                                                            <a title="Consulter le poste : Développeur C/C++ (H/F)" href="http://www.siteduzero.com/emploi/78/developpeur-c-c" class="corpsmenu">
+                                                                <span class="last_jobs">
+                                                                    <span title="CDD" class="job_type jobtypes2">CDD</span>
+                                                                </span>
+                                                                <span>
+                                                                    <span class="job_title">Développeur C/C++ (H/F)</span>
+                                                                    <span style="color: rgb(0, 0, 0);">AYOTLE</span>
+                                                                </span>
+                                                            </a>
+                                                        
+                                                            <a title="Consulter le poste : Développeur web asp.net/aja…" href="http://www.siteduzero.com/emploi/77/developpeur-web-asp-net-ajax-xhtml" class="corpsmenu">
+                                                                <span class="last_jobs">
+                                                                    <span title="Stage" class="job_type jobtypes3">Stage</span>
+                                                                </span>
+                                                                <span>
+                                                                    <span class="job_title">Développeur web asp.net/aja…</span>
+                                                                    <span style="color: rgb(0, 0, 0);">Citizenside.com</span>
+                                                                </span>
+                                                            </a>
+                                                        
+                                                            <a title="Consulter le poste : Ingénieur logiciel C++ (H/F…" href="http://www.siteduzero.com/emploi/3/ingenieur-logiciel-c" class="corpsmenu">
+                                                                <span class="last_jobs">
+                                                                    <span title="Stage" class="job_type jobtypes3">Stage</span> <span title="CDI" class="job_type jobtypes1">CDI</span>
+                                                                </span>
+                                                                <span>
+                                                                    <span class="job_title">Ingénieur logiciel C++ (H/F…</span>
+                                                                    <span style="color: rgb(0, 0, 0);">FACTSET JCF</span>
+                                                                </span>
+                                                            </a>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                
+                                                <div class="menuh_princi_col">
+                                                    
+                                                        <div class="menuh_list_category">
+                                                            <h6>Annonces à la une</h6>
+                                                            <div class="menuh_list_category_job">
+                                                                
+                                                                    <a title="Consulter le poste : 5 Développeurs Java (H/F)" href="http://www.siteduzero.com/emploi/63/5-developpeurs-java" class="corpsmenu">
+
+                                                                        <span class="last_jobs">
+                                                                            <span title="CDI" class="job_type jobtypes1">CDI</span>
+                                                                        </span>
+                                                                        <span>
+                                                                            <span class="job_title">5 Développeurs Java (H/F)</span>
+                                                                            <span style="color: rgb(0, 0, 0);">Small iz beautiful pour AIRP…</span>
+                                                                        </span>
+                                                                    </a>
+                                                                
+                                                                    <a title="Consulter le poste : Développeur PHP Symfony (H/…" href="http://www.siteduzero.com/emploi/58/developpeur-php-symfony" class="corpsmenu">
+
+                                                                        <span class="last_jobs">
+                                                                            <span title="CDI" class="job_type jobtypes1">CDI</span>
+                                                                        </span>
+                                                                        <span>
+                                                                            <span class="job_title">Développeur PHP Symfony (H/…</span>
+                                                                            <span style="color: rgb(0, 0, 0);">Externis Resourcing</span>
+                                                                        </span>
+                                                                    </a>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                      
+                                                    <div class="menuh_list_category">
+                                                        <div>
+                                                            <div><a href="http://www.siteduzero.com/emploi.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/speed_barre_btn_recherche_emploi.png" alt=""></a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="menuh_more2">
+                                                        <a href="http://www.siteduzero.com/emploi/liste.html">Toutes les annonces<img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/fleche_droite.png" alt="►"></a>
+                                                </div>
+                                            </div>
+                                        <div class="clear"></div>
+                                    </div>
+
+                                    <div id="menuh_study" style="display: none; padding-left: 15px;">
+                                        <div class="menu_princi">
+                                            <div class="ico_study"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/ico_etude.png" alt="icon etude" width="50"></div>
+                                            <div class="menuh_princi_col">
+                                                <div class="menuh_list_category">
+                                                    <h6>Recrutement à Bac / Bac +1</h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-280-bts.html">BTS</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-269-ecoles-d-ing%C3%A9nieurs-en-informatique.html">Ecoles d'ingénieurs en informatique</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-274-ecoles-d-ing%C3%A9nieurs-generalistes.html">Ecoles d'ingénieurs généralistes</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-283-iut.html">IUT</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-300-universites.html">Universités</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-287-autre-formation-diplomantes.html">Autres formations diplômantes</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-448-cpge.html">CPGE</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="menuh_list_category">
+                                                    <h6>Recrutement à Bac +2</h6>
+                                                    <ul>
+                                                       <li><a href="http://www.siteduzero.com/etudes-550-270-ecoles-d-ing%C3%A9nieurs-en-informatique.html">Ecoles d'ingénieurs en informatique</a></li>
+                                                       <li><a href="http://www.siteduzero.com/etudes-550-273-ecoles-d-ing%C3%A9nieurs-generalistes.html">Ecoles d'ingénieurs généralistes</a></li>
+                                                       <li><a href="http://www.siteduzero.com/etudes-550-289-autre-formation-diplomantes.html">Autres formations diplômantes</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div class="menuh_princi_col">
+                                                <div class="menuh_list_category">
+                                                    <h6>Recrutement à Bac +3 / Bac +4</h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-388-ecoles-d-ing%C3%A9nieurs-en-informatique.html">Ecoles d'ingénieurs en informatique</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-389-ecoles-d-ing%C3%A9nieurs-generalistes.html">Ecoles d'ingénieurs généralistes</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-390-autre-formation-diplomantes.html">Autres formations diplômantes</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="menuh_list_category">
+                                                    <h6>Recrutement à Bac +5</h6>
+                                                    <ul>
+                                                       <li><a href="http://www.siteduzero.com/etudes-550-299-doctorats.html">Doctorats</a></li>
+                                                       <li><a href="http://www.siteduzero.com/etudes-550-391-autre-formation-diplomantes.html">Autres formations diplômantes</a></li>
+                                                    </ul>
+                                                    <div class="menuh_list_category">
+                                                        <div id="find_training">
+                                                            <div><a href="http://www.siteduzero.com/etudes.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/ico_recherche_cours.png" alt=""><strong>Trouvez une formation</strong></a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+
+                                    <div id="menuh_shop" style="display: none;">
+                                        <div class="flagship_products headband_preorder">
+                                            <a style="display: block; height: 144px;" href="http://www.siteduzero.com/boutique-614-430-apprenez-a-programmer-en-java.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/livre_cours_java_2d.png" alt="Apprenez à programmer en Java"></a>
+                                            <h5>Apprenez à programmer en Java</h5>
+                                            <div class="price" style="margin-top: 16px;">
+                                                <span class="min_price">Prix de précommande</span><br>
+                                                25 €
+                                            </div>
+                                            <span><a class="bouton_action fl" href="http://www.siteduzero.com/boutique-614-430-apprenez-a-programmer-en-java.html">Acheter</a></span>
+                                        </div>
+                                        <div class="flagship_products">
+                                            <a href="http://www.siteduzero.com/boutique-614-188-cle-usb-du-site-du-zero-8-go.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/image_usb_speedbarre.jpg" alt="cle usb"></a>
+                                            <h5>Clé USB du site du Zéro</h5>
+                                            <a href="http://www.siteduzero.com/boutique-614-184-cle-usb-du-site-du-zero-4-go.html">4 Go</a>
+                                            - <a href="http://www.siteduzero.com/boutique-614-188-cle-usb-du-site-du-zero-8-go.html">8 Go</a>
+                                            - <a href="http://www.siteduzero.com/boutique-614-191-cle-usb-du-site-du-zero-16-go.html">16 Go</a><br>
+                                            <div class="price">
+                                                <span class="min_price">À partir de</span><br>
+                                                15,20 €
+                                            </div>
+                                            <span><a class="bouton_action fl" href="http://www.siteduzero.com/boutique-614-188-cle-usb-du-site-du-zero-8-go.html">Acheter</a></span>
+                                        </div>
+
+                                    <div class="other_products">
+                                        <span>Concevez votre site web avec PHP et MySQL<br>
+                                        <a href="http://www.siteduzero.com/boutique-614-107-concevez-votre-site-web-avec-php-et-mysql.html">En savoir plus ►</a></span>
+                                        <a href="http://www.siteduzero.com/boutique-614-107-concevez-votre-site-web-avec-php-et-mysql.html">
+                                        <img style="margin: 13px 0pt 0pt 22px;" alt="Concevez votre site web avec php et mysql" src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/livre_cours_php_2d.png"></a>
+                                    </div>
+
+                                    <div class="other_products">
+                                        <span>Apprenez à programmer en C <br>
+                                        <a href="http://www.siteduzero.com/boutique-614-65-apprenez-a-programmer-en-c.html">En savoir plus ►</a></span>
+                                        <a href="http://www.siteduzero.com/boutique-614-65-apprenez-a-programmer-en-c.html">
+                                        <img style="margin: 13px 0pt 0pt 22px;" alt="Apprenez à programmer en C" src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/livre_cours_c_2d.png"></a>
+                                    </div>
+                                    <div class="other_products">
+                                        <span>Reprenez le contrôle à l'aide de Linux <br>
+                                        <a href="http://www.siteduzero.com/boutique-614-171-reprenez-le-controle-a-l-aide-de-linux.html">En savoir plus ►</a></span>
+                                        <a href="http://www.siteduzero.com/boutique-614-171-reprenez-le-controle-a-l-aide-de-linux.html">
+                                        <img style="margin: 13px 0pt 0pt 22px;" alt="Reprenez le contrôle à l'aide de Linux" src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/livre_cours_linux_2d.png"></a>
+                                    </div>
+
+                                    <div class="other_products">
+                                        <span>Rédigez des documents de qualité avec LaTeX<br>
+                                        <a href="http://www.siteduzero.com/boutique-614-207-redigez-des-documents-de-qualite-avec-latex.html">En savoir plus ►</a></span>
+                                        <a href="http://www.siteduzero.com/boutique-614-207-redigez-des-documents-de-qualite-avec-latex.html">
+                                        <img style="margin: 13px 0pt 0pt 22px;" alt="Rédigez des documents de qualité avec LaTeX" src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/livre_cours_latex_2d.png"></a>
+                                    </div>
+                                      
+                                    <div class="menuh_more">
+                                        <a href="http://www.siteduzero.com/boutique.html">Tous les produits <img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/fleche_droite_002.png" alt="►"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="search_bar">
+                        <div class="ard"></div>
+                        <form method="get" action="recherche.html" id="recherche">
+                            <p>
+                                <input name="src" id="champ_recherche" accesskey="4" value="Rechercher" type="text">
+                                <select name="c" id="section_recherche">
+                                    <option value="3" selected="selected">Cours</option>
+                                    <option value="6">Forums</option>
+                                    <option value="4">News</option>
+                                    <option value="mbr">Membres</option>
+                                    <option value="formation">Études</option>
+                                    <option value="codeweb">Code web</option>
+                                    <option value="mp">MP</option>
+                                </select>
+                                <input class="button_go_search" value="Go" type="submit">
+                                <a class="button_more_search" href="http://www.siteduzero.com/recherche.html">+</a>
+                            </p>
+                        </form>
+                        </div>
+
+                    </div>
+
+<script type="text/javascript">
+
+    
+        //On Hover
+
+    var keyCodeEscape = 27;
+    $(document).keyup(function(f) {
+        if (f.keyCode == keyCodeEscape)
+        {
+            hideBlocMenu();
+        }
+    });
+
+
+    /* Var for speedbar*/
+    showDelay = 300;
+    hiddenDelay = 367;
+    fadeInDelay = 100
+    fadeOutDelay = 100
+    timer = null;
+    hideTimeOut = null
+    // speedbar function
+    function speedShowDelay(){
+        if($('.menuh_content > div').is(':visible'))
+        {
+            showDelay = null;
+        }
+        else
+        {
+            showDelay = 300;
+        }
+    }
+    
+    $("body").mouseleave(function(){
+        $('.menuh_content > div').hide();
+        $('#speedbarre .smenu>li a').removeClass("smenu_hover");
+    });
+    
+    function showMenu(id, id2){
+
+        $(id2).click(function(){
+            clearInterval(timer);
+            hideBlocMenu();
+            return;
+        });
+
+        speedShowDelay();
+
+        $("body").unbind('click');
+
+        clearInterval(timer);
+        if(!$(id).is(':visible'))
+        {
+            $('.menuh_content > div').hide();
+
+            $('#speedbarre .smenu>li a').removeClass("smenu_hover");
+            $('#speedbarre .smenu > li > .speedbarre_arrow').hide();
+
+            timer=setInterval(function(){
+                $(id+' ,#speedbar_expand').fadeIn(fadeInDelay);
+                $(id2+' a').addClass('smenu_hover')
+                clearInterval(timer);
+
+                },showDelay);
+        }
+    }
+
+    function hideMenu(id, id2){
+
+        clearInterval(timer);
+        clearTimeout(hideTimeOut);
+
+        $("body").bind('click',function(){
+            hideBlocMenu();
+        });
+
+        timer=setInterval(function(){
+            $(id).fadeOut(fadeOutDelay,function(){
+                $('#speedbar_expand').hide();
+                $(id2+' a').removeClass("smenu_hover");
+            });
+            clearInterval(timer);
+        },hiddenDelay)
+    }
+
+    function hideBlocMenu(){
+        $('.menuh_content > div').fadeOut(fadeOutDelay, function(){
+            $('#speedbar_expand').hide();
+            $('#speedbarre .smenu>li a').removeClass("smenu_hover");})
+    }
+
+        /* speedbar */
+
+
+    $("#speed_cours").addClass('hideOnLoad');
+    $("#speed_forum").addClass('hideOnLoad');
+    $("#speed_concours").addClass('hideOnLoad');
+    $("#speed_job").addClass('hideOnLoad');
+    $("#speed_etudes").addClass('hideOnLoad');
+    $("#speed_boutique").addClass('hideOnLoad');
+
+
+
+    $(document).mousemove(function(){
+        $("#speed_cours").removeClass('hideOnLoad');
+        $("#speed_forum").removeClass('hideOnLoad');
+        $("#speed_concours").removeClass('hideOnLoad');
+        $("#speed_job").removeClass('hideOnLoad');
+        $("#speed_etudes").removeClass('hideOnLoad');
+        $("#speed_boutique").removeClass('hideOnLoad');
+    })
+
+
+    //TUTORIALS
+    $("#speed_cours, #menuh_tutorials").hover(function(){
+        clearTimeout(hideTimeOut);
+        id = '#menuh_tutorials';
+        id2 = '#speed_cours';
+        if(!$(id2).hasClass('hideOnLoad'))
+        {
+            hideTimeOut = setTimeout(function(){
+                showMenu(id, id2);
+            },100);
+        }
+
+    ;},function(){
+
+        id = '#menuh_tutorials';
+        id2 = '#speed_cours';
+        hideMenu(id, id2);
+    });
+    //FORUMS
+    $("#speed_forum, #menuh_forum").hover(function(){
+        clearTimeout(hideTimeOut);
+        id = '#menuh_forum';
+        id2 = '#speed_forum';
+
+        if(!$(id2).hasClass('hideOnLoad'))
+        {
+            hideTimeOut = setTimeout(function(){
+                showMenu(id, id2);
+            },100);
+        }
+
+    ;},function(){
+
+        id = '#menuh_forum';
+        id2 = '#speed_forum';
+        hideMenu(id, id2);
+    });
+
+    //COLLABORATE
+    $("#speed_concours, #menuh_collaborate").hover(function(){
+        clearTimeout(hideTimeOut);
+        id = '#menuh_collaborate';
+        id2 = '#speed_concours';
+        if(!$(id2).hasClass('hideOnLoad'))
+        {
+            hideTimeOut = setTimeout(function(){
+                showMenu(id, id2);
+            },100);
+        }
+
+    ;},function(){
+
+        id = '#menuh_collaborate';
+        id2 = '#speed_concours';
+        hideMenu(id, id2);
+    });
+
+    //JOB
+    $("#speed_job, #menuh_job").hover(function(){
+        clearTimeout(hideTimeOut);
+        id = '#menuh_job';
+        id2 = '#speed_job';
+        if(!$(id2).hasClass('hideOnLoad'))
+        {
+            hideTimeOut = setTimeout(function(){
+                showMenu(id, id2);
+            },100);
+        }
+
+    ;},function(){
+
+        id = '#menuh_job';
+        id2 = '#speed_job';
+        hideMenu(id, id2);
+    });
+
+    //STUDY
+    $("#speed_etudes, #menuh_study").hover(function(){
+        clearTimeout(hideTimeOut);
+        id = '#menuh_study';
+        id2 = '#speed_etudes';
+        if(!$(id2).hasClass('hideOnLoad'))
+        {
+            hideTimeOut = setTimeout(function(){
+                showMenu(id, id2);
+            },100);
+        }
+
+    ;},function(){
+
+        id = '#menuh_study';
+        id2 = '#speed_etudes';
+        hideMenu(id, id2);
+    });
+
+    //SHOP
+    $("#speed_boutique, #menuh_shop").hover(function(){
+        clearTimeout(hideTimeOut);
+        id = '#menuh_shop';
+        id2 = '#speed_boutique';
+        if(!$(id2).hasClass('hideOnLoad'))
+        {
+            hideTimeOut = setTimeout(function(){
+                showMenu(id, id2);
+            },100);
+        }
+
+    ;},function(){
+
+        id = '#menuh_shop';
+        id2 = '#speed_boutique';
+        hideMenu(id, id2);
+    });
+
+    
+
+</script>
+            
+            <div class="contenu">
+                <div id="menu">
+                    
+
+                    <div class="box_menu">
+                        <h5>Cours</h5>
+
+                        <div class="corpsmenu">
+                            <ul>
+                                
+                                    <li style="border-bottom: 0pt none; padding: 0pt 0pt 2px; background-color: rgb(226, 240, 255);">
+                                        <a href="http://www.siteduzero.com/tutoriel-3-361996-par-ou-commencer.html"><img style="padding-left: 5px;" src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/compass.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu" style="margin-left: 43px;">
+                                            <a href="http://www.siteduzero.com/tutoriel-3-361996-par-ou-commencer.html"><strong class="menu_cours_section">Nouveau ?</strong></a>
+                                            <ul>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-361996-par-ou-commencer.html">Suivez le guide !</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.siteduzero.com/tutoriel-1-67-site-web.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/67.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu">
+                                            <a href="http://www.siteduzero.com/tutoriel-1-67-site-web.html"><strong class="menu_cours_section">Site Web</strong></a>
+                                            <ul>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-13666-apprenez-a-creer-votre-site-web.html">XHTML / CSS</a></li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-309961-dynamisez-vos-sites-web-avec-javascript.html">Javascript</a></li>
+                                                <li>
+                                                    <a href="http://www.siteduzero.com/tutoriel-3-14668-concevez-votre-site-web-avec-php-et-mysql.html">
+                                                        PHP / MySQL
+                                                    </a>
+                                                    <a href="http://www.siteduzero.com/boutique-614-107-concevez-votre-site-web-avec-php-et-mysql.html">
+                                                        <span class="in_book"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/ico_livre.png" alt=""></span>
+                                                        <span style="display: none;">Ce cours existe en livre :<br>Concevez votre site web avec PHP et MySQL</span>
+                                                    </a>
+                                                </li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-112219-apprenez-a-creer-des-applications-web-dynamiques-avec-jee.html">Java EE (J2EE)</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.siteduzero.com/tutoriel-1-57-programmation.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/57.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu">
+                                            <a href="http://www.siteduzero.com/tutoriel-1-57-programmation.html"><strong class="menu_cours_section">Programmation</strong></a>
+                                            <ul>
+                                                <li>
+                                                    <a href="http://www.siteduzero.com/tutoriel-3-14189-apprenez-a-programmer-en-c.html">
+                                                        Langage C
+                                                    </a>
+                                                    <a href="http://www.siteduzero.com/boutique-614-65-apprenez-a-programmer-en-c.html">
+                                                        <span class="in_book"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/ico_livre.png" alt=""></span>
+                                                        <span style="display: none;">Ce cours existe en livre :<br>Apprenez à programmer en C</span>
+                                                    </a>
+                                                </li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-11406-apprenez-a-programmer-en-c.html">Langage C++</a></li>
+                                                <li>
+                                                    <a href="http://www.siteduzero.com/tutoriel-3-10601-programmation-en-Java.html">
+                                                        Java
+                                                    </a>
+                                                        <a href="http://server1.evonia.fr/tracking/ads_stats2-32325f35385f323533__77c00fc1a6__2748__2-0/http://www.siteduzero.com/boutique-614-430-apprenez-a-programmer-en-java.html">
+                                                        <span class="in_book"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/ico_livre_preco.png" alt=""></span>
+                                                        <span style="display: none;">Ce livre est en précommande :<br>Apprenez à programmer en Java</span>
+                                                    </a>
+                                                </li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-119239-programmation-en-java-api.html">Java (API)</a></li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-223267-apprendre-python.html">Python </a></li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-134798-visual_basic_net.html">VB .NET</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>                                        
+                                        <a href="http://www.siteduzero.com/tutoriel-1-60-systemes-d-exploitation.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/60.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu">
+                                            <a href="http://www.siteduzero.com/tutoriel-1-60-systemes-d-exploitation.html"><strong class="menu_cours_section">Systèmes d'exploitation</strong></a>
+                                            <ul>
+                                                <li>
+                                                    <a href="http://www.siteduzero.com/tutoriel-3-12827-reprenez-le-controle-a-l-aide-de-linux.html">
+                                                        Linux
+                                                    </a>
+                                                    <a href="http://www.siteduzero.com/boutique-614-171-reprenez-le-controle-a-l-aide-de-linux.html">
+                                                        <span class="in_book"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/ico_livre.png" alt=""></span>
+                                                        <span style="display: none;">Ce cours existe en livre :<br>Reprenez le contrôle a l'aide de Linux</span>
+                                                    </a>
+                                                </li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-273305-freebsd-et-l-envers-du-decor.html">FreeBSD</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.siteduzero.com/tutoriel-1-56-graphisme.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/56.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu">
+                                            <a href="http://www.siteduzero.com/tutoriel-1-56-graphisme.html"><strong class="menu_cours_section">Graphisme</strong></a>
+                                            <ul>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-351765-debuter-sur-adobe-photoshop.html">Photoshop</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.siteduzero.com/tutoriel-1-58-infographie-3d.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/58.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu">
+                                            <a href="http://www.siteduzero.com/tutoriel-1-58-infographie-3d.html"><strong class="menu_cours_section">Infographie 3D</strong></a>
+                                            <ul>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-11714-debutez-dans-la-3d-avec-blender.html">Blender</a></li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-228998-apprenez-a-modeliser-en-3d-avec-autodesk-maya.html">Maya</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <a href="http://www.siteduzero.com/tutoriel-1-55-bureautique.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/55.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu">
+                                            <a href="http://www.siteduzero.com/tutoriel-1-55-bureautique.html"><strong class="menu_cours_section">Bureautique</strong></a>
+                                            <ul>
+                                                <li>
+                                                    <a href="http://www.siteduzero.com/tutoriel-3-258577-redigez-des-documents-de-qualite-professionnelle-avec-latex.html">
+                                                        LaTeX
+                                                    </a>
+                                                    <a href="http://www.siteduzero.com/boutique-614-207-redigez-des-documents-de-qualite-professionnelle-avec-latex.html">
+                                                        <span class="in_book"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/ico_livre.png" alt=""></span>
+                                                        <span style="display: none;">Ce cours existe en livre :<br>Rédigez des documents de qualité avec LaTeX</span>
+                                                    </a>
+                                                </li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-417000-redigez-facilement-des-documents-avec-word.html">Word<img style="margin-left: 10px;" alt="" src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/iconouveau.png"></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <li>
+                                        <img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/die.png" class="fl" alt="">
+                                        <div class="liste_cours_menu">
+                                            <strong class="menu_cours_section">Tutoriel du jour</strong><br>
+                                            <ul>
+                                                <li>
+                                                    <a href="http://www.siteduzero.com/tutoriel-3-38032-validation-les-conseils-des-validateurs.html">[Validation] Les conseils des Validateurs</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                
+                                <li class="last_idem_liste">
+                                    <div id="menu_ajout_cours">
+                                        <ul>
+                                            <li>
+                                                
+                                                    <a href="http://www.siteduzero.com/tutoriel-3-256867-devenez-auteur-de-cours-sur-le-site-du-zero-et-le-livre-du-zero.html">
+                                                
+                                                Rédigez un cours <img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/add.png" alt="">&nbsp;</a>
+                                             </li>
+                                             <li>
+                                                 <a href="http://www.siteduzero.com/tutoriel.html" title="Tous les cours">Tous les cours  <img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/fleche_droite.png" alt="">&nbsp;</a>
+                                             </li>
+                                         </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="corps">
+                    <div id="zozor_position">
+                        <div id="zozor">
+                            <div class="centre"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/zozor6.png" alt=" Zozor" title=" Zozor"></div>
+                       </div>
+                    </div>
+
+                    <div id="container_bulle_zozor">
+                        
+                    </div>
+
+                    <div id="arbre">
+                        
+			&gt;  <a href="http://www.siteduzero.com/">Le Site du Zéro</a>
+		
+			&gt;  <a href="http://www.siteduzero.com/tutoriel.html">Cours</a>
+			 &gt;  <a href="http://www.siteduzero.com/tutoriel-1-352-tutoriels.html">Tutoriels</a>
+		 &gt;  <a href="http://www.siteduzero.com/tutoriel-1-60-systemes-d-exploitation.html">Systèmes d'exploitation</a>
+		 &gt;  <a href="http://www.siteduzero.com/tutoriel-2-96-linux.html">Linux</a>
+		&gt;  <a href="http://www.siteduzero.com/tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian.html">Installer un serveur DNS avec djbdns sous debian</a> 
+
+&gt; Lecture du tutoriel
+
+                    </div>
+
+                    
+
+
+
+<h1>
+    Installer un serveur DNS avec djbdns sous debian
+    
+</h1>
+
+
+<div id="onglets_tutos" class="onglets_tutos">
+  <ul>
+    
+      <li class="selected">
+      <a href="http://www.siteduzero.com/tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian.html">Tutoriel</a></li>
+    
+      <li>
+      <a href="http://www.siteduzero.com/tutoriel-50-193247-p1-installer-un-serveur-dns-avec-djbdns-sous-debian.html#r61679">17 commentaires</a></li>
+    
+      <li>
+      <a href="http://www.siteduzero.com/tutoriel-21-193247-installer-un-serveur-dns-avec-djbdns-sous-debian.html">Historique</a></li>
+    
+  </ul>
+</div>
+<hr class="bas_onglets">
+
+
+
+
+<div class="cadre_auteur_date">
+    <form action="tutoriel-54-193247.html" method="post">
+        <div class="dnone"><input value="5db6fb8accd208bdc5f8c7a028b1cd18d8875a5d" name="challenge" type="hidden"></div>
+
+        <div class="infobox">
+<h3 class="special">Informations sur le tutoriel</h3>
+<div class="conteneur_infobox">
+<table>
+  <tbody><tr>
+    <td>
+    <div class="boite_avatar_100px">
+      <img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/196856.png" style="width: 95px; height: 100px; display: block;" alt="Avatar" class="avatar" id="avatar194624">  
+     </div>
+    </td>
+    <td>
+     
+      <strong>Auteur</strong> :
+      
+    
+	    <a class="auteur_tut" href="http://www.siteduzero.com/membres-294-194624.html">elalitte</a>
+    
+      <br>
+    
+      
+		  <strong>Difficulté</strong> :
+		  
+			<img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/niveau_2.png" alt="Intermédiaire">
+		  
+		  <br>
+	  <strong>Licence</strong> : <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/fr/"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/6.png" alt="Creative Commons BY-NC-SA" title="Creative Commons BY-NC-SA"></a><br><br>
+      <br>
+      <a href="#tuto_details" onclick="return false;" id="tuto_details_plus">Plus d'informations <img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/fleche_bas.png" alt="Plus d'informations" title="Plus d'informations" id="image_detail"></a>
+      <a href="#onglets_tutos" onclick="return false;" id="tuto_details_moins" style="display: none;">Moins d'informations <img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/fleche_haut.png" alt="Plus d'informations" title="Plus d'informations" id="image_detail_moins"></a>
+      <script type="text/javascript">
+          var lien_plus = document.getElementById('tuto_details_plus');
+          var lien_moins = document.getElementById('tuto_details_moins');
+
+          var toggleDetails = function()
+          {
+              toggle('infos_detaillees');
+              toggle('tuto_details_plus');
+              toggle('tuto_details_moins');
+              return false;
+          };
+
+          if(lien_plus.addEventListener)
+          {
+              lien_plus.addEventListener('click', toggleDetails , false);
+          } else
+          {
+              lien_plus.attachEvent('onclick', toggleDetails);
+          }
+
+          if(lien_moins.addEventListener)
+          {
+              lien_moins.addEventListener('click', toggleDetails , false);
+          } else
+          {
+              lien_moins.attachEvent('onclick', toggleDetails);
+          }
+          
+      </script>
+
+      <div style="display: none;" id="infos_detaillees">
+	<br>			
+<strong>Créé</strong> : Le 01/12/2009 à 14:36:31<br>
+<strong>Modifié</strong> : Le 27/08/2010 à 22:47:42<br>
+
+<strong>Avancement</strong> : 100%<br>
+
+<br>
+
+
+<a href="http://www.siteduzero.com/tutoriel-50-193247-61679-installer-un-serveur-dns-avec-djbdns-sous-debian.html#r61679">17 commentaires</a><br>
+
+
+      </div>
+
+    </td>
+  </tr>
+</tbody></table>
+</div>
+</div>
+
+
+    <div class="infobox">
+        <h3 class="special">Popularité</h3>
+        <div class="conteneur_infobox">
+            <strong>Visualisations</strong> : 10&nbsp;458<br><br>
+            <div style="padding-top: 1px; float: left;"><strong>Appréciation<br>des lecteurs</strong> : </div>
+            <div class="tut_appreciation">
+                <div class="tut_appreciation_smiley" id="smiley-1-11830--998451" style="background-position: -19px 50%;"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/empty.gif" alt=""></div>
+                <span id="eval_nb-1">0</span>
+            </div>
+            <div class="tut_appreciation">
+                <div class="tut_appreciation_smiley" id="smiley-2-11830--998451" style="background-position: -57px 50%;"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/empty.gif" alt=""></div>
+                <span id="eval_nb-2">0</span>
+            </div>
+            <div class="tut_appreciation">
+                <div class="tut_appreciation_smiley" id="smiley-3-11830--998451" style="background-position: -95px 50%;"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/empty.gif" alt=""></div>
+                <span id="eval_nb-3">0</span>
+            </div>
+            <div class="tut_appreciation">
+                <div class="tut_appreciation_smiley eval_always_color" id="smiley-4-11830--998451" style="background-position: -114px 50%;"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/empty.gif" alt=""></div>
+                <span id="eval_nb-4">6</span>
+            </div>
+            
+            <div style="clear: both;"></div>
+                
+                    <p id="tut_vot_ldz" style="text-align: center;"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/thb_livre_cours_c.png" id="tut_vot_ldz_img" alt="">
+                    
+                                <b>2 personnes</b> souhaitent voir ce tutoriel publié en livre ! <br> <a href="http://www.siteduzero.com/vote/ldz/11830.html" id="tut_vot_ldz_link">Vous aussi ?</a>
+                            
+            </p>
+        </div>
+    </div>
+
+
+<div class="infobox" id="pave_pub_tuto" style="display: block;">
+<h3 class="special">Publicité</h3>
+<div class="conteneur_infobox">
+<table style="width: 100%;">
+  <tbody><tr>
+    <td colspan="2" id="menu_pub_tuto">
+
+
+        
+            <script type="text/javascript">
+                <!--
+                ord=Math.random();
+                ord=ord*10000000000000000000;
+                var test = true;
+                document.write('<scr'+'ipt type="text/javascript" src="pub.js.php?cb='+ord+'&amp;l=300&amp;h=250&amp;age=0&amp;afficher_bloc_pub=pave_pub_tuto&amp;cid=96&amp;pays=0"><\/scr'+'ipt>');
+                -->
+            </script><script type="text/javascript" src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/pub.html"></script><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" name="esiea_pave_2011" id="esiea_pave_2011" height="250" width="300" align="middle"><param name="allowScriptAccess" value="always">    <param name="movie" value="http://www.siteduzero.com/uploads/fr/ftp/pub/esiea_pave_2011.swf"><param name="quality" value="high"><param name="bgcolor" value="#000000"><param name="wmode" value="transparent"><embed src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/esiea_pave_2011.swf" wmode="transparent" quality="high" bgcolor="#000000" name="esiea_pave_2011" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" height="250" width="300" align="middle">  </object>
+        
+    </td>
+  </tr>
+</tbody></table>
+</div>
+</div>
+
+        
+	<div class="infobox">
+		<h3 class="special">Historique des mises à jour</h3>
+		<div class="conteneur_infobox">
+			<ul>
+				
+					<li>
+						<em>Le 27/08/2010 à 22:48:26</em><br>
+						 Installer un serveur DNS avec djbdns sous debian      *       Installation et configuration 
+					</li>
+			  
+					<li>
+						<em>Le 04/05/2010 à 17:56:26</em><br>
+						Mise à jour suite à une modification dans la configuration de daemontools.
+					</li>
+			  
+					<li>
+						<em>Le 02/12/2009 à 14:21:53</em><br>
+						zCode, alerte 1256
+					</li>
+			  
+			</ul>
+		</div>
+	</div>
+
+
+        
+            <div class="infobox expandable">
+                <h3 class="special">Partager</h3>
+                <div class="conteneur_infobox addthis_toolbox" style="text-decoration: none;" addthis:url="http://www.siteduzero.com/tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian.html" addthis:title="Installer un serveur DNS avec djbdns sous debian">
+                    <div class="vertical">
+                        <a class="addthis_button_print at300b" title="Imprimer"><span class="at300bs at15nc at15t_print"></span>Imprimer</a>
+                        <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=pdfonline&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian.html&amp;title=Installer%20un%20serveur%20DNS%20avec%20djbdns%20sous%20debian&amp;ate=AT-simpleit/-/-/4d7e06084e57f473/1&amp;uid=4d7e0608f782c0e3&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-2-96-linux.html&amp;tt=0" class="addthis_button_pdfonline at300b" title="Convertir au format PDF"><span class="at300bs at15nc at15t_pdfonline"></span>Convertir en PDF</a>
+                        <a class="addthis_button_email at300b" title="Partager via Email"><span class="at300bs at15nc at15t_email"></span>Email</a>
+                        <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=twitter&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian.html&amp;title=Installer%20un%20serveur%20DNS%20avec%20djbdns%20sous%20debian&amp;ate=AT-simpleit/-/-/4d7e06084e57f473/2&amp;uid=4d7e06080d62e44e&amp;sms_ss=1&amp;at_xt=1&amp;template=%7B%7Btitle%7D%7D%20%7B%7Burl%7D%7D%20%23SdZ&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-2-96-linux.html&amp;tt=0" class="addthis_button_twitter at300b" title="Partager via Twitter"><span class="at300bs at15nc at15t_twitter"></span>Twitter</a>
+                        <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=facebook&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian.html&amp;title=Installer%20un%20serveur%20DNS%20avec%20djbdns%20sous%20debian&amp;ate=AT-simpleit/-/-/4d7e06084e57f473/3&amp;uid=4d7e06080b285468&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-2-96-linux.html&amp;tt=0" class="addthis_button_facebook at300b" title="Partager via Facebook"><span class="at300bs at15nc at15t_facebook"></span>Facebook</a>
+                        <a class="expend" href="#plus"><span class="more">&nbsp;</span>Plus de services</a>
+                        <div style="display: none;" class="slidable">
+                            <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=myspace&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian.html&amp;title=Installer%20un%20serveur%20DNS%20avec%20djbdns%20sous%20debian&amp;ate=AT-simpleit/-/-/4d7e06084e57f473/4&amp;uid=4d7e06087c540af9&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-2-96-linux.html&amp;tt=0" class="addthis_button_myspace at300b" title="Partager via MySpace"><span class="at300bs at15nc at15t_myspace"></span>MySpace</a>
+                            <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=googlebuzz&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian.html&amp;title=Installer%20un%20serveur%20DNS%20avec%20djbdns%20sous%20debian&amp;ate=AT-simpleit/-/-/4d7e06084e57f473/5&amp;uid=4d7e060805949f40&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-2-96-linux.html&amp;tt=0" class="addthis_button_googlebuzz at300b" title="Partager via Google Buzz"><span class="at300bs at15nc at15t_googlebuzz"></span>Google Buzz</a>
+                            <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=blogger&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian.html&amp;title=Installer%20un%20serveur%20DNS%20avec%20djbdns%20sous%20debian&amp;ate=AT-simpleit/-/-/4d7e06084e57f473/6&amp;uid=4d7e0608cda1c530&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-2-96-linux.html&amp;tt=0" class="addthis_button_blogger at300b" title="Partager via Blogger"><span class="at300bs at15nc at15t_blogger"></span>Blogger</a>
+                            <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=buzz&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian.html&amp;title=Installer%20un%20serveur%20DNS%20avec%20djbdns%20sous%20debian&amp;ate=AT-simpleit/-/-/4d7e06084e57f473/7&amp;uid=4d7e06085bb0490f&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-2-96-linux.html&amp;tt=0" class="addthis_button_buzz at300b" title="Partager via Yahoo! Buzz"><span class="at300bs at15nc at15t_buzz"></span>Y! Buzz</a>
+                            <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=live&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian.html&amp;title=Installer%20un%20serveur%20DNS%20avec%20djbdns%20sous%20debian&amp;ate=AT-simpleit/-/-/4d7e06084e57f473/8&amp;uid=4d7e060858cb7209&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-2-96-linux.html&amp;tt=0" class="addthis_button_live at300b" title="Partager via MSN Live"><span class="at300bs at15nc at15t_live"></span>MSN Live</a>
+                            <a class="addthis_button_expanded at300m" title="Partager via un autre service"><span class="at300bs at15nc at15t_expanded"></span>Encore plus de services</a>
+                        </div>
+                    </div>
+                <div class="atclear"></div></div>
+            </div>
+        
+    </form>
+</div>
+
+
+<div id="chap_intro"><h3>Pourquoi ce tutoriel ?</h3><br>
+Le DNS est un service vital sur Internet. Il est bien plus complexe que 
+l'on peut le penser au premier abord, et sa mise en œuvre nécessite une 
+attention particulière. Pour ceux qui ne sont pas convaincus, il y a un 
+cours en elearning sur le DNS à votre disposition.<br>
+<br>
+Par ailleurs, de nombreuses failles de sécurité ont existé, et 
+existeront, sur les outils serveur proposés car ceux-ci sont vieux et 
+peu évolutifs. Le choix de djbdns est donc judicieux, tant par sa 
+simplicité d'utilisation que sa robustesse au niveau sécurité.<br>
+<br>
+Enfin, je n'ai rencontré aucun tutoriel digne de ce nom qui soit capable
+ d'expliquer en détail le fonctionnement et l'installation d'un serveur 
+avec djbdns. Je vais donc m'efforcer d'être clair et d'expliquer les 
+différentes commandes utilisées pour la mise en place, ainsi que les 
+commandes permettant de tester l'installation au fur et à mesure.<br>
+<br>
+Pour essayer d'expliquer les éléments importants, cela rend ce tutoriel 
+un peu long, mais il vaut mieux passer un peu plus de temps à comprendre
+ ce que l'on fait que mettre en place des services que l'on ne maîtrise 
+pas !<br>
+Vous pouvez retrouver tous mes tutos sur <a href="http://www.lalitte.com/">www.lalitte.com</a>.<br>
+<br>
+<br>
+<h3>Pourquoi djbdns ?</h3><br>
+djbdns est un excellent programme. Il a été conçu par D.J.Bernstein, un 
+enseignant en mathématiques américain très original et trublion dans le 
+monde Internet.<br>
+Je trouve que djbdns est excellent car :<br>
+<ul>
+<li>Il marche !</li>
+<li>Il a été pensé et programmé pour être sécurisé.</li>
+<li>Il sépare les services de domaine et de cache qui n'ont rien à voir.</li>
+</ul><br>
+Rien que pour ces trois raisons, il mérite qu'on s'y attarde. Surtout 
+quand on connait le passé de Bind, le serveur dns historique, qui n'a 
+pas une très bonne réputation et qui continue de faire parler de lui 
+après 30 ans de bons et loyaux services. Donc, que vous ayez déjà un 
+serveur bind en place, ou que vous vouliez mettre en place un nouveau 
+serveur, il vous faut installer djbdns.</div>
+
+
+    <div class="liens_bas_tuto">
+        
+    </div>
+
+
+<hr>
+
+
+            <h2>
+                <a id="ss_part_1" class="titre_sous_partie">Installation et configuration</a>
+                
+            </h2>
+
+            <div class="ss_part_texte">
+                <h3>Environnement et périmètre</h3><br>
+<br>
+Je vous propose de faire l'installation de djbdns sur une distribution 
+debian de linux. Tout simplement car cette distribution est excellente 
+pour l'installation de services sécurisés et fiables, et que 
+l'installation d'applications y est plutôt simple. Dans ce tutoriel je 
+me contenterai de vous parler de l'installation d'un serveur dns de 
+domaine, c'est à dire du module tinydns de djbdns. Je vous invite à lire
+ le site de djbdns si vous voulez installer un serveur de cache avec 
+dnscache. Nous allons faire nos commandes en tant que root pendant 
+l'installation, nos amis sous ubuntu pourront le faire grâce à la 
+commande sudo, ou tout simplement en passant root avec sudo -s.<br>
+<br>
+<h3>Conventions</h3><br>
+<br>
+Toutes les commandes unix utilisées utiliseront la typologie suivante encadrée sur fond noir :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>#&nbsp;whoami</pre></div></td></tr></tbody></table></div><br>
+<br>
+Je considèrerai par ailleurs que vous avez une relativement bonne 
+connaissance des systèmes unix pour pouvoir comprendre les commandes que
+ j'indiquerai, même si j'en explique la plupart. Il vous faudra aussi un
+ minimum de connaissances sur l'application DNS.<br>
+<br>
+<br>
+<h3>Installation de djbdns</h3><br>
+<h4>Installation des paquets</h4><br>
+<br>
+Depuis la release 5.04 de Debian, donc si vous êtes en Debian stable(Lenny), djbdns a enfin été intégré à Debian !<br>
+L'installation devient donc vraiment très simple.<br>
+<br>
+On commence par mettre à jour notre liste locale (un bon réflexe à prendre)<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>#&nbsp;apt-get&nbsp;update</pre></div></td></tr></tbody></table></div><br>
+<br>
+Et on installe la totale des packages liés à djbdns.<br>
+Les dépendances étant gérées par apt, il vous installera aussi daemontools et ucspi-tcp.<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>#&nbsp;apt-get&nbsp;install&nbsp;djbdns</pre></div></td></tr></tbody></table></div><br>
+<br>
+djbdns est djbdns, comme son nom l'indique... daemontools est un 
+ensemble d'application créé par D.J.Bernstein pour gérer les services 
+unix, comme par exemple leur lancement ou les logs d'information.<br>
+ucspi-tcp fournit des outils permettant de créer des communication 
+client-serveur de façon simple. C'est donc lui qui va servir à mettre 
+notre application djbdns en écoute sur le réseau pour répondre aux 
+requêtes dns.<br>
+Pour vérifier que vos paquets sont bien installés, vous pouvez tenter<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>#&nbsp;dpkg&nbsp;-l&nbsp;|&nbsp;grep&nbsp;djb</pre></div></td></tr></tbody></table></div><br>
+<br>
+Ce qui va lister tous les packages installés, mais n'afficher que les lignes qui contiennent la chaîne de caractères djb<br>
+Vous devriez avoir un truc du genre :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>ii&nbsp;&nbsp;djbdns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1:1.05-4+lenny1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;collection&nbsp;of&nbsp;Domain&nbsp;Name&nbsp;System&nbsp;tools.</pre></div></td></tr></tbody></table></div><br>
+<br>
+Le ii indiquant bien que le paquet est sélectionné et installé. Nous 
+pouvons donc dès maintenant utiliser les commandes fournies avec djbdns,
+ et nous n'allons pas nous en priver.<br>
+<br>
+<h4>Création des utilisateurs</h4><br>
+<br>
+Comme djbdns a été pensé pour la sécurité, il ne tourne pas bêtement 
+avec les droits root pour qu'en cas de compromission le vilain pirate 
+ait encore un peu de boulot. Pour cela, il faut donc créer des comptes 
+utilisateurs qui seront utilisés par djbdns pour lancer les services 
+(root ne sera utilisé que temporairement pour lancer la socket réseau)<br>
+On prend par ailleurs bien garde à ne pas donner de shell valide à ces deux comptes en cas de compromission.<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>useradd&nbsp;-s&nbsp;/bin/false&nbsp;tinydns
+useradd&nbsp;-s&nbsp;/bin/false&nbsp;dnslog</pre></div></td></tr></tbody></table></div><br>
+<br>
+On peut vérifier que les comptes ont bien été créés en regardant le fichier /etc/passwd qui contient la liste des utilisateurs :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>tail&nbsp;/etc/passwd</pre></div></td></tr></tbody></table></div><br>
+<br>
+Et vous devriez voir quelque chose comme :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>tinydns:x:1001:100::/home/tinydns:/bin/false
+dnslog:x:1002:100::/home/dnslog:/bin/false</pre></div></td></tr></tbody></table></div><br>
+<br>
+Ce qui prouve que vos utilisateurs sont bel et bien présents à l'appel.<br>
+<br>
+<h4>Création des dossiers et répertoires</h4><br>
+<br>
+Nous allons utiliser la commande tinydns-conf qui va nous créer le répertoire de configuration de tinydns.<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>#&nbsp;tinydns-conf&nbsp;tinydns&nbsp;dnslog&nbsp;/etc/tinydns&nbsp;192.168.0.1</pre></div></td></tr></tbody></table></div><br>
+<br>
+Bien sûr, vous mettrez l'adresse IP de votre machine à la place de 192.168.0.1 .<br>
+Cette commande va créer tous les répertoires nécessaires au 
+fonctionnement de tinydns dans /etc/tinydns. Le service sera lancé avec 
+les droits de l'utilisateur indiqué dans la commande (tinydns ici) et 
+chrooté dans le répertoire /etc/tinydns/root/. Si vous n'avez aucune 
+idée de ce qu'est le chroot, sachez simplement que c'est une mesure de 
+sécurité, ou faites des recherches dessus pour en savoir plus.<br>
+Elle va aussi créer des logs dans /etc/tinydns/log/main/ gérés par 
+l'utilisateur dnslog. Vous pourrez ainsi y voir des messages d'erreur 
+s'il y a un quelconque problème.<br>
+<br>
+<h4>Lancement du service</h4><br>
+<br>
+Vous avez peut-être l'habitude de lancer des services sous linux avec 
+des scripts de démarrage dans /etc/init.d/. Et bien pour tinydns, le 
+mode de fonctionnement est extrêmement différent puisque le service est 
+lancé est supervisé par daemontools qui a un fonctionnement original, 
+mais très efficace et utile, notamment car il supervise un processus en 
+permanence et tente de le relancer s'il est arrêté.<br>
+Nous allons créer un lien symbolique vers le répertoire d'installation de tinydns.<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>#&nbsp;mkdir&nbsp;/etc/service
+#&nbsp;ln&nbsp;-s&nbsp;/etc/tinydns&nbsp;/etc/service/</pre></div></td></tr></tbody></table></div><br>
+<br>
+On peut alors voir le lien créé :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>#&nbsp;ls&nbsp;-la&nbsp;/etc/service/</pre></div></td></tr></tbody></table></div><br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>lrwxrwxrwx&nbsp;&nbsp;1&nbsp;root&nbsp;root&nbsp;&nbsp;&nbsp;12&nbsp;2007-06-27&nbsp;13:30&nbsp;tinydns&nbsp;-&gt;&nbsp;/etc/tinydns</pre></div></td></tr></tbody></table></div><br>
+<br>
+Une fois que cela est fait, votre service est magiquement lancé !<br>
+Comment donc ? En fait, la commande svscan de daemontools scrute le 
+répertoire /service et cherche dans les répertoires contenus un fichier 
+run. Si ce fichier est présent, il l'exécute.<br>
+On peut voir le processus svscan lancé :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>#&nbsp;ps&nbsp;auxw
+root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2639&nbsp;&nbsp;0.0&nbsp;&nbsp;0.0&nbsp;&nbsp;&nbsp;&nbsp;140&nbsp;&nbsp;&nbsp;&nbsp;28&nbsp;?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2007&nbsp;&nbsp;&nbsp;0:05&nbsp;svscan&nbsp;/etc/service</pre></div></td></tr></tbody></table></div><br>
+<br>
+Dans notre cas, le répertoire /etc/service/tinydns/ contient le script run suivant :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>#!/bin/sh
+exec&nbsp;2&gt;&amp;1
+exec&nbsp;envuidgid&nbsp;tinydns&nbsp;envdir&nbsp;./env&nbsp;softlimit&nbsp;-d300000&nbsp;/usr/local/bin/tinydns</pre></div></td></tr></tbody></table></div><br>
+<br>
+Dans le langage de daemontools, cela veut dire de lancer le programme 
+/usr/local/bin/tinydns sous l'identité de tinydns en prenant en compte 
+les variables du répertoire /etc/tinydns/env/. Donc si tout se passe 
+bien, notre service est lancé. On peut le voir avec ps :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>#&nbsp;ps&nbsp;auwx
+root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2640&nbsp;&nbsp;0.0&nbsp;&nbsp;0.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;96&nbsp;&nbsp;&nbsp;&nbsp;16&nbsp;?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2007&nbsp;&nbsp;&nbsp;0:00&nbsp;readproctitle&nbsp;service&nbsp;errors:&nbsp;.......................................
+root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2641&nbsp;&nbsp;0.0&nbsp;&nbsp;0.0&nbsp;&nbsp;&nbsp;&nbsp;108&nbsp;&nbsp;&nbsp;&nbsp;24&nbsp;?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2007&nbsp;&nbsp;&nbsp;0:00&nbsp;supervise&nbsp;tinydns</pre></div></td></tr></tbody></table></div><br>
+<br>
+Ou avec la commande adéquate :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>#&nbsp;svstat&nbsp;/etc/service/*
+/etc/service/tinydns:&nbsp;up&nbsp;(pid&nbsp;2644)&nbsp;61511978&nbsp;seconds</pre></div></td></tr></tbody></table></div><br>
+<br>
+Si vous voyez 0 ou 1 seconde, c'est mauvais signe, quelque chose se 
+passe mal et tinydns redémarre en boucle. Dans ce cas allez voir les 
+logs pour y trouver de l'information :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>#&nbsp;tail&nbsp;-n&nbsp;30&nbsp;/etc/tinydns/log/main/current</pre></div></td></tr></tbody></table></div><br>
+<br>
+Cela est souvent dû au fait d'avoir un problème de bind de la socket car
+ l'adresse IP spécifiée n'existe pas ou un service DNS sur le port 53 
+UDP tourne déjà...<br>
+Et donc, si tout s'est bien passé, nous devrions voir le service en écoute sur la machine :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>#&nbsp;netstat&nbsp;-anpe&nbsp;|&nbsp;grep&nbsp;53
+udp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;88.191.51.73:53&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0.0.0:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3421&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2644/tinydns</pre></div></td></tr></tbody></table></div>  <br>
+<br>
+Cette commande affiche la liste des processus en écoute ainsi que le 
+port et le protocole utilisés. Ici, tinydns est bien en écoute sur le 
+port 53/UDP qui sert au DNS.<br>
+<br>
+<h3>Configurer tinydns</h3><br>
+<br>
+<h4>Données de zone</h4><br>
+<br>
+Maintenant que nous avons vérifié que notre service était installé et 
+qu'il était bien en écoute, il va nous falloir le configurer pour 
+diffuser nos informations DNS.<br>
+Imaginons que nous possédions le domaine intechinfo.fr et que nous 
+faisions tourner un serveur web, un serveur de messagerie et bien sûr, 
+deux serveurs DNS. Nous allons voir comment configurer ce domaine sur 
+notre serveur tinydns.<br>
+<br>
+<h4>Préparation du fichier de zone</h4><br>
+<br>
+Les informations concernant notre zone vont se situer dans le fichier 
+/etc/tinydns/root/data. Le format de ce fichier est un peu particulier. 
+En gros, le premier caractère d'une ligne indique le type 
+d'enregistrement DNS, et la suite le nom utilisé, l'adresse IP, etc.<br>
+Dans notre cas, il va nous falloir :<br>
+<br>
+<ul>
+<li>Un enregistrement SOA pour définir notre zone</li>
+<li>Deux enregistrements NS pour nos deux serveurs dns de zone</li>
+<li>Un enregistrement A pour notre serveur web</li>
+<li>Un enregistrement MX pour notre serveur de messagerie</li>
+<li>Un enregistrement A pour le nom de notre serveur de messagerie</li>
+</ul><br>
+<br>
+Il y a deux façons de créer le fichier de zone.<br>
+<br>
+<ul>
+<li>En l'éditant directement à la main</li>
+<li>En utilisant les commandes fournies par djbdns</li>
+</ul><br>
+<br>
+Nous allons faire les deux pour en avoir un aperçu.<br>
+<br>
+<h4>Configuration à l'aide des commandes djbdns</h4><br>
+<br>
+Nous avons plusieurs commandes utiles dans le répertoire /etc/tinydns/root/, donc le nom est évocateur :<br>
+<br>
+<ul>
+<li>add-ns (ajouter un serveur dns, soit un enregistrement NS)</li>
+<li>add-alias (ajouter un alias, soit un enregistrement CNAME)</li>
+<li>add-host (ajouter un host, soit un enregistrement A)</li>
+<li>add-mx (ajouter un serveur de messagerie, soit un enregistrement MX)</li>
+<li>add-childns (ajouter une zone fille, si on veut créer une sous-zone, par exemple etudiants.intechinfo.fr)</li>
+</ul><br>
+<br>
+Nous allons donc les utiliser pour créer notre zone. En tapant la commande sans argument, nous obtenons une aide :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>#&nbsp;cd&nbsp;/etc/tinydns/root
+#&nbsp;./add-ns
+tinydns-edit:&nbsp;usage:&nbsp;tinydns-edit&nbsp;data&nbsp;data.new&nbsp;add&nbsp;[ns|childns|host|alias|mx]&nbsp;domain&nbsp;a.b.c.d</pre></div></td></tr></tbody></table></div><br>
+<br>
+Nous pouvons maintenant ajouter nos serveurs dns :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>#&nbsp;./add-ns&nbsp;intechinfo.fr&nbsp;192.168.0.1</pre></div></td></tr></tbody></table></div><br>
+<br>
+Et voir le résultat dans le fichier data :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>#&nbsp;cat&nbsp;data
+.intechinfo.fr:192.168.0.1:a:259200</pre></div></td></tr></tbody></table></div><br>
+<br>
+Le . en début de ligne indique un enregistrement NS, puis il y a 
+l'adresse IP de ce serveur, le nom associé et le timeout associé à cet 
+enregistrement (3 jours ici, en secondes)<br>
+Vous pouvez utiliser ces commandes à votre guise, et nous allons voir 
+maintenant comment entrer les informations directement dans le fichier 
+de zone.<br>
+<br>
+<h4>Configuration à la main</h4><br>
+<br>
+La syntaxe du fichier data n'est pas très complexe, et son contenu est 
+expliqué sur le site de D.J.Bernstein. Nous allons utiliser vi pour 
+configurer notre fichier data :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>#&nbsp;vi&nbsp;/etc/tinydns/root/data</pre></div></td></tr></tbody></table></div><br>
+<br>
+Et entrer les informations suivantes :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>Zintechinfo.fr:sd-8131.dedibox.fr:lalitte.esiea.fr:2005042201:::::
+.intechinfo.fr:192.168.0.1:dns1.intechinfo.fr:259200
+.intechinfo.fr:192.168.0.2:dns2.intechinfo.fr:259200&nbsp;
++intechinfo.fr:192.168.0.1:86400&nbsp;
++www.intechinfo.fr:192.168.0.1:86400
+@intechinfo.fr:192.168.0.1:mail.intechinfo.fr::86400</pre></div></td></tr></tbody></table></div><br>
+<br>
+Nous avons sur la première ligne l'enregistrement SOA, puis les deux 
+enregistrements NS, deux enregistrements A pour le nom du domaine et le 
+serveur web, et enfin un enregistrement MX pour le serveur de messagerie
+ (l'enregistrement A pour le nom du serveur de messagerie est 
+automatiquement créé, comme pour les enregistrements NS d'ailleurs)<br>
+Et voilà, nous sommes enfin prêts ! ou presque...<br>
+Car malheureusement, tinydns ne parle pas notre langage et le fichier 
+data a besoin d'être compilé pour être compris par tinydns.<br>
+<br>
+<h4>Compilation du fichier data</h4><br>
+<br>
+Pour compiler, rien de plus simple, il suffit de faire la commande make (en étant dans le répertoire /etc/tinydns/root/)<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>#&nbsp;cd&nbsp;/etc/tinydns/root/&nbsp;
+#&nbsp;make</pre></div></td></tr></tbody></table></div><br>
+<br>
+Vous devriez avoir un nouveau fichier data.cdb qui est apparu :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>#&nbsp;ls&nbsp;-la
+drwxr-sr-x&nbsp;2&nbsp;root&nbsp;root&nbsp;&nbsp;4096&nbsp;2009-10-26&nbsp;14:22&nbsp;.
+drwxr-sr-t&nbsp;6&nbsp;root&nbsp;root&nbsp;&nbsp;4096&nbsp;2007-06-27&nbsp;17:54&nbsp;..
+-rwxr-xr-x&nbsp;1&nbsp;root&nbsp;root&nbsp;&nbsp;&nbsp;&nbsp;77&nbsp;2007-06-27&nbsp;17:54&nbsp;add-alias
+-rwxr-xr-x&nbsp;1&nbsp;root&nbsp;root&nbsp;&nbsp;&nbsp;&nbsp;79&nbsp;2007-06-27&nbsp;17:54&nbsp;add-childns
+-rwxr-xr-x&nbsp;1&nbsp;root&nbsp;root&nbsp;&nbsp;&nbsp;&nbsp;76&nbsp;2007-06-27&nbsp;17:54&nbsp;add-host
+-rwxr-xr-x&nbsp;1&nbsp;root&nbsp;root&nbsp;&nbsp;&nbsp;&nbsp;74&nbsp;2007-06-27&nbsp;17:54&nbsp;add-mx
+-rwxr-xr-x&nbsp;1&nbsp;root&nbsp;root&nbsp;&nbsp;&nbsp;&nbsp;74&nbsp;2007-06-27&nbsp;17:54&nbsp;add-ns
+-rw-r--r--&nbsp;1&nbsp;root&nbsp;root&nbsp;16620&nbsp;2009-10-26&nbsp;14:22&nbsp;data
+-rw-r--r--&nbsp;1&nbsp;root&nbsp;root&nbsp;39460&nbsp;2009-09-08&nbsp;10:52&nbsp;data.cdb
+-rw-r--r--&nbsp;1&nbsp;root&nbsp;root&nbsp;&nbsp;&nbsp;234&nbsp;2008-06-23&nbsp;18:17&nbsp;Makefile</pre></div></td></tr></tbody></table></div><br>
+<br>
+Ce fichier est illisible, mais il contient les données compilées du fichier data.<br>
+Nous pouvons maintenant tester si notre serveur dns répond bien à des requêtes pour notre domaine.<br>
+<br>
+<h3>Interrogation du serveur</h3><br>
+<br>
+Il y a de nombreux outils pour interroger un serveur dns. host ou dig 
+sous unix sont excellent pour cela, nous allons donc utiliser la 
+commande dig. La syntaxe est relativement simple :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>dig&nbsp;@@IPserveur&nbsp;requête&nbsp;type</pre></div></td></tr></tbody></table></div><br>
+<br>
+Attention, il faut bien indiquer le @ suivi de l'adresse Ip du serveur !
+ Ce qui donne par exemple pour faire une requête NS sur notre serveur 
+pour le domaine intechinfo.fr<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>#&nbsp;dig&nbsp;@192.168.0.1&nbsp;intechinfo.fr&nbsp;NS
+;&nbsp;&lt;&lt;&gt;&gt;&nbsp;DiG&nbsp;9.3.4&nbsp;&lt;&lt;&gt;&gt;&nbsp;@192.168.0.1.&nbsp;intechinfo.fr&nbsp;NS
+;&nbsp;(1&nbsp;server&nbsp;found)
+;;&nbsp;global&nbsp;options:&nbsp;&nbsp;printcmd
+;;&nbsp;Got&nbsp;answer:
+;;&nbsp;-&gt;&gt;HEADER&lt;&lt;-&nbsp;opcode:&nbsp;QUERY,&nbsp;status:&nbsp;NOERROR,&nbsp;id:&nbsp;56372
+;;&nbsp;flags:&nbsp;qr&nbsp;aa&nbsp;rd;&nbsp;QUERY:&nbsp;1,&nbsp;ANSWER:&nbsp;2,&nbsp;AUTHORITY:&nbsp;0,&nbsp;ADDITIONAL:&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;
+;;&nbsp;QUESTION&nbsp;SECTION:
+;intechinfo.fr.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NS
+;;&nbsp;ANSWER&nbsp;SECTION:
+intechinfo.fr.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;259200&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ns1.intechinfo.fr.
+intechinfo.fr.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;259200&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ns2.intechinfo.fr.
+;;&nbsp;ADDITIONAL&nbsp;SECTION:
+ns1.intechinfo.fr.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;259200&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;192.168.0.1
+ns2.intechinfo.fr.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;259200&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;192.168.0.2
+;;&nbsp;Query&nbsp;time:&nbsp;1&nbsp;msec
+;;&nbsp;SERVER:&nbsp;192.168.0.1#53(192.168.0.1)
+;;&nbsp;WHEN:&nbsp;Mon&nbsp;Oct&nbsp;26&nbsp;14:49:22&nbsp;2009
+;;&nbsp;MSG&nbsp;SIZE&nbsp;&nbsp;rcvd:&nbsp;127</pre></div></td></tr></tbody></table></div><br>
+<br>
+Ça marche ! Notre serveur répond bien pour notre zone intechinfo.fr.<br>
+<br>
+<h3>Arrêter ou relancer le service</h3><br>
+<br>
+Normalement, si vous avez fait l'installation avec apt, un script de 
+démarrage aura été placé dans /etc/init.d et vous pourrez facilement 
+relancer tinydns comme d'habitude sous Debian avec un bon :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>#&nbsp;/etc/init.d/tinydns&nbsp;restart</pre></div></td></tr></tbody></table></div><br>
+<br>
+Mais si vous l'avez installé par compilation, ou que vous voulez 
+respecter l'esprit de D.J.Bernstein, vous pouvez utiliser les commandes 
+sv* pour gérer votre processus tinydns.<br>
+Pour arrêter le service :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>svc&nbsp;-d&nbsp;/service/tinydns</pre></div></td></tr></tbody></table></div><br>
+<br>
+Pour le relancer :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>svc&nbsp;-u&nbsp;/service/tinydns</pre></div></td></tr></tbody></table></div><br>
+<br>
+Pour recharger la configuration :<br>
+<br>
+<span class="code">Code : Console - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 console"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre></pre></td><td class="code"><div class="syntax"><pre>svc&nbsp;-h&nbsp;/service/tinydns</pre></div></td></tr></tbody></table></div><br>
+<br>
+Il ne nous reste plus qu'à acheter un nom de domaine et à le gérer !
+            </div>
+            <hr>
+        
+
+<div id="chap_conclusion">Pour ceux qui ont l'habitude de bind, djbdns 
+est très déroutant car différent, aussi bien dans son installation que 
+sa configuration ou son fonctionnement.<br>
+<br>
+Cependant, cela vaut le coup de s'y essayer, surtout quand on voit les failles successives auxquelles bind a encore affaire...</div>
+
+
+
+    <div class="liens_bas_tuto">
+        
+    </div>
+
+
+<div class="clearer"></div>
+
+<div class="infobox cadre_auteur_date" id="tuto_details">
+    <h3 class="special">Informations sur le tutoriel</h3>
+    <div class="conteneur_infobox">
+        <a href="#onglets_tutos">Retour en haut <img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/fleche_haut.png" alt="Retour en haut" title="Retour en haut"></a>
+        <br>
+        <br>			
+<strong>Créé</strong> : Le 01/12/2009 à 14:36:31<br>
+<strong>Modifié</strong> : Le 27/08/2010 à 22:47:42<br>
+
+<strong>Avancement</strong> : 100%<br>
+
+<br>
+
+
+<a href="http://www.siteduzero.com/tutoriel-50-193247-61679-installer-un-serveur-dns-avec-djbdns-sous-debian.html#r61679">17 commentaires</a><br>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+            <div id="footer">
+                <ul>
+                    <li>
+                        Le Site du Zéro
+                        <ul>
+                            <li><a href="http://www.siteduzero.com/plan.html">Plan du site</a></li>
+                            <li><a href="http://www.siteduzero.com/membres-304.html">L'équipe</a></li>
+                            <li><a href="http://www.siteduzero.com/mentions.html">Mentions légales</a></li>
+                            <li><a href="http://www.siteduzero.com/accessibilite.html" accesskey="0">Accessibilité</a></li>
+                            <li><a href="http://www.siteduzero.com/livreor.html">Livre d'or</a></li>
+                            <li><a href="http://suggestions.siteduzero.com/"><img alt="logo_user_voice" src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/ico_uservoice.png"> Suggestions <img alt="Nouveau" src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/iconouveau.png"></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        Simple IT
+                        <ul>
+                            <li><a href="http://www.siteduzero.com/simpleit.html">Qui sommes-nous ? </a></li>
+                            
+                                <li><a href="http://www.siteduzero.com/formations.html">Formation professionnelle</a></li>
+                                <li><a href="http://www.siteduzero.com/recrutement.html">Recrutement</a></li>
+                            
+                            <li><a href="http://www.simple-it.fr/blog/">Notre blog</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        Contacts
+                        <ul>
+                            <li><a href="http://www.siteduzero.com/publicite-440.html">Espace annonceurs</a></li>
+                            <li><a href="http://www.siteduzero.com/presse.html">Espace presse</a></li>
+                            <li><strong><a href="http://www.siteduzero.com/contact.html" accesskey="7">Nous contacter</a></strong></li>
+                            <li><a href="http://www.siteduzero.com/promouvoir.html">Promouvoir le site</a></li>
+                            <li><a href="http://suggestions.siteduzero.com/forums/97879-rapports-de-bugs">Signaler un bug</a></li>
+                        </ul>
+                    </li>
+                    
+                        <li>
+                            Partenaires 
+                            <ul>
+                                <li><a href="http://www.planethoster.net/Site-du-Zero">Hébergement web</a></li>
+                                <li><a href="http://www.zcorrecteurs.fr/">Correction tutoriels</a></li>
+                            </ul>
+                        </li>
+                    
+                    <li>
+                        Suivez-nous
+                        <ul class="dernier">
+                            <li><a href="http://www.siteduzero.com/Templates/xml/news_fr.xml"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/rss_mini.png" alt="Flux RSS"> Flux RSS News</a>, <a href="http://www.siteduzero.com/Templates/xml/tutoriels_fr.xml">Cours</a>, <a href="http://www.simple-it.fr/blog/index.php?feed/atom">Blog</a></li>
+                            <li><a href="http://www.siteduzero.com/twitter.html"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/twitter_mini.png" alt="Twitter"> Twitter</a></li>
+                            <li><a href="http://www.facebook.com/siteduzero"><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/fb_mini.png" alt="Facebook"> Facebook</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                
+            </div>
+
+            
+
+
+            
+            <script type="text/javascript" src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/scripts_lang.js"></script>
+            <script type="text/javascript" src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/scripts.js"></script>
+            <script type="text/javascript" src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/lib.js"></script>
+
+            
+                <script type="text/javascript">
+    var addthis_config = {  ui_508_compliant: true,
+                            ui_cobrand: "Site du Zéro",
+                            ui_header_color: "#ffffff",
+                            ui_header_background: "#7AB7FC",
+                            username: "simpleit",
+                            services_exclude: 'print,pdfonline,email,twitter,facebook,myspace,googlebuzz,blogger,buzz,live',
+                            data_track_clickback: true  };
+                        
+    var addthis_share = {templates: { twitter:'{{title}} {{url}} #SdZ' } };
+
+    $('div.slidable').hide();
+    $('a.expend').show();
+    $('a.expend').removeAttr('style');
+    
+    $('.expend').click(function(e)
+    {
+        e.preventDefault();
+        $(this).hide('fast');
+        $(this).next('div.slidable').slideToggle('fast');
+    });
+   
+</script>
+<script type="text/javascript" src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/addthis_widget.js"></script>
+            
+
+            <div class="droite printnone">
+                <a href="http://www.xiti.com/xiti.asp?s=129196" title="WebAnalytics">
+                    <script type="text/javascript">
+                        <!--
+                        Xt_param = 's=129196&p=%2Ftutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian.html';
+                        try {Xt_r = top.document.referrer;}
+                        catch(e) {Xt_r = document.referrer; }
+                        Xt_h = new Date();
+                        Xt_i = '<img width="80" height="15" border="0" ';
+                        Xt_i += 'src="http://logv23.xiti.com/g.xiti?'+Xt_param;
+                        Xt_i += '&hl='+Xt_h.getHours()+'x'+Xt_h.getMinutes()+'x'+Xt_h.getSeconds();
+                        if(parseFloat(navigator.appVersion)>=4)
+                        {
+                        Xt_s=screen;Xt_i+='&r='+Xt_s.width+'x'+Xt_s.height+'x'+Xt_s.pixelDepth+'x'+Xt_s.colorDepth;
+                        }
+                        document.write(Xt_i+'&ref='+Xt_r.replace(/[<>"]/g, '').replace(/&/g, '$')+'">');
+                        //-->
+                    </script><img src="tutoriel-3-193247-installer-un-serveur-dns-avec-djbdns-sous-debian_fichiers/g.gif" height="15" width="80" border="0">
+                    <object>
+                        <noscript>
+                            <p><img width="80" height="15" src="http://logv23.xiti.com/g.xiti?s=129196&amp;p=&amp;" alt="WebAnalytics" /></p>
+                        </noscript>
+                    </object>
+                </a>
+                <script type="text/javascript">
+                    var _gaq = _gaq || [];
+                    _gaq.push(['_setAccount', 'UA-19807070-2']);
+                    _gaq.push(['_trackPageview']);
+
+                    (function() {
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                    })();
+                </script>
+            </div>
+
+            <!-- /#2 461/#0.0573/#0.0258/# -->
+	
+    <div aria-labelledby="ui-dialog-title-dialog_bientot" role="dialog" tabindex="-1" class="ui-dialog ui-widget ui-widget-content ui-corner-all " style="display: none; position: absolute; overflow: hidden; z-index: 1000; outline: 0px none;"><div style="-moz-user-select: none;" unselectable="on" class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span style="-moz-user-select: none;" unselectable="on" id="ui-dialog-title-dialog_bientot" class="ui-dialog-title">Bientôt sur le Site du Zéro.</span><a style="-moz-user-select: none;" unselectable="on" role="button" class="ui-dialog-titlebar-close ui-corner-all" href="#"><span style="-moz-user-select: none;" unselectable="on" class="ui-icon ui-icon-closethick">close</span></a></div><div class="ui-dialog-content ui-widget-content" id="dialog_bientot" style="">
+                <p>Le Site du Zéro vous proposera bientôt de nouveaux cours partant de Zéro dans d'autres domaines que l'informatique ! </p>
+                 <a style="color: rgb(38, 119, 201); text-decoration: none;" href="http://www.siteduzero.com/tutoriel-1-433-sciences.html">Découvrir les cours scientifiques</a>
+            </div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><button class="ui-state-default ui-corner-all" type="button">Ok</button></div></div><div style="display: none;" id="tooltip"><h3></h3><div class="body"></div><div class="url"></div></div></body></html>
