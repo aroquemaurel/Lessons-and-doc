@@ -1,0 +1,108 @@
+\documentclass[12pt,a4paper,towside]{book}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+
+\usepackage{lmodern}
+\usepackage[table]{xcolor}
+\input{styles/couleurs.tex}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{verbatim}
+\usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, linkcolor=vert1, urlcolor=bleu, colorlinks=true]{hyperref}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+\usepackage{eurosym}
+\usepackage{array}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{lipsum}
+\input{styles/entetesPiedDePages.tex}
+
+\input{styles/macro.tex}
+\input{styles/remarquesExempleAttention.tex}
+
+\input{styles/polices.tex}
+\input{styles/affichageChapitre.tex}
+
+\input{styles/glossaire.tex}
+
+%\includeonly{
+%}
+
+\begin{document}
+	\setcounter{tocdepth}{1}
+	\setcounter{secnumdepth}{3}
+	\includepdf{styles/couverture_rapport.pdf} %Couverture du rapport de stage
+	\newpage
+	%% Page de titre
+	\input{contenu/pageDeTitre.tex}
+	\newpage
+	\thispagestyle{empty} 
+	\frontmatter
+	\include{contenu/avantPropos/remerciements}
+	\tableofcontents
+	\mainmatter
+	\chapter{test 1}
+	\section{kamoulox 1}
+	\lipsum
+	\section{kamoulox 2}
+	\lipsum 
+	\section{kamoulox 3}
+	\lipsum 
+	\section{kamoulox 4}
+	\lipsum 
+
+	\chapter{test 2}
+	\section{kamoulox 1}
+	\lipsum 
+	\section{kamoulox 2}
+	\lipsum 
+	\section{kamoulox 3}
+	\lipsum 
+	\section{kamoulox 4}
+	\lipsum 
+
+	\chapter{test 3}
+	\section{kamoulox 1}
+	\lipsum 
+	\section{kamoulox 2}
+	\lipsum 
+	\section{kamoulox 3}
+	\lipsum 
+	\section{kamoulox 4}
+	\lipsum 
+
+	\chapter{test 4}
+	\section{kamoulox 1}
+	\lipsum 
+	\section{kamoulox 2}
+	\lipsum 
+	\section{kamoulox 3}
+	\lipsum 
+	\section{kamoulox 4}
+	\lipsum 
+%	\include{includes/chapitre4}
+%	\include{includes/chapitre5}
+%	\include{includes/chapitre6}
+	\closeout\glossaireVar
+	\appendix
+
+%	\include{includes/annexes/listeAnnonceurs}
+%	\include{includes/annexes/listeTableauxCh6}
+	%%% Pour insérer un mot dans le glossaire, utilisez la commande \glo{mot à apparaitre dans le texte}{Mot à apparaitre dans le glossaire}{Définition du mot} 
+%	\chapter{Glossaire}
+%	\begin{sortedlist}
+	%	\input{includes/annexes/glossaire}
+%	\end{sortedlist}
+\end{document}
+
+
+
+
+
+
