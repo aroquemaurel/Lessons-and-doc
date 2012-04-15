@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper]{book}
+\documentclass[12pt,a4paper,towside]{book}
 \usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
 
 \usepackage{lmodern}
@@ -40,19 +40,15 @@
 	\setcounter{secnumdepth}{3}
 	\includepdf{styles/couverture_rapport.pdf} %Couverture du rapport de stage
 	\newpage
-	\begin{flushright}
-		~
-		\vfill
-		\vspace{200px}
-		Version du \today{}
-	\end{flushright}
 	%% Page de titre
 	\input{contenu/pageDeTitre.tex}
+	\newpage
 	\thispagestyle{empty} 
 	\frontmatter
 	\include{contenu/avantPropos/remerciements}
 	\tableofcontents
 	\mainmatter
+\clearemptydoublepage
 	\chapter{test 1}
 	\section{kamoulox 1}
 	\lipsum
