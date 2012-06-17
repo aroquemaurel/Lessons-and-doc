@@ -1,0 +1,27 @@
+	\cleardoublepage
+	\setcounter{page}{1}
+	\appendix
+	\let\oldaddtocontents\addtocontents
+	\def\addtocontents#1{%
+		\def\tmpa{#1}%
+		\def\tmpb{toc}%
+		\ifx\tmpa\tmpb
+		   \def\tmpa{toca}%
+		\fi%
+	 \expandafter\oldaddtocontents\expandafter{\tmpa}%
+	 }
+	\includepdf{styles/couverture_annexes.pdf} %Couverture du rapport de stage
+	\newpage
+
+	\begin{flushright}
+		~
+		\vfill
+		\vspace{200px}
+		Version du \today{}
+	\end{flushright}
+	\thispagestyle{empty}
+	\include{contenu/annexes/pageDeTitre}
+	 \tableofcontentsA
+	 \newpage
+	\thispagestyle{empty}
+	\renewcommand{\chaptermark}[1]{\markboth{\bsc{Annexe~\thechapter{} :} #1}{}}
