@@ -1,0 +1,14 @@
+rapport/*aux 
+rapport/contenu/*aux 
+rapport/contenu/0-avantPropos/*aux
+rapport/*.synctex
+rapport/*bbl
+rapport/*bbi
+rapport/*lol
+rapport/*lof
+rapport/*log
+rapport/*blg
+rapport/*out
+rapport/*prj
+rapport/*lot
+
