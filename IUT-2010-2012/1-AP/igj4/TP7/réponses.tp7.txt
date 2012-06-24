@@ -1,0 +1,50 @@
+1. 
+
+MastermindIhm extending JPanel {BorderLayout}
+|_ JPanel NORTH {BoxLayout[Y_AXIS]}
+   |_ JPanel x nbEssais {FlowLayout}
+      |_ JButton x tailleCombinaison
+      |_ JLabel "Bien placé"
+      |_ JLabel nbBienPlacé
+      |_ JLabel "Mal placé"
+      |_ JLabel nbMalPlacé
+|_ JPanel CENTER {FlowLayout}
+   |_ JButton x tailleCombinaison
+   |_ JButton "Valider"
+   |_ JLabel nbEssaisRestants
+|_ JPanel SOUTH {FlowLayout}
+   |_ JLabel "Couleurs"
+   |_ JButton x nbCouleurs   
+
+2. Voir MastermindIHM
+
+3. 
+                       ____
+			O Début   |    |
+			|         V    | clicBtValider [combiComplette && !combiTrouvée]
++----------------------+___| traitement3
+| ATTENTE_CLIC_COULEUR |-------------------------->(0) FIN
++----------------------+   clicBoutonValider
+ |                 ^		 [combiComplette && combiTrouvée 
+ | 				   |		   || nbEssaisRestants == 0] / traitement4
+ |                 |
+ | clicBtCouleur   | clicBtSaisie
+ | traitement1     | traitement2
+ V                 |
++---------------------+
+| ATTENTE_CLIC_SAISIE |
++---------------------+
+
+traitement1 : stocker la couleur séléctionnée;
+
+traitement2 : poser la couleur sélectionnée sur le bouton;
+
+traitement3 : calculer et afficher pour la combinaison courante le nombre de couleurs
+bien placées et mal placées ;
+enlever 1 au nbEssaisRestants;
+
+traitement4 : si combi trouvée, afficher gagné;
+sinon, afficher perdu;
+quitter;
+
+4. voir MastermindIHM@GestionnaireEvenements
