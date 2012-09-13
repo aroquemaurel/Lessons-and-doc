@@ -1,0 +1,25 @@
+glossaire
+	l <PtrCellule>;
+	dernier <PtrCellule>;
+	nouveau <PtrCellule>;
+	e <Entier>;
+	marqueur <Entier>;
+debut
+	lire(marqueur);	
+	lire(e);
+	l <- NULL;
+	dernier <- NULL;
+	
+	tantque e /= marqueur faire
+		allouer(nouveau);
+		nouveau$\uparrow$.valeur <- e;
+		nouveau$\uparrow$.suivant <- NULL;
+		si l = NULL alors
+			l <- nouveau;
+		sinon
+			dernier$\uparrow$.suivant <- nouveau;
+		fin si;	
+		dernier <- nouveau;
+		lire(e);
+	fin tantque;
+fin

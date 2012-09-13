@@ -1,0 +1,16 @@
+constante NB_EQUIPES <Entier> = 20
+constante LG_MAX <Entier> = 15;
+
+type TabMatchs : tableau [1 a NB_EQUIPES] de <EnrEquipe>;
+
+type EnrEquipe : enregistrement
+	nom <Chaine>,
+	pts <Entier>,
+	gagnes <Entier>,
+	nuls <Entier>,
+	perdus <Entier>,
+	butsP <Entier>,
+	butsC <Entier>;
+
+type chaine : tableau [1 a LG_MAX] de <Caractere>;
+

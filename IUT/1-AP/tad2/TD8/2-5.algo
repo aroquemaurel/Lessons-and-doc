@@ -1,0 +1,34 @@
+procedure supprimer(maj l <Liste[T]>, entree i <Entier>)
+	declenche listeVide, rangInvalide
+glossaire
+	k <Entier>;
+debut
+	si i <1 alors
+		declencher (rangInvalide);
+	fin si;
+	si l = NULL alors
+		declencher (listeVide);
+	fin si;
+	-- supprimer l'éléent en dans lal iste
+	--suppression de l'entete
+	si i = 1 alors
+		courant <- l;
+		l <- l$\uparrow$.suivant;
+		liberer(courant);
+	sinon
+		courant <- l;
+		k <- 1;
+		tantque k <= i -1 faire
+			precedent <- courant;
+			courant <- courant$\uparrow$.suivant;
+			si courant = NULL alors
+				declencher(rangInvalide);
+			fin si;
+			k <- k + 1;
+		fin tantque;
+		precedent$\uparrow$.suivant <- courant$\uparrow$.suivant;
+		liberer(courant);
+	fin si;
+fin 
+
+		

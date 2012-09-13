@@ -1,0 +1,7 @@
+type Couple = enregistrement
+	valeur <Entier>,
+	nbValeur <Entier>; --nombre d'occurence
+
+constante CMAX <Entier> = 100;
+
+type TabCouples = tableau[1..CMAX] de <Couples>;

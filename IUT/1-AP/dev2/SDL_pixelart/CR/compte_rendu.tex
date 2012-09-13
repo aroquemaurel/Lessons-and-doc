@@ -1,0 +1,112 @@
+\documentclass[12pt,a4paper,openany]{article}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+%\usepackage[frenchb]{babel}
+%\usepackage{graphicx}
+%\usepackage{layout}
+%\usepackage{setspace}
+%\usepackage{soul}
+%\usepackage{ulem}
+%\usepackage{eurosym}
+%\usepackage{bookman}
+%\usepackage{charter}
+%\usepackage{newcent}
+%\usepackage{lmodern}
+%\usepackage{mathpazo}
+%\usepackage{mathptmx}
+%\usepackage{url}
+%\usepackage{verbatim}
+%\usepackage{moreverb}
+%\usepackage{wrapfig}
+%\usepackage{amsmath}
+%\usepackage{mathrsfs}
+%\usepackage{asmthm}
+%\usepackage{makeidx}
+%\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+
+
+\include{listing_algo} %prise en charge du langage algo
+
+\title{Compte rendu TP2\\ Dessiner un beau dessin}
+\date{Développement en C++\\ Semestre 2\\}
+\author{}
+\lhead{Compte rendu TP2: Dessiner un beau dessin}
+\chead{}
+\rhead{Valleix - de Roquemaurel (Groupe F)}
+
+\lfoot{Université paul sabatier Toulouse III}
+\cfoot{\thepage}
+\rfoot{dev2}
+
+\pagestyle{fancy}
+\begin{document}
+	\maketitle
+	De ce TP, nous pouvons retenir qu'un programmeur, ce doit d'être vigilant dans la rédaction de son
+	travail. 	
+	En effet il ne faut pas se limiter au fait que le programme marche, mais soigner son code, 
+	pour qu'il soit compréhensible par les autres, mais également pour nous même ulterieurement.\\
+	En effet il peut arriver qu'après coup on ne comprenne plus ce qu'on a voulut faire.\\ \\ \\
+	
+	Ainsi, voici différentes conventions que nous avons essayé de corriger, cela rend le code plus propre,
+	et plus lisible.
+
+	\section{Variable}
+		Les variables sont très importantes dans un programme, ainsi, il faut faire attention à leurs
+		utilitées, leurs appellations, et leurs types.
+		\subsection{Noms}
+			Les noms de variables sont extrement important.\\
+			 Dans le code fournit par l'IUT, tous les noms 
+			de variables s'appellaient $vlx$, c'était catastrophique pour la compréhension du code: \\
+			il était impossible de comprendre à quoi servait une variable.
+		\subsection{Unicité d'utilité}
+			On ne doit pas avoir une variable qui fait plusieurs choses différentes, cela permet d'améliorer
+			la compréhension.  
+		\subsection{Variables globales}
+			Les variables globales sont à proscrire, en effet, elles rendent le code sale, et utilisent
+			beaucoup de mémoire, étant donné qu'elles sont disponibles dans tous les sous-programmes, même
+			si on ne s'en sert pas.
+	\section{Boucles}
+		Il est préférable d'utiliser une boucle for lorsque que l'ont doit répéter un nombre d'actions
+		connu à l'avance, plutôt que d'utiliser une boucle while. La boucle for est plus lisible, elle 
+		permet de déclarer une variable uniquement dans la boucle, et les informations sont condensés, donc
+		plus claires, on saura tout de suite qu'une boucle for veut dire que l'on va répéter des actions un
+		certain nombre de fois.
+	\section{Sous-programmes}
+		\begin{center}
+		\large{\textit{<< Diviser pour mieux régner >>}}
+		\end{center}
+		Il faut diviser le code avec le plus de sous-programmes possible: un sous-programme ne doit pas
+			dépasser 40 lignes. \\
+		En effet il est plus simple de comprendre ce que fait le sous-programme, 
+			que de devoir comprendre tout un code, situé dans le programme principal.\\ \\
+		Il faut également penser à donner un nom clair à son sous-programme, quitte à ce qu'il soit
+		un peu long à écrire.
+	\section{Indentation}
+		L'indentation d'un code est utile: en effet un code bien indenté est beaucoup plus facilement 
+		compréhensible, on voit tout de suite quand commence une boucle ou une condition et quand elle
+		finit. \\
+		Sans indentation, un code est tout simplement illisible.  
+	\section{Commentaires}
+		\begin{center}
+		\large{\textit{<< Si après avoir lu uniquement les commentaires 
+			d'un programme vous n'en comprenez pas l'utilité, jetez-le tout! >>}} IBM
+		\end{center}
+
+		Les commentaires d'un programmes sont eux aussi utiles, ils servent à aider les programmeurs
+		dans le cas ou il relit sont code quelques temps plus tard, ou lorsqu'un autre programmeur lit
+		le code, grâce aux commentaires, il compredra le code.\\
+		Cependant, il n'est pas utile de commenter toutes les lignes, en effet certaines lignes 
+			sont évidente, de plus si les fonctions ont des noms explicites, elles parleront toutes seules! 
+		\newpage	
+		\lstinputlisting[caption=Code en C++n language=C++]{dessinSDL.cpp}	
+			
+\end{document}

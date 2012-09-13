@@ -1,0 +1,9 @@
+glossaire
+	p <Point>;
+debut
+	p <- pointOrigine;
+	si p = pointOrigine alors
+		$\vdots$
+	fin si;
+fin
+

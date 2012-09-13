@@ -1,0 +1,3 @@
+-- ramene par permutation successives la plus grande valeur d\'un tableau tab de ne elements 
+-- en derniere position
+procedure ramenerValeurMax(maj tab, entree n); 

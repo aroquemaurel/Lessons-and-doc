@@ -1,0 +1,20 @@
+--ajoute au rang "rang" une nouvelle entree dans le tableau tabOccs avec un nombre d'occurence egal a un 
+procedure enregistrerOccurence (maj tabOccs <TabCouples>,
+								maj n <Entier>,
+								entree rang <Entier>,
+								entree v <Entier>)
+glossaire
+	i <Entier>;
+
+debut
+	n <- n + 1;
+	i <- n;
+	
+	tantque i > rang faire
+		tabOccs[i].valeur <- tabOccs[i-1].valeur;
+		tabOccs[i].nbVal <- tabOccs[i-1].nbVal;
+		i <- i - 1;
+	fin tantque;
+	tabOccs[i].valeur <- v;
+	tabOccs[i].nbVal <- i;
+fin

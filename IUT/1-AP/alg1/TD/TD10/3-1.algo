@@ -1,0 +1,7 @@
+procedure compterARebours (entree e <Entier>)
+debut
+	si e /= 0 alors
+		ecrire(e);
+		compterARebours(e - 1);
+	fin si;
+fin

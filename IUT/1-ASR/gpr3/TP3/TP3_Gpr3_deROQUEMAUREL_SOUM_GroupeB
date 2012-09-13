@@ -1,0 +1,450 @@
+/***********************************************
+*  ASR => Gpr3                                 *
+************************************************
+*  Login : drn0073a                            *
+*          smm0569a                            *
+************************************************
+*  Groupe: B                                   *
+*                                              *
+************************************************
+*  Nom-prénom : de ROQUEMAUREL Antoine         *
+*  Nom-prénom : SOUM Mathieu                   *
+*                                              *
+*                                              *
+************************************************
+*  TP n°: 3                                    *
+************************************************
+*  Nom du fichier : pipe.c                     *
+***********************************************/
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <limits.h>
+
+#define OK 0
+#define PAS_OK -1
+
+void traitementFils (void);
+
+int main(int argc, char *argv[]) { 
+	pid_t pidFils1, pidPere;
+	int descFichier[2];
+	int erreur, tailleChaine = 0;
+	FILE* data;
+	char entreeAuClavier[256];
+	char chaineAEcrire[256];
+	char* ptr;
+
+	pidPere = getpid();
+
+	system("date");
+	system("echo Login $USER");
+	system("echo UID $UID");
+
+	erreur = pipe(descFichier);
+	if (erreur == -1) {
+		perror("echec pipe");
+		exit(1);
+	}
+
+	ptr = fgets(entreeAuClavier, 256, stdin);
+	for (tailleChaine = 0 ; entreeAuClavier[tailleChaine] != '\0' ; tailleChaine++);
+
+	pidFils1 = fork();
+
+	if (pidPere != getpid()) {
+		switch (pidFils1) {
+			case PAS_OK :
+				perror("Erreur processus fils");
+				exit(1);
+			case OK :
+				erreur = read(descFichier[0], chaineAEcrire, tailleChaine);
+				data = fopen("data.txt", "w");
+				fwrite(chaineAEcrire, tailleChaine, 1, data);
+				erreur = fclose(data);
+				if (erreur == -1)
+					printf("Erreur de fermeture du fichier data.txt");
+				erreur = close(descFichier[0]);
+				if (erreur == -1)
+					printf("Erreur de fermeture du tube -- descFichier[0]");
+				exit(0);
+		}
+	} else {
+
+		if (ptr == NULL)
+			printf("Oh my GOOOD !!");
+
+		write(descFichier[1], entreeAuClavier, tailleChaine);
+		erreur = close(descFichier[1]);
+		if (erreur == -1)
+			printf("Erreur de fermeture du tube -- descFichier[1]");
+	}
+	
+	return 0;
+}
+
+ ___________________________________________________________________________________________________________________________
+
+
+/***********************************************
+*  ASR => Gpr3                                 *
+************************************************
+*  Login : drn0073a                            *
+*          smm0569a                            *
+************************************************
+*  Groupe: B                                   *
+*                                              *
+************************************************
+*  Nom-prénom : de ROQUEMAUREL Antoine         *
+*  Nom-prénom : SOUM Mathieu                   *
+*                                              *
+*                                              *
+************************************************
+*  TP n°: 3                                    *
+************************************************
+*  Nom du fichier : pipe1.trace                *
+***********************************************/
+
+[10:01:13]drn0073a@r-info-gren-l03:~/Gpr3/TP3$ ./pipe1 
+lundi 7 novembre 2011, 10:01:17 (UTC+0100)
+Login drn0073a
+UID 34924
+Bonjour les nounours!
+[10:01:28]drn0073a@r-info-gren-l03:~/Gpr3/TP3$ cat data.txt 
+Bonjour les nounours!
+[10:01:34]drn0073a@r-info-gren-l03:~/Gpr3/TP3$ 
+
+ ___________________________________________________________________________________________________________________________
+
+
+/***********************************************
+*  ASR => Gpr3                                 *
+************************************************
+*  Login : drn0073a                            *
+*          smm0569a                            *
+************************************************
+*  Groupe: B                                   *
+*                                              *
+************************************************
+*  Nom-prénom : de ROQUEMAUREL Antoine         *
+*  Nom-prénom : SOUM Mathieu                   *
+*                                              *
+*                                              *
+************************************************
+*  TP n°: 3                                    *
+************************************************
+*  Nom du fichier : signal1-fifo.c             *
+***********************************************/
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <signal.h>
+#include <fcntl.h>
+#include <sys/types.h>
+
+typedef void (*PtrFct)(int);
+
+void showSignal(int);
+
+int main(void) {
+	PtrFct fctExec;
+	int erreur;
+	int descFIFO;
+	int* pid;
+
+	pid = malloc(sizeof(int));
+	*pid = getpid();
+
+	system("echo Login : $USER");
+	system("echo UID : $UID");
+	system("date");
+	printf("\n");
+
+	while (1337) {
+		fctExec = signal(SIGUSR1, showSignal);
+
+		if (fctExec == SIG_ERR) {
+			perror("Et là... c'est le drame !");
+			exit(1);
+		}
+
+		erreur = mkfifo("data.FIFO", 0600);
+
+		descFIFO = open("data.FIFO", O_WRONLY);
+
+		write(descFIFO, pid, sizeof(int));
+
+		close(descFIFO);
+	}
+	return 0;
+}
+
+void showSignal(int sig) {
+	printf("Bye!\n");
+	exit(0);
+}
+
+ ___________________________________________________________________________________________________________________________
+
+
+/***********************************************
+*  ASR => Gpr3                                 *
+************************************************
+*  Login : drn0073a                            *
+*          smm0569a                            *
+************************************************
+*  Groupe: B                                   *
+*                                              *
+************************************************
+*  Nom-prénom : de ROQUEMAUREL Antoine         *
+*  Nom-prénom : SOUM Mathieu                   *
+*                                              *
+*                                              *
+************************************************
+*  TP n°: 3                                    *
+************************************************
+*  Nom du fichier : signal2-fifo.c             *
+***********************************************/
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <sys/types.h>
+#include <fcntl.h>
+#include <signal.h>
+
+int main(void) {
+	int* pidAKill = malloc(sizeof(int));
+	int descFIFO;
+	
+	descFIFO = open("data.FIFO", O_RDONLY);
+
+	read(descFIFO, pidAKill, sizeof(int));
+
+	kill(*pidAKill, SIGUSR1);
+
+	return 0;
+}
+
+ ___________________________________________________________________________________________________________________________
+
+
+/***********************************************
+*  ASR => Gpr3                                 *
+************************************************
+*  Login : drn0073a                            *
+*          smm0569a                            *
+************************************************
+*  Groupe: B                                   *
+*                                              *
+************************************************
+*  Nom-prénom : de ROQUEMAUREL Antoine         *
+*  Nom-prénom : SOUM Mathieu                   *
+*                                              *
+*                                              *
+************************************************
+*  TP n°: 3                                    *
+************************************************
+*  Nom du fichier : signal12-fifo.trace         *
+***********************************************/
+
+[10:05:01]drn0073a@r-info-gren-l03:~/Gpr3/TP3$ ./signal1-fifo &
+[1] 2941
+[10:06:07]drn0073a@r-info-gren-l03:~/Gpr3/TP3$ Login : drn0073a
+UID : 34924
+lundi 7 novembre 2011, 10:06:07 (UTC+0100)
+
+
+[10:06:08]drn0073a@r-info-gren-l03:~/Gpr3/TP3$ ./signal2-fifo 
+Bye!
+[10:06:12]drn0073a@r-info-gren-l03:~/Gpr3/TP3$ 
+
+ ___________________________________________________________________________________________________________________________
+
+
+/***********************************************
+*  ASR => Gpr3                                 *
+************************************************
+*  Login : drn0073a                            *
+*          smm0569a                            *
+************************************************
+*  Groupe: B                                   *
+*                                              *
+************************************************
+*  Nom-prénom : de ROQUEMAUREL Antoine         *
+*  Nom-prénom : SOUM Mathieu                   *
+*                                              *
+*                                              *
+************************************************
+*  TP n°: 3                                    *
+************************************************
+*  Nom du fichier : reception.c                *
+***********************************************/
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <signal.h>
+#include <fcntl.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <limits.h>
+
+int main (void) {
+	int erreur;
+	int descFIFO;
+	char chaineLue[256];
+
+	unlink("bal.fifo");
+
+	system("echo Login : $USER");
+	system("echo UID : $UID");
+	system("date");
+	
+	erreur = mkfifo("bal.fifo", 0622);
+	if (erreur == -1) {
+		perror("echec mkfifo");
+		exit(1);
+	}
+
+	while (1) {
+		descFIFO = open("bal.fifo", O_RDONLY);
+		if (descFIFO == -1) {
+			perror("echec open");
+			exit(1);
+		}
+
+		read(descFIFO, chaineLue, PIPE_BUF);
+
+		printf("Message : %s", chaineLue);
+		close(descFIFO);
+	}
+
+	return 0;
+}
+
+ ___________________________________________________________________________________________________________________________
+
+
+/***********************************************
+*  ASR => Gpr3                                 *
+************************************************
+*  Login : drn0073a                            *
+*          smm0569a                            *
+************************************************
+*  Groupe: B                                   *
+*                                              *
+************************************************
+*  Nom-prénom : de ROQUEMAUREL Antoine         *
+*  Nom-prénom : SOUM Mathieu                   *
+*                                              *
+*                                              *
+************************************************
+*  TP n°: 3                                    *
+************************************************
+*  Nom du fichier : reception.c                *
+***********************************************/
+
+[10:05:01]drn0073a@r-info-gren-l03:~/Gpr3/TP3$ ./reception 
+Login : drn0073a
+UID : 34924
+lundi 7 novembre 2011, 10:07:03 (UTC+0100)
+Message : Bienvenue au pays des Schtroumphs!
+Message : Ici la vie est belle
+Message : Et on est heureux !! =)
+Message : Et on est heureux !! =)
+^C
+[10:07:49]drn0073a@r-info-gren-l03:~/Gpr3/TP3$ 
+
+ ___________________________________________________________________________________________________________________________
+
+
+/***********************************************
+*  ASR => Gpr3                                 *
+************************************************
+*  Login : drn0073a                            *
+*          smm0569a                            *
+************************************************
+*  Groupe: B                                   *
+*                                              *
+************************************************
+*  Nom-prénom : de ROQUEMAUREL Antoine         *
+*  Nom-prénom : SOUM Mathieu                   *
+*                                              *
+*                                              *
+************************************************
+*  TP n°: 3                                    *
+************************************************
+*  Nom du fichier : emission.c                 *
+***********************************************/
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <signal.h>
+#include <fcntl.h>
+#include <sys/types.h>
+#include <unistd.h>
+
+int main (void) {
+	int erreur;
+	int descFIFO;
+	int tailleChaine;
+	int i;
+	char entreeAuClavier[256];
+	char pathFile[256];
+
+	descFIFO = open("bal.fifo", O_WRONLY);
+	if (descFIFO == -1) {
+		perror("echec open");
+		exit(1);
+	}
+
+	while(1) {
+		printf("Votre message : ");
+
+		fgets(entreeAuClavier, 256, stdin);
+		for (tailleChaine = 0 ; entreeAuClavier[tailleChaine] != '\0' ; tailleChaine++);
+
+		write(descFIFO, entreeAuClavier, tailleChaine + 1);
+	}
+
+	close(descFIFO);
+
+	printf("Merci!");
+
+	return 0;
+}
+
+ ___________________________________________________________________________________________________________________________
+
+
+/***********************************************
+*  ASR => Gpr3                                 *
+************************************************
+*  Login : drn0073a                            *
+*          smm0569a                            *
+************************************************
+*  Groupe: B                                   *
+*                                              *
+************************************************
+*  Nom-prénom : de ROQUEMAUREL Antoine         *
+*  Nom-prénom : SOUM Mathieu                   *
+*                                              *
+*                                              *
+************************************************
+*  TP n°: 3                                    *
+************************************************
+*  Nom du fichier : emission.trace             *
+***********************************************/
+
+[10:05:01]drn0073a@r-info-gren-l03:~/Gpr3/TP3$ ./reception 
+Login : drn0073a
+UID : 34924
+lundi 7 novembre 2011, 10:07:03 (UTC+0100)
+Message : Bienvenue au pays des Schtroumphs!
+Message : Ici la vie est belle
+Message : Et on est heureux !! =)
+Message : Et on est heureux !! =)
+^C
+[10:07:49]drn0073a@r-info-gren-l03:~/Gpr3/TP3$ 
+

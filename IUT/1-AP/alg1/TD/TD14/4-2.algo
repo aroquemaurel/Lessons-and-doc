@@ -1,0 +1,10 @@
+procedure trierParBulles (maj tab<TabEntiers>, entree n <Entier>)
+glossaire
+	nbElements <Entier>;
+debut
+	nbElements <- n;
+	tantque nbElements > 1 faire
+		ramenerValeurMax (tab,1,nbElements);
+		nbElements <- nbElements - 1;
+	fin tantque;
+fin 

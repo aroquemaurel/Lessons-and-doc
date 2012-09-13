@@ -1,0 +1,6 @@
+[10:23:40]drn0073a@r-info-jade-l03:~/Gpr3/TP2$\$$ ./signal1 &
+[1] 3531
+[10:23:45]drn0073a@r-info-jade-l03:~/Gpr3/TP2$\$$ kill -10 3531
+[10:23:55]drn0073a@r-info-jade-l03:~/Gpr3/TP2$\$$ Mon pid c'est 3531 et j'ai recu le signal 10 !
+[1]+  Done                    ./signal1
+

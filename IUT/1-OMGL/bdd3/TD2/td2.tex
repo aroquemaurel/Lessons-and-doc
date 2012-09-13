@@ -1,0 +1,61 @@
+\documentclass{article}
+
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+
+\newcommand{\titre}{Langage de Mise-à-jour des données}
+\newcommand{\numTD}{2}
+
+\newcommand{\module}{Base de données}
+\newcommand{\sigle}{bdd}
+
+\newcommand{\semestre}{3}
+
+\input{/home/satenske/cours/listings.tex} %prise en charge du langage algo
+\input{/home/satenske/cours/entete_iut-td.tex}
+
+\begin{document}
+	\maketitle
+	\section{}
+	\lstinputlisting[language=SQL, caption=Ajout le vin V12 à la carte du restaut R30 au prix de 12]{1.sql}	
+	\section{}
+	\lstinputlisting[language=SQL, caption=Supprimer de la table plat tous les plans recommandés avec le vin V12]{2.sql}	
+	\section{}
+	\lstinputlisting[language=SQL, caption=Prendre en compte le dessert P55 peche Melba recommandés avec le vin V35]{3.sql}	
+	spec prendra la valeur N car il y a une valeure par default
+	
+	\section{}
+	\subsection{}
+	\lstinputlisting[language=SQL, caption=Augmenter les prix de tous les plats de 1\% le prix restant inferieur à 50euros]{4-1.sql}	
+	\subsection{}
+	\lstinputlisting[language=SQL, caption=Diminuer les prix des spécialitées de 0.5\%]{4-2.sql}	
+
+	\section{}
+	\lstinputlisting[language=SQL, caption=Prendre en compte le nouveau vin recommandé pour les plats P12 P15 P20: v33]{5.sql}	
+	\section{}
+	\lstinputlisting[language=SQL, caption=Remplacer le vin recommandé V30 par le vin V40 pour tous les autres plats que les dessert]{6.sql}	
+	\section{}
+	\lstinputlisting[language=SQL, caption=Prendre en compte que le restaurant R10 propose le vin V12 au prix de 15euros]{7.sql}	
+	\section{ }
+	\lstinputlisting[language=SQL, caption=Avancer de 15 jours la date d'ouverture du restaurant R40 et regarder de 15 jours sa fermeture]{8.sql}	
+	\section{}
+	\lstinputlisting[language=SQL, caption=Rajouter des colonnes puis faire la mise à jour de ces colonnes pour P10]{9.sql}	
+	
+\end{document}
+
+
+
+
+
+

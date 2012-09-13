@@ -1,0 +1,60 @@
+importer entreeSortie;
+
+type TabEntier : tableau [1 a 50] de <Entier>;
+
+procedure lireTableauValeur(tabValeurs, nbValeurs); --cf TD9
+
+procedure rechercherOccurence (entree tab <TabEntier>,
+							entree n <Entier>,
+							entree x <Entier>,
+							sortie existe <Booleen>,
+							sortie rang <Entier>)
+glossaire
+	i <Entier>; --indice
+debut
+	si n < 1 ou n > N alors
+		declancher(trancheInvalide);
+	fin si;
+	i <- i;
+
+	tantque i <= n et tab[i] /= x faire
+		i <- i + 1;
+	fin tantque;
+	si i > n alors
+		existe <- FAUX;
+	sinon 
+		existe <- VRAI;
+		rang <- i;
+	fin si;
+fin
+
+programme rechercher
+
+glossaire
+	v <Entier>;
+	tdeValeurs <TabEntier>;
+	nbValeurs <Entier>;
+	trouve <Booleen>;
+	rang <Entier>;
+
+debut
+	lireTableauValeur(tabValeurs, nbValeurs);
+	lire(v);
+	rechercherOccurence(tabValeur, nbValeur, v, trouve, rang);
+	
+	si trouve alors
+		ecrire(rang);
+	sinon
+		ecrire("La valeur na pas ete trouve");
+	fin si;
+	
+	traite-exception
+		lorsque debordement faire
+			ecrire("Trop de valeurs a lire");
+		fin lorsque;
+
+		lorsque trancheInvalide faire
+			ecrire("Tranche invalide de l array");
+		fin lorsque;
+fin
+		

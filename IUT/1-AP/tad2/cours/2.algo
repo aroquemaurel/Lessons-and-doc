@@ -1,0 +1,5 @@
+-- construit un point a partir de X et Y d'une couleur C et de taille T
+-- Nacessite t > 0
+fonction unPoint(entree x <Reel>, entree y <Reel>, entree t<Couleur>, entree t<Reel>)
+		retourne <Point>
+		declenche tailleInvalide;

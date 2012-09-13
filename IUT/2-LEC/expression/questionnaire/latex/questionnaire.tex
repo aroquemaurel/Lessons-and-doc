@@ -1,0 +1,94 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry} %marges
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+
+\title{Questionnaire}
+\date{Sécurité \& réseaux}
+\newcommand{\Pointilles}[1][3]
+{
+	\multido{}{#1}{\makebox[\linewidth]{\dotfill}\\[\parskip]}
+}
+\linespread{1.1}
+
+\lhead{Réseaux \& sécurité}
+\chead{}
+\rhead{\thepage}
+
+\lfoot{Université paul sabatier}
+\cfoot{\thepage}
+\rfoot{Toulouse III}
+
+\pagestyle{fancy}
+\begin{document}
+	\maketitle 
+	\begin{center}
+	\LARGE{\textit{\\\ \\En quoi l'informatique peut-elle apporter une solution aux problèmes d'insécurité?\\\ \\\ \\\ \\}}
+	\end{center}
+	Vous avez accepté de répondre à ce questionnaire dans le cadre de notre projet professionnel et nous vous en remercions.\\
+	Ce dernier nous permettra de recueillir des informations utiles pour notre équipe composée de trois personnes. \\\\
+	Si au cours de ce questionnaire vous ne souhaitez pas répondre à l'une des questions proposé veuillez nous l'indiquez.(en barrant le numéro de la question).
+	\newpage
+	\section{Conditions de travail}
+		\subsection{Quel est en moyenne le nombre d'heure par semaine?}
+			\noindent\Pointilles[4]
+		\subsection{Vos horaires sont-elles flexibles?}
+			\noindent\Pointilles[9]
+		\subsection{Vous arrive-t-il de prolonger votre temps de travail pour terminer ou avancer un projet? (travailler le week-end)}
+			\noindent\Pointilles[9]
+		\subsection{Travaillez-vous en équipe?}
+			\noindent\Pointilles[7]
+		\subsection{Dans quelle fourchette de salaire mensuel net vous situez vous?}
+			\noindent
+			$\square$ Inférieur à 1000 $\square$ entre 1000 et 1500 $\square$ entre 1500 et 2000 $\square$ entre 2000 et 2500 $\square$ Superieur à 2500
+		\subsection{Quels sont les avantages de votre profession?}
+			\noindent\Pointilles[8]
+		\subsection{Les inconvénients?} 
+			\noindent\Pointilles[8]
+		\subsection{Vous arrive-t-il de travailler à domicile?}
+			\noindent\Pointilles[8]
+		\subsection{Êtes vous au contact du client?}
+			\noindent\Pointilles[8]
+		\newpage
+	\section{Travail}
+		\subsection{Quel type de données protégez-vous?}
+			\noindent \Pointilles[7]
+		\subsection{Avez vous déjà restauré un de vos sytèmes suite à une attaque?}
+			\noindent \Pointilles[7]
+		\subsection{Essayez vous de retrouver la source des attaques ou vous contentez vous de protéger les sytèmes?}
+			\noindent \Pointilles[6]
+		\subsection{Quelle type de demande est la plus récurrente?}
+			\noindent \Pointilles[6]
+		\subsection{Est-il nécessaire de s'informer sur les nouvelles failles et leurs évolutions (conférence, meeting...)}
+			\noindent \Pointilles[6]
+		\subsection{Quelles études avez vous fait?}
+			\noindent \Pointilles[6]
+		\subsection{Quelles sont les compétences requises?}
+			\noindent \Pointilles[6]
+		\subsection{Quel est votre secteur d'activité (particulié/professionnel/...)}
+			\noindent \Pointilles[6]
+		\subsection{Est-ce qu'il y a des évolutions de carrière?}
+			\noindent \Pointilles[6]
+		\subsection{Quelles sont vos principales missions?}
+			\noindent \Pointilles[7]
+		\subsection{Quels peuvent être les menaces?}
+			\noindent\Pointilles[7]
+		\subsection{Comment évoluent les systèmes de sécurité? Renouvellez vous le système d'un client gratuitement si une faille est détéctée?}
+			\noindent\Pointilles[7]
+		\subsection{Comment se déroule la formation continue après les études?}
+			\noindent\Pointilles[7]
+		\subsection{Travaillez vous sur une environnement logiciel ou materiel?}
+			\noindent\Pointilles[7]
+	\newpage
+	\section{Opinions et vie privée}
+		\subsection{Avez vous une anecdote sur vos études, votre métier?}
+			\noindent\Pointilles[15]
+		\subsection{Que pensez vous de la loi Hadopi?}
+		\noindent\Pointilles[15]
+\end{document}
+

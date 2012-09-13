@@ -1,0 +1,25 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+plat	1.sql	/^CREATE TABLE plat$/;"	t
+plat.idP	1.sql	/^	idP char(3),$/;"	F
+plat.idV	1.sql	/^	idV char(3)$/;"	F
+plat.nomP	1.sql	/^	nomP varchar2(20),$/;"	F
+plat.placeP	1.sql	/^	placeP varchar2(10),$/;"	F
+propV	1.sql	/^CREATE TABLE propV($/;"	t
+propV.idR	1.sql	/^	idR char(3),$/;"	F
+propV.idV	1.sql	/^	idV char(3),$/;"	F
+propV.prixV	1.sql	/^	prixV number(4,2)$/;"	F
+resto	1.sql	/^CREATE TABLE resto $/;"	t
+resto.dateFerm	1.sql	/^	dateFerm date$/;"	F
+resto.dateOuv	1.sql	/^	dateOuv date,$/;"	F
+resto.idR	1.sql	/^	idR char (3),$/;"	F
+resto.nomR	1.sql	/^	nomR varchar2(20),$/;"	F
+resto.villeR	1.sql	/^	villeR varchar2(20),$/;"	F
+vin	1.sql	/^CREATE TABLE vin$/;"	t
+vin.couleurV	1.sql	/^	couleurV varchar2(10)$/;"	F
+vin.idV	1.sql	/^	idV char(3),$/;"	F
+vin.nomV	1.sql	/^	nomV varchar2(20),$/;"	F

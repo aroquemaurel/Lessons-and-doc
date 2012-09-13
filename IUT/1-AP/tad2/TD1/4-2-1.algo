@@ -1,0 +1,8 @@
+mettre a jour les donnees du match de l equipe;
+--faire evaluer le classement;
+tantque l equipe possede plus de points que la precedente faire
+	echanger dns le classement l equipe et l equipe precedente;
+fin tantque;
+tantque l equipe possede le meme nombre de points que la precedente et quelle a une meilleur def de buts faire
+	echanger dans le classement l equipe et l equipe precedente
+fin tantque; 

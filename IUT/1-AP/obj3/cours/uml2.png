@@ -1,0 +1,170 @@
+% PSTricks TeX macro
+% Title: /home/satenske/cours/AP/obj3/uml2.dia
+% Creator: Dia v0.97.1
+% CreationDate: Thu Sep 15 10:11:14 2011
+% For: satenske
+% \usepackage{pstricks}
+% The following commands are not supported in PSTricks at present
+% We define them conditionally, so when they are implemented,
+% this pstricks file will use them.
+\ifx\setlinejoinmode\undefined
+  \newcommand{\setlinejoinmode}[1]{}
+\fi
+\ifx\setlinecaps\undefined
+  \newcommand{\setlinecaps}[1]{}
+\fi
+% This way define your own fonts mapping (for example with ifthen)
+\ifx\setfont\undefined
+  \newcommand{\setfont}[2]{}
+\fi
+\pspicture(3.300000,-13.050000)(19.700000,-2.550000)
+\psscalebox{1.000000 -1.000000}{
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}%
+\psset{linecolor=dialinecolor}
+\newrgbcolor{diafillcolor}{1.000000 1.000000 1.000000}%
+\psset{fillcolor=diafillcolor}
+\psset{linewidth=0.020000cm}
+\psset{linestyle=solid}
+\newrgbcolor{dialinecolor}{1.000000 1.000000 1.000000}%
+\psset{linecolor=dialinecolor}
+\pspolygon*(5.600000,2.600000)(5.600000,4.000000)(12.260000,4.000000)(12.260000,2.600000)
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}%
+\psset{linecolor=dialinecolor}
+\pspolygon(5.600000,2.600000)(5.600000,4.000000)(12.260000,4.000000)(12.260000,2.600000)
+\setfont{Helvetica-Bold}{1.000000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}%
+\psset{linecolor=dialinecolor}
+\rput(8.930000,3.550000){\psscalebox{1 -1}{Article}}
+\newrgbcolor{dialinecolor}{1.000000 1.000000 1.000000}%
+\psset{linecolor=dialinecolor}
+\pspolygon*(5.600000,4.000000)(5.600000,5.000000)(12.260000,5.000000)(12.260000,4.000000)
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}%
+\psset{linecolor=dialinecolor}
+\pspolygon(5.600000,4.000000)(5.600000,5.000000)(12.260000,5.000000)(12.260000,4.000000)
+\setfont{Courier}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}%
+\psset{linecolor=dialinecolor}
+\rput[l](5.710000,4.700000){\psscalebox{1 -1}{-dateDeLivraison}}
+\newrgbcolor{dialinecolor}{1.000000 1.000000 1.000000}%
+\psset{linecolor=dialinecolor}
+\pspolygon*(5.600000,5.000000)(5.600000,6.000000)(12.260000,6.000000)(12.260000,5.000000)
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}%
+\psset{linecolor=dialinecolor}
+\pspolygon(5.600000,5.000000)(5.600000,6.000000)(12.260000,6.000000)(12.260000,5.000000)
+\setfont{Courier}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}%
+\psset{linecolor=dialinecolor}
+\rput[l](5.710000,5.700000){\psscalebox{1 -1}{+prixDeVente()}}
+\psset{linewidth=0.020000cm}
+\psset{linestyle=solid}
+\newrgbcolor{dialinecolor}{1.000000 1.000000 1.000000}%
+\psset{linecolor=dialinecolor}
+\pspolygon*(12.750000,10.200000)(12.750000,11.600000)(18.892500,11.600000)(18.892500,10.200000)
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}%
+\psset{linecolor=dialinecolor}
+\pspolygon(12.750000,10.200000)(12.750000,11.600000)(18.892500,11.600000)(18.892500,10.200000)
+\setfont{Helvetica-Bold}{1.000000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}%
+\psset{linecolor=dialinecolor}
+\rput(15.821250,11.150000){\psscalebox{1 -1}{Eau gazeuse}}
+\newrgbcolor{dialinecolor}{1.000000 1.000000 1.000000}%
+\psset{linecolor=dialinecolor}
+\pspolygon*(12.750000,11.600000)(12.750000,12.000000)(18.892500,12.000000)(18.892500,11.600000)
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}%
+\psset{linecolor=dialinecolor}
+\pspolygon(12.750000,11.600000)(12.750000,12.000000)(18.892500,12.000000)(18.892500,11.600000)
+\newrgbcolor{dialinecolor}{1.000000 1.000000 1.000000}%
+\psset{linecolor=dialinecolor}
+\pspolygon*(12.750000,12.000000)(12.750000,13.000000)(18.892500,13.000000)(18.892500,12.000000)
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}%
+\psset{linecolor=dialinecolor}
+\pspolygon(12.750000,12.000000)(12.750000,13.000000)(18.892500,13.000000)(18.892500,12.000000)
+\setfont{Courier}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}%
+\psset{linecolor=dialinecolor}
+\rput[l](12.860000,12.700000){\psscalebox{1 -1}{+prixDeVente()}}
+\psset{linewidth=0.020000cm}
+\psset{linestyle=solid}
+\newrgbcolor{dialinecolor}{1.000000 1.000000 1.000000}%
+\psset{linecolor=dialinecolor}
+\pspolygon*(3.350000,10.200000)(3.350000,11.600000)(9.240000,11.600000)(9.240000,10.200000)
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}%
+\psset{linecolor=dialinecolor}
+\pspolygon(3.350000,10.200000)(3.350000,11.600000)(9.240000,11.600000)(9.240000,10.200000)
+\setfont{Helvetica-Bold}{1.000000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}%
+\psset{linecolor=dialinecolor}
+\rput(6.295000,11.150000){\psscalebox{1 -1}{Chemise}}
+\newrgbcolor{dialinecolor}{1.000000 1.000000 1.000000}%
+\psset{linecolor=dialinecolor}
+\pspolygon*(3.350000,11.600000)(3.350000,12.000000)(9.240000,12.000000)(9.240000,11.600000)
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}%
+\psset{linecolor=dialinecolor}
+\pspolygon(3.350000,11.600000)(3.350000,12.000000)(9.240000,12.000000)(9.240000,11.600000)
+\newrgbcolor{dialinecolor}{1.000000 1.000000 1.000000}%
+\psset{linecolor=dialinecolor}
+\pspolygon*(3.350000,12.000000)(3.350000,13.000000)(9.240000,13.000000)(9.240000,12.000000)
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}%
+\psset{linecolor=dialinecolor}
+\pspolygon(3.350000,12.000000)(3.350000,13.000000)(9.240000,13.000000)(9.240000,12.000000)
+\setfont{Courier}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}%
+\psset{linecolor=dialinecolor}
+\rput[l](3.460000,12.700000){\psscalebox{1 -1}{+prixDeVente()}}
+\psset{linewidth=0.020000cm}
+\psset{linestyle=solid}
+\newrgbcolor{dialinecolor}{1.000000 1.000000 1.000000}%
+\psset{linecolor=dialinecolor}
+\pspolygon*(15.100000,5.850000)(19.050000,5.850000)(19.650000,6.450000)(19.650000,7.503533)(15.100000,7.503533)
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}%
+\psset{linecolor=dialinecolor}
+\pspolygon(15.100000,5.850000)(19.050000,5.850000)(19.650000,6.450000)(19.650000,7.503533)(15.100000,7.503533)
+\psset{linewidth=0.010000cm}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}%
+\psset{linecolor=dialinecolor}
+\psline(19.050000,5.850000)(19.050000,6.450000)(19.650000,6.450000)
+\setfont{Courier}{0.376767}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}%
+\psset{linecolor=dialinecolor}
+\rput[l](15.410000,6.740000){\psscalebox{1 -1}{hérite de }}
+\setfont{Courier}{0.376767}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}%
+\psset{linecolor=dialinecolor}
+\rput[l](15.410000,7.116767){\psscalebox{1 -1}{("est une sorte de")}}
+\psset{linewidth=0.100000cm}
+\psset{linestyle=solid}
+\setlinejoinmode{0}
+\setlinecaps{0}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}%
+\psset{linecolor=dialinecolor}
+\psline(7.662500,7.011523)(7.662500,7.550000)(6.000000,7.550000)(6.000000,10.050000)
+\setlinejoinmode{0}
+\newrgbcolor{dialinecolor}{1.000000 1.000000 1.000000}%
+\psset{linecolor=dialinecolor}
+\pspolygon*(8.062500,7.011523)(7.662500,6.211523)(7.262500,7.011523)
+\psset{linewidth=0.100000cm}
+\psset{linestyle=solid}
+\setlinejoinmode{0}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}%
+\psset{linecolor=dialinecolor}
+\pspolygon(8.062500,7.011523)(7.662500,6.211523)(7.262500,7.011523)
+\setfont{Courier}{0.800000}
+\psset{linewidth=0.100000cm}
+\psset{linestyle=solid}
+\setlinejoinmode{0}
+\setlinecaps{0}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}%
+\psset{linecolor=dialinecolor}
+\psline(8.872500,6.946803)(8.872500,7.485281)(14.550000,7.485281)(14.550000,9.900000)
+\setlinejoinmode{0}
+\newrgbcolor{dialinecolor}{1.000000 1.000000 1.000000}%
+\psset{linecolor=dialinecolor}
+\pspolygon*(9.272500,6.946803)(8.872500,6.146803)(8.472500,6.946803)
+\psset{linewidth=0.100000cm}
+\psset{linestyle=solid}
+\setlinejoinmode{0}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}%
+\psset{linecolor=dialinecolor}
+\pspolygon(9.272500,6.946803)(8.872500,6.146803)(8.472500,6.946803)
+\setfont{Courier}{0.800000}
+}\endpspicture

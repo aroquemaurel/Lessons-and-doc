@@ -1,0 +1,85 @@
+\documentclass{article}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+%\usepackage[frenchb]{babel}
+%\usepackage{layout}
+%\usepackage{setspace}
+%\usepackage{soul}
+%\usepackage{ulem}
+%\usepackage{eurosym}
+%\usepackage{bookman}
+%\usepackage{charter}
+%\usepackage{newcent}
+%\usepackage{lmodern}
+%\usepackage{mathpazo}
+%\usepackage{mathptmx}
+%\usepackage{url}
+\usepackage{verbatim}
+%\usepackage{moreverb}
+%\usepackage{wrapfig}
+%\usepackage{amsmath}
+%\usepackage{mathrsfs}
+%\usepackage{asmthm}
+%\usepackage{makeidx}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+
+
+\input{/home/satenske/cours/listings.tex} %prise en charge du langage algo
+
+\title{TD 9\\ Affectation et comparaisons de listes}
+\date{TAD\\ Semestre 2}
+
+\lhead{TD9: Affectation et comparaisons de listes}
+\chead{}
+\rhead{\thepage}
+
+\lfoot{Université Paul Sabatier Toulouse III}
+\cfoot{\thepage}
+\rfoot{tad2}
+
+\pagestyle{fancy}
+\begin{document}
+	\maketitle
+	\section{Représentation statique(Tableau d'éléments)}
+	\begin{itemize}
+		\item "les listes l1 et l2 sont différentes" 
+		\item "Les listes l1 et l3 sont différentes "
+	\end{itemize}
+	\subsection{Point d'arrêt 1}
+		\input{1-1.tex}
+	\subsection{Point d'arrêt 2}
+		\input{1-2.tex}
+	\subsection{Point d'arrêt 3}
+		\input{1-3.tex}
+	\subsection{Conclusion}
+	L'égalité est supporté, l'affectation est à revoir.
+	\section{Représentation dynamique}
+	\begin{itemize}
+		\item "les listes l1 et l2 sont différentes" 
+		\item "Les listes l1 et l3 sont égales"
+	\end{itemize}
+	\subsection{Point d'arrêt 1}
+		\input{2-1.tex}
+	\subsection{Point d'arrêt 2}
+		\input{2-2.tex}
+	\subsection{Point d'arrêt 3}
+		\input{2-3.tex}
+	\subsection{Conclusion}
+	L'opérateur d'affectation du langage ne traduis pas l'opérateur d'affectation de deux listes
+	\subsection{Exportation des opérateurs <- et =}
+			il y a deux possibilités:
+			\begin{itemize}
+				\item Pas d'affectation
+				\item Exportation avec redéfinition des opérateurs <- et =
+			\end{itemize}
+
+\end{document} 

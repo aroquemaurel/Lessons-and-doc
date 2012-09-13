@@ -1,0 +1,4 @@
+type Segment enregistrement
+	origine <Point>,
+	extremite <Point>;
+

@@ -1,0 +1,10 @@
+glossaire
+	p1 <Point>;
+	p2 <Point>;
+debut
+	$\vdots$
+	p1 <- unPoint(1.0,2.0,rouge,1.0); -- ???
+	$\vdots$
+	p2 <- p1; -- ???
+fin
+

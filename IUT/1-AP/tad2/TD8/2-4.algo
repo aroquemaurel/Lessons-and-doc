@@ -1,0 +1,45 @@
+procedure inserer (maj l <Liste[T]>, entree i <Entier>, entree e <T>)
+	declenche rangInvalide, listePleine
+glossaire
+	k <Entier>.
+	courant <Liste[T>;
+	precedent <Liste[T]>;
+	nouveau <Liste[T]>g
+debut
+	-- intercepter l'anomalie rangInvalide pour i < 1
+	si i < 1 alors
+		declencher (rangInvalide);
+	fin si;
+
+	--insérer l'élément e dans la liste
+	--cas début de liste	
+	si i = 1 alors
+		allouer(nouveau);
+		si nouveau = NULL alors
+			declencher(listePleine);
+		fin si;
+		nouveau$\uparrow$.valeur <- e;
+		nouveau$\uparrow$.suivant <- l;
+	sinon
+		--rechercher la cellule de rang i
+		courant <- l;
+		k <- 1;
+		tantque k <= i -1 faire
+			precedent <- courant;
+			si precedent = NULL alors
+				declencher(rangInvalide);
+			fin si;
+			courant <- courant$\uparrow$.suivant;
+			k <- k + i;
+		fin tantque;
+		-- insérer l'élément e après ei-1
+		allouer(nouveau);
+		si nouveau = NULL alors
+			declencher (listePleine);
+		fin si;
+		nouveau$\uparrow$.valeur <- e;
+		nouveau$\uparrow$.suivant <- courant;
+		nouveau$\uparrow$.precedent <- nouveau;
+	fin si;
+fin
+

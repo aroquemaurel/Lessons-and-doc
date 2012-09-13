@@ -1,0 +1,74 @@
+\documentclass{article}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+%\usepackage[frenchb]{babel}
+%\usepackage{layout}
+%\usepackage{setspace}
+%\usepackage{soul}
+%\usepackage{ulem}
+%\usepackage{eurosym}
+%\usepackage{bookman}
+%\usepackage{charter}
+%\usepackage{newcent}
+%\usepackage{lmodern}
+%\usepackage{mathpazo}
+%\usepackage{mathptmx}
+%\usepackage{url}
+%\usepackage{verbatim}
+%\usepackage{moreverb}
+%\usepackage{wrapfig}
+%\usepackage{amsmath}
+%\usepackage{mathrsfs}
+%\usepackage{asmthm}
+%\usepackage{makeidx}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+
+\include{listing_algo} %prise en charge du langage algo
+
+\title{TD 10\\ Récursivité}
+\date{Algorithmique\\ Semestre 1}
+
+\lhead{TD 10: Récursivité}
+\chead{}
+\rhead{\thepage}
+
+\lfoot{Université paul sabatier Toulouse III}
+\cfoot{\thepage}
+\rfoot{Alg1}
+
+\pagestyle{fancy}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\section{Somme des n premiers entiers}
+			\lstinputlisting[caption=Fonction somme (itératif)]{1.algo}
+	\section{Le PGCD}		
+		\subsection{}
+			\lstinputlisting[caption=Entête de la fonction pgcd]{2-1.algo}
+		\subsection{}
+			\lstinputlisting[caption=Fonction pgcd (itératif)]{2-2.algo}
+		\subsection{}
+			\lstinputlisting[caption=Fonction pgcd (récursif)]{2-3.algo}
+	\section{Compter à l'endroit et compter à rebours}
+		\subsection{}
+			\lstinputlisting[caption=Fonction compterARebours (récursif)]{3-1.algo}
+		\subsection{}
+			\lstinputlisting[caption=Fonctoin compterAEndroit (récursif)]{3-2.algo}
+	\section{Palindrome}	
+		\subsection{}
+		\subsection{}
+			\lstinputlisting[caption=Fonction palindrome (récursif)]{4-2.algo}
+		\subsection{}
+			\lstinputlisting[caption=Fonction indiquant si le tableau mot est un palindrome (récursif)]{4-3.algo}
+\end{document}
+
+

@@ -1,0 +1,27 @@
+-- construit un arbre vide
+fonction arbreVide() retourne <ArbreBinaire[T]>;
+
+-- détermine si un arbre est vide
+fonction estVide (entree arbre <ArbreBinaire[T]>) retourne <Booleen>; 
+
+-- racine d'un arbre binaire
+-- necessite non arbreVide(a)
+fonction racine (entree arbre <ArbreBinaire[T]>) retourne <T>
+	declenche arbreVide;
+
+-- sous-nombre gauche d'un arbre a
+-- Nécessite non estVide(a)
+fonction gauche (entree arbre <ArbreBinaire[T]>) retourne <ArbreBinaire[T]>
+	declenche estVide;
+
+-- sous-nombre droit d'un arbre a
+-- Nécessite non estVide(a)
+fonction droite (entree arbre <ArbreBinaire[T]>) retourne <ArbreBinaire[T]>
+	declenche estVide;
+
+-- Construit un nouvel arbre à partir de r, g et d
+fonction nouvelArbre(entree r <T>, entree g <ArbreBinaire[T]>, 
+					entree t <ArbreBinaire[T]>, entree d <ArbreBinaire[T]>) 
+	retourne <ArbreBinaire[T]>
+	declenche arbrePlein;
+

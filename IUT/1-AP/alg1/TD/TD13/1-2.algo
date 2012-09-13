@@ -1,0 +1,34 @@
+importer entreeSortie;
+
+type Couple = enregistrement
+	valeur <Entier>,
+	nbValeur <Entier>; --nombre d'occurence
+
+constante CMAX <Entier> = 100;
+
+type TabCouples = tableau[1..CMAX] de <Couples>;
+
+programme suite
+
+glossaire
+	v <Entier>; -- valeur courante de la liste
+	tabOcc <TabCouples>; -- tableau des couples
+	nbOcc <Entier>; -- nb d'elements du tableau tabOccs
+	trouve <Booleen>; -- indicateur d'existence de la valeur v
+	rang <Entier>; -- positon effective ou eventuelle de v dans tabOccs
+
+debut
+	nbOccs <- 0;
+	lire(v);
+	
+	tantque v /= 0 faire
+		rechercherOccurence (tabOccs, nbOccs, v, trouve, rang);
+		si trouve alors
+			ajouterOccurence(tabOccs, nbOccs, rang);
+		sinon
+			enregistrerOccurence(tabOccs, nbOccs, rang, valeur);
+		fin si;
+		lire(v);
+	fin tantque;
+	ecrireCouples(tabOccs, nbOccs);
+fin

@@ -1,0 +1,17 @@
+-- p < q
+fonction inf(entree p <Peano>, entree q <Peano>)
+	retourne <Booleen>
+glossaire
+	i <Entier>;
+
+debut
+	i <- 1;
+	tantque p[i] /= '!' et q[i] /= '!' faire
+		i <- i + 1;
+	fin tantque;
+
+	retourner(p[i] = '!' et q[i] /= '!');
+fin
+
+
+

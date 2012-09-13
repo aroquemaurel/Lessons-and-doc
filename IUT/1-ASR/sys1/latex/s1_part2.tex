@@ -1,0 +1,300 @@
+\part{Le langage Shell}
+	Ce chapitre traite du shell originel d'UNIX : le Shell de Bourne.\\
+	Nous verrons en détail les spécificités de cet interpréteur de commandes, et nous aborderons la programmation de shell script de Bourne.
+	\chapter{Sh: Le shell de bourne}
+		\section{Introduction}
+			Le Shell Unix est non seulement un interpréteur de commandes mais aussi un langage de programmation.\\
+			Il interprète et exécute les commandes UNIX. \\
+			Cependant, l'utilisateur peut construire, à l'aide de structures de contrôle du Shell, et mémoriser ses propres ensembles de commandes dans des fichiers de commandes appelés script Shell . \\
+			\begin{itemize}
+				\item portabilité
+				\item facilité de mise en oeuvre
+				\item simplicité
+			\end{itemize}
+		\section{Les facilités du shell}
+			\begin{itemize}
+				\item génération des noms de fichiers
+				\item variables non typées 
+				\item paramètres positionnels
+				\item substitution de commandes ... etc
+				\item commandes cataloguées
+				\item caractères spéciaux et autres notations
+			\end{itemize}
+		\section{Les variables}
+			\subsection{Définition}
+				La notion de variable existe aussi en UNIX. Mais contrairement à un langage déclaratif tel que Pascal, l'utilisateur n'a pas besoin de les déclarer.\\ 
+				Les identificateurs sont composés de caractères alphanumériques mais le premier doit obligatoirement être alphabétique.\\
+				\textbf{Exemple} :
+				\begin{verbatim}	
+					position 
+					d1
+					A320
+				\end{verbatim}\\ \\
+
+				Les variables sont de type chaîne de caractères. \\
+				Pour obtenir le contenu d'une variable, il faut la faire précéder de \$. \\
+				Deux types de variables :\\
+				\begin{itemize}	
+					\item \textbf{locales}, créées par l'utilisateur (usage local à un processus)
+				 	\item d'\textbf{environnement}, créées par le système ou par l'utilisateur
+				 \end{itemize}
+			\subsection{Les variables Shell ou locales}
+				création et initialisation : \\
+				$nom=valeur$\\
+				la valeur est une chaîne de caractères \\ \\
+				exemple : $cours=unix$\\
+				===> chaîne 'unix' \\
+				exemple : $poids=156$\\
+				===> chaîne '1' '5' '6'\\ 
+				La valeur de la variable poids n'est pas le nombre 156.\\ \\
+				interprétation numérique d'une chaîne de chiffres\\
+				commande $test$\\
+				commande $expr$\\ \\
+				\textbf{remarques}:\\
+				chaîne vide : '' ou "" ou rien ===> x='' ou x="" ou x= \\
+				'-' (souligné) illégal dans un nom de variable\\
+				'-' ok pour une valeur (signe négatif)\\ \\
+				Pour accèder à la valeur d'une variable on utilise la commande echo\\
+				L'écho d'une variable non définie ou d'une variable affectée d'une chaîne vide produit une ligne blanche.\\
+			\subsection{Les variables Shell ou locales}			
+				Elles sont nécessaires au fonctionnement du shell, du système voire de certaines applications.\\ \\
+
+				La commande set imprime toutes les variables du shell\\
+				La commande env liste les variables d'environnement\\
+				Certaines de ces variables sont modifiées dans le .profile ou dans le fichier nommé dans la variable d'environnement ENV (#ksh#)
+			\subsection{ Variables shell locales et d'environnement}
+				\begin{itemize}
+					\item Une variable ordinaire est une variable locale; elle n'est connue que dans le shell où elle a été créée.
+					\item Une variable de même nom créée dans un sous-shell, sera une variable distincte. La valeur de la même variable dans le shell père n'est pas modifiée.
+					\item Tout shell a ses propres variables locales.
+					\item Tout shell a ses propres variables "globales" appartenant à son environnement ; elles sont héritées par les sous-shells.
+				\end{itemize}
+
+			\subsection{Transmission de variables}						
+				commande $export$\\
+				Cette commande permet de placer une variable dans l'environnement courant. Toute variable utilisée en argument de cette commande possèdera une copie dans tous les sous-shell\\ \\
+
+				\textbf{Remarque} : 
+				les variables peuvent être exportées vers les sous-shell, mais ne peuvent pas être renvoyées vers le shell initial.
+		\section{Shell scripts}
+			Les shells scripts interactifs sont basés sur des commandes shell (read et echo) ainsi que sur l'usage de variables. \\ \\
+			\textbf{Remarques}: 
+			\begin{itemize}
+				\item on peut lire une liste de variables 
+				\item on peut répondre en tapant plusieurs mots sur la même ligne
+			\end{itemize}
+			\subsection{Arguments}
+				La plupart des commandes shell acceptent des arguments :\\ \\
+				Même approche pour les shell scripts les arguments sont référencés par leur position dans la liste des arguments:
+				\begin{itemize}				
+					\item \$1 premier argument,
+					\item \$2 second argument... etc \\ \\
+					conventions:
+					\item \$0 : nom de la commande elle-même
+					\item \$* : liste des arguments
+					\item \$# : nombre d'arguments
+				\end{itemize}	
+			\subsection{Substitution de commande}
+				\subsubsection{méta-caractère antiquote ` (backquote)}
+					Lorsque une chaîne de caractères est entourée par `, elle est interprétée comme une commande et remplacée par son résultat		
+					\begin{verbatim}	
+						$: echo date
+						date
+					\end{verbatim}\\ \\
+					\begin{verbatim}	
+						$: echo voici la date `date`
+						voici la date Vendredi 22 mars 1996 12:23:00
+					\end{verbatim}					
+				
+			\subsection{Valeur résultat de l'exécution d'une commande}
+				\begin{itemize}							
+					\item Exécution correcte ==> 0 
+					\item Exécution incorrecte ==> != 0
+					\item Exemple : grep mot fichier
+					\item Valeur retournée par la commande :
+					\item 0 : 1 ou plusieurs mots mot trouvés
+					\item 1 : mot non trouvé
+					\item 2 : syntaxe incorrecte
+				\end{itemize}
+			\subsection{Variables spéciales}			
+				\begin{itemize}							
+					\item \$ #	: nombre de paramètres positionnels
+					\item \$ -	: options du shell
+					\item \$ ?	: valeur résultat (état de sortie) de la dernière commande exécutée
+					\item \$ \$	: numéro de processus du shell courant
+					\item \$ !	: numéro de processus du dernier processus en background
+					\item \$ 0	: nom de la commande en cours
+					\item \$ *	: liste des paramètres positionnels
+				\end{itemize}
+				
+		\section{Programmation Shell de bourne}
+			Le shell de Bourne offre les structures de contrôle d'exécution de commandes d'un langage de programmation traditionnel.\\
+			\textbf{Conditions et Choix}\\
+			$if/then/else$\\
+			Expression d'une condition : $test$\\
+			$case$\\ \\
+			\textbf{Répétitions}
+			$for$\\
+			$while$\\
+			$until$\\
+			Sortie impérative : $break$\\
+			\subsection{Conditions}
+			    \subsubsection{Définition}
+					La structure de contrôle if/then/else permet de choisir l'exécution d'un ensemble de commandes suivant une condition.
+			    \subsubsection{Syntaxe}
+					La syntaxe if/then/else peut-être plus ou moins complète, comme nous la détaillons dans la syntaxe. il est possible d'imbriquer plusieurs if.
+					\begin{verbatim}	
+						if condition
+						    then 
+						        instruction
+						        ...
+					        fi
+					\end{verbatim}					\\ \\
+					else: 
+					\begin{verbatim}	
+						if condition
+						    then 
+						        instruction
+						        ...
+						    else
+						        instruction
+						        ...
+						    fi
+					\end{verbatim}					 \\ \\
+					elif: 
+					\begin{verbatim}	
+						if condition
+						    then 
+					  	        instruction
+						        ...
+						    elif condition
+						        then
+						            instruction
+						            ...
+					  	        fi
+					\end{verbatim}					
+		\subsection{test}
+			\subsubsection{Définition}
+				La commande $test$ permet d'effectuer des tests d'existence et de comparaison.\\
+				Les différents types de test sont:
+				\begin{itemize}
+					\item Test d'état de ficiher
+					\item Test de comparaison de chaînes
+					\item Test de comparaison numérique
+				\end{itemize}
+			\subsubsection{Syntaxe}
+				Test d'état de fichier\\
+				\begin{tabular}{|c|c|}
+					\hline 
+						$test -r fichier$  & Vrai, si existe et droit en lecture\\
+					\hline 
+					\hline 
+						$test -w fichier$  & Vrai, si existe et droit en écriture\\
+					\hline 
+					\hline 
+						$test -f fichier$  & Vrai, si existe et non répertoire \\
+					\hline 
+					\hline 
+						$test -d fichier$  & Vrai, si existe et repertoire \\
+					\hline 
+					\hline 
+						$test -s fichier$  & Vrai, si existe et taille > 0  \\
+					\hline 
+					\hline 
+						$test -x fichier$  &Vrai, si existe et exécutable \\
+					\hline 
+				\end{tabular}\\ \\
+				Test de comparaison de chaînes\\
+				\begin{tabular}{|c|c|}
+					\hline 
+						$test chaîne1 = chaîne2$  & Égalité \\ 
+					\hline 
+					\hline 
+						$test chaîne1 != chaîne2$  & Non égalité \\ 
+					\hline 
+					\hline 
+						$test -n chaîne$  & longueur non égal à 0\\ 
+					\hline 
+					\hline 
+						$test -z chaîne$  & longueur zéro \\ 
+					\hline 
+				\end{tabular}\\ \\
+				Test comparaison numérique\\
+				\begin{tabular}{|c|c|}
+					\hline 
+						$test n1 -eq n2$  & Égalité \\ 
+					\hline 
+					\hline 
+						$test n1 -ne n2$  & Égalité \\ 
+					\hline 
+					\hline 
+						$test n1 -gt n2$  & Égalité \\ 
+					\hline 
+					\hline 
+						$test n1 -lt n2$  & Égalité \\ 
+					\hline 
+					\hline 
+						$test n1 -ge n2$  & Égalité \\ 
+					\hline 
+					\hline 
+						$test n1 -le n2$  & Égalité \\ 
+					\hline 
+				\end{tabular}\\ \\
+				Les opérateurs logiques sont aussi utilisés avec la commande $test$\\
+				\begin{tabular}{|c|c|}
+					\hline 
+						$!$  & Négation\\ 
+					\hline 
+					\hline 
+						$-a$  & Et logique\\ 
+					\hline 
+					\hline 
+						$-o$  & Ou logique\\ 
+					\hline 
+				\end{tabular}\\ \\
+		\subsection{For}
+			\subsubsection{Définition}
+				La structure de contrôle de répétion $for$ permet d'exécuter les commande ssituées entre le $do$ et le $done$ pour chacune des valeurs prise dans la liste fournie après le $in$ 
+			\subsubsection{Syntaxe}
+				\begin{verbatim}
+					for variable in liste-de-valeurs 
+					    do
+					        commandes
+					    done
+				\end{verbatim}
+		\subsection{While}
+			\subsubsection{Définition}
+				La structure de contrôle de répétion $while$ permet d'exécuter les commande ssituées entre le $do$ et le $done$ \textbf{tant que} la condition est vraie.
+			\subsubsection{Syntaxe}
+				\begin{verbatim}
+					while condition
+					    do
+					        liste-de-commandes
+					    done
+				\end{verbatim}
+		\subsection{Until}
+			\subsubsection{Définition}
+				La structure de contrôle de répétion $until$ permet d'exécuter les commande ssituées entre le $do$ et le $done$ \textbf{jusqu'à ce que} la condition soit vraie.\\
+				Notez que contrairement à certains langages de programmation la condition est évaluée avant de rentrer dans la boucle.
+			\subsubsection{Syntaxe}
+				\begin{verbatim}
+					until condition
+					    do
+					        liste-de-commandes
+					    done
+				\end{verbatim}
+		\subsection{Quelques commandes utiles pour programmer}
+			\subsubsection{Break}
+				L'instruction $break$ permet de sortir des structures de répétition $while$, $for$, et $until$
+			\subsubsection{expr}
+				La commande $expr$ permet d'évaluer une expression arithmétique ou d'effectuer des opérations sur les chaînes de caractères
+			\subsubsection{set}
+				La commande $set$ permet de mettre en oeuvre certaines options:\\
+				$set -x$ permet d'afficher les commandes à exécuter
+			\subsubsection{shift}
+				L'insctruction $shift$ permet de décaler vers la gauche la liste des paramètres passés en argument à un scription.\\
+				La valeur de \$n+1 est mise dans \$n
+			\subsubsection{exit}
+				L'insctruction $exit$ autorise la sortie impérative d'un script en cours d'exécution.
+				
+

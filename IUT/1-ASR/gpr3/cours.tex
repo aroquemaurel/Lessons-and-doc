@@ -1,0 +1,45 @@
+\documentclass[12pt,a4paper,openany]{report}
+
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+
+\newcommand{\titre}{Gestion des processus}
+
+\newcommand{\module}{Gestion des processus}
+\newcommand{\sigle}{gpr}
+
+\newcommand{\semestre}{3}
+
+\input{/home/satenske/cours/listings.tex} %prise en charge du langage algo
+\input{/home/satenske/cours/entete_iut-cours.tex}
+
+\begin{document}
+	\maketitle
+	\chapter{Contrôle des processus}
+	\section{Caractéristiques d'un processus}
+		\subsection{Mode de déroulement d'un processus}
+		Un processus se déroule alternativement dans deux modes:
+		\begin{itemize}
+			\item Mode utilisateur
+			\item Mode superviseur(ou mode privilégié)
+		\end{itemize}
+		Le passage du mode utilisateur au mode superviseur est provoqué par l'occurence d'un événement de type suivant
+		\paragraph{événement internet synchrone} tel qu'un appel système
+		\paragraph{éénement externe asynchrone} tel q'une interruption matérielle
+		\subsection{Structure du programme objet}
+\end{document}
+
+
+
+

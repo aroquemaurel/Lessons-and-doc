@@ -1,0 +1,396 @@
+% /solutions/conference-talks/conference-ornate-20min.fr.tex, 22/02/2006 De Sousa
+\documentclass{beamer}
+
+% Ce fichier est un exemple d'exposé
+
+% - pour des conférences,
+% - d'une durée approximative de 20 minutes,
+% - avec un style ornemental.
+
+
+% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% Traduction de Philippe De Sousa <philippejjg@free.fr>
+%
+% En principe, ce fichier peut être redistribué et/ou modifié conformément
+% aux termes de la GNU Public License, version 2.
+%
+% Cependant, ce fichier est supposé comme étant un "exemple-type" qui peut être modifié
+% selon vos propres besoins. Pour cette raison, si vous utilisez ce fichier en tant qu'
+% "exemple-type" et non spécifiquement pour le distribuer en tant que partie d'un
+% package ou programme, je vous donne la permission exceptionnelle de copier librement et
+% de modifier ce fichier et même d'effacer ce message de copyright.
+\usepackage{pdfpages}
+
+
+\mode<presentation> {
+  \usetheme{UNLTheme}
+  % ou autre ...
+	
+  \setbeamercovered{none}
+  % ou autre chose (il est également possible de supprimer cette ligne)
+}
+
+
+\usepackage[francais]{babel}
+% or autre comme par exemple \usepackage[english]{babel}
+
+\usepackage[latin1]{inputenc}
+% or autre
+
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+% Or autre. Notez que le codage et la fonte doivent être assortis. Si T1
+% ne paraît pas très esthétique, essayer d'effacer la ligne contenant fontenc.
+
+
+\title[] % (facultatif, à utiliser uniquement si le titre de l'article est trop long)
+{L'UML facile avec libUML}
+\subtitle {}
+
+\author[\bsc{Roquemaurel}\newline\bsc{Soum}\newline\bsc{Subias}\newline\bsc{Tang}] % (facultatif, à utiliser seulement avec plusieurs auteurs)
+{Antoine de \bsc{Roquemaurel}\newline Mathieu \bsc{Soum}\newline Geoffroy \bsc{Subias}\newline Marie-Ly \bsc{Tang}}
+
+% - Composez les noms dans l'ordre dans lequel ils apparaîtrons dans l'article
+% - Utilisez la commande \inst{?} uniquement si les auteurs ont des affiliations
+%   différentes.
+
+\institute[] % (facultatif mais généralement nécessaire)
+{
+  IUT 'A' Toulouse -- Université Paul Sabatier \\
+  DUT Informatique
+  \vspace{-10px}
+}
+% - Utilisez la commande \inst uniquement s'il y a plusieurs affectations
+% - Faîtes quelque chose de simple, personne ne s'intéresse à votre adresse
+
+\date[ ~ ~ ~ 26 / 01 / 2012] % (facultatif, peut être une abréviation du nom de la conférence)
+{26 / 01 / 2012}
+% - Utilisez à la fois le nom de la conférence et son abréviation.
+% - N'a pas réellement d'importance pour l'assistance qui sera présente lors de la conférence,
+%   mais en a surtout pour les personnes (y compris vous-même) qui liront les transparents en ligne.
+
+\subject{Soutenance du cahier des charges - projet d'une bibliothéque d'objets graphiques UML}
+% Inséré uniquement dans la page d'information du fichier PDF. Peut être
+% supprimé.
+
+
+% Si vous avez un fichier nommé "université-logo-nomfichier.xxx", où xxx
+% est un format graphique accepté par latex ou pdflatex (comme par exemple .png),
+% alors vous pouvez insérer votre logo ainsi :
+
+% \pgfdeclareimage[height=0.5cm]{le-logo}{université-logo-nomfichier}
+% \logo{\pgfuseimage{le-logo}}
+
+
+% À supprimer si vous ne voulez pas que la table des matières apparaisse
+% au début de chaque sous-section : 
+\AtBeginSection[] {
+  \begin{frame}<beamer>{Ligne directrice}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+% Si vous souhaitez recouvrir vos transparents un à un,
+% utilisez la commande suivante (pour plus d'info, voir la page 74 du manuel
+% d'utilisation de Beamer (version 3.06) par Till Tantau) :
+
+%\beamerdefaultoverlayspecification{<+->}
+
+
+\setbeamertemplate{footline}{
+	\leavevmode%
+	\hbox{\hspace*{-0.6cm}
+	\begin{beamercolorbox}[wd=.19\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot}%
+		\usebeamerfont{section in head/foot}\insertshortdate{}
+	\end{beamercolorbox}%
+
+	\begin{beamercolorbox}[wd=.76\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot}%
+		\usebeamerfont{section in head/foot} Comment faciliter la conception d'un logiciel informatique ?  
+	\end{beamercolorbox}%
+
+	\begin{beamercolorbox}[wd=.10\paperwidth,ht=2.27ex,dp=1ex,right]{section in head/foot}%
+		\usebeamerfont{section in head/foot}\hspace*{2em}
+		\hspace{-10px}\textbf{\insertframenumber{}} / \inserttotalframenumber\hspace*{2ex}
+	\end{beamercolorbox}}%
+					\vskip0pt%
+}
+
+\begin{document}
+\begin{frame}
+  \titlepage
+\end{frame}
+\begin{frame}{Pr\'esentation des acteurs} % ANTOINE
+	\begin{minipage}{4.6cm}
+		\begin{block}{\'Etudiants}
+				Antoine de \bsc{Roquemaurel}\\
+			\pause
+				Mathieu \bsc{Soum}\\
+			\pause
+				Geoffroy \bsc{Subias}\\
+			\pause
+				Marie-Ly \bsc{Tang}
+		\end{block}
+	\end{minipage}
+	\pause
+	~~  
+	\begin{minipage}[r]{4.4cm}
+		\begin{block}{Enseignants}
+				Thierry \bsc{Millan} (\textit{Client})\\
+			\pause
+				Caroline \bsc{Kross} (\textit{Tutrice})
+				\newline \newline
+		\end{block}
+	\end{minipage}
+\end{frame}
+\begin{frame}{Le glossaire}
+
+  \setbeamercovered{transparent}
+\begin{itemize}
+		\item<1,2>  Bibliothèque 
+		\item<1,3>  Objets graphiques UML \\\hspace{30px}(\textbf{U}nified \textbf{M}odeling \textbf{L}anguage)
+\end{itemize}
+\end{frame}
+\begin{frame}{Plan}
+	\tableofcontents
+\end{frame}
+% Introduction 2'
+%   - Glossaire
+\section{Objectifs} % 4'
+\subsection{Présentation du sujet} % Poser problème/sujet
+\begin{frame}{Présentation du sujet}
+	\begin{itemize}
+		\item Choix des éléments graphiques  
+		\item Bibliothèque \texttt{JGraphX}
+	\end{itemize}
+			\begin{figure}
+			\centering
+				\includegraphics<1,4>[width=2.8cm]{diagrammeUsecase.jpeg} ~ ~
+				\includegraphics<2,4>[width=2.8cm]{diagrammeSequence.jpeg} ~ ~
+				\includegraphics<3,4>[width=1.3cm]{diagrammeClasse.jpeg} 
+		\end{figure}
+\end{frame}
+\begin{frame}{Attentes du projet}
+	\begin{itemize}
+		\item Projet inhabituel
+			\begin{itemize}
+				\item Étude de faisabilité
+				\item Composant 
+			\end{itemize}
+			\pause
+		\item Temps de développement
+			\pause
+		\item Utilité d'un outil fragmenté
+	\end{itemize}
+\end{frame}
+
+\subsection{L'architecture} % Architecture (package) -> pour la suite
+\begin{frame}{Architecture de la bibliothèque}
+	\begin{itemize}
+		\item Découpée en différents paquetages 
+			\begin{itemize}
+				\item \texttt{diagramme}
+					\pause
+				\item \texttt{eltGraphique}
+					\pause
+				\item \texttt{ligne}
+					\pause
+			\end{itemize}
+			\vspace{20px}
+		\item Pensée pour une reprise future 
+			\begin{itemize}
+				\item Stabilité
+					\pause
+				\item Factorisation du code
+					\pause
+				\item Facilité de programmation
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+\subsection{Le démonstrateur}
+\begin{frame}{Le démonstrateur}
+\begin{itemize}
+	\item Est un mal nécessaire 
+		\pause
+		\begin{itemize}
+			\item Possibilités de notre bibliothèque
+				\pause
+			\item Test d'intégration
+				\pause
+			\item Exemple d'utilisation
+		\end{itemize}
+\end{itemize}
+\end{frame}
+\section{Methode} % 4'
+\subsection{Développement} % Méthode incrémentale
+\begin{frame}{Méthode incrémentale}
+	\begin{center}
+	Incrément $=$ Nouvelle fonctionnalité
+\end{center}
+	\begin{figure}
+	\centering
+	\includegraphics[width=9cm]{001.png} 
+	\caption{Fonctionnement de la méthode incrémentale}
+	\end{figure}
+	\vspace{-15px}
+\pause
+	\begin{exampleblock}{Avantages}
+		\begin{itemize}
+			\item Produit utilisable à chaque incrément
+			\item Facilité de correction   
+			\item Bonne maîtrise du développement
+			\item Respect des besoins du client
+		\end{itemize}
+	\end{exampleblock}
+\end{frame}
+\subsection{Outils} % Redmine/git && Javadoc && PMD
+\begin{frame}{Git}
+	\begin{itemize}
+		\item Gestionnaire de versionnement
+	\end{itemize}
+	\vspace{-15px}
+	\begin{figure}
+		\centering
+		\includegraphics[width=7cm]{git.png}
+		\caption{Fonctionnement de Git}
+	\end{figure}
+\end{frame}
+\begin{frame}{Redmine}
+	\begin{itemize}
+		\item Plateforme de travail collaboratif   
+			\begin{itemize}
+				\item Calendrier
+			\pause
+				\item Distribution des tâches
+			\pause
+				\item Forums
+			\pause
+				\item Wiki
+			\pause
+			\end{itemize}
+	\end{itemize}
+	\vspace{15px}
+	\hspace{45px}	$\Rightarrow$ Distribution du travail
+\end{frame}
+\begin{frame}{Qualité de la recette}
+	\begin{itemize}
+		\item Code source
+		\pause	
+	\begin{itemize}
+		\item Conventions d'écritures
+		\pause	
+		\item Envoi du code régulier
+		\pause	
+		\item PMD 
+		\pause	
+			\begin{itemize}
+				\item Analyse du code 
+		\pause	
+				\item Respect de contraintes
+			\end{itemize}
+	\end{itemize}
+	\vspace{15px}
+	\pause
+	\item Documentation
+	\begin{itemize}
+		\item Javadoc
+	\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\section{Résultat} % 3'
+\subsection{Démonstration} % Show time!
+\begin{frame}{Choix du diagramme}
+	\begin{figure}
+		\includegraphics[width=5cm]{choixDiagramme.jpg}
+	\end{figure}
+\end{frame}
+\begin{frame}{Démonstrateur}
+	\begin{figure}
+		\hspace{-80px}
+		\includegraphics[width=15cm]{demonstrateur.jpg}
+	\end{figure}
+\end{frame}
+
+\subsection{Et après\ldots} % Génération code / Respect norme UML 2.0 / Ajout diagrammes
+\begin{frame}{Et après\ldots}
+	\begin{itemize}
+		\item Génération de code
+			\pause
+	\end{itemize}
+	\begin{center}
+	Gestion d'éléments non graphiques \\
+		\vspace{5px}
+		\pause
+	$\rightarrow$ Éléments de programmation
+	\end{center}
+\end{frame}
+\begin{frame}{Et après\ldots}
+	\begin{itemize}
+		\item Norme UML 2.0 
+			\pause
+			\begin{itemize}
+				\item Possibilité d'ajouter des restrictions
+					\begin{figure}
+						\hspace{-60px}\includegraphics[width=6.42cm]{restriction.jpg}
+					\end{figure}
+					\pause
+			\end{itemize}
+				\item Possibilité d'ajouter des diagrammes  
+					\begin{itemize}
+						\item Diagramme de collaboration
+						\item Diagramme d'activités
+						\item Diagramme de timing
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+\section*{}
+\begin{frame}{\bsc{Gantt} prévu}
+	\only<1>{
+		\begin{figure}
+			\includegraphics[width=8.5cm]{gantt_passe.png}
+			\caption{\bsc{Gantt} prévisionnel -- Octobre 2011}
+		\end{figure}
+	}
+	\only<2>{
+		\hspace{-68px}
+		\includegraphics[width=11.5cm]{gantt_passe.png}
+	}
+\end{frame}
+\begin{frame}{\bsc{Gantt} effectif}
+	\only<1>{
+	\begin{figure}
+		\centering
+		\includegraphics[width=8.5cm]{gantt_present.png}
+		\caption{\bsc{Gantt} effectif -- Janvier 2012}
+	\end{figure}
+	}
+	\only<2>{
+	\hspace{-68px}
+		\includegraphics<2>[width=11.5cm]{gantt_present.png}
+	}
+\end{frame}
+\begin{frame}{Difficultés}
+	\begin{itemize}
+		\item Stabilisation de l'architecture
+			\pause
+		\item Connaissance des outils à utiliser
+			\pause
+		\item Gestion du groupe 
+			\pause
+			\begin{itemize}
+				\item Régularité des réunions
+			\pause
+				\item Divergences d'opinions
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+\begin{frame}{Avez-vous des questions ?}
+	\includegraphics[width=8cm]{questions.jpg}
+\end{frame}
+% Conclusion 2'
+
+\end{document}
+

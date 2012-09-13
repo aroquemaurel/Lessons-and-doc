@@ -1,0 +1,11 @@
+type FileAvecPriorite[T]: pointeur sur <Priorité>;
+type Priorité[T] : enregistrement
+	suivant <FileAvecPriorite[T]>,
+	niveau <Entier>,
+	elements <Liste[T]>;
+
+type Element[T] : enregistrement
+	valeur<T>,
+	suivant <Liste[T]>;
+
+type Liste[T] : pointeur sur <Element[T]>;

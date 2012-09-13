@@ -1,0 +1,18 @@
+-- determine la moyenne du nombre de maths gagnes par equipe sur la saison
+fonction moyenneMathsGagnes(entree maths <TabMatchs>) retourne <Reel>
+glossaire
+	e <Entier>;
+	nbMatchsG <Entier>;
+	cumulG <Entier>;
+debut
+	e <- 1;
+	cumulG <- 0;
+	tantque e <= NB_EQUIPES faire
+		nbMatchsG <- matchs[e].gagnes;
+		cumulG <- cumulG + nbMatchsG;
+		e <- e + 1;
+	fin tantque;
+	retourner (cumulG/NB_EQUIPES);
+fin	
+
+	

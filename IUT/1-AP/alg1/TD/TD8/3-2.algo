@@ -1,0 +1,68 @@
+importer entreSortie;
+
+type EnrCroix = enregistrement
+	haut <Entier>,         
+	bas <Entier>,
+	droit <Entier>,
+	gauche <Entier>;
+
+fonction sommeChiffre (entree e <Entier>) retourne <Entier>
+glossaire
+	quotient <Entier>;
+	sommeReste <Entier>;
+
+debut
+	quotient <-e ;
+	sommeReste <- 0;
+	
+	tantque quotient /= 0 faire
+		sommeReste <- sommeReste + (quotient mod 10);
+		quotient <- quotient div 10;
+	fin tantque;
+	retourner(sommeReste);
+fin
+
+--construit les chifres de la croix saint andre
+procedure construireCroixStAndre (entree opd1 <Entier>, entree opd2 <Entier>, entree res <Entier>, 	sortie croix <EnrCroix>)
+debut
+	croix.haut <- sommeChiffres(opd1)mod9;
+	croix.bas <- sommeChiffres(opd2)mod9;
+	croix.droit <- sommeChiffres(opd1 * opd2)mod9;
+	croix.gauche <- sommeChiffres(res)mod9;
+fin
+
+procedure ecrireCroixStAndre(
+--- a completer
+--
+--
+
+programme preuvePar9
+glossaire
+	opd1 <Entier>; --Premier operande d'une multiplication
+	opd2 <Entier>; --deuxieme operande d'une multiplication
+	res <Entier>;  --resultat attendu de la multiplication
+	croix <EnrCroix>; --croix de saint Andre pour opd1 * opd2 = res
+debut
+	-- ecrire le message d'invite
+	ecrire("Entrer une suit ede multiplication terminee par 0: ");
+	lire(opd1);
+
+	--traiter toutes les multiplications de la suite
+	tantque opd1 /= 0 faire
+		--lire le deuxieme operande de la multiplicaton
+		lire(opd2);
+		--lire le resultat attend pour la multiplication opd1 * opd2
+		lire(res);
+		--construire la croix de saint andre pour opd1*opd2 = res puis l'afficher
+		construireCroixStAndre(opd1;opd2,res,croix);
+		ecrireCroixStAndre(croix);
+		--tester la valideite de la multiplication opd1*opd2=res
+		si croix.gauche = croix.droit alors
+			ecrire("*** RAS ***");
+		sinon
+			ecrire("*** Multiplication erronnee ***");
+		fin si;
+		-- lire l'operande opd1 de la multiplication suivante
+		lire(opd1);
+	fin tantque;
+fin

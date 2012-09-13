@@ -1,0 +1,2 @@
+CREATE TABLE platV12 AS SELECT * FROM plat WHERE idV='V12';
+

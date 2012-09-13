@@ -1,0 +1,412 @@
+\documentclass[12pt,a4paper,openany]{book}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+%\usepackage[frenchb]{babel}
+%\usepackage{layout}
+%\usepackage{setspace}
+%\usepackage{soul}
+%\usepackage{ulem}
+%\usepackage{eurosym}
+%\usepackage{bookman}
+%\usepackage{charter}
+%\usepackage{newcent}
+%\usepackage{lmodern}
+%\usepackage{mathpazo}
+%\usepackage{mathptmx}
+%\usepackage{url}
+%\usepackage{verbatim}
+%\usepackage{moreverb}
+%\usepackage{wrapfig}
+%\usepackage{amsmath}
+%\usepackage{mathrsfs}
+%\usepackage{asmthm}
+%\usepackage{makeidx}
+%\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+%\usepackage{multido}
+%\usepackage{amssymb}
+
+%\input{/home/satenske/cours/listings.tex}
+
+\title{Cours\\ Adminsitration système}
+\date{ADS\\ Semestre 2}
+
+\lhead{Cours: Administration système}
+\chead{}
+\rhead{\thepage}
+
+\lfoot{Université paul sabatier Toulouse III}
+\cfoot{\thepage}
+\rfoot{ads2}
+
+\pagestyle{fancy}
+\begin{document}
+	\maketitle
+	L'administration système est l'ensemble des tâches faites par des informaticiens.
+	Elle sert à maintenir un logiciel dans un parc informatiques, les systèmes les 
+	plus utilisés sont Linux et Windows.
+
+	\section{Tâches d'administration systèmes}
+		\paragraph{}
+		Il faut d'abord \textbf{installer et configurer} les systèmes d'exploitation
+			de la machine.
+	\paragraph{}
+	Mettre en place les moyens et les procédures pour garantir les performances
+	et la disponibilités des systèmes. 
+	\begin{itemize}
+		\item Gérer les comptes utilisateurs
+		\item installer et mettre à jour les nouveaux logiciels
+		\item organiser et mainteir les systèmes de fichiers.
+		\item organiser et mainteir les systèmes d'impression.
+		\item concevoir et développer les outils logiciels pour automatiser
+			certaines tâches d'administration
+	\end{itemize}
+	\paragraph{}
+		il faut administrer, maintenir et faire évoluer le réseau local et très
+		souvent l'accès au réseau public.
+	\paragraph{}
+		Également mettre en places les moyens et les procédures pour garantir la 
+		sécurité des systèmes et des réseaux.
+	\paragraph{}
+		Résoudre les incidents ponctuels (mot de pass oublié....)
+	\paragraph{}
+		Conseiller, assister et former les utilisateurs
+	\paragraph{}
+		Animer et coordonner l'activié des techniciens informatiques
+	\paragraph{}
+		assurer la veille technologique
+	\paragraph{}
+		planifier l'évolution matérielleet logiciels en fonction des besoin des utilisateurs
+	\paragraph{}
+		négocier avec les fournisseurs d'équipements informatiques
+	\section{Les différents niveaux d'administration}
+		\paragraph{}
+			Depuis les années 80, les progrès technologiques ont entrainé un dévelopement 
+			considérable des réseaux locaux et publics d'ordinateurs.
+		\paragraph{}
+			La plupart des machines sont connectées en réseau, par conséquent les 
+			tâches d'administartion réseau on pris une importance considérable.
+		\paragraph{}
+			C'est pourquoi on décompose l'administation système en deux niveaux:
+			\begin{itemize}
+				\item le niveau système
+				\item le niveau réseau
+			\end{itemize}
+	\chapter{Installation des systèmes Linux}
+		Grâce à la démocratisation de Linux, les différentes distribution ont amélioré
+		l'interface d'installation.\\
+		Il faut connaître l'architecture exact de la machine.\\
+		Si la machine possède déjà un autre OS, il est nécessaire de comprendre ce qui
+		va se passer durant le processus d'installation.\\
+		Pour procéder à l'installation d'un système il faut disposer d'une image de la
+		distribution du système sur un support \textit{bootable} (CD, DVD, clef USB...)
+
+		\section{Notion de systèmes de fichier et de partionnement}
+		\paragraph{}
+			Le système de Gestion de Fichier (SGF) est la composante de l'OS
+			qui fournit aux utilisateurs un modèle logique abstrait de stockage et 
+			de gestion des informations persistantes et de leur organisation des 
+			des fichiers en faisant abstraction du support matériel sur lequel
+			sont stockées ces informations 
+		\paragraph{}
+			La structure de données la plus couramment utilisée est une organisation
+			arborescente basé sur le concept de répertoire (apellé aussi catalogue
+					ou dossier)
+			\begin{itemize}
+				\item Les systèmes UNIX ou Linux utilisent une arborescence unique
+				\item Les systèmes Windows utilisent une arborescence particulière
+				dans laquelle est le noeuds du premier niveau dont des unités 
+				logiques (A, C, D, ...) contenant chacune une arborescence unique.
+			\end{itemize}	
+			L'implémentation interne de la structure de donnée du SGF est réalisée
+			par des structures de données interners spécifiques appelées 
+			\textit{file system} en anglais et traduit par système de fichier.
+			\paragraph{}
+			Un systeme de fichier définit l'organisation interne d'un ensemble
+			de fichiers enregistrés sur tout ou partie d'un média de type
+			\begin{itemize}
+				\item Unités de disque magnétiques
+				\item Unités de disques optiques
+				\item Unités de disque SSD
+				\item Autre....
+			\end{itemize}
+			Il existe de très nombreux système de fichiers qui pour la plupart
+			sont spécifiques à un système d'exploitation, ou à un média.
+			\paragraph{}
+			Les caractéristiques du SGF des systèmes UNIX ou Linux et de leur
+			système de fichiers et leur administration seront présentées plus
+			en détail dans le chapitre 3 du cours.
+			\paragraph{}
+			Dans la plupart des cas, plusieurs système de fichiers seront nécessaire
+			pour implémenter le SGF. \\
+			Pour le système Linux par exemple la partie résidente est en ext3, les disques
+			en FAT32
+			\paragraph{}
+			L'espace de stockage de certains médias comme les disques durs ou les 
+			disques SSD peut être découpé en plusieurs parties contiguës de 
+			différentes tailles appelées partition. Une partition est gérée par 
+			le système comme un disque logique dans lequel il est possible 
+			d'implémenter un système de fichier. 
+			\paragraph{Opération de formatage}
+			L'implémentation d'un système de fichier sur une partition d'un média 
+			ou sur la totalité de l'espace de stockage de certains média, à ne 
+			pas confondre avec le formatage de bas niveau qui consiste à créer 
+			les secteurs physiques.
+			\subsection{Pourquoi partitionner?}
+				La création d'une ou plusieurs partitions sur un ou plusieurs 
+				disques durs correspond généralement à la mise en œuvre d'une
+				politique de gestion de la part de l'administration et/ou à une
+				obligation imposée par le gestionnaire d'E/S des disques durs 
+				(le BIOS des PC par exemple)\\
+				Les principales raison qui conduisent l'administrateur à créer
+				 plusieurs partitions: 
+			 \paragraph{La limitation des risques}
+				La création de plusieurs partitions limite la perte de données à 
+				la seule partition qui est endommagée. Sur une machine serveur,
+				mettre dans des partitions différentes les données qui ne varient
+				pas (noyau...) et celles qui varient en permanence (home, logs, 
+						fichiers temporaires...) est une saine pratique qui 
+				permet de conserver un système qui fonctionne car les partitions 
+				qui ont le plus de risque d'être endommagées sont celle où on 
+				supprime et ou on créer des fichiers. 
+			\paragraph{Le multiboot}
+				Il faut une partition pour OS (système de fichier différents) 
+			\paragraph{Le contournement de la limitation de la taille d'une
+				partition}
+				La taille des partitions est limitée, cette limite varie selon 
+				le type de système de fichier, mais aussi selon les contraintes
+				matérielles de la machine. Chaque type de système de fichiers 
+				disposes de tables d'allocations qui répertorient les blocs 
+				occupés et libres de la partition qui le supporte. 
+				Ces tables ont un nombre d'entrées limité qui définit le nombre
+				de blocs logiques accessible et donc la taille maximal de la 
+				partition. Ces limites sont par exemple de 2Go en FAT16, de
+				2 To en FAT32, de 16G fois Go en NTFS.\\
+				Aujourd'hui cela ne constituent pas une réel limitation par 
+				rapport à la taille des disques durs, exceptée le FAT16.\
+				Ces limitations sont théoriques, car une limitation réel
+				plus restrictive est imposée par les sous programmes du BIOS
+				qui réalisent les accès au secteurs physiques des disques durs.
+			\subsection{Les limitations du partitionnement}
+				Les contraintes du BIOS ne sont pas les seuls à influer sur
+				le partitionnement. Le contexte de gestion de l'espace disque
+				peut limiter la taille des partitions mais aussi leur nombre, 
+				leur position relatives suivant le type (partitions bootable 
+						ou pas)
+				\paragraph{Les contraintes du MBR}
+					Pour gérer le nombre et la taille des partitions une table des 
+					partitions appelée MBR (Master Boot Record) est enregistrée
+					dans le premier secteur de 512 octets du disque (les disques 
+							durs pour PC sont formatés avec des secteurs de 512 octets)
+
+			\subsubsection{Les frontières de cylindres}
+				Les frontières des partitions sont enregistrées en unités
+				de secteurs. Selon les systèmes et aussi les utilitaires
+				de partitionnement, l'unité de découpage n'est pas le secteur mais 
+				le cylindre \\
+				Un cylindre est constitués de toutes les pistes de même rayon
+				situées sur les faces des différents plateaux. Il faut donc
+				connaître le nombre de secteurs contenus dans un cylindre et
+				créer des partitions dont la taille en secteurs est un multiple
+				de celle des cylindres.\\
+				Heureusement la plupart des utilitaires de partitionnement arrondissent 
+				automatiquement les limites de partitions fournies en nombre de secteurs
+				en multiple de cylindres. Certains même ne demandent que la taille 
+				approximative en Mo ou Go et font les calculs de limites 
+				automatiquement.
+		 \subsection{L'ordre des partitions}
+			L'ordre n'a apriori l'ordre des partitions ne devrait pas avoir d'importance
+			puisque chaque partition est indépendante des autres. En réalité certains
+			systèmes ne reconnaissent pas le type des partitions des autres systèmes.
+	\section{Préparation de l'installation}
+			\subsection{Inventaire de la machine}
+			Certains composants peuvent poser des problèmes si leur pilotes ne sont
+			pas reconnus automatiquement lors de l'installation. Il est donc 
+			nécessaire de connaitre la configuration matérielle de la machine afin
+			de pouvoir répondre aux différentes questions que pourrait poser le 
+			logiciel d'installation.
+			\paragraph{Le type de disque dur et éventuellement sa taille}
+			\paragraph{la taille de la mémoire centrale}
+				Pour gérer l'exécution simultanée de plusieurs programmes 
+				les systèmes multi tâches ont besoin d'un espace disque spécial 
+				qu'ils utilisent comme une extension de la mémoire centrale.
+				Cette extension s'appelle swap.
+			\paragraph{Le contrôleur réseau}
+				Ils posent de moins en moins problèmes. Il peut être nécessaire
+				de connaître les références du contrôleur afin de paramétrer correctement
+				le réseau, notamment si l'installation se fait par le réseau. 
+			\paragraph{Le contrôleur graphique}
+				Le contrôleur graphique peut ne pas être reconnu automatiquement.
+				Il faut connaitre ses références pour paramétrer correctement 
+				l'affichage. Il n'y a pas de problème tant que l'installation se
+				déroule en mode graphique basique (mode VGA, géré par n'importe
+						quel contrôleur graphique actuel)
+			\paragraph{Le type de souris}
+				La plupart des souris sont maintenant compatible PS/2.
+			\paragraph{Le chipset}
+			un problème peut survenir si on installe une ancienne distribution
+			sur une machine récente. Le chipset reconnu ne correspond pas à celui
+			de la carte mère. Mais comme dans une même gamme les chipset récents 
+			couvrent les fonctionnalités des plus anciens.
+		\subsection{Différences entre poste de travail et serveur}
+			Contrairement aux systèmes Windows qui sont différents pour les postes
+			de travail et les serveurs le système Linux comme UNIX est fondamentalement
+			un système pour serveurs.\\ \\
+			À l'installation, les différences entre un poste de travail et un 
+			serveur vont porter principalement sur:
+			\begin{itemize}
+				\item le rationnement
+			\end{itemize}
+		\subsection{Le plan de partitionnement}
+		Avant de commencer il faut définir le plan de actionnement du ou des disques
+		 durs de la machine en fonction de son utilisation et aussi des évolutions futures.
+		 \paragraph{Définir la carte de partition}
+			On a vu aux chapitres précédents, la façon de procéder	
+	\section{Les types d'installations}
+		\subsection{Créer des CD d'installation}
+		On peut trouver des CD ou des DVD d'installations dans des magazines, 
+		mais on peut aussi récupérer les images de distributions Linux sur 
+		le site de l'éditeur ou sur des miroirs.
+
+		\subsection{Installation par le réseau}
+		On lance un CD minimal pour démarrer l'installation à partir du réseau.
+		Le BIOS va se connecter ensuite au serveur, tous les programmes seront 
+		téléchargés par le réseau.
+
+	\chapter{Gestion des systèmes de fichiers}
+	\section{Les types de fichiers}
+	Un fichier est un ensemble de données archivées en mémoire auxiliaire. Dans certains
+	OS ces données sont structurées en enregistrement suivant une organisation 
+	déterminée.(séquentielle, calculée, séquentielle..)\\
+		\subsection{Fichiers ordinaires}
+		Deux types:
+		\begin{itemize}
+			\item fichiers texte
+			\item fichiers binaires
+		\end{itemize}
+		\subsection{Fichiers spécial}
+		Un organe périphérique réel ou virtuel est considéré du point de vue du 
+		système comme un fichier spécial dans lequel on peut lire et/ou écrire
+		des donnée avec les même opérations que celles utilisées pour les fichiers
+		ordinaires.\\
+		Deux types de fichiers spéciaux: 
+		\begin{itemize}
+			\item blocs opérations d'E/S par blocs d'octets
+			\item caractères opérations d'E/S octets par octets
+		\end{itemize}
+		\subsection{Autres types de fichiers}
+		\subsection{Répertoire}
+			\subsubsection{Répertoires standards}
+	\section{}
+			\subsection{Structure internet}
+			Le SGF est enregistré en mémoire auxiliaires sur un ou plusieurs
+			média de type
+			\begin{itemize}
+				\item Unités de disque magnétiques (disquettes, disque durs)
+				\item unités de disque optiques (CD-ROM, DVD-ROM)
+				\item Cartes mémoires (clé USB, carte memory stick, carte secure digital)
+			\end{itemize}
+			Après formatage l'espace de stockage d'un disque magnétique ou d'une carte
+			mémoire est constitué d'un ensemble de N blocs consécutifs de taille fixe
+			(512, 1024, 2048 ... Octets)
+			\paragraph{} Les disques durs peuvent être découper en plusieurs partitions,
+			partitions pouvant disposer de système de fichiers différents, le 
+			nombre de partition varie en fonction de la taille du disque et de 
+			l'architecture voulu par l'administrateur. 
+			\paragraph{}
+			Une partition est constituée par un intervalle de blocs consécutifs 
+			et est gérée comme un disque logique comprenant une suite de M blocs 
+			numérotés de 0 à M - 1.
+			\paragraph{Unix}
+			gère une arborescence unique qui peut être
+			enregistrée sur une ou plusieurs partitions structurées en système
+			de fichiers.
+			\paragraph{Windows}
+			Chaque partition d'un organe périphérique est vue par le système
+			comme une unité logique, supportant un seul système de fichier.
+			\paragraph{}
+		\subsection{Les différents types de systèmes de fichiers}
+			\begin{itemize}
+				\item minix: débuts Linux
+				\item ext2: standard de Linux
+				\item ext3: évolution de ext2
+				\item ext4: évolution de ext3
+				\item sysv: ancien, fichiers Unix, System V
+				\item ffs: Unix et BSD
+				\item ufs: Extension du ffs Unix et BSD
+				\item msdos: Système Fat16 pour MS DOS
+				\item vfat: Extension de MS DOS
+				\item ntfs: Partitions Windows NT/2000/XP
+				\item hpfs: Partitions hpfs 
+				\item iso9660: CD-ROM
+				\item nfs: accessible par réseau développé par SUN Mycrosystem
+			\end{itemize}
+		\subsection{Structure du système de fichiers sysv d'Unix, System V de 
+			AT\&T}
+			\begin{verbatim}
+	    +-------------------------------+
+	0   |        bloc de "boot"         |
+	    +-------------------------------+
+	1   |         "super bloc"          |
+	    +-------------------------------+
+	2   |                               |
+	    |      table des inodes         |	
+	    |                               |
+	k   |                               |
+	    +-------------------------------+
+	k+1 |                               |
+	    |       bloc de données         |
+	    |       et blocs libres	        |
+	    |                               |
+	M-1 +-------------------------------+
+
+			\end{verbatim}
+
+			\paragraph{Bloc 0} Contient l'identification du disque logique
+			\paragraph{Bloc 1} contient les attributs du système de fichier
+			\paragraph{Bloc 2 à k} Contiennent la table d'allocation des fichiers
+			\paragraph{Blocs k + 1 à M - 1} Contiennent les données des fichiers
+				et répertoires de l'arborescence supportée par le système de fichiers.
+
+		\subsection{Structure du système de fichier ext2 de Linux}
+		Le système de fichier ext2 à été développé pour pallier les inconvénients
+		des systèmes de fichiers originels minix et ensuite ext2 e particulier le 
+		besoin de supporter des partitions de grande taille.
+		\subsection{Liens physiques et liens symboliques}
+		\paragraph{Lien symboliques}
+			
+		\paragraph{Lien physiques}
+			\begin{verbatim}
+				+------+
+				|      |  
+				|      |
+				+------+
+			\end{verbatim}
+	\section{Commandes d'administration des systèmes de fichiers}
+		\subsection{Fichiers Spéciaux}
+			Sous Linux les fichiers spéciaux qui sont les interfaces avec les pilotes
+			de périphériques (device driver) qui gèrent les opérations d'E/S dans les
+			partitions des unités de disques. 
+			\begin{itemize}
+				\item /dev/hda1 partition 1 du premier disque IDE
+				\item /dev/hda2 partition 2 du premier disque IDE
+				\item /dev/hdan partition n du premier disque IDE
+
+				\item /dev/sda1 partition 1 du premier disque S-ATA
+				\item /dev/sda2 partition 2 du premier disque S-ATA
+				\item /dev/sdan partition n du premier disque S-ATA
+				\item /dev/cdrom CD-Rom
+			\end{itemize}		
+		\subsectin{Création d'un système de fichier}
+		Sous Linux la commande man fs permet de connaitre les types de systèmes
+		de fichiers.
+		$$mkfs~options~filesys$$
+		\subsection{Montage et démontage d'un système de fichiers}
+
+ \end{document}

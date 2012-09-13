@@ -1,0 +1,74 @@
+type ArbreBinaire[T] pointeur sur <Noeud[T]>;
+type Noeud[T] : enregistrement
+	racine <T>,
+	sag <ArbreBinaire[T]>,
+	sad <ArbreBinaire[T]>;
+
+-- créer un arbre vide
+fonction arbreVide()
+	retourne ArbreBinaire[T]
+debut
+	retourner (NULL);
+fin
+
+-- retourne vrai si l'arbre `arbre` est vide 
+fonction estVide(entree arbre <ArbreBinaire[T]>)
+	retourne <Booleen>
+debut
+	retourner (arbre = NULL);
+fin
+
+-- retourne la racine de l'arbre `arbre`
+fonction racine(entree arbre <ArbreBinaire[T]>) 
+	retourne <T>
+	declenche arbreVide
+debut
+	si estVide(arbre) alors
+		declencher arbreVide;
+	fin si;
+
+	retourner (arbre$\uparrow$.racine);
+fin
+
+-- retourne le sous arbre gauche de l'arbre `arbre`
+fonction gauche(entree arbre <ArbreBinaire[T]>) 
+	retourne <T>
+	declenche arbreVide
+debut
+	si estVide(arbre) alors
+		declencher arbreVide;
+	fin si;
+
+	retourner (arbre$\uparrow$.sag);
+fin
+
+-- retourne le sous arbre droit de l'arbre `arbre`
+fonction droite(entree arbre <ArbreBinaire[T]>) 
+	retourne <T>
+	declenche arbreVide
+debut
+	si estVide(arbre) alors
+		declencher arbreVide;
+	fin si;
+
+	retourner (arbre$\uparrow$.sad);
+fin
+
+--construit un nouvel arbre à partir de la racine, sag et sad
+fonction nouvelArbre(entree racine <T>, entree sag <ArbreBinaire[T]>, entree sad <ArbreBinaire[T]>)
+	retourne <ArbreBinaire[T]>
+	declenche arbrePlein
+glossaire
+	nouveau <ArbreBinaire[T]>;
+debut
+	allouer(nouveau);
+	si nouveau = NULL alors
+		declencher arbrePlein;
+	fin si;
+
+	nouveau$\uparrow$.racine <- r;
+	nouveau$\uparrow$.sag <- sag;
+	nouveau$\uparrow$.sad <- sad;
+	
+	retourner (nouveau);
+fin

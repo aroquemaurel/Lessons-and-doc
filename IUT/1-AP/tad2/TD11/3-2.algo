@@ -1,0 +1,10 @@
+constante TAILLE_MAX <Entier> = 1000;
+type Elem[T] : enregistrement
+	valeur <T>,
+	priorite <Entier>;
+
+type TabElem[T] : tableau de [1..TAILLE_MAX] de <Elem[T]>;
+
+type FileAvecPriorite[T]: enregistrement
+	valeurs <TabElem[T]>,
+	nbElements <Entier>;

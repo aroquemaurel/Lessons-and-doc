@@ -1,0 +1,19 @@
+--imprimer les espaces dus aux jours vides;
+	tantque il y a un jour vide a afficher faire
+		afficher un jour vide;
+	fin tantque;
+
+--afficher les numeros de jours
+	se placer sur le premier jour du mois;
+	tantque on a pas affiche tous les jours faire
+		afficher le numero du jour;
+		si on est sur un samedi alors
+			passer a la ligne;
+		fin si;
+		passer au jour suivant;
+	fin tantque;
+
+-- eventuellement effectuer un saut de ligne
+	si on est pas dimanche alors
+		passer a la ligne;
+	fin si;

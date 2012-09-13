@@ -1,0 +1,152 @@
+\usepackage{verbatim}
+\usepackage{datatool}
+
+\date{\today}
+
+\chead{}
+\rhead{Projet \#20}
+\lhead{Bibliothèque d'objets grahiques UML}
+\makeindex
+\lfoot{Université Paul Sabatier Toulouse III}
+\rfoot{--~\thepage~--}
+\cfoot{\footCentre}
+\makeglossary
+\makeatletter
+\def\clap#1{\hbox to 0pt{\hss #1\hss}}%
+\def\ligne#1{%
+\hbox to \hsize{%
+\vbox{\centering #1}}}%
+\def\haut#1#2#3{%
+\hbox to \hsize{%
+\rlap{\vtop{\raggedright #1}}%
+\hss
+\clap{\vtop{\centering #2}}%
+\hss
+\llap{\vtop{\raggedleft #3}}}}%
+\def\bas#1#2#3{%
+\hbox to \hsize{%
+\rlap{\vbox{\raggedright #1}}%
+\hss \clap{\vbox{\centering #2}}%
+\hss
+\llap{\vbox{\raggedleft #3}}}}%
+\def\maketitle{%
+\thispagestyle{empty}\vbox to \vsize{%
+\haut{}{\@blurb}{}
+\begin{flushleft}
+	\vspace{1cm}
+	Antoine de \bsc{Roquemaurel}\\ 
+	Mathieu \bsc{Soum}\\
+	Geoffroy \bsc{Subias}\\
+	Marie-Ly \bsc{Tang}\\
+	\textit{Groupe B}\\
+\end{flushleft}
+\begin{flushright}
+	\vspace{-3cm}
+\begin{tabular}{r@{~}l}
+	\ifthenelse{\equal{\premierDestinataire}{}}{
+	}
+	{
+		Pour \premierDestinataire & (\rolePremierDestinataire) \\
+	}
+	\ifthenelse{\equal{\secondDestinaire}{}}{
+	}
+	{
+		\secondDestinaire & (\roleSecondDestinaire) \\
+	}
+	\ifthenelse{\equal{\troisiemeDestinaire}{}}{
+	}
+	{
+		\troisiemeDestinaire & (\roleTroisiemeDestinaire) \\
+	}
+	\ifthenelse{\equal{\quatriemeDestinaire}{}}{
+	}
+	{
+		\quatriemeDestinaire & (\roleQuatriemeDestinaire) \\
+	}
+	\ifthenelse{\equal{\cinquiemeDestinaire}{}}{
+	}
+	{
+		\cinquiemeDestinaire & (\roleCinquiereDestinaire) \\
+	}
+\end{tabular}
+\end{flushright}
+\vfill
+\vspace{1cm}
+\begin{flushleft}
+\usefont{OT1}{ptm}{m}{n}
+\huge \@title
+\end{flushleft}
+\par
+\hrule height 4pt
+\par
+\begin{flushright}
+\usefont{OT1}{phv}{m}{n}
+\Large \@author
+\par
+\end{flushright}
+\vspace{1cm}
+\vfill
+\vfill
+\bas{}{\@location, le \@date}{}
+}%
+\cleardoublepage
+}
+\def\date#1{\def\@date{#1}}
+\def\author#1{\def\@author{#1}}
+\def\title#1{\def\@title{#1}}
+\def\location#1{\def\@location{#1}}
+\def\blurb#1{\def\@blurb{#1}}
+\date{\today}
+\author{}
+\title{}
+\location{Amiens}\blurb{}
+\makeatother
+\title{\titreDocument}
+\author{Bibliothèque d'objets graphiques UML}
+
+\location{Toulouse}
+\blurb{%
+Université Paul Sabatier -- Toulouse III\\
+IUT A - Toulouse Rangueil\\
+\textbf{Projet tuteuré \#20}\\[1em]
+}%
+
+\makeatletter
+\newcommand{\sortitem}[3]{%
+	\DTLnewrow{list}%
+	\DTLnewdbentry{list}{nom}{#1}%
+	\DTLnewdbentry{list}{page}{#2}%
+	\DTLnewdbentry{list}{definition}{#3}%
+}
+
+\newenvironment{sortedlist}%
+{%
+\DTLifdbexists{list}{\DTLcleardb{list}}{\DTLnewdb{list}}%
+}%
+{%
+\DTLsort{nom,page,definition}{list}%a
+	\DTLforeach*{list}{\theNom=nom,\laPage=page,\theDefinition=definition}{%
+	\paragraph{\theNom}\hspace{-8px}(p \laPage)~--~\theDefinition\hfill 
+}%
+}
+
+%\newwrite{\verbatim@out@one}
+%\newcommand\initiateglossary[1]{\immediate\openout \verbatim@out@one #1}
+
+%\def\terminateglossary{\immediate\closeout\verbatim@out@one\@esphack}
+%\DeclareTextFontCommand{\policeGlossaire}{\fontfamily{cmvtt}\selectfont}
+\DeclareTextFontCommand{\policeGlossaire}{\fontfamily{lmss}\selectfont}
+\DeclareTextFontCommand{\policePackage}{\fontfamily{phv}\selectfont}
+
+\newwrite\glossaireVar
+\openout\glossaireVar=glossaire
+\write\glossaireVar{\noexpand}
+\newcommand{\glo}[3]{
+\policeGlossaire{\hspace{-4px}#1\hspace{-6px}}
+	\write\glossaireVar{\noexpand\sortitem{#2}{\thepage}{#3}}
+}
+
+\makeatother
+\newcommand{\nouveauChapitre}{ \thispagestyle{fancy} }
+\def\sectionautorefname{Section}
+\pagestyle{fancy}

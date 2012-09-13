@@ -1,0 +1,10 @@
+calculer la somme du nombre de matchs gagnes sur la saison;
+calculer le nombre d equipes ayant gagne plus de matchs que la moyenne
+se positionner sur la premiere equipe;
+tantque il reste une quipe a traiter faire
+	si nombre de matchs gagnes > moyenne alors
+		comptabilier cette equipe;
+	fin si;
+	passer a l equipe suivante;
+fin tantque;
+determiner le nombre d equipes ayant gagne plus de matchs que la moyenne;

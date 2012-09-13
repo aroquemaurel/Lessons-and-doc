@@ -1,0 +1,7 @@
+-- trier par insertion une suite de valeurs
+lire la valeur du margeur de fin;
+lire la premiere valeur;
+tantque la valeur est differente de margeur de fin faire
+	inserer la valeur dans la suite triee des valeurs;
+	lire la valeur suivante;
+fin tantque;

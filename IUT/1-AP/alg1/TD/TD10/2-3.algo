@@ -1,0 +1,14 @@
+fonction pgcd (entree a <Entier>,
+				entree b <Entier>) 
+				retourne <Entier>
+debut
+	si a = b alors
+		retourner(a);
+	sinon 
+		si a > b alors
+			retourner (pgcd(a - b, b)); 
+		sinon
+			retourner(pgcd(a, b-a));
+		fin si;
+	fin si;
+fin
