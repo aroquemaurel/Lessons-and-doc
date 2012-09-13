@@ -1,9 +1,0 @@
-[10:50:26]drn0073a@r-info-jade-l03:~/Gpr3/TP2$\$$ ./signal1&
-[1] 3776
-[10:50:31]drn0073a@r-info-jade-l03:~/Gpr3/TP2$\$$ Login : drn0073a
-UID : 34924
-mardi 27 septembre 2011, 10:50:31 (UTC+0200)
-[10:50:43]drn0073a@r-info-jade-l03:~/Gpr3/TP2$\$$ ./signal2 3776
-[10:50:56]drn0073a@r-info-jade-l03:~/Gpr3/TP2$\$$ Mon pid c'est 3776 et j'ai recu le signal 10 !
-[1]+  Done                    ./signal1
-

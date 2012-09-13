@@ -1,9 +1,0 @@
--- afficher le contenu d'un arbre a selon le parcours RGD
-procedure afficherRGD(entree arbre <ArbreBinaire[Caractere]>)
-debut
-	si 	non estVide(arbre) alors
-		ecrire(racine(a));
-		afficher(RGD(gauche(a));
-		afficherRGD(droit(a));
-	fin si;
-fin

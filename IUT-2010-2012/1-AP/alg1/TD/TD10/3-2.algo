@@ -1,8 +1,0 @@
-procedure compterAEndroit (entree n <Entier>)
-
-debut
-	si n /= 0 alors
-		compterAEndroit(n - 1);
-		ecrire(n);
-	fin si;
-fin

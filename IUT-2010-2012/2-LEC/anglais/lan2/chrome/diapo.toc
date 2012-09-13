@@ -1,6 +1,0 @@
-\beamer@endinputifotherversion {3.07pt}
-\beamer@sectionintoc {1}{A new operating system}{2}{0}{1}
-\beamer@sectionintoc {2}{Cloud Computing}{3}{0}{2}
-\beamer@sectionintoc {3}{Marketing}{4}{0}{3}
-\beamer@sectionintoc {4}{Chromium OS}{5}{0}{4}
-\beamer@sectionintoc {5}{Conclusion}{6}{0}{5}

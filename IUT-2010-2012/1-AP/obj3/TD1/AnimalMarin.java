@@ -1,3 +1,0 @@
-class animalMarin extends Animal {
-
-}

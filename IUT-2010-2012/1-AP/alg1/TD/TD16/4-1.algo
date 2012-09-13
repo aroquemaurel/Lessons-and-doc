@@ -1,5 +1,0 @@
--- mettre a jour le clasement matchs du championnat sachant que l equipe classee au rang a bp et bc 
-procedure mettreAJourClassement (maj matchs <TabMatchs>, 
-								entree e <Entier>, 
-								entree bp <Entier>, 
-								entree bc <Entier>);

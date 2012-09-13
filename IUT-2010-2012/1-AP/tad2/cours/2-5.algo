@@ -1,5 +1,0 @@
--- construit une un nouveau point en considerant une nouvelle taille t
--- necessite t >0
-fonction nouvelleTaille(entree p <Point>, entree t <Reel>)
-	retourne <Point>
-	declanche tailleInvalide;

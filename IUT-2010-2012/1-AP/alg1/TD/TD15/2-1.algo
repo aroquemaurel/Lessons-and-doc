@@ -1,2 +1,0 @@
-procedure trierTableauParInsertin (maj tab <TabEntier>, entree n <Entier>)
-declanche trancheInvalide;

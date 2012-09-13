@@ -1,1 +1,0 @@
-SELECT DISTINCT villeR FROM resto;

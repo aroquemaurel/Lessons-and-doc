@@ -1,7 +1,0 @@
-fonction palindromeMot(entree mot <tabCaracteres>,
-						entree n)
-						retourne <Booleen>
-debut
-	retourner(palindrome(mot, 1, n));
-fin
-

@@ -1,5 +1,0 @@
---ajoute au rang "rang" une nouvelle entree dans le tableau tabOccs avec un nombre d'occurence egal a un 
-procedure enregistrerOccurence (maj tabOccs <TabCouples>,
-								maj n <Entier>,
-								entree rang <Entier>,
-								entree v <Entier>);

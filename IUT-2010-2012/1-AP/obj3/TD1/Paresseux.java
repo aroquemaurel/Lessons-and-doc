@@ -1,2 +1,0 @@
-class Paresseux extends Animal {
-}
