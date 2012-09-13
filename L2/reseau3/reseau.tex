@@ -1,0 +1,95 @@
+\documentclass[12pt,a4paper,openany]{article}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\input{/home/satenske/cours/includesLaTeX/couleurs.tex}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, linkcolor=vert1, urlcolor=bleu, colorlinks=true]{hyperref}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+
+\newcommand{\titre}{Les réseaux informatiques}
+\newcommand{\sigle}{reseau}
+\newcommand{\semestre}{3}
+
+\input{/home/satenske/cours/listings.tex} %prise en charge du langage algo
+\input{/home/satenske/cours/entete-l2-cours.tex}
+\input{/home/satenske/cours/includesLaTeX/remarquesExempleAttention.tex}
+\input{/home/satenske/cours/includesLaTeX/polices.tex}
+\input{/home/satenske/cours/includesLaTeX/affichageChapitre.tex}
+
+\begin{document}
+	\setcounter{tocdepth}{2}
+	\setcounter{secnumdepth}{3}
+	\maketitle
+	\section{Histoire de la communication}
+		Les humains ont toujours voulu \textbf{communiquer plus vite et plus loin}, ceci en utilisant des codes, alphabets, langages, \ldots
+		
+		\exemple{Les Gaulois, écrit Jules César dans ``La guerre des Gaules'', avec la voix de champ en champ pouvaient transmettre une nouvelle à 240km de distance en une journée.
+
+			Les Grecs, en utilisant des flambeaux disposés de façon à indiquer les lettres de l'alphabet communiquaient, au temps d'Alexandre, de l'Inde à la Grèce en 5 jours.
+			}	
+
+			Le concept de la communication n'a pas changé de nos jours, nous avons toujours un système de codage afin que l'émetteur et le destinataire puisse communiquer. Cependant les supports de la communication ont changé afin de gagner en rapidité (ondes radio, fibre optique\ldots)\footnote{Les supports de communication présentent tous des caractéristiques techniques.}
+
+			\begin{description}
+				\item[1464] Poste Royale (Louis XI)\\
+					L'inconvénient principal était le temps de transmission.
+				\item[1794] Télégraphe optique (Chappe)\\
+			Les inconvénients du télégraphe optique sont la visibilité et l'atténuation\ldots Cependant, nous procédons de la même façon, nous utilisons un système de relais: c'est un fondamental.
+				\item[1832] Télégraphe \'Electrique (Shilling)
+				\item[1837] Code Télégraphique (Morse) et création de l'administration du Télégraphe
+				\item[1854] 1$^{er}$ projet de téléphone (Bourseul)
+				\item[1860] Lois de l'électromagnétisme (Maxwell)
+				\item[1876] Brevet du Téléphone (Bell)
+				\item[1887] \'Etude sur les ondes Radioélectriques (Hertz)
+				\item[1889] Nationalisation de la société Français de Téléphone
+				\item[1892] \'Etude sur la Radiodiffusion (Crooker)
+				\item[1896] Liaison de TSF (Marconi)
+				\item[1897] \'Emission Radio au Panthéon
+				\item[1901] Monopole d'état sur la radiodiffusion
+				\item[1915] Téléphone automatique
+				\item[1917] Télégraphe de Baudot
+				\item[1943] Premier calculateur électronique. Début de l'ère du traitement électronique de l'information: \textbf{Informatique}, 
+					suivit de la volonté d'obtenir un moyen de télécommunications entre les équipements Informatique: \textbf{Réseaux Informatiques}.\\ Ainsi, un support de communication, nécessitait un réseau différent (Son $\Rightarrow$ Radio, Image $\Rightarrow$ TV, Texte $\Rightarrow$ Télégraphe, \ldots). Une fusion va se produire.
+			\end{description}
+
+			Composants $\Rightarrow$ Signal $\Rightarrow$ Équipements $\Rightarrow$ Protocoles $\Rightarrow$ Architectures $\Rightarrow$ Services.
+
+	\section{\'Evolution des réseaux}
+			De la même manière que la téléphonie et le télégraphe, nous sommes passé d'une phase expérimentale à une phase d'utilisation. Ainsi l'Informatique à beaucoup évolué. Cette évolution à été progressive, il y a eu plusieurs étapes qui ont marqués les réseaux de communication.
+			\paragraph{Coûts des équipements Informatiques / Coûts de la Communication} À l'origine seul les grands comptes étaient capable d'avoir des équipements informatiques. Ainsi les SSI\footnote{Société de Service en Informatiques} sont nées.
+			\paragraph{Système de Télétraitement} Ces systèmes ont été destiné aux entreprise, afin qu'a distance elles puissent utiliser la puissance d'un calculateur qui était géographiquement loin. Une première structure de réseau Informatique fut créée.
+			\remarque{Nous sommes en train de revenir à cette solution créée 40 ans auparavant: Le cloud computing}
+
+			Afin de construire ces structures de réseaux de communication nous avons mis en place des équipements :
+			\begin{itemize}
+				\item Processeur Frontal de Communication\footnote{FEP: Front End Processor}
+				\item Multiplexeurs et concentrateurs
+				\item Liaisons Spécialisées
+				\item Modem
+				\item Commutateurs
+				\item Protocole de communication
+			\end{itemize}
+	\section{Classification}
+	\section{Topologie}
+	\section{Normalisation}
+	\section{Architecture de communication}
+	\section{Modèle OSI}
+	\section{Approche métiers}
+
+\end{document}
+
+
+
+
+
+
