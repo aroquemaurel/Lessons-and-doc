@@ -1,3 +1,0 @@
-type compteInformatique enregistrement
-	motDePasse <Chaine>,
-	fichier <Liste[Fichier]>;

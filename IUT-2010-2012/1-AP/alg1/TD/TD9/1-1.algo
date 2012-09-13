@@ -1,3 +1,0 @@
---lis le mois et l'annee
-procedure lireMois( sortie mois <Entier>,
-					sortie an <Entier>);	

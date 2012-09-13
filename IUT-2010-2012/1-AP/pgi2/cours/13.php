@@ -1,4 +1,0 @@
-<?php
-include('fichierALaCon.php');
-?>
-

@@ -1,4 +1,0 @@
--- s = add(p,q)
-recopier les caracteres '*' de p dans s;
-recopier les caracteres '*' de q dans s;
-ajouter le caractere '!' a s;

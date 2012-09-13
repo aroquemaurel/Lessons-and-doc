@@ -1,6 +1,0 @@
-constante l<Entier> = 5;
-type FileAvecPriorite[T]: tableau [1 a P] de <Liste[T]>;
-type Liste[T]: pointeur sur <Cellule[T]>;
-type Cellule[T]: enregistrement
-	element <T>,
-	suivant <Liste[T]>;

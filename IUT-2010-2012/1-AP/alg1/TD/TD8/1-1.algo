@@ -1,3 +1,0 @@
--- Calcul la somme des chiffres de l'entier e
-fonction sommeChiffre (entree e <Entier>)
-						retourne <Entier>;

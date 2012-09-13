@@ -1,6 +1,0 @@
-ieme(changerIeme(tab,i,e),j)
-si i = j alors
-	e
-sinon	
-	ieme(tab,j);
-fin si;

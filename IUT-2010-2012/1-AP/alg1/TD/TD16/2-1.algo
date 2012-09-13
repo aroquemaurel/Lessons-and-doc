@@ -1,2 +1,0 @@
--- determine la moyenne du nombre de maths gagnes par equipe sur la saison
-fonction moyenneMathsGagnes(entree maths <TabMatchs>) retourne <Reel>;

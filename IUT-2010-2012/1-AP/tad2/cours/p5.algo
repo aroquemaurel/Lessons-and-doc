@@ -1,3 +1,0 @@
-type PtrEntier : pointeur sur <Entier>;
-
-allouer(p);

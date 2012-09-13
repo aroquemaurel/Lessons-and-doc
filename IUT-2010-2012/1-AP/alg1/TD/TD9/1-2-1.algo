@@ -1,4 +1,0 @@
---Fournit le nombre de jours d'un mois d'une annee donnee 
-fonction nbJoursMois(entree mois <Entier>,
-					 entree an <Entier>)
-					 retourne <Entier>;

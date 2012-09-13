@@ -1,3 +1,0 @@
--- retourne la taille d'un point
-fonction taille (entree p <Point>)
-	retourne <Reel>;

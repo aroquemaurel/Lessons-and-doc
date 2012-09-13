@@ -1,9 +1,0 @@
-\beamer@endinputifotherversion {3.07pt}
-\select@language {french}
-\beamer@sectionintoc {1}{The notion of time}{6}{0}{1}
-\beamer@subsectionintoc {1}{1}{An abstract notion}{7}{0}{1}
-\beamer@subsectionintoc {1}{2}{Humans have always wanted to control the time}{9}{0}{1}
-\beamer@sectionintoc {2}{The scientific developments of time travel}{11}{0}{2}
-\beamer@subsectionintoc {2}{1}{A physical impossibility}{12}{0}{2}
-\beamer@subsectionintoc {2}{2}{Challenged in the twentieth century}{13}{0}{2}
-\beamer@sectionintoc {3}{The time travel, an inspiration of science fiction}{15}{0}{3}
