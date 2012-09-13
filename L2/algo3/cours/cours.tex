@@ -1,0 +1,173 @@
+\documentclass[12pt,a4paper,openany]{article}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\input{/home/satenske/cours/includesLaTeX/couleurs.tex}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, linkcolor=vert1, urlcolor=bleu, colorlinks=true]{hyperref}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+
+\newcommand{\titre}{Algorithmie en langage C}
+
+\newcommand{\pole}{}
+\newcommand{\sigle}{}
+
+\newcommand{\semestre}{3}
+
+\input{/home/satenske/cours/listings.tex} %prise en charge du langage algo
+\input{/home/satenske/cours/entete_iut-cours.tex}
+\input{/home/satenske/cours/includesLaTeX/remarquesExempleAttention.tex}
+\input{/home/satenske/cours/includesLaTeX/polices.tex}
+\input{/home/satenske/cours/includesLaTeX/affichageChapitre.tex}
+
+\begin{document}
+	\setcounter{tocdepth}{2}
+	\setcounter{secnumdepth}{3}
+	\maketitle
+	\section{Paradigmes de programmation}
+		Un paradigme est une manière de programmer, il en existe plusieurs: 
+		\subsection{Programmation fonctionnelles}
+		\begin{description}
+		\item[Type de langage] \footnote{Traduction du langage source vers le langage cible(compilation) + une édition de liens, qui est une instanciation sur la machine d'execution (Recherche d'adresse, mémoire, résolution de fonctions) Elle peut être statique ou dynamique. Ex: C, Adda} ou interprétés\footnote{
+		Le langage source est traduit en langage cible à la volée par un intérpreteur. Il est ainsi possible de modifier le programme pendant le fonctionnement du programme.}. Ce paragradigme
+		\item[Entité de base] Appel de fonction
+		\item[Structure de contrôle] Approche récursive. 
+
+
+		Elle est utilisée pour des systèmes critiques\footnote{Besoin d'une sureté de fonctionnement}. Elle à une approche très mathématiques, ce qui 
+		permet d'avoir des outils de preuves générique.
+
+		Elle possède une abstraction de l'environnement d'execution, approche détachée de la machine, pas de notion de mémoire.
+
+		\exemple{Le Caml est un langage de programmation fonctionnelle}
+	\end{description}
+		\subsection{Programmation déclarative}
+		\begin{description}
+			\item[Type de langage] Intérprété
+			\item[Entité de base] Règles de déduction logique.
+			\item[Structure de contrôle  ]
+			Possède une abstraction de la machine cible.
+			\exemple{Le prolog est un langage de programmation déclarative}
+		\end{description}
+		\subsection{Programmation Impérative}
+			La programmation est directement liée à la machine d'execution.
+			\begin{description}	
+				\item[Type de langage] Compilé ou Intérprété
+				\item[Entité de base] Affectation d'une valeure à une variable, qui est une place en mémoire.
+				\item[Structure de contrôle] Séquence, séléction, répétition.
+			\exemple{C, Python, Ada \ldots}
+			\end{description}
+
+	\section{Programmation impérative en C}
+	\'Enormement de langage sont fondés sur la syntaxe du langage C.
+
+	Il a été développé dans les années 1960 par Denis Ritchie. %% Otho? 
+
+	On trouvera toujours une partie description de l'organisation des données en mémoire\footnote{C'est un grand tableau découpé en cases mémoire.},
+	nous aurons donc une déclaration de variables et un type de données.
+	\begin{lstlisting}[caption=Syntaxe de déclaration de variable]
+type nomVariable;		
+	\end{lstlisting}
+	\subsection{Description de l'organisation des données en mémoire}
+	Le C possède différents type de données: 
+	\begin{description}
+		\item[int] Entiers signés
+		\item[unsigned int] Entiers non signés 
+		\item[float] Nombre réél sur 32bits. 
+		\item[double] Nombre réél sur 64bits.
+		\item[char] Entier signé sur 8bits.
+		\item[pointeur] type* ptr; La case mémoire contient une adresse.
+	\end{description}
+	\subsection{Code syntaxe}
+	\subsubsection{Blocs}
+\begin{lstlisting}[language=C, caption=Syntaxe de déclaration de variable]
+bloc { // début du bloc
+} //fin du bloc
+\end{lstlisting}
+	Toute variable est visible dans son bloc de déclaration et ses blocs imbriqués.
+
+	Un bloc transforme une séquence en action.
+
+	\subsubsection{Séquence}
+\begin{lstlisting}[language=C, caption=Syntaxe de déclaration de variable]
+action 1;
+action 2;
+action 3;
+\end{lstlisting}
+	\subsubsection{Séléction}
+\begin{lstlisting}[language=C, caption=Syntaxe de déclaration de variable]
+if(conditon) {
+	action 1;
+} else {
+	action 2;
+}
+\end{lstlisting}
+Condition est une expression booléenne\footnote{Expression renvoyant vrai($!= 0$ ou faux($=0$)} %% TODO
+
+\subsubsection{Répétition}
+\begin{lstlisting}[language=C, caption=Syntaxe de déclaration de variable]
+while(condition) {
+	action;
+}
+\end{lstlisting}
+Condition est une expression booléenne, tant que la condition est vrai, les actions se repettent.
+
+\subsubsection{Affectation}
+\begin{lstlisting}[language=C, caption=Syntaxe de déclaration de variable]
+variable = expression;
+\end{itemize}
+\end{lstlisting}
+\subsubsection{Opérateurs de base sur les types}
+\begin{description}
+	\item[=] Affectation
+	\item[+, -, /, *] Opérateurs arithmétiques.
+	\item[\&\&, ||, !] Opérateurs logiques 
+	\item[==, !=, <, >, <=, >=] Opérateurs booléens
+	\item[++i, i++, --i, i--] Opérateur unaires d'incrémentation.
+\end{description}
+\subsubsection{Opérateurs d'entrées / sorties}
+\paragraph{Ecriture}
+\begin{lstlisting}[language=C, caption=Syntaxe de déclaration de variable]
+	printf('format', var1, var2);
+\end{lstlisting}
+La chaine format peut contenir une chaine de caractères, avec des caractères spéciaux : 
+\begin{description}
+	\item['\%d'] Entier sous forme décimale
+	\item['\%ox'] Entier sous forme héxadécimale
+	\item['\%f'] Flottant 
+	\item['\%c'] Caractère 
+	\item['\%s'] Chaine de caractères 
+	\item['\\n'] Vide le buffer et fait un retour chariot 
+	\item['\\t'] Tabulation 
+	\item['\\r'] Revient en début de ligne.
+	\item['\ldots'] RTFM	
+\end{description}
+Les différents formats doivent être dans l'ordre des variables passés en paramètres.
+\paragraph{Lecture}
+\begin{lstlisting}[language=C, caption=Syntaxe de déclaration de variable]
+	scanf('format', &var1);
+\end{lstlisting}
+\attention{Ne jamais utiliser scanf}
+
+
+% Glossaire
+	% Compilation
+	% Interpretation
+	% Edition de liens
+	% Intérpreteur
+\end{document}
+
+
+
+
+
+
