@@ -1,0 +1,38 @@
+\documentclass[12pt,a4paper,openany]{article}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+
+\newcommand{\titre}{Les vues -- Les triggers}
+\newcommand{\numTD}{5}
+
+\newcommand{\module}{Base de données}
+\newcommand{\sigle}{bdd}
+
+\newcommand{\semestre}{3}
+
+\input{/home/satenske/cours/listings.tex} %prise en charge du langage algo
+\input{/home/satenske/cours/entete_iut-td.tex}
+
+\begin{document}
+	\maketitle
+	\section{Écriture de vues pour l'écriture de requetes complexes}
+	\lstinputlisting[language=SQL]{1.sql}
+	\section{Utilisation de triggers pour la génération automatique des valeurs de colonnes ``dérivées''}
+	\lstinputlisting[language=SQL]{2.sql}
+	\lstinputlisting[language=SQL]{2GrosPoint.sql}
+\end{document}
+
+
+
+

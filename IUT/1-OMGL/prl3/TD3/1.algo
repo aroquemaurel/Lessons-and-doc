@@ -1,0 +1,43 @@
++allumerPersonnage()\\
++eteindrePanneaux()\\
++EditerClassement()\\
++EditerParticipants()\\
++EditerAbandons()\\
++InscrireCoureur(p\_nom:String, p_prenom:String, p_equipe):integer (dossard) 
+	 lève "Equipe inexistante" si l'equipe n'existe pas
+		  "paramêtre invalide" si p_nom, p_prenom sont vide	  
+
++ajouterEquipe(p_nom:String)
+	lève "Equipe existe déjà" si l'équipe est déjà enregistrée							
+
++saisirInformationArrivant(p_dossard:integer, tps:String)	
+	lève "Coureur inexistant" si le dossard ne correspond à aucun coureur
+		 "Paramètre invalide" 
+		 "coureur déjà arrivé" si un temps à déjà été saisie
+
++initialiser()
+  lève "course Terminée"
+
++modifierNomCoureur(p_dossard:integer, p_nouvNom:String)
+	lève "coureur inexistant", "paramètre invalide"							 
+														 
++modifierPrenomCoureur(p_dossard:integer, p_nouvPrenom:String)
+	lève "coureur inexistant", "paramètre invalide"							 
+
++modifierNomEquipeCoureur(p_ancienNom:String, p_nouvNom:String)
+	lève "équipe inexistant", "paramètre invalide"							 
+
+
++supprimerCoureur(p_dossard:integer)
+	lève "coureur inexistant"
+														 
++supprimerEquipe(p_ancienNom:String)
+	lève "équipe inexistant"
+
++modifierEquipeCoureur(p_dossard:integer, p_nomEquipe:string)
+	lève "Coureur inexistant", "Equipe inexistante"
+
++modifierArriveCoureur(p_dossard:integer, p_temps:String)
+	lève "coureur inexistant", "paramètre invalide"							 
+
++finaliser()

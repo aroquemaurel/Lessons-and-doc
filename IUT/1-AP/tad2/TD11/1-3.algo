@@ -1,0 +1,57 @@
+procedure creerFile(sortie f <FileAvecPriorite[T]>)
+glossaire
+	i <Entier>;
+debut
+	i <- 1;
+	tantque i <= p faire
+		f[i] <- NULL;
+		i <- i+1;
+	fin tantque;
+fin
+
+procedure defiler(maj file <FileAvecPriorite[T]>, sortie element <T>)
+	declenche fileVide;
+glossaire
+	i <Entier>;
+	trouvé <Booleen>;
+	courant <Liste[T]>;
+debut
+	trouvé <- faux;
+	i <- p;
+	tantque (i > 0) et (non trouvé) faire
+		si l[i] /= NULL alors
+			trouvé <- vrai;
+			courant <- file[i];			
+			file[i] <- file[i]$\uparrow$.suivant;
+			element <- file[i]$\uparrow$.element;
+			liberer(courant);
+		fin si;
+		i <- i - 1;
+	fin tantque;
+	si non trouvé alors 
+		declencher fileVide;
+	fin si;
+fin 
+
+procedure enfiler(maj file <FileAvecPriorite[T]>, entree ele <T>, entree propriete <Entier>)
+	declenche filePleine
+glossaire
+	nouveau <Liste[T]>;
+	courant <Liste[T];
+debut
+	allouer(nouveau);
+	si nouveau = NULL alors
+		declencher filePleine;
+	fin si;
+	nouveau$\uparrow$.element <- ele;
+	nouveau$\uparrow$.suivant <- NULL;
+	si file[propriete] = NULL alors
+		file[propriete] <- nouveau;
+	sinon	
+		courant <- file[propriete];
+		tantque courant$\uparrow$.suivant /= NULL faire
+			courant <- courant$\uparrow$.suivant;
+		fin tantque; 
+		courant$\uparrow$.suivant <- nouveau;
+	fin si;
+fin	

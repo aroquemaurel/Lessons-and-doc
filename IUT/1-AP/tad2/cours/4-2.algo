@@ -1,0 +1,50 @@
+type Point : pointeur sur <EnrPoint>;
+type EnrPoint enregistrement
+	abscisse <Reel>,
+	ordonnee <Reel>,
+	couleur <Couleur>,
+	taille <Reel>;
+
+-- construire un point d'abscisse x, d'ordonnee y, de couleur c, de taille t 
+-- Necessite t > 0
+fonction unPoint (entree x <Reel>, entree y <Reel>, entree c <Couleur>, entree t<Reel>)
+			retourne <Point>
+			declenche tailleInvalide
+
+glossaire
+	p <Point> -- point retourne par la fonction /!\ pointeur
+	
+debut
+	si t <= 0 alors
+		declencher (tailleInvalide);
+	fin si;
+	allouer(p);
+	p$\uparrow$.abscisse <- x;
+	p$\uparrow$.ordonne <- y;
+	p$\uparrow$.couleur <- c;
+	p$\uparrow$.taille <- t;
+	retourner(p);
+fin
+-- fonction pointOrigine identique au code de pointOrigine en representation statique (cf exemple 1)
+
+--fournit la taille d'un point p
+fonction taille (entree p <Point>)
+	retourne <Reel>
+debut
+	retourner(p$\uparrow$.taille);
+fin
+
+-- modifier la taille d'un point p par la valeur t comme nouvelle taille 
+-- Necessite t > 0
+procedure modifierTaille(maj p <Point>, entree t <Reel>)
+	declenche tailleInvalide
+debut
+	si t <= 0 alors
+		declencher(tailleInvalide);
+	fin si;
+	p$\uparrow$.taille <- t
+fin 
+-- $\vdots$
+-- cf Moodle pour l'implementation complete en representation dynamique	
+
+

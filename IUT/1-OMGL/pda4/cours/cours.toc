@@ -1,0 +1,64 @@
+\select@language {french}
+\contentsline {chapter}{Avant-propos -- Les m\IeC {\'e}thodes agiles: une r\IeC {\'e}ponse \IeC {\`a} un malaise ?}{i}{chapter*.1}
+\contentsline {section}{Les causes de ces echecs}{ii}{section*.2}
+\contentsline {paragraph}{La conformit\IeC {\'e} aux besoins}{ii}{section*.3}
+\contentsline {paragraph}{Les technologies}{ii}{section*.4}
+\contentsline {paragraph}{Les m\IeC {\'e}thodes}{ii}{section*.5}
+\contentsline {section}{Les facteurs cl\IeC {\'e} de l'\IeC {\'e}chec}{iii}{section*.6}
+\contentsline {section}{Les facteurs aidant \IeC {\`a} la r\IeC {\'e}ussite}{iii}{section*.7}
+\contentsline {section}{Quelques explications de l'\IeC {\'e}chec}{iii}{section*.8}
+\contentsline {paragraph}{Le client ne ma\IeC {\^\i }trise pas le projet}{iii}{section*.9}
+\contentsline {paragraph}{Cycles de d\IeC {\'e}veloppement trop long}{iii}{section*.10}
+\contentsline {chapter}{\numberline {1}G\IeC {\'e}n\IeC {\'e}ralit\IeC {\'e}s sur les m\IeC {\'e}thodes Agiles}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Historique}{1}{section.1.1}
+\contentsline {paragraph}{}{1}{section*.12}
+\contentsline {section}{\numberline {1.2}Caract\IeC {\'e}ristiques des m\IeC {\'e}thodes Agiles}{2}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}L'humain est au centre du d\IeC {\'e}veloppement}{2}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}La qualit\IeC {\'e} au centre du d\IeC {\'e}veloppement}{2}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.3}M\IeC {\'e}thodes Agiles Versus M\IeC {\'e}thodes classiqus}{2}{subsection.1.2.3}
+\contentsline {section}{\numberline {1.3}Panorama de diff\IeC {\'e}rentes m\IeC {\'e}thode sagiles}{3}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}UP}{3}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}eXtreme Programming}{4}{subsection.1.3.2}
+\contentsline {subsubsection}{\numberline {1.3.2.1}Valeurs clefs}{4}{subsubsection.1.3.2.1}
+\contentsline {paragraph}{Communication}{4}{section*.13}
+\contentsline {paragraph}{Simplicit\IeC {\'e}}{4}{section*.14}
+\contentsline {paragraph}{Feedback}{4}{section*.15}
+\contentsline {paragraph}{Courage}{4}{section*.16}
+\contentsline {subsubsection}{\numberline {1.3.2.2}Quelques pratiques}{4}{subsubsection.1.3.2.2}
+\contentsline {subsection}{\numberline {1.3.3}Dynamic Software Development Method}{5}{subsection.1.3.3}
+\contentsline {subsection}{\numberline {1.3.4}Adaptive Software Development}{6}{subsection.1.3.4}
+\contentsline {subsubsection}{\numberline {1.3.4.1}Sp\IeC {\'e}culer}{6}{subsubsection.1.3.4.1}
+\contentsline {subsubsection}{\numberline {1.3.4.2}Collaborer}{6}{subsubsection.1.3.4.2}
+\contentsline {subsubsection}{\numberline {1.3.4.3}Apprendre}{6}{subsubsection.1.3.4.3}
+\contentsline {subsection}{\numberline {1.3.5}Crystal Clear}{6}{subsection.1.3.5}
+\contentsline {paragraph}{Les points clefs}{6}{section*.17}
+\contentsline {subsection}{\numberline {1.3.6}\bsc {SCRUM}}{7}{subsection.1.3.6}
+\contentsline {section}{\numberline {1.4}Synth\IeC {\`e}se}{7}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}Comparaisons entre les m\IeC {\'e}thodes}{7}{subsection.1.4.1}
+\contentsline {chapter}{\numberline {2}Scrum}{8}{chapter.2}
+\contentsline {section}{\numberline {2.1}R\IeC {\^o}les}{8}{section.2.1}
+\contentsline {paragraph}{Le Product Owner}{8}{section*.18}
+\contentsline {paragraph}{Le Scrum master}{8}{section*.19}
+\contentsline {paragraph}{L'\IeC {\'e}quipe}{8}{section*.20}
+\contentsline {section}{\numberline {2.2}Timeboxes}{8}{section.2.2}
+\contentsline {paragraph}{Timeboxes}{8}{section*.21}
+\contentsline {section}{\numberline {2.3}Story}{8}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}\IeC {\'E}l\IeC {\'e}ments composants la story}{9}{subsection.2.3.1}
+\contentsline {section}{\numberline {2.4}Sprints}{9}{section.2.4}
+\contentsline {section}{\numberline {2.5}Revue}{10}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}\IeC {\'E}tapes}{10}{subsection.2.5.1}
+\contentsline {section}{\numberline {2.6}Artefacts}{10}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Backlog produits}{10}{subsection.2.6.1}
+\contentsline {subsubsection}{\numberline {2.6.1.1}Objectif}{10}{subsubsection.2.6.1.1}
+\contentsline {subsubsection}{\numberline {2.6.1.2}R\IeC {\^o}le}{10}{subsubsection.2.6.1.2}
+\contentsline {subsection}{\numberline {2.6.2}Plan de sprint}{11}{subsection.2.6.2}
+\contentsline {subsection}{\numberline {2.6.3}Plan de releases}{11}{subsection.2.6.3}
+\contentsline {subsection}{\numberline {2.6.4}Burndown}{11}{subsection.2.6.4}
+\contentsline {chapter}{\numberline {A}Signification des acronymes}{12}{appendix.A}
+\contentsline {paragraph}{AGL}{12}{section*.22}
+\contentsline {paragraph}{MOA}{12}{section*.23}
+\contentsline {paragraph}{MOE}{12}{section*.24}
+\contentsline {paragraph}{RE}{12}{section*.25}
+\contentsline {paragraph}{SWAT}{12}{section*.26}
+\contentsline {paragraph}{UC}{12}{section*.27}
+\contentsline {paragraph}{US}{12}{section*.28}

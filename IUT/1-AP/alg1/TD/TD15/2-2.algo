@@ -1,0 +1,14 @@
+procedure trierTableauParInsertin (maj tab <TabEntier>, entree n <Entier>)
+declanche trancheInvalide
+glossaire
+	i <Entier>; --indice de parcours du taleau
+debut
+	si n < 1 ou n > N alors
+		declencher(trancheInvalide);
+	fin si;
+	i <- 2; --1
+	tantque i < n faire
+		insererValeur(tab, i-1, tab[i]):--2
+		i <- i+1;--2
+	fin tantque;
+fin

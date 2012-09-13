@@ -1,0 +1,2 @@
+fonction nbEquipesAuDessusMoyenne(entree matchs <TabMatchs>)
+	retourne <Entier>;

@@ -1,0 +1,40 @@
+\documentclass{article}
+
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+
+\newcommand{\titre}{Les signaux}
+\newcommand{\numTP}{2}
+
+\newcommand{\module}{Gestion des processus}
+\newcommand{\sigle}{gpr}
+
+\newcommand{\semestre}{3}
+
+\input{/home/satenske/cours/listings.tex} %prise en charge du langage algo
+\input{/home/satenske/cours/entete_iut-tp.tex}
+
+\begin{document}
+	\maketitle
+	\section{Exercice 1}
+	\lstinputlisting[language=C, caption=Exercice 1 -- signal1.c]{1.c}
+	\newpage
+	\section{Exercice 2}
+	\lstinputlisting[language=C, caption=Exercice 2 -- signal2.c]{2.c}
+	\section{Exercice 3}
+	\lstinputlisting[language=C, caption=Exercice 3 -- signal3.c]{3.c}
+\end{document}
+
+
+

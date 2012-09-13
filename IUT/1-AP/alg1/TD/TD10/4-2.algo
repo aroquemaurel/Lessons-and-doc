@@ -1,0 +1,11 @@
+fonction palindrome (entree mot <tabCaracteres>,
+					entree i <Entier>,
+					entree j <Entier>,
+					retourne <Booleen>
+debut
+	si i >= j alors
+		retourner(VRAI);
+	sinon
+		retourner((mot[i] = mot[j]) et palindrome (mot, i + 1, j - 1));
+	fin si;
+fin

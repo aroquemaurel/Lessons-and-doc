@@ -1,0 +1,61 @@
+\documentclass{article}
+
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+
+\newcommand{\titre}{Langage de Description de Données}
+\newcommand{\numTD}{1}
+
+\newcommand{\module}{Base de données}
+\newcommand{\sigle}{bdd}
+
+\newcommand{\semestre}{3}
+
+\input{/home/satenske/cours/listings.tex} %prise en charge du langage algo
+\input{/home/satenske/cours/entete_iut-td.tex}
+
+\begin{document}
+	\maketitle
+	\section{}
+	\lstinputlisting[language=SQL, caption=Création de structures]{1.sql}	
+	\section{}
+	\lstinputlisting[language=SQL, caption=Recopie de table]{2.sql}	
+	\section{}
+	\lstinputlisting[language=SQL, caption=Modification de table]{3.sql}	
+	\section{}
+	\lstinputlisting[language=SQL, caption=Contrainte]{4.sql}	
+	\section{}
+	Pour voir les données: \textbf{select}\\
+	Pour voir la structure: \textbf{describe}\\
+	Pour voir les contraintes mise en place:
+	\lstinputlisting[language=SQL, caption=Visualiser les contraintes]{5.sql}	
+	\section{}
+	\lstinputlisting[language=SQL, caption=Visualiser le contenu]{6.sql}	
+	\section{}
+	\lstinputlisting[language=SQL, caption=Modifier la structure]{7.sql}	
+	\section{}
+	\lstinputlisting[language=SQL, caption=Modifier la structure]{8.sql}	
+	\section{}
+	\lstinputlisting[language=SQL, caption=Créer une table par un select]{9.sql}	
+	\section{}
+	\lstinputlisting[language=SQL, caption=Créer une table par un select]{10.sql}	
+	\section{}
+	\lstinputlisting[language=SQL, caption=Modifier l'ordre des colonnes]{11.sql}	
+\end{document}
+
+
+
+
+
+

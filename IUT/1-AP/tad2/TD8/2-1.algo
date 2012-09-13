@@ -1,0 +1,15 @@
+fonction longueur (entree l <Liste[T]>)
+	retourne <Entier> 
+glossaire
+	k <Entier>; -- compteur de cellules
+	aux <Liste[T]>; -- pour parcourir les cellules
+debut
+	k <- 0;
+	aux <- l;
+	tantque aux /= NULL faire
+		k <- k + 1;
+		aux <- aux$\uparrow$.suivant;
+	fin tantque;
+	retourner (k);
+fin
+

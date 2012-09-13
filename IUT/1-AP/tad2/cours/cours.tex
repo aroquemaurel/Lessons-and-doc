@@ -1,0 +1,55 @@
+\documentclass[12pt,a4paper,openany]{report}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+%\usepackage[frenchb]{babel}
+%\usepackage{layout}
+%\usepackage{setspace}
+%\usepackage{soul}
+%\usepackage{ulem}
+%\usepackage{eurosym}
+%\usepackage{bookman}
+%\usepackage{charter}
+%\usepackage{newcent}
+%\usepackage{lmodern}
+%\usepackage{mathpazo}
+%\usepackage{mathptmx}
+%\usepackage{url}
+%\usepackage{verbatim}
+%\usepackage{moreverb}
+%\usepackage{wrapfig}
+%\usepackage{amsmath}
+%\usepackage{mathrsfs}
+%\usepackage{asmthm}
+%\usepackage{makeidx}
+\usepackage{tikz} %Vectoriel
+\usepackage{listingsutf8}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+
+
+\newcommand{\titre}{Type abstrait de données}
+
+\newcommand{\module}{Type abstrait de données}
+\newcommand{\sigle}{tad}
+
+\newcommand{\semestre}{2}
+
+\input{/home/satenske/cours/listings.tex} %prise en charge du langage algo
+\input{/home/satenske/cours/entete_iut-cours.tex}
+
+\begin{document}
+	\maketitle
+	\chapter{Les pointeurs}
+		\input{pointeurs.tex}	
+	\chapter{Les types abstraits de données}
+		\input{tad.tex}	
+	\chapter{L'implémentation d'un Type Abstrait de Données}
+		\include{implementationTad}							
+		\newpage
+\end{document}

@@ -1,0 +1,91 @@
+\documentclass{article}
+
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+
+\newcommand{\titre}{TD PGE}
+\newcommand{\numTD}{1}
+
+\newcommand{\module}{Programmation Evenementielle}
+\newcommand{\sigle}{pge}
+
+\newcommand{\semestre}{3}
+
+\input{/home/satenske/cours/listings.tex} %prise en charge du langage algo
+\input{/home/satenske/cours/entete_iut-td.tex}
+
+\begin{document}
+	\maketitle
+	\section{Question 1}
+	\begin{tabular}{c|c|c|c|c|c}
+		&	CreationCourse & inscription & inscriptionFinie & courseLancee & courseFinie \\
+		\hline
+		OPT\_inscrire & G & A & G & &\\
+		\hline
+		OPT\_saisirInfo& A & G & G&&\\
+		\hline
+		SaisirTempsCourse & G & G & G&&\\
+		\hline
+		ImpInscrits & G & G &G&&\\
+		\hline
+		ImpAbandons & G & G & G&&\\
+		\hline
+		ImpClassement & G & G & G&&\\
+		\hline
+		impInscrits sans HD & G & G & A&&\\
+		\hline
+		impInscrits avec HD & G & G & A&&\\
+		\hline
+	\end{tabular}
+	\\ \\
+	\section{Question 2}
+	\lstinputlisting[language=wl, caption=2. Met à jour gsEtatDeLaCourse]{2.wl}	
+	\section{Question 3}
+	\lstinputlisting[language=wl, caption=3.]{3.wl}	
+	\section{Question 4}
+	\lstinputlisting[language=wl, caption=4. procédure generationHeureDepart]{4.wl}	
+	\section{Question 5}
+
+	\begin{tabular}{c c|c|c|}
+		\hline
+			& \textbf{Menu} & \textbf{Organisateur} & \textbf{Chronometreur}\\	
+		\hline
+			Coureur & 1 & Default & Invisible \\ 
+		\hline
+			& 2 & Default &  Default\\ 
+		\hline
+			Entier & 3 & Default & Default \\ 
+		\hline
+			Course & 4 & Default &  Invisible\\ 
+		\hline
+			& 5 & Defaut &  \\ 
+		\hline
+			& 6 & Invisible&  Defaut\\ 
+		\hline
+			& 7 & Defaut &  Defaut\\ 
+		\hline
+			& 8 & Defaut &  Defaut\\ 
+		\hline
+			& 9 & Defaut &  Defaut\\ 
+		\hline
+			& 10 & Defaut &  Defaut\\ 
+		\hline
+	\end{tabular}
+
+\end{document}
+
+
+
+
+

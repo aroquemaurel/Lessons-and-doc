@@ -1,0 +1,2 @@
+fonction indiceMinBc (entree matchs <TabMatchs>)
+retourne <Entier>;

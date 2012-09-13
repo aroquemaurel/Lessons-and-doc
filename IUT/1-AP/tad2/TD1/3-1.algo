@@ -1,0 +1,7 @@
+--contenir la liste l à partir du format des données à lire e0, e1, ... ei, ... en e0
+Lire la valeur du marqueur de fin e0;
+Lire la premiere valeure;
+tantque valeur courante /= valeur marqueur de fin e0 faire
+	inserer la valeur courante lue en fin de la liste l;-- /!\ 
+	lire la valeure suivante;
+fin tantque; 

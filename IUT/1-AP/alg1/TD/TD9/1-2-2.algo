@@ -1,0 +1,18 @@
+--retourne le nombre de jours donnee d'une annee donnee
+fonction nombreJoursMois(entree mois <Entier>,
+						 entree annee <Entier>)
+						 retourne <Entier>
+debut
+	si mois = 2 alors
+		si bissextile(annee) alors
+			retourner(29);
+		sinon
+			retourner(28);
+		fin si;
+	sinon
+		si (mois = 4) ou (mois = 6) ou (mois = 9) ou (mois = 11) alors
+			retourner(30);
+		sinon
+			retourner(31);
+		fin si;
+fin

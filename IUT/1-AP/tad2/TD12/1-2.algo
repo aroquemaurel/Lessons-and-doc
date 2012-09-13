@@ -1,0 +1,26 @@
+procedure chercherPremierEmplacementLibre(entree table <Table[T1,T2]>, 
+										entree debutRecherche <Entier>, 
+										sortie videExiste <Booleen>, 
+										sortie emplacementLibre<Entier>)
+glossaire
+	i <Entier>; -- indice de parcours de la table 
+debut
+	si tab[debutRecherche].libre alors
+		videExiste <- emplacementLibre;
+		emplacementLibre <- debutRecherche;
+	sinon
+		-- rechercher le premier emplace libre à partir 
+		-- de debutRecherche + 1
+		i <- (debutRecherche + 1) mod TAILLE_TABLEAU;
+		trouve <- FAUX;
+
+		tantque i /= debutRecherche et non videExiste faire
+			si tab[i].libre alors
+				videExiste <- VRAI;
+				emplacementLibre <- i;
+			sinon
+				i <- (i + 1) mod TAILLE_TABLEAU;
+			fin si;
+		fin tantque;
+	fin si;
+fin

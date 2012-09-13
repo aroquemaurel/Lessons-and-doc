@@ -1,0 +1,5 @@
+procedure creerListe (sortie l <Liste[T]>)
+debut
+	l <- NULL;
+fin	
+

@@ -1,0 +1,8 @@
+glossaire
+	p1 <Point>;
+	p2 <Point>;
+debut
+	p1 <- unPoint(1.0, 0.0, noir, 3.0); -- Interdit
+	p2 <- p1; -- Interdit
+	--Entraine une erreur a la compilation, operation non definie.
+fin

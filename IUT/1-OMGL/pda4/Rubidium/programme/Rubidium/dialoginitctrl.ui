@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DialogInitCtrl</class>
+ <widget class="QDialog" name="DialogInitCtrl">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>845</width>
+    <height>365</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Initialiser les contrôles</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTableView" name="controles"/>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="layoutPlusMoin">
+     <item>
+      <widget class="QPushButton" name="ajouter">
+       <property name="icon">
+        <iconset resource="ressources.qrc">
+         <normaloff>:/icones/ajouter</normaloff>:/icones/ajouter</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="supprimer">
+       <property name="icon">
+        <iconset resource="ressources.qrc">
+         <normaloff>:/icones/supprimer</normaloff>:/icones/supprimer</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="boutons">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Close</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>controles</tabstop>
+  <tabstop>ajouter</tabstop>
+  <tabstop>supprimer</tabstop>
+  <tabstop>boutons</tabstop>
+ </tabstops>
+ <resources>
+  <include location="ressources.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>ajouter</sender>
+   <signal>pressed()</signal>
+   <receiver>DialogInitCtrl</receiver>
+   <slot>ajouter()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>37</x>
+     <y>321</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>3</x>
+     <y>448</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>supprimer</sender>
+   <signal>pressed()</signal>
+   <receiver>DialogInitCtrl</receiver>
+   <slot>supprimer()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>107</x>
+     <y>321</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-3</x>
+     <y>372</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>boutons</sender>
+   <signal>clicked(QAbstractButton*)</signal>
+   <receiver>DialogInitCtrl</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>617</x>
+     <y>355</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>609</x>
+     <y>488</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>ajouter()</slot>
+  <slot>supprimer()</slot>
+ </slots>
+</ui>

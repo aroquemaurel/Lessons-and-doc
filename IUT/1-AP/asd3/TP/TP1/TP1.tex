@@ -1,0 +1,141 @@
+\documentclass{article}
+
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+
+\newcommand{\titre}{TAD Couleur}
+\newcommand{\numTP}{1}
+
+\newcommand{\module}{Algorithmique et Structure de données}
+\newcommand{\sigle}{asd}
+
+\newcommand{\semestre}{3}
+
+\input{/home/satenske/cours/listings.tex} %prise en charge du langage algo
+\input{/home/satenske/cours/entete_iut-tp.tex}
+
+\begin{document}
+	\maketitle
+	\section{Schéma du TAD Test}
+		\begin{verbatim}
+	 _________________________________________________________
+	|     class TestUnitaire                                  |
+	|_________________________________________________________|
+	|- typedef bool (*test)()                                 |
+	|- test functionOfTest                                    |
+	|- string erreurTest                                      |
+	+---------------------------------------------------------+
+	|Constructeur :                                           |
+	|+ TestUnitaire(test ptrFunction, string message)         |
+	|Accsseurs :                                              |
+	|+ test getFunctionOfTest()                               |
+	|+ string getErrorOfTest()                                |
+	|_________________________________________________________|
+
+	
+	 _______________________________________		     _______________________________________ 
+	|     vector<TestUnitaire> lesTests     |		    |     vector<bool> resultat             |
+	+--------+------------------------------+		    +--------+------------------------------+
+|   1    |         TestUnitaire         |			    |   1    |             bool             |
+	|--------+------------------------------+		    |--------+------------------------------+
+|   2    |              //              |			    |   2    |              //              |
+	|--------+------------------------------+		    |--------+------------------------------+
+|   3    |              //              |			    |   3    |              //              |
+	|--------+------------------------------+		    |--------+------------------------------+
+|   4    |              //              |			    |   4    |              //              |
+	|--------+------------------------------+     |--------+------------------------------+
+|   5    |              //              |			    |   5    |              //              |
+	|--------+------------------------------+		    |--------+------------------------------+
+|   6    |              //              |			    |   6    |              //              |
+	|--------+------------------------------+		    |--------+------------------------------+
+	|________|______________________________|		    |________|______________________________|
+
+		\end{verbatim}
+		\section{A quoi sert le classe \textit{TestUnitaire}?}
+	La classe \textit{TestUnitaire} fournit des outils pour tester chaque fonction et repérer l'erreur correspondante.\\
+	La classe associe un pointeur sur la fonction défaillante et un message d'erreur approprié.\\
+		\begin{itemize}
+			\item  \textit{functionOfTest} désigne un pointeur vers la fonction qui pose problème (accesseur : \textit{getFunctionOfTest()})
+			\item  \textit{errorTest} contient le message de l'erreur à afficher (accesseur : \textit{getErrorTest()})
+		\end{itemize}
+		\section{Comment fonctionne la procédure \textit{runAllTests}?}
+		La procédure \textit{runAllTest} initialise les \textit{TestUnitaires}, les effectuent et nous signale une erreur le cas échéant.\\
+		Elle initialise le vecteur \textit{lesTest} avec la fonction \textit{initializeAllTests} et rempli le vecteur résultat de 'false'.\\
+		Ensuite, pour chaque \textit{TestUnitaire}, ont vérifie que les fonctions ne posent pas de problème et modifie le vecteur résultat en conséquence.
+		\begin{itemize}
+			\item true $\Rightarrow$ pas de soucis
+			\item false $\Rightarrow$ erreur à traiter
+		\end{itemize}
+		Elle vérifie que tous les tests ont réussis (\textit{testsAllOkay(resultat)})\\
+		Si les tests ont réussi on affiche "Tous les tests sont Okay",
+		dans le cas contraire on affiche le message d'erreur correspondant aux différentes erreurs 
+		rencontrées à l'aide de la fonction \textit{getErrorTest()}
+
+		\section{Comment ajouter un nouveau test? }
+		\begin{enumerate}
+			\item  Ajouter un fonction de test dans le main.cpp
+			\item  Ajouter une entrée dans cette fonction :
+\begin{lstlisting}[language=C++, caption=Initialisation du test]
+void initializeAllTests(vector<TestUnitaire>& lesTests) {
+	// ... Tests précédents 
+	lesTests.push_back(TestUnitaire(&nomDeMaFonctionDeTest, 
+		string ("Message message d'erreur pour déterminer le problème"));
+}
+\end{lstlisting}
+	\item  Recompiler et tester sa fonction de test en faisant une erreur volontaire et vérifier que le test échoue, puis corriger l'erreur et vérifier que le test réussi.
+	\item  En cas d'erreur non volontaire, corriger cette erreur dans notre fonction de test.
+	\end{enumerate}
+
+	\section{Que garder pour écrire les tests d'une nouvelle classe?}
+	On garde le TAD étudié en 1.: les deux vecteurs (\textit{vector<bool> resultat} et \textit{vector<TestUnitaire> lesTests}). De même pour la classe \textit{TestUnitaire}.\\
+\begin{lstlisting}[language=C++, caption=Classe TestUnitaire  vector resultat et vector lesTests]
+vector<bool> resultat;
+vector<TestUnitaire> lesTests;
+class TestUnitaire{ 
+   private :  
+      // déclaration d'un pointeur de fonction
+      // la fonction ne prend pas de paramètres et renvoie un booléen
+      typedef bool (*test)();  
+      test functionOfTest;
+      string errorTest;
+   
+   public :
+      // constructeur de test
+      TestUnitaire(test ptrFunction, string message) 
+      {
+         this->functionOfTest = ptrFunction;
+         this->errorTest = message;
+      }
+      // les accesseurs en lecture
+      test getFunctionOfTest() const { return this->functionOfTest; }
+      string getErrorTest() const { return this->errorTest; }
+};
+\end{lstlisting}
+	Puis toutes les fonctions d'automatisation des tests :
+\begin{lstlisting}[language=C++, caption=Prototype des fonctions à garder]
+void initializeAllTests(vector<TestUnitaire>& lesTests)
+bool testsAllOkay(vector<bool>& resultats)
+void runAllTests()
+int main(int argc, char *argv[])
+\end{lstlisting}
+
+	Pour ajouter un test, cf. Question 4
+		
+			
+
+\end{document}
+
+
+
+

@@ -1,0 +1,38 @@
+-- Recherche s'il existe le rang de la premiere occurence d'un element x dans un tableau tab de n elements
+-- necessite i <= n <= N
+-- declanche rangInvalide
+-- entraine d)
+procedure rechercherOccurence (entree tab <TabEntier>,
+							entree n <Entier>,
+							entree x <Entier>,
+							sortie existe <Booleen>,
+							sortie rang <Entier>)
+--VERSION 2
+glossaire
+	i <Entier>; --indice
+	fini <Booleen>;
+debut
+	si n < 1 ou n > N alors
+		declancher trancheInvalide;
+	fin si;
+	i <- i;
+	fini <- FAUX;
+
+	tantque non fini faire 
+		si i > n alors
+			fini <- VRAI;
+			existe <- FAUX;
+		sinon
+			si tab[i] = x alors
+				fini <- VRAI;
+				existe <- VRAI;
+				rang <- i;
+			sinon
+				i <- i + 1:
+			fin si;
+		fin si;
+	fin tantque;
+fin
+
+
+

@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/icones">
+        <file alias="quitter">images/exit.png</file>
+        <file alias="imprimer">images/print.png</file>
+        <file alias="ajouter">images/add.png</file>
+        <file alias="editer">images/edit_gris.png</file>
+        <file alias="options">images/settings.png</file>
+        <file alias="supprimer">images/remove.png</file>
+        <file alias="deconnexion">images/power_off.png</file>
+        <file alias="connexion">images/power_on.png</file>
+        <file alias="non">images/no.png</file>
+        <file alias="oui">images/yes.png</file>
+        <file alias="surveiller">images/find.png</file>
+    </qresource>
+</RCC>

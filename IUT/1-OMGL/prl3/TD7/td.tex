@@ -1,0 +1,38 @@
+\documentclass{article}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage{tikz} %Vectoriel \usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+
+\newcommand{\titre}{Implantation d'une modélisation UML en Java}
+\newcommand{\numTD}{7}
+
+\newcommand{\module}{Production de logiciel}
+\newcommand{\sigle}{prl}
+
+\newcommand{\semestre}{3}
+
+\input{/home/satenske/cours/listings.tex} %prise en charge du langage algo
+\input{/home/satenske/cours/entete_iut-td.tex}
+
+\begin{document}
+	\maketitle
+	\lstinputlisting[language=Java, caption=Classe Binome]{Binome.java}
+	\lstinputlisting[language=java, caption=Classe EspaceDeTravail]{EspaceDeTravail.java}
+	\lstinputlisting[language=java, caption=Classe Binome]{Binome.java}
+	\lstinputlisting[language=java, caption=Classe Activite]{Activite.java}
+	\lstinputlisting[language=java, caption=Classe DocumentSimple]{DocumentSimple.java}
+	\lstinputlisting[language=java, caption=Classe DocumentCompose]{DocumentCompose.java}
+
+\end{document}
+
+
+

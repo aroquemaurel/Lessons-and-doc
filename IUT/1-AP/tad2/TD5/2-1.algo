@@ -1,0 +1,4 @@
+add(succ(succ(zero)), succ(succ(succ(zero)))) = 
+succ(add(succ(zero), succ(succ(succ(zero))))) =
+succ(succ(add(zero, succ(succ(succ(zero))))) =
+succ(succ(succ(succ(succ(zero))))) =

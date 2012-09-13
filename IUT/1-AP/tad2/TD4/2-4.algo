@@ -1,0 +1,2 @@
+type Duree : enregistrement
+	s <Entier>;	

@@ -1,0 +1,7 @@
+se positionner sur le premier element de la liste;
+
+tantque il reste un element faire
+	ecrire l'element courant;
+	detruire l'element courant;
+	passer a l'element suivant;
+fin tantque;

@@ -1,0 +1,18 @@
+fonction estTrie (entree <TabEntier>,
+				entree n <Entier>)			
+				retourne <Booleen>
+
+glossaire
+	i <Entier>;
+
+debut
+	i <- 0;
+
+	tantque i < n faire
+		si tab[i] > tab[i+1] alors
+			retourner FAUX;
+		fin si;
+		i <- i+1;
+	fin tantque;
+	retourner(VRAI);
+fin

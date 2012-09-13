@@ -1,0 +1,28 @@
+--En-tetes + proprietes (sujet)
+	
+-- Necessite $h \leq 0$ et $0 \leq m \leq 59$ et $0 \leq s \leq 59$ 
+fonction uneDuree (entree h <Entier>, entree m <Entier>, entree s <Entier>) 
+		retourne <Duree>
+		declenche dureeInvalide;
+
+fonction heures (entree d <Duree>)
+	retourne <Entier>;
+
+fonction minutes(entree d <Duree>)
+	retourne <Entier>;
+
+fonction secondes(entree d <Duree>)
+	retourne <Entier>;
+
+fonction inf(entree d1 <Duree>, entree d2 <Duree>)
+	retourne <Booleen>;
+
+procedure ajouterUneSeconde(maj d <Duree>);
+
+--exportation de l'egalite
+fonction "="(entree d1 <Duree> );
+	retourne <Booleen>;
+
+--exportation de l'affectation
+procedure "<-"(entree d1 <Duree> entree d2 <Duree>);
+

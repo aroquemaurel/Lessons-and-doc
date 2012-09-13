@@ -1,0 +1,21 @@
+procedure enfiler(maj file <FileAvecPriorite[T]>, entree element <T>, entree priorite <Entier>)
+	declencher filePleine
+glossaire
+	i <Entier>;
+debut
+	si 	file.nbElements = TAILLE_MAX alors
+		declencher filePleine;
+	fin si;
+
+	file.nbElements <- file.nbElements +1; 
+	file.valeurs[file.nbElements].valeur <- element;
+	file.valeurs[file.nbElements].priorite <- priorite;
+
+	i <- file.nbElements
+	tantque i > 1 et file.element[i div 2].priorite < file.element[i].priorite faire 
+		echanger(file.element[i div 2], file.element[i]);
+		i <- div 2;
+	fin tantque;
+
+fin	
+			

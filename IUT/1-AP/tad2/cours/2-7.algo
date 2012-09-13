@@ -1,0 +1,15 @@
+--determine le point milieu du segment du segment s
+
+fonction pointMilieu (entree s <Segment>) retourne <Point>
+glossaire
+	xMilieu <Reel>; -- Abscisse du point milieu
+	yMilieu <Reel>; -- ordonnee du point milieu
+debut
+	xMilieu <- (abscisse(s.origine)+abscisse(s.extremite))/2;
+	yMilieu <- (ordonnee(s.origine)+ordonnee(s.extremite))/2;
+
+	retourner(unPoint(xMilieu, yMilieu, noir, 1.0);
+fin
+
+
+	

@@ -1,0 +1,15 @@
+\select@language {french}
+\contentsline {section}{\numberline {1}Construction du mod\IeC {\`e}le -- Classe \texttt {ModelMorpion}}{1}
+\contentsline {section}{\numberline {2}Construction de la vue -- Classe \texttt {VueMorpion}}{3}
+\contentsline {section}{\numberline {3}Construction des contr\IeC {\^o}leurs}{5}
+\contentsline {subsection}{\numberline {3.1}Classe \texttt {controleurBtGrille}}{5}
+\contentsline {subsection}{\numberline {3.2}Classe \texttt {contoleurBteffacer}}{5}
+\contentsline {section}{\numberline {4}Am\IeC {\'e}lioration -- Centralisation des traitements}{6}
+\contentsline {subsection}{\numberline {4.1}Traitement 1}{6}
+\contentsline {subsection}{\numberline {4.2}Traitement 2}{6}
+\contentsline {subsection}{\numberline {4.3}Traitement 3}{6}
+\contentsline {subsection}{\numberline {4.4}Am\IeC {\'e}liorations du code}{6}
+\contentsline {section}{\numberline {A}Le code complet}{7}
+\contentsline {subsection}{\numberline {A.1}Enumeration \texttt {TypeCase}}{7}
+\contentsline {subsection}{\numberline {A.2}Classe \texttt {ModelMorpion}}{7}
+\contentsline {subsection}{\numberline {A.3}Classe \texttt {VueMorpion}}{8}

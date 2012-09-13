@@ -1,0 +1,107 @@
+\documentclass{article}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+%\usepackage[frenchb]{babel}
+%\usepackage{layout}
+%\usepackage{setspace}
+%\usepackage{soul}
+%\usepackage{ulem}
+%\usepackage{eurosym}
+%\usepackage{bookman}
+%\usepackage{charter}
+%\usepackage{newcent}
+%\usepackage{lmodern}
+%\usepackage{mathpazo}
+%\usepackage{mathptmx}
+%\usepackage{url}
+\usepackage{verbatim}
+%\usepackage{moreverb}
+%\usepackage{wrapfig}
+%\usepackage{amsmath}
+%\usepackage{mathrsfs}
+%\usepackage{asmthm}
+%\usepackage{makeidx}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+
+
+\input{/home/satenske/cours/listings.tex} %prise en charge du langage algo
+
+\title{TD 11\\ Représentation physique d'une file avec priorité}
+\date{TAD\\ Semestre 2}
+
+\lhead{TD11: Représentation physique d'une file avec priorité} 
+\chead{}
+\rhead{\thepage}
+
+\lfoot{Université Paul Sabatier Toulouse III}
+\cfoot{\thepage}
+\rfoot{tad2}
+
+\pagestyle{fancy}
+\begin{document}
+	\maketitle
+	\section{Représentation par un tableau de liste}
+		\subsection{}
+			\input{1-1.tex}
+		\subsection{}
+		\lstinputlisting[language=algo, caption=Représentation physique]{1-2.algo}	
+		\subsection{}
+		\lstinputlisting[language=algo]{1-3.algo}	
+	\section{Représentation par une liste ordonnée de listes}
+		\subsection{}
+		\input{2-1.tex}
+		\subsection{}
+		\lstinputlisting[language=algo]{2-1.algo}	
+		\subsection{}
+		\lstinputlisting[language=algo]{2-2.algo}	
+	\section{Representation par un arbre binaire partiellement ordonnée}		
+		\subsection{}
+		\input{3.tex}
+		\subsection{}
+		Pour la file f du sujet:\\
+		\begin{tabular}{|c|}
+		\hline
+		\\
+		\begin{tabular}{|c|c|c|}
+			\hline
+				& \textbf{Valeur} & \textbf{Priorité}\\
+			\hline
+				1 & fer & 5\\
+			\hline
+				2 & benzène & 3\\
+			\hline
+				3 & coton & 1\\
+			\hline
+				4 & blé & 3\\
+			\hline
+				5 & pétrôle & 3\\
+			\hline
+				6 & papier & 1\\
+			\hline
+				7 & /// & ///\\
+				N & /// & ///\\
+			\hline
+		\end{tabular}
+		\\
+			élément\\ 
+			6\\
+			nbElements\\
+			\hline
+		\end{tabular}
+		f
+		\\	
+		\lstinputlisting[language=algo, caption=Définition]{3-2.algo}	
+		\subsection{}
+		\lstinputlisting[language=algo, caption=Opération enfiler]{3-3.algo}	
+\end{document}
+
+

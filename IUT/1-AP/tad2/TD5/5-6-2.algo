@@ -1,0 +1,13 @@
+fonction "=" (entree p1 <Peano>, entree p2 <Peano>) 
+	retourne <Booleen>
+glossaire
+	i <Entier>;
+debut
+	i <- 1;
+	tantque p1[i] /= '!' et p2[i] /= '!' faire
+		i <- i + 2;
+	fin tantque
+	retourner (p1[i] = '!' et p2[i] = '!');
+fin
+
+

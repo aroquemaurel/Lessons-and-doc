@@ -1,0 +1,183 @@
+\chapter{L'héritage de classes et la composition d'objets}
+Deux relations entre classes
+\begin{itemize}
+	\item La relation ``être''(héritage)
+m	\item La relation ``avoir'' ou ``posseder'' ($\Rightarrow$ composition d'objets)
+\end{itemize}
+\section{L'héritage la relation ``être''}
+	\paragraph{Définition} Une classe partage ses propriétés (attributs + méthodes) 
+	avec une autre classe apelée super-classe. Relation entre la classe et 
+	sa super-classe.
+	\paragraph{Exemple} Les objets \textit{laLacoste} et \textit{laBadoit} partagent des propriétés communes
+	(désignation, prixHT, getDesignation, \ldots) mais avec des spécifités 
+	(couleur et taille pour \textit{laLacoste}, prixDeVente pour \textit{laBadoit} (TVA=5.5\%), \ldots) 
+	\subsection{Deux modes d'héritages}
+	\begin{itemize}
+		\item Le mode par \textbf{enrichissement}: ajout d'attributs et/ou méthodes à la 
+			super-classe (appelée aussi classe ancêtre)
+		\lstinputlisting[language=java]{ex4.java}	
+		\newpage
+		\item Le mode par substitution redéfinition dans une sous-classe d'une méthode héritée 
+		\lstinputlisting[language=java]{ex5.java}	
+	\end{itemize}
+	A partir des deux classes Chemise et EauGazeuse, on peut créer les objets 
+	laLacoste et laBadoit.
+	\lstinputlisting[language=java]{ex6.java}	
+	\subsubsection{Remarques}
+	\begin{itemize}
+		\item Dans une même classe on peut hériter par enrichissement et par 
+			substitution
+		\item Pour un eau gazeuse, une seule définition de la méthode prixDeVente, 
+			celle redéfinie dans la classe chemise (elle masque la méthode héritée)
+		\item Dans la classe Chemise l'accès au prixHT par le selecteur getPrixHT 
+			d'Article (rincipe d'encapsulation)
+	\end{itemize}
+\subsection{Sémantique de l'héritage}
+\begin{itemize}
+	\item Pas de sémantique formelle!  En général hériter = ``être une sorte de''
+		\textbf{Attention}: héritage $\neq$ partage de code
+\end{itemize}
+\subsubsection{Point de vue extension}
+Une classe est un ensemble d'objet\\
+Si E designe l'ensemble des objets d'une classe alors si B hérite de A (mot clé extends)\\
+$$E(B) \in E(A)$$
+\paragraph{Remarque} L'ensemble des chemises est un inclus dans l'ensemble des articles
+\subsubsection{Point de vue intention}
+Une classe est un ensemble de proriétés (attributs + méthodes)\\
+si I désigne l'intention d'une classe alors si B hérité de A 
+on a $I(A) \in I(B)$
+\paragraph{Remarque}Une chemise possède les propriétés d'un article
+\paragraph{Remarque} Avec ces deux points de vue complémentaire: \\
+	Si B hérite de A, alors B est considéré sous-type de A (d'après 
+	classe ~= type) \\
+	Conséquence: Tout objet déclaré de type A pourra mémoriser
+	dynamiquement un objet de type B (polymorphisme):
+	\subsection{Le graphe d'héritage}
+	Représentation graphique de la relation d'héritage entre classe
+	(cf diagramme de classe en UML par exemple)
+	\paragraph{Exemple}Classes Article et ses dérivés\\
+%			\input{uml2.tex}
+\input{uml2}
+\subsection{Méthodes retardées et classes abstraites}
+Une méthode est dite retardée lorsque l'ensemble des sous-classes d'une classe donnée en 
+proposent une définition.
+\paragraph{Exemple}UML:  \\
+\input{uml3.tex}
+
+\paragraph{Remarques}
+\begin{itemize}
+\item Appliquer la méthode salaire à un employé n'a pas de sens.
+	A l'exécution, l'employé devra référencer(dans le code) un comptable,
+	une caissière ou un directeur commercial.
+\item Une classe qui hérite d'une classe abstraite reste abstraite
+	si elle ne définit pas la méthode retardée.
+\item On ne peut pas créer d'objet à partir d'une classe abstraite
+	Par contre une classe abstraite peut avoir un constructeur pour ses
+	classes descendantes (\textbf{super}) 
+\end{itemize}
+\subsection{Héritage simple et héritage multiple}
+\paragraph{Héritage simple} une classe ne peut hériter directement que 
+d'une seule classe ancêtre
+\paragraph{Héritage multiple} Sa classe peut hériter directement de plusieurs classe 
+intérêt partager plusieurs point de vue complémentaire\\
+\input{uml4.tex}
+\lstinputlisting[language=java]{ex7.java}	
+\subparagraph{Remarques}
+\begin{itemize}
+\item En héritage simple le graphie d'héritage est un arbre.
+\item Tous les langages à objets ne possèdent pas l'héritage multiple car: 
+	\begin{itemize}
+		\item Sémantique peut claire
+		\item Pue d'exemple pertinent exploitant l'héritage multiple
+		\item Des problèmes théorique et pratiques que subsistent
+	\end{itemize}
+\end{itemize}
+\subsection{Conflits d'héritage}
+En héritage multiple, une même méthode peut être héritée par une sous classe plusieurs fois!
+\paragraph{Problème}pour la sous-classe quelle méthode retenir parmi l'ensemble des méthodes.
+\paragraph{Exemple}Coût de livraison pour un fromage\\
+\input{uml5.tex}\\
+Dans les langages pas de relation universelle.
+Deux approches:
+\begin{itemize}
+	\item Le choix est établi par le langage en considérant un parcours de graphe d'héritage
+	\item Le programmeur résout (dans son code) le conflit
+\end{itemize}
+\paragraph{1ère approche}
+Différents parcours possibles du graphe: en largeur d'abord, en profondeur d'abord, stratagème mixe\ldots
+\subparagraph{exemple:}  
+\textbf{Parcours 1:} Fromage, Article fragile, Article Périssable, Article 
+$\Rightarrow$ CoutLivraison de la classe Fragile\\
+\textbf{Parcours 2: } Résolution du conflit par le programmeur par exemple: 
+\begin{itemize}
+	\item En forçant la redéfinition
+	\item En obligeant à renommer la méthode dans la sous-classe
+\end{itemize}
+\section{La composition d'objets. La relation \textit{Avoir}}
+	Deux manières d'utiliser un classe: 
+	\begin{itemize}
+		\item L'héritage (relation \textit{Être})
+		\item La composition relation (\textit{Avoir})
+	\end{itemize}
+\subsection{Définition}
+Un objet composite (ou agrégation d'objets) est un objet formé de l'assemblage de plusieurs
+objets. 
+\paragraph{Avantage} Construire des objets complexes à partir d'objets existant.
+Les constituants d'un objet composite ne sont accessible que via leurs interfaces (principe
+d'encapsulation)
+\subsection{Exemple}
+\subsubsection{La chaîne hifi}
+\begin{center}
+	\input{uml16.tex}
+\end{center}
+\lstinputlisting[language=java]{8.java}	
+\subsubsection{Remarques}
+\paragraph{}Avec un langage à objet, définition d'une bibliothèque de classes pour réutiliser 
+ce qui existe déjà pour la classe Tableau 
+\paragraph{}
+La communication entre un objet composite et ses constituants est réutilisée via l'interface 
+des constituants $\Rightarrow$ relation client-fournisseur entre le composite (client) et 
+ses constituants (fournisseur)
+\paragraph{}Une classe A est cliente d'une classe B (et B est fournisseur de A) si
+\begin{itemize}
+\item A contient un attribut b de type B
+\item A possède une méthode avec un paramètre d'entrée ou de retour de type B
+\item A utilise une variable locale de type B pour une de ses méthodes
+\end{itemize}
+Le premier cas correspond à une \textbf{dépendance structurelle} les deux autres cas à une
+dépendance \textbf{non structurelle }
+
+\section{Mise en œuvre des mécanismes de réutilisation}
+\subsection{Héritage d'interface}
+Mode d'héritage dans lequel toutes les sous-classes peuvent répondre aux services
+d'une classe ancêtre
+\paragraph{Point de vue}
+Une classe est assimilé à un type donc une sous classe est assimilé à un sous type.\\
+En principe la classe ancêtre est souvent abstraite.
+\paragraph{Exemple: les classes Tableau, Liste, Ensemble d'interface collection}
+\begin{center}
+	\input{uml17.tex}
+\end{center}
+\lstinputlisting[language=java]{9.java}	
+
+\subsection{Héritage versus composition}
+\paragraph{héritage} statique (définit à la compilation). 
+\paragraph{Composition} dynamique (à l'exécution)
+\paragraph{}
+Avec la composition possibilité de combiner dynamiquement des objets entre eux.
+
+\subsubsection{Exemple}
+\paragraph{} Les produits laitiers avec uniquement l'héritage
+\begin{center}
+	\input{uml18.tex}
+\end{center}
+
+\paragraph{} Les produits laitiers avec deux hiérarchies d'héritage: le produit et son conditionnement. 
+\begin{center}
+	\input{uml19.tex}
+\end{center}
+
+\subsection{Héritage versus état d'un objet}
+Ne pas confondre héritage (classification) et état d'un objet 
+(valeurs des champs de l'objet)
+

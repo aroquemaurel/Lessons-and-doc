@@ -1,0 +1,14 @@
+importer EntreeSortie;
+
+programme afficherCalendrierMois
+
+glossaire
+	mois <Entier>;
+	annee <Entier>;
+	premierJour <Entier>;
+
+debut
+	lireMois(mois, annee); --lire le mois et l'annee
+	lire(premierJour); --lire le premier jour
+	afficherMois(mois, annee, premierJour); --afficher le calendrier
+fin

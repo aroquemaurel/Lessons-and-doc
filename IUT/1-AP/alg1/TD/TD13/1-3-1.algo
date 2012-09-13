@@ -1,0 +1,21 @@
+--recherche s'il existe le rang de l'occurence d'une valeur v dans un taleau tabOcc de n elements
+-- s'il n'existe pas rang nous indique la position qu'elle devrait occuper
+procedure rechercherOccurence (entree tabOccs <TabCouples>,
+							entree n <Entier>,
+							entree v <Entier>,
+							sortie existe <Booleen>,
+							sortie rang <Entier>)
+glossaire
+	i <Entier>;
+
+debut
+	tantque v > tab[i].valeur et i <= n faire
+		i <- i + 1;
+	fin tantque;
+	si v = tab[i].valeur alors
+		existe = VRAI;
+		rang <- i;
+	sinon
+		existe <- FAUX;
+	fin si;
+fin

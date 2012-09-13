@@ -1,0 +1,14 @@
+-- parcourir la liste l jusqu'a la cellule ei (pointée par courant)
+-- et précédent pointe ei - 1
+courant <- l;
+k <- 1;
+tantque k <= i -1 ;
+	precedent <- courant;
+	courant <- courant$\uparrow$.suivant;
+	k <- k+1;
+fin tantque;
+-- insérer e entre ei-1 et ei
+nouveau$\uparrow$.valeur <- e;
+nouveau$uparrow$..suivant <- courant;
+precedent$uparrow$.suivant <- nouveau;
+

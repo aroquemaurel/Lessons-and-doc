@@ -1,0 +1,5 @@
+-- trier un tableau par la methode des bulles
+tantque il reste un element du tableau a classer faire
+	ramener la plus grande valeur a la fin du tableau;
+	reduire le tableau d'un element;
+fin tantque; 

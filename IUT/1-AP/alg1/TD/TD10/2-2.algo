@@ -1,0 +1,21 @@
+fonction pgcd(entree a <Entier>,
+			  entree b <Entier>)
+				retourne <Entier>
+
+glossaire
+	aAux <Entier>;
+	bAux <Entier>;
+
+debut 
+	aAux <- a;
+	bAux <- b;
+	
+	tantque aAux /= baux faire
+		si aAux > bAux alors
+			aAux <- aAux - bAux;
+		sinon
+			bAux <- bAux - aAux;
+		fin si;
+	fin tantque;
+	retourner aAux;
+fin

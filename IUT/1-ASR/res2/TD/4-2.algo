@@ -1,0 +1,7 @@
+
+fonction infEgal(entree p1 <Peano>,
+				 entree p2 <Peano>)
+retourne <Booleen>
+debut
+	retourner inf(p1, succ(p2));
+fin

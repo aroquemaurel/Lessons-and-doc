@@ -1,0 +1,9 @@
+--Rechercher dans le tableau tab de n elements le rang s'il existe d'un element x 
+--si l'element existe trouve=VRAI et le rang est celui de l'une de ses occurences 
+--sinon trouve=FAUX
+procedure rechercherParDihotomie(entree tab <TabEntier>,
+								entree n <Entier>,
+								entree x <Entier>,
+								sortie trouve <Booleen>,
+								sortie rang <Entier>);
+
