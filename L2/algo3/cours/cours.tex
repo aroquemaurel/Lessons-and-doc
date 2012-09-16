@@ -15,6 +15,7 @@
 \usepackage{fancyhdr}
 \usepackage{multido}
 \usepackage{amssymb}
+\usepackage{float}
 
 \newcommand{\titre}{Algorithmie en langage C}
 
@@ -119,7 +120,7 @@ if(conditon) {
 	action 2;
 }
 \end{lstlisting}
-Condition est une expression booléenne\footnote{Expression renvoyant vrai($\neq 0$) ou faux($=0$)} %% TODO
+Condition est une expression booléenne\footnote{Expression renvoyant vrai($\neq 0$) ou faux($=0$)}, si celle-ci est vrai, action 1 est executé, sinon action 2 est executé. 
 
 \subsection{Répétition}
 \begin{lstlisting}[language=C, caption=Syntaxe de répétition]
@@ -133,6 +134,7 @@ Condition est une expression booléenne, tant que la condition est vrai, les act
 \begin{lstlisting}[language=C, caption=Syntaxe d'une affectation ]
 variable = expression;
 \end{lstlisting}
+variable reçoit expression, si celle-ci n'est pas du même type que variable, un cast\footnote{ou conversion de type, consiste à convertir un type vers un autre. (int vers double par exemple)} peut-être effectué.
 \subsection{Opérateurs de base sur les types}
 \begin{description}
 	\item[\texttt{=}] Affectation
@@ -209,7 +211,11 @@ int main (int argc, char **argv);
 \end{lstlisting}
 
 \section{La compilation}
-% TODO Schéma
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=13.5cm]{compilation.png}
+	\caption{La compilation}
+\end{figure}
 \subsection{\'Etape 1 : Le préprocesseur}
 Le pré processeur sont les instructions situés en dehors d'un programme, ceux-ci sont préfixé par un dièse (\#).
 \begin{description}
@@ -220,7 +226,6 @@ Le pré processeur sont les instructions situés en dehors d'un programme, ceux-
 #include // remplace par le continu du fichier inclus
 #define Arg1 Arg2 // remplace syntaxique de Arg1 par Arg2
 \end{lstlisting}
-\newpage
 \subsection{Etape 2 : La compilation}
 \begin{description}
 	\item[Entrée] fichier.c, fichier.h
@@ -231,6 +236,8 @@ gcc -c fic1.c fic2.c fic3.c # Créé les fichiers .c
 gcc *.o nomExe #Créer l'executable.
 \end{lstlisting}
 \remarque{La compilation sera étudiée en détails lors des cours de L3 et M1}
+\subsection{\'Etape 3 : L'édition de liens}
+Rassemble tous les fichiers binaires .o en un seul executable.
 \chapter{Exercice}
 \'Ecrire un programme qui lit une série de 10 valeurs et affiche la position du minimum et du maximum de la série.
 \section{\'Etape 1: Analyser le problème}
