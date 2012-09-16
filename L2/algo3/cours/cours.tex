@@ -2,7 +2,7 @@
 
 \usepackage{lmodern}
 \usepackage{xcolor}
-\input{/home/satenske/cours/includesLaTeX/couleurs.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/couleurs.tex}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -23,11 +23,11 @@
 
 \newcommand{\semestre}{3}
 
-\input{/home/satenske/cours/includesLaTeX/listings.tex} %prise en charge du langage algo
-\input{/home/satenske/cours/includesLaTeX/entete_iut-cours.tex}
-\input{/home/satenske/cours/includesLaTeX/remarquesExempleAttention.tex}
-\input{/home/satenske/cours/includesLaTeX/polices.tex}
-\input{/home/satenske/cours/includesLaTeX/affichageChapitre.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex} %prise en charge du langage algo
+\input{/home/aroquemaurel/cours/includesLaTeX/entete_iut-cours.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
 
 \begin{document}
 	\setcounter{tocdepth}{2}
@@ -37,8 +37,8 @@
 		Un paradigme est une manière de programmer, il en existe plusieurs: 
 		\subsection{Programmation fonctionnelles}
 		\begin{description}
-		\item[Type de langage] \footnote{Traduction du langage source vers le langage cible(compilation) + une édition de liens, qui est une instanciation sur la machine d'execution (Recherche d'adresse, mémoire, résolution de fonctions) Elle peut être statique ou dynamique. Ex: C, Adda} ou interprétés\footnote{
-		Le langage source est traduit en langage cible à la volée par un intérpreteur. Il est ainsi possible de modifier le programme pendant le fonctionnement du programme.}. Ce paragradigme
+		\item[Type de langage] \footnote{Traduction du langage source vers le langage cible(compilation) + une édition de liens, qui est une instanciation sur la machine d'exécution (Recherche d'adresse, mémoire, résolution de fonctions) Elle peut être statique ou dynamique. Ex: C, Adda} ou interprétés\footnote{
+		Le langage source est traduit en langage cible à la volée par un interpréteur. Il est ainsi possible de modifier le programme pendant le fonctionnement du programme.}. Ce paradigme
 		\item[Entité de base] Appel de fonction
 		\item[Structure de contrôle] Approche récursive. 
 
@@ -46,50 +46,50 @@
 		Elle est utilisée pour des systèmes critiques\footnote{Besoin d'une sureté de fonctionnement}. Elle à une approche très mathématiques, ce qui 
 		permet d'avoir des outils de preuves générique.
 
-		Elle possède une abstraction de l'environnement d'execution, approche détachée de la machine, pas de notion de mémoire.
+		Elle possède une abstraction de l'environnement d'exécution, approche détachée de la machine, pas de notion de mémoire.
 
 		\exemple{Le Caml est un langage de programmation fonctionnelle}
 	\end{description}
 		\subsection{Programmation déclarative}
 		\begin{description}
-			\item[Type de langage] Intérprété
+			\item[Type de langage] Interprété
 			\item[Entité de base] Règles de déduction logique.
 			\item[Structure de contrôle  ]
 			Possède une abstraction de la machine cible.
 			\exemple{Le prolog est un langage de programmation déclarative}
 		\end{description}
 		\subsection{Programmation Impérative}
-			La programmation est directement liée à la machine d'execution.
+			La programmation est directement liée à la machine d'exécution.
 			\begin{description}	
-				\item[Type de langage] Compilé ou Intérprété
-				\item[Entité de base] Affectation d'une valeure à une variable, qui est une place en mémoire.
-				\item[Structure de contrôle] Séquence, séléction, répétition.
+				\item[Type de langage] Compilé ou Interprété
+				\item[Entité de base] Affectation d'une valeur à une variable, qui est une place en mémoire.
+				\item[Structure de contrôle] Séquence, sélection, répétition.
 			\exemple{C, Python, Ada \ldots}
 			\end{description}
 
 	\section{Programmation impérative en C}
-	\'Enormement de langage sont fondés sur la syntaxe du langage C.
+	Énormément de langage sont fondés sur la syntaxe du langage C.
 
-	Il a été développé dans les années 1960 par Denis Ritchie. %% Otho? 
+	Il a été développé dans les années 1960 par Dennis Ritchie. 
 
 	On trouvera toujours une partie description de l'organisation des données en mémoire\footnote{C'est un grand tableau découpé en cases mémoire.},
 	nous aurons donc une déclaration de variables et un type de données.
 	\begin{lstlisting}[caption=Syntaxe de déclaration de variable]
 type nomVariable;		
 	\end{lstlisting}
-	\subsection{Description de l'organisation des données en mémoire}
+	\subsection{Description de l'organisation des données en mémoire}\label{types}
 	Le C possède différents type de données: 
 	\begin{description}
 		\item[int] Entiers signés
 		\item[unsigned int] Entiers non signés 
-		\item[float] Nombre réél sur 32bits. 
-		\item[double] Nombre réél sur 64bits.
+		\item[float] Nombre réel sur 32bits. 
+		\item[double] Nombre réel sur 64bits.
 		\item[char] Entier signé sur 8bits.
 		\item[pointeur] type* ptr; La case mémoire contient une adresse.
 	\end{description}
 	\subsection{Code syntaxe}
 	\subsubsection{Blocs}
-\begin{lstlisting}[language=C, caption=Syntaxe de déclaration de variable]
+\begin{lstlisting}[language=C, caption=Syntaxe d'un bloc]
 bloc { // début du bloc
 } //fin du bloc
 \end{lstlisting}
@@ -98,13 +98,13 @@ bloc { // début du bloc
 	Un bloc transforme une séquence en action.
 
 	\subsubsection{Séquence}
-\begin{lstlisting}[language=C, caption=Syntaxe de déclaration de variable]
+\begin{lstlisting}[language=C, caption=Syntaxe des actions]
 action 1;
 action 2;
 action 3;
 \end{lstlisting}
 	\subsubsection{Séléction}
-\begin{lstlisting}[language=C, caption=Syntaxe de déclaration de variable]
+\begin{lstlisting}[language=C, caption=Syntaxe d'une structure de contrôle]
 if(conditon) {
 	action 1;
 } else {
@@ -114,15 +114,15 @@ if(conditon) {
 Condition est une expression booléenne\footnote{Expression renvoyant vrai($!= 0$ ou faux($=0$)} %% TODO
 
 \subsubsection{Répétition}
-\begin{lstlisting}[language=C, caption=Syntaxe de déclaration de variable]
+\begin{lstlisting}[language=C, caption=Syntaxe de répétition]
 while(condition) {
 	action;
 }
 \end{lstlisting}
-Condition est une expression booléenne, tant que la condition est vrai, les actions se repettent.
+Condition est une expression booléenne, tant que la condition est vrai, les actions se répètent.
 
 \subsubsection{Affectation}
-\begin{lstlisting}[language=C, caption=Syntaxe de déclaration de variable]
+\begin{lstlisting}[language=C, caption=Syntaxe d'une affectation ]
 variable = expression;
 \end{itemize}
 \end{lstlisting}
@@ -135,30 +135,118 @@ variable = expression;
 	\item[++i, i++, --i, i--] Opérateur unaires d'incrémentation.
 \end{description}
 \subsubsection{Opérateurs d'entrées / sorties}
-\paragraph{Ecriture}
-\begin{lstlisting}[language=C, caption=Syntaxe de déclaration de variable]
-	printf('format', var1, var2);
+\paragraph{Ecriture}~\\
+\begin{lstlisting}[language=C, caption=Syntaxe de l'appel de printf]
+printf('format', var1, var2);
 \end{lstlisting}
 La chaine format peut contenir une chaine de caractères, avec des caractères spéciaux : 
 \begin{description}
-	\item['\%d'] Entier sous forme décimale
-	\item['\%ox'] Entier sous forme héxadécimale
-	\item['\%f'] Flottant 
-	\item['\%c'] Caractère 
-	\item['\%s'] Chaine de caractères 
-	\item['\\n'] Vide le buffer et fait un retour chariot 
-	\item['\\t'] Tabulation 
-	\item['\\r'] Revient en début de ligne.
+	\item[\texttt{'\%d'}] Entier sous forme décimale
+	\item[\texttt{'\%ox'}] Entier sous forme hexadécimale
+	\item[\texttt{'\%f'}] Flottant 
+	\item[\texttt{'\%c'}] Caractère 
+	\item[\texttt{'\%s'}] Chaine de caractères 
+	\item[\texttt{'\\n'}] Vide le buffer et fait un retour chariot 
+	\item[\texttt{'\\t'}] Tabulation 
+	\item[\texttt{'\\r'}] Revient en début de ligne.
 	\item['\ldots'] RTFM	
 \end{description}
 Les différents formats doivent être dans l'ordre des variables passés en paramètres.
-\paragraph{Lecture}
-\begin{lstlisting}[language=C, caption=Syntaxe de déclaration de variable]
-	scanf('format', &var1);
+\paragraph{Lecture}~\newline
+\begin{lstlisting}[language=C, caption=Syntaxe de l'appel de scanf]
+scanf('format', &var1); // & représente l'adresse de la variable dans laquelle écrire.
 \end{lstlisting}
-\attention{Ne jamais utiliser scanf}
+\attention{L'utilisation de cette fonction est risquée. En effet, un utilisateur malveillant peut écrire à des cases mémoires où il n'est pas autorisé.}
 
+\subsubsection{Tableaux}
+Un tableau est une collection d'éléments de même type.
+\begin{lstlisting}[language=C, caption=Syntaxe de déclaration d'un tableau]
+// avec tableau le nom de la variable et N la taille du tableau. 
+type tableau[N], i; 
+i = tableau[P]; //i recoit la valeur de la case P du tableau
+\end{lstlisting}
+\attention{Un tableau commence toujours à 0 et finit à N-1, ainsi, il faut faire très attention au dépassement de la taille d'un tableau.}
+\subsubsection{Les sous-programmes}
+Un sous-programme est un sous-ensemble du programme dans sa hiérarchie fonctionnelle. En C, il correspond toujours à une fonction ou une procédure.
+\begin{lstlisting}[language=C, caption=Syntaxe d'un sous programme]
+typeRetour nomFonction (typeArg1 nomArg1, typeArg2 nomArg2) {
+	/*
+     *	code
+	 */
+	 [return (valeur)];
+}
+\end{lstlisting}
+\texttt{typeRetour} peut posséder comme valeur les même types qu'une variable, voir \ref{types} page \pageref{types}. Celui-ci peut également être \texttt{void}, 
+cela signifie que que la fonction ne renvoie rien, c'est donc une procédure.
+\subsection{Structure d'une programme en C}
+\begin{tabular}{p{8cm}|p{8cm}}
+	\textbf{Interface} & \textbf{Implantation}\\
+	\begin{minipage}{0.8\textwidth}
+		\begin{itemize}
+			\item Déclaration des fonctions (prototype)
+			\item Constantes, types
+			\item Comment utiliser le programme\\~~~~ $\Rightarrow$ \'Ecrire dans un fichier .h (header)
+			\item Préprocesseur (define, macros, \ldots)
+		\end{itemize}
+	\end{minipage}&
+	\begin{minipage}{0.8\textwidth}
+		\begin{itemize}
+			\item Définitions des fonctions: le code\\~~~~ $\Rightarrow$ \'Ecrire dans un fichier .c
+		\end{itemize}
+	\end{minipage}
+\end{tabular}
+Un programme en C ne possède qu'une seul point d'entrée : une instruction est exécuté, c'est la fonction \texttt{main}.
+\begin{lstlisting}[language=C, caption=Point d'entrée du programme: le main]
+int main (int argc, char **argv); 
+//le programme renvoie un entier. C'est le profil d'une fonction.
+\end{lstlisting}
 
+\subsection{La compilation}
+% TODO Schéma
+\subsubsection{\'Etape 1 : Le préprocesseur}
+Le pré processeur sont les instructions situés en dehors d'un programme, ceux-ci sont préfixé par un dièse (\#).
+\begin{description}
+	\item[Entrée] fichier.c
+	\item[Sortie] fichier obtenu une fois les modifications effectués.
+\end{description}~
+\begin{lstlisting}[language=C, caption=Exemple d'instructions pré-processeurs]
+#include // remplace par le continu du fichier inclus
+#define Arg1 Arg2 // remplace syntaxique de Arg1 par Arg2
+\end{lstlisting}
+\newpage
+\subsubsection{Etape 2 : La compilation}
+\begin{description}
+	\item[Entrée] fichier.c, fichier.h
+	\item[Sortie] fichier.o 
+\end{description}
+\begin{lstlisting}[language=bash]
+gcc -c fic1.c fic2.c fic3.c # Créé les fichiers .c
+gcc *.o nomExe #Créer l'executable.
+\end{lstlisting}
+\remarque{La compilation sera étudiée en détails lors des cours de L3 et M1}
+\section{Exercice}
+\'Ecrire un programme qui lit une série de 10 valeurs et affiche la position du minimum et du maximum de la série.
+\subsection{\'Etape 1: Analyser le problème}
+\begin{enumerate}
+	\item Lire les valeurs
+	\item calculer les min et max
+	\item afficher le résultat
+\end{enumerate}
+\subsection{\'Etape 2: Spécifier les sous-problèmes}
+Identifier les entrée, les sorties et leurs propriétés.
+\subsubsection{\texttt{LireLesValeurs}}
+\begin{description}
+	\item[Entrée] Nombre, les valeurs à lire
+	\item[Sortie] Tableau contenant les valeurs lues
+\end{description}
+\subsubsection{\texttt{CalculerMinEtMax}}
+\begin{description}
+	\item[Entrée] Le tableau des valeurs et le nombre de valeur 
+	\item[Sortie] Position, min et max. 
+\end{description}
+\newpage
+\subsection{\'Etape 3: Le code}
+\lstinputlisting[language=C, caption=Code du programme]{exo1.c}
 % Glossaire
 	% Compilation
 	% Interpretation
