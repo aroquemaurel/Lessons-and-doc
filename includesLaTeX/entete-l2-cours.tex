@@ -1,8 +1,5 @@
 \date{\today}
 
-\chead{}
-\rhead{--~ \thepage ~--}
-\lhead{\titre}
 \makeindex
 \lfoot{Université Paul Sabatier Toulouse III}
 \rfoot{\sigle\semestre}
@@ -85,3 +82,46 @@ L2\\
 %\rfoot{\sigle\semestre}
 
 \pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{\bsc{\chaptername~\thechapter{} :} #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection{ #1}}}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0.3pt}
+
+\fancyhf{}
+\fancyhead[LE]{\leftmark}
+\fancyhead[RO]{\rightmark}
+\fancyfoot[LE,RO]{--~\thepage~--}
+\fancyfoot[LO]{\titre{}~~---~~\sigle{}\semestre{}}
+\fancyfoot[RE]{Antoine de \bsc{Roquemaurel}}
+
+%% Cas des premières pages de chapitre
+\fancypagestyle{plain}{%
+	\fancyhf{}%
+	\fancyfoot[L]{\titre{}~~---~~\sigle{}\semestre{}}
+	\fancyfoot[R]{--~\thepage~--}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0.3pt}
+}
+\makeatletter
+\renewcommand*{\lstlistlistingname}{Liste des codes sources}
+\renewcommand\listoffigures{%
+    \chapter{\listfigurename}%
+      \@mkboth{\MakeUppercase\listfigurename}%
+              {\MakeUppercase\listfigurename}%
+       \@starttoc{lof}%
+    }
+    \renewcommand\listoftables{%
+    \chapter{\listtablename}%
+    \@mkboth{\MakeUppercase{\listtablename}}%
+            {\MakeUppercase{\listtablename}}%
+    \@starttoc{lot}
+    }
+
+    \renewcommand\lstlistoflistings{%
+    \begingroup
+    \chapter{\lstlistlistingname}%
+    \parskip\z@\parindent\z@\parfillskip \z@ \@plus 1fil%
+    \@starttoc{lol}%
+    \endgroup
+    }
+	\makeatother
