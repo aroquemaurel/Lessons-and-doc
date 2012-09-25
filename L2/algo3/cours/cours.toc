@@ -1,35 +1,65 @@
 \select@language {french}
-\contentsline {chapter}{\numberline {1}Paradigmes de programmation}{4}{chapter.1}
-\contentsline {section}{\numberline {1.1}Programmation fonctionnelles}{4}{section.1.1}
-\contentsline {section}{\numberline {1.2}Programmation d\IeC {\'e}clarative}{4}{section.1.2}
-\contentsline {section}{\numberline {1.3}Programmation Imp\IeC {\'e}rative}{5}{section.1.3}
-\contentsline {chapter}{\numberline {2}Programmation imp\IeC {\'e}rative en C}{6}{chapter.2}
-\contentsline {section}{\numberline {2.1}Description de l'organisation des donn\IeC {\'e}es en m\IeC {\'e}moire}{6}{section.2.1}
-\contentsline {section}{\numberline {2.2}Code syntaxe}{6}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Blocs}{6}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}S\IeC {\'e}quence}{7}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}S\IeC {\'e}l\IeC {\'e}ction}{7}{subsection.2.2.3}
-\contentsline {subsection}{\numberline {2.2.4}R\IeC {\'e}p\IeC {\'e}tition}{7}{subsection.2.2.4}
-\contentsline {subsection}{\numberline {2.2.5}Affectation}{7}{subsection.2.2.5}
-\contentsline {subsection}{\numberline {2.2.6}Op\IeC {\'e}rateurs de base sur les types}{7}{subsection.2.2.6}
-\contentsline {subsection}{\numberline {2.2.7}Op\IeC {\'e}rateurs d'entr\IeC {\'e}es / sorties}{8}{subsection.2.2.7}
-\contentsline {paragraph}{Ecriture}{8}{section*.2}
-\contentsline {paragraph}{Lecture}{8}{section*.3}
-\contentsline {subsection}{\numberline {2.2.8}Tableaux}{8}{subsection.2.2.8}
-\contentsline {subsection}{\numberline {2.2.9}Les sous-programmes}{9}{subsection.2.2.9}
-\contentsline {section}{\numberline {2.3}Structure d'une programme en C}{9}{section.2.3}
-\contentsline {section}{\numberline {2.4}La compilation}{10}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}\'Etape 1 : Le pr\IeC {\'e}processeur}{10}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}Etape 2 : La compilation}{10}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3}\'Etape 3 : L'\IeC {\'e}dition de liens}{10}{subsection.2.4.3}
-\contentsline {chapter}{\numberline {3}Exercice}{11}{chapter.3}
-\contentsline {section}{\numberline {3.1}\'Etape 1: Analyser le probl\IeC {\`e}me}{11}{section.3.1}
-\contentsline {section}{\numberline {3.2}\'Etape 2: Sp\IeC {\'e}cifier les sous-probl\IeC {\`e}mes}{11}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}\texttt {LireLesValeurs}}{11}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}\texttt {CalculerMinEtMax}}{11}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}\'Etape 3: Le code}{12}{section.3.3}
-\contentsline {chapter}{\numberline {A}Glossaire}{13}{appendix.A}
-\contentsline {paragraph}{Compilation}{13}{section*.4}
-\contentsline {paragraph}{Interpr\IeC {\'e}tation}{13}{section*.5}
-\contentsline {paragraph}{\IeC {\'E}dition de liens}{13}{section*.6}
-\contentsline {chapter}{\numberline {B}Liste des codes sources}{14}{appendix.B}
+\contentsline {chapter}{\numberline {1}Paradigmes de programmation}{5}{chapter.1}
+\contentsline {section}{\numberline {1.1}Programmation fonctionnelles}{5}{section.1.1}
+\contentsline {section}{\numberline {1.2}Programmation d\IeC {\'e}clarative}{5}{section.1.2}
+\contentsline {section}{\numberline {1.3}Programmation Imp\IeC {\'e}rative}{6}{section.1.3}
+\contentsline {chapter}{\numberline {2}Programmation imp\IeC {\'e}rative en C}{7}{chapter.2}
+\contentsline {section}{\numberline {2.1}Description de l'organisation des donn\IeC {\'e}es en m\IeC {\'e}moire}{7}{section.2.1}
+\contentsline {section}{\numberline {2.2}Code syntaxe}{7}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Blocs}{7}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}S\IeC {\'e}quence}{8}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}S\IeC {\'e}l\IeC {\'e}ction}{8}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}R\IeC {\'e}p\IeC {\'e}tition}{8}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}Affectation}{8}{subsection.2.2.5}
+\contentsline {subsection}{\numberline {2.2.6}Op\IeC {\'e}rateurs de base sur les types}{8}{subsection.2.2.6}
+\contentsline {subsection}{\numberline {2.2.7}Op\IeC {\'e}rateurs d'entr\IeC {\'e}es / sorties}{9}{subsection.2.2.7}
+\contentsline {paragraph}{Ecriture}{9}{section*.2}
+\contentsline {paragraph}{Lecture}{9}{section*.3}
+\contentsline {subsection}{\numberline {2.2.8}Tableaux}{9}{subsection.2.2.8}
+\contentsline {subsection}{\numberline {2.2.9}Les sous-programmes}{10}{subsection.2.2.9}
+\contentsline {section}{\numberline {2.3}Structure d'une programme en C}{10}{section.2.3}
+\contentsline {section}{\numberline {2.4}La compilation}{11}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}\'Etape 1 : Le pr\IeC {\'e}processeur}{11}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Etape 2 : La compilation}{11}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}\'Etape 3 : L'\IeC {\'e}dition de liens}{11}{subsection.2.4.3}
+\contentsline {chapter}{\numberline {3}M\IeC {\'e}thodologie de la programmation imp\IeC {\'e}rative}{12}{chapter.3}
+\contentsline {section}{\numberline {3.1}Programmation ``en petit''}{12}{section.3.1}
+\contentsline {section}{\numberline {3.2}Programmation en large}{12}{section.3.2}
+\contentsline {section}{\numberline {3.3}D\IeC {\'e}veloppement d'un algorithme}{12}{section.3.3}
+\contentsline {section}{\numberline {3.4}\'Etape 1 : comprendre le probl\IeC {\`e}me}{12}{section.3.4}
+\contentsline {section}{\numberline {3.5}\'Etape 2 : Sp\IeC {\'e}cification du programme : sp\IeC {\'e}cification formelle}{13}{section.3.5}
+\contentsline {section}{\numberline {3.6}\'Etape 3: Donner un mod\IeC {\`e}le de solution}{13}{section.3.6}
+\contentsline {section}{\numberline {3.7}\'Etape 4 : Programmer et unifier le programme}{13}{section.3.7}
+\contentsline {subsubsection}{\numberline {3.7.0.1}V\IeC {\'e}rification du programme}{13}{subsubsection.3.7.0.1}
+\contentsline {paragraph}{Le tableau de situation}{14}{section*.4}
+\contentsline {chapter}{\numberline {4}Sp\IeC {\'e}cification d'un programme}{15}{chapter.4}
+\contentsline {section}{\numberline {4.1}Mots cl\IeC {\'e}s \IeC {\`a} utiliser dans les pr\IeC {\'e}dicats}{15}{section.4.1}
+\contentsline {section}{\numberline {4.2}\'Ecriture de la sp\IeC {\'e}cification}{15}{section.4.2}
+\contentsline {chapter}{\numberline {A}Glossaire}{16}{appendix.A}
+\contentsline {paragraph}{Compilation}{16}{section*.5}
+\contentsline {paragraph}{Interpr\IeC {\'e}tation}{16}{section*.6}
+\contentsline {paragraph}{\IeC {\'E}dition de liens}{16}{section*.7}
+\contentsline {chapter}{\numberline {B}Exercices}{17}{appendix.B}
+\contentsline {section}{\numberline {B.1}Initiation}{17}{section.B.1}
+\contentsline {subsection}{\numberline {B.1.1}Exercice 1}{17}{subsection.B.1.1}
+\contentsline {subsubsection}{\numberline {B.1.1.1}\'Etape 1: Analyser le probl\IeC {\`e}me}{17}{subsubsection.B.1.1.1}
+\contentsline {subsubsection}{\numberline {B.1.1.2}\'Etape 2: Sp\IeC {\'e}cifier les sous-probl\IeC {\`e}mes}{17}{subsubsection.B.1.1.2}
+\contentsline {paragraph}{\texttt {LireLesValeurs}}{17}{section*.8}
+\contentsline {paragraph}{\texttt {CalculerMinEtMax}}{17}{section*.9}
+\contentsline {subsubsection}{\numberline {B.1.1.3}\'Etape 3: Le code}{18}{subsubsection.B.1.1.3}
+\contentsline {section}{\numberline {B.2}Tableau de situation}{19}{section.B.2}
+\contentsline {subsection}{\numberline {B.2.1}Exercice 2}{19}{subsection.B.2.1}
+\contentsline {subsection}{\numberline {B.2.2}Exercice 3}{20}{subsection.B.2.2}
+\contentsline {section}{\numberline {B.3}Effets de bords}{21}{section.B.3}
+\contentsline {subsection}{\numberline {B.3.1}Exercice 4}{21}{subsection.B.3.1}
+\contentsline {subsection}{\numberline {B.3.2}Exercice 5}{22}{subsection.B.3.2}
+\contentsline {subsection}{\numberline {B.3.3}Exercice 6}{23}{subsection.B.3.3}
+\contentsline {section}{\numberline {B.4}Sp\IeC {\'e}cification}{23}{section.B.4}
+\contentsline {subsection}{\numberline {B.4.1}Exercice 7}{23}{subsection.B.4.1}
+\contentsline {subsubsection}{\numberline {B.4.1.1}Exercice 8}{23}{subsubsection.B.4.1.1}
+\contentsline {subsection}{\numberline {B.4.2}Exercice 8}{24}{subsection.B.4.2}
+\contentsline {subsubsection}{\numberline {B.4.2.1}Calcule de la premi\IeC {\`e}re position}{24}{subsubsection.B.4.2.1}
+\contentsline {subsubsection}{\numberline {B.4.2.2}Calcule de la derni\IeC {\`e}re position}{24}{subsubsection.B.4.2.2}
+\contentsline {subsection}{\numberline {B.4.3}Exercice 9}{24}{subsection.B.4.3}
+\contentsline {subsection}{\numberline {B.4.4}Exercice 10}{24}{subsection.B.4.4}
+\contentsline {chapter}{\numberline {C}Liste des codes sources}{25}{appendix.C}
