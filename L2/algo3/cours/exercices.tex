@@ -1,0 +1,182 @@
+\chapter{Exercices}
+\section{Initiation}
+	\subsection{Exercice 1}
+\'Ecrire un programme qui lit une série de 10 valeurs et affiche la position du minimum et du maximum de la série.
+\subsubsection{\'Etape 1: Analyser le problème}
+\begin{enumerate}
+	\item Lire les valeurs
+	\item calculer les min et max
+	\item afficher le résultat
+\end{enumerate}
+\subsubsection{\'Etape 2: Spécifier les sous-problèmes}
+Identifier les entrée, les sorties et leurs propriétés.
+\paragraph{\texttt{LireLesValeurs}}
+\begin{description}
+	\item[Entrée] Nombre, les valeurs à lire
+	\item[Sortie] Tableau contenant les valeurs lues
+\end{description}
+\paragraph{\texttt{CalculerMinEtMax}}
+\begin{description}
+	\item[Entrée] Le tableau des valeurs et le nombre de valeur 
+	\item[Sortie] Position, min et max. 
+\end{description}
+\newpage
+\subsubsection{\'Etape 3: Le code}
+\lstinputlisting[language=C, caption=Exercice 1 -- Code du programme]{exo1.c}
+\newpage
+	\section{Tableau de situation}	
+	\subsection{Exercice 2}
+\lstinputlisting[language=C, caption=Exercice 3]{exo2.c}
+Nous choisis le jeu de données $n = 0$ et $n = 4$ afin de passer dans tous les cas possibles.
+\begin{center}
+\begin{tabular}{c  |  c  c  c  c  }
+	&\textbf{\'Echelle} & \textbf{n} & \textbf{f} & \textbf{point d'arrêt}\\
+n=0	&1 & 0 & indéfini & 1\\
+	\hline
+	&/ & / & / & /\\
+	\hline
+	\hline
+	&indéfini & 4 & 4 & 2\\
+	\hline
+	&indéfini &  3 & 12 & 3\\	
+	\hline
+	&indéfini & 2 & 24 & 3\\
+	\hline
+	&indéfini & 1 & 24 & 3\\
+	\hline
+	&24 & 6 & 24 & 4\\
+	\hline
+	&/ & / & / & /\\
+	\hline
+\end{tabular}
+\end{center}
+\newpage
+\subsection{Exercice 3}
+
+\lstinputlisting[language=C, caption=Exercice 3]{exo3.c}
+\begin{center}
+\begin{tabular}{c  |  c  c  c  c  }
+	\textbf{Point d'arrêt }& \textbf{T} & \textbf{j} & \textbf{i} &\textbf{n}\\
+	\hline
+	1 & 0,0,0,0,0 & 3 & 5 & 1\\
+	\hline
+	2 & 0,0,0,1,0 & 4 & 3 & @\\
+	\hline
+	3 & 5,9,1,1,1&4&5&\\
+	\hline
+\end{tabular}
+\end{center}
+\newpage
+\section{Effets de bords}
+\subsection{Exercice 4}
+\lstinputlisting[language=C, caption=Exercice 4]{exo4.c}
+\begin{center}
+\begin{tabular}{c |  c  c  c  c  c  c  }
+	\textbf{Point d'arrêt} & \textbf{y} & \textbf{x} & \textbf{t} & \textbf{i} & \textbf{z} & \textbf{f}\\
+	\hline
+	2 & 10 & / & / & 1 && \\
+	\hline
+	1 & 11 & 1 & 2 & 1 & / & 13\\
+	\hline
+	3 & 11 & / & / & 1 & 24 & /\\
+	\hline
+\end{tabular}
+\end{center}
+\newpage
+\subsection{Exercice 5}
+\lstinputlisting[language=C, caption=Exercice 5]{exo5.c}
+\begin{center}
+\begin{tabular}{c |  c  c  c  c  c  }
+	\textbf{Point d'arrêt} & \textbf{i} & \textbf{j} & \textbf{x} & \textbf{y} & \textbf{z}\\
+	\hline
+	3 & 3 & 7 &/ &/&/\\
+	\hline
+	1 & &&@i&@i&@j\\
+	\hline
+	2 & 6 & 12 & @i & @i & @j\\
+	\hline
+	4 & 6 & 12 & / & / & /\\
+	\hline
+	5 & 3 & 7 & / & / & / \\
+	\hline
+	1 & 3&10 &@j&@j&@i\\
+	\hline
+	2 & 20 & 10 & @j&@j&@i\\
+	\hline
+\end{tabular}
+\end{center}
+\newpage
+\subsection{Exercice 6}
+\lstinputlisting[language=C, caption=Exercice 6]{exo6.c} 
+\begin{tabular}{c |  c  c  c  c  c  c  }
+	\textbf{Point d'arrêt} & \textbf{i} & \textbf{j} & \textbf{x} & \textbf{a} & \textbf{a} & \textbf{f}\\
+	\hline
+	2&10&40&/&/&/&/\\
+	\hline
+	1 & 20 & 40 & / & 10 & 40 & 50\\
+	\hline
+	3 & 20 & 40 & 50 & / & / & /\\
+	\hline
+\end{tabular}
+
+\section{Spécification}
+\subsection{Exercice 7}
+	\'Ecrire la spécification d'un programme qui dans un tableacu T de N entiers calcul le nombre n de nombre positifs dans le tableau.
+
+	\begin{itemize}
+		\item $N > 0$
+		\item \texttt{calculeNbPos(T,N,n)}
+		\item $(o \leq n \leq N) \wedge (n = \nu I : o \leq I < N T[I] \geq 0) $
+	\end{itemize}
+\subsubsection{Exercice 8}
+	Soit T un tableau croissant (non strict) de N entier et X un entier.\\
+	Spécifier un programme qui calcule la position de la dernière occurrence de T inférieure ou égale à X avec $T[0] \leq X < T[N-1]$
+
+	\begin{itemize}
+	%	\item $T[0] \leq X < T[N-1]$, $T[I] \leq T[I+1]$, $N > 0$
+		\item $(N > 1) \wedge (T[0] \leq X) \wedge (X < T[N-1]) \wedge (\forall I : 0 \leq I < N - 1 \rightarrow T[I] \leq T[I+1])$
+		\item \texttt{searchPosition(T, N, X, p));} 
+		\item $(0 < p < N - 1) \wedge (T[p] \leq X) \wedge (T[p+1] > X)$
+	\end{itemize}
+	\remarque{Dans la suite du cours, nous pourrons utiliser un raccourcie afin de savoir si un tableau est trié par ordre croissant : $(T,N,\leq)$
+
+	Celle-ci pourra être utilisée dans la copie à condition qu'elle soit définie au préalable.}
+
+\subsection{Exercice 8}
+	Soit un tableau T non vide de N entiers.  \'Ecrire la spécifications du qui programme qui calculent :
+	\begin{itemize}
+		\item La première position de la valeur max de T
+		\item La dernière position de la valeur max de T
+	\end{itemize}
+	\subsubsection{Calcule de la première position}
+	\begin{itemize}
+		\item $N > 0$ 
+		\item \texttt{searchFirstPosition(T, N, f);} 
+		\item $(\forall I :0 \leq I < f \rightarrow T[I] < T[f]) \wedge (\forall I (f \leq I < N) \rightarrow (T[I] \leq T[f]))$ 
+	\end{itemize}
+	\subsubsection{Calcule de la dernière position}
+	\begin{itemize}
+		\item $N > 0$ 
+		\item \texttt{searchLastPosition(T, N, l);} 
+		\item $(\forall I :0 \leq I < l \rightarrow T[I] \leq T[l]) \wedge 
+			(\forall I (l < I < N) \rightarrow (T[I] < T[l]))$ 
+	\end{itemize}
+
+\subsection{Exercice 9}
+	\'Ecrire la spécification d'un programme qui, dans un tableau T de N entiers tous différents cherche la position d'une valeur X si elle existe ou retourne N si elle n'existe pas.
+
+	\begin{itemize}
+		\item $(N\geq0) \wedge (\forall I : 0 \leq I < N \rightarrow (\forall (I, J) : 0 \leq I < N \wedge (0 \leq J < N) \rightarrow T[I] = T[J] \leftrightarrow (I = J)$\footnote{Cela peut aussi s'écrire $N\leq 0) \wedge (\forall I (O \leq I < N) \rightarrow \forall J : J \neq I \wedge 0 \leq J < N \rightarrow T[I] \neq T[J]$}
+		\item \texttt{search(T, N, x)}
+		\item $(0 \leq p < N \wedge T[p] = X) \vee (p=N) \leftrightarrow \forall I (o\leq I < N) \rightarrow T[I] \neq X))$ 
+	\end{itemize}
+
+	\subsection{Exercice 10}
+	Spécifier un programme qui, dans un tableau T de N éléments trié par ordre croissant non strict retourne la longueur du plus grand plateau\footnote{Un plateau est quand il y a plusieurs fois le même caractère}.
+\begin{itemize}
+	\item $(T, N, \leq) \wedge N > 0$
+	\item \texttt{longueurPlusGrandPlateau(T,N,l);}
+	\item $(1 \leq l \leq N) \wedge (\exists I : 0 \leq I < N-l)\wedge (T[I] = T[I+l-1])$ 
+\end{itemize}
+
+% Spécifier un programme qui renvoit le nombre de double lettre dans un tableau de char.

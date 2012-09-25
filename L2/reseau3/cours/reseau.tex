@@ -1,8 +1,8 @@
-\documentclass[12pt,a4paper,openany]{article}
+\documentclass[12pt,a4paper,openany]{book}
 
 \usepackage{lmodern}
 \usepackage{xcolor}
-\input{/home/satenske/cours/includesLaTeX/couleurs.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/couleurs.tex}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -20,17 +20,16 @@
 \newcommand{\sigle}{reseau}
 \newcommand{\semestre}{3}
 
-\input{/home/satenske/cours/includesLaTeX/listings.tex} %prise en charge du langage algo
+\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex} %prise en charge du langage C 
 \input{/home/satenske/cours/includesLaTeX/entete-l2-cours.tex}
-\input{/home/satenske/cours/includesLaTeX/remarquesExempleAttention.tex}
-\input{/home/satenske/cours/includesLaTeX/polices.tex}
-\input{/home/satenske/cours/includesLaTeX/affichageChapitre.tex}
-
+\input{/home/aroquemaurel/cours/includesLaTeX/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
 \begin{document}
 	\setcounter{tocdepth}{2}
 	\setcounter{secnumdepth}{3}
 	\maketitle
-	\section{Histoire de la communication}
+	\chapter{Histoire de la communication}
 		Les humains ont toujours voulu \textbf{communiquer plus vite et plus loin}, ceci en utilisant des codes, alphabets, langages, \ldots
 		
 		\exemple{Les Gaulois, écrit Jules César dans ``La guerre des Gaules'', avec la voix de champ en champ pouvaient transmettre une nouvelle à 240km de distance en une journée.
@@ -64,27 +63,79 @@
 
 			Composants $\Rightarrow$ Signal $\Rightarrow$ Équipements $\Rightarrow$ Protocoles $\Rightarrow$ Architectures $\Rightarrow$ Services.
 
-	\section{\'Evolution des réseaux}
+	\chapter{\'Evolution des réseaux}
 			De la même manière que la téléphonie et le télégraphe, nous sommes passé d'une phase expérimentale à une phase d'utilisation. Ainsi l'Informatique à beaucoup évolué. Cette évolution à été progressive, il y a eu plusieurs étapes qui ont marqués les réseaux de communication.
 			\paragraph{Coûts des équipements Informatiques / Coûts de la Communication} À l'origine seul les grands comptes étaient capable d'avoir des équipements informatiques. Ainsi les SSI\footnote{Société de Service en Informatiques} sont nées.
 			\paragraph{Système de Télétraitement} Ces systèmes ont été destiné aux entreprise, afin qu'a distance elles puissent utiliser la puissance d'un calculateur qui était géographiquement loin. Une première structure de réseau Informatique fut créée.
 			\remarque{Nous sommes en train de revenir à cette solution créée 40 ans auparavant: Le cloud computing}
 
+			\section{Les équipements créés}
 			Afin de construire ces structures de réseaux de communication nous avons mis en place des équipements :
-			\begin{itemize}
-				\item Processeur Frontal de Communication\footnote{FEP: Front End Processor}
-				\item Multiplexeurs et concentrateurs
-				\item Liaisons Spécialisées
-				\item Modem
-				\item Commutateurs
-				\item Protocole de communication
-			\end{itemize}
-	\section{Classification}
-	\section{Topologie}
-	\section{Normalisation}
-	\section{Architecture de communication}
-	\section{Modèle OSI}
-	\section{Approche métiers}
+			\begin{description}
+				\item[Processeur Frontal de Communication\footnote{FEP: Front End Processor}]
+				\item[Multiplexeurs et concentrateurs] Équipement de partage du support de communication, permettent d'avoir des nœuds de communication.
+				\item[Liaisons Spécialisées] Nous avions besoin d'un réseau spécialisé afin d'interconnecter les appareils, pour les connections point à point.
+				\item[Modem] Pour les trafics de grande ligne, il fut choisir d'utiliser un réseau déjà existant, le téléphone.
+			Cependant, le signal à transmettre doit être adapté au support de transmission, on va donc utiliser un adaptateur qui permettra de faire 
+			passer le signal sur le réseau téléphonique : le modem.
+				\item[Commutateurs] Pour avoir une connexion la plus rapide possible, nous avions besoin d'un algorithme de routage afin de passer par un chemin en fonction du trafic présent sur la ligne: le routeur.
+				\item[Protocole de communication] Permet de faire dialoguer deux machines entre elles, elle doivent utiliser le même protocole afin de se comprendre syntaxiquement et sémantiquement.
+			\end{description}
+			
+			\section{Démocratisation de l'Informatique}
+			\begin{description}
+				\item[1970] La genèse des protocoles de communication date des années 1970. En réseau, rien n'a été inventé de nouveau, cela à surtout été des progrès technologiques : rapidité, miniaturisation, coûts et donc démocratisation. Les premiers mini-calculateurs.
+				\item[1980] Début de l'informatique personnelle et mise en \oe{}uvre des réseaux locaux.
+				\item[1990] Applications de l'Internet, premiers mobiles et satellites. 
+			\end{description}
+
+	\chapter{Classification}
+		Le critère de classification est la distance entre les entités communicantes.
+		\begin{enumerate}
+			\item Architectures des calculateurs / Architecture de communication
+			\item LAN\footnote{Local Area Network} ou RLE\footnote{Réseau Local d'Entreprise}
+			\item WAN\footnote{Wide Area Network} ou RLD\footnote{Réseau Longue Distance}
+			\item DAN\footnote{Departmental Area Network}, MAN\footnote{Metropolitain Area Network}\ldots
+		\end{enumerate}
+		\begin{tabular}{| c c c |}
+			\hline
+			Distance & & Exemple\\
+			1m & Square meter & PAN\\
+			\hline
+			10m & Room & LAN\\
+			\hline
+			100m & Building & LAN\\
+			\hline
+			1km & Campus & LAN, DAN\\
+			\hline
+			100 km & City & WAN\\
+			\hline
+			1000km & Continent & WAN\\
+			\hline
+			10 000km & Planet & WAN, The Internet\\
+			\hline
+		\end{tabular}
+
+		Les autres critères de classifications : 
+		\begin{itemize}
+			\item Débit
+			\item Architecture (OSI,TCP/IP)
+			\item \ldots
+		\end{itemize}
+
+		Les critères de classifications pour un LAN: 
+		\begin{itemize}
+			\item PABX
+			\item Bureautique
+			\item Industriel
+			\item Large bande
+			\item \ldots
+		\end{itemize}
+	\chapter{Topologie}
+	\chapter{Normalisation}
+	\chapter{Architecture de communication}
+	\chapter{Modèle OSI}
+	\chapter{Approche métiers}
 
 \end{document}
 
