@@ -35,31 +35,36 @@
 \contentsline {chapter}{\numberline {4}Sp\IeC {\'e}cification d'un programme}{15}{chapter.4}
 \contentsline {section}{\numberline {4.1}Mots cl\IeC {\'e}s \IeC {\`a} utiliser dans les pr\IeC {\'e}dicats}{15}{section.4.1}
 \contentsline {section}{\numberline {4.2}\'Ecriture de la sp\IeC {\'e}cification}{15}{section.4.2}
-\contentsline {chapter}{\numberline {A}Glossaire}{16}{appendix.A}
-\contentsline {paragraph}{Compilation}{16}{section*.5}
-\contentsline {paragraph}{Interpr\IeC {\'e}tation}{16}{section*.6}
-\contentsline {paragraph}{\IeC {\'E}dition de liens}{16}{section*.7}
-\contentsline {chapter}{\numberline {B}Exercices}{17}{appendix.B}
-\contentsline {section}{\numberline {B.1}Initiation}{17}{section.B.1}
-\contentsline {subsection}{\numberline {B.1.1}Exercice 1}{17}{subsection.B.1.1}
-\contentsline {subsubsection}{\numberline {B.1.1.1}\'Etape 1: Analyser le probl\IeC {\`e}me}{17}{subsubsection.B.1.1.1}
-\contentsline {subsubsection}{\numberline {B.1.1.2}\'Etape 2: Sp\IeC {\'e}cifier les sous-probl\IeC {\`e}mes}{17}{subsubsection.B.1.1.2}
-\contentsline {paragraph}{\texttt {LireLesValeurs}}{17}{section*.8}
-\contentsline {paragraph}{\texttt {CalculerMinEtMax}}{17}{section*.9}
-\contentsline {subsubsection}{\numberline {B.1.1.3}\'Etape 3: Le code}{18}{subsubsection.B.1.1.3}
-\contentsline {section}{\numberline {B.2}Tableau de situation}{19}{section.B.2}
-\contentsline {subsection}{\numberline {B.2.1}Exercice 2}{19}{subsection.B.2.1}
-\contentsline {subsection}{\numberline {B.2.2}Exercice 3}{20}{subsection.B.2.2}
-\contentsline {section}{\numberline {B.3}Effets de bords}{21}{section.B.3}
-\contentsline {subsection}{\numberline {B.3.1}Exercice 4}{21}{subsection.B.3.1}
-\contentsline {subsection}{\numberline {B.3.2}Exercice 5}{22}{subsection.B.3.2}
-\contentsline {subsection}{\numberline {B.3.3}Exercice 6}{23}{subsection.B.3.3}
-\contentsline {section}{\numberline {B.4}Sp\IeC {\'e}cification}{23}{section.B.4}
-\contentsline {subsection}{\numberline {B.4.1}Exercice 7}{23}{subsection.B.4.1}
-\contentsline {subsubsection}{\numberline {B.4.1.1}Exercice 8}{23}{subsubsection.B.4.1.1}
-\contentsline {subsection}{\numberline {B.4.2}Exercice 8}{24}{subsection.B.4.2}
-\contentsline {subsubsection}{\numberline {B.4.2.1}Calcule de la premi\IeC {\`e}re position}{24}{subsubsection.B.4.2.1}
-\contentsline {subsubsection}{\numberline {B.4.2.2}Calcule de la derni\IeC {\`e}re position}{24}{subsubsection.B.4.2.2}
-\contentsline {subsection}{\numberline {B.4.3}Exercice 9}{24}{subsection.B.4.3}
-\contentsline {subsection}{\numberline {B.4.4}Exercice 10}{24}{subsection.B.4.4}
-\contentsline {chapter}{\numberline {C}Liste des codes sources}{25}{appendix.C}
+\contentsline {chapter}{\numberline {5}V\IeC {\'e}rification formelle de programmes}{16}{chapter.5}
+\contentsline {section}{\numberline {5.1}Syst\IeC {\`e}me de r\IeC {\'e}\IeC {\'e}criture Pfp}{16}{section.5.1}
+\contentsline {section}{\numberline {5.2}Calcul de pfp d'une affectation}{16}{section.5.2}
+\contentsline {section}{\numberline {5.3}Calcul du pfp d'une s\IeC {\'e}quence}{17}{section.5.3}
+\contentsline {chapter}{\numberline {A}Glossaire}{19}{appendix.A}
+\contentsline {paragraph}{Compilation}{19}{section*.5}
+\contentsline {paragraph}{Interpr\IeC {\'e}tation}{19}{section*.6}
+\contentsline {paragraph}{\IeC {\'E}dition de liens}{19}{section*.7}
+\contentsline {chapter}{\numberline {B}Exercices}{20}{appendix.B}
+\contentsline {section}{\numberline {B.1}Initiation}{20}{section.B.1}
+\contentsline {subsection}{\numberline {B.1.1}Exercice 1}{20}{subsection.B.1.1}
+\contentsline {subsubsection}{\numberline {B.1.1.1}\'Etape 1: Analyser le probl\IeC {\`e}me}{20}{subsubsection.B.1.1.1}
+\contentsline {subsubsection}{\numberline {B.1.1.2}\'Etape 2: Sp\IeC {\'e}cifier les sous-probl\IeC {\`e}mes}{20}{subsubsection.B.1.1.2}
+\contentsline {paragraph}{\texttt {LireLesValeurs}}{20}{section*.8}
+\contentsline {paragraph}{\texttt {CalculerMinEtMax}}{20}{section*.9}
+\contentsline {subsubsection}{\numberline {B.1.1.3}\'Etape 3: Le code}{21}{subsubsection.B.1.1.3}
+\contentsline {section}{\numberline {B.2}Tableau de situation}{22}{section.B.2}
+\contentsline {subsection}{\numberline {B.2.1}Exercice 2}{22}{subsection.B.2.1}
+\contentsline {subsection}{\numberline {B.2.2}Exercice 3}{23}{subsection.B.2.2}
+\contentsline {section}{\numberline {B.3}Effets de bords}{24}{section.B.3}
+\contentsline {subsection}{\numberline {B.3.1}Exercice 4}{24}{subsection.B.3.1}
+\contentsline {subsection}{\numberline {B.3.2}Exercice 5}{25}{subsection.B.3.2}
+\contentsline {subsection}{\numberline {B.3.3}Exercice 6}{26}{subsection.B.3.3}
+\contentsline {section}{\numberline {B.4}Sp\IeC {\'e}cification}{26}{section.B.4}
+\contentsline {subsection}{\numberline {B.4.1}Exercice 7}{26}{subsection.B.4.1}
+\contentsline {subsubsection}{\numberline {B.4.1.1}Exercice 8}{26}{subsubsection.B.4.1.1}
+\contentsline {subsection}{\numberline {B.4.2}Exercice 8}{27}{subsection.B.4.2}
+\contentsline {subsubsection}{\numberline {B.4.2.1}Calcule de la premi\IeC {\`e}re position}{27}{subsubsection.B.4.2.1}
+\contentsline {subsubsection}{\numberline {B.4.2.2}Calcule de la derni\IeC {\`e}re position}{27}{subsubsection.B.4.2.2}
+\contentsline {subsection}{\numberline {B.4.3}Exercice 9}{27}{subsection.B.4.3}
+\contentsline {subsection}{\numberline {B.4.4}Exercice 10}{27}{subsection.B.4.4}
+\contentsline {subsection}{\numberline {B.4.5}Exercice 11}{28}{subsection.B.4.5}
+\contentsline {chapter}{\numberline {C}Liste des codes sources}{29}{appendix.C}

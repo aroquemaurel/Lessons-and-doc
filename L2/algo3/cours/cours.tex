@@ -362,7 +362,90 @@ Rassemble tous les fichiers binaires .o en un seul executable.
 			\end{itemize}
 		}
 	
-	\appendix
+	\chapter{Vérification formelle de programmes}
+	Vérifier que le programme est correct revient à démontrer l'implication suivante :\\ PE $\rightarrow$ pfp(\texttt{(action(D,r, PS);}
+
+	Avec pfp étant la plus faible précondition\footnote{wp weakest precondition}.
+	\begin{description}
+		\item[pfp]	C'est un système de réécriture permetant de transformer une formule logique en une autre selon le programme qui doit s'éxécuter.
+			C'est donc une réécriture syntaxique du prédicat de sortie en fonction des actions du programme.  \item[Tableau de situation] Système de réécriture des données en entrée (mémoireà vers les données en sortie (mémoire)) en fonction des actions du programme.  \end{description}
+	\section{Système de réécriture Pfp}
+		Ensemble de règles de réécriture permettant de transformer une formule logique en fonction des structures de base des langages de programmation.
+
+		Les langages impératifs:
+			\begin{itemize}
+				\item affectation
+				\item Séquence
+				\item Sélection
+				\item répétition
+			\end{itemize}
+
+		Règle de réécriture : \texttt{pfp(structure, formule) = formule}
+
+	\section{Calcul de pfp d'une affectation}
+	$$pfp("x=e", Q) = Q^e_n$$
+
+	Avec la formule Q dans laquelle toutes les occurences de ``x'' sont remplacées par ``e'' (remplacement textuel)
+	\exemple {
+		Soit le programme suivant :
+		\begin{itemize}
+			\item $x > 0$
+			\item $x = x-1$
+			\item $x \geq 0$
+		\end{itemize}
+		On doit se poser la question \texttt{PE} $\rightarrow$ \texttt{pfp(programme, PS)} ?\\
+		\begin{eqnarray*}
+			(x > 0) &\rightarrow& \texttt{pfp}("x=x-1", x \geq 0)\\
+			(x>0)&\rightarrow&(x-1 \geq 0)\\
+			(x>0) &\rightarrow& (x > 0)
+		\end{eqnarray*}
+	}
+	\section{Calcul du pfp d'une séquence}
+	$$\texttt{pfp}("a1;a2;a3", Q) = \texttt{pfp}("a1;a2;", \texttt{pfp}("a3;", Q));$$
+	\exemple{
+	Soit les programme suivant, lesquels sont justes, lesquels sont faux ?
+	\begin{itemize}
+		\item \texttt{/* f = i! */}
+		\item \texttt{i = i + 1;\\f = f*i}
+		\item \texttt{/* f = i! */}
+	\end{itemize}
+\begin{eqnarray*}
+	 f = i! &\rightarrow& \texttt{pfp}("i = i + 1 ; f = f \times i;", f = i!)\\
+	 f = i! &\rightarrow& \texttt{pfp}("i = i +1", \texttt{pfp}("f = f \times i", f = i !)\footnote{\'Evaluation de la "règle" la plus profonde}\\
+	 f = i! &\rightarrow& \texttt{pfp}("i = i+1", f \times i = i!)\\
+	 f * i! &\rightarrow& f\times (i+1) = (i+1)!\\
+	 &&i! \times(i+1) = (i+1)!\ \textmd{Par définition de}\ i!
+\end{eqnarray*}
+
+	\begin{itemize}
+		\item \texttt{/* f = i! */}
+		\item \texttt{f = f * (i + 1);\\i = i + 1;}
+		\item \texttt{/* f = i! */}
+	\end{itemize}
+	\begin{eqnarray*}
+		f = i! &\rightarrow& \texttt{pfp}("f = f\times (i+1); i = i +1;", f= i!)\\
+		f=i!&\rightarrow&\texttt{pfp}("f=f\times(i+1);",\texttt{pfp}("i=i+1",f=i!)\\
+		%f = i! &\rightarrow& \textt{pfp}("f = f \times (i + 1);" f = (i + 1)!)
+	\end{eqnarray*}
+	\begin{itemize}
+		\item \texttt{/* (x = A) $\wedge$ (y = B) $\wedge$ (z = C)}
+		\item \texttt{x = x + y +z;\\z = x - y - z;\\y = x - y -z;\\x = x - y - z;}
+		\item \texttt{/* (x = B) $\wedge$ (y = C) $\wedge$ (z = A) */}
+	\end{itemize}
+	\begin{eqnarray*}
+		PE &\rightarrow& \texttt{pfp}("x=x+y+z;z=x-y-z;y=x-y-z;x=x-y-z;", (x=B)\wedge(y=C)\wedge(z=A)\\
+		PE &\rightarrow& \texttt{pfp}("x=x+y+z, z-x-y-z;y=x-y-z;", \texttt{pfp}("x=x-y-z;(x=B)\wedge(y=C)\wedge(z=A)\\
+		PE &\rightarrow& \texttt{pfp}("x=x+y+z, z-x-y-z;y=x-y-z;", x-y-z=B)\wedge y=C \wedge z = A\\
+		PE &\rightarrow& \texttt{pfp}("x=x+y+z,z=x-y-z", (y=B)\wedge (x-y-z=C)\wedge z = A\\
+		PE &\rightarrow& \texttt{pfp}("x=x+y+z", (y=B)\wedge (z=C) \wedge (x-y-z=A)\\
+		PE &\rightarrow& (y=B) \wedge (z=C)\wedge(x=A) \textmd{Vrai parceque }p\rightarrow p = vrai
+	\end{eqnarray*}
+	
+}
+\appendix
+
+
+
 	\chapter{Glossaire}
 	\paragraph{Compilation} Un compilateur est un programme informatique qui transforme un code source écrit dans un langage de programmation (le langage source) en un autre langage informatique (le langage cible).
 	\paragraph{Interprétation}

@@ -173,10 +173,22 @@ n=0	&1 & 0 & indéfini & 1\\
 
 	\subsection{Exercice 10}
 	Spécifier un programme qui, dans un tableau T de N éléments trié par ordre croissant non strict retourne la longueur du plus grand plateau\footnote{Un plateau est quand il y a plusieurs fois le même caractère}.
+
 \begin{itemize}
 	\item $(T, N, \leq) \wedge N > 0$
 	\item \texttt{longueurPlusGrandPlateau(T,N,l);}
 	\item $(1 \leq l \leq N) \wedge (\exists I : 0 \leq I < N-l)\wedge (T[I] = T[I+l-1])$ 
 \end{itemize}
+	\subsection{Exercice 11}
+		Spécifier un programme qui, dans un tableau de N entiers calcule le nombre de doublons : un doublon est une succession de 2 nombres identiques.
 
-% Spécifier un programme qui renvoit le nombre de double lettre dans un tableau de char.
+		\begin{itemize}
+			\item $N > 0$
+			\item \texttt{calculeDoublons(T, N, n);}
+			\item $n = \nu I : 0 \leq I < N \wedge T[I] = T[I+1]$
+		\end{itemize}
+		\remarque{
+			Dans le cas ou deux doublons ne sont pas forcément côte à côte, le prédicat de sortie deviendrait : 
+			$$n = \sum^{N-1}_{I=0} \nu J : I < J < N \wedge T[J] = T[I]$$
+		}
+
