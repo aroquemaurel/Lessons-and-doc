@@ -1,0 +1,1 @@
+java -Xmx1024m -jar dist\satoulouse.jar

@@ -29,6 +29,11 @@
 \input{/home/aroquemaurel/cours/includesLaTeX/remarquesExempleAttention.tex}
 \input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
 \input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
+\newcommand{\pfp}{\texttt{pfp}}
+
+\newcommand{\ifp}{\texttt{if}}
+\newcommand{\elsep}{\texttt{else}}
+
 \makeatother
 
 \begin{document}
@@ -403,7 +408,6 @@ Rassemble tous les fichiers binaires .o en un seul executable.
 	\section{Calcul du pfp d'une séquence}
 	$$\texttt{pfp}("a1;a2;a3", Q) = \texttt{pfp}("a1;a2;", \texttt{pfp}("a3;", Q));$$
 	\exemple{
-	Soit les programme suivant, lesquels sont justes, lesquels sont faux ?
 	\begin{itemize}
 		\item \texttt{/* f = i! */}
 		\item \texttt{i = i + 1;\\f = f*i}
@@ -416,50 +420,50 @@ Rassemble tous les fichiers binaires .o en un seul executable.
 	 f * i! &\rightarrow& f\times (i+1) = (i+1)!\\
 	 &&i! \times(i+1) = (i+1)!\ \textmd{Par définition de}\ i!
 \end{eqnarray*}
-
-	\begin{itemize}
-		\item \texttt{/* f = i! */}
-		\item \texttt{f = f * (i + 1);\\i = i + 1;}
-		\item \texttt{/* f = i! */}
-	\end{itemize}
-	\begin{eqnarray*}
-		f = i! &\rightarrow& \texttt{pfp}("f = f\times (i+1); i = i +1;", f= i!)\\
-		f=i!&\rightarrow&\texttt{pfp}("f=f\times(i+1);",\texttt{pfp}("i=i+1",f=i!)\\
-		%f = i! &\rightarrow& \textt{pfp}("f = f \times (i + 1);" f = (i + 1)!)
-	\end{eqnarray*}
-	\begin{itemize}
-		\item \texttt{/* (x = A) $\wedge$ (y = B) $\wedge$ (z = C)}
-		\item \texttt{x = x + y +z;\\z = x - y - z;\\y = x - y -z;\\x = x - y - z;}
-		\item \texttt{/* (x = B) $\wedge$ (y = C) $\wedge$ (z = A) */}
-	\end{itemize}
-	\begin{eqnarray*}
-		PE &\rightarrow& \texttt{pfp}("x=x+y+z;z=x-y-z;y=x-y-z;x=x-y-z;", (x=B)\wedge(y=C)\wedge(z=A)\\
-		PE &\rightarrow& \texttt{pfp}("x=x+y+z, z-x-y-z;y=x-y-z;", \texttt{pfp}("x=x-y-z;(x=B)\wedge(y=C)\wedge(z=A)\\
-		PE &\rightarrow& \texttt{pfp}("x=x+y+z, z-x-y-z;y=x-y-z;", x-y-z=B)\wedge y=C \wedge z = A\\
-		PE &\rightarrow& \texttt{pfp}("x=x+y+z,z=x-y-z", (y=B)\wedge (x-y-z=C)\wedge z = A\\
-		PE &\rightarrow& \texttt{pfp}("x=x+y+z", (y=B)\wedge (z=C) \wedge (x-y-z=A)\\
-		PE &\rightarrow& (y=B) \wedge (z=C)\wedge(x=A) \textmd{Vrai parceque }p\rightarrow p = vrai
-	\end{eqnarray*}
-	
 }
+	\section{Calcul du pfp de la séléction} \begin{center} \texttt{if(B)\{$a_1$\} [else\{$A_2$\}]}
+	 \end{center}
+\begin{eqnarray*}
+	\texttt{pfp}("\texttt{if}(B)\{A_1\}\texttt{else}\{1_2\}", PS) &=&
+	B \rightarrow \texttt{pfp}(A_1, PS) \wedge \neg B \rightarrow \texttt{pfp} (A_2, PS)\\
+	\texttt{pfp}("\texttt{if}(B)\{A_1\}\texttt{else}\{A_2\}", PS) &=& B \rightarrow \texttt{pfp}(A_1, PS) \wedge \neg B \rightarrow PS 
+\end{eqnarray*}
+
+Un exemple est disponible annexe \ref{pfpSequence} page \pageref{pfpSequence}.
+
+\section{Calcul du pfp d'une répétition.}
+Modélisation formelle de la répétition.
+\begin{lstlisting}[language=C]
+/* PE */
+initialisation;
+/* INVARIANT */
+while(c) {
+	/* $c \wedge \textsc{INVARIANT}$ */
+	corps de boucle;
+	/* $\textsc{INVARIANT}$ */
+}
+/* $\neg c \wedge \textsc{INVARIANT}$ */
+\end{lstlisting}
+
+Il y a cinq étapes pour la vérification de la boucle.
+\begin{enumerate}
+	\item $PE \rightarrow \pfp(\texttt{initialisation}, \texttt{INVARIANT})$
+	\item $c \wedge \texttt{INVARIANT} \rightarrow \pfp (\texttt{corps}, \texttt{INVARIANT})$
+	\item $\neg c \wedge \texttt{INVARIANT} \rightarrow PS$ 
+	\item $ \texttt{InvARIANT} \wedge c \rightarrow f > 0$\footnote{f: fonction définie positive : f est appelée ``variante''}
+	\item $F = f \wedge \texttt{INVARIANT} \wedge c \rightarrow \pfp (\texttt{corps}, F > f)$\footnote{f est décroissante}
+\end{enumerate}
+
 \appendix
-
-
-
 	\chapter{Glossaire}
 	\paragraph{Compilation} Un compilateur est un programme informatique qui transforme un code source écrit dans un langage de programmation (le langage source) en un autre langage informatique (le langage cible).
 	\paragraph{Interprétation}
 	Analyse, traduit et exécute un programme écrit dans un langage informatique. De tels langages sont dits langages interprétés.
 
-	L'interpréteur est capable de lire le code source d'un langage sous forme de script, habituellement un fichier texte, et d'en exécuter les instructions après une analyse syntaxique du contenu. Généralement ces langages textuels sont appelés des langages de programmation. Cette interprétation conduit à une exécution d'action ou à un stockage de contenu ordonné par la syntaxe textuelle.
-	\paragraph{Édition de liens} Lors d’un développement informatique, l'édition des liens est un processus qui permet de créer des fichiers exécutables ou des bibliothèques dynamiques ou statiques, à partir de fichiers objets.
+	L'interpréteur est capable de lire le code source d'un langage sous forme de script, habituellement un fichier texte, et d'en exécuter les instructions après une analyse syntaxique du contenu. Généralement ces langages textuels sont appelés des langages de programmation. Cette interprétation conduit à une exécution d'action ou à un stockage de contenu ordonné par la syntaxe textuelle.  \paragraph{Édition de liens} Lors d’un développement informatique, l'édition des liens est un processus qui permet de créer des fichiers exécutables ou des bibliothèques dynamiques ou statiques, à partir de fichiers objets.
 	\include{exercices}
 	\lstlistoflistings{}
 
 \end{document}
-
-
-
-
 
 

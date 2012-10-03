@@ -134,13 +134,111 @@
 	\chapter{Topologie}
 	\chapter{Normalisation}
 	\chapter{Architecture de communication}
+		\begin{description}
+			\item[Transmission physique] Correspond au supports, au type d'encodage, aux liaisons, toute l'architecture physique.
+			\item[Contrôle d'erreurs]  Vérifier que les paquets sont bien arrivés.
+			\item[Contrôle de flux]  S'assurer que l'émetteur n'aille pas trop vite par rapport au récepteur
+			\item[Routage]  en cas de nœud de communication, choisir le chemin le plus rapide ceci en fonction du trafic. 
+			\item[Régulation de flux (congestion)] Réguler le flux pour éviter la congestion\footnote{Peut être assimiler aux bouchons}, il préfère la prévention afin d'éviter les bouchons. 
+			\item[Séquencement]  Les fichiers sont découpés en plusieurs paquets, en effet un paquet à une taille maximum, le séquencement réassemble les paquets afin de reconstituer le fichier grâce à une numérotation des paquets..
+			\item[Contrôle de bout en bout] Vérifier que le fichier à bien été reconstitué. 
+			\item[Gestion du dialogue] 
+			\item[Reprise sur incidents]Cela permet aussi de gérer un arrêt de la connexion réseau afin de reprendre le transfert à l'endroit où il s'était arrêté
+			\item[Transformation de l'information] Codage de l'information (avec le code ASCII par exemple), compression (codecs), sécurité de l'information (cryptage) 
+			\item[Synchronisation des processus] Sémantique de l'application, c'est-à-dire quelle opération au niveau applicatifs (Renommer un fichier, créer un répertoire, \ldots)
+		\end{description}
+
+		Des \textbf{architectures normalisées} ont été mis en place par les opérateurs de Télécommunications (X21, X25, ISDN,\ldots).\\
+		Des \textbf{architectures propriétaires} ont également être mise en place par les constructeurs informatiques (SNA, DNA, DSA).\\
+		\begin{description}
+			\item[1977] \textbf{ISO} constitue un comité pour la normalisation dans le domaine des télécommunications et de l'interconnexion des systèmes.\\
+			\item[1984] ISO 7948 référence CCITT X.200 (ITU)
+			\item[OSI] Cadre fonctionnel -- Le modèle de référence. Les objectifs du modèle OSI sont les suivants : 
+				\begin{itemize}
+					\item Décomposer (décomposition fonctionnelle)
+					\item Structurer
+					\item Assurer l'indépendance vis à vis du matériel et du logiciel.
+				\end{itemize}
+		\end{description}
 	\chapter{Modèle OSI}
+	\section{Les couches}
+\begin{verbatim}
+      +-------------------+ Exemple  
+7 N+4 |   Application     | HTTP   
+      +-------------------+     
+6 N+3 |   Présentation    | HTML, MPEG     
+      +-------------------+              SERVICES APPLICATIFS (Couches hautes)
+5 N+2 |   Session         |   
+      +-------------------+ ===========================================================
+4 N+1 |   Transport       | TCP 
+      +-------------------+    
+3 N   |   Réseau          | IP    
+      +-------------------+                 SERVICES TRANSPORTS(Couches basses)
+2 N-1 |   Liaison         | Wifi    
+      +-------------------+    
+1 N-2 |   Physique        | RJ45  
+      +-------------------+  
+\end{verbatim}
+\begin{verbatim}
+	Système A                                               Système B
++--------------+                                           +---------------+
+| Layer (N+1)  | <---------------------------------------> |  Layer (N-1)  |
++--------------+                                           +---------------+       
+      ^                                                         ^
+      |                                                         | 
+  Service Interface                                       Sercice Interface
+    =======                                                   =======
+      | SAP                                                     | SAP
+      |                                                         | 
+      v                                                         v
++---------------+	                                        +---------------+	   
+|  Layer (N)    |  <--------------------------------------> |   Layer (N)   |
++---------------+	                                        +---------------+
+\end{verbatim}
+\newpage
+\section{Communication entre systèmes}
+\begin{verbatim}
+  +-------------------+                                     +-------------------+
+7 |   Application     |   <------------------------------>  |  Application      | 7
+  +-------------------+                                     +-------------------+
+6 |   Présentation    |   <------------------------------>  |  Présentation     | 6 
+  +-------------------+                                     +-------------------+
+5 |   Session         |   <------------------------------>  |  Session          | 5 
+  +-------------------+                                     +-------------------+
+4 |   Transport       |   <------------------------------>  |  Transport        | 4
+  +-------------------+                                     +-------------------+
+3 |   Réseau          |   <------------------------------>  |  Réseau           | 3
+  +-------------------+                                     +-------------------+ 
+2 |   Liaison         |   <------------------------------>  |  Liaison          | 2
+  +-------------------+                                     +-------------------+
+1 |   Physique        |   <------------------------------>  |  Physique         | 1
+  +-------------------+                                     +-------------------+
+
+\end{verbatim}
+
+\section{4 primitives de Service} 
+\begin{description}
+	\item[Requête] une entité sollicite un service pour faire une activité.
+	\item[Indication] Informe d'un événement
+	\item[Réponse] Réponse à l'événement.
+	\item[Confirmation] Informe de la demande de service
+\end{description}
+Modes de communication:
+\begin{itemize}
+	\item Mode connexté
+	\item Mode non contecté
+\end{itemize}
+
+Trois phases pour le mode connecté
+\begin{itemize}
+	\item \'Etablissement de la connexion avec négociation entre les deux entités (N+1) et le service (N)
+	\item Transfert de données entre entités (N+1) sur la connexion (N) avec séquencement.
+	\item Libération de la connexion
+\end{itemize}
+Multiplexage de connexion et éclatement de connexions
 	\chapter{Approche métiers}
 
 \end{document}
-
-
-
 
 
 

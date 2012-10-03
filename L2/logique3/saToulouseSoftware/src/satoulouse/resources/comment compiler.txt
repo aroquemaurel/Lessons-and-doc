@@ -1,0 +1,1 @@
+"C:\Program Files (x86)\Java\jre1.6.0_18\bin\java" -jar kawa-1.10.jar -C C:\Users\Ancmin\Documents\NetbeansProjects\satoulouse\src\satoulouse\resources\formula-expander.scm
