@@ -108,6 +108,82 @@
 				3E5 &=& (3\times 16^2 + 14*16 + 5 + 5 \times 16^{-1} + 8 \times 16 ^{-2}\\
 				&=& (997,34375)_{10}
 			\end{eqnarray*}
+		\section{Codage}
+		\subsection{Codage de nombres entiers relatifs}
+		On veut coder des entiers relatifs sur 16 chifffres binaires (deux octets).
+
+		\begin{tabular}{| p{1.8cm}|p{4cm}|p{2cm}|p{3.7cm}|p{3.7cm}|}
+			\hline
+			& \multicolumn{2}{ c|}{\textbf{Valeur absolue}}  & \multicolumn{2}{ c |}{\textbf{Valeur relative}}\\
+			\hline
+			\textbf{Base 10} & \textbf{Base 2} & \textbf{Base 16} & \textbf{Valeur absolue + signe} & \textbf{Complément à 2}\\
+			\hline
+			$\ \ 35671$&$10000\;010\;0101\;0111$& 75B8 & Hors intervalle & Hors intervalle\\
+			\hline
+			$-32768$ & $1000\; 0000\; 0000\; 0000$ & $8000$ & Hors intervalle & $1000\; 0000\; 0000$\\
+			\hline
+			$\ \ 46443$& $1011\; 0101\; 0110\; 1011$ & B56B & Hors intervalle & Hors intervalle\\
+			\hline
+			$-19536$& $0100\; 1100\; 0110\;0100$ & 4C64 & $1100\; 1100\; 0110\; 0100$ & $1011\; 0011\; 1001\; 1100$\\
+			\hline
+			$-19040$ & $0100\; 1010\; 0110\; 0000$ & 4A60 & $1100\; 1010\; 0110\; 0000$ & $1011\; 0101\; 1010\; 0000$\\
+			\hline
+		\end{tabular}
+		\subsubsection{Calcul de la valeur absolue en base 2}
+		\begin{eqnarray*}
+			3567 \div 16 &=& 229 \textrm{ et reste 7}\\
+			2229 \div 16 &=& 139 \textrm{ et reste 5}\\
+			139 \div 16 &=& 8 \textrm{ et reste B}\\
+			8 \div 16 &=&0 \textrm{ et reste 8}\\
+		\end{eqnarray*}
+		$$\Rightarrow (35671)_{10} = (8B57)_{16} = (1000\; 1010\; 0101\; 0111)_2$$
+		\remarque{
+		Afin de pouvoir représenter un nombre celui-ci ne doit pas dépasser un certain intervalle : 
+
+\begin{description}
+	\item[Entier naturel] $[0;2^{16-1}] = [0;65535]$
+	\item[Valeur absolue + signe] $[-2^{15-1};2^{15-1}] = [-16384 ; 16384]$
+	\item[Complément à deux] $[-2^{15};2^{15}] = [-32768 ; 32768]$
+\end{description}
+		}
+		\subsection{Convertir un nombre flottant en décimal}
+		\begin{center}
+			\begin{tabular}{|c|c|c|}
+				\hline
+				$0$ & $1000\; 0001$ & $1110\; 0000\; 0000\; 0000\; 0000\; 0000$\\
+				\hline
+			\end{tabular}
+		\end{center}
+	$$C = E + biais$$
+	En simple précision biais = 127.
+
+	\begin{eqnarray*}
+		S &=& 0 \rightarrow \textrm{ positif}\\
+		C &=& 129\\
+		E &=& C - 127 = 2\\
+		1.M &=& 1.111 \Rightarrow 1.111 \times 2^2 = 111.1 \times 2^0 = (7.5)_{10}\\
+	\end{eqnarray*}
+	\newpage	
+	\subsection{Convertir un nombre décimal en flottant}
+	\begin{eqnarray*}
+		(35.5)_{10} &=& ? \\
+		100011.1 &=& 10000111 \times 2^5\\
+		\textrm{Nombre positif donc } S &=& 0\\
+		E &=& 5\\
+		C &=& E + 127 = 132 = 128+4 = (10000100)_2\\
+		1.M &=& 1.00011\\
+		M &=& 0011\\
+	\end{eqnarray*}
+	
+		\begin{center}
+			\begin{tabular}{|c|c|c|}
+				\hline
+				$0$ & $1000\; 0001$ & $0100\; 0011\; 0000\; 0000\; 0000\; 0000$\\
+				\hline
+			\end{tabular}
+		\end{center}
+		
+
 \end{document}
 
 
