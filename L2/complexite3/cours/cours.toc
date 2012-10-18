@@ -23,6 +23,7 @@
 \contentsline {section}{\numberline {2.1}Complexit\IeC {\'e} de boucles ``pour''}{9}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Exemple}{9}{subsection.2.1.1}
 \contentsline {section}{\numberline {2.2}Complexit\IeC {\'e} de boucles ``tant que''}{10}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Exemple}{10}{subsection.2.2.1}
 \contentsline {chapter}{\numberline {3}Complexit\IeC {\'e} d'algorithmes d\IeC {\'e}finis par r\IeC {\'e}ccurence}{9}{chapter.3}
 \contentsline {chapter}{\numberline {4}Structure de donn\IeC {\'e}es et complexit\IeC {\'e}}{10}{chapter.4}
 \contentsline {chapter}{\numberline {A}Exercices}{11}{appendix.A}

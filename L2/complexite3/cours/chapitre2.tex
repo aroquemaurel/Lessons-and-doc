@@ -39,5 +39,16 @@ $$T_{\moy} = 1 + \sum^\infty_{i=1}\textrm{Prob}$$
 On ajoute 1 pour le test de la condition C lorsque C = faux.
 
 Soit $E_i$ l'événement C = Vrai au début de $i_i$\\
-Si $\forall i, j E_i, E_j$ sont indépendantes et $\prob(E_i) = p < 1$, où p est une constante
+Si $\forall i, j E_i, E_j$ sont indépendantes et $\prob(E_i) = p < 1$, où p est une constante, alors\\ prob(on exécute $I_i$) = $\prob(E_1\cdots E_i) = p^i$ d'où
+$$T_{\moy}(n) = 1 + \sum^{\infty}_{i=1}p^i*T(I_i)$$
+Si $T(I_i)$ est constante, alors $$T_{\moy}(n) = \Theta (1 + \frac{p}{1-p}) = \Theta (\frac{1}{1-p}) = \Theta(1)$$
 
+\subsection{Exemple}
+Comparaison de 2 suites $\{A_i\},\{b_i\}$.
+\begin{lstlisting}[language=algo]
+	i := 1;
+	tantque (ai = bi et i <= n) faire
+		i := i + 1;
+	fin tantque;
+\end{lstlisting}
+$T_{\moy}(n) = \Theta(1)$ si les suites sont indépendantes et aléatoires.
