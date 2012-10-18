@@ -1,0 +1,49 @@
+\chapter{Exercices}
+\section{TD 1}
+\subsection{Lesquelles des affirmations suivantes sont vraies ?}
+\begin{enumerate}
+	\item $n^2.5 = \Theta(n^3)$ : Faux 
+	\item $n^2.5 = O(n^3)$ : Vrai 
+	\item $n^2.5 = \Omega(n^3)$ : Faux
+	\item $log_2(2n) = \Theta(\log n)$ : Vrai
+	\item Vrai
+	\item Faux
+\end{enumerate}
+\subsection{Une seule des afirmations suivantes est vraie. Laquelle ?}
+Réponse D
+\subsection{Une seule des affirmations suivantes est vraie. Laquelle ?}
+Réponse C
+$n + n\log_2 n \leq 2 n\log_2 n= \Theta(n \log n)$
+\remarque{On ne s'occupe pas des facteurs constants}
+\subsection{}
+Réponse D
+\subsection{Laquelle des affirmations suivantes sont vraies}
+\begin{enumerate}
+	\item $\max{(f(n),g(n))} = \Theta(f(n)+g(n))$ Vrai : $\max (f(n), g(n)) \leq f(n) + n(n) \leq 2 \max(f(n),g(n))$
+	\item Vrai : $\frac{1}{c}f(n) \leq g(n)$ et $g(n) \leq \frac{1}{2}f(n)$
+	\item Vrai : $\forall n \geq n_0 : f(n) \leq c g(n)$
+	\item Faux
+	\item Vrai
+	\item Faux \\
+		$$g(n) = 2n, f(n) = n\\ g(n) = O(f(n))\\ 2^{g(n)} = 2^{2n} = (2^n)^2$$
+\end{enumerate}
+\subsection{Lesquelles des affirmations suivantes sont vraies ?}
+Réponse D. 
+\begin{eqnarray*}
+	f(n) \leq c_1 g(n)&,& g(n) \leq c_2 f(n)\\
+	\frac{1}{c_2} \leq \frac{f(n)}{g(n)} \leq c_1.1 &\Rightarrow& \frac{f(n)}{g(n)} = \Theta(1)
+\end{eqnarray*}
+\subsection{Simplifiez les expressions suivantes}
+\begin{enumerate}
+	\item $O(4n^2+3n^2+7\log_2(n^n)) = O(n^3)$ 
+	\item $\Theta(n\log_2 n + 17n + 2n^3 = \Theta (n^2)$ 
+	\item $\Omega(4n^2 + 3n^3) = \Omega(n^3)$ 
+	\item $O(2^{n\log_3}n + 3\log_2 n!) = O(n^2)$
+	\item $O(2\log_3 n + 3\log_2 n + 6) = O(\log n)$
+\end{enumerate}
+\subsection{Classez les fonctions suivantes dans l'ordre croissant d'ordre de grandeur}
+\begin{enumerate}
+\item $4n \log_2 n + 4n$
+\item $2n \log_2 n + 4n$
+\item $n^2 \log_e n$
+\end{enumerate}

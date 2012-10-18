@@ -36,124 +36,25 @@
 \newcommand{\elsep}{\texttt{else}}
 
 \makeatother
-
+\includeonly{
+%chapitre1,
+chapitre2,
+%chapitre3,
+%chapitre4,
+%annexes,
+}
 \begin{document}
 	\setcounter{tocdepth}{1}
 	\setcounter{secnumdepth}{3}
 	\maketitle
 	\tableofcontents
-	\chapter{Introduction}
-		\section{Complexité}
-		On cherche à estimer le temps de calcul d'un algorithme A en fonction d'un paramètre n. Pour avoir une mesure indépendante de la machine, on identifie
-		le temps de calcul avec le nombre d'instructions exécutées. 
-		
-		\exemple{Le paramètre n pourrait être la taille d'un tableau, par exemple.}
-
-		Soit $D_i$ l'ensemble des données possibles telle que $n=i$. Pour $d \in D_i$ on notera $T(A,d)$ le nombre d'instructions exécutée pendant l'exécution de
-		$A(d)$.\\
-		On notera $\prob(d|i)$ la probabilité que les données soit $d$ étant donné qu'elles sont de taille $i$.
-
-		\subsection{La complexité temporelle maximale} 
-		La complexité temporelle maximale\footnote{Complexité dans le pire des cas} d'un algorithme A :
-		$$T_{\max}(i) = \max_{d\in D_i}\{T(A,d)\}$$
-		\subsection{La complexité temporelle moyenne}
-		La complexité temporelle moyenne\footnote{Complexité dans le cas moyen} d'un algorithme A :
-		$$T_{\moy} = \sum_{d \in D_i} \prob(d|i) \times T(A,d)$$
-		\remarque{Pour pouvoir calculer $T_\moy$, il faut connaître la distribution des données, ce qui n'est pas toujours évident (par exemple en traitement d'image)}
-		\subsection{La complexité temporelle minimale}
-		La complexité temporelle minimale\footnote{Complexité dans le meilleur des cas} d'un algorithme A :
-		$$T_{\min}(i) = \min_{d\in D_i}\{T(A,d)\}$$ 
-		\remarque{Peu utilisé, sauf pour prouver qu'un algorithme est mauvais. Si la complexité temporelle minimale est 
-			mauvaise même dans le meilleur des cas, alors l'algorithme n'est pas bon.}
-
-%			\remarque{$T_{\max}$ et $T_{\min}$ nous fournissent des bornes supérieures et inférieures.}
-
-		\subsection{Compairaison de complexités en fonction de la machine}
-		\begin{tabular}{| c | p{7cm} | p{7cm}|} 
-			\hline
-			\textbf{Complexité}& \multicolumn{2}{|c|}{\textbf{Nombre d'instructions pouvant executer la machine}}\\
-			\hline
-			 & $1\;000\;000$ & $1\;000\;000\;000\;000$\\
-			\hline
-			$n$ & $1\;000\;000$&$1\;000\;000\;000\;000$\\
-			\hline
-			$n \log_2 n$ &$64\;000$&$32\;000\;000\;000$\\
-			\hline
-			$n^2$ & $1\;000$&$1\;000\;000$\\
-			\hline
-			$n^3$ &$100$&$10\;000$\\
-			\hline
-			$2^n$ &$20$&$40$\\
-			\hline
-		\end{tabular}
-		\section{Complexité asymptotique}
-		Pour comparer des algorithmes, on ne s'intéresse qu'à leur comportements pour n grand. On cherche une mesure de complexité qui soit indépendante du langage de programmation et de la vitesse de la machine. \\ 
-	$\Rightarrow$		On ne doit pas perdre en compte des facteurs constants.  \\
-	$\Rightarrow$	Ordre de grandeur
-
-	\subsection{La complexité asymptotique}
-	La complexité asymptotique\footnote{Que ce soit maximale, moyenne ou minimale} est l'ordre de grandeur de sa limite lorsque $n \rightarrow \infty$
-
-	\subsection{Notation} Soient $T$, $f$ des fonctions positives ou nulles. Rotations de grandeur de fonction asymptotiques.
-	\paragraph{Grand O} $T = O(f)$ si $\exists c \in \mathbb{R}^{>0}$ et $n_0 \in \mathbb{N}$ tels que $\forall n \geq n_0$, $T(n) \leq cf(n)$.
-
-	\paragraph{Grand Oméga} $T = \Omega(f)$ si $\exists c \in \mathbb{R}^{>0}$ et $n_0 \in \mathbb{N}$ tels que $i\forall n \geq n_0$, $T(n) \geq cf(n)$
-	\paragraph{Petit O} $T = o(f)$ si $\frac{T(n)}{f(n)} \rightarrow O$ lorsque $n \rightarrow \infty$. 
-	\remarque{T est négligeable devant f}
-
-	\exemple{
-	\begin{enumerate}
-		\item $2n^2 + 5n + 10 = O(n^2)$\\
-		Dans la définition $n_0 = 5$,$c=4$ : \\
-		$\forall n \geq 5,\ 2n^2+5n+10 \leq 4n^2$
-	\item $2n^2 + 5n + 10 = \Omega(n^2)$\\
-		Dans la définition, $n_0 = 1$, $c = 2$\\
-		$\forall n \geq 1,\ 2n^2 + 5n + 10 \geq 2n^2 \cdots$\\
-		Donc $2n^2+5n+10 = \Theta (n^2)$
-	\item $\frac{1}{5} + n = O(n\log_2 n)\ (n_0 = 2,\ c=2)$
-	\item $\frac{1}{5} n \log_2 n + n = \Omega(n \log n)\ (n_0=1,c=\frac{1}{5})$
-	\item $\forall k \geq 0$, $n^k = O(n^{k+1})$ mais $n^k \neq \Omega(n^{k+1})$
-	\item $\forall a,b >1, \log_a n = \Theta (\log_b n)$ car $\log_a n = \frac{\log_b n}{\log_b a}$ et $\log_b a$ est une constante. $\Rightarrow$ On a pas besoin de préciser la base de logarithme dnas une complexité asymptotique
-	\item $2n^2 + 5n + 10 = 2n^2 + 0(n^2)$
-	\item Pour toute constante $c>0$, $C = \Theta(1)$
-	\item $2^n = o(3^n)$
-	\end{enumerate}
-	}
-	\remarque{\begin{enumerate}
-		\item O et $\Omega$ sont des pré-ordres\footnote{Relations reflexives et transitives} :\\ $f = O(f)$ et $f = O(g)$ et $g = O(h)) \Rightarrow f = O(h)$
-		\item $\Theta$ est une relation d'équivalence\footnote{relation reflexives, symétrique et transitive} : 
-			$f = \Theta(g) \Leftrightarrow g = \Theta (f)$
-	\end{enumerate}
-	}
-	\paragraph{Proposition}
-	$$\textrm{Si } \lim_{n \rightarrow \infty} \frac{f(n)}{g(n)} = a > 0 \textrm{ Alors }f = \Theta (g)$$
-	\remarque{La réciproque est fausse}
-
-	\paragraph{Notation} $$f \sim g \Rightarrow \lim_{n\rightarrow \infty} \frac{f(n)}{g(n)} = 1$$
-	\exemple{$(3n+1)^3 \sim 27n^3$}
-	\section{Exemple de complexités d'algorithmes}
-	\subsection{Le tri à bulles}
-	\begin{eqnarray*}
-		T_{\min} (n) &=& \Theta (n) \textrm{ Si le tableau est est déjà trié}\\
-		T_{\max}(n) &=& \Theta(n^2) \textrm{ Si le tableau est trié en ordre décroissant}\\
-		T_{\moy}(n) &=& T_{\max}(n) = \Theta(n^2)\\
-	\end{eqnarray*}
-	\subsection{Tri par fusion}
-	\begin{eqnarray*}
-		T_{\min}(n) = T_{\max}(n) = T_{\moy}(n) = \Theta (n\log n)
-	\end{eqnarray*}
-	\subsection{Tri rapide}
-	\begin{eqnarray*}
-		T_{\min}(n) = T_{\moy}(n) &=& \Theta (n \log n)\\
-		T_{\max}(n) &=& \Theta(n^2)
-	\end{eqnarray*}
-	\chapter{Complexité des boucles}
-	\chapter{Complexité d'algorithmes définis par réccurence}
-	\chapter{Structure de données et complexité}
+	\include{chapitre1}
+	\include{chapitre2}
+	\include{chapitre3}
+	\include{chapitre4}
 	
 	\appendix
-	\chapter{Exercices}
-	\section{TD 1}
+	\include{annexes}
 \end{document}
 
 

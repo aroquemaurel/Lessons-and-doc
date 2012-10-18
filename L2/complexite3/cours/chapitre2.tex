@@ -1,0 +1,43 @@
+\chapter{Complexité des boucles}
+	\section{Complexité de boucles ``pour''}
+\begin{lstlisting}[language=algo]
+	pour i:= 1 a n faire
+		-- Corps de la boucle
+	fin pour;
+\end{lstlisting}
+Notions $I_i$ la i\ieme{} itération (les instructions executées lors du i\ieme{} passage dans la boucle) et $T(I_i)$ sa complexité temporelle.:
+
+%$$	T_{\moy}(n) = T_\max(n) = \sum^{n}_{i=1} T(I_i)\\$$
+Par exemple, $T_\moy(n) = T\max(n) = \Theta(n)$ si $T(I_i)$ constant et $= \Theta(n^2)$ si $T(I_i) = an+b$ (boucle imbriquée.
+
+\subsection{Exemple}
+Calculer $A=BC$, le produit de 2 matrics. Rappel:
+$$a_{ik} = \sum^n_{j=1} = b_{ij}C_{ji}$$
+\begin{lstlisting}[language=algo]
+	pour i = 1 a n faire
+		pour k = 1 a n faire
+				aik  0
+				pour j = 1 a n faire
+					aik = aik + bij * cjk;
+				fin pour;
+			fin pour;
+		fin pour;
+	fin pour;
+\end{lstlisting}
+
+$$T_{\moy}(n) = T_{\max}(n) = \sum^n_{i=1}\sum^n_{k=1}(1+n) = \Theta(n^3)$$
+
+\newpage
+\section{Complexité de boucles ``tant que''}
+
+\begin{lstlisting}[language=algo]
+	tantque C faire
+		-- Corps de la boucle
+	fin tantque;
+\end{lstlisting}
+$$T_{\moy} = 1 + \sum^\infty_{i=1}\textrm{Prob}$$
+On ajoute 1 pour le test de la condition C lorsque C = faux.
+
+Soit $E_i$ l'événement C = Vrai au début de $i_i$\\
+Si $\forall i, j E_i, E_j$ sont indépendantes et $\prob(E_i) = p < 1$, où p est une constante
+
