@@ -11,3 +11,14 @@
 \BOOKMARK [1][-]{section.7.2}{Communication entre syst\350mes}{chapter.7}
 \BOOKMARK [1][-]{section.7.3}{4 primitives de Service}{chapter.7}
 \BOOKMARK [0][-]{chapter.8}{Approche m\351tiers}{}
+\BOOKMARK [0][-]{appendix.A}{Exo}{}
+\BOOKMARK [1][-]{subsection.A.0.1}{Comment appelle-t-on un r\351seau \340 l'\351chelle d'une entreprise ?}{appendix.A}
+\BOOKMARK [2][-]{subsection.A.0.2}{Quelles sont les diff\351rences entre une topologie point \340 point et une topologie \340 diffusion ?}{subsection.A.0.1}
+\BOOKMARK [2][-]{subsection.A.0.3}{Quel est l'int\351r\352t de lanormalisation ? Citer 4 organismes de normalisation}{subsection.A.0.1}
+\BOOKMARK [2][-]{subsection.A.0.4}{Qu'appelle-t-on syst\350me r\351\351l? Comment un syst\350me r\351el peut devenir ouvert ?}{subsection.A.0.1}
+\BOOKMARK [2][-]{subsection.A.0.5}{Que d\351finit le mod\350le de r\351f\351rence OSI ?}{subsection.A.0.1}
+\BOOKMARK [2][-]{subsection.A.0.6}{Quelle est la signification de la communication horizontale dans le mod\350le OSI ?}{subsection.A.0.1}
+\BOOKMARK [2][-]{subsection.A.0.7}{Dans quelle mesure peut-on parler de communication verticale dans le mod\350le OSI ?}{subsection.A.0.1}
+\BOOKMARK [2][-]{subsection.A.0.8}{Qui du mod\350le OSI ou de l'architecture TCP/IP est le plus r\351cent ?}{subsection.A.0.1}
+\BOOKMARK [2][-]{subsection.A.0.9}{\300 quel niveau se situe le d\351placement proprement dit des donn\351es ?}{subsection.A.0.1}
+\BOOKMARK [2][-]{subsection.A.0.10}{Quel type d'identifiant est mis en \234uvre au niveau 1 OSI ?}{subsection.A.0.1}

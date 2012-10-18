@@ -1,5 +1,4 @@
 \documentclass[12pt,a4paper,openany]{book}
-
 \usepackage{lmodern}
 \usepackage{xcolor}
 \input{/home/aroquemaurel/cours/includesLaTeX/couleurs.tex}
@@ -458,7 +457,7 @@ n=0	&1 & 0 & indéfini & 1\\
 
 Un exemple est disponible annexe \ref{pfpSequence} page \pageref{pfpSequence}.
 
-\section{Calcul du pfp d'une répétition.}
+\section{Calcul du pfp d'une répétition.}\label{pfpBoucle}
 Modélisation formelle de la répétition.
 \begin{lstlisting}[language=C]
 /* PE */
@@ -475,9 +474,9 @@ while(c) {
 Il y a cinq étapes pour la vérification de la boucle.
 \begin{enumerate}
 	\item $PE \rightarrow \pfp(\texttt{initialisation}, \texttt{INVARIANT})$
-	\item $c \wedge \texttt{INVARIANT} \rightarrow \pfp (\texttt{corps}, \texttt{INVARIANT})$
-	\item $\neg c \wedge \texttt{INVARIANT} \rightarrow PS$ 
-	\item $ \texttt{InvARIANT} \wedge c \rightarrow f > 0$\footnote{f: fonction définie positive : f est appelée ``variante''}
+	\item $c \wedge \texttt{INVARIANT} \rightarrow \pfp (\texttt{corps}, \texttt{INVARIANT})$\label{etape2boucle}
+	\item $\neg c \wedge \texttt{INVARIANT} \rightarrow PS$ \label{etape3boucle}
+	\item $ \texttt{INVARIANT} \wedge c \rightarrow f > 0$\footnote{f: fonction définie positive : f est appelée ``variante''}
 	\item $F = f \wedge \texttt{INVARIANT} \wedge c \rightarrow \pfp (\texttt{corps}, F > f)$\footnote{f est décroissante}
 \end{enumerate}
 

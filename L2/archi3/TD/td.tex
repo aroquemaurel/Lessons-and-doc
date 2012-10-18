@@ -184,6 +184,27 @@
 		\end{center}
 		
 
+		\chapter{Algèbre de Bool}
+	\section{Table de vérité des opérateurs classiques}
+	\subsection{Exercice 1}
+		\subsubsection{A -- Démontrer que les opérateurs NAND et NOR sont des opérateurs complets}
+		\begin{eqnarray*}
+			\bar A &=& A|A\\
+			A.B &=& \bar{\bar{A.B}} = \bar{\bar A + \bar B} = \bar{A/B} = (A | B) | (A | B)\\
+			A+B &=& \bar{\bar{A+B}} = \bar{\bar A + \bar B} = (A|B) |(B |B)
+		\end{eqnarray*}
+		\begin{eqnarray*}
+			\bar A = \bar{A+A} = A \downarrow A\\
+			A . B = \bar{\bar{A.B}} = \bar{\bar A+ \bar B} = A \downarrow B \downarrow (\downarrow B \downarrow B)
+		\end{eqnarray*}
+		\subsubsection{B --}
+		\begin{enumerate}
+			\item $f(A,B,C,D)=\bar A B D + B\bar C + A\bar C D= \bar{\bar{\bar A B \bar D + B \bar C + A \bar C D}} 
+				= \bar{(\bar{\bar B\bar D).(\bar{A\bar C D)}}} = ( (A|A)|B( (D|D))) | (B|(C|C)) | (A|(C|C)|D)
+				$
+
+			
+		\end{enumerate}<++>
 \end{document}
 
 
