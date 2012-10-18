@@ -1,17 +1,20 @@
-\BOOKMARK [0][-]{chapter.1}{Histoire de la communication}{}
-\BOOKMARK [0][-]{chapter.2}{\311volution des r\351seaux}{}
+\BOOKMARK [-1][-]{part.1}{I Introduction aux r\351seaux informatiques}{}
+\BOOKMARK [0][-]{chapter.1}{Histoire de la communication}{part.1}
+\BOOKMARK [0][-]{chapter.2}{\311volution des r\351seaux}{part.1}
 \BOOKMARK [1][-]{section.2.1}{Les \351quipements cr\351\351s}{chapter.2}
 \BOOKMARK [1][-]{section.2.2}{D\351mocratisation de l'Informatique}{chapter.2}
-\BOOKMARK [0][-]{chapter.3}{Classification}{}
-\BOOKMARK [0][-]{chapter.4}{Topologie}{}
-\BOOKMARK [0][-]{chapter.5}{Normalisation}{}
-\BOOKMARK [0][-]{chapter.6}{Architecture de communication}{}
-\BOOKMARK [0][-]{chapter.7}{Mod\350le OSI}{}
+\BOOKMARK [0][-]{chapter.3}{Classification}{part.1}
+\BOOKMARK [0][-]{chapter.4}{Topologie}{part.1}
+\BOOKMARK [0][-]{chapter.5}{Normalisation}{part.1}
+\BOOKMARK [0][-]{chapter.6}{Architecture de communication}{part.1}
+\BOOKMARK [0][-]{chapter.7}{Mod\350le OSI}{part.1}
 \BOOKMARK [1][-]{section.7.1}{Les couches}{chapter.7}
 \BOOKMARK [1][-]{section.7.2}{Communication entre syst\350mes}{chapter.7}
 \BOOKMARK [1][-]{section.7.3}{4 primitives de Service}{chapter.7}
-\BOOKMARK [0][-]{chapter.8}{Approche m\351tiers}{}
-\BOOKMARK [0][-]{appendix.A}{Exo}{}
+\BOOKMARK [0][-]{chapter.8}{Approche m\351tiers}{part.1}
+\BOOKMARK [-1][-]{part.2}{II Transmission des donn\351es}{}
+\BOOKMARK [0][-]{chapter.9}{Codage de l'Information}{part.2}
+\BOOKMARK [0][-]{appendix.A}{Exo}{part.2}
 \BOOKMARK [1][-]{subsection.A.0.1}{Comment appelle-t-on un r\351seau \340 l'\351chelle d'une entreprise ?}{appendix.A}
 \BOOKMARK [2][-]{subsection.A.0.2}{Quelles sont les diff\351rences entre une topologie point \340 point et une topologie \340 diffusion ?}{subsection.A.0.1}
 \BOOKMARK [2][-]{subsection.A.0.3}{Quel est l'int\351r\352t de lanormalisation ? Citer 4 organismes de normalisation}{subsection.A.0.1}
