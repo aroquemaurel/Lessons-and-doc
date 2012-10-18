@@ -11,8 +11,8 @@
 \contentsline {lstlisting}{\numberline {2.11}Point d'entr\IeC {\'e}e du programme: le main}{10}{lstlisting.2.11}
 \contentsline {lstlisting}{\numberline {2.12}Exemple d'instructions pr\IeC {\'e}-processeurs}{11}{lstlisting.2.12}
 \contentsline {lstlisting}{\numberline {4.1}Exercice 3}{14}{lstlisting.4.1}
-\contentsline {lstlisting}{\numberline {9.1}Exercice 1 -- Code du programme}{22}{lstlisting.9.1}
-\contentsline {lstlisting}{\numberline {9.2}Exercice 3}{23}{lstlisting.9.2}
-\contentsline {lstlisting}{\numberline {9.3}Exercice 4}{24}{lstlisting.9.3}
-\contentsline {lstlisting}{\numberline {9.4}Exercice 5}{25}{lstlisting.9.4}
-\contentsline {lstlisting}{\numberline {9.5}Exercice 6}{26}{lstlisting.9.5}
+\contentsline {lstlisting}{\numberline {C.1}Exercice 1 -- Code du programme}{22}{lstlisting.C.1}
+\contentsline {lstlisting}{\numberline {C.2}Exercice 3}{23}{lstlisting.C.2}
+\contentsline {lstlisting}{\numberline {C.3}Exercice 4}{24}{lstlisting.C.3}
+\contentsline {lstlisting}{\numberline {C.4}Exercice 5}{25}{lstlisting.C.4}
+\contentsline {lstlisting}{\numberline {C.5}Exercice 6}{26}{lstlisting.C.5}
