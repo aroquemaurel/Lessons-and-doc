@@ -1,117 +1,117 @@
-\chapter{Méthodologie de la programmation impérative}
-	\section{Programmation ``en petit''}
-	\begin{description}
-		\item[Données] celle-ci son simple, comme un tableau à N éléments.
-		\item[Problème] Petit.
-		\item[Résolution] Développement d'un algorithme afin de traiter ces données.
-	\end{description}
-	Cf. cours du S3.
-
-	\section{Programmation en large}
-	\begin{description}
-		\item[Données] celle-ci son complexes, modélisation des données avec des types abstrait.
-		\item[Résolution] Développer de nombreux algorithmes afin de traiter le type abstrait. 
-	\end{description}
-	Cf. cours du S4.
-	\section{Développement d'un algorithme}
-	C'est un processus à 4 étapes:
-	\begin{enumerate}
-		\item \textbf{Comprendre} le problème : identifier le ``quoi''.
-		\item \textbf{Spécification} du problème : formaliser le ``quoi''
-		\item \textbf{Définir} un modèle de solution : identifier le ``comment''
-		\item \textbf{Développer} et trouver l'algorithme : formaliser le ``comment''.
-	\end{enumerate}
-
-	\section{\'Etape 1 : comprendre le problème}
-		Analyser du texte afin d'identifier les propriétés suivantes.
-		\begin{itemize}
-			\item Identifier les domaines du problèmes
-		Le domaine pose les fondements scientifiques à utiliser par le programme. 
-			\exemple{Arithmétique : se fonder sur la théorie du calcul\\ 
-					Topologique: se fonder sur les bases mathématiques de topologie}
-					\newpage
-
-					Il faut se poser la question \textit{``est-ce calculable ?''} : est-ce que le problème peut être résolu par un ordinateur.
-		\exemple{
-			\begin{enumerate}
-				\item Corriger toutes les fautes d'orthographe dans un texte: Non calculable car il y a un manque d'informations sur la taille et la nature des
-		données.  
-				\item Calculer la factorielle d'un entier $N \geq 0$ : calculable puisque la taille des données est fixée.
-			\end{enumerate}
-			}
-
-		\item \textit{évaluer les contraintes ``Physiques''} liées au problème. 
-			\begin{itemize}
-				\item Les contraintes liées à l'architecture et au fonctionnement de l'ordinateur
-				\item Les restrictions du problème.
-			\end{itemize}
-
-		\item Prendre des exemples et les traiter ``manuellement''
-		\end{itemize}	
-
-		En sortie de cette étape, nous avons une description informelle des données et de leur traitements.
-
-	\section{\'Etape 2 : Spécification du programme : spécification formelle}
-	Utilisation du langage logique des précédents pour écrire le programme, la spécification est composée de 3 informations appelée le triplet de \bsc{Hoare}.
-		\begin{enumerate}
-			\item Prédicat d'entrée : Exprime les propriétés logiques des données en entrée. 
-			\item nomDuProgramme (données en entrée E, données en sortie) 
-			\item Prédicat de sortie exprime les propriétés logiques des résultats.
-		\end{enumerate}
-		\exemple{
-		Celui du facteur de $N \geq 0$
-			\begin{itemize}
-				\item $ N > 0 \wedge [(N \in N)] \wedge (N < 30)$
-				\item \texttt{fact(N, f);}
-				\item $f = N!$
-			\end{itemize}
-		}
-		\section{\'Etape 3: Donner un modèle de solution}
-		Exprimer les différentes étapes de transformation des données en entrée vers les données en sortie. 
-		\begin{itemize}
-			\item En langage naturel
-			\item Sous forme fonctionnelle
-		\end{itemize}
-	\section{\'Etape 4 : Programmer et unifier le programme}	
-	\begin{itemize}
-		\item \'Ecriture en C du programme traduction du modèle vers le C.
-			\subsubsection{Vérification du programme}
-			\begin{itemize}
-				\item Test d'exécution : Tableau de situation, vérification non exhaustive. Cf section\ref{tableauSituation} page \pageref{tableauSituation}.
-				\item Preuve formelle par calcul de ``Plus faible Pré condition'' (Pfp). Cf chapitre \ref{pfp} page \pageref{pfp}.
-			\end{itemize}
-			\chapter{Le tableau de situation}\label{tableauSituation}
-	Le tableau de situation sert à tester le programme, la vérification n'est pas exhaustive. Il s'agit de vérifier que l'état des variables est cohérent.
+	\chapter{Méthodologie de la programmation impérative}
+		\section{Programmation ``en petit''}
 		\begin{description}
-			\item[Données en entrée] Programme ``instrumenté'' : code source + point d'arrêt: 
-				localisation dans l'espace du programme d'une opération de photographie de l'état de l'ordinateur.
-			\item[Opération de transformation] Dénuder le programme et prendre les photos. 
-			\item[Donnée en sortie] Liste de ``photos'' qui déçoit l'exécution de la même mémoire au cours de l'exécution.
+			\item[Données] celle-ci son simple, comme un tableau à N éléments.
+			\item[Problème] Petit.
+			\item[Résolution] Développement d'un algorithme afin de traiter ces données.
 		\end{description}
-	\end{itemize}
-	\exemple{
-		\lstinputlisting[language=C, caption=Exercice 3, numbers=none]{annexes/exo2.c}
-		Nous choisis le jeu de données $n = 0$ et $n = 4$ afin de passer dans tous les cas possibles.
-		\begin{center}
-			\begin{tabular}{c  |  c  c  c  c  }
-				&\textbf{\'Echelle} & \textbf{n} & \textbf{f} & \textbf{point d'arrêt}\\
-				n=0	&1 & 0 & indéfini & 1\\
-				\hline
-				&/ & / & / & /\\
-				\hline
-				\hline
-				&indéfini & 4 & 4 & 2\\
-				\hline
-				&indéfini &  3 & 12 & 3\\	
-				\hline
-				&indéfini & 2 & 24 & 3\\
-				\hline
-				&indéfini & 1 & 24 & 3\\
-				\hline
-				&24 & 6 & 24 & 4\\
-				\hline
-				&/ & / & / & /\\
-				\hline
-			\end{tabular}
-	\end{center}
-	}
+		Cf. cours du S3.
+
+		\section{Programmation en large}
+		\begin{description}
+			\item[Données] celle-ci son complexes, modélisation des données avec des types abstrait.
+			\item[Résolution] Développer de nombreux algorithmes afin de traiter le type abstrait. 
+		\end{description}
+		Cf. cours du S4.
+		\section{Développement d'un algorithme}
+		C'est un processus à 4 étapes:
+		\begin{enumerate}
+			\item \textbf{Comprendre} le problème : identifier le ``quoi''.
+			\item \textbf{Spécification} du problème : formaliser le ``quoi''
+			\item \textbf{Définir} un modèle de solution : identifier le ``comment''
+			\item \textbf{Développer} et trouver l'algorithme : formaliser le ``comment''.
+		\end{enumerate}
+
+		\section{\'Etape 1 : comprendre le problème}
+			Analyser du texte afin d'identifier les propriétés suivantes.
+			\begin{itemize}
+				\item Identifier les domaines du problèmes
+			Le domaine pose les fondements scientifiques à utiliser par le programme. 
+				\exemple{Arithmétique : se fonder sur la théorie du calcul\\ 
+						Topologique: se fonder sur les bases mathématiques de topologie}
+						\newpage
+
+						Il faut se poser la question \textit{``est-ce calculable ?''} : est-ce que le problème peut être résolu par un ordinateur.
+			\exemple{
+				\begin{enumerate}
+					\item Corriger toutes les fautes d'orthographe dans un texte: Non calculable car il y a un manque d'informations sur la taille et la nature des
+			données.  
+					\item Calculer la factorielle d'un entier $N \geq 0$ : calculable puisque la taille des données est fixée.
+				\end{enumerate}
+				}
+
+			\item \textit{évaluer les contraintes ``Physiques''} liées au problème. 
+				\begin{itemize}
+					\item Les contraintes liées à l'architecture et au fonctionnement de l'ordinateur
+					\item Les restrictions du problème.
+				\end{itemize}
+
+			\item Prendre des exemples et les traiter ``manuellement''
+			\end{itemize}	
+
+			En sortie de cette étape, nous avons une description informelle des données et de leur traitements.
+
+		\section{\'Etape 2 : Spécification du programme : spécification formelle}
+		Utilisation du langage logique des précédents pour écrire le programme, la spécification est composée de 3 informations appelée le triplet de \bsc{Hoare}.
+			\begin{enumerate}
+				\item Prédicat d'entrée : Exprime les propriétés logiques des données en entrée. 
+				\item nomDuProgramme (données en entrée E, données en sortie) 
+				\item Prédicat de sortie exprime les propriétés logiques des résultats.
+			\end{enumerate}
+			\exemple{
+			Celui du facteur de $N \geq 0$
+				\begin{itemize}
+					\item $ N > 0 \wedge [(N \in N)] \wedge (N < 30)$
+					\item \texttt{fact(N, f);}
+					\item $f = N!$
+				\end{itemize}
+			}
+			\section{\'Etape 3: Donner un modèle de solution}
+			Exprimer les différentes étapes de transformation des données en entrée vers les données en sortie. 
+			\begin{itemize}
+				\item En langage naturel
+				\item Sous forme fonctionnelle
+			\end{itemize}
+		\section{\'Etape 4 : Programmer et unifier le programme}	
+		\begin{itemize}
+			\item \'Ecriture en C du programme traduction du modèle vers le C.
+				\subsubsection{Vérification du programme}
+				\begin{itemize}
+					\item Test d'exécution : Tableau de situation, vérification non exhaustive. Cf section\ref{tableauSituation} page \pageref{tableauSituation}.
+					\item Preuve formelle par calcul de ``Plus faible Pré condition'' (Pfp). Cf chapitre \ref{pfp} page \pageref{pfp}.
+				\end{itemize}
+				\chapter{Le tableau de situation}\label{tableauSituation}
+		Le tableau de situation sert à tester le programme, la vérification n'est pas exhaustive. Il s'agit de vérifier que l'état des variables est cohérent.
+			\begin{description}
+				\item[Données en entrée] Programme ``instrumenté'' : code source + point d'arrêt: 
+					localisation dans l'espace du programme d'une opération de photographie de l'état de l'ordinateur.
+				\item[Opération de transformation] Dénuder le programme et prendre les photos. 
+				\item[Donnée en sortie] Liste de ``photos'' qui déçoit l'exécution de la même mémoire au cours de l'exécution.
+			\end{description}
+		\end{itemize}
+		\exemple{
+\lstinputlisting[language=C, caption=Exercice 3, numbers=none]{annexes/exo2.c}
+Nous choisis le jeu de données $n = 0$ et $n = 4$ afin de passer dans tous les cas possibles.
+\begin{center}
+\begin{tabular}{c  |  c  c  c  c  }
+	&\textbf{\'Echelle} & \textbf{n} & \textbf{f} & \textbf{point d'arrêt}\\
+n=0	&1 & 0 & indéfini & 1\\
+	\hline
+	&/ & / & / & /\\
+	\hline
+	\hline
+	&indéfini & 4 & 4 & 2\\
+	\hline
+	&indéfini &  3 & 12 & 3\\	
+	\hline
+	&indéfini & 2 & 24 & 3\\
+	\hline
+	&indéfini & 1 & 24 & 3\\
+	\hline
+	&24 & 6 & 24 & 4\\
+	\hline
+	&/ & / & / & /\\
+	\hline
+\end{tabular}
+\end{center}
+		}
