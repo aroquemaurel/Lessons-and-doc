@@ -1,0 +1,41 @@
+\select@language {french}
+\contentsline {part}{I\hspace {1em}Introduction aux r\IeC {\'e}seaux informatiques}{5}{part.1}
+\contentsline {chapter}{\numberline {1}Histoire de la communication}{6}{chapter.1}
+\contentsline {chapter}{\numberline {2}\'Evolution des r\IeC {\'e}seaux}{8}{chapter.2}
+\contentsline {paragraph}{Co\IeC {\^u}ts des \IeC {\'e}quipements Informatiques / Co\IeC {\^u}ts de la Communication}{8}{section*.2}
+\contentsline {paragraph}{Syst\IeC {\`e}me de T\IeC {\'e}l\IeC {\'e}traitement}{8}{section*.3}
+\contentsline {section}{\numberline {2.1}Les \IeC {\'e}quipements cr\IeC {\'e}\IeC {\'e}s}{8}{section.2.1}
+\contentsline {section}{\numberline {2.2}D\IeC {\'e}mocratisation de l'Informatique}{9}{section.2.2}
+\contentsline {chapter}{\numberline {3}Classification}{10}{chapter.3}
+\contentsline {chapter}{\numberline {4}Topologie}{12}{chapter.4}
+\contentsline {section}{\numberline {4.1}Topologie point \IeC {\`a} point}{12}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Topologie en \IeC {\'e}toile}{12}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Topologie en boucle}{13}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Topologie maill\IeC {\'e}e}{13}{subsection.4.1.3}
+\contentsline {section}{\numberline {4.2}Topologie \IeC {\`a} diffusion}{14}{section.4.2}
+\contentsline {section}{\numberline {4.3}Choix d'une topologie}{15}{section.4.3}
+\contentsline {chapter}{\numberline {5}Normalisation}{16}{chapter.5}
+\contentsline {section}{\numberline {5.1}qu'est ce que la normalisation et pourquoi ?}{16}{section.5.1}
+\contentsline {section}{\numberline {5.2}Les principaux organismes de normalisation}{16}{section.5.2}
+\contentsline {chapter}{\numberline {6}Architecture de communication}{19}{chapter.6}
+\contentsline {section}{\numberline {6.1}Qu'appelle-t-on Architecture de Communication ?}{20}{section.6.1}
+\contentsline {section}{\numberline {6.2}Quels sont les services offerts par une architecture de communication ?}{20}{section.6.2}
+\contentsline {section}{\numberline {6.3}Pourquoi normaliser l'architecture ?}{21}{section.6.3}
+\contentsline {section}{\numberline {6.4}Le mod\IeC {\`e}le OSI}{21}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Utilit\IeC {\'e} et objectifs}{21}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}Les couches}{22}{subsection.6.4.2}
+\contentsline {subsubsection}{\numberline {6.4.2.1}Couche 1}{22}{subsubsection.6.4.2.1}
+\contentsline {subsubsection}{\numberline {6.4.2.2}Couche 2}{22}{subsubsection.6.4.2.2}
+\contentsline {subsubsection}{\numberline {6.4.2.3}Couche 3}{22}{subsubsection.6.4.2.3}
+\contentsline {subsubsection}{\numberline {6.4.2.4}Couche 4}{23}{subsubsection.6.4.2.4}
+\contentsline {subsubsection}{\numberline {6.4.2.5}Couche 5}{23}{subsubsection.6.4.2.5}
+\contentsline {subsubsection}{\numberline {6.4.2.6}Couche 6}{23}{subsubsection.6.4.2.6}
+\contentsline {subsubsection}{\numberline {6.4.2.7}Couche 7}{23}{subsubsection.6.4.2.7}
+\contentsline {subsection}{\numberline {6.4.3}Int\IeC {\'e}raction entre entit\IeC {\'e}s}{23}{subsection.6.4.3}
+\contentsline {subsubsection}{\numberline {6.4.3.1}D\IeC {\'e}finitions}{24}{subsubsection.6.4.3.1}
+\contentsline {subsection}{\numberline {6.4.4}Transfert des donn\IeC {\'e}es utilisateurs}{25}{subsection.6.4.4}
+\contentsline {paragraph}{Segmentation/R\IeC {\'e}assemblage}{26}{section*.4}
+\contentsline {subsection}{\numberline {6.4.5}Int\IeC {\'e}ractions entre entit\IeC {\'e}s}{26}{subsection.6.4.5}
+\contentsline {part}{II\hspace {1em}Transmission des donn\IeC {\'e}es}{28}{part.2}
+\contentsline {chapter}{\numberline {7}Codage de l'Information}{29}{chapter.7}
+\contentsline {chapter}{\numberline {A}TD 1}{30}{appendix.A}
