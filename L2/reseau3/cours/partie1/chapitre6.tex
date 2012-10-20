@@ -1,32 +1,7 @@
 \chapter{Architecture de communication}
-	\begin{description}
-		\item[Transmission physique] Correspond au supports, au type d'encodage, aux liaisons, toute l'architecture physique.
-		\item[Contrôle d'erreurs]  Vérifier que les paquets sont bien arrivés.
-		\item[Contrôle de flux]  S'assurer que l'émetteur n'aille pas trop vite par rapport au récepteur
-		\item[Routage]  en cas de nœud de communication, choisir le chemin le plus rapide ceci en fonction du trafic. 
-		\item[Régulation de flux (congestion)] Réguler le flux pour éviter la congestion\footnote{Peut être assimiler aux bouchons}, il préfère la prévention afin d'éviter les bouchons. 
-		\item[Séquencement]  Les fichiers sont découpés en plusieurs paquets, en effet un paquet à une taille maximum, le séquencement réassemble les paquets afin de reconstituer le fichier grâce à une numérotation des paquets..
-		\item[Contrôle de bout en bout] Vérifier que le fichier à bien été reconstitué. 
-		\item[Gestion du dialogue] 
-		\item[Reprise sur incidents]Cela permet aussi de gérer un arrêt de la connexion réseau afin de reprendre le transfert à l'endroit où il s'était arrêté
-		\item[Transformation de l'information] Codage de l'information (avec le code ASCII par exemple), compression (codecs), sécurité de l'information (cryptage) 
-		\item[Synchronisation des processus] Sémantique de l'application, c'est-à-dire quelle opération au niveau applicatifs (Renommer un fichier, créer un répertoire, \ldots)
-	\end{description}
 
-	Des \textbf{architectures normalisées} ont été mis en place par les opérateurs de Télécommunications (X21, X25, ISDN,\ldots).\\
-	Des \textbf{architectures propriétaires} ont également être mise en place par les constructeurs informatiques (SNA, DNA, DSA).\\
-	\begin{description}
-		\item[1977] \textbf{ISO} constitue un comité pour la normalisation dans le domaine des télécommunications et de l'interconnexion des systèmes.\\
-		\item[1984] ISO 7948 référence CCITT X.200 (ITU)
-		\item[OSI] Cadre fonctionnel -- Le modèle de référence. Les objectifs du modèle OSI sont les suivants : 
-			\begin{itemize}
-				\item Décomposer (décomposition fonctionnelle)
-				\item Structurer
-				\item Assurer l'indépendance vis à vis du matériel et du logiciel.
-			\end{itemize}
-	\end{description}
 
-	\section{Qu'appelle-t-on Architecture de Communication ?}
+	\section{Définition d'une architecture de communication}
 Quand on parle d'Architecture, on se réfère à une structure d'éléments définissant un système complexe. Dans le langage courant, l'architecture est ``l'art de concevoir et de construire un bâtiment selon des règles techniques'' (Le Petit Larousse). Pour un informaticien, il est fait souvent référence à l'architecture du calculateur, ensemble structuré d'éléments électroniques et logiques.
 
 L'Architecture de Communication définit l'ensemble des entités nécessaires à la Communication ainsi que les règles régissant les échanges entre elles. On parle aussi d'Architecture de Réseau.
@@ -46,20 +21,21 @@ Le responsable d'une entreprise française (FR) négocie un marché avec le resp
 
 Des fonctions similaires seront mises en oeuvre du coté destinataire en remontant les différentes couches.
 
-\section{Quels sont les services offerts par une architecture de communication ?}
+\section{Les services offerts par une architecture de communication}
 Les services offerts par une architecture de communication couvrnt tous les aspects de la transmission physique jusqu'à la synchronisation des processus applicatifs :
-\begin{itemize}
-\item Transmission physique;
-\item Contrôle d'erreurs;
-\item Routage;
-\item Régulation de flux (congestion);
-\item Séquencement;
-\item Contrôle de bout en bout;
-\item Gestion du dialogue;
-\item Reprise sur incidents;
-\item Transformation de l'information (codage, compression, cryptage\ldots);
-\item Synchronisation des processus;
-\end{itemize}
+\begin{description}
+	\item[Transmission physique] Correspond au supports, au type d'encodage, aux liaisons, toute l'architecture physique.
+	\item[Contrôle d'erreurs]  Vérifier que les paquets sont bien arrivés.
+	\item[Contrôle de flux]  S'assurer que l'émetteur n'aille pas trop vite par rapport au récepteur
+	\item[Routage]  en cas de nœud de communication, choisir le chemin le plus rapide ceci en fonction du trafic. 
+	\item[Régulation de flux (congestion)] Réguler le flux pour éviter la congestion\footnote{Peut être assimiler aux bouchons}, il préfère la prévention afin d'éviter les bouchons. 
+	\item[Séquencement]  Les fichiers sont découpés en plusieurs paquets, en effet un paquet à une taille maximum, le séquencement réassemble les paquets afin de reconstituer le fichier grâce à une numérotation des paquets..
+	\item[Contrôle de bout en bout] Vérifier que le fichier à bien été reconstitué. 
+	\item[Gestion du dialogue] 
+	\item[Reprise sur incidents]Cela permet aussi de gérer un arrêt de la connexion réseau afin de reprendre le transfert à l'endroit où il s'était arrêté
+	\item[Transformation de l'information] Codage de l'information (avec le code ASCII par exemple), compression (codecs), sécurité de l'information (cryptage) 
+	\item[Synchronisation des processus] Sémantique de l'application, c'est-à-dire quelle opération au niveau applicatifs (Renommer un fichier, créer un répertoire, \ldots)
+\end{description}
 
 \section{Pourquoi normaliser l'architecture ?}
 Les opérateurs de Télécommunications, réunis au sein du CCITT (ITU actuellement), ont défini des architectures de communications permettant l'échange d'informations. Ainsi, leurs réseaux étaient interopérables ce qui a permis la constitution de réseaux internationaux.
@@ -68,6 +44,18 @@ Le monde Informatique n'a pas réagi de la même façon. Les intérêts n'étaie
 
 Face à cette situation, en 1977, l'organisation ISO a constitué des comités pour le développement d'une architecture commune permettant la connexion des équipements et l'échange de données entre eux. Ainsi, au sein du Comité Technique (TC : Technical Committee) TC97, deux Sous Comités (SC : SubCommittee) SC6 et SC21 s'occupèrent de la normalisation dans le domaine des Télécommunications et de l'Interconnexion de Systèmes. Le premier modèle a été achevé en 1979. En 1984, ISO publia le document ISO 7498 relatif au modèle de référence pour l'Interconnexion de Systèmes Ouverts OSI (Open Systems Interconnection). Le modèle OSI est référencé au CCITT sous la norme X.200. 
 
+	Des \textbf{architectures normalisées} ont été mis en place par les opérateurs de Télécommunications (X21, X25, ISDN,\ldots).\\
+	Des \textbf{architectures propriétaires} ont également être mise en place par les constructeurs informatiques (SNA, DNA, DSA).\\
+	\begin{description}
+		\item[1977] \textbf{ISO} constitue un comité pour la normalisation dans le domaine des télécommunications et de l'interconnexion des systèmes.\\
+		\item[1984] ISO 7948 référence CCITT X.200 (ITU)
+		\item[OSI] Cadre fonctionnel -- Le modèle de référence. Les objectifs du modèle OSI sont les suivants : 
+			\begin{itemize}
+				\item Décomposer (décomposition fonctionnelle)
+				\item Structurer
+				\item Assurer l'indépendance vis à vis du matériel et du logiciel.
+			\end{itemize}
+	\end{description}
 \section{Le modèle OSI}
 \subsection{Utilité et objectifs}
 On appelle Système Ouvert Réel un système réel dont la communication avec un autre système réel se fait conformément au modèle OSI.
@@ -86,7 +74,7 @@ SI regroupe les entités en 7 couches. Chaque couche correspond à un niveau log
 	\item Les couches hautes (5-7) relatives au traitement réparti de l'information ;
 \end{itemize}
 
-
+\newpage
 \subsection{Les couches}
 \begin{verbatim}
       +-------------------+ Exemple  

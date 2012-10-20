@@ -15,12 +15,12 @@
 \contentsline {section}{\numberline {4.2}Topologie \IeC {\`a} diffusion}{14}{section.4.2}
 \contentsline {section}{\numberline {4.3}Choix d'une topologie}{15}{section.4.3}
 \contentsline {chapter}{\numberline {5}Normalisation}{16}{chapter.5}
-\contentsline {section}{\numberline {5.1}qu'est ce que la normalisation et pourquoi ?}{16}{section.5.1}
+\contentsline {section}{\numberline {5.1}D\IeC {\'e}finition et utilit\IeC {\'e} de la normalisation}{16}{section.5.1}
 \contentsline {section}{\numberline {5.2}Les principaux organismes de normalisation}{16}{section.5.2}
 \contentsline {chapter}{\numberline {6}Architecture de communication}{19}{chapter.6}
-\contentsline {section}{\numberline {6.1}Qu'appelle-t-on Architecture de Communication ?}{20}{section.6.1}
-\contentsline {section}{\numberline {6.2}Quels sont les services offerts par une architecture de communication ?}{20}{section.6.2}
-\contentsline {section}{\numberline {6.3}Pourquoi normaliser l'architecture ?}{21}{section.6.3}
+\contentsline {section}{\numberline {6.1}D\IeC {\'e}finition d'une architecture de communication}{19}{section.6.1}
+\contentsline {section}{\numberline {6.2}Les services offerts par une architecture de communication}{19}{section.6.2}
+\contentsline {section}{\numberline {6.3}Pourquoi normaliser l'architecture ?}{20}{section.6.3}
 \contentsline {section}{\numberline {6.4}Le mod\IeC {\`e}le OSI}{21}{section.6.4}
 \contentsline {subsection}{\numberline {6.4.1}Utilit\IeC {\'e} et objectifs}{21}{subsection.6.4.1}
 \contentsline {subsection}{\numberline {6.4.2}Les couches}{22}{subsection.6.4.2}
