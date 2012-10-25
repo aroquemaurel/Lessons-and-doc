@@ -24,21 +24,21 @@ Identifier les entrée, les sorties et leurs propriétés.
 \subsubsection{\'Etape 3: Le code}
 \lstinputlisting[language=C, caption=Exercice 1 -- Code du programme]{annexes/exo1.c}
 \newpage
-	\section{Tableau de situation}	
-	\subsection{Exercice 2}
+\section{Tableau de situation}	
+\subsection{Exercice 2}
 \subsection{Exercice 3}
 
 \lstinputlisting[language=C, caption=Exercice 3]{annexes/exo3.c}
 \begin{center}
 \begin{tabular}{c  |  c  c  c  c  }
-	\textbf{Point d'arrêt }& \textbf{T} & \textbf{j} & \textbf{i} &\textbf{n}\\
-	\hline
-	1 & 0,0,0,0,0 & 3 & 5 & 1\\
-	\hline
-	2 & 0,0,0,1,0 & 4 & 3 & @\\
-	\hline
-	3 & 5,9,1,1,1&4&5&\\
-	\hline
+\textbf{Point d'arrêt }& \textbf{T} & \textbf{j} & \textbf{i} &\textbf{n}\\
+\hline
+1 & 0,0,0,0,0 & 3 & 5 & 1\\
+\hline
+2 & 0,0,0,1,0 & 4 & 3 & @\\
+\hline
+3 & 5,9,1,1,1&4&5&\\
+\hline
 \end{tabular}
 \end{center}
 \newpage
@@ -167,46 +167,46 @@ Identifier les entrée, les sorties et leurs propriétés.
 			$$n = \sum^{N-1}_{I=0} \nu J : I < J < N \wedge T[J] = T[I]$$
 		}
 
-	\section{Preuves de programmes}
-	\subsection{Séquence}
-	\begin{itemize}
-		\item \texttt{/* f = i! */}
-		\item \texttt{f = f * (i + 1);\\i = i + 1;}
-		\item \texttt{/* f = i! */}
-	\end{itemize}
-	\begin{eqnarray*}
-		f = i! &\rightarrow& \texttt{pfp}("f = f\times (i+1); i = i +1;", f= i!)\\
-		f=i!&\rightarrow&\texttt{pfp}("f=f\times(i+1);",\texttt{pfp}("i=i+1",f=i!)\\
-		%f = i! &\rightarrow& \textt{pfp}("f = f \times (i + 1);" f = (i + 1)!)
-	\end{eqnarray*}
-	\begin{itemize}
-		\item \texttt{/* (x = A) $\wedge$ (y = B) $\wedge$ (z = C)}
-		\item \texttt{x = x + y +z;\\z = x - y - z;\\y = x - y -z;\\x = x - y - z;}
-		\item \texttt{/* (x = B) $\wedge$ (y = C) $\wedge$ (z = A) */}
-	\end{itemize}
-	\begin{eqnarray*}
-		PE &\rightarrow& \texttt{pfp}("x=x+y+z;z=x-y-z;y=x-y-z;x=x-y-z;", (x=B)\wedge(y=C)\wedge(z=A)\\
-		PE &\rightarrow& \texttt{pfp}("x=x+y+z, z-x-y-z;y=x-y-z;", \\&&\texttt{pfp}("x=x-y-z;(x=B)\wedge(y=C)\wedge(z=A)\\
-		PE &\rightarrow& \texttt{pfp}("x=x+y+z, z-x-y-z;y=x-y-z;", x-y-z=B)\wedge y=C \wedge z = A\\
-		PE &\rightarrow& \texttt{pfp}("x=x+y+z,z=x-y-z", (y=B)\wedge (x-y-z=C)\wedge z = A\\
-		PE &\rightarrow& \texttt{pfp}("x=x+y+z", (y=B)\wedge (z=C) \wedge (x-y-z=A)\\
-		PE &\rightarrow& (y=B) \wedge (z=C)\wedge(x=A) \textmd{Vrai parceque }p\rightarrow p = \textmd{vrai}
-	\end{eqnarray*}
-	
-	\subsection{Sélection} \label{pfpSequence}
-	\subsubsection{Exercice 1}
+\section{Preuves de programmes}
+\subsection{Séquence}
+\begin{itemize}
+	\item \texttt{/* f = i! */}
+	\item \texttt{f = f * (i + 1);\\i = i + 1;}
+	\item \texttt{/* f = i! */}
+\end{itemize}
+\begin{eqnarray*}
+	f = i! &\rightarrow& \texttt{pfp}("f = f\times (i+1); i = i +1;", f= i!)\\
+	f=i!&\rightarrow&\texttt{pfp}("f=f\times(i+1);",\texttt{pfp}("i=i+1",f=i!)\\
+	%f = i! &\rightarrow& \textt{pfp}("f = f \times (i + 1);" f = (i + 1)!)
+\end{eqnarray*}
+\begin{itemize}
+	\item \texttt{/* (x = A) $\wedge$ (y = B) $\wedge$ (z = C)}
+	\item \texttt{x = x + y +z;\\z = x - y - z;\\y = x - y -z;\\x = x - y - z;}
+	\item \texttt{/* (x = B) $\wedge$ (y = C) $\wedge$ (z = A) */}
+\end{itemize}
+\begin{eqnarray*}
+	PE &\rightarrow& \texttt{pfp}("x=x+y+z;z=x-y-z;y=x-y-z;x=x-y-z;", (x=B)\wedge(y=C)\wedge(z=A)\\
+	PE &\rightarrow& \texttt{pfp}("x=x+y+z, z-x-y-z;y=x-y-z;", \\&&\texttt{pfp}("x=x-y-z;(x=B)\wedge(y=C)\wedge(z=A)\\
+	PE &\rightarrow& \texttt{pfp}("x=x+y+z, z-x-y-z;y=x-y-z;", x-y-z=B)\wedge y=C \wedge z = A\\
+	PE &\rightarrow& \texttt{pfp}("x=x+y+z,z=x-y-z", (y=B)\wedge (x-y-z=C)\wedge z = A\\
+	PE &\rightarrow& \texttt{pfp}("x=x+y+z", (y=B)\wedge (z=C) \wedge (x-y-z=A)\\
+	PE &\rightarrow& (y=B) \wedge (z=C)\wedge(x=A) \textmd{Vrai parceque }p\rightarrow p = \textmd{vrai}
+\end{eqnarray*}
+
+\subsection{Sélection} \label{pfpSequence}
+\subsubsection{Exercice 1}
 \begin{lstlisting}[language=C]
 /* x = A */
 if(x < 0)
-	x = -x;
+x = -x;
 
 /* x = |A| */
 \end{lstlisting}
 
 \begin{eqnarray*}
-	/*x = A*/ &\rightarrow& \pfp ("if(x < 0)\{ x = -x \}", x = |A|)\\
-	/*x = A*/ &\rightarrow& (((x<0)\rightarrow \pfp ("x=-x;", x = |A| ) \wedge (x >= 0 \rightarrow x = |A|)))\\
-	/*x = A*/ &\rightarrow& (((x < 0) \rightarrow (-x = |A|)) \wedge (( x >= 0) \rightarrow (x = |A|)))\\
+/*x = A*/ &\rightarrow& \pfp ("if(x < 0)\{ x = -x \}", x = |A|)\\
+/*x = A*/ &\rightarrow& (((x<0)\rightarrow \pfp ("x=-x;", x = |A| ) \wedge (x >= 0 \rightarrow x = |A|)))\\
+/*x = A*/ &\rightarrow& (((x < 0) \rightarrow (-x = |A|)) \wedge (( x >= 0) \rightarrow (x = |A|)))\\
 \end{eqnarray*}
 $( A ( A < 0) \rightarrow (-A = |A|) ) \wedge (A >= 0 \rightarrow (A=|A|))$
 Définition de la valeur absolue $|.|$.
@@ -215,18 +215,18 @@ Définition de la valeur absolue $|.|$.
 \begin{lstlisting}[language=C]
 /* x = A $\wedge$ y = B */
 if (A < B) {
-	x = A;
-	y = B;
+x = A;
+y = B;
 } else {
-	x = B;
-	y = A;
+x = B;
+y = A;
 }
 /* x $\leq$ y */ 
 \end{lstlisting}
 \begin{eqnarray*}
-	PE &\rightarrow& \pfp ("\ifp (A < B) \{ x = A; y = B\}\elsep \{ x = B; y =A\}", x \leq y)\\
+PE &\rightarrow& \pfp ("\ifp (A < B) \{ x = A; y = B\}\elsep \{ x = B; y =A\}", x \leq y)\\
 PE&\rightarrow&((A<B)\rightarrow\pfp("x=A;y=B",x\leq y))\wedge((A\geq B)\rightarrow\pfp("x=B;y=A",x\leq y))\\
-	PE &\rightarrow& ((( A < B) \rightarrow (A \leq B)) \wedge (A \geq B ) \rightarrow (B \leq A))
+PE &\rightarrow& ((( A < B) \rightarrow (A \leq B)) \wedge (A \geq B ) \rightarrow (B \leq A))
 \end{eqnarray*}
 Vrai par définition. A et toujours inférieur à B. $(A \geq B) \rightarrow (B \leq A)$ est une Tautologie. 
 \subsubsection{Exercice 3}
@@ -243,11 +243,11 @@ C'est une tautologie par définition de \texttt{max}.
 \subsubsection{Exercice 4}
 $$\pfp ("\ifp (x > y) \{ if(x \%2 ==  0) \{ x = x - 2\}\} \elsep \{y=y-1;\}", y-2 < x);$$
 \begin{eqnarray*}
-	(x > y) &\rightarrow& \pfp("if(x\%2 == 0) { x = x-2; } ", y-2 < x)) \wedge ( ( x \leq y) \rightarrow \pfp ("y = y-1;", y - 2 < x) )\\
-	(x > y) &\rightarrow& ( ( (x \%2 = =0) \rightarrow \pfp ("x = x-2", y-2 < x) \wedge \\
-	& &(x \% 2 != 0) \rightarrow(y-2 < x)) \wedge ( (x \leq y) \rightarrow (y-z < x))\\ 
-	(x > y) &\rightarrow& ( (x\%2 = = 0)\rightarrow ( (y-2) < (x - 2) ) \wedge ( ( x\%2 != 0) \rightarrow (y-2 < x))) \wedge (x \leq y \rightarrow y-z < x) \\
-	(x > y) &\rightarrow& (x \leq y \rightarrow y - z < x)
+(x > y) &\rightarrow& \pfp("if(x\%2 == 0) { x = x-2; } ", y-2 < x)) \wedge ( ( x \leq y) \rightarrow \pfp ("y = y-1;", y - 2 < x) )\\
+(x > y) &\rightarrow& ( ( (x \%2 = =0) \rightarrow \pfp ("x = x-2", y-2 < x) \wedge \\
+& &(x \% 2 != 0) \rightarrow(y-2 < x)) \wedge ( (x \leq y) \rightarrow (y-z < x))\\ 
+(x > y) &\rightarrow& ( (x\%2 = = 0)\rightarrow ( (y-2) < (x - 2) ) \wedge ( ( x\%2 != 0) \rightarrow (y-2 < x))) \wedge (x \leq y \rightarrow y-z < x) \\
+(x > y) &\rightarrow& (x \leq y \rightarrow y - z < x)
 \end{eqnarray*}
 
 \subsubsection{Exercice 5}
@@ -255,10 +255,10 @@ $$\pfp ("\ifp (x > y) \{ if(x \%2 ==  0) \{ x = x - 2\}\} \elsep \{y=y-1;\}", y-
 /* $N \geq 0$ */
 
 /* P Tableau de polynôme
- * N Degré du polynôme
- * X Point ou je veux évoluer le polynôme
- * r Résultat du polynôme
- */
+* N Degré du polynôme
+* X Point ou je veux évoluer le polynôme
+* r Résultat du polynôme
+*/
 calculPolynome(P,N,X,r);
 /* $r = \sum^N_{k=0} A[I]X^k $ */
 \end{lstlisting}
@@ -267,87 +267,87 @@ calculPolynome(P,N,X,r);
 
 /*	INV = $(o \leq i \leq N) \wedge (r = \sum^i_{k=0} A[k]x^k) \wedge (y = x^i)$*/
 while(c) {
-	/* c \wedge INV */
-	corps;
-	/* INV */
+/* c \wedge INV */
+corps;
+/* INV */
 }
 /* $\neg c \wedge INV$ */
 /* $p = \sum^N_{k=0} A[k] x^k$ */
 \end{lstlisting}
 \paragraph{INVARIANT}
-	$$(o \leq i \leq N) \wedge (r = \sum^i_{k=0} A[k]x^k) \wedge (y = x^i)$$
+$$(o \leq i \leq N) \wedge (r = \sum^i_{k=0} A[k]x^k) \wedge (y = x^i)$$
 \paragraph{Intitialisation}
-	\begin{enumerate} 
-		\item INIT 0 \begin{lstlisting}[language=C,numbers=none]
+\begin{enumerate} 
+	\item INIT 0 \begin{lstlisting}[language=C,numbers=none]
 i = 0; 
 p = 0; 
 y = 1;
 \end{lstlisting}~
 \begin{eqnarray*}
-	PE &\rightarrow& \pfp (\texttt{init}\ 0, \texttt{INV})\\
-	N \geq 0 &\rightarrow& \pfp ("i=0;p=0", p=\sum^i_k=0 A[k]x^k \wedge 1 = x^i);\\
-	N \geq 0 &\rightarrow& \pfp ("i=0", 0 = \sum^i_{k=0} A[k]x^k \wedge 1 = x^i\\
-	N \geq 0 &\rightarrow& 0 = \sum^0_{k=0} A[k]x^k \wedge 1 = x^0\\
-	(N \geq 0 &\rightarrow& 0 = A[0] \wedge 1 = 1) \Rightarrow \textrm{Faux et Vrai, donc le programme est Faux} \end{eqnarray*}
-		\item INIT 1 \begin{lstlisting}[language=C,numbers=none]
+PE &\rightarrow& \pfp (\texttt{init}\ 0, \texttt{INV})\\
+N \geq 0 &\rightarrow& \pfp ("i=0;p=0", p=\sum^i_k=0 A[k]x^k \wedge 1 = x^i);\\
+N \geq 0 &\rightarrow& \pfp ("i=0", 0 = \sum^i_{k=0} A[k]x^k \wedge 1 = x^i\\
+N \geq 0 &\rightarrow& 0 = \sum^0_{k=0} A[k]x^k \wedge 1 = x^0\\
+(N \geq 0 &\rightarrow& 0 = A[0] \wedge 1 = 1) \Rightarrow \textrm{Faux et Vrai, donc le programme est Faux} \end{eqnarray*}
+	\item INIT 1 \begin{lstlisting}[language=C,numbers=none]
 i = 0; 
 p = A[0]; 
 y = 1;
 \end{lstlisting}
 \begin{eqnarray*}
-	PE &\rightarrow& \pfp (\texttt{init}\ 1, \texttt{INV})\\
-	N \geq 0 &\rightarrow& \pfp ("i=0;p=A[0]", p=\sum^i_k=0 A[k]x^k \wedge 1 = x^i);\\
-	N \geq 0 &\rightarrow& \pfp ("i=0", A[0] = \sum^i_{k=0} A[k]x^k \wedge 1 = x^i\\
-	N \geq 0 &\rightarrow& A[0] = \sum^0_{k=0} A[k]x^k \wedge 1 = x^0\\
-	(N \geq 0 &\rightarrow& A[0] = A[0] \wedge 1 = 1) \Rightarrow \textrm{Vrai et Vrai, donc le programme est correct}
+PE &\rightarrow& \pfp (\texttt{init}\ 1, \texttt{INV})\\
+N \geq 0 &\rightarrow& \pfp ("i=0;p=A[0]", p=\sum^i_k=0 A[k]x^k \wedge 1 = x^i);\\
+N \geq 0 &\rightarrow& \pfp ("i=0", A[0] = \sum^i_{k=0} A[k]x^k \wedge 1 = x^i\\
+N \geq 0 &\rightarrow& A[0] = \sum^0_{k=0} A[k]x^k \wedge 1 = x^0\\
+(N \geq 0 &\rightarrow& A[0] = A[0] \wedge 1 = 1) \Rightarrow \textrm{Vrai et Vrai, donc le programme est correct}
 \end{eqnarray*}
 \end{enumerate}
 L'initialisation nécessaire est donc init 1.
 \paragraph{Boucles} 
-	\begin{enumerate} 
-		\item \begin{lstlisting}[language=C,numbers=none]
+\begin{enumerate} 
+	\item \begin{lstlisting}[language=C,numbers=none]
 while(i < N) { 
-	++i; 
-	p = p + A[i-1] * y; 
-	y = y * X; 
+++i; 
+p = p + A[i-1] * y; 
+y = y * X; 
 }
-		\end{lstlisting}~
-		\'Etape numéro \ref{etape3boucle} (Cf section \ref{pfpBoucle} page \pageref{etape3boucle})
-		\begin{eqnarray*}
-			\neg C \wedge INV &\rightarrow& PS\\
-			(i > N) \wedge (p = \sum^i_{k=0} A[k] x^k) \wedge(y=x^i) &\rightarrow& p = \sum^N_{k=0}A[k]x^k\\
-			(i > N) \wedge (p = \sum^i_{k=0} A[k] x^k) \wedge(y=x^i) &\rightarrow& p = \sum^N_{k=0}A[k]x^k\wedge (i=N)\\
-			(i > N) &\rightarrow& (i = N) \Rightarrow \textrm{C'est donc faux.}\\
-		\end{eqnarray*}
-		\remarque{Nous sommes partis de la conclusion et avons essayé de faire apparaitre notre hypothèse en partie droite.}
-		\item \begin{lstlisting}[language=C,numbers=none]
+	\end{lstlisting}~
+	\'Etape numéro \ref{etape3boucle} (Cf section \ref{pfpBoucle} page \pageref{etape3boucle})
+	\begin{eqnarray*}
+		\neg C \wedge INV &\rightarrow& PS\\
+		(i > N) \wedge (p = \sum^i_{k=0} A[k] x^k) \wedge(y=x^i) &\rightarrow& p = \sum^N_{k=0}A[k]x^k\\
+		(i > N) \wedge (p = \sum^i_{k=0} A[k] x^k) \wedge(y=x^i) &\rightarrow& p = \sum^N_{k=0}A[k]x^k\wedge (i=N)\\
+		(i > N) &\rightarrow& (i = N) \Rightarrow \textrm{C'est donc faux.}\\
+	\end{eqnarray*}
+	\remarque{Nous sommes partis de la conclusion et avons essayé de faire apparaitre notre hypothèse en partie droite.}
+	\item \begin{lstlisting}[language=C,numbers=none]
 while( i != N) { 
-	++i; 
-	p = p + a[i-1] * y; 
-	y = y * X 
+++i; 
+p = p + a[i-1] * y; 
+y = y * X 
 } 
 \end{lstlisting}~
-		\'Etape numéro \ref{etape3boucle} (Cf section \ref{pfpBoucle} page \pageref{etape3boucle})
-		\begin{eqnarray*}
-			\neg C \wedge INV &\rightarrow& PS\\
-			(i \neq N) \wedge (p = \sum^i_{k=0} A[k] x^k) \wedge(y=x^i) &\rightarrow& p = \sum^N_{k=0}A[k]x^k\\
-			(i \neq N) \wedge (p = \sum^i_{k=0} A[k] x^k) \wedge(y=x^i) &\rightarrow& p = \sum^N_{k=0}A[k]x^k\wedge (i=N)\\
-			(i \neq N) &\rightarrow& (i = N) \Rightarrow \textrm{C'est donc vrai}. 
-		\end{eqnarray*}
-		\'Etape numéro \ref{etape2boucle} (Cf section \ref{pfpBoucle} page \pageref{etape3boucle})
-		\begin{eqnarray*}
-			C \wedge INV &\rightarrow& \pfp(corps, INV)\\
-			C \wedge INV &\rightarrow& \pfp ("i++;p=p+A[i-1]*y;", (p=\sum^i_{k=0}A[k]x^k)\\&&\wedge(y*x=x^i)\wedge(0\leq i\leq n )\\
-			C \wedge INV &\rightarrow& \pfp ("i++;", (p+A[i-1]*y = \sum^i_{k=0}A[k]x^k)\\&&\wedge(y*x=x^i)\wedge(0\leq i\leq n )\\
-			(i \neq N) \wedge (0\leq i \leq N) \wedge\\ (p = \sum^i_{k=0} A[k] x^k) \wedge (y=X^i) &\rightarrow& (p+A[i] * i = \sum^{i+1}_{k=0}A[k]x^k) \wedge (y \times x = x^{i+1}) \wedge (0 \leq i+1 \leq N)\\
-			(i \neq N) \wedge (0\leq i \leq N) \wedge \\(p = \sum^i_{k=0} A[k] x^k) \wedge (y=X^i) &\rightarrow& A[i] \times x^i = p+A[i+1]x^{i+1} \wedge x^i \times = x^{i+1} \wedge Tautologie \\
-			(i \neq N) \wedge (0\leq i \leq N) \wedge \\(p = \sum^i_{k=0} A[k] x^k) \wedge (y=X^i) &\rightarrow& Faux \wedge Tautologie \wedge Tautologie\Rightarrow \textrm{Le programme est donc faux} \\
-		\end{eqnarray*}
+	\'Etape numéro \ref{etape3boucle} (Cf section \ref{pfpBoucle} page \pageref{etape3boucle})
+	\begin{eqnarray*}
+		\neg C \wedge INV &\rightarrow& PS\\
+		(i \neq N) \wedge (p = \sum^i_{k=0} A[k] x^k) \wedge(y=x^i) &\rightarrow& p = \sum^N_{k=0}A[k]x^k\\
+		(i \neq N) \wedge (p = \sum^i_{k=0} A[k] x^k) \wedge(y=x^i) &\rightarrow& p = \sum^N_{k=0}A[k]x^k\wedge (i=N)\\
+		(i \neq N) &\rightarrow& (i = N) \Rightarrow \textrm{C'est donc vrai}. 
+	\end{eqnarray*}
+	\'Etape numéro \ref{etape2boucle} (Cf section \ref{pfpBoucle} page \pageref{etape3boucle})
+	\begin{eqnarray*}
+		C \wedge INV &\rightarrow& \pfp(corps, INV)\\
+		C \wedge INV &\rightarrow& \pfp ("i++;p=p+A[i-1]*y;", (p=\sum^i_{k=0}A[k]x^k)\\&&\wedge(y*x=x^i)\wedge(0\leq i\leq n )\\
+		C \wedge INV &\rightarrow& \pfp ("i++;", (p+A[i-1]*y = \sum^i_{k=0}A[k]x^k)\\&&\wedge(y*x=x^i)\wedge(0\leq i\leq n )\\
+		(i \neq N) \wedge (0\leq i \leq N) \wedge\\ (p = \sum^i_{k=0} A[k] x^k) \wedge (y=X^i) &\rightarrow& (p+A[i] * i = \sum^{i+1}_{k=0}A[k]x^k) \wedge (y \times x = x^{i+1}) \wedge (0 \leq i+1 \leq N)\\
+		(i \neq N) \wedge (0\leq i \leq N) \wedge \\(p = \sum^i_{k=0} A[k] x^k) \wedge (y=X^i) &\rightarrow& A[i] \times x^i = p+A[i+1]x^{i+1} \wedge x^i \times = x^{i+1} \wedge Tautologie \\
+		(i \neq N) \wedge (0\leq i \leq N) \wedge \\(p = \sum^i_{k=0} A[k] x^k) \wedge (y=X^i) &\rightarrow& Faux \wedge Tautologie \wedge Tautologie\Rightarrow \textrm{Le programme est donc faux} \\
+	\end{eqnarray*}
 \item \begin{lstlisting}[language=C,numbers=none]
 while(i == N) { 
-	++i;	
-	p = p +(A[i] * y * X); 
-	y = y * X; 
+++i;	
+p = p +(A[i] * y * X); 
+y = y * X; 
 }
 \end{lstlisting}
 Ce programme effectue la correction de l'erreur détectée plus haut. Il est correct.
@@ -366,11 +366,11 @@ a = 1;
 b = 1;
 /* $INV = (F_i = a) \wedge (F_n-1 = b) \wedge (o \leq i \leq N)$ */
 while(c) {
-	/* $c \neg INV$ */
-	i++;
-	b += a;
-	a = b - a;
-	/* $INV$ */
+/* $c \neg INV$ */
+i++;
+b += a;
+a = b - a;
+/* $INV$ */
 }
 /* $\neg c \wedge INV$ */
 /* $F_n = \{\cdots\}$ */
@@ -379,46 +379,46 @@ while(c) {
 \remarque{Il est conseillé de commencer par l'étape la plus facile, en effet, une étape et nous n'avons pas à effectuer les autres}
 \paragraph{Etape 1}
 \begin{eqnarray*}
-	PE &\rightarrow& \pfp("init", INV)\\
-	N \geq 0 &\rightarrow& (F_{i+1} = 1) \wedge (F_i = 1) \wedge (i=0)\\
-	N \geq 0 &\rightarrow& (F_1 = 1) \wedge (F_0 = 1)\Rightarrow \textrm{Tautologie par définition}
+PE &\rightarrow& \pfp("init", INV)\\
+N \geq 0 &\rightarrow& (F_{i+1} = 1) \wedge (F_i = 1) \wedge (i=0)\\
+N \geq 0 &\rightarrow& (F_1 = 1) \wedge (F_0 = 1)\Rightarrow \textrm{Tautologie par définition}
 \end{eqnarray*}
 \paragraph{Etape 3}
 \begin{eqnarray*}
-	(i = N) \wedge (F_i = a) \wedge (F_{i+1} = b) \wedge (0 \leq i \leq N) &\rightarrow& F_N = a\\
-	(F_n = a) \wedge (F_{N+1}) \wedge (0 \leq N) &\rightarrow& F_N = a \Rightarrow \textrm{Tautologie}
+(i = N) \wedge (F_i = a) \wedge (F_{i+1} = b) \wedge (0 \leq i \leq N) &\rightarrow& F_N = a\\
+(F_n = a) \wedge (F_{N+1}) \wedge (0 \leq N) &\rightarrow& F_N = a \Rightarrow \textrm{Tautologie}
 \end{eqnarray*}
 
 \paragraph{Etape 2}
 \begin{eqnarray*}
-	(i \neq N) \wedge (F_i = a) \wedge (F_{i+1} = b) \wedge (0 \leq i \leq N) &\rightarrow& \pfp("\cdots", F_i=b-a \wedge F_{i+1} = b \wedge \cdots)\\
-	&\rightarrow& \pfp ("\cdots", F_i = b+a - a \wedge F_{i+1} = b+a\\
-	&\rightarrow& F_i+1 = b \wedge F_{i+2} = b + a \wedge i+1 \leq N\\
-	&\rightarrow& T \wedge T \textrm{par définition} \wedge T 
+(i \neq N) \wedge (F_i = a) \wedge (F_{i+1} = b) \wedge (0 \leq i \leq N) &\rightarrow& \pfp("\cdots", F_i=b-a \wedge F_{i+1} = b \wedge \cdots)\\
+&\rightarrow& \pfp ("\cdots", F_i = b+a - a \wedge F_{i+1} = b+a\\
+&\rightarrow& F_i+1 = b \wedge F_{i+2} = b + a \wedge i+1 \leq N\\
+&\rightarrow& T \wedge T \textrm{par définition} \wedge T 
 \end{eqnarray*}
 
 \paragraph{Etape 4}
 Tester une existance de $f > 0$ avant l'execution du corps : $c \wedge INV \rightarrow f > 0$.
 \begin{eqnarray*}
-	(i \neq  N) \wedge (F_i = a) \wedge (F_n-1 = b) \wedge (o \leq i \leq N) &\rightarrow& f > 0\\
-	 f = N-i \Rightarrow N \geq 0\textrm{ donc Vrai.}
+(i \neq  N) \wedge (F_i = a) \wedge (F_n-1 = b) \wedge (o \leq i \leq N) &\rightarrow& f > 0\\
+ f = N-i \Rightarrow N \geq 0\textrm{ donc Vrai.}
 \end{eqnarray*}
 
 \paragraph{\'Etape 5}
 \begin{eqnarray*}
 f = F \wedge c \wedge INV &\rightarrow& \pfp("corps", f < F)\\
-	N-i = F \wedge c \wedge INV &\rightarrow& \pfp("corps", N-i < F)\\
-	N - i = F \wedge c \wedge INV &\rightarrow& N - (i+1) < F\\
-	&\rightarrow& N -i-1 < F \\
-	&\rightarrow& F-1 < F \Rightarrow \textrm{Tautologie}
+N-i = F \wedge c \wedge INV &\rightarrow& \pfp("corps", N-i < F)\\
+N - i = F \wedge c \wedge INV &\rightarrow& N - (i+1) < F\\
+&\rightarrow& N -i-1 < F \\
+&\rightarrow& F-1 < F \Rightarrow \textrm{Tautologie}
 \end{eqnarray*}
 
-\section{Exercice 7 : plus grand plateau}
+\subsection{Exercice 7 : plus grand plateau}
 \begin{lstlisting}[language=C]
-	/* $N \geq 1) \wedge (B(N), \geq )$ */
+	/* $(N \geq 1) \wedge (B(N), \geq )$ */
 	j = 1;
 	p = 1;
-	/* $INV = (1 \leq p \leq j) \wedge (\exists k : 0 \leq k \leq j - p) \wedge (B[k] = B[k+p-1]))$
+	/* $INV = (1 \leq p \leq j \leq N) \wedge (\exists k : 0 \leq k \leq j - p) \wedge (B[k] = B[k+p-1]))$
 	$\wedge (\forall k (0 \leq k \leq j -p - 1) \rightarrow (B[k] \neq B[k+p]))$ */
 	while (j != N) {
 		/* $INV \wedge c$ */
@@ -434,3 +434,94 @@ f = F \wedge c \wedge INV &\rightarrow& \pfp("corps", f < F)\\
 \end{lstlisting}
 \remarque{$(B(N), \geq)$ signifique le tableau est ordonné dans l'ordre croissant non strict}
 
+Soit PE le prédicat d'entrée.
+
+
+\begin{eqnarray*}
+	x \geq 1 &\rightarrow& \pfp (j=1,p=1, Inv)\\
+	x \geq 1 &\rightarrow& (0 \leq 1 \leq 1 \leq N)\wedge \exists k(0 \leq k \leq 0 (B[k]=B[k])) \wedge \forall k(0 \leq k \leq -1 \rightarrow B[k] \neq B[k+1]\\
+	&& \Rightarrow \textrm{ Toujours vrai }
+\end{eqnarray*}
+
+\begin{eqnarray*}
+	C \wedge INV &\rightarrow& \pfp (\ifp (B[j-p] == B[k]) p++;j++,INV)\\
+	C \wedge INV &\rightarrow& \pfp (\ifp(B[j-p] == B[j]) p++, \pfp(j++, INV))\\
+	C \wedge INV &\rightarrow& \pfp(\cdots
+	, 1 \leq p \leq j+1 \leq N \wedge \exists k (0 \leq k\leq j + 1 - p)\\&&
+			\wedge B[k] = B[k+p-1] \wedge \exists \forall k(0 \leq k < j+1-p-1 \rightarrow B[k] \neq B[k+p] )) = A\\
+C \wedge INV &\rightarrow& B[j-p] == B[j] \rightarrow \pfp (p++, A) \wedge B[j-p]  \neq B[j] \rightarrow A\\
+C \wedge INV &\rightarrow& (B[j-p] \neq B[j] \rightarrow (0 \leq p \leq j+1 \leq N) \wedge \exists k 0 \leq k \leq j+1-p \wedge B[k] = B[k+p-1] \\&&
+\wedge \forall k 0 \neq k \leq j-p \rightarrow B[k] \neq B[k-p]\\
+&\rightarrow& T \wedge \exists k 0 \leq k< j-p \wedge B[k] = B[k+1-p] \wedge B[j+1-p] = B[j+1-p+1-p] \wedge \cdots\\
+\end{eqnarray*}
+\subsection{Définition variante}
+\begin{eqnarray*}
+	C \wedge INV &\rightarrow& f > 0\\
+	J \neq N \wedge INV &\rightarrow& (f = N-j) >0 \Rightarrow \textrm{ Vrai }
+\end{eqnarray*}
+
+\begin{eqnarray*}
+	N-j  =F \wedge C \wedge INV &\rightarrow& \pfp(corps, N-j < F)\\
+	N-j  =F \wedge C \wedge INV &\rightarrow& \pfp(\ifp(\cdots))\cdots,\pfp(j++,N-j<F)\\
+	N-j  =F \wedge C \wedge INV &\rightarrow& B|j-p] = B[j] \rightarrow N - j -1 < F \wedge B[j-p] \neq B[j] \rightarrow N-j-1 < F\\
+	N-j = F \wedge C \wedge INV \rightarrow N-j-1 < F \wedge F-1 < F
+\end{eqnarray*}
+
+\subsection{Exercice 8}
+
+\begin{lstlisting}[language=C]
+	/* $A \leq 0 \wedge B \geq 0 */
+	x = A;
+	y = B;
+	z = 1;
+
+	/* (z = x^y = A^B) \wedge y \geq 0$ */
+	while(y != 0) {
+		/* $z *x^y = A^B \wedge y \geq 0$ */
+		while(y \% 2 == 0) {
+			y = y / 2 ;
+			x = x*x;
+		}
+		/* $z = x^y = A^B \wedge y > 0 \wedge y \%2 \neq 0 $*/
+		y--;
+		z = z * x;
+		/* z = x^y = A^B \wedge y \geq 0 */
+	}
+	PS : /* z = A^b */
+
+\end{lstlisting}
+\section{\'Ecriture d'un programme à partir de sa preuve}
+\subsection{Dichotomie}
+\begin{lstlisting}[language=C]
+/* N > 0 */
+a = 1;
+b = N;
+while(b != a + 1) {
+	m = (a+b)/2;
+	if(0 <= N-m*m) {
+		a = m;
+	} else {
+		b = m;
+	}
+}
+/*
+ * Réécriture : $a^2 \leq N \wedge N \leq b^2 \wedge (b=a+1)$
+ * $a^2 \leq N \wedge N \leq (A+1)^2$  
+ */
+\end{lstlisting}
+Variante : $b-a$ : taille de l'intervalle. Fonction décroissante.
+\subsection{}
+
+\begin{lstlisting}[language=C]
+/* N $\leq$ 2 $\wedge$ B(0..N-1, $\leq$) $\wedge$ B[0] $\leq$ X $\wedge$ B[N-1] > X */
+cherchep(B,N,X,p);
+p = 0; 
+/* 0 $\leq$ p $\leq$ i-2 $\wedge$ B(p) $\leq$ x $\wedge$ B[p+1] > x */ 
+while (B[p+1] <= X) {
+	++p;
+}
+/* 
+ * 0 $\leq$ p $\leq$ N-2 $\wedge$ B[p] $\leq$ x < B[p+1] 
+ */
+\end{lstlisting}
+Variante : $N - i$
