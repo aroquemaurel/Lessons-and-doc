@@ -34,6 +34,7 @@
 	\setcounter{tocdepth}{2}
 	\setcounter{secnumdepth}{3}
 	\maketitle
+	\tableofcontents
 	\chapter{Numérotation et codage\\ TD optionnel}
 		\section{Numérotation}
 		\subsection{Réaliser l'opération suivante en binaire : $(1101011-10110)\times 11001$}
@@ -199,12 +200,140 @@
 		\end{eqnarray*}
 		\subsubsection{B --}
 		\begin{enumerate}
-			\item $f(A,B,C,D)=\bar A B D + B\bar C + A\bar C D= \overline{\overline{\bar A B \bar D + B \bar C + A \bar C D}} 
-				= \overline{(\overline{\bar B\bar D).(\overline{A\bar C D)}}} = ( (A|A)|B( (D|D))) | (B|(C|C)) | (A|(C|C)|D)
-				$
+			\item $f(A,B,C,D)=\bar A B \bar D + B\bar C + A\bar C D= \overline{\overline{\bar A B \bar D + B \bar C + A \bar C D}} 
+				= \overline{(\overline{\bar B\bar D).(\overline{A\bar C D)}}} =\\ ( (A|A)|B( (D|D))) | (B|(C|C)) | (A|(C|C)|D)$
+			\item $f(A,B,C,D)=(A+B)(\bar C + \bar D)(\bar A + \bar B + \bar C) = \overline{\overline{(A+B)(\bar C + \bar B)(\bar A + \bar B + \bar C)}}=\\
+				\overline{\bar A \bar B) + CD + ABC} = \overline{\bar A \bar B} . \overline{CD} . \overline{ABC} =\\
+				((A|A)(B|B)|(C|D)|(A|B|C))|((A|A)(B|B)|(C|D)|(A|B|C)) =\\
+				((A\downarrow B)\downarrow (C \downarrow C) \downarrow (D \downarrow D) \downarrow (A \downarrow A)\downarrow (B\downarrow B) \downarrow (C \downarrow C))$
+		\end{enumerate}
+	\subsection{Exercice 3}
+	\subsubsection{1}
+	$f(w,x,y,z) = \sum n(1,3,4,7,9,11,12,15) = yz+\bar x z + x\bar y \bar z$
+	\\
+	\begin{tabular}{c|c|c|c|c|}
+		& 00&01&11&10\\
+		\hline
+		00&&1&1&\\
+		\hline
+		01&1&&1&\\
+		\hline
+		11&1&&1&\\
+		\hline
+		10&&1&1&\\
+		\hline
+	\end{tabular}
+	\subsubsection{2}
+	$f(w,x,y,z) = \sum m(0,1,3,6,9,13,15) = \bar w \bar x \bar y + \bar w \bar x z + wxz + w\bar y z+w\bar x y \bar z$\\
+	\begin{tabular}{c|c|c|c|c|}
+		& 00&01&11&10\\
+		\hline
+		00&1&1&1&\\
+		\hline
+		01&&&&1\\
+		\hline
+		11&&1&1&\\
+		\hline
+		10&&1&&\\
+		\hline
+	\end{tabular}
+	\subsubsection{3}
+	$f(w,x,y,z) = \sum m (0,1,5,7,8,10,14,15) = \bar w \bar x \bar y +  \bar w x z + wxy + w\bar x \bar  z$\\
+	\begin{tabular}{c|c|c|c|c|}
+		& 00&01&11&10\\
+		\hline
+		00&1&1&&\\
+		\hline
+		01&&1&1&\\
+		\hline
+		11&&&1&1\\
+		\hline
+		10&1&&&1\\
+		\hline
+	\end{tabular}
 
-			
-		\end{enumerate}<++>
+	\subsection{4}
+	\begin{tabular}{c|c|c|c|c|}
+		& 00&01&11&10\\
+		\hline
+	\end{tabular}
+	\subsection{5}
+	\begin{tabular}{c|c|c|c|c|}
+		& 00&01&11&10\\
+		\hline
+	\end{tabular}
+	\subsection{9}
+	$f(w,x,y,z) = \Pi M(1,3,4,9,11,14) CI(w,x,y,z) = (x+\bar z)(\bar x + z)$\\
+	\begin{tabular}{c|c|c|c|c|}
+		& 00&01&11&10\\
+		\hline
+		00&&0&0&\\
+		\hline
+		01&0&&&*\\
+		\hline
+		11&*&*&&0\\
+		\hline
+		10&&0&0&\\
+		\hline
+	\end{tabular}
+	\subsection{11}
+	$f(w,x,y,z) = \sum m(0,1,3,5,6,7,11,13,14,15) CI(w,x,y,z) = 4\\
+	f(w,x,y,z) = \bar y \bar w + yz + xy +xz$\\
+	\begin{tabular}{c|c|c|c|c|}
+		& 00&01&11&10\\
+		\hline
+		00&1&1&1&\\
+		\hline
+		01&*&1&1&1\\
+		\hline
+		11&&1&1&1\\
+		\hline
+		10&&&1&\\
+		\hline
+	\end{tabular}
+
+	\chapter{Fonctions logiques}
+	\section{Exercice 1 : Simplifications algébriques}
+	\subsection{}
+	\begin{tabular}{ccc||c}
+		x&y&z & $F_1$\\
+		0&0&0&	0\\
+		0&0&1& 	1\\
+		0&1&0& 	1\\
+		0&1&1& 	1\\
+		1&0&0& 	1\\
+		1&0&1& 	1\\
+		1&1&0& 	1\\
+		1&1&1& 	1\\
+	\end{tabular}
+	\begin{eqnarray*}
+		F_1 &=& (x+y+z).(\bar x + \bar y + z + xy + \bar x \bar y)\\
+		&=& (x+y+z).(\bar{\bar x} + \bar{\bar y} + z + xy + \overline{\bar x \bar y})\\
+		&=& (x+y+z)(\bar x + \bar y (1 + \bar x) + z +xy)\\
+		&=& (x+y+z)(\bar x + \bar y + z + xy)\\
+		&=& (x+y+z)(\overline{xy} + xy + z)\\
+		&=& (x+y+z)(1+z)\\
+		F_1 &=& x+y+z
+	\end{eqnarray*}
+	\subsection{}
+	\begin{eqnarray*}
+		F_2 &=& \sum m(0,4,6,7,14,15)\\
+		&=& \bar x \bar y \bar z \bar w + \bar x y \bar z \bar w + \bar x y z \bar w + \bar x yzw + xyz\bar w + xyzw\\
+		&=& \bar x \bar z \bar w(y+\bar y) +\bar x yz (w+\bar w) + xyz(w + \bar w)\\
+		&=& \bar x \bar z \bar w + \bar x y z + xyz\\
+		&=& \bar x \bar z \bar w + xy(x + \bar x)\\
+		F_2 &=& \bar x \bar z \bar w + xy
+	\end{eqnarray*}
+	\section{Exercice 2 : Formes canoniques}
+	\subsection{}
+	$G_1 = I_1 + I_2$ avec $I_1 = \sum m (0,4,6)$ et $I_2 = \Pi M(1,4,5)$
+	\begin{eqnarray*}
+		G_1 &=& \sum m(0,4,6) + \Pi M(1,4,5)\\
+		&=& \sum m(0,4,6) + \sum m (0,2,3,6,7)\\
+		G_1 &=& \sum m (0,2,3,4,6,7) \Rightarrow \textrm{ Forme canonique Disjonctive}\\
+		G_1 &=& \Pi M (1,5) \Rightarrow \textrm{ Forme Canonique Conjonctive}
+	\end{eqnarray*}
+	
 \end{document}
 
 
