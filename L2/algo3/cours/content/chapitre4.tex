@@ -1,33 +1,36 @@
-\chapter{Spécification d'un programme}
-\remarque{Durant ce chapitre, nous parlerons de programme, cependant cela est valable également pour les sous-programme}
-Un programme est spécifié par un triplet : 
-\begin{itemize}
-	\item Prédicat d'entrée P(E) ou précondition
-	\item action (E, S)
-	\item Prédicat de sortie P(S) ou postcondition
-\end{itemize}
 
-	Les prédicats sont écrits en utilisant le formalisme de la logique des prédicats et de sopérations booléeenes.
-	\section{Mots clés à utiliser dans les prédicats}
-	Les mots clés pouvant être utilisés: 
-	\begin{itemize}
-		\item Les quantificateurs logiques : $\forall$(quelque soit), $\exists$(il existe), $\nu$(nombre de)
-		\item Les connecteurs logiques : $\wedge$(et), $\vee$(ou), $\rightarrow$(implique), $\leftrightarrow$(equivalence), $\lnot$(not)
-	\end{itemize}
-	\section{\'Ecriture de la spécification}
-	C'es une traduction de l'énoncé et de l'analyse faite dans l'étape 1 de la méthodologie : c'est un \textbf{triplet} logique.
-	La démarche pour écrire la spécification est la suivante.
-		\begin{itemize}
-			\item Identifier les propriétés des données d'entrée et les exprimer sous forme logique
-			\item Identifier les propriétés sur les données en sortie et les exprimer sous forme logique. 
+				\chapter{Le tableau de situation}\label{tableauSituation}
+		Le tableau de situation sert à tester le programme, la vérification n'est pas exhaustive. Il s'agit de vérifier que l'état des variables est cohérent.
+			\begin{description}
+				\item[Données en entrée] Programme ``instrumenté'' : code source + point d'arrêt: 
+					localisation dans l'espace du programme d'une opération de photographie de l'état de l'ordinateur.
+				\item[Opération de transformation] Dénuder le programme et prendre les photos. 
+				\item[Donnée en sortie] Liste de ``photos'' qui déçoit l'exécution de la même mémoire au cours de l'exécution.
+			\end{description}
 		\end{itemize}
-	\exemple{
-		\'Ecrire un programme qui trie un tableau T de N éléments.\\
-		\begin{itemize}
-			\item $N > 1$
-			\item \texttt{trier (T, N, t);}
-			\item $(\forall I : 0 \leq I < N-1 \longrightarrow T[I] \leq T[I+1]) \wedge$\\$
-				(\forall I : 0 \leq I < N \longrightarrow $\\$(\nu J : 0 \leq J < N \wedge t[I] = t[J]) = (\nu J : o \leq J < N \wedge t[I] = T[J]))$ 
-		\end{itemize}
-	}
-
+		\exemple{
+\lstinputlisting[language=C, caption=Exercice 3, numbers=none]{annexes/exo2.c}
+Nous choisis le jeu de données $n = 0$ et $n = 4$ afin de passer dans tous les cas possibles.
+\begin{center}
+\begin{tabular}{c  |  c  c  c  c  }
+	&\textbf{\'Echelle} & \textbf{n} & \textbf{f} & \textbf{point d'arrêt}\\
+n=0	&1 & 0 & indéfini & 1\\
+	\hline
+	&/ & / & / & /\\
+	\hline
+	\hline
+	&indéfini & 4 & 4 & 2\\
+	\hline
+	&indéfini &  3 & 12 & 3\\	
+	\hline
+	&indéfini & 2 & 24 & 3\\
+	\hline
+	&indéfini & 1 & 24 & 3\\
+	\hline
+	&24 & 6 & 24 & 4\\
+	\hline
+	&/ & / & / & /\\
+	\hline
+\end{tabular}
+\end{center}
+		}

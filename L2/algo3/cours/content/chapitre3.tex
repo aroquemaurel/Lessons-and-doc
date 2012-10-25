@@ -80,38 +80,3 @@
 					\item Test d'exécution : Tableau de situation, vérification non exhaustive. Cf section\ref{tableauSituation} page \pageref{tableauSituation}.
 					\item Preuve formelle par calcul de ``Plus faible Pré condition'' (Pfp). Cf chapitre \ref{pfp} page \pageref{pfp}.
 				\end{itemize}
-				\chapter{Le tableau de situation}\label{tableauSituation}
-		Le tableau de situation sert à tester le programme, la vérification n'est pas exhaustive. Il s'agit de vérifier que l'état des variables est cohérent.
-			\begin{description}
-				\item[Données en entrée] Programme ``instrumenté'' : code source + point d'arrêt: 
-					localisation dans l'espace du programme d'une opération de photographie de l'état de l'ordinateur.
-				\item[Opération de transformation] Dénuder le programme et prendre les photos. 
-				\item[Donnée en sortie] Liste de ``photos'' qui déçoit l'exécution de la même mémoire au cours de l'exécution.
-			\end{description}
-		\end{itemize}
-		\exemple{
-\lstinputlisting[language=C, caption=Exercice 3, numbers=none]{annexes/exo2.c}
-Nous choisis le jeu de données $n = 0$ et $n = 4$ afin de passer dans tous les cas possibles.
-\begin{center}
-\begin{tabular}{c  |  c  c  c  c  }
-	&\textbf{\'Echelle} & \textbf{n} & \textbf{f} & \textbf{point d'arrêt}\\
-n=0	&1 & 0 & indéfini & 1\\
-	\hline
-	&/ & / & / & /\\
-	\hline
-	\hline
-	&indéfini & 4 & 4 & 2\\
-	\hline
-	&indéfini &  3 & 12 & 3\\	
-	\hline
-	&indéfini & 2 & 24 & 3\\
-	\hline
-	&indéfini & 1 & 24 & 3\\
-	\hline
-	&24 & 6 & 24 & 4\\
-	\hline
-	&/ & / & / & /\\
-	\hline
-\end{tabular}
-\end{center}
-		}
