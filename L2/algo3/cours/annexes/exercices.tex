@@ -168,7 +168,7 @@ Identifier les entrée, les sorties et leurs propriétés.
 		}
 
 \section{Preuves de programmes}
-\subsection{Séquence}
+\subsection{Séquence}\label{exoPfpSequence}
 \begin{itemize}
 	\item \texttt{/* f = i! */}
 	\item \texttt{f = f * (i + 1);\\i = i + 1;}
@@ -193,7 +193,7 @@ Identifier les entrée, les sorties et leurs propriétés.
 	PE &\rightarrow& (y=B) \wedge (z=C)\wedge(x=A) \textmd{Vrai parceque }p\rightarrow p = \textmd{vrai}
 \end{eqnarray*}
 
-\subsection{Sélection} \label{pfpSequence}
+\subsection{Sélection} \label{exoPfpSelect}
 \subsubsection{Exercice 1}
 \begin{lstlisting}[language=C]
 /* x = A */
@@ -249,8 +249,8 @@ $$\pfp ("\ifp (x > y) \{ if(x \%2 ==  0) \{ x = x - 2\}\} \elsep \{y=y-1;\}", y-
 (x > y) &\rightarrow& ( (x\%2 = = 0)\rightarrow ( (y-2) < (x - 2) ) \wedge ( ( x\%2 != 0) \rightarrow (y-2 < x))) \wedge (x \leq y \rightarrow y-z < x) \\
 (x > y) &\rightarrow& (x \leq y \rightarrow y - z < x)
 \end{eqnarray*}
-
-\subsubsection{Exercice 5}
+\subsection{Boucles}\label{exoPfpBoucles}
+\subsubsection{Exercice 1}
 \begin{lstlisting}[language=C]
 /* $N \geq 0$ */
 
@@ -353,7 +353,7 @@ y = y * X;
 Ce programme effectue la correction de l'erreur détectée plus haut. Il est correct.
 \end{enumerate}
 
-\subsection{Exercice 6 : Suite de Fibonacci}
+\subsubsection{Exercice 2 : Suite de Fibonacci}
 \remarque{
 Le rang $n$ de la suite de Fibonacci est défini comme suit: \\
 $F_n = 1$ si $n=0$ ou $n=1$\\
@@ -413,7 +413,7 @@ N - i = F \wedge c \wedge INV &\rightarrow& N - (i+1) < F\\
 &\rightarrow& F-1 < F \Rightarrow \textrm{Tautologie}
 \end{eqnarray*}
 
-\subsection{Exercice 7 : plus grand plateau}
+\subsubsection{Exercice 3 : plus grand plateau}
 \begin{lstlisting}[language=C]
 	/* $(N \geq 1) \wedge (B(N), \geq )$ */
 	j = 1;
@@ -454,7 +454,7 @@ C \wedge INV &\rightarrow& (B[j-p] \neq B[j] \rightarrow (0 \leq p \leq j+1 \leq
 \wedge \forall k 0 \neq k \leq j-p \rightarrow B[k] \neq B[k-p]\\
 &\rightarrow& T \wedge \exists k 0 \leq k< j-p \wedge B[k] = B[k+1-p] \wedge B[j+1-p] = B[j+1-p+1-p] \wedge \cdots\\
 \end{eqnarray*}
-\subsection{Définition variante}
+\subsubsection{Exercice 4 : Définition variante}
 \begin{eqnarray*}
 	C \wedge INV &\rightarrow& f > 0\\
 	J \neq N \wedge INV &\rightarrow& (f = N-j) >0 \Rightarrow \textrm{ Vrai }
@@ -467,7 +467,7 @@ C \wedge INV &\rightarrow& (B[j-p] \neq B[j] \rightarrow (0 \leq p \leq j+1 \leq
 	N-j = F \wedge C \wedge INV \rightarrow N-j-1 < F \wedge F-1 < F
 \end{eqnarray*}
 
-\subsection{Exercice 8}
+\subsubsection{Exercice 5}
 
 \begin{lstlisting}[language=C]
 	/* $A \leq 0 \wedge B \geq 0 */
@@ -491,7 +491,7 @@ C \wedge INV &\rightarrow& (B[j-p] \neq B[j] \rightarrow (0 \leq p \leq j+1 \leq
 
 \end{lstlisting}
 \section{\'Ecriture d'un programme à partir de sa preuve}
-\subsection{Dichotomie}
+\subsection{Exercice 1 : Dichotomie}
 \begin{lstlisting}[language=C]
 /* N > 0 */
 a = 1;
@@ -510,7 +510,7 @@ while(b != a + 1) {
  */
 \end{lstlisting}
 Variante : $b-a$ : taille de l'intervalle. Fonction décroissante.
-\subsection{}
+\subsection{Exercice 2}
 
 \begin{lstlisting}[language=C]
 /* N $\leq$ 2 $\wedge$ B(0..N-1, $\leq$) $\wedge$ B[0] $\leq$ X $\wedge$ B[N-1] > X */

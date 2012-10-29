@@ -7,9 +7,8 @@
 				\item[Opération de transformation] Dénuder le programme et prendre les photos. 
 				\item[Donnée en sortie] Liste de <<photos>> qui déçoit l'exécution de la même mémoire au cours de l'exécution.
 			\end{description}
-		\exemple{
-\lstinputlisting[language=C, caption=Exercice 3, numbers=none]{annexes/exo2.c}
-Nous choisis le jeu de données $n = 0$ et $n = 4$ afin de passer dans tous les cas possibles.
+		\exemple{\lstinputlisting[language=C, caption=Exercice 3, numbers=none]{annexes/exo2.c}
+Nous choisis le jeu de données $n = 0$ et $n = 4$ afin de passer dans tous les cas.
 \begin{center}
 \begin{tabular}{c  |  c  c  c  c  }
 	&\textbf{\'Echelle} & \textbf{n} & \textbf{f} & \textbf{point d'arrêt}\\
@@ -39,21 +38,23 @@ n=0	&1 & 0 & indéfini & 1\\
 	Avec pfp étant la plus faible précondition\footnote{wp weakest precondition}.
 	\begin{description}
 		\item[pfp]	C'est un système de réécriture permetant de transformer une formule logique en une autre selon le programme qui doit s'éxécuter.
-			C'est donc une réécriture syntaxique du prédicat de sortie en fonction des actions du programme.  \item[Tableau de situation] Système de réécriture des données en entrée (mémoireà vers les données en sortie (mémoire)) en fonction des actions du programme.  \end{description}
+			C'est donc une réécriture syntaxique du prédicat de sortie en fonction des actions du programme.  \item[Tableau de situation] Système de réécriture des données en entrée (mémoire vers les données en sortie (mémoire)) en fonction des actions du programme.  \end{description}
+			\remarque{Avec un tableau de situation ou des tests unitaires, il n'est pas possible de prouver qu'un programme est correct dans tous les
+			cas, ceux-ci seront toujours basés sur un jeu d'essai. Le calcul de pfp permet de prouver qu'un programme est correct dans tous les cas.}
 	\subsection{Système de réécriture Pfp}
 		Ensemble de règles de réécriture permettant de transformer une formule logique en fonction des structures de base des langages de programmation.
 
-		Les langages impératifs:
+		Nous allons étudier le calcul d'une pfp pour un langage impératif, pour ceux-ci les structures de bases sont :
 			\begin{itemize}
-				\item affectation
-				\item Séquence
-				\item Sélection
-				\item répétition
+				\item affectation (section \ref{pfpselection})
+				\item Séquence (section \ref{pfpsequence})
+				\item Sélection (section \ref{pfpselection})
+				\item répétition (section \ref{pfpBoucle})
 			\end{itemize}
 
 		Règle de réécriture : \texttt{pfp(structure, formule) = formule}
 
-	\subsection{Calcul de pfp d'une affectation}
+		\subsection{Calcul de pfp d'une affectation}\label{pfpaffectation}
 	$$pfp("x=e", Q) = Q^e_n$$
 
 	Avec la formule Q dans laquelle toutes les occurences de <<x>> sont remplacées par <<e>> (remplacement textuel)
@@ -71,7 +72,7 @@ n=0	&1 & 0 & indéfini & 1\\
 			(x>0) &\rightarrow& (x > 0)
 		\end{eqnarray*}
 	}
-	\subsection{Calcul du pfp d'une séquence}
+	\subsection{Calcul du pfp d'une séquence}\label{pfpsequence}
 	$$\texttt{pfp}("a1;a2;a3", Q) = \texttt{pfp}("a1;a2;", \texttt{pfp}("a3;", Q));$$
 	\exemple{
 	\begin{itemize}
@@ -87,7 +88,7 @@ n=0	&1 & 0 & indéfini & 1\\
 	 &&i! \times(i+1) = (i+1)!\ \textmd{Par définition de}\ i!
 \end{eqnarray*}
 }
-	\subsection{Calcul du pfp de la séléction} \begin{center} \texttt{if(B)\{$a_1$\} [else\{$A_2$\}]}
+\subsection{Calcul du pfp de la séléction}\label{pfpselection} \begin{center} \texttt{if(B)\{$a_1$\} [else\{$A_2$\}]}
 	 \end{center}
 \begin{eqnarray*}
 	\texttt{pfp}("\texttt{if}(B)\{A_1\}\texttt{else}\{1_2\}", PS) &=&
@@ -95,7 +96,7 @@ n=0	&1 & 0 & indéfini & 1\\
 	\texttt{pfp}("\texttt{if}(B)\{A_1\}\texttt{else}\{A_2\}", PS) &=& B \rightarrow \texttt{pfp}(A_1, PS) \wedge \neg B \rightarrow PS 
 \end{eqnarray*}
 
-Un exemple est disponible annexe \ref{pfpSequence} page \pageref{pfpSequence}.
+Un exemple est disponible annexe \ref{exoPfpSelect} page \pageref{exoPfpSelect}.
 
 \subsection{Calcul du pfp d'une répétition.}\label{pfpBoucle}
 Modélisation formelle de la répétition.
@@ -120,3 +121,4 @@ Il y a cinq étapes pour la vérification de la boucle.
 	\item $F = f \wedge \texttt{INVARIANT} \wedge c \rightarrow \pfp (\texttt{corps}, F > f)$\footnote{f est décroissante}
 \end{enumerate}
 
+Les exemples des boucles sont disponible annexe \ref{exoPfpBoucles} page \pageref{exoPfpBoucles}. 
