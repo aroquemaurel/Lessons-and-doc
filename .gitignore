@@ -1,2 +1,7 @@
 *.log
 IUT/
+*aux
+*lol
+*idx
+*glo
+*out
