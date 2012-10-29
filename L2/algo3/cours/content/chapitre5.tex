@@ -1,34 +1,122 @@
+\chapter{Vérifications de programmes}
+\section{Le tableau de situation}\label{tableauSituation}
+		Le tableau de situation sert à tester le programme, la vérification n'est pas exhaustive. Il s'agit de vérifier que l'état des variables est cohérent.
+			\begin{description}
+				\item[Données en entrée] Programme <<instrumenté>> : code source + point d'arrêt: 
+					localisation dans l'espace du programme d'une opération de photographie de l'état de l'ordinateur.
+				\item[Opération de transformation] Dénuder le programme et prendre les photos. 
+				\item[Donnée en sortie] Liste de <<photos>> qui déçoit l'exécution de la même mémoire au cours de l'exécution.
+			\end{description}
+		\exemple{
+\lstinputlisting[language=C, caption=Exercice 3, numbers=none]{annexes/exo2.c}
+Nous choisis le jeu de données $n = 0$ et $n = 4$ afin de passer dans tous les cas possibles.
+\begin{center}
+\begin{tabular}{c  |  c  c  c  c  }
+	&\textbf{\'Echelle} & \textbf{n} & \textbf{f} & \textbf{point d'arrêt}\\
+n=0	&1 & 0 & indéfini & 1\\
+	\hline
+	&/ & / & / & /\\
+	\hline
+	\hline
+	&indéfini & 4 & 4 & 2\\
+	\hline
+	&indéfini &  3 & 12 & 3\\	
+	\hline
+	&indéfini & 2 & 24 & 3\\
+	\hline
+	&indéfini & 1 & 24 & 3\\
+	\hline
+	&24 & 6 & 24 & 4\\
+	\hline
+	&/ & / & / & /\\
+	\hline
+\end{tabular}
+\end{center}
+		}
+\section{Vérification formelle de programmes avec les pfp}\label{pfp}
+	Vérifier que le programme est correct revient à démontrer l'implication suivante :\\ PE $\rightarrow$ pfp(\texttt{(action(D,r, PS);}
 
-\chapter{Spécification d'un programme}
-\remarque{Durant ce chapitre, nous parlerons de programme, cependant cela est valable également pour les sous-programme}
-Un programme est spécifié par un triplet : 
-\begin{itemize}
-	\item Prédicat d'entrée P(E) ou précondition
-	\item action (E, S)
-	\item Prédicat de sortie P(S) ou postcondition
-\end{itemize}
+	Avec pfp étant la plus faible précondition\footnote{wp weakest precondition}.
+	\begin{description}
+		\item[pfp]	C'est un système de réécriture permetant de transformer une formule logique en une autre selon le programme qui doit s'éxécuter.
+			C'est donc une réécriture syntaxique du prédicat de sortie en fonction des actions du programme.  \item[Tableau de situation] Système de réécriture des données en entrée (mémoireà vers les données en sortie (mémoire)) en fonction des actions du programme.  \end{description}
+	\subsection{Système de réécriture Pfp}
+		Ensemble de règles de réécriture permettant de transformer une formule logique en fonction des structures de base des langages de programmation.
 
-	Les prédicats sont écrits en utilisant le formalisme de la logique des prédicats et de sopérations booléeenes.
-	\section{Mots clés à utiliser dans les prédicats}
-	Les mots clés pouvant être utilisés: 
-	\begin{itemize}
-		\item Les quantificateurs logiques : $\forall$(quelque soit), $\exists$(il existe), $\nu$(nombre de)
-		\item Les connecteurs logiques : $\wedge$(et), $\vee$(ou), $\rightarrow$(implique), $\leftrightarrow$(equivalence), $\lnot$(not)
-	\end{itemize}
-	\section{\'Ecriture de la spécification}
-	C'es une traduction de l'énoncé et de l'analyse faite dans l'étape 1 de la méthodologie : c'est un \textbf{triplet} logique.
-	La démarche pour écrire la spécification est la suivante.
+		Les langages impératifs:
+			\begin{itemize}
+				\item affectation
+				\item Séquence
+				\item Sélection
+				\item répétition
+			\end{itemize}
+
+		Règle de réécriture : \texttt{pfp(structure, formule) = formule}
+
+	\subsection{Calcul de pfp d'une affectation}
+	$$pfp("x=e", Q) = Q^e_n$$
+
+	Avec la formule Q dans laquelle toutes les occurences de <<x>> sont remplacées par <<e>> (remplacement textuel)
+	\exemple {
+		Soit le programme suivant :
 		\begin{itemize}
-			\item Identifier les propriétés des données d'entrée et les exprimer sous forme logique
-			\item Identifier les propriétés sur les données en sortie et les exprimer sous forme logique. 
+			\item $x > 0$
+			\item $x = x-1$
+			\item $x \geq 0$
 		\end{itemize}
-	\exemple{
-		\'Ecrire un programme qui trie un tableau T de N éléments.\\
-		\begin{itemize}
-			\item $N > 1$
-			\item \texttt{trier (T, N, t);}
-			\item $(\forall I : 0 \leq I < N-1 \longrightarrow T[I] \leq T[I+1]) \wedge$\\$
-				(\forall I : 0 \leq I < N \longrightarrow $\\$(\nu J : 0 \leq J < N \wedge t[I] = t[J]) = (\nu J : o \leq J < N \wedge t[I] = T[J]))$ 
-		\end{itemize}
+		On doit se poser la question \texttt{PE} $\rightarrow$ \texttt{pfp(programme, PS)} ?\\
+		\begin{eqnarray*}
+			(x > 0) &\rightarrow& \texttt{pfp}("x=x-1", x \geq 0)\\
+			(x>0)&\rightarrow&(x-1 \geq 0)\\
+			(x>0) &\rightarrow& (x > 0)
+		\end{eqnarray*}
 	}
+	\subsection{Calcul du pfp d'une séquence}
+	$$\texttt{pfp}("a1;a2;a3", Q) = \texttt{pfp}("a1;a2;", \texttt{pfp}("a3;", Q));$$
+	\exemple{
+	\begin{itemize}
+		\item \texttt{/* f = i! */}
+		\item \texttt{i = i + 1;\\f = f*i}
+		\item \texttt{/* f = i! */}
+	\end{itemize}
+\begin{eqnarray*}
+	 f = i! &\rightarrow& \texttt{pfp}("i = i + 1 ; f = f \times i;", f = i!)\\
+	 f = i! &\rightarrow& \texttt{pfp}("i = i +1", \texttt{pfp}("f = f \times i", f = i !)\footnote{\'Evaluation de la "règle" la plus profonde}\\
+	 f = i! &\rightarrow& \texttt{pfp}("i = i+1", f \times i = i!)\\
+	 f * i! &\rightarrow& f\times (i+1) = (i+1)!\\
+	 &&i! \times(i+1) = (i+1)!\ \textmd{Par définition de}\ i!
+\end{eqnarray*}
+}
+	\subsection{Calcul du pfp de la séléction} \begin{center} \texttt{if(B)\{$a_1$\} [else\{$A_2$\}]}
+	 \end{center}
+\begin{eqnarray*}
+	\texttt{pfp}("\texttt{if}(B)\{A_1\}\texttt{else}\{1_2\}", PS) &=&
+	B \rightarrow \texttt{pfp}(A_1, PS) \wedge \neg B \rightarrow \texttt{pfp} (A_2, PS)\\
+	\texttt{pfp}("\texttt{if}(B)\{A_1\}\texttt{else}\{A_2\}", PS) &=& B \rightarrow \texttt{pfp}(A_1, PS) \wedge \neg B \rightarrow PS 
+\end{eqnarray*}
+
+Un exemple est disponible annexe \ref{pfpSequence} page \pageref{pfpSequence}.
+
+\subsection{Calcul du pfp d'une répétition.}\label{pfpBoucle}
+Modélisation formelle de la répétition.
+\begin{lstlisting}[language=C]
+/* PE */
+initialisation;
+/* INVARIANT */
+while(c) {
+	/* $c \wedge \textsc{INVARIANT}$ */
+	corps de boucle;
+	/* $\textsc{INVARIANT}$ */
+}
+/* $\neg c \wedge \textsc{INVARIANT}$ */
+\end{lstlisting}
+
+Il y a cinq étapes pour la vérification de la boucle.
+\begin{enumerate}
+	\item $PE \rightarrow \pfp(\texttt{initialisation}, \texttt{INVARIANT})$
+	\item $c \wedge \texttt{INVARIANT} \rightarrow \pfp (\texttt{corps}, \texttt{INVARIANT})$\label{etape2boucle}
+	\item $\neg c \wedge \texttt{INVARIANT} \rightarrow PS$ \label{etape3boucle}
+	\item $ \texttt{INVARIANT} \wedge c \rightarrow f > 0$\footnote{f: fonction définie positive : f est appelée <<variante>>}
+	\item $F = f \wedge \texttt{INVARIANT} \wedge c \rightarrow \pfp (\texttt{corps}, F > f)$\footnote{f est décroissante}
+\end{enumerate}
 
