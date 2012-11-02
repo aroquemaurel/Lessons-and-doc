@@ -28,13 +28,13 @@ bloc { // début du bloc
 
 	Un bloc transforme une séquence en action.
 
-	\subsection{Séquence}
+	\subsection{Séquence}\label{sequence}
 \begin{lstlisting}[language=C, caption=Syntaxe des actions]
 action 1;
 action 2;
 action 3;
 \end{lstlisting}
-	\subsection{Séléction}
+\subsection{Séléction}\label{selection}
 \begin{lstlisting}[language=C, caption=Syntaxe d'une structure de contrôle]
 if(conditon) {
 	action 1;
@@ -44,7 +44,7 @@ if(conditon) {
 \end{lstlisting}
 Condition est une expression booléenne\footnote{Expression renvoyant vrai($\neq 0$) ou faux($=0$)}, si celle-ci est vrai, action 1 est executé, sinon action 2 est executé. 
 
-\subsection{Répétition}
+\subsection{Répétition}\label{repetition}
 \begin{lstlisting}[language=C, caption=Syntaxe de répétition]
 while(condition) {
 	action;
@@ -52,7 +52,7 @@ while(condition) {
 \end{lstlisting}
 Condition est une expression booléenne, tant que la condition est vrai, les actions se répètent.
 
-\subsection{Affectation}
+\subsection{Affectation}\label{affectation}
 \begin{lstlisting}[language=C, caption=Syntaxe d'une affectation ]
 variable = expression;
 \end{lstlisting}

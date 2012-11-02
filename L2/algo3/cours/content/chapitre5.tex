@@ -1,6 +1,20 @@
 \chapter{Vérifications de programmes}
+	Vérifier que le programme est correct revient à démontrer l'implication suivante :\\ PE $\rightarrow$ pfp(\texttt{(action(D,r, PS);}
+
+	Avec pfp étant la plus faible précondition\footnote{wp weakest precondition}.
+	\begin{description}
+		\item[Tableau de situation] Système de réécriture des données en entrée\footnote{mémoire vers les données en sortie (mémoire)} en fonction des
+			actions du programme, cela permet de vérifier la cohérence du programme au niveau du contenu des variables. Cf section \ref{tableauSituation}.
+		\item[pfp ou Plus Faible Précondition]	C'est un système de réécriture permetant de transformer une formule logique en une autre selon le programme qui doit s'éxécuter.
+			C'est donc une réécriture syntaxique du prédicat de sortie en fonction des actions du programme. Cf section \ref{pfp}.
+	\end{description}
+			\remarque{Avec un tableau de situation ou des tests unitaires, il n'est pas possible de prouver qu'un programme est correct dans tous les
+			cas, ceux-ci seront toujours basés sur un jeu d'essai. Le calcul de pfp permet de prouver qu'un programme est correct dans tous les cas,
+			mais il est aussi plus long à effectuer, il est donc préférable de faire un tableau de situation rapidement, si le programme est incorrect,
+			nous pourront le voir rapidement..}
 \section{Le tableau de situation}\label{tableauSituation}
-		Le tableau de situation sert à tester le programme, la vérification n'est pas exhaustive. Il s'agit de vérifier que l'état des variables est cohérent.
+		Le tableau de situation sert à tester le programme, la vérification n'est pas exhaustive. Il s'agit de vérifier que l'état des variables en
+		mémoire est cohérent. Le tableau de situation peut être effectuée à l'aide d'un ordinateur, via un débuggeur par exemple. 
 			\begin{description}
 				\item[Données en entrée] Programme <<instrumenté>> : code source + point d'arrêt: 
 					localisation dans l'espace du programme d'une opération de photographie de l'état de l'ordinateur.
@@ -12,12 +26,12 @@ Nous choisis le jeu de données $n = 0$ et $n = 4$ afin de passer dans tous les 
 \begin{center}
 \begin{tabular}{c  |  c  c  c  c  }
 	&\textbf{\'Echelle} & \textbf{n} & \textbf{f} & \textbf{point d'arrêt}\\
-n=0	&1 & 0 & indéfini & 1\\
+$n=0$	&1 & 0 & indéfini & 1\\
 	\hline
 	&/ & / & / & /\\
 	\hline
 	\hline
-	&indéfini & 4 & 4 & 2\\
+	$n=4$&indéfini & 4 & 4 & 2\\
 	\hline
 	&indéfini &  3 & 12 & 3\\	
 	\hline
@@ -33,15 +47,6 @@ n=0	&1 & 0 & indéfini & 1\\
 \end{center}
 		}
 \section{Vérification formelle de programmes avec les pfp}\label{pfp}
-	Vérifier que le programme est correct revient à démontrer l'implication suivante :\\ PE $\rightarrow$ pfp(\texttt{(action(D,r, PS);}
-
-	Avec pfp étant la plus faible précondition\footnote{wp weakest precondition}.
-	\begin{description}
-		\item[pfp]	C'est un système de réécriture permetant de transformer une formule logique en une autre selon le programme qui doit s'éxécuter.
-			C'est donc une réécriture syntaxique du prédicat de sortie en fonction des actions du programme.  \item[Tableau de situation] Système de réécriture des données en entrée (mémoire vers les données en sortie (mémoire)) en fonction des actions du programme.  \end{description}
-			\remarque{Avec un tableau de situation ou des tests unitaires, il n'est pas possible de prouver qu'un programme est correct dans tous les
-			cas, ceux-ci seront toujours basés sur un jeu d'essai. Le calcul de pfp permet de prouver qu'un programme est correct dans tous les cas.}
-	\subsection{Système de réécriture Pfp}
 		Ensemble de règles de réécriture permettant de transformer une formule logique en fonction des structures de base des langages de programmation.
 
 		Nous allons étudier le calcul d'une pfp pour un langage impératif, pour ceux-ci les structures de bases sont :
@@ -55,6 +60,7 @@ n=0	&1 & 0 & indéfini & 1\\
 		Règle de réécriture : \texttt{pfp(structure, formule) = formule}
 
 		\subsection{Calcul de pfp d'une affectation}\label{pfpaffectation}
+		La définition d'une affectation est disponible section \ref{affectation}.
 	$$pfp("x=e", Q) = Q^e_n$$
 
 	Avec la formule Q dans laquelle toutes les occurences de <<x>> sont remplacées par <<e>> (remplacement textuel)
@@ -73,6 +79,7 @@ n=0	&1 & 0 & indéfini & 1\\
 		\end{eqnarray*}
 	}
 	\subsection{Calcul du pfp d'une séquence}\label{pfpsequence}
+		La définition d'une séquence est disponible section \ref{sequence}.
 	$$\texttt{pfp}("a1;a2;a3", Q) = \texttt{pfp}("a1;a2;", \texttt{pfp}("a3;", Q));$$
 	\exemple{
 	\begin{itemize}
@@ -84,12 +91,13 @@ n=0	&1 & 0 & indéfini & 1\\
 	 f = i! &\rightarrow& \texttt{pfp}("i = i + 1 ; f = f \times i;", f = i!)\\
 	 f = i! &\rightarrow& \texttt{pfp}("i = i +1", \texttt{pfp}("f = f \times i", f = i !)\footnote{\'Evaluation de la "règle" la plus profonde}\\
 	 f = i! &\rightarrow& \texttt{pfp}("i = i+1", f \times i = i!)\\
-	 f * i! &\rightarrow& f\times (i+1) = (i+1)!\\
-	 &&i! \times(i+1) = (i+1)!\ \textmd{Par définition de}\ i!
+	 f = i! &\rightarrow& f\times (i+1) = (i+1)!\\
+&&i! \times(i+1) = (i+1)!\ \textmd{Par définition de}\ i!
 \end{eqnarray*}
 }
-\subsection{Calcul du pfp de la séléction}\label{pfpselection} \begin{center} \texttt{if(B)\{$a_1$\} [else\{$A_2$\}]}
-	 \end{center}
+\subsection{Calcul du pfp de la séléction}\label{pfpselection} 
+		La définition d'une séléction est disponible section \ref{selection}.
+		$$\ifp (B)\{a_1\} [\elsep \{A_2\}]$$
 \begin{eqnarray*}
 	\texttt{pfp}("\texttt{if}(B)\{A_1\}\texttt{else}\{1_2\}", PS) &=&
 	B \rightarrow \texttt{pfp}(A_1, PS) \wedge \neg B \rightarrow \texttt{pfp} (A_2, PS)\\
@@ -99,6 +107,7 @@ n=0	&1 & 0 & indéfini & 1\\
 Un exemple est disponible annexe \ref{exoPfpSelect} page \pageref{exoPfpSelect}.
 
 \subsection{Calcul du pfp d'une répétition.}\label{pfpBoucle}
+		La définition d'une répétition est disponible section \ref{repetition}.
 Modélisation formelle de la répétition.
 \begin{lstlisting}[language=C]
 /* PE */
