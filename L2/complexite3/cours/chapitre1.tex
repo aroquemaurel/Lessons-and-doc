@@ -2,7 +2,7 @@
 	\section{Complexité}
 	On cherche à estimer le temps de calcul d'un algorithme A en fonction d'un paramètre n. Pour avoir une mesure indépendante de la machine, on identifie
 	le temps de calcul avec le nombre d'instructions exécutées. 
-	
+
 	\exemple{Le paramètre n pourrait être la taille d'un tableau, par exemple.}
 
 	Soit $D_i$ l'ensemble des données possibles telle que $n=i$. Pour $d \in D_i$ on notera $T(A,d)$ le nombre d'instructions exécutée pendant l'exécution de
@@ -22,7 +22,7 @@
 	\remarque{Peu utilisé, sauf pour prouver qu'un algorithme est mauvais. Si la complexité temporelle minimale est 
 		mauvaise même dans le meilleur des cas, alors l'algorithme n'est pas bon.}
 
-%			\remarque{$T_{\max}$ et $T_{\min}$ nous fournissent des bornes supérieures et inférieures.}
+	%			\remarque{$T_{\max}$ et $T_{\min}$ nous fournissent des bornes supérieures et inférieures.}
 
 	\subsection{Compairaison de complexités en fonction de la machine}
 	\begin{tabular}{| c | p{7cm} | p{7cm}|} 
@@ -44,92 +44,92 @@
 	\end{tabular}
 	\section{Complexité asymptotique}
 	Pour comparer des algorithmes, on ne s'intéresse qu'à leur comportements pour n grand. On cherche une mesure de complexité qui soit indépendante du langage de programmation et de la vitesse de la machine. \\ 
-$\Rightarrow$		On ne doit pas perdre en compte des facteurs constants.  \\
-$\Rightarrow$	Ordre de grandeur
+	$\Rightarrow$		On ne doit pas perdre en compte des facteurs constants.  \\
+	$\Rightarrow$	Ordre de grandeur
 
-\subsection{La complexité asymptotique}
-La complexité asymptotique\footnote{Que ce soit maximale, moyenne ou minimale} est l'ordre de grandeur de sa limite lorsque $n \rightarrow \infty$
+	\subsection{La complexité asymptotique}
+	La complexité asymptotique\footnote{Que ce soit maximale, moyenne ou minimale} est l'ordre de grandeur de sa limite lorsque $n \rightarrow \infty$
 
-\subsection{Notation} Soient $T$, $f$ des fonctions positives ou nulles. Rotations de grandeur de fonction asymptotiques.
-\paragraph{Grand O} $T = O(f)$ si $\exists c \in \mathbb{R}^{>0}$ et $n_0 \in \mathbb{N}$ tels que $\forall n \geq n_0$, $T(n) \leq cf(n)$.
+	\subsection{Notation} Soient $T$, $f$ des fonctions positives ou nulles. Rotations de grandeur de fonction asymptotiques.
+	\paragraph{Grand O} $T = O(f)$ si $\exists c \in \mathbb{R}^{>0}$ et $n_0 \in \mathbb{N}$ tels que $\forall n \geq n_0$, $T(n) \leq cf(n)$.
 
-\paragraph{Grand Oméga} $T = \Omega(f)$ si $\exists c \in \mathbb{R}^{>0}$ et $n_0 \in \mathbb{N}$ tels que $i\forall n \geq n_0$, $T(n) \geq cf(n)$
-\paragraph{Petit O} $T = o(f)$ si $\frac{T(n)}{f(n)} \rightarrow O$ lorsque $n \rightarrow \infty$. 
-\remarque{T est négligeable devant f}
+	\paragraph{Grand Oméga} $T = \Omega(f)$ si $\exists c \in \mathbb{R}^{>0}$ et $n_0 \in \mathbb{N}$ tels que $i\forall n \geq n_0$, $T(n) \geq cf(n)$
+	\paragraph{Petit O} $T = o(f)$ si $\frac{T(n)}{f(n)} \rightarrow O$ lorsque $n \rightarrow \infty$. 
+	\remarque{T est négligeable devant f}
 
-\exemple{
-\begin{enumerate}
+	\exemple{
+	\begin{enumerate}
 	\item $2n^2 + 5n + 10 = O(n^2)$\\
 	Dans la définition $n_0 = 5$,$c=4$ : \\
 	$\forall n \geq 5,\ 2n^2+5n+10 \leq 4n^2$
-\item $2n^2 + 5n + 10 = \Omega(n^2)$\\
+	\item $2n^2 + 5n + 10 = \Omega(n^2)$\\
 	Dans la définition, $n_0 = 1$, $c = 2$\\
 	$\forall n \geq 1,\ 2n^2 + 5n + 10 \geq 2n^2 \cdots$\\
 	Donc $2n^2+5n+10 = \Theta (n^2)$
-\item $\frac{1}{5} + n = O(n\log_2 n)\ (n_0 = 2,\ c=2)$
-\item $\frac{1}{5} n \log_2 n + n = \Omega(n \log n)\ (n_0=1,c=\frac{1}{5})$
-\item $\forall k \geq 0$, $n^k = O(n^{k+1})$ mais $n^k \neq \Omega(n^{k+1})$
-\item $\forall a,b >1, \log_a n = \Theta (\log_b n)$ car $\log_a n = \frac{\log_b n}{\log_b a}$ et $\log_b a$ est une constante. $\Rightarrow$ On a pas besoin de préciser la base de logarithme dnas une complexité asymptotique
-\item $2n^2 + 5n + 10 = 2n^2 + 0(n^2)$
-\item Pour toute constante $c>0$, $C = \Theta(1)$
-\item $2^n = o(3^n)$
-\end{enumerate}
-}
-\remarque{\begin{enumerate}
+	\item $\frac{1}{5} + n = O(n\log_2 n)\ (n_0 = 2,\ c=2)$
+	\item $\frac{1}{5} n \log_2 n + n = \Omega(n \log n)\ (n_0=1,c=\frac{1}{5})$
+	\item $\forall k \geq 0$, $n^k = O(n^{k+1})$ mais $n^k \neq \Omega(n^{k+1})$
+	\item $\forall a,b >1, \log_a n = \Theta (\log_b n)$ car $\log_a n = \frac{\log_b n}{\log_b a}$ et $\log_b a$ est une constante. $\Rightarrow$ On a pas besoin de préciser la base de logarithme dnas une complexité asymptotique
+	\item $2n^2 + 5n + 10 = 2n^2 + 0(n^2)$
+	\item Pour toute constante $c>0$, $C = \Theta(1)$
+	\item $2^n = o(3^n)$
+	\end{enumerate}
+	}
+	\remarque{\begin{enumerate}
 	\item O et $\Omega$ sont des pré-ordres\footnote{Relations reflexives et transitives} :\\ $f = O(f)$ et $f = O(g)$ et $g = O(h)) \Rightarrow f = O(h)$
 	\item $\Theta$ est une relation d'équivalence\footnote{relation reflexives, symétrique et transitive} : 
 		$f = \Theta(g) \Leftrightarrow g = \Theta (f)$
-\end{enumerate}
-}
-\paragraph{Proposition}
-$$\textrm{Si } \lim_{n \rightarrow \infty} \frac{f(n)}{g(n)} = a > 0 \textrm{ Alors }f = \Theta (g)$$
-\remarque{La réciproque est fausse}
+	\end{enumerate}
+	}
+	\paragraph{Proposition}
+	$$\textrm{Si } \lim_{n \rightarrow \infty} \frac{f(n)}{g(n)} = a > 0 \textrm{ Alors }f = \Theta (g)$$
+	\remarque{La réciproque est fausse}
 
-\paragraph{Notation} $$f \sim g \Rightarrow \lim_{n\rightarrow \infty} \frac{f(n)}{g(n)} = 1$$
-\exemple{$(3n+1)^3 \sim 27n^3$}
-\section{Exemple de complexités d'algorithmes}
-\subsection{Le tri à bulles}
-\begin{eqnarray*}
-	T_{\min} (n) &=& \Theta (n) \textrm{ Si le tableau est est déjà trié}\\
-	T_{\max}(n) &=& \Theta(n^2) \textrm{ Si le tableau est trié en ordre décroissant}\\
-	T_{\moy}(n) &=& T_{\max}(n) = \Theta(n^2)\\
-\end{eqnarray*}
-\subsection{Tri par fusion}
-\begin{eqnarray*}
-	T_{\min}(n) = T_{\max}(n) = T_{\moy}(n) = \Theta (n\log n)
-\end{eqnarray*}
-\subsection{Tri rapide}
-\begin{eqnarray*}
-	T_{\min}(n) = T_{\moy}(n) &=& \Theta (n \log n)\\
-	T_{\max}(n) &=& \Theta(n^2)
-\end{eqnarray*}
+	\paragraph{Notation} $$f \sim g \Rightarrow \lim_{n\rightarrow \infty} \frac{f(n)}{g(n)} = 1$$
+	\exemple{$(3n+1)^3 \sim 27n^3$}
+	\section{Exemple de complexités d'algorithmes}
+	\subsection{Le tri à bulles}
+	\begin{eqnarray*}
+		T_{\min} (n) &=& \Theta (n) \textrm{ Si le tableau est est déjà trié}\\
+		T_{\max}(n) &=& \Theta(n^2) \textrm{ Si le tableau est trié en ordre décroissant}\\
+		T_{\moy}(n) &=& T_{\max}(n) = \Theta(n^2)\\
+	\end{eqnarray*}
+	\subsection{Tri par fusion}
+	\begin{eqnarray*}
+		T_{\min}(n) = T_{\max}(n) = T_{\moy}(n) = \Theta (n\log n)
+	\end{eqnarray*}
+	\subsection{Tri rapide}
+	\begin{eqnarray*}
+		T_{\min}(n) = T_{\moy}(n) &=& \Theta (n \log n)\\
+		T_{\max}(n) &=& \Theta(n^2)
+	\end{eqnarray*}
 
-\section{Comportement symptotique de fonctions usuelles}
-Il y a quatre groupes importants de fonction positives croissantes.
-\begin{description}
-	\item[Logarithmiques] $(\log n)^\sigma$ (où $\sigma > 0$), $\log\log n, \ldots$
-	\item[Polynomiales] $n^\gamma$ (où $\gamma > 0$), $n^\gamma(\log n)^\gamma$(où $\gamma > 0$)
-	\item[Exponentielles] $2^{\alpha n^\beta}$ (où $\alpha > 0$ et $0 < \beta \leq 1$), par exemple $2^n$, $4^n$, $2^{\sqrt{n}}$
-	\item[Supraexponentielles] $n!$, $n^n$, $2^{n^2}$, \ldots
-\end{description}
-\remarque{
-	Il existe des fonctions intermédiaires(par exemple $n^{\log_2 n}$) mais ces fonctions se rencontrent très rarement dans l'analyse de complexité d'algorithmes
-}
+	\section{Comportement symptotique de fonctions usuelles}
+	Il y a quatre groupes importants de fonction positives croissantes.
+	\begin{description}
+		\item[Logarithmiques] $(\log n)^\sigma$ (où $\sigma > 0$), $\log\log n, \ldots$
+		\item[Polynomiales] $n^\gamma$ (où $\gamma > 0$), $n^\gamma(\log n)^\gamma$(où $\gamma > 0$)
+		\item[Exponentielles] $2^{\alpha n^\beta}$ (où $\alpha > 0$ et $0 < \beta \leq 1$), par exemple $2^n$, $4^n$, $2^{\sqrt{n}}$
+		\item[Supraexponentielles] $n!$, $n^n$, $2^{n^2}$, \ldots
+	\end{description}
+	\remarque{
+		Il existe des fonctions intermédiaires(par exemple $n^{\log_2 n}$) mais ces fonctions se rencontrent très rarement dans l'analyse de complexité d'algorithmes
+	}
 
-% Courbes. CF Feuille de TD
-\begin{eqnarray*}
-	\lim_{n\rightarrow \infty} \frac{n^b}{a^n} = O \textrm{ Pour toutes constantes} a,b \textrm{ avec } a > 1 \textrm{)}\\
-	n^b = o(a^n)\\
-	\lim_{n\rightarrow \infty} \frac{(\log_2 n)^{\sigma}}{n^\sigma} = O\\
-	\Rightarrow (\log_2 n)^\sigma = o(n^\sigma)\\
-\end{eqnarray*}
+	% Courbes. CF Feuille de TD
+	\begin{eqnarray*}
+		\lim_{n\rightarrow \infty} \frac{n^b}{a^n} = O \textrm{ Pour toutes constantes} a,b \textrm{ avec } a > 1 \textrm{)}\\
+		n^b = o(a^n)\\
+		\lim_{n\rightarrow \infty} \frac{(\log_2 n)^{\sigma}}{n^\sigma} = O\\
+		\Rightarrow (\log_2 n)^\sigma = o(n^\sigma)\\
+	\end{eqnarray*}
 
 
-\subsection{La formule de Stisling}
-\begin{eqnarray*}
-	n! \sim \sqrt{2\pi n}(\frac{n}{e})^n\\
-	\Rightarrow n! = o(n^n) \textrm{ et } n! = \Omega(2^n)
-\end{eqnarray*}
-On peut aussi en déduire :
-$$\log(n!) \sim n\log n$$
+	\subsection{La formule de Stisling}
+	\begin{eqnarray*}
+		n! \sim \sqrt{2\pi n}(\frac{n}{e})^n\\
+		\Rightarrow n! = o(n^n) \textrm{ et } n! = \Omega(2^n)
+	\end{eqnarray*}
+	On peut aussi en déduire :
+	$$\log(n!) \sim n\log n$$
 

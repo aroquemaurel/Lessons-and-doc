@@ -24,15 +24,23 @@
 \contentsline {subsection}{\numberline {2.1.1}Exemple}{9}{subsection.2.1.1}
 \contentsline {section}{\numberline {2.2}Complexit\IeC {\'e} de boucles ``tant que''}{10}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Exemple}{10}{subsection.2.2.1}
-\contentsline {chapter}{\numberline {3}Complexit\IeC {\'e} d'algorithmes d\IeC {\'e}finis par r\IeC {\'e}ccurence}{11}{chapter.3}
-\contentsline {chapter}{\numberline {4}Structure de donn\IeC {\'e}es et complexit\IeC {\'e}}{12}{chapter.4}
-\contentsline {chapter}{\numberline {A}Exercices}{13}{appendix.A}
-\contentsline {section}{\numberline {A.1}TD 1}{13}{section.A.1}
-\contentsline {subsection}{\numberline {A.1.1}Lesquelles des affirmations suivantes sont vraies ?}{13}{subsection.A.1.1}
-\contentsline {subsection}{\numberline {A.1.2}Une seule des afirmations suivantes est vraie. Laquelle ?}{13}{subsection.A.1.2}
-\contentsline {subsection}{\numberline {A.1.3}Une seule des affirmations suivantes est vraie. Laquelle ?}{13}{subsection.A.1.3}
-\contentsline {subsection}{\numberline {A.1.4}}{13}{subsection.A.1.4}
-\contentsline {subsection}{\numberline {A.1.5}Laquelle des affirmations suivantes sont vraies}{13}{subsection.A.1.5}
-\contentsline {subsection}{\numberline {A.1.6}Lesquelles des affirmations suivantes sont vraies ?}{14}{subsection.A.1.6}
-\contentsline {subsection}{\numberline {A.1.7}Simplifiez les expressions suivantes}{14}{subsection.A.1.7}
-\contentsline {subsection}{\numberline {A.1.8}Classez les fonctions suivantes dans l'ordre croissant d'ordre de grandeur}{14}{subsection.A.1.8}
+\contentsline {section}{\numberline {2.3}Approximation asymptotique de sommes partielles}{10}{section.2.3}
+\contentsline {paragraph}{Exemples de sommes partielles}{10}{section*.7}
+\contentsline {subsection}{\numberline {2.3.1}Principe de la m\IeC {\'e}thode}{10}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Application}{11}{subsection.2.3.2}
+\contentsline {chapter}{\numberline {3}Complexit\IeC {\'e} d'algorithmes d\IeC {\'e}finis par r\IeC {\'e}ccurence}{13}{chapter.3}
+\contentsline {chapter}{\numberline {4}Structure de donn\IeC {\'e}es et complexit\IeC {\'e}}{14}{chapter.4}
+\contentsline {chapter}{\numberline {A}Exercices}{15}{appendix.A}
+\contentsline {section}{\numberline {A.1}TD 1}{15}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}Lesquelles des affirmations suivantes sont vraies ?}{15}{subsection.A.1.1}
+\contentsline {subsection}{\numberline {A.1.2}Une seule des afirmations suivantes est vraie. Laquelle ?}{15}{subsection.A.1.2}
+\contentsline {subsection}{\numberline {A.1.3}Une seule des affirmations suivantes est vraie. Laquelle ?}{15}{subsection.A.1.3}
+\contentsline {subsection}{\numberline {A.1.4}}{15}{subsection.A.1.4}
+\contentsline {subsection}{\numberline {A.1.5}Laquelle des affirmations suivantes sont vraies}{15}{subsection.A.1.5}
+\contentsline {subsection}{\numberline {A.1.6}Lesquelles des affirmations suivantes sont vraies ?}{16}{subsection.A.1.6}
+\contentsline {subsection}{\numberline {A.1.7}Simplifiez les expressions suivantes}{16}{subsection.A.1.7}
+\contentsline {subsection}{\numberline {A.1.8}Classez les fonctions suivantes dans l'ordre croissant d'ordre de grandeur}{16}{subsection.A.1.8}
+\contentsline {subsection}{\numberline {A.1.9}}{16}{subsection.A.1.9}
+\contentsline {subsection}{\numberline {A.1.10}}{17}{subsection.A.1.10}
+\contentsline {subsection}{\numberline {A.1.11}}{17}{subsection.A.1.11}
+\contentsline {subsection}{\numberline {A.1.12}}{17}{subsection.A.1.12}

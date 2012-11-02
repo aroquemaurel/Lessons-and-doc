@@ -28,7 +28,7 @@ $$a_{ik} = \sum^n_{j=1} = b_{ij}C_{ji}$$
 $$T_{\moy}(n) = T_{\max}(n) = \sum^n_{i=1}\sum^n_{k=1}(1+n) = \Theta(n^3)$$
 
 \newpage
-\section{Complexité de boucles ``tant que''}
+\section{Complexité de boucles ``tant que''}\label{complexiteboucletantque}
 
 \begin{lstlisting}[language=algo]
 	tantque C faire
@@ -52,3 +52,62 @@ Comparaison de 2 suites $\{A_i\},\{b_i\}$.
 	fin tantque;
 \end{lstlisting}
 $T_{\moy}(n) = \Theta(1)$ si les suites sont indépendantes et aléatoires.
+\section{Approximation asymptotique de sommes partielles}
+\paragraph{Exemples de sommes partielles}
+$$\sum^n_{i=1}\frac{1}{i}\ \ \sum^n_{i=1} i^k\ \  \sum^n_{i=1} \log_2 i$$
+\subsection{Principe de la méthode}
+Pour calculer une approximation asymptotique de $\sum^n_{i=1} f(i)$ où f est une fonction monotone on l'encadre par $\int f(n)du$.
+
+\textbf{Proposition } Si $f$ est décroissante, alors 
+$$ \int^{n+1}_p f(u)du \leq \sum^n_{i=p} f(i) \leq \int^n_{p-1} f(u)du$$
+
+%\textbf{Preuve}
+%% courbe 2
+
+\exemple{
+f(u) = $\frac{1}{u}. H_n = \sum^n_{i=1} \frac{1}{i}$ est la série harmonique. On ne peut intégrer $\frac{1}{u}$ qu'à partir de 1 donc on choisit $p=2$.
+$$ \int^{n+1}_2 \frac{1}{u}du \leq H_n - 1 \leq \int^n_1 \frac{1}{u}du$$
+\begin{eqnarray*}
+	[\log_e u]^{n+1}_{2} &\leq& H_n - 1 \leq [\log_e u]^n_1\\
+	\log_e(n+1) - \log_e 2 &\leq& H_n - 1 \leq \log_e n -\log_e 1\\
+	\log_e n -\log_e 2 + 1 &<& H_n \leq (\log_e n) + 1
+\end{eqnarray*}
+Donc $H_n = \Theta(\log n)$
+}
+
+\subsection{Application} Étude de complexité d'un algorithme de génération d'une permutation aléatoire des entiers $1,2,\cdots,n$ dans un tableau \texttt{perm}
+
+\remarque{Il existe un algorithme de complexité $\Theta(N)$ pour ce problème : pour chaque $i \in \{1,2,\cdots,n\}$, échanger \perm[i] et \perm[\texttt{random(i)}].
+}
+\begin{lstlisting}[language=algo, caption=Génération d'une permutation aléatoire]
+pour i = 1 a n faire 
+	vu[i] = faux;
+fin pour;
+pour i = 1 a n faire
+	x = random(n);
+	tantque vu[x] faire
+		x = random(n);
+	fin tantque;
+	perm[i] = x;
+	vu[x] = vrai;
+fin pour;
+\end{lstlisting}
+\remarque{
+	$T_{\max} = \infty$ car il n'y a aucune garantie de terminaison. C'est un exemple d'algorithme de type \textit{Las Vegas} 
+	la probabilité de non terminaison est nulle.
+}
+On suppose que la complexité de \random(n) est $\Theta (1)$. 
+
+Pour $i, n$ fixe, à chaque itération de la boucle ``tantque'', la probabilité de rentrer dans la boucle est une constante pour 
+$p=\frac{i-1}{n}$ et $p < 1$ pour $1 \leq i \leq n$.
+
+Par l'analyse de la complexité d'une boucle ``tantque'' (section \ref{complexiteboucletantque}), 
+la complexité moyenne de la boucle ``tantque'' est $\Theta (\frac{1}{1-p}$ donc 
+\begin{eqnarray*}
+	T_{\moy} &=& \Theta(\sum^n_{i=1}\frac{1}{1-\frac{i-1}{n}})\\
+	&=& \Theta(\sum^n_{i=1}\frac{n}{n-(i-1)}\\
+	&=& \Theta(n\sum^n_{k=1}\frac{1}{k})\\
+	&=&\Theta(n H_n)=\Theta(n\log n) \textrm{ car } H_n = \Theta(\log n)
+\end{eqnarray*}
+
+
