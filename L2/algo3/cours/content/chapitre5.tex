@@ -66,11 +66,7 @@ $n=0$	&1 & 0 & indéfini & 1\\
 	Avec la formule Q dans laquelle toutes les occurences de <<x>> sont remplacées par <<e>> (remplacement textuel)
 	\exemple {
 		Soit le programme suivant :
-		\begin{itemize}
-			\item $x > 0$
-			\item $x = x-1$
-			\item $x \geq 0$
-		\end{itemize}
+		\lstinputlisting[language=C, numbers=none]{annexes/exemplePfpAfect.c}
 		On doit se poser la question \texttt{PE} $\rightarrow$ \texttt{pfp(programme, PS)} ?\\
 		\begin{eqnarray*}
 			(x > 0) &\rightarrow& \texttt{pfp}("x=x-1", x \geq 0)\\
@@ -81,12 +77,8 @@ $n=0$	&1 & 0 & indéfini & 1\\
 	\subsection{Calcul du pfp d'une séquence}\label{pfpsequence}
 		La définition d'une séquence est disponible section \ref{sequence}.
 	$$\texttt{pfp}("a1;a2;a3", Q) = \texttt{pfp}("a1;a2;", \texttt{pfp}("a3;", Q));$$
-	\exemple{
-	\begin{itemize}
-		\item \texttt{/* f = i! */}
-		\item \texttt{i = i + 1;\\f = f*i}
-		\item \texttt{/* f = i! */}
-	\end{itemize}
+		\exemple{
+		\lstinputlisting[language=C, numbers=none]{annexes/exemplePfpSeq.c}
 \begin{eqnarray*}
 	 f = i! &\rightarrow& \texttt{pfp}("i = i + 1 ; f = f \times i;", f = i!)\\
 	 f = i! &\rightarrow& \texttt{pfp}("i = i +1", \texttt{pfp}("f = f \times i", f = i !)\footnote{\'Evaluation de la "règle" la plus profonde}\\
@@ -95,16 +87,27 @@ $n=0$	&1 & 0 & indéfini & 1\\
 &&i! \times(i+1) = (i+1)!\ \textmd{Par définition de}\ i!
 \end{eqnarray*}
 }
+D'autres exercices sont disponibles annexe \ref{exoPfpSequence} page \pageref{exoPfpSequence}.
 \subsection{Calcul du pfp de la séléction}\label{pfpselection} 
 		La définition d'une séléction est disponible section \ref{selection}.
 		$$\ifp (B)\{a_1\} [\elsep \{A_2\}]$$
 \begin{eqnarray*}
-	\texttt{pfp}("\texttt{if}(B)\{A_1\}\texttt{else}\{1_2\}", PS) &=&
+	\texttt{pfp}("\texttt{if}(B)\{A_1\}\texttt{else}\{A_2\}", PS) &=&
 	B \rightarrow \texttt{pfp}(A_1, PS) \wedge \neg B \rightarrow \texttt{pfp} (A_2, PS)\\
-	\texttt{pfp}("\texttt{if}(B)\{A_1\}\texttt{else}\{A_2\}", PS) &=& B \rightarrow \texttt{pfp}(A_1, PS) \wedge \neg B \rightarrow PS 
+	\texttt{pfp}("\texttt{if}(B)\{A_1\}", PS) &=& B \rightarrow \texttt{pfp}(A_1, PS) \wedge \neg B \rightarrow PS 
 \end{eqnarray*}
-
-Un exemple est disponible annexe \ref{exoPfpSelect} page \pageref{exoPfpSelect}.
+\exemple{
+Soit le programme suivant :
+\lstinputlisting[language=C, numbers=none]{annexes/exemplePfpSelect.c}
+\begin{eqnarray*}
+x = A &\rightarrow& \pfp ("\ifp(x < 0)\{ x = -x \}", x = |A|)\\
+x = A &\rightarrow& ((x<0)\rightarrow \pfp ("x=-x;", x = |A| ) \wedge (x >= 0 \rightarrow x = |A|))\\
+x = A &\rightarrow& ((x < 0) \rightarrow (-x = |A|)) \wedge (( x >= 0) \rightarrow (x = |A|))\\
+\end{eqnarray*}
+$( A ( A < 0) \rightarrow (-A = |A|) ) \wedge (A >= 0 \rightarrow (A=|A|))$
+Définition de la valeur absolue $|.|$.
+}
+D'autres exercices sont disponibles annexe \ref{exoPfpSelect} page \pageref{exoPfpSelect}.
 
 \subsection{Calcul du pfp d'une répétition.}\label{pfpBoucle}
 		La définition d'une répétition est disponible section \ref{repetition}.
@@ -129,5 +132,22 @@ Il y a cinq étapes pour la vérification de la boucle.
 	\item $ \texttt{INVARIANT} \wedge c \rightarrow f > 0$\footnote{f: fonction définie positive : f est appelée <<variante>>}
 	\item $F = f \wedge \texttt{INVARIANT} \wedge c \rightarrow \pfp (\texttt{corps}, F > f)$\footnote{f est décroissante}
 \end{enumerate}
-
-Les exemples des boucles sont disponible annexe \ref{exoPfpBoucles} page \pageref{exoPfpBoucles}. 
+\exemple{\lstinputlisting[language=C, numbers=none]{annexes/exemplePfpBoucles.c}
+\begin{eqnarray*}
+	x \geq 1 &\rightarrow& \pfp (j=1,p=1, Inv)\\
+	x \geq 1 &\rightarrow& (0 \leq 1 \leq 1 \leq N)\wedge \exists k(0 \leq k \leq 0 (B[k]=B[k])) \wedge\\&& \forall k(0 \leq k \leq -1 \rightarrow B[k] \neq B[k+1]\\
+	&& \Rightarrow \textrm{ Toujours vrai }
+\end{eqnarray*}
+\begin{eqnarray*}
+	C \wedge INV &\rightarrow& \pfp (\ifp (B[j-p] == B[k]) p++;j++,INV)\\
+	C \wedge INV &\rightarrow& \pfp (\ifp(B[j-p] == B[j]) p++, \pfp(j++, INV))\\
+	C \wedge INV &\rightarrow& \pfp(\cdots
+	, 1 \leq p \leq j+1 \leq N \wedge \exists k (0 \leq k\leq j + 1 - p)\\&&
+			\wedge B[k] = B[k+p-1] \wedge\\&& \exists \forall k(0 \leq k < j+1-p-1 \rightarrow B[k] \neq B[k+p] )) = A\\
+C \wedge INV &\rightarrow& B[j-p] == B[j] \rightarrow \pfp (p++, A) \wedge B[j-p]  \neq B[j] \rightarrow A\\
+C \wedge INV &\rightarrow& (B[j-p] \neq B[j] \rightarrow (0 \leq p \leq j+1 \leq N) \wedge \\&&\exists k 0 \leq k \leq j+1-p \wedge B[k] = B[k+p-1] \\&&
+\wedge \forall k 0 \neq k \leq j-p \rightarrow B[k] \neq B[k-p]\\
+&\rightarrow& T \wedge \exists k 0 \leq k< j-p \wedge B[k] = B[k+1-p] \wedge\\&& B[j+1-p] = B[j+1-p+1-p] \wedge \cdots\\
+\end{eqnarray*}}
+\remarque{Il est conseillé de commencer par l'étape la plus facile, en effet, une étape et nous n'avons pas à effectuer les autres}
+D'autres exercices sur les répétitions sont disponible annexe \ref{exoPfpBoucles} page \pageref{exoPfpBoucles}. 
