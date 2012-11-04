@@ -34,7 +34,7 @@
 \contentsline {subsection}{\numberline {3.3.3}\'Etape 3: Donner un mod\IeC {\`e}le de solution}{14}{subsection.3.3.3}
 \contentsline {subsection}{\numberline {3.3.4}\'Etape 4 : Programmer et unifier le programme}{15}{subsection.3.3.4}
 \contentsline {subsection}{\numberline {3.3.5}\'Etape 5 : V\IeC {\'e}rification du programme}{15}{subsection.3.3.5}
-\contentsline {part}{II\hspace {1em}Int\IeC {\'e}r\IeC {\^e}ts des sp\IeC {\'e}cifications}{16}{part.2}
+\contentsline {part}{II\hspace {1em}Int\IeC {\'e}r\IeC {\^e}t et utilisation des sp\IeC {\'e}cifications}{16}{part.2}
 \contentsline {chapter}{\numberline {4}Sp\IeC {\'e}cification d'un programme}{17}{chapter.4}
 \contentsline {section}{\numberline {4.1}Mots cl\IeC {\'e}s \IeC {\`a} utiliser dans les pr\IeC {\'e}dicats}{17}{section.4.1}
 \contentsline {section}{\numberline {4.2}\'Ecriture de la sp\IeC {\'e}cification}{17}{section.4.2}

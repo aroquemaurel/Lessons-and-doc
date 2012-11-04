@@ -129,7 +129,8 @@ Il y a cinq étapes pour la vérification de la boucle.
 	\item $PE \rightarrow \pfp(\texttt{initialisation}, \texttt{INVARIANT})$
 	\item $c \wedge \texttt{INVARIANT} \rightarrow \pfp (\texttt{corps}, \texttt{INVARIANT})$\label{etape2boucle}
 	\item $\neg c \wedge \texttt{INVARIANT} \rightarrow PS$ \label{etape3boucle}
-	\item $ \texttt{INVARIANT} \wedge c \rightarrow f > 0$\footnote{f: fonction définie positive : f est appelée <<variante>>}
+	\item $ \texttt{INVARIANT} \wedge c \rightarrow f > 0$\footnote{f: fonction définie positive : f est appelée <<variante>>, ceci afin de vérifier que
+		la boucle se termine et n'est donc pas inifinie}
 	\item $F = f \wedge \texttt{INVARIANT} \wedge c \rightarrow \pfp (\texttt{corps}, F > f)$\footnote{f est décroissante}
 \end{enumerate}
 \exemple{\lstinputlisting[language=C, numbers=none]{annexes/exemplePfpBoucles.c}
