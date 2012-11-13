@@ -1,0 +1,122 @@
+\documentclass[a4paper, 11pt]{article}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{verbatim}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{float}
+
+\newcommand{\titre}{Réseau}
+\newcommand{\numero}{2}
+
+\newcommand{\typeDoc}{TDM}
+
+\newcommand{\module}{Réseau}
+\newcommand{\sigle}{reseau}
+
+\newcommand{\semestre}{3}
+
+\input{/home/satenske/cours/includesLaTeX/l2/tddm.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex} %prise en charge du langage C 
+\input{/home/aroquemaurel/cours/includesLaTeX/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
+
+\makeatother
+\newcommand{\http}{\bsc{http}}
+\newcommand{\osi}{\bsc{osi}}
+\newcommand{\dns}{\bsc{dns}}
+\newcommand{\udp}{\bsc{udp}}
+\newcommand{\ip}{\bsc{ip}}
+\newcommand{\tcp}{\bsc{tcp}}
+\newcommand{\ftp}{\bsc{ftp}}
+\newcommand{\mac}{\bsc{mac}}
+\newcommand{\arp}{\bsc{ftp}}
+\begin{document}
+	\maketitle
+	\section{Concept d'adresse}
+	\subsection{Adresses physiques}
+	
+	\begin{description}
+		\item[Protocole] La couche liaison de données utilise le \textbf{protocole \udp}.
+		\item[Adresse physique source] \texttt{00:1b:fc:23:f0:94}
+		\item[Adresse physique de destination] \texttt{00:07:cb:3e:fd:73}
+	\end{description}
+	Un adresse \mac{} est codé sur 6 octets, ainsi, il existe $2^{48}$ adresses \mac{} différentes.
+
+	\subsection{Adresses logiques}
+	\begin{description}
+		\item[Protocole] La couche liaison de données utilise le \textbf{protocole IP}.
+		\item[Adresse réseau source] \texttt{192.168.0.10}
+		\item[Adresse réseau destination] \texttt{212.27.40.240}
+	\end{description}
+	Une adresse IP v4 est codé sur 4 octets ainsi il existe $2^{32}$ adresse différentes, cependant ces IP sont arrivés à leur fin, ainsi IPv6 à été
+	développé afin de palier à ce problème, ces adresse là sont codés en hexadécimal sur 16 octets, soit $2^128$ adresses différentes.
+
+	\subsection{}
+		L'adresse mac de destination est une adresse physique qui est connue dans le réseau local, c'est en l'occurence l'adresse du routeur qui se
+		chargera de transmettre les paquets au routeur suivant jusqu'à arriver à l'adresse IP de destination.
+
+		\subsection{Adresse de broadcast} Une adresse de \textit{broadcast} est une adresse de diffusion, lorsque l'on envoie un paquet à cette adresse, tous les clients du
+	 réseau recoivent le paquet. En l'occurence, cette requête de \textit{broadcast} est une requête \arp{}, elle sert à identifier les postes sur le réseau.
+	\section{Exemples de formats d'adresses liaison et réseau}
+	\subsection{Adresse \mac}
+	L'adresse \mac{} de la carte réseau est \texttt{00:0f:fe:d3:b5:f6}.
+	\subsection{Adresse IP}
+	L'adresse IP de l'ordinateur est \texttt{130.120.8.168} avec un masque de sous-réseau de \texttt{255.255.252.0}.
+
+	\begin{itemize}
+		\item Les deux premiers octets de cette adresse logique sont pour la partie réseau. 
+		\item Le troisième octet possède 6 bits réseau et 3 bits equipements.
+		\item Le dernier octet est pour l'equipement
+	\end{itemize}
+
+	\section{Gestion des adresses IP officielles}
+	\subsection{Regional Internet Registry}
+	Il existe aujourd'hui cinq RIR\footnote{Regional Internet Registry}. Par ordre de création, ce sont :
+	\begin{itemize}
+		\item RIPE-NCC\footnote{Réseaux IP Européens} pour l'Europe et le Moyen-Orient ;
+		\item ARIN \footnote{American Registry for Internet Numbers} pour l'Amérique du Nord ;
+		\item APNIC \footnote{Asia Pacific Network Information Center} pour l'Asie et le Pacifique ;
+		\item LACNIC \footnote{Latin American and Caribbean IP address Regional Registry} pour l'Amérique latine et les îles des Caraïbes ;
+		\item AfriNIC \footnote{African Network Information Center} pour l'Afrique.
+	\end{itemize}
+
+	\subsection{Registre d'allocations}
+	\subsubsection{\texttt{192.48.251.195}}
+		\begin{description}
+			\item[Préfixe] Le préfixe 193 appartient à RIPE.
+			\item[Propriétaire] Cette adresse IP appartient à Jacques \bsc{Landru}, Martine \bsc{Sion} et Tovoherizo \bsc{Rakotonavalona} pour la cité scientifique de Lille1.
+		\end{description}
+
+	
+		\subsubsection{\texttt{64.248.129.75}}
+		\begin{description}
+			\item[Préfixe] Le préfixe appartient à ??? 
+			\item[Propriétaire] Cette adresse IP n'est pas reconnue.
+		\end{description}
+
+		\subsubsection{\texttt{202.56.176.26}}
+		\begin{description}
+			\item[Préfixe] Le préfixe 202 appartient à APNIC.
+			\item[Propriétaire] Cette adresse IP appartient à Nasir \bsc{Abdul Rahimy} et Stanislav \bsc{Kolodzinsky} pour CeReTechs Main network. 
+		\end{description}
+		
+		\subsection{Adresse de l'université}
+		Le préfixe 130 appartient à RIPE.
+
+		L'adresse IP \texttt{130.120.84.5} appartient à l'université Paul Sabatier, l'université possède une plage d'IP de classe B, ainsi toutes les IP
+		de \texttt{160.120.0.0} à \texttt{130.120.255.255} appartiennent à l'UPS\footnote{Université Paul Sabatier}.
+
+\end{document}
+
+
