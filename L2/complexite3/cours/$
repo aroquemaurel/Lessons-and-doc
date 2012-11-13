@@ -1,0 +1,19 @@
+i  = 1;
+m  = 0;
+i0 = 1;
+tantque (i <= n) faire
+	m = m + 1; --On cherche le segment Sm
+	max = min = A[i] -- max et min sont les valeurs max et min de Sm
+	i = i + 1;
+	tantque (i <= n et A[i]-min <= k et max-A[I] <= k) faire
+		si A[i] > max alors 
+			max = A[i]; 
+		fin si;
+		si A[i] < min alors 
+			min = A[i]; 
+		fin si;
+			
+		i = i + 1;
+	fin tantque
+	im = i-1; --im = fin du segmetn de Sm
+fin tantque;

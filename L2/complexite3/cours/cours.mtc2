@@ -1,0 +1,14 @@
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.1}Complexit\IeC {\'e} de boucles ``pour''}{\reset@font\mtcSfont 9}{section.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.1.1}Exemple}{\reset@font\mtcSSfont 9}{subsection.2.1.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.2}Complexit\IeC {\'e} de boucles ``tant que''}{\reset@font\mtcSfont 11}{section.2.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.1}Exemple}{\reset@font\mtcSSfont 11}{subsection.2.2.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.3}Approximation asymptotique de sommes partielles}{\reset@font\mtcSfont 11}{section.2.3}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Exemples de sommes partielles}{\reset@font\mtcPfont 11}{section*.7}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.3.1}Principe de la m\IeC {\'e}thode}{\reset@font\mtcSSfont 11}{subsection.2.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.3.2}Application}{\reset@font\mtcSSfont 12}{subsection.2.3.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.4}Analyse de cas particuliers de boucles}{\reset@font\mtcSfont 13}{section.2.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.4.1}Algorithme gourmand pour trouver une semengation optimale}{\reset@font\mtcSSfont 13}{subsection.2.4.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.4.1.1}Probl\IeC {\`e}me}{\reset@font\mtcSSSfont 13}{subsubsection.2.4.1.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Application}{\reset@font\mtcPfont 13}{section*.8}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Algorithme gourmand}{\reset@font\mtcPfont 13}{section*.9}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.4.1.2}D\IeC {\'e}monstration que l'algorithme trouve toujours une segmentation optimale}{\reset@font\mtcSSSfont 14}{subsubsection.2.4.1.2}}
