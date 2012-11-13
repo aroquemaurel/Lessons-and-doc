@@ -1,4 +1,5 @@
 \select@language {french}
+\chapterbegin 
 \contentsline {chapter}{\numberline {1}Introduction}{4}{chapter.1}
 \contentsline {section}{\numberline {1.1}Complexit\IeC {\'e}}{4}{section.1.1}
 \contentsline {subsection}{\numberline {1.1.1}La complexit\IeC {\'e} temporelle maximale}{4}{subsection.1.1.1}
@@ -8,7 +9,7 @@
 \contentsline {section}{\numberline {1.2}Complexit\IeC {\'e} asymptotique}{5}{section.1.2}
 \contentsline {subsection}{\numberline {1.2.1}La complexit\IeC {\'e} asymptotique}{5}{subsection.1.2.1}
 \contentsline {subsection}{\numberline {1.2.2}Notation}{5}{subsection.1.2.2}
-\contentsline {paragraph}{Grand O}{5}{section*.2}
+\contentsline {paragraph}{Grand O}{6}{section*.2}
 \contentsline {paragraph}{Grand Om\IeC {\'e}ga}{6}{section*.3}
 \contentsline {paragraph}{Petit O}{6}{section*.4}
 \contentsline {paragraph}{Proposition}{6}{section*.5}
@@ -22,12 +23,18 @@
 \contentsline {chapter}{\numberline {2}Complexit\IeC {\'e} des boucles}{9}{chapter.2}
 \contentsline {section}{\numberline {2.1}Complexit\IeC {\'e} de boucles ``pour''}{9}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Exemple}{9}{subsection.2.1.1}
-\contentsline {section}{\numberline {2.2}Complexit\IeC {\'e} de boucles ``tant que''}{10}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Exemple}{10}{subsection.2.2.1}
-\contentsline {section}{\numberline {2.3}Approximation asymptotique de sommes partielles}{10}{section.2.3}
-\contentsline {paragraph}{Exemples de sommes partielles}{10}{section*.7}
-\contentsline {subsection}{\numberline {2.3.1}Principe de la m\IeC {\'e}thode}{10}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Application}{11}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.2}Complexit\IeC {\'e} de boucles ``tant que''}{11}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Exemple}{11}{subsection.2.2.1}
+\contentsline {section}{\numberline {2.3}Approximation asymptotique de sommes partielles}{11}{section.2.3}
+\contentsline {paragraph}{Exemples de sommes partielles}{11}{section*.7}
+\contentsline {subsection}{\numberline {2.3.1}Principe de la m\IeC {\'e}thode}{11}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Application}{12}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.4}Analyse de cas particuliers de boucles}{13}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Algorithme gourmand pour trouver une semengation optimale}{13}{subsection.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.1.1}Probl\IeC {\`e}me}{13}{subsubsection.2.4.1.1}
+\contentsline {paragraph}{Application}{13}{section*.8}
+\contentsline {paragraph}{Algorithme gourmand}{13}{section*.9}
+\contentsline {subsubsection}{\numberline {2.4.1.2}D\IeC {\'e}monstration que l'algorithme trouve toujours une segmentation optimale}{14}{subsubsection.2.4.1.2}
 \contentsline {chapter}{\numberline {3}Complexit\IeC {\'e} d'algorithmes d\IeC {\'e}finis par r\IeC {\'e}ccurence}{13}{chapter.3}
 \contentsline {chapter}{\numberline {4}Structure de donn\IeC {\'e}es et complexit\IeC {\'e}}{14}{chapter.4}
 \contentsline {chapter}{\numberline {A}Exercices}{15}{appendix.A}
