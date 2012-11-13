@@ -1,0 +1,52 @@
+\section{Exercice complet}
+\'Ecrire un programme qui calcule le nombre de plateaux de taille maximale dans un tableau de N entiers.\\
+ T est croissant non strict
+ \begin{enumerate}
+	 \item Comprendre le problème
+		 \begin{itemize}
+			 \item Prendre des exemples
+			 \item Identifier les entrées et les sorties
+		 \end{itemize}
+	 \item Spécifier 
+	 \item \'Ecrire le programme avec preuve
+ \end{enumerate}
+ \subsection{Comprendre le problème}
+ \begin{table}[H]
+	 \centering
+	 \begin{tabular}{|c|c|c|c|c|c|c|c|}
+		 \hline
+		 1&1&1&2&3&3&3&4\\
+		 \hline
+	 \end{tabular}
+	 \caption{2 plateaux de taille 3}
+ \end{table}
+ \begin{table}[H]
+	 \centering
+	 \begin{tabular}{|c|c|c|c|c|c|c|c|}
+		 \hline
+		 1&1&2&3&3&3&4\\
+		 \hline
+	 \end{tabular}
+	 \caption{1 plateaux de taille 3}
+ \end{table}
+ \begin{table}[H]
+	 \centering
+	 \begin{tabular}{|c|c|c|c|c|c|c|c|}
+		 \hline
+		 1&2&3&4&5&6&7&8\\
+		 \hline
+	 \end{tabular}
+	 \caption{8 plateaux de taille 1}
+ \end{table}
+ \textbf{En entrée} : le tableau T de longueur N.\\
+ \textbf{En sortie} : le nombre de tableau nb de taille t.
+ \subsection{Spécification}
+ \begin{lstlisting}[language=C]
+/* (N > 0) $\wedge$ T(0..N, $\leq$) */
+nbPlateauMax(T,N,nb);
+/* nb $\geq$ 1 $\wedge$ nb = $\nu$I : 0 $\leq$ I $\leq$ N - t $\wedge$ T[I] = T[I+t-1] $\wedge$ 
+ * $\forall$ J : O $\leq$ J $\leq$ N-t-1 $\rightarrow$ T[J] $\neq$ T[J+t] 
+ */ 
+ \end{lstlisting}
+ \subsection{\'Ecrire le programme avec preuve}
+ \lstinputlisting[language=C]{annexes/exercices/complet.c}
