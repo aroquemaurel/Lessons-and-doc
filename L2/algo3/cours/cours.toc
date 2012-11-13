@@ -1,9 +1,11 @@
 \select@language {french}
+\chapterbegin 
 \contentsline {part}{I\hspace {1em}Introduction \IeC {\`a} la programmation}{5}{part.1}
 \contentsline {chapter}{\numberline {1}Paradigmes de programmation}{6}{chapter.1}
 \contentsline {section}{\numberline {1.1}Programmation fonctionnelles}{6}{section.1.1}
 \contentsline {section}{\numberline {1.2}Programmation d\IeC {\'e}clarative}{6}{section.1.2}
 \contentsline {section}{\numberline {1.3}Programmation Imp\IeC {\'e}rative}{7}{section.1.3}
+\contentsline {xpart}{Introduction \IeC {\`a} la programmation}{6}{part.1}
 \contentsline {chapter}{\numberline {2}Programmation imp\IeC {\'e}rative en C}{8}{chapter.2}
 \contentsline {section}{\numberline {2.1}Description de l'organisation des donn\IeC {\'e}es en m\IeC {\'e}moire}{8}{section.2.1}
 \contentsline {section}{\numberline {2.2}Code syntaxe}{8}{section.2.2}
@@ -38,72 +40,78 @@
 \contentsline {chapter}{\numberline {4}Sp\IeC {\'e}cification d'un programme}{17}{chapter.4}
 \contentsline {section}{\numberline {4.1}Mots cl\IeC {\'e}s \IeC {\`a} utiliser dans les pr\IeC {\'e}dicats}{17}{section.4.1}
 \contentsline {section}{\numberline {4.2}\'Ecriture de la sp\IeC {\'e}cification}{17}{section.4.2}
-\contentsline {chapter}{\numberline {5}V\IeC {\'e}rifications de programmes}{18}{chapter.5}
-\contentsline {section}{\numberline {5.1}Le tableau de situation}{18}{section.5.1}
-\contentsline {section}{\numberline {5.2}V\IeC {\'e}rification formelle de programmes avec les pfp}{19}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Calcul de pfp d'une affectation}{20}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Calcul du pfp d'une s\IeC {\'e}quence}{20}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Calcul du pfp de la s\IeC {\'e}l\IeC {\'e}ction}{21}{subsection.5.2.3}
-\contentsline {subsection}{\numberline {5.2.4}Calcul du pfp d'une r\IeC {\'e}p\IeC {\'e}tition.}{21}{subsection.5.2.4}
-\contentsline {chapter}{\numberline {6}Ecriture d'un programme \IeC {\`a} partir de sa sp\IeC {\'e}cification}{24}{chapter.6}
-\contentsline {section}{\numberline {6.1}Mod\IeC {\`e}le de boucle}{24}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}1$^{\IeC {\`e}re}$ approche: Preuve avec invariant trivial}{24}{subsection.6.1.1}
-\contentsline {subsubsection}{\numberline {6.1.1.1}Exemple}{24}{subsubsection.6.1.1.1}
-\contentsline {subsection}{\numberline {6.1.2}2$^{nd}$ approche : \IeC {\'E}limination de conjoint}{25}{subsection.6.1.2}
-\contentsline {subsubsection}{\numberline {6.1.2.1}Exemple}{25}{subsubsection.6.1.2.1}
-\contentsline {subsection}{\numberline {6.1.3}3$^{\IeC {\`e}me}$ approche : introduction d'une variable dans Q}{26}{subsection.6.1.3}
-\contentsline {subsubsection}{\numberline {6.1.3.1}Exemple}{26}{subsubsection.6.1.3.1}
-\contentsline {part}{III\hspace {1em}Annexes}{27}{part.3}
-\contentsline {chapter}{\numberline {A}Glossaire}{28}{appendix.A}
-\contentsline {paragraph}{Compilation}{28}{section*.4}
-\contentsline {paragraph}{Interpr\IeC {\'e}tation}{28}{section*.5}
-\contentsline {paragraph}{\IeC {\'E}dition de liens}{28}{section*.6}
-\contentsline {chapter}{\numberline {B}Liste des codes sources}{29}{appendix.B}
-\contentsline {chapter}{\numberline {C}Exercices}{30}{appendix.C}
-\contentsline {section}{\numberline {C.1}Initiation \IeC {\`a} la programmation}{30}{section.C.1}
-\contentsline {subsection}{\numberline {C.1.1}Exercice 1}{30}{subsection.C.1.1}
-\contentsline {subsubsection}{\numberline {C.1.1.1}\'Etape 1: Analyser le probl\IeC {\`e}me}{30}{subsubsection.C.1.1.1}
-\contentsline {subsubsection}{\numberline {C.1.1.2}\'Etape 2: Sp\IeC {\'e}cifier les sous-probl\IeC {\`e}mes}{30}{subsubsection.C.1.1.2}
-\contentsline {paragraph}{\texttt {LireLesValeurs}}{30}{section*.7}
-\contentsline {paragraph}{\texttt {CalculerMinEtMax}}{30}{section*.8}
-\contentsline {subsubsection}{\numberline {C.1.1.3}\'Etape 3: Le code}{31}{subsubsection.C.1.1.3}
-\contentsline {section}{\numberline {C.2}Sp\IeC {\'e}cification}{32}{section.C.2}
-\contentsline {subsection}{\numberline {C.2.1}Exercice 7}{32}{subsection.C.2.1}
-\contentsline {subsubsection}{\numberline {C.2.1.1}Exercice 8}{32}{subsubsection.C.2.1.1}
-\contentsline {subsection}{\numberline {C.2.2}Exercice 8}{32}{subsection.C.2.2}
-\contentsline {subsubsection}{\numberline {C.2.2.1}Calcule de la premi\IeC {\`e}re position}{32}{subsubsection.C.2.2.1}
-\contentsline {subsubsection}{\numberline {C.2.2.2}Calcule de la derni\IeC {\`e}re position}{32}{subsubsection.C.2.2.2}
-\contentsline {subsection}{\numberline {C.2.3}Exercice 9}{33}{subsection.C.2.3}
-\contentsline {subsection}{\numberline {C.2.4}Exercice 10}{33}{subsection.C.2.4}
-\contentsline {subsection}{\numberline {C.2.5}Exercice 11}{33}{subsection.C.2.5}
-\contentsline {section}{\numberline {C.3}Tableau de situation}{33}{section.C.3}
-\contentsline {subsection}{\numberline {C.3.1}Exercice 2}{33}{subsection.C.3.1}
-\contentsline {subsection}{\numberline {C.3.2}Effets de bords}{35}{subsection.C.3.2}
-\contentsline {subsubsection}{\numberline {C.3.2.1}Exercice 4}{35}{subsubsection.C.3.2.1}
-\contentsline {subsubsection}{\numberline {C.3.2.2}Exercice 5}{36}{subsubsection.C.3.2.2}
-\contentsline {subsubsection}{\numberline {C.3.2.3}Exercice 6}{37}{subsubsection.C.3.2.3}
-\contentsline {section}{\numberline {C.4}Plus faible pr\IeC {\'e}condition}{37}{section.C.4}
-\contentsline {subsection}{\numberline {C.4.1}S\IeC {\'e}quence}{37}{subsection.C.4.1}
-\contentsline {subsubsection}{\numberline {C.4.1.1}Exercice 1}{37}{subsubsection.C.4.1.1}
-\contentsline {subsubsection}{\numberline {C.4.1.2}Exercice 2}{38}{subsubsection.C.4.1.2}
-\contentsline {subsection}{\numberline {C.4.2}S\IeC {\'e}lection}{38}{subsection.C.4.2}
-\contentsline {subsubsection}{\numberline {C.4.2.1}Exercice 1}{38}{subsubsection.C.4.2.1}
-\contentsline {subsubsection}{\numberline {C.4.2.2}Exercice 2}{38}{subsubsection.C.4.2.2}
-\contentsline {subsubsection}{\numberline {C.4.2.3}Exercice 3}{39}{subsubsection.C.4.2.3}
-\contentsline {subsection}{\numberline {C.4.3}Boucles}{39}{subsection.C.4.3}
-\contentsline {subsubsection}{\numberline {C.4.3.1}Exercice 1}{39}{subsubsection.C.4.3.1}
-\contentsline {paragraph}{INVARIANT}{40}{section*.9}
-\contentsline {paragraph}{Intitialisation}{40}{section*.10}
-\contentsline {paragraph}{Boucles}{40}{section*.11}
-\contentsline {subsubsection}{\numberline {C.4.3.2}Exercice 2 : Suite de Fibonacci}{42}{subsubsection.C.4.3.2}
-\contentsline {paragraph}{Etape 1}{42}{section*.13}
-\contentsline {paragraph}{Etape 3}{42}{section*.15}
-\contentsline {paragraph}{Etape 2}{43}{section*.17}
-\contentsline {paragraph}{Etape 4}{43}{section*.18}
-\contentsline {paragraph}{\'Etape 5}{43}{section*.20}
-\contentsline {subsubsection}{\numberline {C.4.3.3}Exercice 3 : plus grand plateau}{43}{subsubsection.C.4.3.3}
-\contentsline {subsubsection}{\numberline {C.4.3.4}Exercice 3 : D\IeC {\'e}finition variante}{43}{subsubsection.C.4.3.4}
-\contentsline {subsubsection}{\numberline {C.4.3.5}Exercice 4}{43}{subsubsection.C.4.3.5}
-\contentsline {section}{\numberline {C.5}\'Ecriture d'un programme \IeC {\`a} partir de sa preuve}{44}{section.C.5}
-\contentsline {subsection}{\numberline {C.5.1}Exercice 1 : Dichotomie}{44}{subsection.C.5.1}
-\contentsline {subsection}{\numberline {C.5.2}Exercice 2}{44}{subsection.C.5.2}
+\contentsline {xpart}{Int\IeC {\'e}r\IeC {\^e}t et utilisation des sp\IeC {\'e}cifications}{17}{part.2}
+\contentsline {chapter}{\numberline {5}V\IeC {\'e}rifications de programmes}{19}{chapter.5}
+\contentsline {section}{\numberline {5.1}Le tableau de situation}{19}{section.5.1}
+\contentsline {section}{\numberline {5.2}V\IeC {\'e}rification formelle de programmes avec les pfp}{20}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Calcul de pfp d'une affectation}{21}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Calcul du pfp d'une s\IeC {\'e}quence}{21}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Calcul du pfp de la s\IeC {\'e}l\IeC {\'e}ction}{22}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}Calcul du pfp d'une r\IeC {\'e}p\IeC {\'e}tition.}{22}{subsection.5.2.4}
+\contentsline {chapter}{\numberline {6}Ecriture d'un programme \IeC {\`a} partir de sa sp\IeC {\'e}cification}{25}{chapter.6}
+\contentsline {section}{\numberline {6.1}Mod\IeC {\`e}le de boucle}{25}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}1$^{\IeC {\`e}re}$ approche: Preuve avec invariant trivial}{25}{subsection.6.1.1}
+\contentsline {subsubsection}{\numberline {6.1.1.1}Exemple}{25}{subsubsection.6.1.1.1}
+\contentsline {subsection}{\numberline {6.1.2}2$^{nd}$ approche : \IeC {\'E}limination de conjoint}{26}{subsection.6.1.2}
+\contentsline {subsubsection}{\numberline {6.1.2.1}Exemple}{26}{subsubsection.6.1.2.1}
+\contentsline {subsection}{\numberline {6.1.3}3$^{\IeC {\`e}me}$ approche : introduction d'une variable dans Q}{27}{subsection.6.1.3}
+\contentsline {subsubsection}{\numberline {6.1.3.1}Exemple}{27}{subsubsection.6.1.3.1}
+\contentsline {part}{III\hspace {1em}Annexes}{28}{part.3}
+\contentsline {chapter}{\numberline {A}Glossaire}{29}{appendix.A}
+\contentsline {paragraph}{Compilation}{29}{section*.4}
+\contentsline {paragraph}{Interpr\IeC {\'e}tation}{29}{section*.5}
+\contentsline {paragraph}{\IeC {\'E}dition de liens}{29}{section*.6}
+\contentsline {chapter}{\numberline {B}Liste des codes sources}{30}{appendix.B}
+\contentsline {xpart}{Annexes}{29}{part.3}
+\contentsline {chapter}{\numberline {C}Exercices}{31}{appendix.C}
+\contentsline {section}{\numberline {C.1}Initiation \IeC {\`a} la programmation}{31}{section.C.1}
+\contentsline {subsection}{\numberline {C.1.1}Exercice 1}{31}{subsection.C.1.1}
+\contentsline {subsubsection}{\numberline {C.1.1.1}\'Etape 1: Analyser le probl\IeC {\`e}me}{31}{subsubsection.C.1.1.1}
+\contentsline {subsubsection}{\numberline {C.1.1.2}\'Etape 2: Sp\IeC {\'e}cifier les sous-probl\IeC {\`e}mes}{31}{subsubsection.C.1.1.2}
+\contentsline {paragraph}{\texttt {LireLesValeurs}}{31}{section*.7}
+\contentsline {paragraph}{\texttt {CalculerMinEtMax}}{31}{section*.8}
+\contentsline {subsubsection}{\numberline {C.1.1.3}\'Etape 3: Le code}{32}{subsubsection.C.1.1.3}
+\contentsline {section}{\numberline {C.2}Sp\IeC {\'e}cification}{33}{section.C.2}
+\contentsline {subsection}{\numberline {C.2.1}Exercice 7}{33}{subsection.C.2.1}
+\contentsline {subsubsection}{\numberline {C.2.1.1}Exercice 8}{33}{subsubsection.C.2.1.1}
+\contentsline {subsection}{\numberline {C.2.2}Exercice 8}{33}{subsection.C.2.2}
+\contentsline {subsubsection}{\numberline {C.2.2.1}Calcule de la premi\IeC {\`e}re position}{33}{subsubsection.C.2.2.1}
+\contentsline {subsubsection}{\numberline {C.2.2.2}Calcule de la derni\IeC {\`e}re position}{33}{subsubsection.C.2.2.2}
+\contentsline {subsection}{\numberline {C.2.3}Exercice 9}{34}{subsection.C.2.3}
+\contentsline {subsection}{\numberline {C.2.4}Exercice 10}{34}{subsection.C.2.4}
+\contentsline {subsection}{\numberline {C.2.5}Exercice 11}{34}{subsection.C.2.5}
+\contentsline {section}{\numberline {C.3}Tableau de situation}{34}{section.C.3}
+\contentsline {subsection}{\numberline {C.3.1}Exercice 2}{34}{subsection.C.3.1}
+\contentsline {subsection}{\numberline {C.3.2}Effets de bords}{36}{subsection.C.3.2}
+\contentsline {subsubsection}{\numberline {C.3.2.1}Exercice 4}{36}{subsubsection.C.3.2.1}
+\contentsline {subsubsection}{\numberline {C.3.2.2}Exercice 5}{37}{subsubsection.C.3.2.2}
+\contentsline {subsubsection}{\numberline {C.3.2.3}Exercice 6}{38}{subsubsection.C.3.2.3}
+\contentsline {section}{\numberline {C.4}Plus faible pr\IeC {\'e}condition}{38}{section.C.4}
+\contentsline {subsection}{\numberline {C.4.1}S\IeC {\'e}quence}{38}{subsection.C.4.1}
+\contentsline {subsubsection}{\numberline {C.4.1.1}Exercice 1}{38}{subsubsection.C.4.1.1}
+\contentsline {subsubsection}{\numberline {C.4.1.2}Exercice 2}{39}{subsubsection.C.4.1.2}
+\contentsline {subsection}{\numberline {C.4.2}S\IeC {\'e}lection}{39}{subsection.C.4.2}
+\contentsline {subsubsection}{\numberline {C.4.2.1}Exercice 1}{39}{subsubsection.C.4.2.1}
+\contentsline {subsubsection}{\numberline {C.4.2.2}Exercice 2}{39}{subsubsection.C.4.2.2}
+\contentsline {subsubsection}{\numberline {C.4.2.3}Exercice 3}{40}{subsubsection.C.4.2.3}
+\contentsline {subsection}{\numberline {C.4.3}Boucles}{40}{subsection.C.4.3}
+\contentsline {subsubsection}{\numberline {C.4.3.1}Exercice 1}{40}{subsubsection.C.4.3.1}
+\contentsline {paragraph}{INVARIANT}{41}{section*.9}
+\contentsline {paragraph}{Intitialisation}{41}{section*.10}
+\contentsline {paragraph}{Boucles}{41}{section*.11}
+\contentsline {subsubsection}{\numberline {C.4.3.2}Exercice 2 : Suite de Fibonacci}{43}{subsubsection.C.4.3.2}
+\contentsline {paragraph}{Etape 1}{43}{section*.13}
+\contentsline {paragraph}{Etape 3}{43}{section*.15}
+\contentsline {paragraph}{Etape 2}{44}{section*.17}
+\contentsline {paragraph}{Etape 4}{44}{section*.18}
+\contentsline {paragraph}{\'Etape 5}{44}{section*.20}
+\contentsline {subsubsection}{\numberline {C.4.3.3}Exercice 3 : plus grand plateau}{44}{subsubsection.C.4.3.3}
+\contentsline {subsubsection}{\numberline {C.4.3.4}Exercice 3 : D\IeC {\'e}finition variante}{44}{subsubsection.C.4.3.4}
+\contentsline {subsubsection}{\numberline {C.4.3.5}Exercice 4}{44}{subsubsection.C.4.3.5}
+\contentsline {section}{\numberline {C.5}\'Ecriture d'un programme \IeC {\`a} partir de sa preuve}{45}{section.C.5}
+\contentsline {subsection}{\numberline {C.5.1}Exercice 1 : Dichotomie}{45}{subsection.C.5.1}
+\contentsline {subsection}{\numberline {C.5.2}Exercice 2}{45}{subsection.C.5.2}
+\contentsline {section}{\numberline {C.6}Exercice complet}{46}{section.C.6}
+\contentsline {subsection}{\numberline {C.6.1}Comprendre le probl\IeC {\`e}me}{46}{subsection.C.6.1}
+\contentsline {subsection}{\numberline {C.6.2}Sp\IeC {\'e}cification}{46}{subsection.C.6.2}
+\contentsline {subsection}{\numberline {C.6.3}\'Ecrire le programme avec preuve}{47}{subsection.C.6.3}

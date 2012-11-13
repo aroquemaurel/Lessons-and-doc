@@ -14,6 +14,7 @@
 \usepackage{multido}
 \usepackage{amssymb}
 \usepackage{float}
+\usepackage[francais]{minitoc}
 
 \newcommand{\titre}{Algorithmie en langage C}
 
@@ -45,19 +46,23 @@
 	annexes/exercices/indexExercices
 }
 \begin{document}
+	\dominitoc
 	\setcounter{tocdepth}{1}
 	\setcounter{secnumdepth}{3}
+	\setcounter{minitocdepth}{1}
 	\maketitle
 	\tableofcontents
 	\part{Introduction à la programmation}
 	\include{content/chapitre1}
 	\include{content/chapitre2}
 	\include{content/chapitre3}
+
 	\part{Intérêt et utilisation des spécifications}
 	\include{content/chapitre4}
 	\include{content/chapitre5}
 	\include{content/chapitre6}
 	\include{content/chapitre7}
+
 	\appendix
 	\part{Annexes}
 	\include{annexes/annexes}
