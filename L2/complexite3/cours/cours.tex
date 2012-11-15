@@ -15,6 +15,7 @@
 \usepackage{multido}
 \usepackage{amssymb}
 \usepackage{float}
+\usepackage[francais]{minitoc}
 
 \newcommand{\titre}{Complexité des algorithmes}
 
@@ -48,15 +49,15 @@ annexes,
 \begin{document}
 	\setcounter{tocdepth}{1}
 	\setcounter{secnumdepth}{3}
+	\setcounter{minitocdepth}{1}
+	\dominitoc
 	\maketitle
 	\tableofcontents
 	\include{chapitre1}
 	\include{chapitre2}
 	\include{chapitre3}
 	\include{chapitre4}
-	
 	\appendix
 	\include{annexes}
 \end{document}
-
 
