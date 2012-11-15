@@ -1,4 +1,5 @@
 \chapter{Complexité des boucles}
+\minitoc
 	\section{Complexité de boucles ``pour''}
 \begin{lstlisting}[language=algo]
 	pour i:= 1 a n faire
@@ -28,86 +29,144 @@ $$a_{ik} = \sum^n_{j=1} = b_{ij}C_{ji}$$
 $$T_{\moy}(n) = T_{\max}(n) = \sum^n_{i=1}\sum^n_{k=1}(1+n) = \Theta(n^3)$$
 
 \newpage
-\section{Complexité de boucles ``tant que''}\label{complexiteboucletantque}
+	\section{Complexité de boucles ``tant que''}\label{complexiteboucletantque}
 
-\begin{lstlisting}[language=algo]
-	tantque C faire
-		-- Corps de la boucle
-	fin tantque;
-\end{lstlisting}
-$$T_{\moy} = 1 + \sum^\infty_{i=1}\textrm{Prob}$$
-On ajoute 1 pour le test de la condition C lorsque C = faux.
+	\begin{lstlisting}[language=algo]
+		tantque C faire
+			-- Corps de la boucle
+		fin tantque;
+	\end{lstlisting}
+	$$T_{\moy} = 1 + \sum^\infty_{i=1}\textrm{Prob}$$
+	On ajoute 1 pour le test de la condition C lorsque C = faux.
 
-Soit $E_i$ l'événement C = Vrai au début de $i_i$\\
-Si $\forall i, j E_i, E_j$ sont indépendantes et $\prob(E_i) = p < 1$, où p est une constante, alors\\ prob(on exécute $I_i$) = $\prob(E_1\cdots E_i) = p^i$ d'où
-$$T_{\moy}(n) = 1 + \sum^{\infty}_{i=1}p^i*T(I_i)$$
-Si $T(I_i)$ est constante, alors $$T_{\moy}(n) = \Theta (1 + \frac{p}{1-p}) = \Theta (\frac{1}{1-p}) = \Theta(1)$$
+	Soit $E_i$ l'événement C = Vrai au début de $i_i$\\
+	Si $\forall i, j E_i, E_j$ sont indépendantes et $\prob(E_i) = p < 1$, où p est une constante, alors\\ prob(on exécute $I_i$) = $\prob(E_1\cdots E_i) = p^i$ d'où
+	$$T_{\moy}(n) = 1 + \sum^{\infty}_{i=1}p^i*T(I_i)$$
+	Si $T(I_i)$ est constante, alors $$T_{\moy}(n) = \Theta (1 + \frac{p}{1-p}) = \Theta (\frac{1}{1-p}) = \Theta(1)$$
 
-\subsection{Exemple}
-Comparaison de 2 suites $\{A_i\},\{b_i\}$.
-\begin{lstlisting}[language=algo]
-	i := 1;
-	tantque (ai = bi et i <= n) faire
-		i := i + 1;
-	fin tantque;
-\end{lstlisting}
-$T_{\moy}(n) = \Theta(1)$ si les suites sont indépendantes et aléatoires.
-\section{Approximation asymptotique de sommes partielles}
-\paragraph{Exemples de sommes partielles}
-$$\sum^n_{i=1}\frac{1}{i}\ \ \sum^n_{i=1} i^k\ \  \sum^n_{i=1} \log_2 i$$
-\subsection{Principe de la méthode}
-Pour calculer une approximation asymptotique de $\sum^n_{i=1} f(i)$ où f est une fonction monotone on l'encadre par $\int f(n)du$.
+	\subsection{Exemple}
+	Comparaison de 2 suites $\{A_i\},\{b_i\}$.
+	\begin{lstlisting}[language=algo]
+		i := 1;
+		tantque (ai = bi et i <= n) faire
+			i := i + 1;
+		fin tantque;
+	\end{lstlisting}
+	$T_{\moy}(n) = \Theta(1)$ si les suites sont indépendantes et aléatoires.
+	\section{Approximation asymptotique de sommes partielles}
+	\paragraph{Exemples de sommes partielles}
+	$$\sum^n_{i=1}\frac{1}{i}\ \ \sum^n_{i=1} i^k\ \  \sum^n_{i=1} \log_2 i$$
+	\subsection{Principe de la méthode}
+	Pour calculer une approximation asymptotique de $\sum^n_{i=1} f(i)$ où f est une fonction monotone on l'encadre par $\int f(n)du$.
 
-\textbf{Proposition } Si $f$ est décroissante, alors 
-$$ \int^{n+1}_p f(u)du \leq \sum^n_{i=p} f(i) \leq \int^n_{p-1} f(u)du$$
+	\textbf{Proposition } Si $f$ est décroissante, alors 
+	$$ \int^{n+1}_p f(u)du \leq \sum^n_{i=p} f(i) \leq \int^n_{p-1} f(u)du$$
 
-%\textbf{Preuve}
-%% courbe 2
+	%\textbf{Preuve}
+	%% courbe 2
 
-\exemple{
-f(u) = $\frac{1}{u}. H_n = \sum^n_{i=1} \frac{1}{i}$ est la série harmonique. On ne peut intégrer $\frac{1}{u}$ qu'à partir de 1 donc on choisit $p=2$.
-$$ \int^{n+1}_2 \frac{1}{u}du \leq H_n - 1 \leq \int^n_1 \frac{1}{u}du$$
-\begin{eqnarray*}
-	[\log_e u]^{n+1}_{2} &\leq& H_n - 1 \leq [\log_e u]^n_1\\
-	\log_e(n+1) - \log_e 2 &\leq& H_n - 1 \leq \log_e n -\log_e 1\\
-	\log_e n -\log_e 2 + 1 &<& H_n \leq (\log_e n) + 1
-\end{eqnarray*}
-Donc $H_n = \Theta(\log n)$
-}
+	\exemple{
+	f(u) = $\frac{1}{u}. H_n = \sum^n_{i=1} \frac{1}{i}$ est la série harmonique. On ne peut intégrer $\frac{1}{u}$ qu'à partir de 1 donc on choisit $p=2$.
+	$$ \int^{n+1}_2 \frac{1}{u}du \leq H_n - 1 \leq \int^n_1 \frac{1}{u}du$$
+	\begin{eqnarray*}
+		[\log_e u]^{n+1}_{2} &\leq& H_n - 1 \leq [\log_e u]^n_1\\
+		\log_e(n+1) - \log_e 2 &\leq& H_n - 1 \leq \log_e n -\log_e 1\\
+		\log_e n -\log_e 2 + 1 &<& H_n \leq (\log_e n) + 1
+	\end{eqnarray*}
+	Donc $H_n = \Theta(\log n)$
+	}
 
-\subsection{Application} Étude de complexité d'un algorithme de génération d'une permutation aléatoire des entiers $1,2,\cdots,n$ dans un tableau \texttt{perm}
+	\subsection{Application} Étude de complexité d'un algorithme de génération d'une permutation aléatoire des entiers $1,2,\cdots,n$ dans un tableau \texttt{perm}
 
-\remarque{Il existe un algorithme de complexité $\Theta(N)$ pour ce problème : pour chaque $i \in \{1,2,\cdots,n\}$, échanger \perm[i] et \perm[\texttt{random(i)}].
-}
-\begin{lstlisting}[language=algo, caption=Génération d'une permutation aléatoire]
-pour i = 1 a n faire 
-	vu[i] = faux;
-fin pour;
-pour i = 1 a n faire
-	x = random(n);
-	tantque vu[x] faire
+	\remarque{Il existe un algorithme de complexité $\Theta(N)$ pour ce problème : pour chaque $i \in \{1,2,\cdots,n\}$, échanger \perm[i] et \perm[\texttt{random(i)}].
+	}
+	\begin{lstlisting}[language=algo, caption=Génération d'une permutation aléatoire]
+	pour i = 1 a n faire 
+		vu[i] = faux;
+	fin pour;
+	pour i = 1 a n faire
 		x = random(n);
-	fin tantque;
-	perm[i] = x;
-	vu[x] = vrai;
-fin pour;
-\end{lstlisting}
-\remarque{
-	$T_{\max} = \infty$ car il n'y a aucune garantie de terminaison. C'est un exemple d'algorithme de type \textit{Las Vegas} 
-	la probabilité de non terminaison est nulle.
-}
-On suppose que la complexité de \random(n) est $\Theta (1)$. 
+		tantque vu[x] faire
+			x = random(n);
+		fin tantque;
+		perm[i] = x;
+		vu[x] = vrai;
+	fin pour;
+	\end{lstlisting}
+	\remarque{
+		$T_{\max} = \infty$ car il n'y a aucune garantie de terminaison. C'est un exemple d'algorithme de type \textit{Las Vegas} 
+		la probabilité de non terminaison est nulle.
+	}
+	On suppose que la complexité de \random(n) est $\Theta (1)$. 
 
-Pour $i, n$ fixe, à chaque itération de la boucle ``tantque'', la probabilité de rentrer dans la boucle est une constante pour 
-$p=\frac{i-1}{n}$ et $p < 1$ pour $1 \leq i \leq n$.
+	Pour $i, n$ fixe, à chaque itération de la boucle ``tantque'', la probabilité de rentrer dans la boucle est une constante pour 
+	$p=\frac{i-1}{n}$ et $p < 1$ pour $1 \leq i \leq n$.
 
-Par l'analyse de la complexité d'une boucle ``tantque'' (section \ref{complexiteboucletantque}), 
-la complexité moyenne de la boucle ``tantque'' est $\Theta (\frac{1}{1-p}$ donc 
-\begin{eqnarray*}
-	T_{\moy} &=& \Theta(\sum^n_{i=1}\frac{1}{1-\frac{i-1}{n}})\\
-	&=& \Theta(\sum^n_{i=1}\frac{n}{n-(i-1)}\\
-	&=& \Theta(n\sum^n_{k=1}\frac{1}{k})\\
-	&=&\Theta(n H_n)=\Theta(n\log n) \textrm{ car } H_n = \Theta(\log n)
-\end{eqnarray*}
+	Par l'analyse de la complexité d'une boucle ``tantque'' (section \ref{complexiteboucletantque}), 
+	la complexité moyenne de la boucle ``tantque'' est $\Theta (\frac{1}{1-p}$ donc 
+	\begin{eqnarray*}
+		T_{\moy} &=& \Theta(\sum^n_{i=1}\frac{1}{1-\frac{i-1}{n}})\\
+		&=& \Theta(\sum^n_{i=1}\frac{n}{n-(i-1)}\\
+		&=& \Theta(n\sum^n_{k=1}\frac{1}{k})\\
+		&=&\Theta(n H_n)=\Theta(n\log n) \textrm{ car } H_n = \Theta(\log n)
+	\end{eqnarray*}
 
 
+	\section{Analyse de cas particuliers de boucles}
+		Parfois, il est possible de trouver un majorant de la complexité d'un algorithme en identifiant une variable monotone croissante dont la valeur
+		est majorée.
+		\subsection{Algorithme gourmand pour trouver une semengation optimale}
+		\subsubsection{Problème} Décomposer une suite d'entiers $A_1A_2\cdots A_n$ en un nombre minimum de segments tels que les valeurs dans un même segment
+		ne différent que par au plus $k$.
+		\exemple{
+		$k=1$, $A=1\;1\;1\;2\;3\;4\;4\;4\;4\;3\;3\;1\;1\;1\;2\; 2$
+
+		Cet exemple possède au moins deux segmentations possibles
+		\centering
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			111 &23& 44433 &11122\\
+			\hline
+		\end{tabular}
+		4 segments.\\
+		\centering
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			1112 &344433& 11122\\
+			\hline
+		\end{tabular}
+		3 segments.
+		}
+		\paragraph{Application} Nettoyage de signal, compactage de données (avec perte d'informations)
+	
+		\paragraph{Algorithme gourmand} 
+		\begin{enumerate}
+			\item Trouver le plus long préfixe $A_1 \cdots A_{i_1}$, de la suite $A_1\cdots A_n$ telle que que $\forall i,j \in \{1,\cdots,i_1\}$,
+				$|A_i-A_j| \leq k$
+			\item Appel récursif du même algorithme sur la suite $A_{i_1+1}\cdots A_n$
+		\end{enumerate}
+	
+		\subsubsection{Démonstration que l'algorithme trouve toujours une segmentation optimale}
+		Supposons que l'algorithme gourmand trouve une segmentation $\sigma$ dont les segments se terminent aux positions $i_1,i_2,\cdots,i_\sigma$,
+		mais qu'il existe une segmentation optimale $\sigma_opt$ dont les segments se terminent aux positions $j_1,j_2,\cdots,j_t$ avec $t < r$.
+
+		Soient $i_0 = j_0 = 1$. Nous avons $i_t < i_r = n = j_t$.
+	
+		Soit $m$ le plus petit indice tel que $i_m < j_m$. Donc $i_{m-1} \geq j_{m-1}$. Un tel indice existe car $i_0 = j_0$ et $i_t < j_t$
+%		\paragraph{Segmentation $\sigma$}
+	%	\begin{tabular}{c|c|c}
+%			\hline
+%			~~~~~~ & ~~~y~~~ & ~~~~~~~\\
+%			\hline
+%		\end{tabular}\\
+%		~~~~~~  $i_{m-1}
+
+%		\paragraph{Segmentation $\sigma_{opt}$}
+
+		Par définition de la segmentation <<gourmande>>, $\sigma$, il y a une valeur $j$ dans le segment $S_m$ telle que $|y-x| > k$. 
+		Mais dans ce cas, $\sigma_{opt}$ n'est pas une segmentation valide. Cette contradiction montre que la segmentation gourmande est toujours
+		optimale.
+
+		\lstinputlisting[language=algo]{1.algo}
+		Chaque itération des deux boucles \texttt{tantque} incrémente $i$. Puisque $i \leq n$, on peut en déduire $T_{\max}(n) = \Theta(n)$ malgré la
+		présence de deux boucles imbriquées.
