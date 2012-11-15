@@ -19,6 +19,7 @@
 void elem_display(const Element pElem) {
 	printf("nb : %d", pElem.nb);
 }
+
 void elem_saisir(Element* pElem) {
 	printf("Entrer nb: ");
 	scanf("%d", &(pElem->nb));
