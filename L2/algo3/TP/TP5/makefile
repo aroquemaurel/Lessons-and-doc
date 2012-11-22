@@ -1,16 +1,22 @@
-main: main.o element.o pile.o
-	gcc -o main main.o element.o pile.o
+SRC=src/
+LIB=lib/
+BIN=bin/
+CFLAGS= -Wall -g -I../   #on va chercher eventuellement des headers dans le dossier parent
 
-main.o: main.c element.h
-	gcc -o main.o -c main.c
+main: $(BIN)main.o $(BIN)element.o $(BIN)pile.o
+	gcc -o main $(SRC)main.o $(BIN)element.o $(BIN)pile.o $(CFLAGS)
 
-element.o: element.c element.h
-	gcc -o element.o -c element.c
+$(BIN)main.o: $(SRC)main.c $(LIB)element.h
+	gcc -o $(BIN)main.o -c $(SRC)/main.c $(CFLAGS)
 
-pile.o: pile.c pile.h
-	gcc -o pile.o -c pile.c
+$(BIN)element.o: $(SRC)element.c $(LIB)element.h
+	gcc -o $(BIN)element.o -c $(SRC)element.c $(CFLAGS)
+
+$(BIN)pile.o: $(SRC)pile.c $(LIB)pile.h
+	gcc -o $(BIN)pile.o -c $(SRC)pile.c $(CFLAGS)
 
 clean:
-	rm -rfv *.o
+	rm -rfv $(BIN)*.o
 
 all: main
+
