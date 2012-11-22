@@ -1,0 +1,10 @@
+procedure triFusion(T,i,k) -- Tri du tableau T[i:k]
+debut
+	si k-i+1 > 1 alors
+		j = (k+1)/2;
+		triFusion(T,i,j);
+		triFusion(T,j+1,k);
+		fusion(T,i,j,k);
+	fin si;
+fin
+		
