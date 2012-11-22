@@ -65,5 +65,41 @@ Donc réponse D.
 	\item[f] $\Theta(n^4)$
 \end{enumerate}
 
-\subsection{}
-\subsection{}
+
+\subsection{16.}
+\subsubsection{a}
+\begin{displaymath}
+		\left. \begin{array}{rrr}
+			V_n &=& V_{n-1} + 1\\
+			V_{n+1} &=& V_n + 1\\
+		\end{array}\right\}
+		\Rightarrow \left. \begin{array}{rrr}V_{n+1}-V_n &=& V_n - V_{n-1}\\V_{n+1} &=&  2V_n - V_{n-1}\end{array}\right.
+\end{displaymath}
+
+\subsubsection{b}
+\begin{displaymath}
+	\left. \begin{array}{rrr}
+		T(n) &=&  7T(n-1) + 4^n\\
+		T(n+1) &=& 7T(n) + 4^{n+1}\\
+	\end{array}\right\} 
+	T(n+1) - 4T (n) = 7T(n) - 28T(n-1)
+\end{displaymath}
+
+\subsection{17.}
+\subsubsection{a}
+\begin{eqnarray*}
+V_{k+1} - 4V_k + 4V_{k-1} &=&  0\\
+x^2 - 4x + 4 &=& 0
+\end{eqnarray*}
+$$\Delta = 16 - 16 = 0$$
+$$r = \frac{4}{2} = 0$$
+$$(\lambda_1 + \lambda_2 n)2^n$$
+\subsubsection{b}
+\begin{eqnarray*}
+	V_{k+2} - 2V_{k+1} + V_k &=& 0\\
+	x^2 - 2x +1
+\end{eqnarray*}
+$$\Delta = 0$$
+$$r = 1$$
+$$S = \lambda_1 + \lambda_2 n$$
+\subsubsection{c}

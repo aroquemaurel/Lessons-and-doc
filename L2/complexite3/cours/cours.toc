@@ -1,41 +1,59 @@
 \select@language {french}
 \chapterbegin 
-\contentsline {chapter}{\numberline {1}Introduction}{4}{chapter.1}
-\contentsline {section}{\numberline {1.1}Complexit\IeC {\'e}}{4}{section.1.1}
-\contentsline {subsection}{\numberline {1.1.1}La complexit\IeC {\'e} temporelle maximale}{4}{subsection.1.1.1}
-\contentsline {subsection}{\numberline {1.1.2}La complexit\IeC {\'e} temporelle moyenne}{4}{subsection.1.1.2}
-\contentsline {subsection}{\numberline {1.1.3}La complexit\IeC {\'e} temporelle minimale}{5}{subsection.1.1.3}
-\contentsline {subsection}{\numberline {1.1.4}Compairaison de complexit\IeC {\'e}s en fonction de la machine}{5}{subsection.1.1.4}
-\contentsline {section}{\numberline {1.2}Complexit\IeC {\'e} asymptotique}{5}{section.1.2}
-\contentsline {subsection}{\numberline {1.2.1}La complexit\IeC {\'e} asymptotique}{5}{subsection.1.2.1}
-\contentsline {subsection}{\numberline {1.2.2}Notation}{5}{subsection.1.2.2}
-\contentsline {paragraph}{Grand O}{6}{section*.2}
-\contentsline {paragraph}{Grand Om\IeC {\'e}ga}{6}{section*.3}
-\contentsline {paragraph}{Petit O}{6}{section*.4}
-\contentsline {paragraph}{Proposition}{6}{section*.5}
-\contentsline {paragraph}{Notation}{7}{section*.6}
-\contentsline {section}{\numberline {1.3}Exemple de complexit\IeC {\'e}s d'algorithmes}{7}{section.1.3}
-\contentsline {subsection}{\numberline {1.3.1}Le tri \IeC {\`a} bulles}{7}{subsection.1.3.1}
-\contentsline {subsection}{\numberline {1.3.2}Tri par fusion}{7}{subsection.1.3.2}
-\contentsline {subsection}{\numberline {1.3.3}Tri rapide}{7}{subsection.1.3.3}
-\contentsline {section}{\numberline {1.4}Comportement symptotique de fonctions usuelles}{7}{section.1.4}
-\contentsline {subsection}{\numberline {1.4.1}La formule de Stisling}{8}{subsection.1.4.1}
-\contentsline {chapter}{\numberline {2}Complexit\IeC {\'e} des boucles}{9}{chapter.2}
-\contentsline {section}{\numberline {2.1}Complexit\IeC {\'e} de boucles ``pour''}{9}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Exemple}{9}{subsection.2.1.1}
-\contentsline {section}{\numberline {2.2}Complexit\IeC {\'e} de boucles ``tant que''}{11}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Exemple}{11}{subsection.2.2.1}
-\contentsline {section}{\numberline {2.3}Approximation asymptotique de sommes partielles}{11}{section.2.3}
-\contentsline {paragraph}{Exemples de sommes partielles}{11}{section*.7}
-\contentsline {subsection}{\numberline {2.3.1}Principe de la m\IeC {\'e}thode}{11}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Application}{12}{subsection.2.3.2}
-\contentsline {section}{\numberline {2.4}Analyse de cas particuliers de boucles}{13}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Algorithme gourmand pour trouver une semengation optimale}{13}{subsection.2.4.1}
-\contentsline {subsubsection}{\numberline {2.4.1.1}Probl\IeC {\`e}me}{13}{subsubsection.2.4.1.1}
-\contentsline {paragraph}{Application}{13}{section*.8}
-\contentsline {paragraph}{Algorithme gourmand}{13}{section*.9}
-\contentsline {subsubsection}{\numberline {2.4.1.2}D\IeC {\'e}monstration que l'algorithme trouve toujours une segmentation optimale}{14}{subsubsection.2.4.1.2}
-\contentsline {chapter}{\numberline {3}Complexit\IeC {\'e} d'algorithmes d\IeC {\'e}finis par r\IeC {\'e}ccurence}{13}{chapter.3}
+\chapterbegin 
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Complexit\IeC {\'e}}{1}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}La complexit\IeC {\'e} temporelle maximale}{1}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}La complexit\IeC {\'e} temporelle moyenne}{1}{subsection.1.1.2}
+\contentsline {subsection}{\numberline {1.1.3}La complexit\IeC {\'e} temporelle minimale}{2}{subsection.1.1.3}
+\contentsline {subsection}{\numberline {1.1.4}Compairaison de complexit\IeC {\'e}s en fonction de la machine}{2}{subsection.1.1.4}
+\contentsline {section}{\numberline {1.2}Complexit\IeC {\'e} asymptotique}{2}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}La complexit\IeC {\'e} asymptotique}{2}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}Notation}{2}{subsection.1.2.2}
+\contentsline {paragraph}{Grand O}{3}{section*.3}
+\contentsline {paragraph}{Grand Om\IeC {\'e}ga}{3}{section*.4}
+\contentsline {paragraph}{Petit O}{3}{section*.5}
+\contentsline {paragraph}{Proposition}{3}{section*.6}
+\contentsline {paragraph}{Notation}{4}{section*.7}
+\contentsline {section}{\numberline {1.3}Exemple de complexit\IeC {\'e}s d'algorithmes}{4}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Le tri \IeC {\`a} bulles}{4}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}Tri par fusion}{4}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.3.3}Tri rapide}{4}{subsection.1.3.3}
+\contentsline {section}{\numberline {1.4}Comportement symptotique de fonctions usuelles}{4}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}La formule de Stisling}{5}{subsection.1.4.1}
+\contentsline {chapter}{\numberline {2}Complexit\IeC {\'e} des boucles}{6}{chapter.2}
+\contentsline {section}{\numberline {2.1}Complexit\IeC {\'e} de boucles ``pour''}{6}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Exemple}{6}{subsection.2.1.1}
+\contentsline {section}{\numberline {2.2}Complexit\IeC {\'e} de boucles ``tant que''}{8}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Exemple}{8}{subsection.2.2.1}
+\contentsline {section}{\numberline {2.3}Approximation asymptotique de sommes partielles}{8}{section.2.3}
+\contentsline {paragraph}{Exemples de sommes partielles}{8}{section*.8}
+\contentsline {subsection}{\numberline {2.3.1}Principe de la m\IeC {\'e}thode}{8}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Application}{9}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.4}Analyse de cas particuliers de boucles}{10}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Algorithme gourmand pour trouver une semengation optimale}{10}{subsection.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.1.1}Probl\IeC {\`e}me}{10}{subsubsection.2.4.1.1}
+\contentsline {paragraph}{Application}{10}{section*.9}
+\contentsline {paragraph}{Algorithme gourmand}{10}{section*.10}
+\contentsline {subsubsection}{\numberline {2.4.1.2}D\IeC {\'e}monstration que l'algorithme trouve toujours une segmentation optimale}{11}{subsubsection.2.4.1.2}
+\contentsline {chapter}{\numberline {3}Complexit\IeC {\'e} d'algorithmes d\IeC {\'e}finis par r\IeC {\'e}currence}{12}{chapter.3}
+\contentsline {section}{\numberline {3.1}Exemple introductif : Tri fusion}{12}{section.3.1}
+\contentsline {section}{\numberline {3.2}M\IeC {\'e}thode na\IeC {\"\i }ve d'analyse de complexit\IeC {\'e}}{12}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}R\IeC {\'e}sum\IeC {\'e} de la m\IeC {\'e}thode na\IeC {\"\i }ve}{13}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Exemples d'application}{13}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}R\IeC {\'e}duction \IeC {\`a} des formes simples}{13}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}\IeC {\'E}quation r\IeC {\'e}currentes lin\IeC {\'e}aires}{14}{section.3.3}
+\contentsline {paragraph}{D\IeC {\'e}finition}{14}{section*.11}
+\contentsline {subsection}{\numberline {3.3.1}\IeC {\'E}quations r\IeC {\'e}currentes lin\IeC {\'e}aires homog\IeC {\`e}nes d'ordre 1}{14}{subsection.3.3.1}
+\contentsline {paragraph}{Proposition}{14}{section*.12}
+\contentsline {subsection}{\numberline {3.3.2}\IeC {\'E}quations r\IeC {\'e}currentes lin\IeC {\'e}aires non-homog\IeC {\`e}nes d'ordre 1}{14}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Recherche d'une solution g\IeC {\'e}n\IeC {\'e}rale pour les \IeC {\'e}quations r\IeC {\'e}currentes lin\IeC {\'e}aires homog\IeC {\`e}nes d'ordre 2}{15}{subsection.3.3.3}
+\contentsline {paragraph}{D\IeC {\'e}finition}{15}{section*.13}
+\contentsline {paragraph}{Th\IeC {\'e}or\IeC {\`e}me}{15}{section*.14}
+\contentsline {paragraph}{Cas des racines doubles}{15}{section*.15}
+\contentsline {paragraph}{Th\IeC {\'e}or\IeC {\`e}me}{15}{section*.16}
+\contentsline {paragraph}{Preuve dans le cas d'une racine double}{16}{section*.17}
+\contentsline {subsection}{\numberline {3.3.4}Recherche de solutions particuli\IeC {\`e}res pour les \IeC {\'e}quations r\IeC {\'e}currentes lin\IeC {\'e}aires homog\IeC {\`e}nes d'ordre 2}{16}{subsection.3.3.4}
 \contentsline {chapter}{\numberline {4}Structure de donn\IeC {\'e}es et complexit\IeC {\'e}}{14}{chapter.4}
 \contentsline {chapter}{\numberline {A}Exercices}{15}{appendix.A}
 \contentsline {section}{\numberline {A.1}TD 1}{15}{section.A.1}
@@ -49,5 +67,10 @@
 \contentsline {subsection}{\numberline {A.1.8}Classez les fonctions suivantes dans l'ordre croissant d'ordre de grandeur}{16}{subsection.A.1.8}
 \contentsline {subsection}{\numberline {A.1.9}}{16}{subsection.A.1.9}
 \contentsline {subsection}{\numberline {A.1.10}}{17}{subsection.A.1.10}
-\contentsline {subsection}{\numberline {A.1.11}}{17}{subsection.A.1.11}
-\contentsline {subsection}{\numberline {A.1.12}}{17}{subsection.A.1.12}
+\contentsline {subsection}{\numberline {A.1.11}16.}{17}{subsection.A.1.11}
+\contentsline {subsubsection}{\numberline {A.1.11.1}a}{17}{subsubsection.A.1.11.1}
+\contentsline {subsubsection}{\numberline {A.1.11.2}b}{17}{subsubsection.A.1.11.2}
+\contentsline {subsection}{\numberline {A.1.12}17.}{17}{subsection.A.1.12}
+\contentsline {subsubsection}{\numberline {A.1.12.1}a}{17}{subsubsection.A.1.12.1}
+\contentsline {subsubsection}{\numberline {A.1.12.2}b}{17}{subsubsection.A.1.12.2}
+\contentsline {subsubsection}{\numberline {A.1.12.3}c}{18}{subsubsection.A.1.12.3}
