@@ -1,0 +1,6 @@
+Recette le : 16/12/12
+
+	Generation permutation -- recursive
+		Cas simple: n = 1
+		Pour obtenir perm(n) on insre n  chaque position de chaque permutation de per(n-1)
+	
