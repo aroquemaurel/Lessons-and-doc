@@ -111,7 +111,12 @@
 \contentsline {section}{\numberline {C.5}\'Ecriture d'un programme \IeC {\`a} partir de sa preuve}{45}{section.C.5}
 \contentsline {subsection}{\numberline {C.5.1}Exercice 1 : Dichotomie}{45}{subsection.C.5.1}
 \contentsline {subsection}{\numberline {C.5.2}Exercice 2}{45}{subsection.C.5.2}
-\contentsline {section}{\numberline {C.6}Exercice complet}{46}{section.C.6}
-\contentsline {subsection}{\numberline {C.6.1}Comprendre le probl\IeC {\`e}me}{46}{subsection.C.6.1}
-\contentsline {subsection}{\numberline {C.6.2}Sp\IeC {\'e}cification}{46}{subsection.C.6.2}
-\contentsline {subsection}{\numberline {C.6.3}\'Ecrire le programme avec preuve}{47}{subsection.C.6.3}
+\contentsline {section}{\numberline {C.6}Exercices complets}{46}{section.C.6}
+\contentsline {subsection}{\numberline {C.6.1}Nombre de plateaux de tailles maximales}{46}{subsection.C.6.1}
+\contentsline {subsection}{\numberline {C.6.2}Comprendre le probl\IeC {\`e}me}{46}{subsection.C.6.2}
+\contentsline {subsection}{\numberline {C.6.3}Sp\IeC {\'e}cification}{47}{subsection.C.6.3}
+\contentsline {subsection}{\numberline {C.6.4}\'Ecrire le programme}{47}{subsection.C.6.4}
+\contentsline {subsection}{\numberline {C.6.5}\'Ecrire un programme qui calcule la somme pr\IeC {\'e}fix\IeC {\'e}e d'un tableau}{48}{subsection.C.6.5}
+\contentsline {subsubsection}{\numberline {C.6.5.1}Comprendre le probl\IeC {\`e}me}{48}{subsubsection.C.6.5.1}
+\contentsline {subsubsection}{\numberline {C.6.5.2}Sp\IeC {\'e}cifications}{48}{subsubsection.C.6.5.2}
+\contentsline {subsubsection}{\numberline {C.6.5.3}Programme}{48}{subsubsection.C.6.5.3}

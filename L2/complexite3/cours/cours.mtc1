@@ -1,19 +1,19 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.1}Complexit\IeC {\'e}}{\reset@font\mtcSfont 4}{section.1.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.1.1}La complexit\IeC {\'e} temporelle maximale}{\reset@font\mtcSSfont 4}{subsection.1.1.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.1.2}La complexit\IeC {\'e} temporelle moyenne}{\reset@font\mtcSSfont 5}{subsection.1.1.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.1.3}La complexit\IeC {\'e} temporelle minimale}{\reset@font\mtcSSfont 5}{subsection.1.1.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.1.4}Compairaison de complexit\IeC {\'e}s en fonction de la machine}{\reset@font\mtcSSfont 5}{subsection.1.1.4}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.2}Complexit\IeC {\'e} asymptotique}{\reset@font\mtcSfont 5}{section.1.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.2.1}La complexit\IeC {\'e} asymptotique}{\reset@font\mtcSSfont 6}{subsection.1.2.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.2.2}Notation}{\reset@font\mtcSSfont 6}{subsection.1.2.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Grand O}{\reset@font\mtcPfont 6}{section*.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Grand Om\IeC {\'e}ga}{\reset@font\mtcPfont 6}{section*.3}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Petit O}{\reset@font\mtcPfont 6}{section*.4}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Proposition}{\reset@font\mtcPfont 7}{section*.5}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Notation}{\reset@font\mtcPfont 7}{section*.6}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.3}Exemple de complexit\IeC {\'e}s d'algorithmes}{\reset@font\mtcSfont 7}{section.1.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.3.1}Le tri \IeC {\`a} bulles}{\reset@font\mtcSSfont 7}{subsection.1.3.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.3.2}Tri par fusion}{\reset@font\mtcSSfont 7}{subsection.1.3.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.3.3}Tri rapide}{\reset@font\mtcSSfont 8}{subsection.1.3.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.4}Comportement symptotique de fonctions usuelles}{\reset@font\mtcSfont 8}{section.1.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.4.1}La formule de Stisling}{\reset@font\mtcSSfont 8}{subsection.1.4.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.1}Complexit\IeC {\'e}}{\reset@font\mtcSfont 1}{section.1.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.1.1}La complexit\IeC {\'e} temporelle maximale}{\reset@font\mtcSSfont 1}{subsection.1.1.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.1.2}La complexit\IeC {\'e} temporelle moyenne}{\reset@font\mtcSSfont 1}{subsection.1.1.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.1.3}La complexit\IeC {\'e} temporelle minimale}{\reset@font\mtcSSfont 2}{subsection.1.1.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.1.4}Compairaison de complexit\IeC {\'e}s en fonction de la machine}{\reset@font\mtcSSfont 2}{subsection.1.1.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.2}Complexit\IeC {\'e} asymptotique}{\reset@font\mtcSfont 2}{section.1.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.2.1}La complexit\IeC {\'e} asymptotique}{\reset@font\mtcSSfont 2}{subsection.1.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.2.2}Notation}{\reset@font\mtcSSfont 2}{subsection.1.2.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Grand O}{\reset@font\mtcPfont 3}{section*.3}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Grand Om\IeC {\'e}ga}{\reset@font\mtcPfont 3}{section*.4}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Petit O}{\reset@font\mtcPfont 3}{section*.5}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Proposition}{\reset@font\mtcPfont 3}{section*.6}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Notation}{\reset@font\mtcPfont 4}{section*.7}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.3}Exemple de complexit\IeC {\'e}s d'algorithmes}{\reset@font\mtcSfont 4}{section.1.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.3.1}Le tri \IeC {\`a} bulles}{\reset@font\mtcSSfont 4}{subsection.1.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.3.2}Tri par fusion}{\reset@font\mtcSSfont 4}{subsection.1.3.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.3.3}Tri rapide}{\reset@font\mtcSSfont 4}{subsection.1.3.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.4}Comportement symptotique de fonctions usuelles}{\reset@font\mtcSfont 4}{section.1.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.4.1}La formule de Stisling}{\reset@font\mtcSSfont 5}{subsection.1.4.1}}

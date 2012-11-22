@@ -1,0 +1,81 @@
+\documentclass[a4paper, 11pt]{article}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{verbatim}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+
+\newcommand{\titre}{Variables aléatoires discrètes}
+\newcommand{\typeDoc}{TD}
+
+\newcommand{\module}{Probablité}
+\newcommand{\sigle}{proba}
+
+\newcommand{\semestre}{3}
+
+\input{/home/satenske/cours/includesLaTeX/listings.tex} %prise en charge du langage algo
+\input{/home/satenske/cours/includesLaTeX/l2/tddm.tex}
+
+\begin{document}
+	\maketitle
+	\section{1}
+	\begin{eqnarray*}
+		E(x) &=& \int xf(x) dx\\
+		&=& \int^b_a x\frac{1}{b-a}dx\\
+		&=& \frac{1}{b-a}\int^b_a xdx\\
+		&=& \frac{1}{b-a} [\frac{x^2}{2}]^b_a\\
+		&=& \frac{[\frac{b^2}{2}] - \frac{a^2}{2}]}{b-a} = \frac{b^2 -a^2}{2(b-a)}\\
+		&=& \frac{(b-a)(b+a)}{2(b-a)}
+	\end{eqnarray*}
+
+	\begin{eqnarray*}
+		var(X) = E(X^2)-E(X)^2\\
+		E(X) &=& \int x^2f(x)dx\\
+		&=& \int^b_a x^2\frac{1}{b-a} dx\\
+		&=& \frac{1}{b-a} \int^b_a x^2 dx\\
+		&=& \frac{1}{b-a}[\frac{1}{3} x^3]^b_a\\
+		&=& \frac{1}{b-a} \frac{b^3-a^3}{3} = \frac{(b-a)(b^2+a^2+ab)}{3(b-a)}=\frac{b^2+a^2+ab}{3}
+	\end{eqnarray*}
+	\begin{eqnarray*}
+		var(X) &=&  \frac{b^2+a^2+ab}{3} - \frac{a^2+2ab+b^2}{4}\\
+		&=& \frac{(4b^2 + 4a^2 + 4ab)-(3a^2	+6ab+3b^2)}{12}\\
+		&=& \frac{a^2+b^2-2ab}{12}\\
+		&=&\frac{(a-b)^2}{12}
+	\end{eqnarray*}
+	\section{Exercice 1}
+%	\begin{itemize}
+%		\item 
+%\begin{eqnarray*}
+%	x > 0, F(x) = 0\%\%
+%	0 \leq x \leq 1, F_x(x) = \int^x_{-\infty}f(u) du\\%
+%	= 0+\int^x_0 \frac{u}{2} du = \frac{1}{2}\int^x_0udu = \frac{1}{2}[\frac{u^2}{2}]^x_0 = \frac{1}{2}(\frac{x^2}{2}) = \frac{x^2}{4}
+%\end{eqnarray*}
+%\item 
+%\begin{eqnarray*}
+%	F_x(x) &=&  \frac{1}{2}+[u^2 ( \frac{5}{2}u]^x_{\frac{3}{2}}	\\
+%	&=& \frac{1}{2} + x^2 - \frac{5{2}x - \frac{9}{4} + \frac{15}{4}\\
+%	&=& x^2 - \frac{5}{2}x + 2
+%\end{eqnarray*}
+%	\end{itemize}
+	\section{Exercice 2 --- TD3}
+	T\footnote{v.a réélle à densité normale de m = 175 et $\sigma =6$}: taille moyenne d'un homme de 25 ans. 
+	\subsection{$E(y)$ et $\sigma(y)$}
+	\begin{eqnarray*}
+		E(y) &=& E(\alpha X + \beta)\\
+		&=& E(\alpha X) + \beta\\
+		&=& \alpha E(X) + \beta
+	\end{eqnarray*}
+	\begin{eqnarray*}
+		\sigma (y) &=& \sqrt{var(y)} = \sqrt{var(\alpha X + \beta)} = \sqrt{E( ( (\alpha X + \beta) - E(\alpha X + \beta))^2)} = \sqrt{E
+	\end{eqnarray*}
+\end{document}
+
+
