@@ -1,4 +1,5 @@
-\section{Exercice complet}
+\section{Exercices complets}
+\subsection{Nombre de plateaux de tailles maximales}
 \'Ecrire un programme qui calcule le nombre de plateaux de taille maximale dans un tableau de N entiers.\\
  T est croissant non strict
  \begin{enumerate}
@@ -8,7 +9,8 @@
 			 \item Identifier les entrées et les sorties
 		 \end{itemize}
 	 \item Spécifier 
-	 \item \'Ecrire le programme avec preuve
+	 \item \'Ecrire le programme 
+	 \item Preuve du programme 
  \end{enumerate}
  \subsection{Comprendre le problème}
  \begin{table}[H]
@@ -43,10 +45,37 @@
  \subsection{Spécification}
  \begin{lstlisting}[language=C]
 /* (N > 0) $\wedge$ T(0..N, $\leq$) */
-nbPlateauMax(T,N,nb);
-/* nb $\geq$ 1 $\wedge$ nb = $\nu$I : 0 $\leq$ I $\leq$ N - t $\wedge$ T[I] = T[I+t-1] $\wedge$ 
- * $\forall$ J : O $\leq$ J $\leq$ N-t-1 $\rightarrow$ T[J] $\neq$ T[J+t] 
+nbPlateauMax(T,N,p,nb);
+/* nb $\geq$ 1 $\wedge$ nb = $\nu$I : 0 $\leq$ I $\leq$ N - p $\wedge$ T[I] = T[I+p-1] $\wedge$ 
+ * $\forall$ J : O $\leq$ J $\leq$ N-p-1 $\rightarrow$ T[J] $\neq$ T[J+p] 
  */ 
  \end{lstlisting}
- \subsection{\'Ecrire le programme avec preuve}
+ \subsection{\'Ecrire le programme}
  \lstinputlisting[language=C]{annexes/exercices/complet.c}
+
+ \subsection{\'Ecrire un programme qui calcule la somme préfixée d'un tableau}
+ \subsubsection{Comprendre le problème}
+ \begin{tabular}{|c|c|c|c|c|c|}
+	 \multicolumn{3}{|c|}{$\sum$ préfixé}&i\\
+	 \hline
+	 a & b & c&d&\ldots&~~\\
+	 \hline
+ \end{tabular}
+
+  Ce qui pourrait donner : \\
+ \begin{tabular}{|c|c|c|c|c|c|}
+	 \multicolumn{3}{|c|}{$\sum$ préfixé}&i\\
+	 \hline
+	 0 & a & a+b&\multicolumn{2}{|c}{\ldots}&$\sum^{N-1}_{i=0}T[i]$\\
+	 \hline
+ \end{tabular}
+ \subsubsection{Spécifications}
+ \begin{lstlisting}[language=C]
+ /* N > 0 */
+ prefixSum(N, T, t, s);
+ /* t[0] = 0 $\wedge$ ($\forall$ I $\leq$ I < N $\rightarrow$ T[I] = T[I-1] + T[I-1]) 
+  * $\wedge$ s = t[N-1]+T|N-1]
+  */
+ \end{lstlisting}
+ \subsubsection{Programme}
+ \lstinputlisting[language=C]{annexes/exercices/complet2.c}
