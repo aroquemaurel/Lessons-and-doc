@@ -14,7 +14,7 @@
  *
  * =====================================================================================
  */
-#include "element.h"
+#include "../lib/element.h"
 
 void elem_display(const Element pElem) {
 	printf("nb : %d", pElem.nb);

@@ -15,7 +15,7 @@
  * =====================================================================================
  */
 
-#include "pile.h"
+#include "../lib/pile.h"
 
 void stack_initialize(Stack* pStack) {
 	int i;
@@ -35,10 +35,10 @@ bool stack_isFull(const Stack pStack) {
 
 void stack_display(const Stack pStack) {
 	int i;
-	for(i = 0; i < stack_size(pStack) ; ++i) {
+	for(i = stack_size(pStack)-1; i >= 0 ; --i) {
 		printf("+---------+\n");
-		elem_display(pStack.tab[pStack.lastIndice]);
-		printf("+---------+\n");
+		elem_display(pStack.tab[i]);
+		printf("\n+---------+\n");
 	}
 }
 
