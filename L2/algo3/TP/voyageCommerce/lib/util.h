@@ -28,7 +28,6 @@ bool gVerboseMode;
 
 int util_searchFirstOccurenceInArray(char** pArray, const int pSize, char* pSearch);
 
-char** util_split( char* str, char c );
 inline void util_displayVerboseMode(char* pString);
 
 #endif

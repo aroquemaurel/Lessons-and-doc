@@ -19,15 +19,6 @@
 #ifndef __INSTANCE
 #define __INSTANCE
 
-typedef struct {
-	double x;
-	double y;
-	int id;
-}Instance;
-
-void instance_display(const Instance pInstance);
-void instance_initialize(Instance* pInstance);
-
 #endif
 
 
