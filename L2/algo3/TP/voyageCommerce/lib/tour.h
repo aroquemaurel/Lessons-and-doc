@@ -19,10 +19,6 @@
 #ifndef __TOUR
 #define __TOUR
 
-#include "instance.h"
-
-typedef struct {
-}Tour;
 
 #endif
 

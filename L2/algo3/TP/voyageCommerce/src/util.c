@@ -27,26 +27,6 @@ int util_searchFirstOccurenceInArray(char** pArray, const int pSize, char* pSear
 	return (position == pSize-1 && strcmp(pArray[position], pSearch) != 0) ? -1 : position;
 }
 
-char** util_split( char* str, char c ) {
-	static char* tmp[256] ; 
-	int current = 0;
-	tmp[current++] = str;
-
-	while(*str) {
-		if (*str == c) {
-			*str = '\0';
-			tmp[current++] = str+1; 
-		}
-		if(tmp[current] = '\0')
-			current--;
-
-		++str;
-	}
-	tmp[current] = 0;
-
-	return tmp;
-} 
-
 inline void util_displayVerboseMode(char* pString) {
 	if(gVerboseMode) {
 		printf("%s", pString);
