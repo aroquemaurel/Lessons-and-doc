@@ -42,17 +42,25 @@
 \includeonly{
 chapitre1,
 chapitre2,
-%chapitre3,
+chapitre3,
 %chapitre4,
 annexes,
 }
 \begin{document}
+	\frontmatter
 	\setcounter{tocdepth}{1}
 	\setcounter{secnumdepth}{3}
 	\setcounter{minitocdepth}{1}
 	\dominitoc
 	\maketitle
+	\chapter*{Modalité de Contrôle de connaissance}
+	\begin{enumerate}
+		\item Devoir Maison à rendre avant 10h le 21 décembre. (10\%)
+		\item Contrôle de continue sous forme de QCM lundi 3 décembre de 8h15 à 9h45 (20\%)
+		\item Contrôle terminal vendredi 21 décembre de 10h à 12h (70\%)
+	\end{enumerate}
 	\tableofcontents
+	\mainmatter
 	\include{chapitre1}
 	\include{chapitre2}
 	\include{chapitre3}
