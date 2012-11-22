@@ -1,0 +1,114 @@
+\documentclass[a4paper, 11pt]{article}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{verbatim}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{float}
+
+\newcommand{\titre}{Réseau}
+\newcommand{\numero}{3}
+
+\newcommand{\typeDoc}{TDM}
+
+\newcommand{\module}{Réseau}
+\newcommand{\sigle}{reseau}
+
+\newcommand{\semestre}{3}
+
+\input{/home/satenske/cours/includesLaTeX/l2/tddm.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex} %prise en charge du langage C 
+\input{/home/aroquemaurel/cours/includesLaTeX/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
+
+\makeatother
+\newcommand{\http}{\bsc{http}}
+\newcommand{\osi}{\bsc{osi}}
+\newcommand{\dns}{\bsc{dns}}
+\newcommand{\udp}{\bsc{udp}}
+\newcommand{\ip}{\bsc{ip}}
+\newcommand{\tcp}{\bsc{tcp}}
+\newcommand{\ftp}{\bsc{ftp}}
+\newcommand{\mac}{\bsc{mac}}
+\newcommand{\arp}{\bsc{ftp}}
+\begin{document}
+	\maketitle
+	\section{Le système de noms de domaines}
+	Couche 5
+	\subsection{}
+	On tape l'adresse \texttt{http://univ-tlse3.fr}; nous demandons donc au serveur DNS quel est l'IP de ce nom de domaine, le serveur de DNS nous
+	renvoie l'adresse IP, nous intérrogeons ensuite le serveur http avec l'ip que nous avons obtenus.
+	\subsection{}
+		L'un étant le serveur par défaut, la pluspart des requêtes lui sont destinés : 130.120.8.10, mais nous possédons également un serveur DNS de
+		secour, en cas de problème: 130.120.8.11.
+		\subsection{}
+		www.licinfo.ups-tlse.fr: 195.220.59.69
+		www.ups-tlse.fr: 195.220.59.77
+	\section{Gestion des noms de domaines dans l'Internet}
+	\subsection{}
+	\subsubsection{Structure d'un nom de domaine}
+	\subsubsection{TLD}
+	Un TLD\footnote{Top-level domain ou Domaine de premier niveau} est un domaine qui est au sommet de la hiérarchie des domaines. 
+
+	Il existe deux types de TLD : domaines génériques et les domaines nationaux
+	\begin{description}
+		\item[Générique]appelés gTLDsont desnoms de domaines générique de niveau supérieur proposantu ne classification selon le secteur d'activité.
+		\item[Nationaux] appelés ccTLD correspondent aux différents pays et leurs nmos correspondent aux abréviations des noms de pays définies par la
+			norme ISO 3166.
+	\end{description}
+	\subsubsection{}
+\begin{description}
+	\item[Royaume-uni] Nominet UK
+	\item[Grèce]ICS-FORTH GR
+	\item[Japon] Japan Registry Services 
+\end{description}
+\subsection{}
+AFNIC(NIC France)
+
+Afin d'utiliser ce TLD, il faut avoir la nationalité française.
+	\section{URL}
+	\subsection{}
+	\subsection{}
+	\begin{tabular}{c|c|c|c|}
+		URL & Protocole & Adresse IP & Port de destination\\
+		\hline
+		http://www.cict.fr & http & 195.220.59.23 & 80\\
+		\hline
+		http://aurore.cict.fr & http & 195.22.59.23 & 80\\
+		\hline
+		http://ftp.cict.fr & http & 195.220.59.23& 80\\
+		\hline
+		ftp://www.cict.fr & ftp & 195.220.59.23& 21\\
+		\hline
+		ftp://ftp.cict.fr & ftp & 195.220.59.23 & 21\\
+		\hline
+		ftp://mail.cict.fr & ftp & 195.220.59.28 & 21\\
+		\hline
+		ftp://votrelogin@oceane.cict.fr & ftp & 195.220.60.26 & 21\\
+		\hline
+		http://www.irit.fr & http & 141.115.28.2 & 80\\
+		\hline
+		http://141.115.28.2 & http & 141.115.28.2 & 80\\
+		\hline
+		http://www.cict.fr:80 & http & 195.220.59.23 & 80\\
+		\hline
+		http://www.cict.fr:81 & http & 195.220.59.23 & 81\\
+		\hline
+		http://www.cict.fr:21 & http & 195.220.59.23 & 21\\
+		\hline
+		http://www.cict.fr:21 & http & 195.220.59.23 & 21\\
+		\hline
+	\end{tabular}
+\end{document}
+
+
