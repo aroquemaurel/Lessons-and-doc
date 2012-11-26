@@ -24,36 +24,37 @@
 \contentsline {chapter}{\numberline {2}Complexit\IeC {\'e} des boucles}{6}{chapter.2}
 \contentsline {section}{\numberline {2.1}Complexit\IeC {\'e} de boucles ``pour''}{6}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Exemple}{6}{subsection.2.1.1}
-\contentsline {section}{\numberline {2.2}Complexit\IeC {\'e} de boucles ``tant que''}{8}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Exemple}{8}{subsection.2.2.1}
-\contentsline {section}{\numberline {2.3}Approximation asymptotique de sommes partielles}{8}{section.2.3}
-\contentsline {paragraph}{Exemples de sommes partielles}{8}{section*.8}
-\contentsline {subsection}{\numberline {2.3.1}Principe de la m\IeC {\'e}thode}{8}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Application}{9}{subsection.2.3.2}
-\contentsline {section}{\numberline {2.4}Analyse de cas particuliers de boucles}{10}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Algorithme gourmand pour trouver une semengation optimale}{10}{subsection.2.4.1}
-\contentsline {subsubsection}{\numberline {2.4.1.1}Probl\IeC {\`e}me}{10}{subsubsection.2.4.1.1}
-\contentsline {paragraph}{Application}{10}{section*.9}
-\contentsline {paragraph}{Algorithme gourmand}{10}{section*.10}
-\contentsline {subsubsection}{\numberline {2.4.1.2}D\IeC {\'e}monstration que l'algorithme trouve toujours une segmentation optimale}{11}{subsubsection.2.4.1.2}
-\contentsline {chapter}{\numberline {3}Complexit\IeC {\'e} d'algorithmes d\IeC {\'e}finis par r\IeC {\'e}currence}{12}{chapter.3}
-\contentsline {section}{\numberline {3.1}Exemple introductif : Tri fusion}{12}{section.3.1}
-\contentsline {section}{\numberline {3.2}M\IeC {\'e}thode na\IeC {\"\i }ve d'analyse de complexit\IeC {\'e}}{12}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}R\IeC {\'e}sum\IeC {\'e} de la m\IeC {\'e}thode na\IeC {\"\i }ve}{13}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Exemples d'application}{13}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}R\IeC {\'e}duction \IeC {\`a} des formes simples}{13}{subsection.3.2.3}
-\contentsline {section}{\numberline {3.3}\IeC {\'E}quation r\IeC {\'e}currentes lin\IeC {\'e}aires}{14}{section.3.3}
-\contentsline {paragraph}{D\IeC {\'e}finition}{14}{section*.11}
-\contentsline {subsection}{\numberline {3.3.1}\IeC {\'E}quations r\IeC {\'e}currentes lin\IeC {\'e}aires homog\IeC {\`e}nes d'ordre 1}{14}{subsection.3.3.1}
-\contentsline {paragraph}{Proposition}{14}{section*.12}
-\contentsline {subsection}{\numberline {3.3.2}\IeC {\'E}quations r\IeC {\'e}currentes lin\IeC {\'e}aires non-homog\IeC {\`e}nes d'ordre 1}{14}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Recherche d'une solution g\IeC {\'e}n\IeC {\'e}rale pour les \IeC {\'e}quations r\IeC {\'e}currentes lin\IeC {\'e}aires homog\IeC {\`e}nes d'ordre 2}{15}{subsection.3.3.3}
-\contentsline {paragraph}{D\IeC {\'e}finition}{15}{section*.13}
-\contentsline {paragraph}{Th\IeC {\'e}or\IeC {\`e}me}{15}{section*.14}
-\contentsline {paragraph}{Cas des racines doubles}{15}{section*.15}
-\contentsline {paragraph}{Th\IeC {\'e}or\IeC {\`e}me}{15}{section*.16}
-\contentsline {paragraph}{Preuve dans le cas d'une racine double}{16}{section*.17}
-\contentsline {subsection}{\numberline {3.3.4}Recherche de solutions particuli\IeC {\`e}res pour les \IeC {\'e}quations r\IeC {\'e}currentes lin\IeC {\'e}aires homog\IeC {\`e}nes d'ordre 2}{16}{subsection.3.3.4}
+\contentsline {section}{\numberline {2.2}Complexit\IeC {\'e} de boucles ``tant que''}{7}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Exemple}{7}{subsection.2.2.1}
+\contentsline {section}{\numberline {2.3}Approximation asymptotique de sommes partielles}{7}{section.2.3}
+\contentsline {paragraph}{Exemples de sommes partielles}{7}{section*.8}
+\contentsline {subsection}{\numberline {2.3.1}Principe de la m\IeC {\'e}thode}{7}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Application}{8}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.4}Analyse de cas particuliers de boucles}{9}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Algorithme gourmand pour trouver une semengation optimale}{9}{subsection.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.1.1}Probl\IeC {\`e}me}{9}{subsubsection.2.4.1.1}
+\contentsline {paragraph}{Application}{9}{section*.9}
+\contentsline {paragraph}{Algorithme gourmand}{9}{section*.10}
+\contentsline {subsubsection}{\numberline {2.4.1.2}D\IeC {\'e}monstration que l'algorithme trouve toujours une segmentation optimale}{10}{subsubsection.2.4.1.2}
+\contentsline {chapter}{\numberline {3}Complexit\IeC {\'e} d'algorithmes d\IeC {\'e}finis par r\IeC {\'e}currence}{11}{chapter.3}
+\contentsline {section}{\numberline {3.1}Exemple introductif : Tri fusion}{11}{section.3.1}
+\contentsline {section}{\numberline {3.2}M\IeC {\'e}thode na\IeC {\"\i }ve d'analyse de complexit\IeC {\'e}}{11}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}R\IeC {\'e}sum\IeC {\'e} de la m\IeC {\'e}thode na\IeC {\"\i }ve}{12}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Exemples d'application}{12}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}R\IeC {\'e}duction \IeC {\`a} des formes simples}{12}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}\IeC {\'E}quation r\IeC {\'e}currentes lin\IeC {\'e}aires}{13}{section.3.3}
+\contentsline {paragraph}{D\IeC {\'e}finition}{13}{section*.11}
+\contentsline {subsection}{\numberline {3.3.1}\IeC {\'E}quations r\IeC {\'e}currentes lin\IeC {\'e}aires homog\IeC {\`e}nes d'ordre 1}{13}{subsection.3.3.1}
+\contentsline {paragraph}{Proposition}{13}{section*.12}
+\contentsline {subsection}{\numberline {3.3.2}\IeC {\'E}quations r\IeC {\'e}currentes lin\IeC {\'e}aires non-homog\IeC {\`e}nes d'ordre 1}{13}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Recherche d'une solution g\IeC {\'e}n\IeC {\'e}rale pour les \IeC {\'e}quations r\IeC {\'e}currentes lin\IeC {\'e}aires homog\IeC {\`e}nes d'ordre 2}{14}{subsection.3.3.3}
+\contentsline {paragraph}{D\IeC {\'e}finition}{14}{section*.13}
+\contentsline {paragraph}{Th\IeC {\'e}or\IeC {\`e}me}{14}{section*.14}
+\contentsline {paragraph}{Cas des racines doubles}{14}{section*.15}
+\contentsline {paragraph}{Th\IeC {\'e}or\IeC {\`e}me}{14}{section*.16}
+\contentsline {paragraph}{Preuve dans le cas d'une racine double}{15}{section*.17}
+\contentsline {subsection}{\numberline {3.3.4}Recherche de solutions particuli\IeC {\`e}res pour les \IeC {\'e}quations r\IeC {\'e}currentes lin\IeC {\'e}aires homog\IeC {\`e}nes d'ordre 2}{15}{subsection.3.3.4}
+\contentsline {subsubsection}{\numberline {3.3.4.1}R\IeC {\'e}sum\IeC {\'e} de la m\IeC {\'e}thode pour les \IeC {\'e}quations homog\IeC {\`e}nes d'ordre 2}{15}{subsubsection.3.3.4.1}
 \contentsline {chapter}{\numberline {4}Structure de donn\IeC {\'e}es et complexit\IeC {\'e}}{14}{chapter.4}
 \contentsline {chapter}{\numberline {A}Exercices}{15}{appendix.A}
 \contentsline {section}{\numberline {A.1}TD 1}{15}{section.A.1}

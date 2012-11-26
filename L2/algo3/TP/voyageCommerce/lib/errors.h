@@ -19,6 +19,7 @@
 #ifndef __ERRORS
 #define __ERRORS
 
+#include <stdio.h>
 #include <stdlib.h>
 
 typedef struct {
@@ -31,7 +32,7 @@ typedef struct {
 } Errors;
 
 void errors_initialize(Errors* pErrors);
-void errors_displayErrorsMessage(Errors* pErrors);
+void errors_displayErrorsMessage(const Errors pErrors);
 void errors_setNbArguments(Errors* pErrors);
 void errors_setTagFNotFound(Errors* pErrors);
 void errors_setFileNotFound(Errors* pErrors, char* fileName);

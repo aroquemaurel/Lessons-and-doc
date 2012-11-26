@@ -25,6 +25,8 @@ void test_searchFirstOccurenceInArray(const int pNumTest) {
 	int returnExpected, returnObtained;
 	char* array1[6] = {"test", "truc", "chose", "chouette", "", "unMot"};
 	char* array2[1] = {"truc"};
+	int  array3[4] =  {0, 1, 2, 3};
+
 	char* fctName = "test_searchFirstOccurenceInArray";
 	bool test = true;
 	switch(pNumTest) {
@@ -47,6 +49,8 @@ void test_searchFirstOccurenceInArray(const int pNumTest) {
 		case 5:
 			returnExpected = -1;
 			test = ((returnObtained = util_searchFirstOccurenceInArray(array2, 1, "unMot")) == returnExpected);
+			break;
+		case 6:
 			break;
 	}
 	displayResults(test, pNumTest,fctName, returnObtained, returnExpected);

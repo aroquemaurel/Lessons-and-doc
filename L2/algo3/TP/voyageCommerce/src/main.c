@@ -7,7 +7,7 @@
  *						dans ce fichier.
  *
  *        Version:  1.0
- *        Created:  19/11/2012 10:41:29
+ *        Created:  19/11/2012 10:42:29
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -22,16 +22,20 @@
 
 #include "parsing.h"
 #include "errors.h"
+#include "instance.h"
+#include "town.h"
 
 int main (int argc, char** argv) {
-	char* fileName;
+	char* fileName;	
 	FILE* file = NULL;
-	Errors errors;
-	AlgoType algoType;
 	int parameter1 = 0;
 	int parameter2 = 0;
-	errors_initialize(&errors);
+	Instance instance;
 
+	Errors errors;
+	AlgoType algoType;
+
+	errors_initialize(&errors);
 	gVerboseMode = parsing_parseVerboseMode(argv, argc); 
 	fileName = parsing_parseFileName(argv, argc, &errors);
 	algoType = parsing_algoType(argv, argc, &errors, &parameter1, &parameter2);
@@ -42,6 +46,9 @@ int main (int argc, char** argv) {
 	}
 	// on peut travailler
 	if(errors.nbErrors == 0) {
+	instance_initialize(&instance, file);
+	printf("%d", instance.towns[4].id);
+
 		switch(algoType) {
 			case BRUTEFORCE:
 				printf("Brute force not implemented");
@@ -57,7 +64,13 @@ int main (int argc, char** argv) {
 				break;
 		}
 	} else {
-		errors_displayErrorsMessage(&errors);	
+		errors_displayErrorsMessage(errors);	
 	}
+
+	if(file != NULL) {
+		fclose(file);
+	}
+
 	return 0;
 }
+

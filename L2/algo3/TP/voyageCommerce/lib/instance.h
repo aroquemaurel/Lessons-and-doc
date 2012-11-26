@@ -19,6 +19,19 @@
 #ifndef __INSTANCE
 #define __INSTANCE
 
+#include "town.h"
+#include <stdbool.h>
+typedef struct {
+	Town towns[512];
+	int nbTown;
+	char* name;
+	char* type;
+}Instance;
+
+void instance_display(const Instance pInstance);
+void instance_initialize(Instance* pInstance, FILE* pFile);
+void instance_push(Instance* pInstance, const Town pTown);
+
 #endif
 
 
