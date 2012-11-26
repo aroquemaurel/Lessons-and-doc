@@ -1,12 +1,12 @@
 /*
  * =====================================================================================
  *
- *       Filename:  tour.h
+ *       Filename:  town.h
  *
  *    Description:  
  *
  *        Version:  1.0
- *        Created:  21/11/2012 22:04:13
+ *        Created:  21/11/2012 22:35:19
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -16,17 +16,18 @@
  * =====================================================================================
  */
 
-#ifndef __TOUR
-#define __TOUR
-
-#include "instance.h"
-#include "util.h"
+#ifndef __TOWN
+#define __TOWN
+#include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
+#include "util.h"
 typedef struct {
-}Tour;
+	int x;
+	int y;
+	int id;
+} Town;
 
-bool tour_nextPermutation(int* pPermutation, const int pSize);
+void town_initialize(Town* pTown, char* pString);
 #endif
 
 

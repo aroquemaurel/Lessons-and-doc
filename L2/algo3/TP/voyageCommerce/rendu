@@ -4,3 +4,12 @@ Recette le : 16/12/12
 		Cas simple: n = 1
 		Pour obtenir perm(n) on insre n  chaque position de chaque permutation de per(n-1)
 	
+
+	Itérative ++
+
+	Génération de la permutation suivante.
+		1/ Trouver le + grand indice k tq (d[k] < d[k+1]
+			=> Si y'en a pas, on a terminé
+		2/ Trouevr le plus grand indice i tel que d[k] < d[i]
+			swap d[k], d[i]
+		3/ Inverser(retourner) la séquence (d[k+1]...d[n] => d[n] ... d[K+1])

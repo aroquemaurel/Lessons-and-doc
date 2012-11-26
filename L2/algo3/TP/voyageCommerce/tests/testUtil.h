@@ -20,6 +20,7 @@
 #define __TESTS_UTIL
 
 #include "fctTestUnitaire.h"
+#include "../lib/tour.h"
 
 void test_searchFirstOccurenceInArray(const int pNumTest);
 
