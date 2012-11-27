@@ -33,6 +33,9 @@
 
 \makeatother
 \newcommand{\http}{\bsc{http}}
+\newcommand{\url}{\bsc{url}}
+\newcommand{\ssh}{\bsc{ssh}}
+\newcommand{\https}{\bsc{https}}
 \newcommand{\osi}{\bsc{osi}}
 \newcommand{\dns}{\bsc{dns}}
 \newcommand{\udp}{\bsc{udp}}
@@ -44,19 +47,30 @@
 \begin{document}
 	\maketitle
 	\section{Le système de noms de domaines}
-	Couche 5
+	\subsection{Protocole DNS}
+	Ce protocole appartient à la couche numéro 5.
+	% TODO diagramme
 	\subsection{}
 	On tape l'adresse \texttt{http://univ-tlse3.fr}; nous demandons donc au serveur DNS quel est l'IP de ce nom de domaine, le serveur de DNS nous
 	renvoie l'adresse IP, nous intérrogeons ensuite le serveur http avec l'ip que nous avons obtenus.
 	\subsection{}
-		L'un étant le serveur par défaut, la pluspart des requêtes lui sont destinés : 130.120.8.10, mais nous possédons également un serveur DNS de
-		secour, en cas de problème: 130.120.8.11.
+		L'un étant le serveur par défaut, la pluspart des requêtes lui sont destinés : \texttt{130.120.8.10}, mais nous possédons également un serveur DNS de
+		secours, \texttt{130.120.8.11}.
 		\subsection{}
-		www.licinfo.ups-tlse.fr: 195.220.59.69
-		www.ups-tlse.fr: 195.220.59.77
+		\begin{description}
+			\item[\texttt{www.licinfo.ups-tlse.fr}] 195.220.59.69
+			\item[\texttt{www.ups-tlse.fr}] 195.220.59.77
+		\end{description}
+		% TODO cohérence
 	\section{Gestion des noms de domaines dans l'Internet}
 	\subsection{}
 	\subsubsection{Structure d'un nom de domaine}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=12cm]{structNdd.png}
+		\caption{Structure d'un nom de domaine}
+	\end{figure}
+
 	\subsubsection{TLD}
 	Un TLD\footnote{Top-level domain ou Domaine de premier niveau} est un domaine qui est au sommet de la hiérarchie des domaines. 
 
@@ -72,41 +86,56 @@
 	\item[Grèce]ICS-FORTH GR
 	\item[Japon] Japan Registry Services 
 \end{description}
-\subsection{}
-AFNIC(NIC France)
-
-Afin d'utiliser ce TLD, il faut avoir la nationalité française.
-	\section{URL}
 	\subsection{}
+	Pour le \texttt{.fr} l'organisme qui le gère est l'AFNIC(NIC France), il n'y a aucune restriction dans le choix de ce domaine.
+
+	\section{URL}
+	\subsection{Définition}
+	Une \url{}\footnote{Uniform Resource Locator} une chaîne de caractères utilisée pour adresser les ressources du World Wide Web.
+
+	Une \url comporter tout d'abord le protocole utilisé, suivit de \texttt{://}. Ensuite, il peut comporter un utilisateur suivit de \texttt{@} qui est
+	facultatif. Puis, le nom de domaine ou l'adresse \ip du serveur et enfin, il peut y avoir le numéro de port préfixé par \texttt{:}. Si le numéro de
+	port n'est pas renseigné, celui utilisé sera celui par défaut du protocole (\http{} 80, \https{} 443, \ssh{} 22, telnet 23, \ftp{} 21, \ldots)
+
+	\exemple{
+	Voici des exemples d'\url: 
+\begin{itemize}
+	\item \texttt{https://google.fr}
+	\item \texttt{http://google.fr:80}
+	\item \texttt{ftp://anonymous@ftp.cict.fr:21}
+	\item \texttt{ssh://21003495@ouvea.edu.ups-tlse.fr}
+	\item \texttt{http://adresse.com:8080}
+\end{itemize}
+	}
 	\subsection{}
 	\begin{tabular}{c|c|c|c|}
-		URL & Protocole & Adresse IP & Port de destination\\
+		\textbf{URL} & Protocole & Adresse IP & Port de destination\\
 		\hline
-		http://www.cict.fr & http & 195.220.59.23 & 80\\
+		\texttt{http://www.cict.fr} & \http & \texttt{195.220.59.23} & 80\\
 		\hline
-		http://aurore.cict.fr & http & 195.22.59.23 & 80\\
+		\texttt{http://aurore.cict.fr} & \http & \texttt{195.22.59.23} & 80\\
 		\hline
-		http://ftp.cict.fr & http & 195.220.59.23& 80\\
+		\texttt{http://ftp.cict.fr} & \http & \texttt{195.220.59.23}& 80\\
 		\hline
-		ftp://www.cict.fr & ftp & 195.220.59.23& 21\\
+		\texttt{ftp://www.cict.fr} & \ftp & \texttt{195.220.59.23}& 21\\
 		\hline
-		ftp://ftp.cict.fr & ftp & 195.220.59.23 & 21\\
+		\texttt{ftp://ftp.cict.fr} & \ftp & \texttt{195.220.59.23} & 21\\
 		\hline
-		ftp://mail.cict.fr & ftp & 195.220.59.28 & 21\\
+		\texttt{ftp://mail.cict.fr} & \ftp & \texttt{195.220.59.28} & 21\\
 		\hline
-		ftp://votrelogin@oceane.cict.fr & ftp & 195.220.60.26 & 21\\
+		\texttt{ftp://votrelogin@oceane.cict.fr} & \ftp & \texttt{195.220.60.26} & 21\\
 		\hline
-		http://www.irit.fr & http & 141.115.28.2 & 80\\
+		\texttt{http://www.irit.fr} & \http & \texttt{141.115.28.2} & 80\\
 		\hline
-		http://141.115.28.2 & http & 141.115.28.2 & 80\\
+		\texttt{http://141.115.28.2} & \http & \texttt{141.115.28.2} & 80\\
 		\hline
-		http://www.cict.fr:80 & http & 195.220.59.23 & 80\\
+		\texttt{http://www.cict.fr:80} & \http & \texttt{195.220.59.23} & 80\\
 		\hline
-		http://www.cict.fr:81 & http & 195.220.59.23 & 81\\
+		\texttt{http://www.cict.fr:81} & \http & \texttt{195.220.59.23} & 81\\
 		\hline
-		http://www.cict.fr:21 & http & 195.220.59.23 & 21\\
+		\texttt{http://www.cict.fr:21} & \http & \texttt{195.220.59.23} & 21\\
 		\hline
-		http://www.cict.fr:21 & http & 195.220.59.23 & 21\\
+		\texttt{http://www.cict.fr:21} & \http & \texttt{195.220.59.23} & 21\\
 		\hline
 	\end{tabular}
 \end{document}
