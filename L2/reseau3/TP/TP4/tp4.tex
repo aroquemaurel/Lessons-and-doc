@@ -1,0 +1,144 @@
+\documentclass[a4paper, 11pt]{article}
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{verbatim}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{float}
+
+\newcommand{\titre}{Réseau}
+\newcommand{\numero}{3}
+\newcommand{\typeDoc}{TDM}
+\newcommand{\module}{Réseau}
+\newcommand{\sigle}{reseau}
+\newcommand{\semestre}{3}
+
+\input{/home/satenske/cours/includesLaTeX/l2/tddm.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex} %prise en charge du langage C 
+\input{/home/aroquemaurel/cours/includesLaTeX/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
+
+\makeatother
+\newcommand{\http}{\bsc{http}}
+\newcommand{\url}{\bsc{url}}
+\newcommand{\ssh}{\bsc{ssh}}
+\newcommand{\https}{\bsc{https}}
+\newcommand{\osi}{\bsc{osi}}
+\newcommand{\dns}{\bsc{dns}}
+\newcommand{\udp}{\bsc{udp}}
+\newcommand{\ip}{\bsc{ip}}
+\newcommand{\tcp}{\bsc{tcp}}
+\newcommand{\ftp}{\bsc{ftp}}
+\newcommand{\mac}{\bsc{mac}}
+\newcommand{\arp}{\bsc{ftp}}
+\begin{document}
+	\maketitle
+	\section{Commande et outils de tests réseau}
+	\subsection{Commandes utiles}
+	\subsubsection{\texttt{ifconfig} ou \texttt{ipconfig}}
+	\subsubsection{\texttt{host} ou \texttt{nslookup}}
+	\subsubsection{\texttt{whois}}
+	\subsection{Le \texttt{ping}}
+	\subsection{}
+\begin{lstlisting}[language=bash, basicstyle=\scriptsize\ttfamily]
+C:\Users\21003495.MIG.000>ping 130.120.8.170
+Envoi d'une requête Ping 130.120.8.170 avec 32 octets de données :
+Réponse de 130.120.8.170 : octets=32 temps<1ms TTL=128
+Réponse de 130.120.8.170 : octets=32 temps<1ms TTL=128
+Réponse de 130.120.8.170 : octets=32 temps<1ms TTL=128
+Réponse de 130.120.8.170 : octets=32 temps<1ms TTL=128
+
+Statistiques Ping pour 130.120.8.170:
+Paquets : envoyés = 4, recus = 4, perdus = 0 (perte 0%),
+Durée approximative des boucles en millisecondes :
+Minimum = 0ms, Maximum = 0ms, Moyenne = 0ms
+
+C:\Users\21003495.MIG.000>ping www.univ-tlse3.fr
+Envoi d'une requête ping sur servcms.ups-tlse.fr [195.220.59.77] avec 32 octets de données :
+Réponse de 195.220.59.77 : octets=32 temps<1ms TTL=62
+Réponse de 195.220.59.77 : octets=32 temps<1ms TTL=62
+Réponse de 195.220.59.77 : octets=32 temps<1ms TTL=62
+Réponse de 195.220.59.77 : octets=32 temps<1ms TTL=62
+
+Statistiques Ping pour 195.220.59.77:
+Paquets : envoyés = 4, recus = 4, perdus = 0 (perte 0%),
+Durée approximative des boucles en millisecondes :
+Minimum = 0ms, Maximum = 0ms, Moyenne = 0ms
+
+C:\Users\21003495.MIG.000>ping google.fr
+Envoi d'une requête ping sur google.fr [74.125.230.248] avec 32 octets de données :
+Réponse de 74.125.230.248 : octets=32 temps=14 ms TTL=51
+Réponse de 74.125.230.248 : octets=32 temps=14 ms TTL=51
+Réponse de 74.125.230.248 : octets=32 temps=14 ms TTL=51
+Réponse de 74.125.230.248 : octets=32 temps=14 ms TTL=51
+
+Statistiques Ping pour 74.125.230.248:
+Paquets : envoyés = 4, recus = 4, perdus = 0 (perte 0%),
+Durée approximative des boucles en millisecondes :
+Minimum = 14ms, Maximum = 14ms, Moyenne = 14ms
+	\end{lstlisting}
+	\subsubsection{}
+	\subsection{La commande \texttt{traceroute}}
+\begin{lstlisting}[language=bash, basicstyle=\scriptsize\ttfamily]
+C:\Users\21003495.MIG.000>tracert 130.120.8.170
+Détermination de l'itinéraire vers 206-08.mig.snap.fsi [130.120.8.170] avec un maximum de 30
+sauts :
+1 <1 ms <1 ms <1 ms 206-08.mig.snap.fsi [130.120.8.170] 
+#Le chemin est direct car les deux pc doivent être connecté au même switch, 
+#ainsi le paquet ne passe pas par un routeur intérmédiaire
+Itinéraire déterminé.
+
+C:\Users\21003495.MIG.000>tracert www.univ-tlse3.fr
+Détermination de l'itinéraire vers servcms.ups-tlse.fr [195.220.59.77] avec un maximum de 30 sauts :
+1 <1 ms <1 ms <1 ms 130.120.8.1 
+2 <1 ms <1 ms <1 ms rtr-cict.cict.fr [130.120.124.15]
+3 <1 ms <1 ms <1 ms servcms.ups-tlse.fr [195.220.59.77]
+Itinéraire déterminé.
+
+C:\Users\21003495.MIG.000>tracert google.fr
+Détermination de l'itinéraire vers google.fr [74.125.230.247] avec un maximum de 30 sauts :
+1 <1 ms <1 ms <1 ms 130.120.8.1
+2 <1 ms <1 ms <1 ms 194.167.94.98
+3 <1 ms <1 ms <1 ms 194.199.11.2
+4 <1 ms <1 ms <1 ms te1-3-toulouse-rtr-021.noc.renater.fr [193.51.181.178]
+5 14 ms 14 ms 14 ms te1-3-montpellier-rtr-021.noc.renater.fr [193.51.189.33]
+6 17 ms 17 ms 17 ms te1-2-marseille1-rtr-021.noc.renater.fr [193.51. 189.21]
+7 18 ms 19 ms 19 ms te0-0-0-0-lyon1-rtr-001.noc.renater.fr [193.51.189.17]
+8 14 ms 14 ms 14 ms te1-1-lyon2-rtr-021.noc.renater.fr [193.51.179.117]
+9 45 ms 48 ms 45 ms te0-0-0-1-paris2-rtr-001.noc.renater.fr [193.51. 189.2]
+10 18 ms 18 ms 18 ms te1-1-paris2-rtr-021.noc.renater.fr [193.51.189. 9]
+11 25 ms 18 ms 17 ms 193.51.182.197
+12 15 ms 14 ms 14 ms 72.14.238.228
+13 18 ms 18 ms 18 ms 209.85.242.51
+14 15 ms 15 ms 15 ms par08s10-in-f23.1e100.net [74.125.230.247]
+Itinéraire déterminé.
+
+\end{lstlisting}
+	\section{Protocole \ftp{} et \http{}}
+	\subsection{Connexion \texttt{telnet}}
+\begin{lstlisting}[language=bash, basicstyle=\scriptsize\ttfamily]
+login: 21003495
+Password:
+Last login: Tue Nov 13 13:44:20 from 130.120.240.36
+-bash-3.00$\$$ hostname
+ouvea.edu.ups-tlse.fr
+\end{lstlisting}
+	\subsection{\http}
+	\subsubsection{Récupérer une ressource}
+	\subsubsection{}
+	\subsection{\ftp}
+	\subsubsection{Connexion de contrôle}
+	\subsubsection{COnnexion de données}
+\end{document}
+
+
