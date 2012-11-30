@@ -1,5 +1,4 @@
-/*
- * =====================================================================================
+/* * =====================================================================================
  *
  *       Filename:  town.h
  *
@@ -27,7 +26,7 @@ typedef struct {
 	int id;
 } Town;
 
-void town_initialize(Town* pTown, char* pString);
+void town_initialize(Town* pTown, const int pId, const int pX, const int pY);
 #endif
 
 

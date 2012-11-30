@@ -1,4 +1,4 @@
-﻿NAME: essai petit
+NAME: essaiPetit
 TYPE: TSP
 DIMENSION: 8
 DISPLAY_DATA_SECTION
@@ -11,3 +11,4 @@ DISPLAY_DATA_SECTION
    7    1650.0   650.0
    8    1490.0  1630.0
 EOF
+

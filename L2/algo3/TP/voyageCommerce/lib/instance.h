@@ -21,6 +21,7 @@
 
 #include "town.h"
 #include <stdbool.h>
+#include <string.h>
 typedef struct {
 	Town towns[512];
 	int nbTown;
