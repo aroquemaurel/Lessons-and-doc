@@ -17,8 +17,11 @@
 
 #include "town.h"
 #include "string.h"
-void town_initialize(Town* pTown, char* pString) {
-	char** test;
+void town_initialize(Town* pTown, const int pId, const int pX, const int pY) {
+	pTown->id = pId;
+	pTown->x = pX;
+	pTown->y = pY;
+/*  char** test;
 	int i=0, j=0;
 	int size;
 	test = util_split(pString, ' ', &size);
@@ -34,4 +37,5 @@ void town_initialize(Town* pTown, char* pString) {
 			++j;
 		}
 	}
+ */
 }

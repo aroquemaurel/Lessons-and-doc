@@ -31,7 +31,6 @@ int main (int argc, char** argv) {
 	int parameter1 = 0;
 	int parameter2 = 0;
 	Instance instance;
-
 	Errors errors;
 	AlgoType algoType;
 
@@ -44,14 +43,16 @@ int main (int argc, char** argv) {
 	if(file == NULL) {
 		errors_setFileNotFound(&errors, fileName);
 	}
+
 	// on peut travailler
 	if(errors.nbErrors == 0) {
 	instance_initialize(&instance, file);
-	printf("%d", instance.towns[4].id);
+//	printf("%d", instance.towns[4].id);
+	printf("%s", instance.name);
 
 		switch(algoType) {
 			case BRUTEFORCE:
-				printf("Brute force not implemented");
+				printf("\nBrute force not implemented\n");
 				break;
 			case LOCALSEARCH_RANDOM:
 				printf("Random local search not implemented");
@@ -65,12 +66,13 @@ int main (int argc, char** argv) {
 		}
 	} else {
 		errors_displayErrorsMessage(errors);	
+		return EXIT_FAILURE;
 	}
 
 	if(file != NULL) {
 		fclose(file);
 	}
 
-	return 0;
+	return EXIT_SUCCESS;
 }
 
