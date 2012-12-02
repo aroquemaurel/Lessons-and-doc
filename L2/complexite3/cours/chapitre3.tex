@@ -61,7 +61,7 @@ fusion produit le sous tableau T[i:k] trié à partir de la fusion de ces deux t
 	\end{eqnarray*}
 
 	\section{Équation récurrentes linéaires}
-	\paragraph{Définition} Une équation récurrente linéaire à coefficients constants d'odre $k$ est une équation de la forme 
+	\paragraph{Définition} Une équation récurrente linéaire à coefficients constants d'ordre $k$ est une équation de la forme 
 	\begin{displaymath}
 		\left\{ \begin{array}{llll}
 			u_1 &=& C_i (O \leq i \leq k-1) & \textsc{Conditions initiales (CI)}\\
@@ -115,7 +115,7 @@ fusion produit le sous tableau T[i:k] trié à partir de la fusion de ces deux t
 			U_n &=&  U_{n-1} + U_{n-2}
 		\end{array} \right.
 	\end{displaymath}
-	ON résoud ces équations d'ordre 2 comme des équations d'ordre 1 : On cherche une solution générale de la forme $\lambda r^n$. Une telle solution
+	On résout ces équations d'ordre 2 comme des équations d'ordre 1 : On cherche une solution générale de la forme $\lambda r^n$. Une telle solution
 	vérifie, pour le cas de la suite de Fibonacci : $\forall n \geq 2$, $\lambda r^n = \lambda r^{n-1} + \lambda r^{n-2}$
 
 	Soit, en divisant par $\lambda r^{n-2}$ $$r^2 = r + 1$$
@@ -132,11 +132,11 @@ fusion produit le sous tableau T[i:k] trié à partir de la fusion de ces deux t
 	Dans le cas de la suite de Fibonacci, on calcule le discriminant $\Delta=5$ et on trouve les deux racines $r_1 = \frac{1-\sqrt{5}}{2}$ et 
 	$r_2=\frac{1+\sqrt{5}}{2}$
 
-	\paragraph{Cas des racines doubles} Si le discriminant $\Delta = 0$, alors le polynome n'a qu'une seule racine (de multiplicité 2). En remarquant
+	\paragraph{Cas des racines doubles} Si le discriminant $\Delta = 0$, alors le polynôme n'a qu'une seule racine (de multiplicité 2). En remarquant
 	que $r$ racine double de P(x) implique que $r$ est aussi une racine de $P'(x)$ on peut démontrer que $\{n\lambda r^n\}_{n \geq 0}$ est aussi une
 	solution de l'équation récurrente.
 
-	\paragraph{Théorème} Les solutions générales d'une équation récurrente linéaire homogène d'ordre 2 dont le polynmoe cractéristique de deux racines
+	\paragraph{Théorème} Les solutions générales d'une équation récurrente linéaire homogène d'ordre 2 dont le polynôme caractéristique de deux racines
 	$r_1$ et $r_2$ sont :
 	\begin{itemize}
 		\item Si $r_1 \neq r_2$ : $\{ \lambda_1 r_1^n + \lambda_2 r_2^n\}_{n \geq 0}$ pour toute constantes $\lambda_1$, $\lambda_2$
@@ -144,15 +144,15 @@ fusion produit le sous tableau T[i:k] trié à partir de la fusion de ces deux t
 	\end{itemize}
 
 	\paragraph{Preuve dans le cas d'une racine double}
-	Soit l'équation $u_{n+2} + a U_{n+1} + bu_n = 0$ et soit $r$ une racine double du polynome caractéristique.\\  
+	Soit l'équation $u_{n+2} + a U_{n+1} + bu_n = 0$ et soit $r$ une racine double du polynôme caractéristique.\\  
 	$P(x) = x^2 + ax + b$, donc $r$ est aussi une racine de $P'(x)= 2x+a$. La suite $\{nr^n\}_{n\geq 0}$ est une solution de l'équation car
 	\begin{eqnarray*}
 	(n+2)r^{n+2} + a(n+1)r^{n+1} + bnr^n &=& n(r^{n+2} + ar^{n+1} + br^n) + 2r^{n+2} + ar^{n+1}\\
 	&=& r^n[n(r^2 + ar + b) + r(2r+a)]\\
 	&=& 0
 	\end{eqnarray*}
-	\subsection{Recherche de solutions particulières pour les équations récurrentes linéaires homogènes d'ordre 2}<++>
-	Dans le cas de la suit ede Fibonacci, on cherche une solution particulières satisfaisant les conditions initialies et qui est de la forme
+	\subsection{Recherche de solutions particulières pour les équations récurrentes linéaires homogènes d'ordre 2}
+	Dans le cas de la suite de Fibonacci, on cherche une solution particulières satisfaisant les conditions initiales et qui est de la forme
 	$\lambda_1r_1^n + \lambda_2r_2^n$ où $r_1 = \frac{1-\sqrt{5}}{2}$ et $r_2 = \frac{1+\sqrt{5}}{2}$
 
 	Donc on cherche $\lambda_1$, $\lambda_2$ tels que
@@ -183,10 +183,80 @@ fusion produit le sous tableau T[i:k] trié à partir de la fusion de ces deux t
 	\subsubsection{Résumé de la méthode pour les équations homogènes d'ordre 2}
 	Pour résoudre l'équation $u_n = aU_{n-1} + bu_{n-2}$
 	\begin{enumerate}
-		\item On calcule le polynome caractéristique $P(x) = x^2 - ax -b$
-		\item On calcul les racines (eventuellement complexes)
+		\item On calcule le polynôme caractéristique $P(x) = x^2 - ax -b$
+		\item On calcul les racines (éventuellement complexes)
 			$r_1$ et $r_2$ de $P$
 		\item On cherche les coefficients $\lambda_1$ $\lambda_2$ tels que $\lambda_1r_1^n + \lambda_2r_2^n$ satisfaisant les CI
 	\end{enumerate}
 
+	\subsection{Équations récurrentes d'ordre $k$}
+	Pour les équations récurrentes homogènes d'ordre k, les considérations sur le polynôme caractéristique et ses racines restent valables. La difficulté
+	est calculatoire car il faut trouver les racines d'un polynôme de degré k. Mais lorsque l'équation a été obtenu en éliminant  la partie
+	non-homogène, les coefficients utilisés sont des solutions. 
+	\exemple{Pour l'algorithme de Strasser, on a obtenu l'équation en faisant
+	$$E_n-GE_{n-1}$$ où $E_n$ désigne l'équation de rang $n$
 
+	$\Rightarrow$ 4 est une racine du polynôme caractéristique.
+	}
+
+	En cas de racine d'ordre $m$, on peut montrer par récurrence que $\{n^j\alpha^n\}_{n\geq 0}$ est une solution de l'équation récurrente homogène pour
+	tout $j=0,\cdots,m-1$. Ceci nous permet d'avoir $k$ variables dans le système d'équation linéaires dérivées des CI.
+
+	Le théorème suivant généralise le théorème 2 au cas de récurrences homogènes d'ordre $k > 2$ et prend en compte directement le second membre.
+	\paragraph{Théorème 3}
+	Supposons que le polynôme caractéristique de la récurrence homogène $u_n = au_{n-1} + \cdots + a_ku_{n-k}$ admet $p$ racines $ri(i=1,\cdots,p)$ de
+	multiplicité $mi(i=1,\cdots,p)$. Alors la solution de la récurrence 
+	$$u_n = a_1u_{n-1}+\cdots+a_ku_{n-k} + \sum^t_{i=1} b_i^n P_i(n)$$
+	où $p_i$ est un polynôme de degré $d_i$) est donnée par $$\sum^t_{i=1}b_i^n Q_i(n)\footnote{Partie de la solution qui prend en compte le second membre} + 
+	\sum_{i \in \{1,\ldots,p\}}r_i^n R_i(n)\footnote{Solution pour la récurrence homogène}$$
+	tel que $r_i \not\in \{b_1,\cdots,b_t\}$
+
+	Où 
+	\begin{displaymath}
+		\textrm{deg}(Q_i) = \left\{ \begin{array}{lll}
+			d_i & si & b_i \not\in \{r_i,\cdots,r_p \}\\
+			d_i+m_j & si& b_i = r_j
+		\end{array} \right.
+	\end{displaymath}
+
+	Et $\textrm{deg}(R_i) = m_i-1$
+
+	On obtient les polynômes $Q_i$ et $R_i$ à partir des CI et par identification des coefficients des termes $b_i^n n^j$ dans la récurrence.
+
+	\remarque{Dans le théorème 2, il n'y avait de second membre (t=0) et les polynômes $R_i$ étaient de la forme $\lambda_1$ ou $\lambda_1 = \lambda_2 n$
+	}
+	\begin{displaymath}
+		\left. \begin{array}{lll}
+			u_n &=&  u_{n-1} + 1n^3\\
+			u_{n-1} &=&  u_{n-2} + 1
+		\end{array}
+		\right\}
+		u_n - u_{n-1} = u_{n-1} - u_{n-2}
+	\end{displaymath}
+	\exemple{
+	$$T(n) = 2T(\frac{n}{2}) + n ; T(1) = 1$$
+	Après changement de variable $n=2^k$, $u_k = T(n)$, nous avons $u_k = 2u_{k-1}+2^k$.
+
+	Ici le second membre $$\sum^t_{i=1} b_i^k Pi(k) = 2^k$$
+
+	Donc $T=1$, $P_i(k)=1$, $b_i=2$
+
+	Le polynôme caractéristique $P(x)=x-2$. La seule racine est $r_i = 2$.
+	Donc la solution particulière  est de la forme $2^k(q_0 + q_i^k)$ car $\textrm{deg}(Q_i) = \textrm{deg}{P_i}  +\textrm{multiplicité}  = 0 + 1$, et
+	cette solution satisfait la CI et la récurrence $1 = T(1) = u_0$
+	$$2^k(q_0+q_1k) = 2 \times 2^{k-1}(q_0+q_i(k-1))$$	
+			D'où $q_0 = 1$, $q_1 = 1$ donc $u_n = 2^k(1+k)$ et $T(n) = u_k = n(1+\log_2n)$
+	}
+
+	\subsection{Théorème pour les récurrences par divisions}
+	Le théorème suivant nous donne directement l'ordre de grandeur de la solution en fonction des coefficients de l'équation récurrente.
+
+	\paragraph{Théorème 4} Soient $a \geq 1$, $b > 1$ deux constantes, $f(n)$ une fonction, et $\{t(n\}_{n\geq 0}$ une suite vérifiant l'équation 
+	$T(n) = aT(\frac{n}{b}) + f(n)$
+
+	On a pour $\epsilon > 0$
+\begin{itemize}
+	\item Si $f(n) = 0(n^{\log_b a - \epsilon}$ alors $T(n) = \Theta(n^{\log_b a})$
+	\item Si $f(n) = \Theta(n^{\log_b a})$ alors $T(n) = \Theta(n^{\log_b a . \log n})$
+	\item Si $f(n) = \Omega(n^{\log_b a + \epsilon}$ et $af(\frac{n}{b}) \leq cf(n)$ pour une constante $c >1$, alors $T(n) = \Theta(f(n))$
+\end{itemize}
