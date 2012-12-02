@@ -23,6 +23,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
+#include "distance.h"
 
 bool gVerboseMode;
 
@@ -30,9 +31,11 @@ int util_searchFirstOccurenceInArray(char** pArray, const int pSize, char* pSear
 
 char** util_split(char* str, char c, int* size );
 inline void util_displayVerboseMode(char* pString);
-
-void util_reversearray(int* ptab, const int pbegin, const int pend);
+void util_reverseArray(int* pTab, const int pBegin, const int pEnd);
 bool util_arrayIsEqual(int* pTab1, int* pTab2, int pSize);
 void util_displayArray(const int* pTab, const int pSize);
+int util_sum(const int pBegin, const int pEnd);
+inline int util_divide2RoundTop(const int pNb);
+void util_swap(int* a, int* b);
 
 #endif

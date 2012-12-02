@@ -33,6 +33,11 @@ int main (int argc, char** argv) {
 	Instance instance;
 	Errors errors;
 	AlgoType algoType;
+	Town test1, test2;
+	test1.id = 3;
+	test2.id = 1;
+	Distance test;
+	distance_new(&test, &test1, &test2);
 
 	errors_initialize(&errors);
 	gVerboseMode = parsing_parseVerboseMode(argv, argc); 
@@ -48,7 +53,6 @@ int main (int argc, char** argv) {
 	if(errors.nbErrors == 0) {
 	instance_initialize(&instance, file);
 //	printf("%d", instance.towns[4].id);
-	printf("%s", instance.name);
 
 		switch(algoType) {
 			case BRUTEFORCE:

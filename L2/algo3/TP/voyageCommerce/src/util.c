@@ -84,3 +84,25 @@ void util_displayArray(const int* pTab, const int pSize) {
 		printf("%d ", pTab[i]);
 	}
 }
+
+int util_sum(const int pBegin, const int pEnd) {
+	int i=pBegin;
+	int ret=0;
+	while(i <= pEnd) {
+		ret += i;
+		++i;
+	}
+
+	return ret;
+}
+
+inline int util_divide2RoundTop(const int pNb) {
+	return ((pNb% 2 == 0) ? pNb/2 : pNb/2+1);
+}
+
+void util_swap(int* a, int* b) {
+	int buff;
+	buff = *a;
+	*a = *b;
+	*b = buff;
+}

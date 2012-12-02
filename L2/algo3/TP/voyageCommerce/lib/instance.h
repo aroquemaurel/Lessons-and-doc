@@ -20,19 +20,24 @@
 #define __INSTANCE
 
 #include "town.h"
+#include "distance.h"
+#include "util.h"
 #include <stdbool.h>
 #include <string.h>
+
+#define N 512
 typedef struct {
-	Town towns[512];
+	Town towns[N];
+	Distance distances[N];
 	int nbTown;
 	char* name;
 	char* type;
-}Instance;
+} Instance;
 
 void instance_display(const Instance pInstance);
 void instance_initialize(Instance* pInstance, FILE* pFile);
 void instance_push(Instance* pInstance, const Town pTown);
-
+void instance_initializeDistances(Instance* pInstance);
 #endif
 
 
