@@ -190,26 +190,26 @@
 	\subsection{Exercice 1}
 		\subsubsection{A -- Démontrer que les opérateurs NAND et NOR sont des opérateurs complets}
 		\begin{eqnarray*}
-			\bar A &=& A|A\\
-			A.B &=& \overline{\overline{A.B}} = \overline{\bar A + \bar B} = \overline{A/B} = (A | B) | (A | B)\\
-			A+B &=& \overline{\overline{A+B}} = \overline{\bar A + \bar B} = (A|B) |(B |B)
+			\overline A &=& A|A\\
+			A.B &=& \overline{\overline{A.B}} = \overline{\overline A + \overline B} = \overline{A/B} = (A | B) | (A | B)\\
+			A+B &=& \overline{\overline{A+B}} = \overline{\overline A + \overline B} = (A|B) |(B |B)
 		\end{eqnarray*}
 		\begin{eqnarray*}
-			\bar A = \overline{A+A} = A \downarrow A\\
-			A . B = \overline{\overline{A.B}} = \overline{\bar A+ \bar B} = A \downarrow B \downarrow (\downarrow B \downarrow B)
+			\overline A = \overline{A+A} = A \downarrow A\\
+			A . B = \overline{\overline{A.B}} = \overline{\overline A+ \overline B} = A \downarrow B \downarrow (\downarrow B \downarrow B)
 		\end{eqnarray*}
 		\subsubsection{B --}
 		\begin{enumerate}
-			\item $f(A,B,C,D)=\bar A B \bar D + B\bar C + A\bar C D= \overline{\overline{\bar A B \bar D + B \bar C + A \bar C D}} 
-				= \overline{(\overline{\bar B\bar D).(\overline{A\bar C D)}}} =\\ ( (A|A)|B( (D|D))) | (B|(C|C)) | (A|(C|C)|D)$
-			\item $f(A,B,C,D)=(A+B)(\bar C + \bar D)(\bar A + \bar B + \bar C) = \overline{\overline{(A+B)(\bar C + \bar B)(\bar A + \bar B + \bar C)}}=\\
-				\overline{\bar A \bar B) + CD + ABC} = \overline{\bar A \bar B} . \overline{CD} . \overline{ABC} =\\
+			\item $f(A,B,C,D)=\overline A B \overline D + B\overline C + A\overline C D= \overline{\overline{\overline A B \overline D + B \overline C + A \overline C D}} 
+				= \overline{(\overline{\overline B\overline D).(\overline{A\overline C D)}}} =\\ ( (A|A)|B( (D|D))) | (B|(C|C)) | (A|(C|C)|D)$
+			\item $f(A,B,C,D)=(A+B)(\overline C + \overline D)(\overline A + \overline B + \overline C) = \overline{\overline{(A+B)(\overline C + \overline B)(\overline A + \overline B + \overline C)}}=\\
+				\overline{\overline A \overline B) + CD + ABC} = \overline{\overline A \overline B} . \overline{CD} . \overline{ABC} =\\
 				((A|A)(B|B)|(C|D)|(A|B|C))|((A|A)(B|B)|(C|D)|(A|B|C)) =\\
 				((A\downarrow B)\downarrow (C \downarrow C) \downarrow (D \downarrow D) \downarrow (A \downarrow A)\downarrow (B\downarrow B) \downarrow (C \downarrow C))$
 		\end{enumerate}
 	\subsection{Exercice 3}
 	\subsubsection{1}
-	$f(w,x,y,z) = \sum n(1,3,4,7,9,11,12,15) = yz+\bar x z + x\bar y \bar z$
+	$f(w,x,y,z) = \sum n(1,3,4,7,9,11,12,15) = yz+\overline x z + x\overline y \overline z$
 	\\
 	\begin{tabular}{c|c|c|c|c|}
 		& 00&01&11&10\\
@@ -224,7 +224,7 @@
 		\hline
 	\end{tabular}
 	\subsubsection{2}
-	$f(w,x,y,z) = \sum m(0,1,3,6,9,13,15) = \bar w \bar x \bar y + \bar w \bar x z + wxz + w\bar y z+w\bar x y \bar z$\\
+	$f(w,x,y,z) = \sum m(0,1,3,6,9,13,15) = \overline w \overline x \overline y + \overline w \overline x z + wxz + w\overline y z+w\overline x y \overline z$\\
 	\begin{tabular}{c|c|c|c|c|}
 		& 00&01&11&10\\
 		\hline
@@ -238,7 +238,7 @@
 		\hline
 	\end{tabular}
 	\subsubsection{3}
-	$f(w,x,y,z) = \sum m (0,1,5,7,8,10,14,15) = \bar w \bar x \bar y +  \bar w x z + wxy + w\bar x \bar  z$\\
+	$f(w,x,y,z) = \sum m (0,1,5,7,8,10,14,15) = \overline w \overline x \overline y +  \overline w x z + wxy + w\overline x \overline  z$\\
 	\begin{tabular}{c|c|c|c|c|}
 		& 00&01&11&10\\
 		\hline
@@ -263,7 +263,7 @@
 		\hline
 	\end{tabular}
 	\subsection{9}
-	$f(w,x,y,z) = \Pi M(1,3,4,9,11,14) CI(w,x,y,z) = (x+\bar z)(\bar x + z)$\\
+	$f(w,x,y,z) = \Pi M(1,3,4,9,11,14) CI(w,x,y,z) = (x+\overline z)(\overline x + z)$\\
 	\begin{tabular}{c|c|c|c|c|}
 		& 00&01&11&10\\
 		\hline
@@ -278,7 +278,7 @@
 	\end{tabular}
 	\subsection{11}
 	$f(w,x,y,z) = \sum m(0,1,3,5,6,7,11,13,14,15) CI(w,x,y,z) = 4\\
-	f(w,x,y,z) = \bar y \bar w + yz + xy +xz$\\
+	f(w,x,y,z) = \overline y \overline w + yz + xy +xz$\\
 	\begin{tabular}{c|c|c|c|c|}
 		& 00&01&11&10\\
 		\hline
@@ -307,10 +307,10 @@
 		1&1&1& 	1\\
 	\end{tabular}
 	\begin{eqnarray*}
-		F_1 &=& (x+y+z).(\bar x + \bar y + z + xy + \bar x \bar y)\\
-		&=& (x+y+z).(\bar{\bar x} + \bar{\bar y} + z + xy + \overline{\bar x \bar y})\\
-		&=& (x+y+z)(\bar x + \bar y (1 + \bar x) + z +xy)\\
-		&=& (x+y+z)(\bar x + \bar y + z + xy)\\
+		F_1 &=& (x+y+z).(\overline x + \overline y + z + xy + \overline x \overline y)\\
+		&=& (x+y+z).(\overline{\overline x} + \overline{\overline y} + z + xy + \overline{\overline x \overline y})\\
+		&=& (x+y+z)(\overline x + \overline y (1 + \overline x) + z +xy)\\
+		&=& (x+y+z)(\overline x + \overline y + z + xy)\\
 		&=& (x+y+z)(\overline{xy} + xy + z)\\
 		&=& (x+y+z)(1+z)\\
 		F_1 &=& x+y+z
@@ -318,11 +318,11 @@
 	\subsection{}
 	\begin{eqnarray*}
 		F_2 &=& \sum m(0,4,6,7,14,15)\\
-		&=& \bar x \bar y \bar z \bar w + \bar x y \bar z \bar w + \bar x y z \bar w + \bar x yzw + xyz\bar w + xyzw\\
-		&=& \bar x \bar z \bar w(y+\bar y) +\bar x yz (w+\bar w) + xyz(w + \bar w)\\
-		&=& \bar x \bar z \bar w + \bar x y z + xyz\\
-		&=& \bar x \bar z \bar w + xy(x + \bar x)\\
-		F_2 &=& \bar x \bar z \bar w + xy
+		&=& \overline x \overline y \overline z \overline w + \overline x y \overline z \overline w + \overline x y z \overline w + \overline x yzw + xyz\overline w + xyzw\\
+		&=& \overline x \overline z \overline w(y+\overline y) +\overline x yz (w+\overline w) + xyz(w + \overline w)\\
+		&=& \overline x \overline z \overline w + \overline x y z + xyz\\
+		&=& \overline x \overline z \overline w + xy(x + \overline x)\\
+		F_2 &=& \overline x \overline z \overline w + xy
 	\end{eqnarray*}
 	\section{Exercice 2 : Formes canoniques}
 	\subsection{}
@@ -334,6 +334,69 @@
 		G_1 &=& \Pi M (1,5) \Rightarrow \textrm{ Forme Canonique Conjonctive}
 	\end{eqnarray*}
 	
+	\chapter{Les circuits combinatoires}
+	\section{Exercice 1}
+	\subsection{Encodeur de priorité}
+	\begin{tabular}{cccc||cc}
+		$E_3$ & $E_2$ & $E_1$ & $E_0$ & $S_1$ & $S_0$\\
+		\hline
+		0&0&0&1&0&0\\
+		0&0&1&*&0&1\\
+		0&1&*&*&0&1\\
+		1&*&*&*&1&1\\
+	\end{tabular}\\
+	\begin{eqnarray*}
+	S_1&=& E_3E_2+E_3=E_3+E_2\\
+	S_0 &=& E_3E_2E_1+E_3 = E_3+\overline{E_2} E_1
+	\end{eqnarray*}
+	\remarque{Théorème d'absorption}
+	\subsection{Comparateur 4 bits}
+	\subsubsection{Comparateur 1 bit}
+		\begin{tabular}{cc||ccc}
+			A & B & S & I & E\\
+			\hline
+			0&0&0&0&1\\
+			0&1&0&1&0\\
+			1&0&1&0&0\\
+			1&1&0&0&1
+		\end{tabular}
+		\begin{eqnarray*}
+			S&=& a\overline b\\
+			I&=& \overline a b\\
+			E&=& \overline a \overline b + ab = a \odot b
+		\end{eqnarray*}
+		\remarque{ $$a \overline \oplus b \Leftrightarrow a \odot b$$ }
+	\subsubsection{Comparateur 2 bits}% a_1a_0=>A b_1b_0=>B
+	$$ \underbrace{a_1a_0}_A + \underbrace{b_1b_0}_B$$
+	\begin{eqnarray*}
+		E &=&  (a_1 \odot b_1)(a_0 \odot b_O)\\
+		S &=&  a_1 \overline{b_1} + a_0\overline{b_0}(a_1 \odot b_1)\\
+		I &=& \overline{a_1}b_1 + \overline{a_0}b_0(a_1 \odot b_1)
+	\end{eqnarray*}
+	\subsubsection{Comparateur 4 bits -- Généralisation}
+	\begin{eqnarray*}
+		E &=&  (a_3 \odot b_3)(a_2 \odot b_2)(a_1 \odot b_1)(a_0 \odot b_0)\\
+		S &=& a_3\overline{b_3}+a_2\overline{b_2}(a_3 \odot b_3) + a_1 \overline{b_1} (a_3 \odot b_3)(a_2 \odot b_2) + a_0
+		\overline{b_0}(a_3\odot b_3)(a_2\odot b_2)(a_1 \odot b_1)\\
+		I &=&  \overline{a_3}b_3 + \overline{a_2}b_2(a_3 \odot b_3) + \overline{a_1} b_1 (a_3 \odot b_3)(a_2 \odot b_3) +
+		\overline{a_1}b_1 (a_3 \odot b_3)(a_2 \odot b_2) +\\&& \overline{a_0}b_0 (a_3 \odot b_3)(a_2 \odot b_2)(a_1 \odot b_1)
+	\end{eqnarray*}
+
+	\section{Exercice 2}
+	\begin{tabular}{cc||cccc}
+		$C_1$&$C_0$&$S_3$&$S_2$&$S_1$&$S_0$\\
+		\hline
+		0&0&$E_3$&$E_2$&$E_1$&$E_0$\\
+		0&1&0&$E_3$&$E_2$&$E_1$\\
+		1&0&0&0&$E_3$&$E_2$\\
+		1&1&0&0&0&$E_3$
+	\end{tabular}
+	\begin{eqnarray*}
+		S_3 &=&  \overline{C_1}\overline{C_0}E_3\\
+		S_2 &=&  \overline C_1 \overline C_0 E_2 + \overline{C_1} C_0 E_3\\
+		S_1 &=&  \overline{C_1} \overline{C_0}E_2 + C_1\overline{C_0}E_3\\
+		S_0 &=& \overline{C_1} \overline{C_0}E_0 + C_1 \overline{C_0}E_1+C_1\overline{C_0}E_2 + C_1C_0E_3
+	\end{eqnarray*}
 \end{document}
 
 
