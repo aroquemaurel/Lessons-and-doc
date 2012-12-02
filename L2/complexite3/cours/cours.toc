@@ -6,7 +6,7 @@
 \contentsline {subsection}{\numberline {1.1.1}La complexit\IeC {\'e} temporelle maximale}{1}{subsection.1.1.1}
 \contentsline {subsection}{\numberline {1.1.2}La complexit\IeC {\'e} temporelle moyenne}{1}{subsection.1.1.2}
 \contentsline {subsection}{\numberline {1.1.3}La complexit\IeC {\'e} temporelle minimale}{2}{subsection.1.1.3}
-\contentsline {subsection}{\numberline {1.1.4}Compairaison de complexit\IeC {\'e}s en fonction de la machine}{2}{subsection.1.1.4}
+\contentsline {subsection}{\numberline {1.1.4}Comparaison de complexit\IeC {\'e}s en fonction de la machine}{2}{subsection.1.1.4}
 \contentsline {section}{\numberline {1.2}Complexit\IeC {\'e} asymptotique}{2}{section.1.2}
 \contentsline {subsection}{\numberline {1.2.1}La complexit\IeC {\'e} asymptotique}{2}{subsection.1.2.1}
 \contentsline {subsection}{\numberline {1.2.2}Notation}{2}{subsection.1.2.2}
@@ -55,6 +55,10 @@
 \contentsline {paragraph}{Preuve dans le cas d'une racine double}{15}{section*.17}
 \contentsline {subsection}{\numberline {3.3.4}Recherche de solutions particuli\IeC {\`e}res pour les \IeC {\'e}quations r\IeC {\'e}currentes lin\IeC {\'e}aires homog\IeC {\`e}nes d'ordre 2}{15}{subsection.3.3.4}
 \contentsline {subsubsection}{\numberline {3.3.4.1}R\IeC {\'e}sum\IeC {\'e} de la m\IeC {\'e}thode pour les \IeC {\'e}quations homog\IeC {\`e}nes d'ordre 2}{15}{subsubsection.3.3.4.1}
+\contentsline {subsection}{\numberline {3.3.5}\IeC {\'E}quations r\IeC {\'e}currentes d'ordre $k$}{15}{subsection.3.3.5}
+\contentsline {paragraph}{Th\IeC {\'e}or\IeC {\`e}me 3}{16}{section*.18}
+\contentsline {subsection}{\numberline {3.3.6}Th\IeC {\'e}or\IeC {\`e}me pour les r\IeC {\'e}currences par divisions}{17}{subsection.3.3.6}
+\contentsline {paragraph}{Th\IeC {\'e}or\IeC {\`e}me 4}{17}{section*.19}
 \contentsline {chapter}{\numberline {4}Structure de donn\IeC {\'e}es et complexit\IeC {\'e}}{14}{chapter.4}
 \contentsline {chapter}{\numberline {A}Exercices}{15}{appendix.A}
 \contentsline {section}{\numberline {A.1}TD 1}{15}{section.A.1}
@@ -75,3 +79,5 @@
 \contentsline {subsubsection}{\numberline {A.1.12.1}a}{17}{subsubsection.A.1.12.1}
 \contentsline {subsubsection}{\numberline {A.1.12.2}b}{17}{subsubsection.A.1.12.2}
 \contentsline {subsubsection}{\numberline {A.1.12.3}c}{18}{subsubsection.A.1.12.3}
+\contentsline {subsection}{\numberline {A.1.13}18}{18}{subsection.A.1.13}
+\contentsline {subsubsection}{\numberline {A.1.13.1}a}{18}{subsubsection.A.1.13.1}

@@ -25,7 +25,7 @@
 
 	%			\remarque{$T_{\max}$ et $T_{\min}$ nous fournissent des bornes supérieures et inférieures.}
 
-	\subsection{Compairaison de complexités en fonction de la machine}
+	\subsection{Comparaison de complexités en fonction de la machine}
 	\begin{tabular}{| c | p{7cm} | p{7cm}|} 
 		\hline
 		\textbf{Complexité}& \multicolumn{2}{|c|}{\textbf{Nombre d'instructions pouvant executer la machine}}\\
@@ -70,15 +70,16 @@
 	\item $\frac{1}{5} + n = O(n\log_2 n)\ (n_0 = 2,\ c=2)$
 	\item $\frac{1}{5} n \log_2 n + n = \Omega(n \log n)\ (n_0=1,c=\frac{1}{5})$
 	\item $\forall k \geq 0$, $n^k = O(n^{k+1})$ mais $n^k \neq \Omega(n^{k+1})$
-	\item $\forall a,b >1, \log_a n = \Theta (\log_b n)$ car $\log_a n = \frac{\log_b n}{\log_b a}$ et $\log_b a$ est une constante. $\Rightarrow$ On a pas besoin de préciser la base de logarithme dnas une complexité asymptotique
+	\item $\forall a,b >1, \log_a n = \Theta (\log_b n)$ car $\log_a n = \frac{\log_b n}{\log_b a}$ et $\log_b a$ est une constante. $\Rightarrow$ On a
+		pas besoin de préciser la base de logarithme dans une complexité asymptotique
 	\item $2n^2 + 5n + 10 = 2n^2 + 0(n^2)$
 	\item Pour toute constante $c>0$, $C = \Theta(1)$
 	\item $2^n = o(3^n)$
 	\end{enumerate}
 	}
 	\remarque{\begin{enumerate}
-	\item O et $\Omega$ sont des pré-ordres\footnote{Relations reflexives et transitives} :\\ $f = O(f)$ et $f = O(g)$ et $g = O(h)) \Rightarrow f = O(h)$
-	\item $\Theta$ est une relation d'équivalence\footnote{relation reflexives, symétrique et transitive} : 
+	\item O et $\Omega$ sont des pré-ordres\footnote{Relations réflexives et transitives} :\\ $f = O(f)$ et $f = O(g)$ et $g = O(h)) \Rightarrow f = O(h)$
+	\item $\Theta$ est une relation d'équivalence\footnote{relation réflexives, symétrique et transitive} : 
 		$f = \Theta(g) \Leftrightarrow g = \Theta (f)$
 	\end{enumerate}
 	}
@@ -111,7 +112,7 @@
 		\item[Logarithmiques] $(\log n)^\sigma$ (où $\sigma > 0$), $\log\log n, \ldots$
 		\item[Polynomiales] $n^\gamma$ (où $\gamma > 0$), $n^\gamma(\log n)^\gamma$(où $\gamma > 0$)
 		\item[Exponentielles] $2^{\alpha n^\beta}$ (où $\alpha > 0$ et $0 < \beta \leq 1$), par exemple $2^n$, $4^n$, $2^{\sqrt{n}}$
-		\item[Supraexponentielles] $n!$, $n^n$, $2^{n^2}$, \ldots
+		\item[Supra exponentielles] $n!$, $n^n$, $2^{n^2}$, \ldots
 	\end{description}
 	\remarque{
 		Il existe des fonctions intermédiaires(par exemple $n^{\log_2 n}$) mais ces fonctions se rencontrent très rarement dans l'analyse de complexité d'algorithmes
