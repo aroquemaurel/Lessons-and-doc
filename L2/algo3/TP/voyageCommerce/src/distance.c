@@ -15,7 +15,7 @@
  * =====================================================================================
  */
 #include "distance.h"
-
+#include "util.h"
 void distance_new(Distance* pDistance, Town* pFirstTown, Town* pSecondTown) {
 	pDistance->firstTown = *pFirstTown;
 	pDistance->secondTown = *pSecondTown;

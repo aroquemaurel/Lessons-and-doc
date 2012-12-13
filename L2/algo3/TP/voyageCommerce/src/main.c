@@ -20,10 +20,9 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-#include "parsing.h"
 #include "errors.h"
+#include "parsing.h"
 #include "instance.h"
-#include "town.h"
 
 int main (int argc, char** argv) {
 	char* fileName;	

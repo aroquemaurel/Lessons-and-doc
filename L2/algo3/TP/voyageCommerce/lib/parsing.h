@@ -19,6 +19,7 @@
 #ifndef __PARSING
 #define __PARSING
 
+#include <stdbool.h>
 #include "util.h"
 #include "errors.h"
 

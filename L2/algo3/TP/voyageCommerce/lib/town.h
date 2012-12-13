@@ -19,7 +19,7 @@
 #define __TOWN
 #include <stdio.h>
 #include <stdlib.h>
-//#include "util.h"
+
 typedef struct {
 	int x;
 	int y;

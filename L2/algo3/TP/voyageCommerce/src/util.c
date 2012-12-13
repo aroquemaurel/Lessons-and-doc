@@ -25,36 +25,16 @@ int util_searchFirstOccurenceInArray(char** pArray, const int pSize, char* pSear
 	return (position == pSize-1 && strcmp(pArray[position], pSearch) != 0) ? -1 : position;
 }
 
-char** util_split(char* str, const char c, int* size ) {
-	static char* tmp[256];
-	int current = 0;
-	tmp[current++] = str;
-
-	while(*str) {
-		if (*str == c) {
-			*str = '\0';
-			tmp[current++] = str+1; 
-		}
-
-		++str;
-	}
-	tmp[current] = 0;
-
-	*size = current;
-
-	return tmp;
-} 
-
 inline void util_displayVerboseMode(char* pString) {
 	if(gVerboseMode) {
 		printf("%s", pString);
 	}
 }
 
-void util_reverseArray(int* pTab, const int pBegin, const int pEnd) {
+void util_reverseArray(Town* pTab, const int pBegin, const int pEnd) {
 	int i = pBegin;
 	int j = pEnd;
-	int buff;
+	Town buff;
 
 	while(i < j) {
 		buff = pTab[i];
@@ -106,3 +86,4 @@ void util_swap(int* a, int* b) {
 	*a = *b;
 	*b = buff;
 }
+

@@ -68,7 +68,6 @@ void instance_push(Instance* pInstance, const Town pTown) { // TODO exception nb
 void instance_initializeDistances(Instance* pInstance) {
 	int i, j, k = 0;
 	Distance buffDistance;
-
 	for(i = 0 ; i <= pInstance->nbTown; ++i) {
 		for(j = 0 ; j < i ; ++j) {
 			distance_new(&buffDistance, &(pInstance->towns[i-1]), &(pInstance->towns[j]));
@@ -76,41 +75,35 @@ void instance_initializeDistances(Instance* pInstance) {
 			++k;
 		}
 	}
-
-	/*  Display vecteur */
-	for(i = 0 ; i < util_sum(0, pInstance->nbTown); ++i) {
-		printf("%d%d(%.2f) ", pInstance->distances[i].firstTown.id, pInstance->distances[i].secondTown.id, pInstance->distances[i].distance);  // TODO Remplacer i/j par distances
+	instance_displayLinearVector(*pInstance);
+	instance_displayMatrix(*pInstance);
+}
+void instance_displayLinearVector(Instance pInstance) {
+	int i;
+	for(i = 0 ; i < util_sum(0, pInstance.nbTown); ++i) {
+		printf("%d%d(%.2f) ", pInstance.distances[i].firstTown.id, pInstance.distances[i].secondTown.id, pInstance.distances[i].distance);  
 	}
-	printf("\n\n");
+	printf("\n");
+}
 
-	int previous = pInstance->distances[0].firstTown.id; 
-	k = 0;
-	for(i = 0 ; i < util_sum(0, pInstance->nbTown); ++i) {
-		if(previous != pInstance->distances[i].firstTown.id) {
-			for(j = 0; j < pInstance->nbTown - k -1 ; ++j) {
-				distance = distance(pInstance->distances, k, j);
-		if(pInstance->distances[i].distance < 10) {
-			printf("   ");
-		} else if(pInstance->distances[i].distance < 100) {
-			printf("  ");
-		} else if(pInstance->distances[i].distance < 1000) {
-			printf(" ");
-		}
-//				printf("00 ", pInstance->distances[10].firstTown.id);  
-//				TODO symétrie
-				printf("%.2f ", distance);
-			}
+void instance_displayMatrix(Instance pInstance) { 
+	int previous = pInstance.distances[0].firstTown.id; 
+	int i, k;
+
+	for(i = 0, k = 0 ; i < util_sum(0, pInstance.nbTown); ++i) {
+		if(previous != pInstance.distances[i].firstTown.id) {
 			++k;
 			printf("\n");
-			previous = pInstance->distances[i].firstTown.id; 
+			previous = pInstance.distances[i].firstTown.id; 
 		}
-		if(pInstance->distances[i].distance < 10) {
+		if(pInstance.distances[i].distance < 10) {
 			printf("   ");
-		} else if(pInstance->distances[i].distance < 100) {
+		} else if(pInstance.distances[i].distance < 100) {
 			printf("  ");
-		} else if(pInstance->distances[i].distance < 1000) {
+		} else if(pInstance.distances[i].distance < 1000) {
 			printf(" ");
 		}
-		printf("%.2f ", pInstance->distances[i].distance);  // TODO Remplacer i/j par distances
+		printf("%.2f ", pInstance.distances[i].distance);  // TODO Remplacer i/j par distances
 	}
+	printf("\n");
 }
