@@ -19,14 +19,14 @@
 #ifndef __TOUR
 #define __TOUR
 
-#include "instance.h"
-#include "util.h"
 #include <stdlib.h>
 #include <stdbool.h>
+
+#include "town.h"
 typedef struct {
 }Tour;
 
-bool tour_nextPermutation(int* pPermutation, const int pSize);
+bool tour_nextPermutation(Town* pPermutation, const int pSize);
 #endif
 
 

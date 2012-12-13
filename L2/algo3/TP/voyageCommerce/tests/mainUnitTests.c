@@ -26,14 +26,16 @@ int main(int argc, char *argv[]) {
 	test_searchFirstOccurenceInArray(4);
 	test_searchFirstOccurenceInArray(5);
 
-	util_reverseArray(test, 0, 5);
+//	util_reverseArray(test, 0, 5);
 	util_displayArray(test, 11);
 	printf("\n");
   
 	util_displayArray(test2, 3);
-	while(tour_nextPermutation(test2, 3)) { // TODO testUnitaire. Semble correct. 
-		util_displayArray(test2, 3);
+/*  while(tour_nextPermutation(test2, 3)) { // TODO testUnitaire. Semble correct. 
+ *  util_displayArray(test2, 3);
 		printf("\n");
 	}
+*/
+	// TODO distance. Util
 	return 0;
 }

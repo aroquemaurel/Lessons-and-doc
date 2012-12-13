@@ -16,19 +16,19 @@
  */
 #include "tour.h"
 
-bool tour_nextPermutation(int* pPermutation, const int pSize) {
+bool tour_nextPermutation(Town* pPermutation, const int pSize) {
 	int i=pSize-1;
-	int buff;
+	Town buff;
 	bool found=false;
 	int k=pSize-1; 
 
-	while(pPermutation[k] >= pPermutation[k+1] && k >= 0) {
+	while(pPermutation[k].id >= pPermutation[k+1].id && k >= 0) {
 		--k;
 	}
 
 	if(k != -1) {
 		found = true;
-		while(pPermutation[k] >= pPermutation[i] && i > k+1) {
+		while(pPermutation[k].id >= pPermutation[i].id && i > k+1) {
 			--i;
 		}
 		buff = pPermutation[k];
