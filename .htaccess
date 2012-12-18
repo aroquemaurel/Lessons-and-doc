@@ -1,3 +1,8 @@
+AuthName "Page d'administration protégée"
+AuthType Basic
+AuthUserFile "/data/dev/cours/.htpasswd"
+Require valid-user
+
 HeaderName /.imgftp/head.htm
 ReadmeName /.imgftp/foot.htm
 

@@ -1,1 +1,28 @@
 \chapter{Structure de données et complexité}
+\section{Les principales structures de données}
+Les opérations les plus courantes: 
+\begin{description}
+	\item[I]Insertion
+	\item[A] Test d'appartenance
+	\item[S] Suppression
+	\item[SD, SP, SM] Suppression du dernier élément du premier élément, de l'élément minimum.
+\end{description}
+
+\begin{tabular}{|c|c|c}
+	\textbf{TDA}\footnotemark & \textbf{Opération de base} & \textbf{Réalisation pour laquelle ces opérations sont on en O(log n)}\\
+	\hline
+	Pile & I, SD & liste chainées\\
+	\hline
+	File & I, SD & liste chainée avec deux pointeurs début et fin\\
+	\hline
+	index statique & A & tableau trié\\
+	\hline
+	file de priorité & I, SM & tas\\
+	\hline
+	ensemble & A, I, S & table d'hâchage\footnotemark\\
+	\hline
+	ensemble trié & A, I, S, SM & ABR, arbre rouge-noir, arbre AVL, B-arbre\footnotemark\\
+\end{tabular} 
+\footnotetext{Type abstrait de données}
+\footnotetext{Complexité moyenne O(log n)}
+\footnotetext{Complexité moyenne O(log n)}

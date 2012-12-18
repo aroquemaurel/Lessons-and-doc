@@ -1,0 +1,114 @@
+\chapter{Codage de l'information}
+\section{Pourquoi coder ?}
+La communication nécessite la \textbf{compréhension} entre les deux entités communicantes. L'émetteur
+envoie de l'information au récepteur qui doit savoir l'\textbf{interpréter} pour la comprendre. Ainsi,
+le codage de l'information est la première étape de toute communication.
+\section{Comment coder ?}
+L'être humain mit en place des langages et créa l'écrit. Au début, l'écrit consistait
+essentiellement dans des dessins puis vint un alphabet plus simple à utiliser qui offrait de
+multiples combinaisons pour une plus grande richesse de l'expression. En réalité, les
+caractères de l'écrit ne sont que des symboles interprétables. L'écrit se développa et la
+communication par la voie écrite fut institutionnalisé en France par la création de la poste
+royale en 1464 par Louis XI.
+
+L'invention du télégraphe électrique (1832) par P. Shilling va révolutionner le monde de la
+communication qui allait s'effectuer par la voie des ondes. Le ``fil qui chante'' et qui va
+plus vite que le messsager était si important que le ministère de l'intérieur allait créer
+l'Administration du Télégraphe en 1837. Mais, il était nécessaire de codifier les caractères à
+	transmettre. Ce fut l'oeuvre de S. Morse qui, en 1837, développa l'alphabet télégraphique. Le
+	``Morse'' codait chaque caractère en une suite de signaux électriques de courte (point) ou de
+	longue (trait) durée.
+
+	L'autorisation d'accès privé au télégraphe ne fut donnée qu'en 1851 par Napoléon III. En 1879,
+	le premier ministère des postes et du télégraphe (P et T) fut créé. Le téléphone allait
+	apparaître à cette époque.
+
+	En 1917, E. Baudot mit au point un code qui allait être utilisé sur le réseau télégraphique
+	commuté (Télex). Des machines spéciales munies d'un clavier permettait de générer le signal
+	correspondant au texte tapé. Ainsi, si dans le ``Morse'', il fallait que la personne connaisse
+	le codage pour le générer, ceci n'était pas nécessaire avec le télex. Les premiers terminaux
+	``numériques'' apparaissaient.
+
+	Lorsque l'Informatique se développa, il était nécessaire de constituer un codage adapté. En
+	effet, la machine ne comprend que des éléments binaires (bits) : 0 et 1. Le codage consistera
+	à combiner plusieurs bits. Ainsi, une dissociation allait se faire entre l'information et le
+	signal généré.
+
+	Le codage de l'information s'effectue en deux étapes:
+
+	\begin{itemize}
+		\item codage sous forme binaire (ASCII, EBCDIC, DCB\ldots);
+		\item codage de l'élément binaire par un état physique (tension, fréquence\ldots);
+	\end{itemize}
+
+	Dans le cas où deux équipements veulent communiquer en utilisant des codes différents, il est
+	nécessaire de disposer alors de fonctions de transcodage.
+
+	Nous nous intéressons dans ce paragraphe à la première étape, la seconde étant traitée dans le
+	paragraphe <<Techniques de transmission>>.
+
+	\section{Différents codes}
+	\subsection{Le code morse}
+	Le code Morse est un des premiers codes développés. Chaque caractère est codé par une
+	combinaison de points et de traits. Le code est un code statistique: les caractères les plus
+	fréquemment utilisés sont codés avec peu d'éléments tandis que les caractères les moins
+	fréquemment utilisé auront une longueur plus importante.
+
+	\begin{tabular}{cccccccccc}
+		A&.--&B&--\ldots&C&--.--.&D&--\ldots&E&.
+	\end{tabular}
+
+	L'inconvénient technique de ce code est que DE peut être confondu avec B (-\ldots). C'est
+	pourquoi, un silence (pause) entre deux caractères était nécessaire.
+
+	\subsection{Le code Baudot}
+	Le code Baudot est un des premiers codes utilisés avec une machine. Chaque caractère est codé
+	par une combinaison de 0 et de 1. Le code est un code à 5 bits. Il est aussi appelé code
+	télégraphique ou Alphabet International (AI) \no 2 ou code CCITT \no 2.
+
+	Avec 5 bits, nous ne pouvons avoir que 32 combinaisons. Or si on désire coder les lettres er
+	les chiffres, nous ne disposons pas d'assez de combinaisons. C'est pourquoi le code Baudot
+	contient deux jeux de caractères appelés ``Lettres'' (``Lower Case'') et ``Chiffres'' (``Upper
+	Case''). En fait, l'ensemble ``Chiffres'' contient aussi d'autres symboles (ponctuation,
+	\&,\#\ldots). Deux caractères ``Inversion Lettres'' (code 29) et ``Inversion Chiffres'' (code
+	30) permet de commuter entre les deux ensembles. Evidemment, l'inconvénient réside dans des
+	commutations fréquentes. D'autre part, ce code bien qu'il soit plus riche que le code Morse ne
+	traite pas les minuscules et certains symboles.
+
+
+	\subsection{Le code ASCII}
+	L'apparition de l'informatique et la nécessité de disposer de codes plus riches et plus
+	fonctionnels va mettre en évidence les limitations des codes précédents et va donner naissance
+	à des codes contenant plus de bits. En 1963, un code à 7 bits va être développé aux Etats-Unis
+	par l'ANSI. Ce code est connu sous le nom d'ASCII\footnote{American Standard Code for Information
+Interchange}ou Alphabet International \no 5 ou Code CCITT \no 5 ou ISO 646.
+
+Avec 7 bits, le code ASCII permet la représentation des lettres (majuscules et minuscules),
+des chiffres, de différents symboles (nationaux,\ldots) et des caractères de commandes (de
+terminal et de communication). C'est un code réellement conçu pour l'échange de données et la
+gestion de la communication.
+
+Le codage des lettres et des chiffres facilite le tri et le passage de majuscule aux
+minuscules (et vice versa).
+
+Des caractères ont été prévus pour :
+
+\begin{itemize}
+	\item les commandes de mise en page (Retour Chariot, Nouvelle Ligne\ldots);
+	\item les commandes de périphériques (Device Control 1 à 4);
+	\item les commandes de communication et de gestion de la liaion (ACK, NAK\ldots);
+	\item \ldots
+\end{itemize}
+
+Enfin, pour munir ce code de mécanisme de détection d'erreur, un bit a été rajouté permettant
+ce contrôle. Ce bit est appelé bit de parité en raison du mécanisme mis en oeuvre. C'est donc
+un code sur 8 bits (7+1).
+
+Le jeu de caractères ASCII a trouvé ses limites lorsqu'on a voulu coder des symboles
+graphiques supplémentaires. C'est pourquoi, il fut étendu avec la norme ISO 4873.
+
+L'usage du code ASCII (7+1) dans des protocoles de transmission pose un problème lors des
+transmissions de données codées ASCII 8 bits ou lors des transmissions de données non ASCII
+(Images, voix, exécutables\ldots).
+
+

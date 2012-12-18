@@ -1,41 +1,65 @@
 \select@language {french}
-\contentsline {part}{I\hspace {1em}Introduction aux r\IeC {\'e}seaux informatiques}{5}{part.1}
-\contentsline {chapter}{\numberline {1}Histoire de la communication}{6}{chapter.1}
+\contentsline {part}{I\hspace {1em}Introduction aux r\IeC {\'e}seaux informatiques}{6}{part.1}
+\contentsline {chapter}{\numberline {1}Histoire de la communication}{7}{chapter.1}
 \contentsline {chapter}{\numberline {2}\'Evolution des r\IeC {\'e}seaux}{8}{chapter.2}
 \contentsline {paragraph}{Co\IeC {\^u}ts des \IeC {\'e}quipements Informatiques / Co\IeC {\^u}ts de la Communication}{8}{section*.2}
 \contentsline {paragraph}{Syst\IeC {\`e}me de T\IeC {\'e}l\IeC {\'e}traitement}{8}{section*.3}
 \contentsline {section}{\numberline {2.1}Les \IeC {\'e}quipements cr\IeC {\'e}\IeC {\'e}s}{8}{section.2.1}
-\contentsline {section}{\numberline {2.2}D\IeC {\'e}mocratisation de l'Informatique}{9}{section.2.2}
-\contentsline {chapter}{\numberline {3}Classification}{10}{chapter.3}
-\contentsline {chapter}{\numberline {4}Topologie}{12}{chapter.4}
-\contentsline {section}{\numberline {4.1}Topologie point \IeC {\`a} point}{12}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Topologie en \IeC {\'e}toile}{12}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Topologie en boucle}{13}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}Topologie maill\IeC {\'e}e}{13}{subsection.4.1.3}
-\contentsline {section}{\numberline {4.2}Topologie \IeC {\`a} diffusion}{14}{section.4.2}
-\contentsline {section}{\numberline {4.3}Choix d'une topologie}{15}{section.4.3}
-\contentsline {chapter}{\numberline {5}Normalisation}{16}{chapter.5}
-\contentsline {section}{\numberline {5.1}D\IeC {\'e}finition et utilit\IeC {\'e} de la normalisation}{16}{section.5.1}
-\contentsline {section}{\numberline {5.2}Les principaux organismes de normalisation}{16}{section.5.2}
-\contentsline {chapter}{\numberline {6}Architecture de communication}{19}{chapter.6}
-\contentsline {section}{\numberline {6.1}D\IeC {\'e}finition d'une architecture de communication}{19}{section.6.1}
-\contentsline {section}{\numberline {6.2}Les services offerts par une architecture de communication}{19}{section.6.2}
-\contentsline {section}{\numberline {6.3}Pourquoi normaliser l'architecture ?}{20}{section.6.3}
-\contentsline {section}{\numberline {6.4}Le mod\IeC {\`e}le OSI}{21}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Utilit\IeC {\'e} et objectifs}{21}{subsection.6.4.1}
-\contentsline {subsection}{\numberline {6.4.2}Les couches}{22}{subsection.6.4.2}
-\contentsline {subsubsection}{\numberline {6.4.2.1}Couche 1}{22}{subsubsection.6.4.2.1}
-\contentsline {subsubsection}{\numberline {6.4.2.2}Couche 2}{22}{subsubsection.6.4.2.2}
-\contentsline {subsubsection}{\numberline {6.4.2.3}Couche 3}{22}{subsubsection.6.4.2.3}
-\contentsline {subsubsection}{\numberline {6.4.2.4}Couche 4}{23}{subsubsection.6.4.2.4}
-\contentsline {subsubsection}{\numberline {6.4.2.5}Couche 5}{23}{subsubsection.6.4.2.5}
-\contentsline {subsubsection}{\numberline {6.4.2.6}Couche 6}{23}{subsubsection.6.4.2.6}
-\contentsline {subsubsection}{\numberline {6.4.2.7}Couche 7}{23}{subsubsection.6.4.2.7}
-\contentsline {subsection}{\numberline {6.4.3}Int\IeC {\'e}raction entre entit\IeC {\'e}s}{23}{subsection.6.4.3}
-\contentsline {subsubsection}{\numberline {6.4.3.1}D\IeC {\'e}finitions}{24}{subsubsection.6.4.3.1}
-\contentsline {subsection}{\numberline {6.4.4}Transfert des donn\IeC {\'e}es utilisateurs}{25}{subsection.6.4.4}
-\contentsline {paragraph}{Segmentation/R\IeC {\'e}assemblage}{26}{section*.4}
-\contentsline {subsection}{\numberline {6.4.5}Int\IeC {\'e}ractions entre entit\IeC {\'e}s}{26}{subsection.6.4.5}
-\contentsline {part}{II\hspace {1em}Transmission des donn\IeC {\'e}es}{28}{part.2}
-\contentsline {chapter}{\numberline {7}Codage de l'Information}{29}{chapter.7}
-\contentsline {chapter}{\numberline {A}TD 1}{30}{appendix.A}
+\contentsline {section}{\numberline {2.2}D\IeC {\'e}mocratisation de l'Informatique}{8}{section.2.2}
+\contentsline {chapter}{\numberline {3}Classification}{9}{chapter.3}
+\contentsline {chapter}{\numberline {4}Topologie}{11}{chapter.4}
+\contentsline {section}{\numberline {4.1}Topologie point \IeC {\`a} point}{11}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Topologie en \IeC {\'e}toile}{11}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Topologie en boucle}{12}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Topologie maill\IeC {\'e}e}{12}{subsection.4.1.3}
+\contentsline {section}{\numberline {4.2}Topologie \IeC {\`a} diffusion}{13}{section.4.2}
+\contentsline {section}{\numberline {4.3}Choix d'une topologie}{14}{section.4.3}
+\contentsline {chapter}{\numberline {5}Normalisation}{15}{chapter.5}
+\contentsline {section}{\numberline {5.1}D\IeC {\'e}finition et utilit\IeC {\'e} de la normalisation}{15}{section.5.1}
+\contentsline {section}{\numberline {5.2}Les principaux organismes de normalisation}{15}{section.5.2}
+\contentsline {chapter}{\numberline {6}Architecture de communication}{18}{chapter.6}
+\contentsline {section}{\numberline {6.1}D\IeC {\'e}finition d'une architecture de communication}{18}{section.6.1}
+\contentsline {section}{\numberline {6.2}Les services offerts par une architecture de communication}{18}{section.6.2}
+\contentsline {section}{\numberline {6.3}Pourquoi normaliser l'architecture ?}{19}{section.6.3}
+\contentsline {section}{\numberline {6.4}Le mod\IeC {\`e}le OSI}{19}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Utilit\IeC {\'e} et objectifs}{19}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}Les couches}{21}{subsection.6.4.2}
+\contentsline {subsubsection}{\numberline {6.4.2.1}Couche 1}{21}{subsubsection.6.4.2.1}
+\contentsline {subsubsection}{\numberline {6.4.2.2}Couche 2}{21}{subsubsection.6.4.2.2}
+\contentsline {subsubsection}{\numberline {6.4.2.3}Couche 3}{21}{subsubsection.6.4.2.3}
+\contentsline {subsubsection}{\numberline {6.4.2.4}Couche 4}{21}{subsubsection.6.4.2.4}
+\contentsline {subsubsection}{\numberline {6.4.2.5}Couche 5}{22}{subsubsection.6.4.2.5}
+\contentsline {subsubsection}{\numberline {6.4.2.6}Couche 6}{22}{subsubsection.6.4.2.6}
+\contentsline {subsubsection}{\numberline {6.4.2.7}Couche 7}{22}{subsubsection.6.4.2.7}
+\contentsline {subsection}{\numberline {6.4.3}Int\IeC {\'e}raction entre entit\IeC {\'e}s}{22}{subsection.6.4.3}
+\contentsline {subsubsection}{\numberline {6.4.3.1}D\IeC {\'e}finitions}{22}{subsubsection.6.4.3.1}
+\contentsline {subsection}{\numberline {6.4.4}Transfert des donn\IeC {\'e}es utilisateurs}{24}{subsection.6.4.4}
+\contentsline {paragraph}{Segmentation/R\IeC {\'e}assemblage}{25}{section*.4}
+\contentsline {subsection}{\numberline {6.4.5}Int\IeC {\'e}ractions entre entit\IeC {\'e}s}{25}{subsection.6.4.5}
+\contentsline {part}{II\hspace {1em}Transmission des donn\IeC {\'e}es}{26}{part.2}
+\contentsline {chapter}{\numberline {7}Codage de l'information}{27}{chapter.7}
+\contentsline {section}{\numberline {7.1}Pourquoi coder ?}{27}{section.7.1}
+\contentsline {section}{\numberline {7.2}Comment coder ?}{27}{section.7.2}
+\contentsline {section}{\numberline {7.3}Diff\IeC {\'e}rents codes}{28}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Le code morse}{28}{subsection.7.3.1}
+\contentsline {subsection}{\numberline {7.3.2}Le code Baudot}{28}{subsection.7.3.2}
+\contentsline {subsection}{\numberline {7.3.3}Le code ASCII}{28}{subsection.7.3.3}
+\contentsline {chapter}{\numberline {8}Communication entre deux terminaux}{29}{chapter.8}
+\contentsline {section}{\numberline {8.1}Quels sont les \IeC {\'e}l\IeC {\'e}ments constitutifs d'un syst\IeC {\`e}me de communication ?}{29}{section.8.1}
+\contentsline {section}{\numberline {8.2}Qu'appelle-t-on transmission parall\IeC {\`e}le et transmission s\IeC {\'e}rie ?}{29}{section.8.2}
+\contentsline {section}{\numberline {8.3}Quelles sont les diff\IeC {\'e}rences entre une transmission asynchrone et une transmission synchrone ?}{30}{section.8.3}
+\contentsline {section}{\numberline {8.4}Comment r\IeC {\'e}sout-on le probl\IeC {\`e}me de synchronisation des horloges Emission et R\IeC {\'e}ception ?}{31}{section.8.4}
+\contentsline {section}{\numberline {8.5}Qu'appelle-t-on transmission simplex et transmission duplex ?}{31}{section.8.5}
+\contentsline {section}{\numberline {8.6}Combien de fils sont n\IeC {\'e}cessaires pour la transmission ?}{32}{section.8.6}
+\contentsline {section}{\numberline {8.7}Quelle est la diff\IeC {\'e}rence entre d\IeC {\'e}bit binaire et rapidit\IeC {\'e} de modulation ?}{32}{section.8.7}
+\contentsline {chapter}{\numberline {9}Analyse spectrale}{33}{chapter.9}
+\contentsline {section}{\numberline {9.1}Quelles sont les diff\IeC {\'e}rentes formes physiques utilis\IeC {\'e}es pour le transport de l'information ?}{33}{section.9.1}
+\contentsline {section}{\numberline {9.2}Quelles sont les caract\IeC {\'e}ristiques d'un signal analogique \IeC {\'e}l\IeC {\'e}mentaire ?}{33}{section.9.2}
+\contentsline {section}{\numberline {9.3}Comment peut-on caract\IeC {\'e}riser un signal quelconque ?}{34}{section.9.3}
+\contentsline {section}{\numberline {9.4}Quelles sont les d\IeC {\'e}formations affectant un signal ?}{34}{section.9.4}
+\contentsline {paragraph}{L'affaiblissement}{34}{section*.5}
+\contentsline {paragraph}{Les distorsions}{34}{section*.6}
+\contentsline {paragraph}{Les bruits}{35}{section*.7}
+\contentsline {section}{\numberline {9.5}Quelle est la capacit\IeC {\'e} d'un support de transmission ?}{35}{section.9.5}
+\contentsline {chapter}{\numberline {10}Techniques de transmission}{36}{chapter.10}
+\contentsline {chapter}{\numberline {11}Multiplexage}{37}{chapter.11}
