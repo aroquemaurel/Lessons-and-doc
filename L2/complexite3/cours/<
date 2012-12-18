@@ -1,0 +1,13 @@
+\chapter{Structure de données et complexité}
+\section{Les principales structures de données}
+Les opérations les plus courantes: 
+\begin{description}
+	\item[I]Insertion
+	\item[A] Test d'appartenance
+	\item[S] Suppression
+	\item[SD, SP, SM] Suppression du dernier élément du premier élément, de l'élément minimum.
+\end{description}
+
+\begin{tabular}{|c|c|c}
+	\begin
+\end{tabular} 

@@ -46,9 +46,16 @@
 	\section{Commande et outils de tests réseau}
 	\subsection{Commandes utiles}
 	\subsubsection{\texttt{ifconfig} ou \texttt{ipconfig}}
+	\texttt{ifconfig} et \texttt{ipconfig} permettent d'affiches les informations de chacunes des interfaces résea : L'adresse IP, et l'adresse \mac étant les
+	principales informations utilisées.
 	\subsubsection{\texttt{host} ou \texttt{nslookup}}
+	\texttt{host} est une commande permettant d'afficher les redirections DNS
 	\subsubsection{\texttt{whois}}
+	\texttt{whois} est une commande permettant d'afficher des informations sur le propriétaire d'un nom de domaine.
 	\subsection{Le \texttt{ping}}
+	Le \texttt{ping} permet de tester la connexion réseau entre deux équipements, le premier équipement envoie un paquet jusqu'à un autre équipement, celui-ci
+	doit répondre en renvoyant le paquet, si ce paquet nous revient, la connexion est effective, sinon il y a un problème, ou l'équipement refuse de renvoyer ce
+	paquet même s'il l'a bien reçus.
 	\subsection{}
 \begin{lstlisting}[language=bash, basicstyle=\scriptsize\ttfamily]
 C:\Users\21003495.MIG.000>ping 130.120.8.170
@@ -135,10 +142,79 @@ ouvea.edu.ups-tlse.fr
 \end{lstlisting}
 	\subsection{\http}
 	\subsubsection{Récupérer une ressource}
-	\subsubsection{}
+	IL faut utiliser la commande \http{}  \texttt{GET}, celle-ci nous renverra le fichier ou la page web demandée, avec le code de retour 200, pour dire que tout
+	s'est bien passé, dans les autres cas, un code d'erreur différent de 200 est renvoyé pour que nous sachions pour quelle raison le fichier demandée nous ai
+	pas délivré.
+	\subsubsection{Telnet \http}
+\begin{lstlisting}[language=bash, basicstyle=\scriptsize\ttfamily]
+telnet http://www.crie-mig-iup.ups-tlse.fr 80
+GET /u3.html HTTP/1.0
+Host: www.crie-mig-iup.ups-tlse.fr
+Referer: http://www.crie-mig-iup.ups-tlse.fr/
+User-Agent: CERN-LineMode/2.15 libwww/2.17b3
+\end{lstlisting}	
+\begin{lstlisting}[caption=Réponse du serveur, language=bash, basicstyle=\scriptsize\ttfamily]
+HTTP/1.1 200 OK
+Date: Tue, 27 Nov 2012 07:52:40 GMT
+Server: Apache
+Last-Modified: Tue, 09 Oct 2012 13:24:38 GMT
+ETag: ``10615f2-14e4-4cba042841180''
+Accept-Ranges: bytes
+Content-Length: 5348
+Connection: close
+Content-Type: text/html
+#suivi du code HTML de la page
+\end{lstlisting}
 	\subsection{\ftp}
+\begin{lstlisting}[language=bash, basicstyle=\scriptsize\ttfamily]
+-bash-3.00$\$$ telnet ftp.cict.fr 21
+Trying 195.220.59.23...
+Connected to aurore.cict.fr.
+Escape character is '^2]'.
+220 aurore.cict.fr FTP server (Version wu-2.6.2(1) Wed Oct 29 11:07:38 MET 2003) ready.
+USER anonymous
+331 Guest login ok, send your complete e-mail address as password.
+PASS adresse@mail.com
+230 Guest login ok, access restrictions apply.
+SYST
+215 UNIX Type: L8
+PWD
+257 ``/'' is current directory.
+CWD /pub/doc
+250 CWD command successful.
+PASV
+227 Entering Passive Mode (195,220,59,23,153,153)
+\end{lstlisting}
 	\subsubsection{Connexion de contrôle}
-	\subsubsection{COnnexion de données}
+	Numéro port = $153\times 256 + 153 = 39321$
+\begin{lstlisting}[caption=connexion de contrôle, language=bash, basicstyle=\scriptsize\ttfamily]
+PASV
+227 Entering Passive Mode (195,220,59,23,153,153)
+LIST
+150 Opening ASCII mode data connection for /bin/ls.
+226 Transfer complete.
+\end{lstlisting}
+	\subsubsection{Connexion de données}
+\begin{lstlisting}[caption=connexion de contrôle, language=bash, basicstyle=\scriptsize\ttfamily]
+-bash-3.00$\$$ telnet 195.220.59.23 39321
+Trying 195.220.59.23\ldots
+Connected to 195.220.59.23.
+Escape character is '^]'.
+total 3048
+drwxrwxr-x   4 ftpadm   cict        4096 Mar  6  2012 .
+dr-xrwxr-x   4 ftp      cict        4096 Oct  5 14:17 ..
+-rw-rw-r--   1 ftpadm   cict       63040 Jan 29  1993 RFCs.ps
+-rw-rw-r--   1 ftpadm   cict       26695 Jan 29  1993 WAIS.txt
+-rw-rw-r--   1 ftpadm   cict      492528 Jan 29  1993 Zen.intro.ps
+-rw-rw-r--   1 ftpadm   cict      624664 Jun 21  1995 apprends_latex.ps
+-rw-rw-r--   1 ftpadm   cict       16998 Jan 29  1993 biblis.internet.txt
+-rw-rw-r--   1 ftpadm   cict       62766 Jan 29  1993 ftp.anonymous.ps
+-rw-rw-r--   1 ftpadm   cict      217127 Jan 21  1994 micro-reseau.ps.210194
+drwxrwxr-x   3 ftpadm   cict        4096 Apr 28  1995 rezo
+drwxrwxr-x   2 ftpadm   cict        4096 Oct 10  1994 xlispstat
+Connection to 195.220.59.23 closed by foreign host.
+-bash-3.00$\$$
+\end{lstlisting}
 \end{document}
 
 

@@ -1,0 +1,10 @@
+insertion(T, n, x):
+	n := n + 1;
+	T[n] := x;
+	i := n; 
+	p := i/2;
+	tantque (i > 2) et T[i] < T[p] faire
+		echanger(T[i], T[p]);
+		i := p;
+		p := i/2;
+	fin tantque;
