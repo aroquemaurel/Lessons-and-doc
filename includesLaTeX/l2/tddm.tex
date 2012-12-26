@@ -3,7 +3,12 @@
 \date{\today}
 
 \chead{Antoine de \bsc{Roquemaurel} (Groupe 1.1)}
-\rhead{\typeDoc~\no\numero}
+\ifthenelse{\equal{\numero}{}}{
+\numero{}
+}
+{
+	\rhead{\typeDoc~\no\numero}
+}
 \lhead{\titre}
 %\makeindex
 
@@ -64,8 +69,8 @@
 \setboolean{monBool}{true}
 \author{}
 \title{}
-\ifthenelse{\equal{\typeDoc}{}}{
-\numeroTD{}
+\ifthenelse{\equal{\numero}{}}{
+	\type{\typeDoc~--- }
 }
 {
 	\type{\typeDoc~\no\numero~--- }
