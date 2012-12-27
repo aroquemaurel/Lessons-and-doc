@@ -1,6 +1,5 @@
 /*
- * =====================================================================================
- *
+ * ===================================================================================== *
  *       Filename:  main.c
  *
  *    Description:  Point d'entrée du programme. Aucune fonction ne doit être déclarée
@@ -52,12 +51,13 @@ int main (int argc, char** argv) {
 	// on peut travailler
 	if(errors.nbErrors == 0) {
 	instance_initialize(&instance, file);
-//	printf("%d", instance.towns[4].id);
 
 		switch(algoType) {
 			case BRUTEFORCE:
+//				distance_betweenTowns(instance.distances, 2,1);
 				tour = bruteForce_bestPath(instance);
-				printf("\nBrute force not implemented\n");
+				printf("La meilleure tournée est la tournée : ");
+				tour_display(tour);
 				break;
 			case LOCALSEARCH_RANDOM:
 				printf("Random local search not implemented");

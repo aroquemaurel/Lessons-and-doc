@@ -29,7 +29,7 @@ typedef struct {
 
 void distance_new(Distance* pDistance, Town* pFirstTown, Town* pSecondTown);
 double distance_calculDistance(const Town pTown1, const Town pTown2);
-double distance(Distance* pDistances, int i, int j);
+double distance_betweenTowns(Distance* pDistances, int i, int j);
 
 #endif
 

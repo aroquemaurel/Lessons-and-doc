@@ -29,7 +29,7 @@
 typedef struct {
 	Town towns[N];
 	Distance distances[N];
-	int nbTown;
+	int nbTowns;
 	char* name;
 	char* type;
 } Instance;

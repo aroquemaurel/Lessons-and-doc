@@ -15,11 +15,15 @@
  * =====================================================================================
  */
 #include "testUtil.h"
-
 int main(int argc, char *argv[]) { 
 	int test[] = {0,1,2,3,4,5,6,7,8,9,10};
 	int test2[] = {1,2,3};
 	int i=0;
+	Town town1, town2;
+	town1.x = 1030;
+	town2.x = 1150;
+	town1.y = 2070;
+	town2.y = 1760;
 	test_searchFirstOccurenceInArray(1);
 	test_searchFirstOccurenceInArray(2);
 	test_searchFirstOccurenceInArray(3);
@@ -31,11 +35,11 @@ int main(int argc, char *argv[]) {
 	printf("\n");
   
 	util_displayArray(test2, 3);
+	printf("%f", distance_calculDistance(town1,town2));
 /*  while(tour_nextPermutation(test2, 3)) { // TODO testUnitaire. Semble correct. 
  *  util_displayArray(test2, 3);
 		printf("\n");
 	}
 */
-	// TODO distance. Util
 	return 0;
 }

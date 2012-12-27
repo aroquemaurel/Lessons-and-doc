@@ -23,10 +23,17 @@
 #include <stdbool.h>
 
 #include "town.h"
+#include "instance.h"
+#include "distance.h"
 typedef struct {
+	Town towns[N];
+	int nbTowns;
+	double length;
 }Tour;
 
-bool tour_nextPermutation(Town* pPermutation, const int pSize);
+void tour_initialize(Tour* pTour, Instance pInstance);
+bool tour_nextPermutation(Tour* pPermutation);
+void tour_calculLength(Tour* pTour, Distance* pDistance);
 #endif
 
 
