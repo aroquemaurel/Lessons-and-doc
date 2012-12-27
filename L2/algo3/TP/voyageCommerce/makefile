@@ -6,8 +6,8 @@ CFLAGS=-Wall -lm -g -I lib
 EXE=travellingSalesman
 
 # Programme principal
-$(EXE): $(BIN)/main.o $(BIN)/util.o $(BIN)/parsing.o $(BIN)/errors.o $(BIN)/instance.o $(BIN)/tour.o $(BIN)/town.o $(BIN)/distance.o unitTests
-	gcc -o $(EXE) $(BIN)/main.o $(BIN)/util.o $(BIN)/parsing.o $(BIN)/errors.o $(BIN)/tour.o $(BIN)/instance.o $(BIN)/town.o $(BIN)/distance.o $(CFLAGS)
+$(EXE): $(BIN)/main.o $(BIN)/util.o $(BIN)/parsing.o $(BIN)/errors.o $(BIN)/instance.o $(BIN)/tour.o $(BIN)/town.o $(BIN)/distance.o $(BIN)/bruteForce.o unitTests
+	gcc -o $(EXE) $(BIN)/main.o $(BIN)/util.o $(BIN)/parsing.o $(BIN)/errors.o $(BIN)/tour.o $(BIN)/instance.o $(BIN)/town.o $(BIN)/distance.o $(BIN)/bruteForce.o $(CFLAGS)
 $(BIN)/main.o: $(SRC)/main.c $(BIN)/parsing.o 
 	gcc -o $(BIN)/main.o -c $(SRC)/main.c $(CFLAGS)
 $(BIN)/util.o: $(SRC)/util.c  $(LIB)/util.h
@@ -24,6 +24,8 @@ $(BIN)/instance.o: $(SRC)/instance.c $(LIB)/instance.h $(BIN)/town.o $(BIN)/dist
 	gcc -o $(BIN)/instance.o -c $(SRC)/instance.c $(CFLAGS)
 $(BIN)/distance.o: $(SRC)/distance.c $(LIB)/distance.h 
 	gcc -o $(BIN)/distance.o -c $(SRC)/distance.c $(CFLAGS)
+$(BIN)/bruteForce.o: $(SRC)/bruteForce.c $(LIB)/bruteForce.h 
+	gcc -o $(BIN)/bruteForce.o -c $(SRC)/bruteForce.c $(CFLAGS)
 
 # Tests unitaires de util.c
 $(BIN)/mainUnitTests.o: $(TEST)/mainUnitTests.c
@@ -39,6 +41,8 @@ clean:
 	rm -rfv $(BIN)/*.o
 
 all: $(EXE) 
+
+recomp: clean $(EXE)
 
 tarball: 
 	tar -jcvf travellingSalesman.tar.bz2 ./$(BIN) ./$(TEST) ./$(EXE) ./$(LIB) ./$(SRC) makefile

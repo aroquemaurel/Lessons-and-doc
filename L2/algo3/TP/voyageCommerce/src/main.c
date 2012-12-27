@@ -22,7 +22,7 @@
 
 #include "errors.h"
 #include "parsing.h"
-#include "instance.h"
+#include "bruteForce.h"
 
 int main (int argc, char** argv) {
 	char* fileName;	
@@ -33,6 +33,7 @@ int main (int argc, char** argv) {
 	Errors errors;
 	AlgoType algoType;
 	Town test1, test2;
+	Tour tour;
 	test1.id = 3;
 	test2.id = 1;
 	Distance test;
@@ -55,6 +56,7 @@ int main (int argc, char** argv) {
 
 		switch(algoType) {
 			case BRUTEFORCE:
+				tour = bruteForce_bestPath(instance);
 				printf("\nBrute force not implemented\n");
 				break;
 			case LOCALSEARCH_RANDOM:
