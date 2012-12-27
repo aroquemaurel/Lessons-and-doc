@@ -31,19 +31,18 @@ double distance_calculDistance(const Town pTown1, const Town pTown2) {
 }
 
 Distance distance_searchDistance(Distance* pDistances, const int pFirst, const int pSecond) {
-	int i = util_sum(0,pFirst);
+	int i = util_sum(0,pFirst-1);
+	int j;
 	int search = 0;
 
-	while(search != pSecond) {
-		search = pDistances[i++].secondTown.id;	
-	}
-
-	return (pDistances[i]);
+	Distance test;
+	
+	return (pDistances[i+pSecond-1]);
 }
 
-double distance(Distance* pDistances, int i, int j) {
+double distance_betweenTowns(Distance* pDistances, int i, int j) {
 	Distance distance;
-	if(j > i) {
+	if(i < j) {
 		util_swap(&i, &j);
 	} else if(j == i) {
 		return 0;

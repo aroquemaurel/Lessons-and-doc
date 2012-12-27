@@ -17,5 +17,14 @@
 #include "bruteForce.h"
 
 Tour bruteForce_bestPath(Instance pInstance) {
-
+	Tour buffTour, bestTour;
+	tour_initialize(&buffTour, pInstance);
+	bestTour = buffTour;
+	while(tour_nextPermutation(&buffTour)) {
+		tour_calculLength(&buffTour, pInstance.distances);
+		if(buffTour.length < bestTour.length) {
+			bestTour = buffTour;
+		}
+	}
+	return bestTour;
 }
