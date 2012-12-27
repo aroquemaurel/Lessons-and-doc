@@ -29,6 +29,7 @@ double distance_calculDistance(const Town pTown1, const Town pTown2) {
 				 pow((y1 > y2) ? y1 - y2 : y2 - y1, 2)
 			)); //Pythagore
 }
+
 Distance distance_searchDistance(Distance* pDistances, const int pFirst, const int pSecond) {
 	int i = util_sum(0,pFirst);
 	int search = 0;
@@ -39,6 +40,7 @@ Distance distance_searchDistance(Distance* pDistances, const int pFirst, const i
 
 	return (pDistances[i]);
 }
+
 double distance(Distance* pDistances, int i, int j) {
 	Distance distance;
 	if(j > i) {
