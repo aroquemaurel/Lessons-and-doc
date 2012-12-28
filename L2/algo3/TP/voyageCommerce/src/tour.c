@@ -61,11 +61,12 @@ void tour_calculLength(Tour* pTour, Distance* pDistance) {
 	pTour->length = length;	
 }
 
-void tour_display(Tour pTour) {
-	int i;
-	for(i = 0 ; i < pTour.nbTowns ; ++i) {
-		printf("%d ", pTour.towns[i].id);
-	}
-	printf("\nLa longueur de ce tour est %f", pTour.length);
-
+void tour_display(Tour pTour, bool pDisplay) {
+    if(pDisplay) {
+        int i;
+        for(i = 0 ; i < pTour.nbTowns ; ++i) {
+            printf("%d ", pTour.towns[i].id);
+        }
+        printf("\nLa longueur de ce tour est %f", pTour.length);
+    }
 }

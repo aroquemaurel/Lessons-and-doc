@@ -15,6 +15,7 @@
  * =====================================================================================
  */
 #include "bruteForce.h"
+#include "lib/util.h"
 
 Tour bruteForce_bestPath(Instance pInstance) {
 	Tour buffTour, bestTour;
@@ -25,6 +26,10 @@ Tour bruteForce_bestPath(Instance pInstance) {
 		if(buffTour.length < bestTour.length) {
 			bestTour = buffTour;
 		}
+        
+        util_displayVerboseMode("Tour : ");
+        tour_display(buffTour, gVerboseMode);
+        util_displayVerboseMode("\n\n");
 	}
 	return bestTour;
 }

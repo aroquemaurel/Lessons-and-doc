@@ -40,4 +40,3 @@ void errors_setNoAlgoSpecified(Errors* pErrors);
 void errors_setLsrNotValidParameter(Errors* pErrors);
 #endif
 
-

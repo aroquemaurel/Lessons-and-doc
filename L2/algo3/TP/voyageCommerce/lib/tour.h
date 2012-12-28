@@ -34,6 +34,6 @@ typedef struct {
 void tour_initialize(Tour* pTour, Instance pInstance);
 bool tour_nextPermutation(Tour* pPermutation);
 void tour_calculLength(Tour* pTour, Distance* pDistance);
+void tour_display(Tour pTour);
 #endif
-
 

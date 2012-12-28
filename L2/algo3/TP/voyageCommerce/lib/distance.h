@@ -33,4 +33,3 @@ double distance_betweenTowns(Distance* pDistances, int i, int j);
 
 #endif
 
-
