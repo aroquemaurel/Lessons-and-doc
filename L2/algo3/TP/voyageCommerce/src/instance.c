@@ -36,10 +36,13 @@ void instance_initialize(Instance* pInstance, FILE* pFile) {
 				strcpy(name, buffValue);
 			} else if(strcmp(buffTag, "DIMENSION:") == 0) {
 				dimension = atoi(buffValue);
-			} else if(strcmp(buffTag, "DISPLAY_DATA_SECTION") == 0) {
+            } else if(  strcmp(buffTag, "DISPLAY_DATA_SECTION") == 0 || 
+		    			strcmp(buffTag, "NODE_COORD_SECTION") == 0) {
 				displayData = true;
-			}
-		} else {
+			} else {
+                fgets(buffTag, 256, pFile) ;  // Autre tag, on cherche pas à comprendre, ligne suivante.
+            }
+		} else { 
 			if(buffId == 0) {
 				fseek(pFile, -1, SEEK_CUR);
 			}
@@ -53,6 +56,7 @@ void instance_initialize(Instance* pInstance, FILE* pFile) {
 		}
 
 	}
+    pInstance->nbTowns = dimension;
 	pInstance->name = name;
 	instance_initializeDistances(pInstance);
 }
@@ -75,8 +79,6 @@ void instance_initializeDistances(Instance* pInstance) {
 			++k;
 		}
 	}
-//	instance_displayLinearVector(*pInstance);
-//	instance_displayMatrix(*pInstance);
 }
 void instance_displayLinearVector(Instance pInstance) {
 	int i;

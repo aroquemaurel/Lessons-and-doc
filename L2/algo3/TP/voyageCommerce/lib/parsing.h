@@ -36,4 +36,3 @@ AlgoType parsing_algoType(char** pTab, const int pSize, Errors* pErrors, int* pa
 
 #endif
 
-

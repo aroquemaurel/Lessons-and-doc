@@ -29,4 +29,3 @@ typedef struct {
 void town_initialize(Town* pTown, const int pId, const int pX, const int pY);
 #endif
 
-

@@ -1,3 +1,4 @@
+
 /*
  * =====================================================================================
  * *       Filename:  util.c *
@@ -25,7 +26,7 @@ int util_searchFirstOccurenceInArray(char** pArray, const int pSize, char* pSear
 	return (position == pSize-1 && strcmp(pArray[position], pSearch) != 0) ? -1 : position;
 }
 
-inline void util_displayVerboseMode(char* pString) {
+void util_displayVerboseMode(char* pString) {
 	if(gVerboseMode) {
 		printf("%s", pString);
 	}
@@ -86,4 +87,3 @@ void util_swap(int* a, int* b) {
 	*a = *b;
 	*b = buff;
 }
-
