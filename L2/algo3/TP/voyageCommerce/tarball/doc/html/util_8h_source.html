@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Le voyageur de commerce:  Fichier source de lib/util.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Généré par Doxygen 1.7.1 -->
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Page&nbsp;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&nbsp;de&nbsp;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&nbsp;des&nbsp;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Portée&nbsp;globale</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>lib/util.h</h1>  </div>
+</div>
+<div class="contents">
+<a href="util_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00012"></a>00012 <span class="preprocessor">#ifndef __UTIL</span>
+<a name="l00013"></a>00013 <span class="preprocessor"></span><span class="preprocessor">#define __UTIL</span>
+<a name="l00014"></a>00014 <span class="preprocessor"></span>
+<a name="l00015"></a>00015 <span class="preprocessor">#include &lt;stdbool.h&gt;</span>
+<a name="l00016"></a>00016 <span class="preprocessor">#include &lt;stdio.h&gt;</span>
+<a name="l00017"></a>00017 <span class="preprocessor">#include &lt;string.h&gt;</span>
+<a name="l00018"></a>00018 <span class="preprocessor">#include &quot;<a class="code" href="tour_8h.html" title="Fonctions des tournées.">tour.h</a>&quot;</span>
+<a name="l00019"></a>00019 <span class="preprocessor">#include &quot;<a class="code" href="path_8h.html" title="Fonctions des trajets.">path.h</a>&quot;</span>
+<a name="l00021"></a><a class="code" href="util_8h.html#af77d9b0b5a1e9c1fc94de5c5b45500fc">00021</a> <span class="keywordtype">bool</span> <a class="code" href="util_8h.html#af77d9b0b5a1e9c1fc94de5c5b45500fc" title="Mode verbose.">gVerboseMode</a>;
+<a name="l00022"></a>00022 
+<a name="l00030"></a>00030 <span class="keywordtype">int</span> <a class="code" href="util_8h.html#a38a6f0f1fbd8adf66b85ea7a7e9e1dc2" title="Cherche la première occurence d&amp;#39;une chaine de caractère dans un tableau de chaine caractère...">util_searchFirstOccurenceInArray</a>(<span class="keywordtype">char</span>** pArray, <span class="keyword">const</span> <span class="keywordtype">int</span> pSize, <span class="keywordtype">char</span>* pSearch);
+<a name="l00031"></a>00031 
+<a name="l00038"></a>00038 <span class="keywordtype">void</span> <a class="code" href="util_8h.html#ac878ff06d8fd6169a8ffe4eda7e170f9" title="Inverse les éléments d&amp;#39;un tableau pTag entre les cases pBegin et pEnd.">util_reverseArray</a>(<a class="code" href="structTown.html" title="Objet des ville.">Town</a>* pTab, <span class="keyword">const</span> <span class="keywordtype">int</span> pBegin, <span class="keyword">const</span> <span class="keywordtype">int</span> pEnd);
+<a name="l00039"></a>00039 
+<a name="l00045"></a>00045 <span class="keywordtype">void</span> <a class="code" href="util_8h.html#ae25650a63e9f4f35334d474b5caf7c2b" title="Affiche le contenu d&amp;#39;un tableau d&amp;#39;entiers.">util_displayArray</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>* pTab, <span class="keyword">const</span> <span class="keywordtype">int</span> pSize);
+<a name="l00046"></a>00046 
+<a name="l00053"></a>00053 <span class="keywordtype">int</span> <a class="code" href="util_8h.html#a9ac9311a18d38fe6d5cb1f5b3244851b" title="Calcul la somme des éléments allant de pBegin à pEnd.">util_sum</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> pBegin, <span class="keyword">const</span> <span class="keywordtype">int</span> pEnd);
+<a name="l00054"></a>00054 
+<a name="l00060"></a>00060 <span class="keywordtype">void</span> <a class="code" href="util_8h.html#aabf05057e5eab92dc5781b4fd7ee0bba" title="Échange deux variables.">util_swap</a>(<a class="code" href="structTown.html" title="Objet des ville.">Town</a>* a, <a class="code" href="structTown.html" title="Objet des ville.">Town</a>* b);
+<a name="l00061"></a>00061 
+<a name="l00068"></a>00068 <span class="keywordtype">int</span> <a class="code" href="util_8h.html#a42ce7cb070434fa218e864d8444f29b5" title="Calcul une valeur aléatoire entre pMin et pMax.">util_rand</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> pMin, <span class="keyword">const</span> <span class="keywordtype">int</span> pMax);
+<a name="l00069"></a>00069 
+<a name="l00080"></a>00080 <span class="keywordtype">bool</span> <a class="code" href="util_8h.html#acecb389be3afc2e24df4862c5ffa91fa" title="Indique si un sous-tableau d&amp;#39;un tableau est présent dans un autre tableau.">util_sousTabExist</a>(<a class="code" href="structTour.html" title="Objet d&amp;#39;une tournée.">Tour</a> pChild, <span class="keyword">const</span> <span class="keywordtype">int</span> pBegin, <span class="keyword">const</span> <span class="keywordtype">int</span> pEnd, <a class="code" href="structTour.html" title="Objet d&amp;#39;une tournée.">Tour</a> pParent, <span class="keywordtype">bool</span> pRecursvite);
+<a name="l00081"></a>00081 
+<a name="l00082"></a>00082 
+<a name="l00089"></a>00089 <span class="keywordtype">void</span> <a class="code" href="util_8h.html#a32c75397c58d94526c54073291a71e68" title="Supprime la valeur pDeleteIndice d&amp;#39;un tableau.">util_deleteArrayValue</a>(<a class="code" href="structPath.html" title="Objet d&amp;#39;un trajet.">Path</a>* pArray, <span class="keywordtype">int</span> pSize, <span class="keywordtype">int</span> pDeleteIndice);
+<a name="l00090"></a>00090 
+<a name="l00091"></a>00091 <span class="preprocessor">#endif</span>
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Généré le Sun Jan 13 2013 16:47:43 pour Le voyageur de commerce par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

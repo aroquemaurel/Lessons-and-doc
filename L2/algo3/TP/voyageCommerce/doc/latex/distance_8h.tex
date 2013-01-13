@@ -1,0 +1,107 @@
+\hypertarget{distance_8h}{
+\section{Référence du fichier lib/distance.h}
+\label{distance_8h}\index{lib/distance.h@{lib/distance.h}}
+}
+
+
+Fonctions des distances.  
+
+
+{\ttfamily \#include $<$math.h$>$}\par
+{\ttfamily \#include \char`\"{}town.h\char`\"{}}\par
+\subsection*{Structures de données}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structDistance}{Distance}
+\begin{DoxyCompactList}\small\item\em Objet des distances. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structDistance}{Distance} \hyperlink{distance_8h_ac714e60819a349c03b5960585136b856}{distance\_\-new} (\hyperlink{structTown}{Town} pFirstTown, \hyperlink{structTown}{Town} pSecondTown)
+\begin{DoxyCompactList}\small\item\em Créer une nouvelle distance. \item\end{DoxyCompactList}\item 
+double \hyperlink{distance_8h_a3c0a5cae2a774b648d20447b23d81d84}{distance\_\-calculDistance} (const \hyperlink{structTown}{Town} pTown1, const \hyperlink{structTown}{Town} pTown2)
+\begin{DoxyCompactList}\small\item\em Calcul la distance entre deux villes. \item\end{DoxyCompactList}\item 
+\hyperlink{structDistance}{Distance} \hyperlink{distance_8h_a75f9d06738c4cde184c3ad7e5845ae20}{distance\_\-betweenTowns} (\hyperlink{structDistance}{Distance} $\ast$pDistances, \hyperlink{structTown}{Town} i, \hyperlink{structTown}{Town} j)
+\begin{DoxyCompactList}\small\item\em Calcul la distance entre deux villes. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Fonctions des distances. \begin{DoxyAuthor}{Auteur}
+Antoine de Roquemaurel 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+01/12/2012 20:33:44
+\end{DoxyDate}
+Entêtes des fonctions se rapportant aux distances 
+
+\subsection{Documentation des fonctions}
+\hypertarget{distance_8h_a75f9d06738c4cde184c3ad7e5845ae20}{
+\index{distance.h@{distance.h}!distance\_\-betweenTowns@{distance\_\-betweenTowns}}
+\index{distance\_\-betweenTowns@{distance\_\-betweenTowns}!distance.h@{distance.h}}
+\subsubsection[{distance\_\-betweenTowns}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Distance} distance\_\-betweenTowns (
+\begin{DoxyParamCaption}
+\item[{{\bf Distance} $\ast$}]{ pDistances, }
+\item[{{\bf Town}}]{ i, }
+\item[{{\bf Town}}]{ j}
+\end{DoxyParamCaption}
+)}}
+\label{distance_8h_a75f9d06738c4cde184c3ad7e5845ae20}
+
+
+Calcul la distance entre deux villes. 
+
+
+\begin{DoxyParams}{Paramètres}
+\item[{\em pDistances}]La matrice de distances \item[{\em i}]La première ville \item[{\em j}]La seconde ville \end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+La distance
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{Voir également}
+\hyperlink{structTown}{Town} 
+\end{DoxySeeAlso}
+\hypertarget{distance_8h_a3c0a5cae2a774b648d20447b23d81d84}{
+\index{distance.h@{distance.h}!distance\_\-calculDistance@{distance\_\-calculDistance}}
+\index{distance\_\-calculDistance@{distance\_\-calculDistance}!distance.h@{distance.h}}
+\subsubsection[{distance\_\-calculDistance}]{\setlength{\rightskip}{0pt plus 5cm}double distance\_\-calculDistance (
+\begin{DoxyParamCaption}
+\item[{const {\bf Town}}]{ pTown1, }
+\item[{const {\bf Town}}]{ pTown2}
+\end{DoxyParamCaption}
+)}}
+\label{distance_8h_a3c0a5cae2a774b648d20447b23d81d84}
+
+
+Calcul la distance entre deux villes. 
+
+
+\begin{DoxyParams}{Paramètres}
+\item[{\em pTown1}]Première ville \item[{\em pTown2}]Seconde ville \end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+La distance
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{Voir également}
+\hyperlink{structTown}{Town} 
+\end{DoxySeeAlso}
+\hypertarget{distance_8h_ac714e60819a349c03b5960585136b856}{
+\index{distance.h@{distance.h}!distance\_\-new@{distance\_\-new}}
+\index{distance\_\-new@{distance\_\-new}!distance.h@{distance.h}}
+\subsubsection[{distance\_\-new}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Distance} distance\_\-new (
+\begin{DoxyParamCaption}
+\item[{{\bf Town}}]{ pFirstTown, }
+\item[{{\bf Town}}]{ pSecondTown}
+\end{DoxyParamCaption}
+)}}
+\label{distance_8h_ac714e60819a349c03b5960585136b856}
+
+
+Créer une nouvelle distance. 
+
+
+\begin{DoxyParams}{Paramètres}
+\item[{\em pFirstTown}]Première ville \item[{\em pSecondTown}]Seconde ville \end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+\hyperlink{structDistance}{Distance} entre les deux villes
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{Voir également}
+\hyperlink{structTown}{Town} 
+\end{DoxySeeAlso}

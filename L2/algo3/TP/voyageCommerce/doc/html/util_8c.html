@@ -1,0 +1,440 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Le voyageur de commerce: Référence du fichier src/util.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Généré par Doxygen 1.7.1 -->
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Page&nbsp;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&nbsp;de&nbsp;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&nbsp;des&nbsp;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Portée&nbsp;globale</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<h1>Référence du fichier src/util.c</h1>  </div>
+</div>
+<div class="contents">
+
+<p>Fonctions utiles.  
+<a href="#_details">Plus de détails...</a></p>
+<code>#include &quot;<a class="el" href="tour_8h_source.html">tour.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="util_8h_source.html">util.h</a>&quot;</code><br/>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8c.html#a38a6f0f1fbd8adf66b85ea7a7e9e1dc2">util_searchFirstOccurenceInArray</a> (char **pArray, const int pSize, char *pSearch)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Cherche la première occurence d'une chaine de caractère dans un tableau de chaine caractère.  <a href="#a38a6f0f1fbd8adf66b85ea7a7e9e1dc2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8c.html#ac878ff06d8fd6169a8ffe4eda7e170f9">util_reverseArray</a> (<a class="el" href="structTown.html">Town</a> *pTab, const int pBegin, const int pEnd)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Inverse les éléments d'un tableau pTag entre les cases pBegin et pEnd.  <a href="#ac878ff06d8fd6169a8ffe4eda7e170f9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8c.html#ae25650a63e9f4f35334d474b5caf7c2b">util_displayArray</a> (const int *pTab, const int pSize)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Affiche le contenu d'un tableau d'entiers.  <a href="#ae25650a63e9f4f35334d474b5caf7c2b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8c.html#a9ac9311a18d38fe6d5cb1f5b3244851b">util_sum</a> (const int pBegin, const int pEnd)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calcul la somme des éléments allant de pBegin à pEnd.  <a href="#a9ac9311a18d38fe6d5cb1f5b3244851b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8c.html#aabf05057e5eab92dc5781b4fd7ee0bba">util_swap</a> (<a class="el" href="structTown.html">Town</a> *a, <a class="el" href="structTown.html">Town</a> *b)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Échange deux variables.  <a href="#aabf05057e5eab92dc5781b4fd7ee0bba"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8c.html#a42ce7cb070434fa218e864d8444f29b5">util_rand</a> (const int pMin, const int pMax)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calcul une valeur aléatoire entre pMin et pMax.  <a href="#a42ce7cb070434fa218e864d8444f29b5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8c.html#acecb389be3afc2e24df4862c5ffa91fa">util_sousTabExist</a> (<a class="el" href="structTour.html">Tour</a> pChild, const int pBegin, const int pEnd, <a class="el" href="structTour.html">Tour</a> pParent, bool pRecursvite)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Indique si un sous-tableau d'un tableau est présent dans un autre tableau.  <a href="#acecb389be3afc2e24df4862c5ffa91fa"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8c.html#a32c75397c58d94526c54073291a71e68">util_deleteArrayValue</a> (<a class="el" href="structPath.html">Path</a> *pArray, int pSize, int pDeleteIndice)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Supprime la valeur pDeleteIndice d'un tableau.  <a href="#a32c75397c58d94526c54073291a71e68"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Description détaillée</h2>
+<p>Fonctions utiles. </p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Antoine de Roquemaurel </dd></dl>
+<dl class="date"><dt><b>Date:</b></dt><dd>19/11/2012 16:27:39</dd></dl>
+<p>Entêtes des fonctions pouvant être utiles dans tout le projet. Ce sont des fonctions simples, qui doivent être indépendantes du projet. </p>
+<hr/><h2>Documentation des fonctions</h2>
+<a class="anchor" id="a32c75397c58d94526c54073291a71e68"></a><!-- doxytag: member="util.c::util_deleteArrayValue" ref="a32c75397c58d94526c54073291a71e68" args="(Path *pArray, int pSize, int pDeleteIndice)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void util_deleteArrayValue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structPath.html">Path</a> *&nbsp;</td>
+          <td class="paramname"> <em>pArray</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>pSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>pDeleteIndice</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Supprime la valeur pDeleteIndice d'un tableau. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pArray</em>&nbsp;</td><td>Le tableau </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pSize</em>&nbsp;</td><td>La taille du tableau </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pDeleteIndice</em>&nbsp;</td><td>L'indice à supprimer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae25650a63e9f4f35334d474b5caf7c2b"></a><!-- doxytag: member="util.c::util_displayArray" ref="ae25650a63e9f4f35334d474b5caf7c2b" args="(const int *pTab, const int pSize)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void util_displayArray </td>
+          <td>(</td>
+          <td class="paramtype">const int *&nbsp;</td>
+          <td class="paramname"> <em>pTab</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>pSize</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Affiche le contenu d'un tableau d'entiers. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pTab</em>&nbsp;</td><td>Le tableau à afficher </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pSize</em>&nbsp;</td><td>La taille du tableau </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a42ce7cb070434fa218e864d8444f29b5"></a><!-- doxytag: member="util.c::util_rand" ref="a42ce7cb070434fa218e864d8444f29b5" args="(const int pMin, const int pMax)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int util_rand </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>pMin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>pMax</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Calcul une valeur aléatoire entre pMin et pMax. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pMin</em>&nbsp;</td><td>Minimum </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pMax</em>&nbsp;</td><td>Maximum </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>la valeur aléatoire </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac878ff06d8fd6169a8ffe4eda7e170f9"></a><!-- doxytag: member="util.c::util_reverseArray" ref="ac878ff06d8fd6169a8ffe4eda7e170f9" args="(Town *pTab, const int pBegin, const int pEnd)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void util_reverseArray </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structTown.html">Town</a> *&nbsp;</td>
+          <td class="paramname"> <em>pTab</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>pBegin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>pEnd</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Inverse les éléments d'un tableau pTag entre les cases pBegin et pEnd. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pTab</em>&nbsp;</td><td>Tableau à inverser </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pBegin</em>&nbsp;</td><td>Début de la section à inverser </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pEnd</em>&nbsp;</td><td>Fin de la section à inverser </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a38a6f0f1fbd8adf66b85ea7a7e9e1dc2"></a><!-- doxytag: member="util.c::util_searchFirstOccurenceInArray" ref="a38a6f0f1fbd8adf66b85ea7a7e9e1dc2" args="(char **pArray, const int pSize, char *pSearch)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int util_searchFirstOccurenceInArray </td>
+          <td>(</td>
+          <td class="paramtype">char **&nbsp;</td>
+          <td class="paramname"> <em>pArray</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>pSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>pSearch</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Cherche la première occurence d'une chaine de caractère dans un tableau de chaine caractère. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pArray</em>&nbsp;</td><td>Le tableau de chaines de caractères dans lequel chercher </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pSize</em>&nbsp;</td><td>La taille du tableau </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pSearch</em>&nbsp;</td><td>La chaine de caractère à chercher </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>La position de la chaine dans le tableau ou -1 si elle n'a pas été trouvée </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acecb389be3afc2e24df4862c5ffa91fa"></a><!-- doxytag: member="util.c::util_sousTabExist" ref="acecb389be3afc2e24df4862c5ffa91fa" args="(Tour pChild, const int pBegin, const int pEnd, Tour pParent, bool pRecursvite)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool util_sousTabExist </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structTour.html">Tour</a>&nbsp;</td>
+          <td class="paramname"> <em>pChild</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>pBegin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>pEnd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structTour.html">Tour</a>&nbsp;</td>
+          <td class="paramname"> <em>pParent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>pRecursvite</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Indique si un sous-tableau d'un tableau est présent dans un autre tableau. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pChild</em>&nbsp;</td><td>Le tableau à chercher </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pBegin</em>&nbsp;</td><td>Le début de la section à chercher </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pEnd</em>&nbsp;</td><td>La fin de la section à chercher </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pParent</em>&nbsp;</td><td>Le tableau dans lequel chercher </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pRecursvite</em>&nbsp;</td><td>Pour simplifier vis-à-vis de la récursivité, doit toujours être à false</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>Vrai si le sous-tableau à été trouvé faux sinon </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9ac9311a18d38fe6d5cb1f5b3244851b"></a><!-- doxytag: member="util.c::util_sum" ref="a9ac9311a18d38fe6d5cb1f5b3244851b" args="(const int pBegin, const int pEnd)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int util_sum </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>pBegin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>pEnd</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Calcul la somme des éléments allant de pBegin à pEnd. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pBegin</em>&nbsp;</td><td>Début de la somme </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pEnd</em>&nbsp;</td><td>Fin de la somme </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>La somme des éléments </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aabf05057e5eab92dc5781b4fd7ee0bba"></a><!-- doxytag: member="util.c::util_swap" ref="aabf05057e5eab92dc5781b4fd7ee0bba" args="(Town *a, Town *b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void util_swap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structTown.html">Town</a> *&nbsp;</td>
+          <td class="paramname"> <em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structTown.html">Town</a> *&nbsp;</td>
+          <td class="paramname"> <em>b</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Échange deux variables. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>a</em>&nbsp;</td><td>Première variable à échanger </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>b</em>&nbsp;</td><td>Seconde variable </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address class="footer"><small>Généré le Sun Jan 13 2013 16:47:43 pour Le voyageur de commerce par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

@@ -1,0 +1,207 @@
+\hypertarget{util_8h}{
+\section{Référence du fichier lib/util.h}
+\label{util_8h}\index{lib/util.h@{lib/util.h}}
+}
+
+
+Fonctions utiles.  
+
+
+{\ttfamily \#include $<$stdbool.h$>$}\par
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$string.h$>$}\par
+{\ttfamily \#include \char`\"{}tour.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}path.h\char`\"{}}\par
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{util_8h_a38a6f0f1fbd8adf66b85ea7a7e9e1dc2}{util\_\-searchFirstOccurenceInArray} (char $\ast$$\ast$pArray, const int pSize, char $\ast$pSearch)
+\begin{DoxyCompactList}\small\item\em Cherche la première occurence d'une chaine de caractère dans un tableau de chaine caractère. \item\end{DoxyCompactList}\item 
+void \hyperlink{util_8h_ac878ff06d8fd6169a8ffe4eda7e170f9}{util\_\-reverseArray} (\hyperlink{structTown}{Town} $\ast$pTab, const int pBegin, const int pEnd)
+\begin{DoxyCompactList}\small\item\em Inverse les éléments d'un tableau pTag entre les cases pBegin et pEnd. \item\end{DoxyCompactList}\item 
+void \hyperlink{util_8h_ae25650a63e9f4f35334d474b5caf7c2b}{util\_\-displayArray} (const int $\ast$pTab, const int pSize)
+\begin{DoxyCompactList}\small\item\em Affiche le contenu d'un tableau d'entiers. \item\end{DoxyCompactList}\item 
+int \hyperlink{util_8h_a9ac9311a18d38fe6d5cb1f5b3244851b}{util\_\-sum} (const int pBegin, const int pEnd)
+\begin{DoxyCompactList}\small\item\em Calcul la somme des éléments allant de pBegin à pEnd. \item\end{DoxyCompactList}\item 
+void \hyperlink{util_8h_aabf05057e5eab92dc5781b4fd7ee0bba}{util\_\-swap} (\hyperlink{structTown}{Town} $\ast$a, \hyperlink{structTown}{Town} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Échange deux variables. \item\end{DoxyCompactList}\item 
+int \hyperlink{util_8h_a42ce7cb070434fa218e864d8444f29b5}{util\_\-rand} (const int pMin, const int pMax)
+\begin{DoxyCompactList}\small\item\em Calcul une valeur aléatoire entre pMin et pMax. \item\end{DoxyCompactList}\item 
+bool \hyperlink{util_8h_acecb389be3afc2e24df4862c5ffa91fa}{util\_\-sousTabExist} (\hyperlink{structTour}{Tour} pChild, const int pBegin, const int pEnd, \hyperlink{structTour}{Tour} pParent, bool pRecursvite)
+\begin{DoxyCompactList}\small\item\em Indique si un sous-\/tableau d'un tableau est présent dans un autre tableau. \item\end{DoxyCompactList}\item 
+void \hyperlink{util_8h_a32c75397c58d94526c54073291a71e68}{util\_\-deleteArrayValue} (\hyperlink{structPath}{Path} $\ast$pArray, int pSize, int pDeleteIndice)
+\begin{DoxyCompactList}\small\item\em Supprime la valeur pDeleteIndice d'un tableau. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{util_8h_af77d9b0b5a1e9c1fc94de5c5b45500fc}{
+bool \hyperlink{util_8h_af77d9b0b5a1e9c1fc94de5c5b45500fc}{gVerboseMode}}
+\label{util_8h_af77d9b0b5a1e9c1fc94de5c5b45500fc}
+
+\begin{DoxyCompactList}\small\item\em Mode verbose. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Fonctions utiles. \begin{DoxyAuthor}{Auteur}
+Antoine de Roquemaurel 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+19/11/2012 16:27:39
+\end{DoxyDate}
+Entêtes des fonctions pouvant être utiles dans tout le projet. Ce sont des fonctions simples, qui doivent être indépendantes du projet. 
+
+\subsection{Documentation des fonctions}
+\hypertarget{util_8h_a32c75397c58d94526c54073291a71e68}{
+\index{util.h@{util.h}!util\_\-deleteArrayValue@{util\_\-deleteArrayValue}}
+\index{util\_\-deleteArrayValue@{util\_\-deleteArrayValue}!util.h@{util.h}}
+\subsubsection[{util\_\-deleteArrayValue}]{\setlength{\rightskip}{0pt plus 5cm}void util\_\-deleteArrayValue (
+\begin{DoxyParamCaption}
+\item[{{\bf Path} $\ast$}]{ pArray, }
+\item[{int}]{ pSize, }
+\item[{int}]{ pDeleteIndice}
+\end{DoxyParamCaption}
+)}}
+\label{util_8h_a32c75397c58d94526c54073291a71e68}
+
+
+Supprime la valeur pDeleteIndice d'un tableau. 
+
+
+\begin{DoxyParams}{Paramètres}
+\item[{\em pArray}]Le tableau \item[{\em pSize}]La taille du tableau \item[{\em pDeleteIndice}]L'indice à supprimer \end{DoxyParams}
+\hypertarget{util_8h_ae25650a63e9f4f35334d474b5caf7c2b}{
+\index{util.h@{util.h}!util\_\-displayArray@{util\_\-displayArray}}
+\index{util\_\-displayArray@{util\_\-displayArray}!util.h@{util.h}}
+\subsubsection[{util\_\-displayArray}]{\setlength{\rightskip}{0pt plus 5cm}void util\_\-displayArray (
+\begin{DoxyParamCaption}
+\item[{const int $\ast$}]{ pTab, }
+\item[{const int}]{ pSize}
+\end{DoxyParamCaption}
+)}}
+\label{util_8h_ae25650a63e9f4f35334d474b5caf7c2b}
+
+
+Affiche le contenu d'un tableau d'entiers. 
+
+
+\begin{DoxyParams}{Paramètres}
+\item[{\em pTab}]Le tableau à afficher \item[{\em pSize}]La taille du tableau \end{DoxyParams}
+\hypertarget{util_8h_a42ce7cb070434fa218e864d8444f29b5}{
+\index{util.h@{util.h}!util\_\-rand@{util\_\-rand}}
+\index{util\_\-rand@{util\_\-rand}!util.h@{util.h}}
+\subsubsection[{util\_\-rand}]{\setlength{\rightskip}{0pt plus 5cm}int util\_\-rand (
+\begin{DoxyParamCaption}
+\item[{const int}]{ pMin, }
+\item[{const int}]{ pMax}
+\end{DoxyParamCaption}
+)}}
+\label{util_8h_a42ce7cb070434fa218e864d8444f29b5}
+
+
+Calcul une valeur aléatoire entre pMin et pMax. 
+
+
+\begin{DoxyParams}{Paramètres}
+\item[{\em pMin}]Minimum \item[{\em pMax}]Maximum \end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+la valeur aléatoire 
+\end{DoxyReturn}
+\hypertarget{util_8h_ac878ff06d8fd6169a8ffe4eda7e170f9}{
+\index{util.h@{util.h}!util\_\-reverseArray@{util\_\-reverseArray}}
+\index{util\_\-reverseArray@{util\_\-reverseArray}!util.h@{util.h}}
+\subsubsection[{util\_\-reverseArray}]{\setlength{\rightskip}{0pt plus 5cm}void util\_\-reverseArray (
+\begin{DoxyParamCaption}
+\item[{{\bf Town} $\ast$}]{ pTab, }
+\item[{const int}]{ pBegin, }
+\item[{const int}]{ pEnd}
+\end{DoxyParamCaption}
+)}}
+\label{util_8h_ac878ff06d8fd6169a8ffe4eda7e170f9}
+
+
+Inverse les éléments d'un tableau pTag entre les cases pBegin et pEnd. 
+
+
+\begin{DoxyParams}{Paramètres}
+\item[{\em pTab}]Tableau à inverser \item[{\em pBegin}]Début de la section à inverser \item[{\em pEnd}]Fin de la section à inverser \end{DoxyParams}
+\hypertarget{util_8h_a38a6f0f1fbd8adf66b85ea7a7e9e1dc2}{
+\index{util.h@{util.h}!util\_\-searchFirstOccurenceInArray@{util\_\-searchFirstOccurenceInArray}}
+\index{util\_\-searchFirstOccurenceInArray@{util\_\-searchFirstOccurenceInArray}!util.h@{util.h}}
+\subsubsection[{util\_\-searchFirstOccurenceInArray}]{\setlength{\rightskip}{0pt plus 5cm}int util\_\-searchFirstOccurenceInArray (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{ pArray, }
+\item[{const int}]{ pSize, }
+\item[{char $\ast$}]{ pSearch}
+\end{DoxyParamCaption}
+)}}
+\label{util_8h_a38a6f0f1fbd8adf66b85ea7a7e9e1dc2}
+
+
+Cherche la première occurence d'une chaine de caractère dans un tableau de chaine caractère. 
+
+
+\begin{DoxyParams}{Paramètres}
+\item[{\em pArray}]Le tableau de chaines de caractères dans lequel chercher \item[{\em pSize}]La taille du tableau \item[{\em pSearch}]La chaine de caractère à chercher \end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+La position de la chaine dans le tableau ou -\/1 si elle n'a pas été trouvée 
+\end{DoxyReturn}
+\hypertarget{util_8h_acecb389be3afc2e24df4862c5ffa91fa}{
+\index{util.h@{util.h}!util\_\-sousTabExist@{util\_\-sousTabExist}}
+\index{util\_\-sousTabExist@{util\_\-sousTabExist}!util.h@{util.h}}
+\subsubsection[{util\_\-sousTabExist}]{\setlength{\rightskip}{0pt plus 5cm}bool util\_\-sousTabExist (
+\begin{DoxyParamCaption}
+\item[{{\bf Tour}}]{ pChild, }
+\item[{const int}]{ pBegin, }
+\item[{const int}]{ pEnd, }
+\item[{{\bf Tour}}]{ pParent, }
+\item[{bool}]{ pRecursvite}
+\end{DoxyParamCaption}
+)}}
+\label{util_8h_acecb389be3afc2e24df4862c5ffa91fa}
+
+
+Indique si un sous-\/tableau d'un tableau est présent dans un autre tableau. 
+
+
+\begin{DoxyParams}{Paramètres}
+\item[{\em pChild}]Le tableau à chercher \item[{\em pBegin}]Le début de la section à chercher \item[{\em pEnd}]La fin de la section à chercher \item[{\em pParent}]Le tableau dans lequel chercher \item[{\em pRecursvite}]Pour simplifier vis-\/à-\/vis de la récursivité, doit toujours être à false\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Vrai si le sous-\/tableau à été trouvé faux sinon 
+\end{DoxyReturn}
+\hypertarget{util_8h_a9ac9311a18d38fe6d5cb1f5b3244851b}{
+\index{util.h@{util.h}!util\_\-sum@{util\_\-sum}}
+\index{util\_\-sum@{util\_\-sum}!util.h@{util.h}}
+\subsubsection[{util\_\-sum}]{\setlength{\rightskip}{0pt plus 5cm}int util\_\-sum (
+\begin{DoxyParamCaption}
+\item[{const int}]{ pBegin, }
+\item[{const int}]{ pEnd}
+\end{DoxyParamCaption}
+)}}
+\label{util_8h_a9ac9311a18d38fe6d5cb1f5b3244851b}
+
+
+Calcul la somme des éléments allant de pBegin à pEnd. 
+
+
+\begin{DoxyParams}{Paramètres}
+\item[{\em pBegin}]Début de la somme \item[{\em pEnd}]Fin de la somme \end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+La somme des éléments 
+\end{DoxyReturn}
+\hypertarget{util_8h_aabf05057e5eab92dc5781b4fd7ee0bba}{
+\index{util.h@{util.h}!util\_\-swap@{util\_\-swap}}
+\index{util\_\-swap@{util\_\-swap}!util.h@{util.h}}
+\subsubsection[{util\_\-swap}]{\setlength{\rightskip}{0pt plus 5cm}void util\_\-swap (
+\begin{DoxyParamCaption}
+\item[{{\bf Town} $\ast$}]{ a, }
+\item[{{\bf Town} $\ast$}]{ b}
+\end{DoxyParamCaption}
+)}}
+\label{util_8h_aabf05057e5eab92dc5781b4fd7ee0bba}
+
+
+Échange deux variables. 
+
+
+\begin{DoxyParams}{Paramètres}
+\item[{\em a}]Première variable à échanger \item[{\em b}]Seconde variable \end{DoxyParams}

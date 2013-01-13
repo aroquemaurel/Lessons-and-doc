@@ -2,12 +2,11 @@
 \usepackage{ifthen}
 \date{\today}
 
-\chead{Antoine de \bsc{Roquemaurel} (Groupe 1.1)}
+\rhead{Antoine de \bsc{Roquemaurel} (Groupe 1.1)}
 \ifthenelse{\equal{\numero}{}}{
-\numero{}
 }
 {
-	\rhead{\typeDoc~\no\numero}
+	\chead{\typeDoc~\no\numero}
 }
 \lhead{\titre}
 %\makeindex
@@ -52,9 +51,10 @@
 			\huge \@type \@title
 		\end{center}
 		\par
+		\vspace{3px}
 		\hrule height 1pt
 		\par
-		\vspace{1cm}
+		\vspace{-0.8cm}
 		\bas{}{}{}
 }%
 }
@@ -89,7 +89,7 @@
 	L2 Informatique\\
 \end{flushleft}
 \begin{flushright}
-	\vspace{-45px}
+	\vspace{-55px}
 	\Large \textbf \module \\
 	\normalsize \textit \today\\
 	Semestre \semestre

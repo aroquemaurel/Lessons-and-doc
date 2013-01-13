@@ -1,0 +1,94 @@
+\documentclass[a4paper]{book}
+\usepackage{a4wide}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{textcomp}
+\usepackage{alltt}
+\usepackage{times}
+\usepackage{ifpdf}
+\ifpdf
+\usepackage[pdftex,
+            pagebackref=true,
+            colorlinks=true,
+            linkcolor=blue,
+            unicode
+           ]{hyperref}
+\else
+\usepackage[ps2pdf,
+            pagebackref=true,
+            colorlinks=true,
+            linkcolor=blue,
+            unicode
+           ]{hyperref}
+\usepackage{pspicture}
+\fi
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+
+\usepackage{doxygen}
+\lstset{language=C++,inputencoding=utf8,basicstyle=\footnotesize,breaklines=true,breakatwhitespace=true,tabsize=4,numbers=left }
+\makeindex
+\setcounter{tocdepth}{3}
+\renewcommand{\footrulewidth}{0.4pt}
+\begin{document}
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\vspace*{7cm}
+\begin{center}
+{\Large Le voyageur de commerce \\[1ex]\large 1 }\\
+\vspace*{1cm}
+{\large Généré par Doxygen 1.7.1}\\
+\vspace*{0.5cm}
+{\small Sun Jan 13 2013 16:47:43}\\
+\end{center}
+\end{titlepage}
+\clearemptydoublepage
+\pagenumbering{roman}
+\tableofcontents
+\clearemptydoublepage
+\pagenumbering{arabic}
+\hypersetup{pageanchor=true}
+\chapter{Le problème du voyageur de commerce -\/ Projet d'algorithmique en langage C}
+\label{index}\hypertarget{index}{}\input{main}
+\chapter{Index des structures de données}
+\input{annotated}
+\chapter{Index des fichiers}
+\input{files}
+\chapter{Documentation des structures de données}
+\input{structAlgo}
+\input{structDistance}
+\input{structErrors}
+\input{structInstance}
+\input{structPath}
+\input{structTour}
+\input{structTown}
+\chapter{Documentation des fichiers}
+\input{bruteForce_8h}
+\input{distance_8h}
+\input{errors_8h}
+\input{genetic_8h}
+\input{instance_8h}
+\input{localSearch_8h}
+\input{parsing_8h}
+\input{path_8h}
+\input{tour_8h}
+\input{town_8h}
+\input{util_8h}
+\input{bruteForce_8c}
+\input{distance_8c}
+\input{errors_8c}
+\input{genetic_8c}
+\input{instance_8c}
+\input{localSearch_8c}
+\input{main_8c}
+\input{parsing_8c}
+\input{path_8c}
+\input{tour_8c}
+\input{town_8c}
+\input{util_8c}
+\printindex
+\end{document}

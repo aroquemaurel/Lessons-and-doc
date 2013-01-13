@@ -1,0 +1,107 @@
+\documentclass[a4paper, 11pt]{article}
+
+\usepackage{xcolor}
+\input{/home/aroquemaurel/cours/includesLaTeX/couleurs.tex}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{verbatim}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, linkcolor=vert1, urlcolor=bleu, colorlinks=true]{hyperref}
+
+\newcommand{\titre}{Le problème du voyageur de commerce}
+\newcommand{\numero}{}
+\newcommand{\typeDoc}{Projet}
+\newcommand{\module}{Algorithmique}
+\newcommand{\sigle}{algo}
+\newcommand{\semestre}{3}
+\newcommand{\pfp}{\texttt{pfp}}
+	
+\newcommand{\ifp}{\texttt{if}}
+	
+\newcommand{\elsep}{\texttt{else}}
+
+
+\input{/home/satenske/cours/includesLaTeX/l2/tddm.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex} %prise en charge du langage C 
+\input{/home/aroquemaurel/cours/includesLaTeX/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
+\makeatother
+\begin{document}
+	\maketitle
+	\section{Le projet}
+	\subsection{Compilation}
+	\begin{itemize}
+		\item \texttt{make} ou \texttt{make build} Compile le projet
+		\item \texttt{make clean} supprime les fichiers binaires (.o)
+	\end{itemize}
+	Une fois un make effectué le fichier exécutable est disponible en racine du projet, il se nomme \texttt{voyageurDeCommerce}. 	
+	\subsection{Execution}
+	Comme demandé dans le cahier des charges, le programme doit respecter une liste d'argument précis, exemples d'utilisation :
+	\begin{lstlisting}[language=sh, basicstyle=\scriptsize\ttfamily, caption=Exemple d'execution du programme]
+./voyageurDeCommerce -v -f resources/inputFiles/essai8.txt -bf
+./voyageurDeCommerce -f resources/inputFiles/essai8.txt -bf -lsr 50
+./voyageurDeCommerce -f resources/inputFiles/ulysse16.txt -lsnr 20 -lsr 50
+./voyageurDeCommerce -v -f resources/inputFiles/ulysse16.txt -ga 15 0.8
+	\end{lstlisting}
+	\subsection{Organisation des fichiers}
+	Afin d'avoir une meilleur clarté, le projet est organisé en plusieurs fichiers, qui sont répartis dans différents dossiers, ci-dessous l'utilité de chacun
+	des dossiers.
+
+	\begin{description}
+		\item[{build}] Ce dossier contient les fichiers binaires (.o) du projet, ceux-ci seront supprimés en utilisant la commande
+			\texttt{make clean} 
+		\item[{doc}] Ce dossier contient la documentation générée à l'aide de \texttt{doxygen} du projet.\footnote{Celle-ci est disponible en format \bsc{HTML} ou
+			pdf.} \\La documentation du projet est également disponible à l'adresse suivante : \\ \lien{http://documentation.joohoo.fr/L2/voyageurCommerce/}
+		\item[{lib}] Ce dossier contient les fichiers headers (.h)
+		\item[{src}] Ce dossier contient les sources du projet (.c) 
+		\item[{resources}] Ici sont entreposés les fichiers de ressources pouvant être utiles au programmes 
+		\item[nbproject] Fichiers de configuration du makefile
+	\end{description}
+	\section{Modifications apportés depuis la validation du 7 Janvier 2013}
+	Les modifications depuis la validation : 
+	\begin{itemize}
+		\item Correction bug des recherches locales.
+		\item Développement de la partie 3, algorithmes génétiques
+	\end{itemize}
+	\remarque{Pour la partie sur les algorithmes génétiques, il n'est pas précisé dans le sujet que le nombrez N d'individus doit être passé en paramètre du
+	programme, ainsi cette valeur n'est présente qu'en paramètre de la fonction \texttt{genetic\_bestPath} afin de respecter le cahier des charges du
+	point de vue des arguments.}
+
+	\section{Programmation avec preuve de \texttt{util\_searchFirstOccurence}}
+	\subsection{Spécification}
+\begin{lstlisting}[language=C]
+/* N $>$ 0 */
+searchFirstOccurence(T, R, N, p);
+/* (($\forall$ I : 0 $\leq$ I $<$ N $\rightarrow$ T[i] $\neq$ R)$\rightarrow$ p $=$ -1) $\lor$ 
+ *  (($\exists$ J : 0 $\leq$ J $<$ N $\wedge$ T[J] $=$ R) $\rightarrow$ p $=$ J) 
+ */
+\end{lstlisting}
+\subsection{Programmation}
+\begin{lstlisting}[language=C]
+/* N $>$ 0 */
+p = 0;
+/* INV = $\forall$ J : 0 $\leq$ J $\leq$ p $\rightarrow$ T[J] $\neq$ R */
+while(p < N && T[p] != R) {
+	/* p $<$ N $\wedge$ T[p} $\neq$ R $\wedge$ INV */
+	++p;
+	/* INV */
+}
+/* p $>$ N $\wedge$ T[p] $=$ R $\wedge$ $\forall$J: 0 $\leq$ J $<$ p $\rightarrow$ T[J] $\neq$ R */
+if(p == N-1) {
+	p = -1;
+}
+/* (( $\forall$ I: 0 $\leq$ I $<$ N $\rightarrow$ T[I] $\neq$ R) $\rightarrow$ p = -1) $\wedge$
+ * (($\exists$ p : 0 $\leq$ < N $\wedge$ T[p] = R) $\wedge$ $\forall$ J : 0 $\leq$ J < p $\rightarrow$ T[J] $\neq$ R)
+ */
+\end{lstlisting}
+\end{document}

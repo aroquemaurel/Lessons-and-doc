@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Le voyageur de commerce: Le problème du voyageur de commerce - Projet d&#39;algorithmique en langage C</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Généré par Doxygen 1.7.1 -->
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li class="current"><a href="main.html"><span>Page&nbsp;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&nbsp;de&nbsp;données</span></a></li>
+      <li><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<h1>Le problème du voyageur de commerce - Projet d'algorithmique en langage C </h1>  </div>
+</div>
+<div class="contents">
+<h3 class="version">1 </h3><dl class="author"><dt><b>Auteur:</b></dt><dd>L2 Antoine de Roquemaurel (G1.1) </dd></dl>
+<dl class="date"><dt><b>Date:</b></dt><dd>19/11/2012 10:42:29</dd></dl>
+<p>Point d'entrée du programme. Aucune fonction ne doit être déclarée Ce sont des fonctions simples, qui doivent être indépendantes du projet.</p>
+<h2><a class="anchor" id="Le"></a>
+problème</h2>
+<p>Étant donné n points (des "villes") et les distances les séparant, trouver un chemin de longueur totale qui passe exactement une fois par chaque point et reviennent au point de départ (une tournée).</p>
+<p>Ce problème peut servir tel quel a l'optimisation de trajectoires de machines-outils : par exemple, pour minimiser le temps total que met une fraiseuse a commande numérique pour percer n points dans une plaque de tôle ou pour percer les trous des composants d'un circuit electronique comme dans le cas qui nous intéresse.</p>
+<p>Ce problème est plus compliqué qu'il n'y parait et on ne connait pas de méthode de résolution permettant d'obtenir des solutions exactes en un temps raisonnable pour de grandes instances (grand nombre de villes) du problème. Pour ces grandes instances, on devra donc souvent se contenter de solutions approchés, car on se retrouve face à une explosion combinatoire : le nombre de chemins possibles passant par 69 villes est déjà un nombre d’une longueur de 100 chiffres. Pour comparaison, un nombre d'une longueur de 80 chiffres permettrait déjà de représenter le nombre d'atomes dans tout l'univers connu.</p>
+<p>Le problème du "voyageur de commerce" a été étudié depuis lontemps et on dispose d’une grande variété d'algorithmes donnant le plus souvent des solutions approchés mais calculables en un temps raisonnable.</p>
+<h2><a class="anchor" id="Les"></a>
+algorithmes implémentéé</h2>
+<p>Ce problème sera implémenté via différents algorithmes :</p>
+<ul>
+<li>Brute force</li>
+<li>Recherche locale aléatoire</li>
+<li>Recherche locale systématique</li>
+<li>Algorithme génétique </li>
+</ul>
+</div>
+<hr class="footer"/><address class="footer"><small>Généré le Sun Jan 13 2013 16:47:43 pour Le voyageur de commerce par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>
