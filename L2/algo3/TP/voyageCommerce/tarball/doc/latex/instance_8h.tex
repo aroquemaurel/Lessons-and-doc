@@ -1,0 +1,165 @@
+\hypertarget{instance_8h}{
+\section{Référence du fichier lib/instance.h}
+\label{instance_8h}\index{lib/instance.h@{lib/instance.h}}
+}
+
+
+Fonctions sur les instances.  
+
+
+{\ttfamily \#include $<$stdbool.h$>$}\par
+{\ttfamily \#include $<$string.h$>$}\par
+{\ttfamily \#include \char`\"{}town.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}distance.h\char`\"{}}\par
+\subsection*{Structures de données}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structInstance}{Instance}
+\begin{DoxyCompactList}\small\item\em Objet des instances. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{instance_8h_a0240ac851181b84ac374872dc5434ee4}{
+\#define \hyperlink{instance_8h_a0240ac851181b84ac374872dc5434ee4}{N}~1024}
+\label{instance_8h_a0240ac851181b84ac374872dc5434ee4}
+
+\begin{DoxyCompactList}\small\item\em Taille maximale des tableaux. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{instance_8h_a1058dfaf55684061f53d50b1f9f7821c}{instance\_\-display} (const \hyperlink{structInstance}{Instance} pInstance)
+\begin{DoxyCompactList}\small\item\em Affiche une \hyperlink{structInstance}{Instance}. \item\end{DoxyCompactList}\item 
+\hyperlink{structInstance}{Instance} \hyperlink{instance_8h_a02a01978b8b8e2884b8aa0c288344280}{instance\_\-new} (FILE $\ast$pFile)
+\begin{DoxyCompactList}\small\item\em Créer une nouvelle \hyperlink{structInstance}{Instance} à partir d'un fichier. \item\end{DoxyCompactList}\item 
+void \hyperlink{instance_8h_ac04153fd35ba82c91bdf29e938fdc2bc}{instance\_\-push} (\hyperlink{structInstance}{Instance} $\ast$pInstance, const \hyperlink{structTown}{Town} pTown)
+\begin{DoxyCompactList}\small\item\em Ajoute une nouvelle ville dans une \hyperlink{structInstance}{Instance}. \item\end{DoxyCompactList}\item 
+void \hyperlink{instance_8h_a1e3ecd1b3c78bf2ab80600ece180be0d}{instance\_\-initializeDistancesMatrix} (\hyperlink{structInstance}{Instance} $\ast$pInstance)
+\begin{DoxyCompactList}\small\item\em Initialise la matrice des distances. \item\end{DoxyCompactList}\item 
+void \hyperlink{instance_8h_aea66943af36e7996046ffd9298284264}{instance\_\-displayLinearVector} (const \hyperlink{structInstance}{Instance} pInstance)
+\begin{DoxyCompactList}\small\item\em Affiche la matrice des distances sous forme linéaire. \item\end{DoxyCompactList}\item 
+void \hyperlink{instance_8h_a01afd2fe19295c209087670a92f82bc3}{instance\_\-displayMatrix} (const \hyperlink{structInstance}{Instance} pInstance)
+\begin{DoxyCompactList}\small\item\em Affiche la matrice des distances sous forme de matrice symétrique. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Fonctions sur les instances. \begin{DoxyAuthor}{Auteur}
+Antoine de Roquemaurel 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+21/11/2012 22:03:34
+\end{DoxyDate}
+Toutes les entêtes des fonctions se rapportant à une instance. 
+
+\subsection{Documentation des fonctions}
+\hypertarget{instance_8h_a1058dfaf55684061f53d50b1f9f7821c}{
+\index{instance.h@{instance.h}!instance\_\-display@{instance\_\-display}}
+\index{instance\_\-display@{instance\_\-display}!instance.h@{instance.h}}
+\subsubsection[{instance\_\-display}]{\setlength{\rightskip}{0pt plus 5cm}void instance\_\-display (
+\begin{DoxyParamCaption}
+\item[{const {\bf Instance}}]{ pInstance}
+\end{DoxyParamCaption}
+)}}
+\label{instance_8h_a1058dfaf55684061f53d50b1f9f7821c}
+
+
+Affiche une \hyperlink{structInstance}{Instance}. 
+
+
+\begin{DoxyParams}{Paramètres}
+\item[{\em pInstance}]l' \hyperlink{structInstance}{Instance} à afficher \end{DoxyParams}
+\hypertarget{instance_8h_aea66943af36e7996046ffd9298284264}{
+\index{instance.h@{instance.h}!instance\_\-displayLinearVector@{instance\_\-displayLinearVector}}
+\index{instance\_\-displayLinearVector@{instance\_\-displayLinearVector}!instance.h@{instance.h}}
+\subsubsection[{instance\_\-displayLinearVector}]{\setlength{\rightskip}{0pt plus 5cm}void instance\_\-displayLinearVector (
+\begin{DoxyParamCaption}
+\item[{const {\bf Instance}}]{ pInstance}
+\end{DoxyParamCaption}
+)}}
+\label{instance_8h_aea66943af36e7996046ffd9298284264}
+
+
+Affiche la matrice des distances sous forme linéaire. 
+
+
+\begin{DoxyParams}{Paramètres}
+\item[{\em pInstance}]L'instance à afficher \end{DoxyParams}
+\begin{DoxySeeAlso}{Voir également}
+\hyperlink{structDistance}{Distance} 
+\end{DoxySeeAlso}
+\hypertarget{instance_8h_a01afd2fe19295c209087670a92f82bc3}{
+\index{instance.h@{instance.h}!instance\_\-displayMatrix@{instance\_\-displayMatrix}}
+\index{instance\_\-displayMatrix@{instance\_\-displayMatrix}!instance.h@{instance.h}}
+\subsubsection[{instance\_\-displayMatrix}]{\setlength{\rightskip}{0pt plus 5cm}void instance\_\-displayMatrix (
+\begin{DoxyParamCaption}
+\item[{const {\bf Instance}}]{ pInstance}
+\end{DoxyParamCaption}
+)}}
+\label{instance_8h_a01afd2fe19295c209087670a92f82bc3}
+
+
+Affiche la matrice des distances sous forme de matrice symétrique. 
+
+
+\begin{DoxyParams}{Paramètres}
+\item[{\em pInstance}]L'instance à afficher \end{DoxyParams}
+\begin{DoxySeeAlso}{Voir également}
+\hyperlink{structDistance}{Distance} 
+\end{DoxySeeAlso}
+\hypertarget{instance_8h_a1e3ecd1b3c78bf2ab80600ece180be0d}{
+\index{instance.h@{instance.h}!instance\_\-initializeDistancesMatrix@{instance\_\-initializeDistancesMatrix}}
+\index{instance\_\-initializeDistancesMatrix@{instance\_\-initializeDistancesMatrix}!instance.h@{instance.h}}
+\subsubsection[{instance\_\-initializeDistancesMatrix}]{\setlength{\rightskip}{0pt plus 5cm}void instance\_\-initializeDistancesMatrix (
+\begin{DoxyParamCaption}
+\item[{{\bf Instance} $\ast$}]{ pInstance}
+\end{DoxyParamCaption}
+)}}
+\label{instance_8h_a1e3ecd1b3c78bf2ab80600ece180be0d}
+
+
+Initialise la matrice des distances. 
+
+
+\begin{DoxyParams}{Paramètres}
+\item[{\em pInstance}]L'instance à modifier \end{DoxyParams}
+\begin{DoxySeeAlso}{Voir également}
+\hyperlink{structDistance}{Distance} 
+\end{DoxySeeAlso}
+\hypertarget{instance_8h_a02a01978b8b8e2884b8aa0c288344280}{
+\index{instance.h@{instance.h}!instance\_\-new@{instance\_\-new}}
+\index{instance\_\-new@{instance\_\-new}!instance.h@{instance.h}}
+\subsubsection[{instance\_\-new}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Instance} instance\_\-new (
+\begin{DoxyParamCaption}
+\item[{FILE $\ast$}]{ pFile}
+\end{DoxyParamCaption}
+)}}
+\label{instance_8h_a02a01978b8b8e2884b8aa0c288344280}
+
+
+Créer une nouvelle \hyperlink{structInstance}{Instance} à partir d'un fichier. 
+
+
+\begin{DoxyParams}{Paramètres}
+\item[{\em pFile}]Le pointeur sur fichier contenant les informations de l'instance\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+la nouvelle \hyperlink{structInstance}{Instance} 
+\end{DoxyReturn}
+\hypertarget{instance_8h_ac04153fd35ba82c91bdf29e938fdc2bc}{
+\index{instance.h@{instance.h}!instance\_\-push@{instance\_\-push}}
+\index{instance\_\-push@{instance\_\-push}!instance.h@{instance.h}}
+\subsubsection[{instance\_\-push}]{\setlength{\rightskip}{0pt plus 5cm}void instance\_\-push (
+\begin{DoxyParamCaption}
+\item[{{\bf Instance} $\ast$}]{ pInstance, }
+\item[{const {\bf Town}}]{ pTown}
+\end{DoxyParamCaption}
+)}}
+\label{instance_8h_ac04153fd35ba82c91bdf29e938fdc2bc}
+
+
+Ajoute une nouvelle ville dans une \hyperlink{structInstance}{Instance}. 
+
+
+\begin{DoxyParams}{Paramètres}
+\item[{\em pInstance}]L'instance à modifier \item[{\em pTown}]La ville à ajouter\end{DoxyParams}
+\begin{DoxySeeAlso}{Voir également}
+\hyperlink{structTown}{Town} 
+\end{DoxySeeAlso}

@@ -1,0 +1,199 @@
+\select@language {french}
+\contentsline {chapter}{\numberline {1}Le probl\IeC {\`e}me du voyageur de commerce -\/ Projet d'algorithmique en langage C}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}probl\IeC {\`e}me}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}algorithmes impl\IeC {\'e}ment\IeC {\'e}\IeC {\'e}}{1}{section.1.2}
+\contentsline {chapter}{\numberline {2}Index des structures de donn\IeC {\'e}es}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Structures de donn\IeC {\'e}es}{3}{section.2.1}
+\contentsline {chapter}{\numberline {3}Index des fichiers}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}Liste des fichiers}{5}{section.3.1}
+\contentsline {chapter}{\numberline {4}Documentation des structures de donn\IeC {\'e}es}{7}{chapter.4}
+\contentsline {section}{\numberline {4.1}R\IeC {\'e}f\IeC {\'e}rence de la structure Algo}{7}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Description d\IeC {\'e}taill\IeC {\'e}e}{7}{subsection.4.1.1}
+\contentsline {section}{\numberline {4.2}R\IeC {\'e}f\IeC {\'e}rence de la structure Distance}{7}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Description d\IeC {\'e}taill\IeC {\'e}e}{8}{subsection.4.2.1}
+\contentsline {section}{\numberline {4.3}R\IeC {\'e}f\IeC {\'e}rence de la structure Errors}{8}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Description d\IeC {\'e}taill\IeC {\'e}e}{9}{subsection.4.3.1}
+\contentsline {section}{\numberline {4.4}R\IeC {\'e}f\IeC {\'e}rence de la structure Instance}{9}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Description d\IeC {\'e}taill\IeC {\'e}e}{9}{subsection.4.4.1}
+\contentsline {section}{\numberline {4.5}R\IeC {\'e}f\IeC {\'e}rence de la structure Path}{10}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Description d\IeC {\'e}taill\IeC {\'e}e}{10}{subsection.4.5.1}
+\contentsline {section}{\numberline {4.6}R\IeC {\'e}f\IeC {\'e}rence de la structure Tour}{10}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Description d\IeC {\'e}taill\IeC {\'e}e}{11}{subsection.4.6.1}
+\contentsline {section}{\numberline {4.7}R\IeC {\'e}f\IeC {\'e}rence de la structure Town}{11}{section.4.7}
+\contentsline {subsection}{\numberline {4.7.1}Description d\IeC {\'e}taill\IeC {\'e}e}{11}{subsection.4.7.1}
+\contentsline {chapter}{\numberline {5}Documentation des fichiers}{13}{chapter.5}
+\contentsline {section}{\numberline {5.1}R\IeC {\'e}f\IeC {\'e}rence du fichier lib/bruteForce.h}{13}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Description d\IeC {\'e}taill\IeC {\'e}e}{13}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Documentation des fonctions}{13}{subsection.5.1.2}
+\contentsline {subsubsection}{\numberline {5.1.2.1}bruteForce\_\discretionary {-}{}{}bestPath}{13}{subsubsection.5.1.2.1}
+\contentsline {section}{\numberline {5.2}R\IeC {\'e}f\IeC {\'e}rence du fichier lib/distance.h}{14}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Description d\IeC {\'e}taill\IeC {\'e}e}{14}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Documentation des fonctions}{14}{subsection.5.2.2}
+\contentsline {subsubsection}{\numberline {5.2.2.1}distance\_\discretionary {-}{}{}betweenTowns}{14}{subsubsection.5.2.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2.2}distance\_\discretionary {-}{}{}calculDistance}{15}{subsubsection.5.2.2.2}
+\contentsline {subsubsection}{\numberline {5.2.2.3}distance\_\discretionary {-}{}{}new}{15}{subsubsection.5.2.2.3}
+\contentsline {section}{\numberline {5.3}R\IeC {\'e}f\IeC {\'e}rence du fichier lib/errors.h}{15}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Description d\IeC {\'e}taill\IeC {\'e}e}{16}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Documentation des fonctions}{16}{subsection.5.3.2}
+\contentsline {subsubsection}{\numberline {5.3.2.1}errors\_\discretionary {-}{}{}displayErrorsMessage}{16}{subsubsection.5.3.2.1}
+\contentsline {subsubsection}{\numberline {5.3.2.2}errors\_\discretionary {-}{}{}new}{17}{subsubsection.5.3.2.2}
+\contentsline {subsubsection}{\numberline {5.3.2.3}errors\_\discretionary {-}{}{}setFileNotFound}{17}{subsubsection.5.3.2.3}
+\contentsline {subsubsection}{\numberline {5.3.2.4}errors\_\discretionary {-}{}{}setMissingParameterGa}{17}{subsubsection.5.3.2.4}
+\contentsline {subsubsection}{\numberline {5.3.2.5}errors\_\discretionary {-}{}{}setMissingParameterLsnr}{17}{subsubsection.5.3.2.5}
+\contentsline {subsubsection}{\numberline {5.3.2.6}errors\_\discretionary {-}{}{}setMissingParameterLsr}{17}{subsubsection.5.3.2.6}
+\contentsline {subsubsection}{\numberline {5.3.2.7}errors\_\discretionary {-}{}{}setNbArguments}{17}{subsubsection.5.3.2.7}
+\contentsline {subsubsection}{\numberline {5.3.2.8}errors\_\discretionary {-}{}{}setNoAlgoSpecified}{18}{subsubsection.5.3.2.8}
+\contentsline {subsubsection}{\numberline {5.3.2.9}errors\_\discretionary {-}{}{}setNoValidParameterGa}{18}{subsubsection.5.3.2.9}
+\contentsline {subsubsection}{\numberline {5.3.2.10}errors\_\discretionary {-}{}{}setNoValidParameterLsnr}{18}{subsubsection.5.3.2.10}
+\contentsline {subsubsection}{\numberline {5.3.2.11}errors\_\discretionary {-}{}{}setNoValidParameterLsr}{18}{subsubsection.5.3.2.11}
+\contentsline {subsubsection}{\numberline {5.3.2.12}errors\_\discretionary {-}{}{}setTagFNotFound}{18}{subsubsection.5.3.2.12}
+\contentsline {section}{\numberline {5.4}R\IeC {\'e}f\IeC {\'e}rence du fichier lib/genetic.h}{18}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Description d\IeC {\'e}taill\IeC {\'e}e}{19}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Documentation des fonctions}{19}{subsection.5.4.2}
+\contentsline {subsubsection}{\numberline {5.4.2.1}genetic\_\discretionary {-}{}{}DPX}{19}{subsubsection.5.4.2.1}
+\contentsline {subsubsection}{\numberline {5.4.2.2}genetic\_\discretionary {-}{}{}getBestPath}{19}{subsubsection.5.4.2.2}
+\contentsline {subsubsection}{\numberline {5.4.2.3}genetic\_\discretionary {-}{}{}mutation}{20}{subsubsection.5.4.2.3}
+\contentsline {section}{\numberline {5.5}R\IeC {\'e}f\IeC {\'e}rence du fichier lib/instance.h}{20}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Description d\IeC {\'e}taill\IeC {\'e}e}{21}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}Documentation des fonctions}{21}{subsection.5.5.2}
+\contentsline {subsubsection}{\numberline {5.5.2.1}instance\_\discretionary {-}{}{}display}{21}{subsubsection.5.5.2.1}
+\contentsline {subsubsection}{\numberline {5.5.2.2}instance\_\discretionary {-}{}{}displayLinearVector}{21}{subsubsection.5.5.2.2}
+\contentsline {subsubsection}{\numberline {5.5.2.3}instance\_\discretionary {-}{}{}displayMatrix}{21}{subsubsection.5.5.2.3}
+\contentsline {subsubsection}{\numberline {5.5.2.4}instance\_\discretionary {-}{}{}initializeDistancesMatrix}{22}{subsubsection.5.5.2.4}
+\contentsline {subsubsection}{\numberline {5.5.2.5}instance\_\discretionary {-}{}{}new}{22}{subsubsection.5.5.2.5}
+\contentsline {subsubsection}{\numberline {5.5.2.6}instance\_\discretionary {-}{}{}push}{22}{subsubsection.5.5.2.6}
+\contentsline {section}{\numberline {5.6}R\IeC {\'e}f\IeC {\'e}rence du fichier lib/localSearch.h}{22}{section.5.6}
+\contentsline {subsection}{\numberline {5.6.1}Description d\IeC {\'e}taill\IeC {\'e}e}{23}{subsection.5.6.1}
+\contentsline {subsection}{\numberline {5.6.2}Documentation des fonctions}{23}{subsection.5.6.2}
+\contentsline {subsubsection}{\numberline {5.6.2.1}localSearch\_\discretionary {-}{}{}randomBestPath}{23}{subsubsection.5.6.2.1}
+\contentsline {subsubsection}{\numberline {5.6.2.2}localSearch\_\discretionary {-}{}{}systematicBestPath}{23}{subsubsection.5.6.2.2}
+\contentsline {section}{\numberline {5.7}R\IeC {\'e}f\IeC {\'e}rence du fichier lib/parsing.h}{24}{section.5.7}
+\contentsline {subsection}{\numberline {5.7.1}Description d\IeC {\'e}taill\IeC {\'e}e}{24}{subsection.5.7.1}
+\contentsline {subsection}{\numberline {5.7.2}Documentation du type de l'\IeC {\'e}num\IeC {\'e}ration}{24}{subsection.5.7.2}
+\contentsline {subsubsection}{\numberline {5.7.2.1}AlgoType}{24}{subsubsection.5.7.2.1}
+\contentsline {subsection}{\numberline {5.7.3}Documentation des fonctions}{25}{subsection.5.7.3}
+\contentsline {subsubsection}{\numberline {5.7.3.1}parsing\_\discretionary {-}{}{}algoType}{25}{subsubsection.5.7.3.1}
+\contentsline {subsubsection}{\numberline {5.7.3.2}parsing\_\discretionary {-}{}{}parseFileName}{25}{subsubsection.5.7.3.2}
+\contentsline {subsubsection}{\numberline {5.7.3.3}parsing\_\discretionary {-}{}{}parseVerboseMode}{25}{subsubsection.5.7.3.3}
+\contentsline {section}{\numberline {5.8}R\IeC {\'e}f\IeC {\'e}rence du fichier lib/path.h}{26}{section.5.8}
+\contentsline {subsection}{\numberline {5.8.1}Description d\IeC {\'e}taill\IeC {\'e}e}{26}{subsection.5.8.1}
+\contentsline {subsection}{\numberline {5.8.2}Documentation des fonctions}{26}{subsection.5.8.2}
+\contentsline {subsubsection}{\numberline {5.8.2.1}path\_\discretionary {-}{}{}addNearNeighbor}{26}{subsubsection.5.8.2.1}
+\contentsline {subsubsection}{\numberline {5.8.2.2}path\_\discretionary {-}{}{}display}{27}{subsubsection.5.8.2.2}
+\contentsline {subsubsection}{\numberline {5.8.2.3}path\_\discretionary {-}{}{}new}{27}{subsubsection.5.8.2.3}
+\contentsline {section}{\numberline {5.9}R\IeC {\'e}f\IeC {\'e}rence du fichier lib/tour.h}{27}{section.5.9}
+\contentsline {subsection}{\numberline {5.9.1}Description d\IeC {\'e}taill\IeC {\'e}e}{28}{subsection.5.9.1}
+\contentsline {subsection}{\numberline {5.9.2}Documentation des fonctions}{28}{subsection.5.9.2}
+\contentsline {subsubsection}{\numberline {5.9.2.1}tour\_\discretionary {-}{}{}2opt}{28}{subsubsection.5.9.2.1}
+\contentsline {subsubsection}{\numberline {5.9.2.2}tour\_\discretionary {-}{}{}addSeveralTowns}{29}{subsubsection.5.9.2.2}
+\contentsline {subsubsection}{\numberline {5.9.2.3}tour\_\discretionary {-}{}{}addTown}{29}{subsubsection.5.9.2.3}
+\contentsline {subsubsection}{\numberline {5.9.2.4}tour\_\discretionary {-}{}{}calculLength}{29}{subsubsection.5.9.2.4}
+\contentsline {subsubsection}{\numberline {5.9.2.5}tour\_\discretionary {-}{}{}display}{29}{subsubsection.5.9.2.5}
+\contentsline {subsubsection}{\numberline {5.9.2.6}tour\_\discretionary {-}{}{}new}{29}{subsubsection.5.9.2.6}
+\contentsline {subsubsection}{\numberline {5.9.2.7}tour\_\discretionary {-}{}{}nextPermutation}{30}{subsubsection.5.9.2.7}
+\contentsline {subsubsection}{\numberline {5.9.2.8}tour\_\discretionary {-}{}{}randomWalk}{30}{subsubsection.5.9.2.8}
+\contentsline {subsubsection}{\numberline {5.9.2.9}tour\_\discretionary {-}{}{}replaceTheWorstTour}{30}{subsubsection.5.9.2.9}
+\contentsline {section}{\numberline {5.10}R\IeC {\'e}f\IeC {\'e}rence du fichier lib/town.h}{30}{section.5.10}
+\contentsline {subsection}{\numberline {5.10.1}Description d\IeC {\'e}taill\IeC {\'e}e}{31}{subsection.5.10.1}
+\contentsline {subsection}{\numberline {5.10.2}Documentation des fonctions}{31}{subsection.5.10.2}
+\contentsline {subsubsection}{\numberline {5.10.2.1}town\_\discretionary {-}{}{}display}{31}{subsubsection.5.10.2.1}
+\contentsline {subsubsection}{\numberline {5.10.2.2}town\_\discretionary {-}{}{}new}{31}{subsubsection.5.10.2.2}
+\contentsline {section}{\numberline {5.11}R\IeC {\'e}f\IeC {\'e}rence du fichier lib/util.h}{31}{section.5.11}
+\contentsline {subsection}{\numberline {5.11.1}Description d\IeC {\'e}taill\IeC {\'e}e}{32}{subsection.5.11.1}
+\contentsline {subsection}{\numberline {5.11.2}Documentation des fonctions}{32}{subsection.5.11.2}
+\contentsline {subsubsection}{\numberline {5.11.2.1}util\_\discretionary {-}{}{}deleteArrayValue}{32}{subsubsection.5.11.2.1}
+\contentsline {subsubsection}{\numberline {5.11.2.2}util\_\discretionary {-}{}{}displayArray}{33}{subsubsection.5.11.2.2}
+\contentsline {subsubsection}{\numberline {5.11.2.3}util\_\discretionary {-}{}{}rand}{33}{subsubsection.5.11.2.3}
+\contentsline {subsubsection}{\numberline {5.11.2.4}util\_\discretionary {-}{}{}reverseArray}{33}{subsubsection.5.11.2.4}
+\contentsline {subsubsection}{\numberline {5.11.2.5}util\_\discretionary {-}{}{}searchFirstOccurenceInArray}{33}{subsubsection.5.11.2.5}
+\contentsline {subsubsection}{\numberline {5.11.2.6}util\_\discretionary {-}{}{}sousTabExist}{34}{subsubsection.5.11.2.6}
+\contentsline {subsubsection}{\numberline {5.11.2.7}util\_\discretionary {-}{}{}sum}{34}{subsubsection.5.11.2.7}
+\contentsline {subsubsection}{\numberline {5.11.2.8}util\_\discretionary {-}{}{}swap}{34}{subsubsection.5.11.2.8}
+\contentsline {section}{\numberline {5.12}R\IeC {\'e}f\IeC {\'e}rence du fichier src/bruteForce.c}{34}{section.5.12}
+\contentsline {subsection}{\numberline {5.12.1}Description d\IeC {\'e}taill\IeC {\'e}e}{35}{subsection.5.12.1}
+\contentsline {subsection}{\numberline {5.12.2}Documentation des fonctions}{35}{subsection.5.12.2}
+\contentsline {subsubsection}{\numberline {5.12.2.1}bruteForce\_\discretionary {-}{}{}bestPath}{35}{subsubsection.5.12.2.1}
+\contentsline {section}{\numberline {5.13}R\IeC {\'e}f\IeC {\'e}rence du fichier src/distance.c}{35}{section.5.13}
+\contentsline {subsection}{\numberline {5.13.1}Description d\IeC {\'e}taill\IeC {\'e}e}{35}{subsection.5.13.1}
+\contentsline {subsection}{\numberline {5.13.2}Documentation des fonctions}{36}{subsection.5.13.2}
+\contentsline {subsubsection}{\numberline {5.13.2.1}distance\_\discretionary {-}{}{}betweenTowns}{36}{subsubsection.5.13.2.1}
+\contentsline {subsubsection}{\numberline {5.13.2.2}distance\_\discretionary {-}{}{}calculDistance}{36}{subsubsection.5.13.2.2}
+\contentsline {subsubsection}{\numberline {5.13.2.3}distance\_\discretionary {-}{}{}new}{36}{subsubsection.5.13.2.3}
+\contentsline {section}{\numberline {5.14}R\IeC {\'e}f\IeC {\'e}rence du fichier src/errors.c}{37}{section.5.14}
+\contentsline {subsection}{\numberline {5.14.1}Description d\IeC {\'e}taill\IeC {\'e}e}{37}{subsection.5.14.1}
+\contentsline {subsection}{\numberline {5.14.2}Documentation des fonctions}{38}{subsection.5.14.2}
+\contentsline {subsubsection}{\numberline {5.14.2.1}errors\_\discretionary {-}{}{}displayErrorsMessage}{38}{subsubsection.5.14.2.1}
+\contentsline {subsubsection}{\numberline {5.14.2.2}errors\_\discretionary {-}{}{}new}{38}{subsubsection.5.14.2.2}
+\contentsline {subsubsection}{\numberline {5.14.2.3}errors\_\discretionary {-}{}{}setFileNotFound}{38}{subsubsection.5.14.2.3}
+\contentsline {subsubsection}{\numberline {5.14.2.4}errors\_\discretionary {-}{}{}setMissingParameterGa}{38}{subsubsection.5.14.2.4}
+\contentsline {subsubsection}{\numberline {5.14.2.5}errors\_\discretionary {-}{}{}setMissingParameterLsnr}{38}{subsubsection.5.14.2.5}
+\contentsline {subsubsection}{\numberline {5.14.2.6}errors\_\discretionary {-}{}{}setMissingParameterLsr}{39}{subsubsection.5.14.2.6}
+\contentsline {subsubsection}{\numberline {5.14.2.7}errors\_\discretionary {-}{}{}setNoAlgoSpecified}{39}{subsubsection.5.14.2.7}
+\contentsline {subsubsection}{\numberline {5.14.2.8}errors\_\discretionary {-}{}{}setNoValidParameterGa}{39}{subsubsection.5.14.2.8}
+\contentsline {subsubsection}{\numberline {5.14.2.9}errors\_\discretionary {-}{}{}setNoValidParameterLsnr}{39}{subsubsection.5.14.2.9}
+\contentsline {subsubsection}{\numberline {5.14.2.10}errors\_\discretionary {-}{}{}setNoValidParameterLsr}{39}{subsubsection.5.14.2.10}
+\contentsline {subsubsection}{\numberline {5.14.2.11}errors\_\discretionary {-}{}{}setTagFNotFound}{39}{subsubsection.5.14.2.11}
+\contentsline {section}{\numberline {5.15}R\IeC {\'e}f\IeC {\'e}rence du fichier src/genetic.c}{39}{section.5.15}
+\contentsline {subsection}{\numberline {5.15.1}Description d\IeC {\'e}taill\IeC {\'e}e}{40}{subsection.5.15.1}
+\contentsline {subsection}{\numberline {5.15.2}Documentation des fonctions}{40}{subsection.5.15.2}
+\contentsline {subsubsection}{\numberline {5.15.2.1}genetic\_\discretionary {-}{}{}DPX}{40}{subsubsection.5.15.2.1}
+\contentsline {subsubsection}{\numberline {5.15.2.2}genetic\_\discretionary {-}{}{}getBestPath}{40}{subsubsection.5.15.2.2}
+\contentsline {subsubsection}{\numberline {5.15.2.3}genetic\_\discretionary {-}{}{}mutation}{41}{subsubsection.5.15.2.3}
+\contentsline {section}{\numberline {5.16}R\IeC {\'e}f\IeC {\'e}rence du fichier src/instance.c}{41}{section.5.16}
+\contentsline {subsection}{\numberline {5.16.1}Description d\IeC {\'e}taill\IeC {\'e}e}{41}{subsection.5.16.1}
+\contentsline {subsection}{\numberline {5.16.2}Documentation des fonctions}{42}{subsection.5.16.2}
+\contentsline {subsubsection}{\numberline {5.16.2.1}instance\_\discretionary {-}{}{}display}{42}{subsubsection.5.16.2.1}
+\contentsline {subsubsection}{\numberline {5.16.2.2}instance\_\discretionary {-}{}{}displayLinearVector}{42}{subsubsection.5.16.2.2}
+\contentsline {subsubsection}{\numberline {5.16.2.3}instance\_\discretionary {-}{}{}displayMatrix}{42}{subsubsection.5.16.2.3}
+\contentsline {subsubsection}{\numberline {5.16.2.4}instance\_\discretionary {-}{}{}initializeDistancesMatrix}{42}{subsubsection.5.16.2.4}
+\contentsline {subsubsection}{\numberline {5.16.2.5}instance\_\discretionary {-}{}{}new}{43}{subsubsection.5.16.2.5}
+\contentsline {subsubsection}{\numberline {5.16.2.6}instance\_\discretionary {-}{}{}push}{43}{subsubsection.5.16.2.6}
+\contentsline {section}{\numberline {5.17}R\IeC {\'e}f\IeC {\'e}rence du fichier src/localSearch.c}{43}{section.5.17}
+\contentsline {subsection}{\numberline {5.17.1}Description d\IeC {\'e}taill\IeC {\'e}e}{43}{subsection.5.17.1}
+\contentsline {subsection}{\numberline {5.17.2}Documentation des fonctions}{44}{subsection.5.17.2}
+\contentsline {subsubsection}{\numberline {5.17.2.1}localSearch\_\discretionary {-}{}{}randomBestPath}{44}{subsubsection.5.17.2.1}
+\contentsline {subsubsection}{\numberline {5.17.2.2}localSearch\_\discretionary {-}{}{}systematicBestPath}{44}{subsubsection.5.17.2.2}
+\contentsline {section}{\numberline {5.18}R\IeC {\'e}f\IeC {\'e}rence du fichier src/main.c}{44}{section.5.18}
+\contentsline {subsection}{\numberline {5.18.1}Description d\IeC {\'e}taill\IeC {\'e}e}{45}{subsection.5.18.1}
+\contentsline {subsection}{\numberline {5.18.2}Documentation des fonctions}{45}{subsection.5.18.2}
+\contentsline {subsubsection}{\numberline {5.18.2.1}main}{45}{subsubsection.5.18.2.1}
+\contentsline {section}{\numberline {5.19}R\IeC {\'e}f\IeC {\'e}rence du fichier src/parsing.c}{45}{section.5.19}
+\contentsline {subsection}{\numberline {5.19.1}Description d\IeC {\'e}taill\IeC {\'e}e}{45}{subsection.5.19.1}
+\contentsline {subsection}{\numberline {5.19.2}Documentation des fonctions}{45}{subsection.5.19.2}
+\contentsline {subsubsection}{\numberline {5.19.2.1}parsing\_\discretionary {-}{}{}algoType}{45}{subsubsection.5.19.2.1}
+\contentsline {subsubsection}{\numberline {5.19.2.2}parsing\_\discretionary {-}{}{}parseFileName}{46}{subsubsection.5.19.2.2}
+\contentsline {subsubsection}{\numberline {5.19.2.3}parsing\_\discretionary {-}{}{}parseVerboseMode}{46}{subsubsection.5.19.2.3}
+\contentsline {section}{\numberline {5.20}R\IeC {\'e}f\IeC {\'e}rence du fichier src/path.c}{46}{section.5.20}
+\contentsline {subsection}{\numberline {5.20.1}Description d\IeC {\'e}taill\IeC {\'e}e}{47}{subsection.5.20.1}
+\contentsline {subsection}{\numberline {5.20.2}Documentation des fonctions}{47}{subsection.5.20.2}
+\contentsline {subsubsection}{\numberline {5.20.2.1}path\_\discretionary {-}{}{}addNearNeighbor}{47}{subsubsection.5.20.2.1}
+\contentsline {subsubsection}{\numberline {5.20.2.2}path\_\discretionary {-}{}{}display}{47}{subsubsection.5.20.2.2}
+\contentsline {subsubsection}{\numberline {5.20.2.3}path\_\discretionary {-}{}{}new}{47}{subsubsection.5.20.2.3}
+\contentsline {section}{\numberline {5.21}R\IeC {\'e}f\IeC {\'e}rence du fichier src/tour.c}{48}{section.5.21}
+\contentsline {subsection}{\numberline {5.21.1}Description d\IeC {\'e}taill\IeC {\'e}e}{48}{subsection.5.21.1}
+\contentsline {subsection}{\numberline {5.21.2}Documentation des fonctions}{49}{subsection.5.21.2}
+\contentsline {subsubsection}{\numberline {5.21.2.1}tour\_\discretionary {-}{}{}2opt}{49}{subsubsection.5.21.2.1}
+\contentsline {subsubsection}{\numberline {5.21.2.2}tour\_\discretionary {-}{}{}addSeveralTowns}{49}{subsubsection.5.21.2.2}
+\contentsline {subsubsection}{\numberline {5.21.2.3}tour\_\discretionary {-}{}{}addTown}{49}{subsubsection.5.21.2.3}
+\contentsline {subsubsection}{\numberline {5.21.2.4}tour\_\discretionary {-}{}{}calculLength}{49}{subsubsection.5.21.2.4}
+\contentsline {subsubsection}{\numberline {5.21.2.5}tour\_\discretionary {-}{}{}display}{50}{subsubsection.5.21.2.5}
+\contentsline {subsubsection}{\numberline {5.21.2.6}tour\_\discretionary {-}{}{}new}{50}{subsubsection.5.21.2.6}
+\contentsline {subsubsection}{\numberline {5.21.2.7}tour\_\discretionary {-}{}{}nextPermutation}{50}{subsubsection.5.21.2.7}
+\contentsline {subsubsection}{\numberline {5.21.2.8}tour\_\discretionary {-}{}{}randomWalk}{50}{subsubsection.5.21.2.8}
+\contentsline {subsubsection}{\numberline {5.21.2.9}tour\_\discretionary {-}{}{}replaceTheWorstTour}{51}{subsubsection.5.21.2.9}
+\contentsline {section}{\numberline {5.22}R\IeC {\'e}f\IeC {\'e}rence du fichier src/town.c}{51}{section.5.22}
+\contentsline {subsection}{\numberline {5.22.1}Description d\IeC {\'e}taill\IeC {\'e}e}{51}{subsection.5.22.1}
+\contentsline {subsection}{\numberline {5.22.2}Documentation des fonctions}{51}{subsection.5.22.2}
+\contentsline {subsubsection}{\numberline {5.22.2.1}town\_\discretionary {-}{}{}display}{51}{subsubsection.5.22.2.1}
+\contentsline {subsubsection}{\numberline {5.22.2.2}town\_\discretionary {-}{}{}new}{51}{subsubsection.5.22.2.2}
+\contentsline {section}{\numberline {5.23}R\IeC {\'e}f\IeC {\'e}rence du fichier src/util.c}{52}{section.5.23}
+\contentsline {subsection}{\numberline {5.23.1}Description d\IeC {\'e}taill\IeC {\'e}e}{52}{subsection.5.23.1}
+\contentsline {subsection}{\numberline {5.23.2}Documentation des fonctions}{53}{subsection.5.23.2}
+\contentsline {subsubsection}{\numberline {5.23.2.1}util\_\discretionary {-}{}{}deleteArrayValue}{53}{subsubsection.5.23.2.1}
+\contentsline {subsubsection}{\numberline {5.23.2.2}util\_\discretionary {-}{}{}displayArray}{53}{subsubsection.5.23.2.2}
+\contentsline {subsubsection}{\numberline {5.23.2.3}util\_\discretionary {-}{}{}rand}{53}{subsubsection.5.23.2.3}
+\contentsline {subsubsection}{\numberline {5.23.2.4}util\_\discretionary {-}{}{}reverseArray}{53}{subsubsection.5.23.2.4}
+\contentsline {subsubsection}{\numberline {5.23.2.5}util\_\discretionary {-}{}{}searchFirstOccurenceInArray}{53}{subsubsection.5.23.2.5}
+\contentsline {subsubsection}{\numberline {5.23.2.6}util\_\discretionary {-}{}{}sousTabExist}{54}{subsubsection.5.23.2.6}
+\contentsline {subsubsection}{\numberline {5.23.2.7}util\_\discretionary {-}{}{}sum}{54}{subsubsection.5.23.2.7}
+\contentsline {subsubsection}{\numberline {5.23.2.8}util\_\discretionary {-}{}{}swap}{54}{subsubsection.5.23.2.8}

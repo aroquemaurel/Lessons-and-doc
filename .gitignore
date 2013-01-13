@@ -5,5 +5,8 @@ IUT/
 *idx
 *glo
 *out
+*swo 
+*swp
 /L2/algo3/TP/voyageurDeCommerce/build/
 /L2/algo3/TP/voyageurDeCommerce/dist/
+*.o
