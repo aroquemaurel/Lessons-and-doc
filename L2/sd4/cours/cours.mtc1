@@ -1,0 +1,7 @@
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.1}Syntaxe des TAD}{\reset@font\mtcSfont 5}{section.1.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.1.1}Signature du TAD \texttt {Pile}}{\reset@font\mtcSSfont 6}{subsection.1.1.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Signature de base}{\reset@font\mtcPfont 6}{section*.5}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Signature \IeC {\'e}tandue}{\reset@font\mtcPfont 6}{section*.6}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.2}Impl\IeC {\'e}mentation d'un TAD}{\reset@font\mtcSfont 6}{section.1.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.2.1}Impl\IeC {\'e}mentation de la structure de donn\IeC {\'e}es et des op\IeC {\'e}rateurs}{\reset@font\mtcSSfont 7}{subsection.1.2.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {1.2.1.1}Impl\IeC {\'e}mentation statique du TAD \texttt {Pile}}{\reset@font\mtcSSSfont 7}{subsubsection.1.2.1.1}}

@@ -1,0 +1,19 @@
+\section{TAD}
+\subsection{Suite du TAD \texttt{Pile}}
+\begin{enumerate}
+	\item Implémenter la fonction permettant de remplacer toute les occurrences de l'élément x par l'élément y dans la pile.
+	\item Implémenter la fonction d'affichage de la Pile.
+\end{enumerate}
+\begin{description}
+	\item[Rajouter dans le champ des opérations] \texttt{remplacerOccurence} Pile $\times$ Element $\times$ Element $\rightarrow$ Pile
+	\item[Préconditions] rien
+	\item[Axiones]
+\end{description}
+
+\begin{lstlisting}[language=C]
+remplacerOccurence(creer(), x, y) = creer();
+remplacerOccurence(empiler(p, x), x1, x2) = 
+		p1 $\wedge$ $\forall z$ (appartient(p1, z) $\rightarrow$ (z $\neq$ x1) (empiler(p, x), z') $\wedge$ z' = x1))
+\end{lstlisting}
+
+\lstinputlisting[language=C]{annexes/exercices/1.c}
