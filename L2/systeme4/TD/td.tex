@@ -1,0 +1,60 @@
+\documentclass[12pt,a4paper,openany]{book}
+
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\input{/home/aroquemaurel/cours/includesLaTeX/couleurs.tex}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, linkcolor=vert1, urlcolor=bleu, colorlinks=true]{hyperref}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+
+\newcommand{\titre}{Systèmes 2 --- TD}
+
+\newcommand{\pole}{}
+\newcommand{\sigle}{systèmes}
+
+\newcommand{\semestre}{4}
+
+\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex} %prise en charge du langage algo
+\input{/home/aroquemaurel/cours/includesLaTeX/entete-l2-cours.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
+
+\begin{document}
+	\setcounter{tocdepth}{2}
+	\setcounter{secnumdepth}{3}
+	\maketitle
+	\tableofcontents
+	\chapter{Introduction}
+		\section{Exercice 1}
+		\lstinputlisting[language=C, caption=Exercice 1 -- Version portable]{codes/1.c}
+		\lstinputlisting[language=C, caption=Exercice 1 -- Version Unix]{codes/1-2.c}
+		\section{Exercice 2}
+		\lstinputlisting[language=C, caption=Exercice 2]{codes/2-2.c}
+		\lstinputlisting[language=C, caption=Exercice 2 -- Correction]{codes/2.c}
+	\chapter{Processus}
+		\section{Exercice 3}
+		\section{Exercice 4}
+		\section{Exercice 5}
+		\section{Exercice 6}
+		\section{Exercice 7}
+	\chapter{Gestion de la mémoire: mémoire virtuelle et allocation non contiguë}
+	\chapter{Structure interne du système de fichier d'Unix}
+	\chapter{Primitives Unix (POSIX.1) de manipulation des fichiers}
+\end{document}
+
+
+
+
+
+
