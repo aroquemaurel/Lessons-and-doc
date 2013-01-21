@@ -1,17 +1,7 @@
-\chapter{Pointeurs}
-\section{Exercice 1}
+\section{Pointeurs}
+\subsection{Exercice 1}
 \lstinputlisting[language=C]{annexes/exercices/pointeurs.c}
 
-\begin{tabular}{c|c|c|c|c|}
-	\hline
-	Nb&p&*p&q&*q\\
-	1 & &  & & \\ 
-	2 &NULL & interdit & & \\ 
-	3 & NULL &interdit & NULL & interdit\\
-	4 &  
-\end{tabular}
-
-\subsection{Etape 1}
 \begin{tabular}{c|p{1cm}|}
 	\multicolumn{2}{c|}{1}\\
 	&\\
@@ -20,7 +10,7 @@
 	\hline
 	&\\
 	\hline
-	\multicolumn{1}{c}{p|}&\\
+	p&\\
 	\hline
 	q&\\
 	\hline
@@ -133,7 +123,7 @@
 	\hline
 \end{tabular}
 
-\section{Exercice 2}
+\subsection{Exercice 2}
 \lstinputlisting[language=C]{annexes/exercices/pointeurs2.c}
 \begin{tabular}{c|p{1cm}|}
 	\multicolumn{2}{c|}{1}\\
@@ -213,7 +203,7 @@
 \remarque{Dans le du malloc qui ne marche pas, ce que contient la mémoire est inconnu, si on accède à *p nous auron une segmentation fault. Ainsi on
 rajoute un test}
 
-\section{Exercice 3}
+\subsection{Exercice 3}
 \lstinputlisting[language=C]{annexes/exercices/pointeurs3.c}
 \begin{tabular}{c|p{1cm}}
 	\multicolumn{2}{c|}{1}\\
@@ -276,5 +266,5 @@ rajoute un test}
 	\hline
 \end{tabular}
 
-\section{Exercice 4 -- Même exercice avec une autre valeur}
+\subsection{Exercice 4 -- Même exercice avec une autre valeur}
 \lstinputlisting[language=C]{annexes/exercices/pointeurs4.c}

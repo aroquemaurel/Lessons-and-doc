@@ -1,0 +1,16 @@
+\select@language {french}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Types de donn\IeC {\'e}es Abstraits (TAD)}{5}{chapter.1}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Principe de base d'un TAD}}{5}{figure.1.1}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Pile avec une liste simplement chain\IeC {\'e}e}}{8}{figure.1.2}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces File avec une liste simplement chain\IeC {\'e}e}}{8}{figure.1.3}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Pile avec une liste doublement chain\IeC {\'e}e}}{9}{figure.1.4}
+\contentsline {figure}{\numberline {1.5}{\ignorespaces File avec une liste doublement chain\IeC {\'e}e}}{9}{figure.1.5}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Cours sur les pointeurs en C}{10}{appendix.A}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Liste des codes sources}{13}{appendix.B}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Table des figures}{14}{appendix.C}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Exercices}{15}{appendix.D}

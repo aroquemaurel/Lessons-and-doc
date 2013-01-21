@@ -1,4 +1,4 @@
-\chapter{Cours sur les pointeurs en C}\ref{pointeurs}
+\chapter{Cours sur les pointeurs en C}\label{pointeurs}
 Déjà vu par le passages de paramètres.
 \section{Syntaxe}
 	\subsection{Déclaration}
@@ -71,6 +71,6 @@ free(nomPointeur);
 \end{enumerate}
 
 Cela veut dire que la place n'est plus réservé au programme, elle pourra être alloué à un autre programme.
-\attention{La case mémoire ne met pas à jour la case mémoire, celle-ci contient toujours la valeur, si personne ne récupère la case, il sera toujours
-possible d'accéder à la donnée, cependant cela est aléatoire, cela peut être source d'erreurs}
+\attention{Le gestionnaire de mémoire ne met pas à jour la case mémoire, celle-ci contient toujours la valeur, si personne ne récupère la case, il sera toujours
+possible d'accéder à la donnée. C'est donc aléatoire, c'est une source d'erreurs.}
 
