@@ -1,7 +1,7 @@
 \chapter{Types de données Abstraits (TAD)}
 C'est une méthode de spécification de structures de données(SD).
 
-C'est utile pour la programmation << En large >>, c'est-à-dire à plusieurs, pour cela nous sommes obligés de travaillerr sur la communication et
+C'est utile pour la programmation << En large >>, c'est-à-dire à plusieurs, pour cela nous sommes obligés de travailler sur la communication et
 l'échange sur le code produit, on utilise pour cela les \textbf{spécifications} : 
 \begin{itemize}
 	\item Les Entrées Sorties du programme \footnote{Vu au S3}
@@ -9,8 +9,9 @@ l'échange sur le code produit, on utilise pour cela les \textbf{spécifications
 \end{itemize}
 \begin{figure}[H]
 	\centering
-				\includegraphics[width=8cm]{1.jpg}
-			\end{figure}
+	\includegraphics[width=8cm]{1.jpg}
+	\caption{Principe de base d'un TAD}
+\end{figure}
 \exemple{\textbf{Les entiers}
 
 \begin{description}
@@ -55,7 +56,7 @@ en sortir.\footnote{Last In First Out}.
 		\end{itemize}
 	\item[Axiones]~
 \end{description}
-
+~\newline
 \begin{lstlisting}[language=C, numbers=none]
 /* 
  * Avant toute chose on partitionne l'ensemble des opérations en deux sous ensembles : 
@@ -109,3 +110,38 @@ Celle-ci peut être statique ou dynamique.
 	\item Utilisation d'un entier donnant le nombre d'éléments rangés dans la pile
 \end{itemize}
 \lstinputlisting[language=C]{content/1.c}
+
+\section{Exemple de structure de données linéaires dynamiques}
+\subsection{Pile}
+Liste simplement chaînée dynamique à un point d'entrée
+% TODO Schéma
+
+\begin{lstlisting}[language=C, numbers=none,frame=none]
+	typedef struct etCel {
+	Element val;
+	struct etCel *suiv;
+} CelSc;
+\end{lstlisting}
+
+\subsection{File}
+Liste simplement chainée à deux points d'entrée
+% TODO Schéma
+\begin{lstlisting}[language=C, numbers=none,frame=none]
+	typedef struct etCel2 {
+	LSC fin;
+	LSC debut;
+} LSC2;
+\end{lstlisting}
+\subsection{Pile avec liste doublement chainée}
+%% TODO
+
+\begin{lstlisting}[language=C, numbers=none,frame=none]
+typedef struct etCelDC {
+	Element val;
+	struct etCelDC* suiv;
+	struct etCelDC* precedent;
+}
+typedef celDC* LDC;
+\end{lstlisting}
+
+\subsection{File avec liste doublement chaîné}

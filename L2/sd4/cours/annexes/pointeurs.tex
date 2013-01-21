@@ -1,0 +1,76 @@
+\chapter{Cours sur les pointeurs en C}\ref{pointeurs}
+Déjà vu par le passages de paramètres.
+\section{Syntaxe}
+	\subsection{Déclaration}
+\begin{lstlisting}[language=C, numbers=none,frame=none]
+typePointé* nomPointeur
+\end{lstlisting}
+\lstinputlisting[caption=Exemple de déclaration, numbers=none,language=C]{annexes/ptr1.c}
+	\subsection{Utilisation}
+\begin{lstlisting}[language=C, numbers=none,frame=none]
+nomPointeur // manipule l'adresse
+*nomPointeur //manipule la zone pointée
+\end{lstlisting}
+\begin{lstlisting}[language=C, numbers=none,frame=none]
+pe=&n; //opérateur d'adressage
+\end{lstlisting}
+
+\subsection{Constante}
+	\texttt{NULL} représente une adresse inexistante.
+	\begin{lstlisting}[language=C, numbers=none,frame=none]
+pe = NULL;
+*pe; // Erreur à l'exécution
+	\end{lstlisting}
+
+\section{Opérateur autorisés sur les pointeurs}
+\subsection{L'affectation}
+\begin{verbatim}
+nomPointeur =  expression correspondant à une adresse ou à NULL
+\end{verbatim}
+
+\subsection{Addition et la soustraction entre un pointeur et un entier}
+\begin{verbatim}
+nomPointeur = nomPointeur + 10; 
+nomPointeur = nomPointeur - 15; 
+\end{verbatim}
+On obtient une expression correspondant à une adresse
+\begin{verbatim}
+pe = pe+10; //pe contient l'adresse du 10e entier après la valeu initalie de pe.
+\end{verbatim}
+\attention{À utiliser que si pe pointe sur un tableau}
+
+\subsection{Soustraction de deux pointeurs}
+Renvoi un entier donnant le nombre d'éléments pointés entre les deux pointeurs
+\attention{Uniquement si les deux pointeurs sont sur le même tableau}
+
+\subsection{Comparaison sur des pointeurs}
+Ce sont les opérateurs de comparaison classique : \texttt{= =} et \texttt{!=}
+
+\subsection{Allocation dynamique de mémoire}
+\begin{lstlisting}[language=C, numbers=none,frame=none]
+nomPointeur = (typePointeur) malloc(sizeof(typePointé));
+nomPointeur = (typePointé*) malloc(n*sizeof(typePointé));
+\end{lstlisting}
+\begin{lstlisting}[language=C, numbers=none,frame=none]
+	int *e;
+	pe = (int*) malloc(sizeof(int));
+\end{lstlisting}
+\begin{enumerate}
+	\item Le programme demande au gestionnaire mémoire à avoir une place de la taille \texttt{sizeof(int)}
+	\item Si la place est disponible retourne l'adresse demandée ou la première case du <<tableau>> dynamique
+	\item Sinon retourne \texttt{NULL}
+\end{enumerate}
+
+\subsection{Libération dynamique de mémoire}
+\begin{lstlisting}[language=C, numbers=none,frame=none]
+free(nomPointeur);
+\end{lstlisting}
+\begin{enumerate}
+	\item Le programme contact le gestionnaire mémoire 
+	\item Le gestionnaire mémoire <<libère>> la place
+\end{enumerate}
+
+Cela veut dire que la place n'est plus réservé au programme, elle pourra être alloué à un autre programme.
+\attention{La case mémoire ne met pas à jour la case mémoire, celle-ci contient toujours la valeur, si personne ne récupère la case, il sera toujours
+possible d'accéder à la donnée, cependant cela est aléatoire, cela peut être source d'erreurs}
+
