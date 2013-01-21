@@ -9,7 +9,7 @@ l'échange sur le code produit, on utilise pour cela les \textbf{spécifications
 \end{itemize}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=8cm]{1.jpg}
+	\includegraphics[width=8cm]{1.eps}
 	\caption{Principe de base d'un TAD}
 \end{figure}
 \exemple{\textbf{Les entiers}
@@ -57,16 +57,15 @@ en sortir.\footnote{Last In First Out}.
 	\item[Axiones]~
 \end{description}
 ~\newline
+Avant toute chose, on partitionne l'ensemble des opérations en deux sous ensembles: 
+\begin{itemize}
+	\item Les constructeurs
+	\item Les opérateurs
+\end{itemize}
+L'ensemble des constructeurs est necessaire et suffisant pour pouvoir gagner n'importe quelle valeur de la donnée
 \begin{lstlisting}[language=C, numbers=none]
-/* 
- * Avant toute chose on partitionne l'ensemble des opérations en deux sous ensembles : 
- *	  Les constructeurs
- *	  Les opérateurs
- *  L'ensemble des constructeurs est necessaire et suffisant pour pouvoir gagner n'importe quelle valeur de la donnée
- */
-
- /* On applique chaque constructeur à chaque opérateur et on decrit logiquement ce qui se passe
- */
+ // On applique chaque constructeur à chaque opérateur et on decrit logiquement 
+ // ce qu'il se passe
  estVide(creer()) = true;
  estVide(empiler(p, x)) = false;
  depiler(creer()) = creer();
@@ -114,7 +113,12 @@ Celle-ci peut être statique ou dynamique.
 \section{Exemple de structure de données linéaires dynamiques}
 \subsection{Pile}
 Liste simplement chaînée dynamique à un point d'entrée
-% TODO Schéma
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=6cm]{content/pile.eps}
+	\caption{Pile avec une liste simplement chainée}
+\end{figure}
 
 \begin{lstlisting}[language=C, numbers=none,frame=none]
 	typedef struct etCel {
@@ -125,6 +129,12 @@ Liste simplement chaînée dynamique à un point d'entrée
 
 \subsection{File}
 Liste simplement chainée à deux points d'entrée
+
+\begin{figure}[H]
+	\centering
+\includegraphics[width=6cm]{content/file.eps}
+	\caption{File avec une liste simplement chainée}
+\end{figure}
 % TODO Schéma
 \begin{lstlisting}[language=C, numbers=none,frame=none]
 	typedef struct etCel2 {
@@ -133,7 +143,11 @@ Liste simplement chainée à deux points d'entrée
 } LSC2;
 \end{lstlisting}
 \subsection{Pile avec liste doublement chainée}
-%% TODO
+\begin{figure}[H]
+	\centering
+\includegraphics[width=12cm]{content/pileDoubleChaine.eps}
+	\caption{Pile avec une liste doublement chainée}
+\end{figure}
 
 \begin{lstlisting}[language=C, numbers=none,frame=none]
 typedef struct etCelDC {
@@ -145,3 +159,8 @@ typedef celDC* LDC;
 \end{lstlisting}
 
 \subsection{File avec liste doublement chaîné}
+\begin{figure}[H]
+	\centering
+\includegraphics[width=12cm]{content/fileDoubleChaine.eps}
+	\caption{File avec une liste doublement chainée}
+\end{figure}
