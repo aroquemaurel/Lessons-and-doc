@@ -2,22 +2,22 @@
 Déjà vu par le passages de paramètres.
 \section{Syntaxe}
 	\subsection{Déclaration}
-\begin{lstlisting}[language=C, numbers=none,frame=none]
+\begin{lstlisting}[language=C, numbers=none,frame=none, caption=Syntaxe de déclaration d'un pointeur]
 typePointé* nomPointeur
 \end{lstlisting}
 \lstinputlisting[caption=Exemple de déclaration, numbers=none,language=C]{annexes/ptr1.c}
 	\subsection{Utilisation}
-\begin{lstlisting}[language=C, numbers=none,frame=none]
+\begin{lstlisting}[language=C, numbers=none,frame=none, caption=Syntaxe utilisation d'un pointeur]
 nomPointeur // manipule l'adresse
 *nomPointeur //manipule la zone pointée
 \end{lstlisting}
-\begin{lstlisting}[language=C, numbers=none,frame=none]
+\begin{lstlisting}[language=C, numbers=none,frame=none, caption=Exemple d'utilisation d'un pointeur]
 pe=&n; //opérateur d'adressage
 \end{lstlisting}
 
 \subsection{Constante}
 	\texttt{NULL} représente une adresse inexistante.
-	\begin{lstlisting}[language=C, numbers=none,frame=none]
+	\begin{lstlisting}[language=C, numbers=none,frame=none, caption=Exemple d'utilisation de la constante \texttt{NULL}]
 pe = NULL;
 *pe; // Erreur à l'exécution
 	\end{lstlisting}
@@ -47,11 +47,11 @@ Renvoi un entier donnant le nombre d'éléments pointés entre les deux pointeur
 Ce sont les opérateurs de comparaison classique : \texttt{= =} et \texttt{!=}
 
 \subsection{Allocation dynamique de mémoire}
-\begin{lstlisting}[language=C, numbers=none,frame=none]
+\begin{lstlisting}[language=C, numbers=none,frame=none, caption=Syntaxe d'allocation dynamique]
 nomPointeur = (typePointeur) malloc(sizeof(typePointé));
 nomPointeur = (typePointé*) malloc(n*sizeof(typePointé));
 \end{lstlisting}
-\begin{lstlisting}[language=C, numbers=none,frame=none]
+\begin{lstlisting}[language=C, numbers=none,frame=none, caption=Exemple d'allocation dynamique]
 	int *e;
 	pe = (int*) malloc(sizeof(int));
 \end{lstlisting}
@@ -62,7 +62,7 @@ nomPointeur = (typePointé*) malloc(n*sizeof(typePointé));
 \end{enumerate}
 
 \subsection{Libération dynamique de mémoire}
-\begin{lstlisting}[language=C, numbers=none,frame=none]
+\begin{lstlisting}[language=C, numbers=none,frame=none, caption=Syntaxe de libération de mémoire]
 free(nomPointeur);
 \end{lstlisting}
 \begin{enumerate}

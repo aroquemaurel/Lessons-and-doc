@@ -2,15 +2,17 @@
 \addvspace {10\p@ }
 \contentsline {xchapter}{Types de donn\IeC {\'e}es Abstraits (TAD)}{5}{chapter.1}
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Principe de base d'un TAD}}{5}{figure.1.1}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Pile avec une liste simplement chain\IeC {\'e}e}}{8}{figure.1.2}
-\contentsline {figure}{\numberline {1.3}{\ignorespaces File avec une liste simplement chain\IeC {\'e}e}}{8}{figure.1.3}
-\contentsline {figure}{\numberline {1.4}{\ignorespaces Pile avec une liste doublement chain\IeC {\'e}e}}{9}{figure.1.4}
-\contentsline {figure}{\numberline {1.5}{\ignorespaces File avec une liste doublement chain\IeC {\'e}e}}{9}{figure.1.5}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Cours sur les pointeurs en C}{10}{appendix.A}
+\contentsline {xchapter}{Cours sur les pointeurs en C}{11}{appendix.A}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Liste des codes sources}{13}{appendix.B}
+\contentsline {xchapter}{Exemple de structure de donn\IeC {\'e}es lin\IeC {\'e}aires dynamiques}{14}{appendix.B}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Pile avec une liste simplement chain\IeC {\'e}e}}{14}{figure.B.1}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces File avec une liste simplement chain\IeC {\'e}e}}{14}{figure.B.2}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Pile avec une liste doublement chain\IeC {\'e}e}}{15}{figure.B.3}
+\contentsline {figure}{\numberline {B.4}{\ignorespaces File avec une liste doublement chain\IeC {\'e}e}}{15}{figure.B.4}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Table des figures}{14}{appendix.C}
+\contentsline {xchapter}{Liste des codes sources}{16}{appendix.C}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Exercices}{15}{appendix.D}
+\contentsline {xchapter}{Table des figures}{17}{appendix.D}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Exercices}{18}{appendix.E}

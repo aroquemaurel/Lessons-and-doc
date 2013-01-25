@@ -62,8 +62,8 @@ Avant toute chose, on partitionne l'ensemble des opérations en deux sous ensemb
 	\item Les constructeurs
 	\item Les opérateurs
 \end{itemize}
-L'ensemble des constructeurs est necessaire et suffisant pour pouvoir gagner n'importe quelle valeur de la donnée
-\begin{lstlisting}[language=C, numbers=none]
+L'ensemble des constructeurs est nécessaire et suffisant pour pouvoir gagner n'importe quelle valeur de la donnée
+\begin{lstlisting}[language=C, numbers=none,caption=Opérations du TAD Pile]
  // On applique chaque constructeur à chaque opérateur et on decrit logiquement 
  // ce qu'il se passe
  estVide(creer()) = true;
@@ -89,7 +89,7 @@ L'ensemble des constructeurs est necessaire et suffisant pour pouvoir gagner n'i
 \subsection{Implémentation de la structure de données et des opérateurs}
 Trouver une représentation interne de la structure de données, celle-ci est contrainte par le langage choisi.
 
-Celle-ci peut être statique ou dynamique. 
+Celle-ci peut être statique ou dynamique\footnote{Des exemples de structures de données dynamiques du TAD sont disponibles annexes \ref{sdDynamqique}}. 
 \begin{description}
 	\item[Statique] La donnée ne peut plus changer de place ni de taille mémoire ou dynmaique.
 		\begin{itemize}
@@ -108,59 +108,60 @@ Celle-ci peut être statique ou dynamique.
 	\item Utilisation d'un tableau
 	\item Utilisation d'un entier donnant le nombre d'éléments rangés dans la pile
 \end{itemize}
-\lstinputlisting[language=C]{content/1.c}
+\lstinputlisting[language=C, caption=Implémentation des fonctions du type Pile en statique]{content/1.c}
+\subsubsection{Implémentation dynamique du TAD \texttt{Pile}}
+\lstinputlisting[language=C, caption=Implémentation des fonctions du type Pile en dynamique]{content/pileDynamique.c}
 
-\section{Exemple de structure de données linéaires dynamiques}
-\subsection{Pile}
-Liste simplement chaînée dynamique à un point d'entrée
+\section{Protection du TAD}
+La protection d'un TAD se fait en deux phases : 
+\begin{description}
+	\item[séparer corps - interface] Bibliothèque 
+	\item Protéger le type
+\end{description}
+\subsection{Séparation du corps et de l'interface}
+	Cela correspond à une biblitohèque, ainsi nous allons séparer le fichier source en trois fichiers : 
+	\subsubsection{Fichiers}
+	\begin{description}
+		\item[\texttt{fichier.h}] Contient les prototypes de fonctions et les \texttt{typedef}.
+		\item[\texttt{fichier.c}] Contient \texttt{\#include ''fichier.h''} et les implémentations de fonctions sauf le main.
+		\item[\texttt{testFichier.c}] Contient \texttt{\#include ''fichier.h''} et le \texttt{main}.
+	\end{description}
+	\subsubsection{Compilation}	
+	\begin{itemize}
+		\item \texttt{gcc -c fichier.c}
+		\item \texttt{gcc -c testFichier.c}
+		\item \texttt{gcc fichier.o testfichier.o -o nomExe}
+	\end{itemize}
+	\subsection{Protection du type}
+	Nous allons étudier le cas de la pile statique.
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=6cm]{content/pile.eps}
-	\caption{Pile avec une liste simplement chainée}
-\end{figure}
-
-\begin{lstlisting}[language=C, numbers=none,frame=none]
-	typedef struct etCel {
-	Element val;
-	struct etCel *suiv;
-} CelSc;
+\begin{lstlisting}[language=C, numbers=none,caption=Type de la pile statique originel -- Présent dans le .h]
+#define N 1000
+typedef struct etPile {
+	element tab[N];
+	int nb;
+} Pile;
 \end{lstlisting}
 
-\subsection{File}
-Liste simplement chainée à deux points d'entrée
-
-\begin{figure}[H]
-	\centering
-\includegraphics[width=6cm]{content/file.eps}
-	\caption{File avec une liste simplement chainée}
-\end{figure}
-% TODO Schéma
-\begin{lstlisting}[language=C, numbers=none,frame=none]
-	typedef struct etCel2 {
-	LSC fin;
-	LSC debut;
-} LSC2;
+Nous allons devoir cacher ce type afin que l'utilisateur ne le modifie pour cela, il sera caché dans le .c et un pointeur présent dans le .h.
+\begin{lstlisting}[language=C, numbers=none,frame=none, caption=Type de la pile statique -- Présent dans le .h]
+typedef struct etPile* pile;
 \end{lstlisting}
-\subsection{Pile avec liste doublement chainée}
-\begin{figure}[H]
-	\centering
-\includegraphics[width=12cm]{content/pileDoubleChaine.eps}
-	\caption{Pile avec une liste doublement chainée}
-\end{figure}
-
-\begin{lstlisting}[language=C, numbers=none,frame=none]
-typedef struct etCelDC {
-	Element val;
-	struct etCelDC* suiv;
-	struct etCelDC* precedent;
-}
-typedef celDC* LDC;
+\begin{lstlisting}[language=C, numbers=none,caption=Type de la pile statique -- Présent dans le .c]
+#define N 1000
+typedef struct etPile {
+	element tab[N];
+	int nb;
+}Pile;
 \end{lstlisting}
 
-\subsection{File avec liste doublement chaîné}
-\begin{figure}[H]
-	\centering
-\includegraphics[width=12cm]{content/fileDoubleChaine.eps}
-	\caption{File avec une liste doublement chainée}
-\end{figure}
+Nous devons ainsi modifier le fichier source afin d'utiliser le pointeur sur pile.
+\begin{lstlisting}[language=C, numbers=none,caption=Modification de la fonction \texttt{creer} s'adaptant à la protection de données]
+	Pile p;
+	p = (Pile)malloc(sizeof(PileInterne));
+	p->nb = 0
+
+	return p;
+\end{lstlisting}
+
+\remarque{Désormais nous ferons systématiquement la séparation corps - interface et la protection du type.}
