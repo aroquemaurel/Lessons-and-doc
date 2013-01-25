@@ -16,4 +16,27 @@ remplacerOccurence(empiler(p, x), x1, x2) =
 		p1 $\wedge$ $\forall z$ (appartient(p1, z) $\rightarrow$ (z $\neq$ x1) (empiler(p, x), z') $\wedge$ z' = x1))
 \end{lstlisting}
 
-\lstinputlisting[language=C]{annexes/exercices/1.c}
+\lstinputlisting[language=C, caption=TAD Pile]{annexes/exercices/1.c}
+
+\subsection{TAD \texttt{File}}
+\begin{description}
+	\item[Sorte] File
+	\item[Utilise] Element, booleen
+	\item[Constructeurs]~
+		\begin{description}
+			\item[\texttt{creer}] $\rightarrow$ File% CONSTRUCTEURS
+			\item[\texttt{enfiler}] \texttt{File} $\times$ Element $\rightarrow$ File
+		\end{description}
+	\item[Projecteurs] 
+		\begin{description}
+			\item[\texttt{estVide}] file $\rightarrow$ Booleen
+			\item[\texttt{appartient}] file $\times$ Element $\rightarrow$ Booleen
+			\item[\texttt{defiler}] file $\rightarrow$ file
+			\item[\texttt{premier}] file $\rightarrow$ Element
+			\item[\texttt{dernier}] file $\rightarrow$ Element
+		\end{description}
+	\item[Précondition] premier(f) <=> non est Vide(f) dernier(f) <=> non est Vide(f) 
+\end{description}
+% Réécrire les méthode de la pile statique pour prendre en compte la protection du type
+% Proposer les axiones pour le TAD file
+% Propos un type C pour l'implémentation du TAD file
