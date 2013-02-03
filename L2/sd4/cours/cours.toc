@@ -38,8 +38,10 @@
 \contentsline {section}{\numberline {E.1}TAD}{18}{section.E.1}
 \contentsline {subsection}{\numberline {E.1.1}Suite du TAD \texttt {Pile}}{18}{subsection.E.1.1}
 \contentsline {subsection}{\numberline {E.1.2}TAD \texttt {File}}{18}{subsection.E.1.2}
-\contentsline {section}{\numberline {E.2}Pointeurs}{19}{section.E.2}
-\contentsline {subsection}{\numberline {E.2.1}Exercice 1}{19}{subsection.E.2.1}
-\contentsline {subsection}{\numberline {E.2.2}Exercice 2}{19}{subsection.E.2.2}
-\contentsline {subsection}{\numberline {E.2.3}Exercice 3}{20}{subsection.E.2.3}
-\contentsline {subsection}{\numberline {E.2.4}Exercice 4 -- M\IeC {\^e}me exercice avec une autre valeur}{20}{subsection.E.2.4}
+\contentsline {subsubsection}{\numberline {E.1.2.1}Statique}{19}{subsubsection.E.1.2.1}
+\contentsline {subsubsection}{\numberline {E.1.2.2}Dynamique}{20}{subsubsection.E.1.2.2}
+\contentsline {section}{\numberline {E.2}Pointeurs}{22}{section.E.2}
+\contentsline {subsection}{\numberline {E.2.1}Exercice 1}{22}{subsection.E.2.1}
+\contentsline {subsection}{\numberline {E.2.2}Exercice 2}{22}{subsection.E.2.2}
+\contentsline {subsection}{\numberline {E.2.3}Exercice 3}{23}{subsection.E.2.3}
+\contentsline {subsection}{\numberline {E.2.4}Exercice 4 -- M\IeC {\^e}me exercice avec une autre valeur}{23}{subsection.E.2.4}

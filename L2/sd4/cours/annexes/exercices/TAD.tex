@@ -36,7 +36,30 @@ remplacerOccurence(empiler(p, x), x1, x2) =
 			\item[\texttt{premier}] file $\rightarrow$ Element
 			\item[\texttt{dernier}] file $\rightarrow$ Element
 		\end{description}
-	\item[Précondition] premier(f) <=> non est Vide(f) dernier(f) <=> non est Vide(f) 
+	\item[Précondition]~
+		\begin{description}
+			\item[\texttt{premier}] premier(f) $\Leftrightarrow$ $\neg$estVide(f) 
+			\item[\texttt{dernier}] dernier(f) $\Leftrightarrow$ $\neg$estVide(f) 
+		\end{description}
+	\item[Axiones]~
+\begin{lstlisting}[language=C, numbers=none,caption=Axiones du TAD File]
+estVide(creer()) = true;
+estVide(enfiler(f,x)) = false;
+appartient(creer(), x) = false;
+appartient(enfiler(f,x),y) = (x = y) $\vee$ appartient(f,y)
+defiler(creer()) = creer()
+defiler(enfiler(f,x) = creer() si estVide(f)
+					 = enfiler(defiler(f), x) sinon
+premier(enfiler(f,x)) = premier(f) si !estVide
+					  = x sinon
+dernier(enfiler(f,x)) = x
+\end{lstlisting}
 \end{description}
+\subsubsection{Statique}
+\lstinputlisting[language=C, caption=TAD File dynamique Headers]{annexes/exercices/3.h}
+\lstinputlisting[language=C, caption=TAD File dynamique Implémentation]{annexes/exercices/3.c}
+\subsubsection{Dynamique}
+\lstinputlisting[language=C, caption=TAD File dynamique Headers]{annexes/exercices/4.h}
+\lstinputlisting[language=C, caption=TAD File dynamique Implémentation]{annexes/exercices/4.c}
 % Proposer les axiones pour le TAD file
 % Propos un type C pour l'implémentation du TAD file

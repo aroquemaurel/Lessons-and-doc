@@ -1,18 +1,25 @@
+#define _POSIX_C_SOURCE 1
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
 
 int main(int argc, char** argv) {
-	int pid;
-
-	switch(pid=fork()) {
+	pid_t pid;
+	switch(pid = fork()) {
 		case -1:
+			perror("fork");
 			exit(1);
-			break;
 		case 0: //fils
-			printf("Exécuté par le fils -- Père: %d\nFils: %d\n", getppid(), getpid());
+			printf("Executé par le fils\n");
+			printf("PID du père: %d\n", (int)getppid());
+			printf("PID du fils %d\n\n", (int)getpid());
 			break;
 		default: //père
-			printf("Exécuté par le père -- père: %d\n", getpid());
-		
+			printf("Executé par le père\n");
+			printf("PID du père: %d\n", (int)getpid());
+			break;
 	}
+
+	return 0;
 }

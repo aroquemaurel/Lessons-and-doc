@@ -34,6 +34,35 @@
 	\setcounter{secnumdepth}{3}
 	\maketitle
 	\tableofcontents
+	\chapter{Contrôle de flux}
+	\chapter{Reprise sur erreurs}
+	Temporisateur si aucun accusé de réception.
+	Numérotation des trames et compteurs à l'émission et à a réception. 
+
+	\subsection{Politique de reprise sur erreurs}
+	\subsubsection{Stop and Wait}
+	\begin{itemize}
+		\item La source ne transmet qu'une seule trame et attend l'acquittement
+		\item Si trame émise perdue => expiration du tempo et retransmission
+		\item Si acquittement perdu => expiration du tempo de l'émetteur et retransmission. Le récepteur utilise le
+			numéro pour voir qu'il l'a déjà reçus.
+	\end{itemize}
+	\subsection{Go Back N}
+	\begin{description}
+		\item[] Basé sur fenetre d'anticipation
+		\item[Trame émise perdue] 
+			\begin{itemize}
+				\item Le recepteur rejette toutes les trame reçues hors séquence
+				\item Notification de rejet du récepeur et retransmission de toutes les trames à partir de la trame
+					perdue
+			\end{itemize}
+		\item[Acquittement perdu] 
+			\begin{itemize}
+				\item Expiration du tempo côté emetteur et retransmission de toutes les trames non acquittées
+				\item Le récepteur filtre les trames dupliquées
+			\end{itemize}<++>
+
+	\end{description}
 \end{document}
 
 
