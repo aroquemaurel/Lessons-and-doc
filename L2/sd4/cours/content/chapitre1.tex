@@ -64,15 +64,15 @@ Avant toute chose, on partitionne l'ensemble des opérations en deux sous ensemb
 \end{itemize}
 L'ensemble des constructeurs est nécessaire et suffisant pour pouvoir gagner n'importe quelle valeur de la donnée
 \begin{lstlisting}[language=C, numbers=none,caption=Opérations du TAD Pile]
- // On applique chaque constructeur à chaque opérateur et on decrit logiquement 
- // ce qu'il se passe
- estVide(creer()) = true;
- estVide(empiler(p, x)) = false;
- depiler(creer()) = creer();
- depiler(empiler(p, x)) = p;
- sommet(empiler(p, x)) = x;
- appartient(creer(), x) = false;
- appartient(empiler(p, x), y) = (x = y) $\vee$ appartient(p, y)
+// On applique chaque constructeur à chaque opérateur et on decrit logiquement 
+// ce qu'il se passe
+estVide(creer()) = true;
+estVide(empiler(p, x)) = false;
+depiler(creer()) = creer();
+depiler(empiler(p, x)) = p;
+sommet(empiler(p, x)) = x;
+appartient(creer(), x) = false;
+appartient(empiler(p, x), y) = (x = y) $\vee$ appartient(p, y)
  \end{lstlisting}
 
 \section{Implémentation d'un TAD}

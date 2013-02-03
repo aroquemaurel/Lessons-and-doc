@@ -1,0 +1,93 @@
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage{lmodern}
+\usepackage{xcolor}
+\input{/home/aroquemaurel/cours/includesLaTeX/couleurs.tex}
+
+\usepackage[utf8]{inputenc} \usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, linkcolor=vert1, urlcolor=bleu, colorlinks=true]{hyperref}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+\usepackage{float}
+
+\newcommand{\titre}{Structures de données}
+
+\newcommand{\pole}{}
+\newcommand{\sigle}{sd}
+
+\newcommand{\semestre}{4}
+
+\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex} %prise en charge du langage C 
+\input{/home/aroquemaurel/cours/includesLaTeX/entete-l2-cours.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
+\newcommand{\pfp}{\texttt{pfp}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+
+\newcommand{\ifp}{\texttt{if}}
+\newcommand{\elsep}{\texttt{else}}
+
+\makeatother
+\includeonly {
+	content/chapitre1,
+	annexes/annexes,
+	annexes/exercices/indexExercices,
+	annexes/pointeurs,
+	annexes/sdDynamique,
+}
+\begin{document}
+	\setcounter{tocdepth}{1}
+	\setcounter{secnumdepth}{3}
+	\maketitle
+	\tableofcontents
+	\chapter{Interpolation polynomiale}
+		%
+		%
+		%
+		%
+		\begin{eqnarray*}
+			A&=&\{a_0,\cdots,a_d\}\\
+			lg,d(x)&=&\frac{(x-a_0) \cdots
+			(x-a_j-1)(x-a_{j+1)}\cdots
+			(x-a_j)}{a_j-a_0)\cdots(a_j-a_{j-1})(a_{j+1})\cdots(a_j-a_d)}
+		\end{eqnarray*}
+		\paragraph{Intérpolation $f_0 f_1 \cdots f_d$}
+			$$	L(a_j,f_j) = p(x) =
+			\sum^d_{j=0}f_jl_{j,d}(x)$$
+			\section{Propriétés de l'interpolation de
+			Lagrange}
+			\subsection{}
+			\begin{displaymath}
+				\left. \begin{array}{cc}
+				P(x) \in P_d\\
+				P(a_i) = f(a_i), i = 0,1,\cdots,d
+			\end{array}\right\}
+			\Leftrightarrow p(x) = L[a_0,a_1,\cdots,a_d;f]
+			\end{displaymath}
+			$$ L[a_0, a_1, \cdots, a_d;P]= P$$
+			\subsection{}
+			\begin{eqnarray*}
+&&				\forall d \in \N, \forall x \in \R \Rightarrow \sum^d_{j=0}l_j,d(x) = 1\\
+&&				d=1, a_0,a_1\\
+&&				l_{0,1}(x) + l_{1,1} = \frac{x-a_1}{a_0-a_1} + \frac{x-a_0}{a_1-a_0} = \frac{x-a_1-x+a_0}{a_0-a_1} = 1\\
+&&			1 \equiv l_O = L[a_0, a1, \cdots, a_d ; l_0] = \sum^d_{j=0}l_O(a_j)\times l_{j,d}(x) = \sum^{d}_{j=0}l_{j,d}(x)
+			\end{eqnarray*}
+			\subsection{}
+			\begin{eqnarray*}
+				&&A=\{a_0,a_1,\cdots,a_d\}\in \R , f:\R \rightarrow \R, g:\R \rightarrow \R\\
+				&&L[a_0,a_1,\cdots,a_d,f+g] = L[a_0,a_1,\cdots,a_d;f] + L[a_0,a_1,\ldots,a_d;g]\\
+				&& \sum^d_{j=0}(f+g)(a_j) = \sum^d_{j=0}[f(a_j)+g(a_j)]l_{j,d}(x)\\
+				&& \sum^d_{j=0}f(a_j) ; l_{j,d} + \sum^d_{j=0}g(a_j)l_{j,d}(x)
+			\end{eqnarray*}
+	\appendix
+	\lstlistoflistings
+	\listoffigures
+\end{document}
+
