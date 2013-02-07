@@ -1,12 +1,6 @@
 #ifndef __PILEDYNAMIQUE
 #define __PILEDYNAMIQUE
 
-typedef int Element;
-typedef struct etCel {
-	Element value;
-	struct etCel* next;
-} Cel;
-
 typedef Cel* Pile;
 
 Pile pile_init();
@@ -19,5 +13,3 @@ Pile pile_saisir();
 Element pile_sommet(Pile pStack);
 
 #endif
-
-
