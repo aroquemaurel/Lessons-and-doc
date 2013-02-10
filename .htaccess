@@ -1,4 +1,4 @@
-AuthName "Page d'administration protégée"
+AuthName "Demande d'authentification"
 AuthType Basic
 AuthUserFile "/data/dev/cours/.htpasswd"
 Require valid-user
