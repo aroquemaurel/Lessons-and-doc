@@ -30,7 +30,7 @@ Pile pile_init() {
 
 void pile_afficher(Pile pStack) {
 	while(!pile_estVide(pStack)) {
-		printf("%d ", pStack->value);
+		printf("| %d |\n", pStack->value);
 		pStack = pStack->next;
 	}
 }

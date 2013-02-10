@@ -1,0 +1,88 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CC	makefile	/^CC=gcc$/;"	m
+ELEMENTPILE	elt_pile.h	2;"	d
+EXEC	makefile	/^EXEC=hanoi $/;"	m
+OPT	makefile	/^OPT=-Wall -g$/;"	m
+PILESTATIQUE	pile.h	2;"	d
+Pile	pileDynamique.h	/^typedef Cel* Pile;$/;"	t
+Plateau	plateau.h	/^typedef T_pile* Plateau;$/;"	t
+TAILLEMAX	Pile_Statique_Fichier_de_depart_pour_compil_separee.c	12;"	d	file:
+TAILLEMAX	pile.h	8;"	d
+T_cell	pile.c	/^} T_cell;$/;"	t	typeref:struct:cell	file:
+T_element	Pile_Statique_Fichier_de_depart_pour_compil_separee.c	/^typedef int T_element;$/;"	t	file:
+T_element	elt_pile.h	/^typedef int T_element;$/;"	t
+T_pile	Pile_Statique_Fichier_de_depart_pour_compil_separee.c	/^typedef struct cell* T_pile;$/;"	t	typeref:struct:cell	file:
+T_pile	pile.h	/^typedef struct cell* T_pile;$/;"	t	typeref:struct:cell
+T_tab	Pile_Statique_Fichier_de_depart_pour_compil_separee.c	/^typedef T_element T_tab[TAILLEMAX];$/;"	t	file:
+__PILEDYNAMIQUE	pileDynamique.h	2;"	d
+__PLATEAU	plateau.h	2;"	d
+affecter_element	Pile_Statique_Fichier_de_depart_pour_compil_separee.c	/^void affecter_element (T_element* el1, T_element el2)$/;"	f	signature:(T_element* el1, T_element el2)
+affecter_element	elt_pile.c	/^void affecter_element (T_element* el1, T_element el2)$/;"	f	signature:(T_element* el1, T_element el2)
+affecter_element	elt_pile.h	/^void affecter_element(T_element *vers, T_element de);$/;"	p	signature:(T_element *vers, T_element de)
+afficher_element	Pile_Statique_Fichier_de_depart_pour_compil_separee.c	/^void afficher_element (T_element el)$/;"	f	signature:(T_element el)
+afficher_element	elt_pile.c	/^void afficher_element (T_element el)$/;"	f	signature:(T_element el)
+afficher_element	elt_pile.h	/^void afficher_element(T_element el);$/;"	p	signature:(T_element el)
+afficher_pile	Pile_Statique_Fichier_de_depart_pour_compil_separee.c	/^void afficher_pile(T_pile p)$/;"	f	signature:(T_pile p)
+afficher_pile	pile.c	/^void afficher_pile(T_pile p) {$/;"	f	signature:(T_pile p)
+afficher_pile	pile.h	/^void afficher_pile(T_pile p);$/;"	p	signature:(T_pile p)
+cell	Pile_Statique_Fichier_de_depart_pour_compil_separee.c	/^struct cell$/;"	s	file:
+cell	pile.c	/^typedef struct cell {$/;"	s	file:
+cell::next	pile.c	/^	struct cell* next;$/;"	m	struct:cell	typeref:struct:cell::cell	file:	access:public
+cell::tab	Pile_Statique_Fichier_de_depart_pour_compil_separee.c	/^ { T_tab  tab;$/;"	m	struct:cell	file:	access:public
+cell::tete	Pile_Statique_Fichier_de_depart_pour_compil_separee.c	/^   int    tete; \/*indice du sommet de la pile dans tab*\/$/;"	m	struct:cell	file:	access:public
+cell::value	pile.c	/^	T_element value;$/;"	m	struct:cell	file:	access:public
+decalerAnneau1	main.c	/^void decalerAnneau1(Plateau pPlateau, const int pNbAnneaux, int* pPositionAnneau, int* pNumEtape) {$/;"	f	signature:(Plateau pPlateau, const int pNbAnneaux, int* pPositionAnneau, int* pNumEtape)
+decalerAnneau1	main.c	/^void decalerAnneau1(Plateau pPlateau, const int pNbAnneaux, int* pPositionAnneau, int* pNumEtape);$/;"	p	file:	signature:(Plateau pPlateau, const int pNbAnneaux, int* pPositionAnneau, int* pNumEtape)
+depiler	Pile_Statique_Fichier_de_depart_pour_compil_separee.c	/^void depiler(T_pile *p)$/;"	f	signature:(T_pile *p)
+depiler	pile.c	/^void depiler(T_pile *p) {$/;"	f	signature:(T_pile *p)
+depiler	pile.h	/^void depiler(T_pile *p);$/;"	p	signature:(T_pile *p)
+empiler	Pile_Statique_Fichier_de_depart_pour_compil_separee.c	/^void empiler(T_pile *p, T_element el)$/;"	f	signature:(T_pile *p, T_element el)
+empiler	pile.c	/^void empiler(T_pile *p, T_element pElem) {$/;"	f	signature:(T_pile *p, T_element pElem)
+empiler	pile.h	/^void empiler(T_pile *p, T_element el);$/;"	p	signature:(T_pile *p, T_element el)
+initialiser_pile	Pile_Statique_Fichier_de_depart_pour_compil_separee.c	/^void initialiser_pile(T_pile *p)$/;"	f	signature:(T_pile *p)
+initialiser_pile	pile.c	/^void initialiser_pile(T_pile *p) {$/;"	f	signature:(T_pile *p)
+initialiser_pile	pile.h	/^void initialiser_pile(T_pile *p);$/;"	p	signature:(T_pile *p)
+main	Pile_Statique_Fichier_de_depart_pour_compil_separee.c	/^int main(void)$/;"	f	signature:(void)
+main	main.c	/^int main(int argc, char** argv) {$/;"	f	signature:(int argc, char** argv)
+next	pile.c	/^	struct cell* next;$/;"	m	struct:cell	typeref:struct:cell::cell	file:	access:public
+pile_afficher	pileDynamique.h	/^void pile_afficher(Pile pStack);$/;"	p	signature:(Pile pStack)
+pile_depiler	pileDynamique.h	/^Element pile_depiler(Pile* pStack);$/;"	p	signature:(Pile* pStack)
+pile_empiler	pileDynamique.h	/^void pile_empiler(Pile* pStack, Element pElem);$/;"	p	signature:(Pile* pStack, Element pElem)
+pile_estVide	pileDynamique.h	/^bool pile_estVide(const Pile pStack);$/;"	p	signature:(const Pile pStack)
+pile_init	pileDynamique.h	/^Pile pile_init();$/;"	p	signature:()
+pile_pleine	Pile_Statique_Fichier_de_depart_pour_compil_separee.c	/^bool pile_pleine(T_pile p)$/;"	f	signature:(T_pile p)
+pile_pleine	pile.c	/^bool pile_pleine(T_pile p) {$/;"	f	signature:(T_pile p)
+pile_pleine	pile.h	/^bool pile_pleine(T_pile p);$/;"	p	signature:(T_pile p)
+pile_pleine	pileDynamique.h	/^bool pile_pleine(const Pile pStack);$/;"	p	signature:(const Pile pStack)
+pile_saisir	pileDynamique.h	/^Pile pile_saisir();$/;"	p	signature:()
+pile_sommet	pileDynamique.h	/^Element pile_sommet(Pile pStack);$/;"	p	signature:(Pile pStack)
+pile_vide	Pile_Statique_Fichier_de_depart_pour_compil_separee.c	/^bool pile_vide(T_pile p)$/;"	f	signature:(T_pile p)
+pile_vide	pile.c	/^bool pile_vide(T_pile p) {$/;"	f	signature:(T_pile p)
+pile_vide	pile.h	/^bool pile_vide(T_pile p);$/;"	p	signature:(T_pile p)
+plateau_afficher	plateau.c	/^void plateau_afficher(Plateau pPlateau) {$/;"	f	signature:(Plateau pPlateau)
+plateau_afficher	plateau.h	/^void plateau_afficher(const Plateau pPlateau);$/;"	p	signature:(const Plateau pPlateau)
+plateau_deplacementEstPossible	plateau.c	/^bool plateau_deplacementEstPossible(Plateau pPlateau, const int pBegin, const int pEnd) {$/;"	f	signature:(Plateau pPlateau, const int pBegin, const int pEnd)
+plateau_deplacementEstPossible	plateau.h	/^bool plateau_deplacementEstPossible();$/;"	p	signature:()
+plateau_deplacerAnneau	plateau.c	/^void plateau_deplacerAnneau(Plateau pPlateau, const int pBegin, const int pEnd) {$/;"	f	signature:(Plateau pPlateau, const int pBegin, const int pEnd)
+plateau_deplacerAnneau	plateau.h	/^void plateau_deplacerAnneau(Plateau pPlateau, const int pBegin, const int pEnd);$/;"	p	signature:(Plateau pPlateau, const int pBegin, const int pEnd)
+plateau_initialiser	plateau.c	/^Plateau plateau_initialiser(const int pNbelement) {$/;"	f	signature:(const int pNbelement)
+plateau_initialiser	plateau.h	/^Plateau plateau_initialiser(const int pNbelement);$/;"	p	signature:(const int pNbelement)
+resolutionHanoi_iteratif	main.c	/^int resolutionHanoi_iteratif(Plateau pPlateau, const int pNbAnneaux, const bool pAfficherEtapes) {$/;"	f	signature:(Plateau pPlateau, const int pNbAnneaux, const bool pAfficherEtapes)
+resolutionHanoi_iteratif	main.c	/^int resolutionHanoi_iteratif(Plateau pPlateau, const int pNbAnneaux, const bool pAfficherEtapes);$/;"	p	file:	signature:(Plateau pPlateau, const int pNbAnneaux, const bool pAfficherEtapes)
+resolutionHanoi_recursif	main.c	/^int resolutionHanoi_recursif(Plateau pPlateau, const int pNbAnneaux, const int pEmplacementDepart, $/;"	p	file:	signature:(Plateau pPlateau, const int pNbAnneaux, const int pEmplacementDepart, const int pEmplacementArrive, const int pEmplacementIntermediaire)
+resolutionHanoi_recursif	main.c	/^int resolutionHanoi_recursif(Plateau pPlateau, const int pNbAnneaux, const int pEmplacementDepart, const int pEmplacementArrive, const int pEmplacementIntermediaire) {$/;"	f	signature:(Plateau pPlateau, const int pNbAnneaux, const int pEmplacementDepart, const int pEmplacementArrive, const int pEmplacementIntermediaire)
+saisir_element	Pile_Statique_Fichier_de_depart_pour_compil_separee.c	/^void saisir_element (T_element* el)$/;"	f	signature:(T_element* el)
+saisir_element	elt_pile.c	/^void saisir_element (T_element* el)$/;"	f	signature:(T_element* el)
+saisir_element	elt_pile.h	/^void saisir_element(T_element *el);$/;"	p	signature:(T_element *el)
+saisir_pile	Pile_Statique_Fichier_de_depart_pour_compil_separee.c	/^void saisir_pile(T_pile* p)$/;"	f	signature:(T_pile* p)
+sommet_pile	Pile_Statique_Fichier_de_depart_pour_compil_separee.c	/^T_element sommet_pile(T_pile p)$/;"	f	signature:(T_pile p)
+sommet_pile	pile.c	/^T_element sommet_pile(T_pile p) {$/;"	f	signature:(T_pile p)
+sommet_pile	pile.h	/^T_element sommet_pile(T_pile p);$/;"	p	signature:(T_pile p)
+tab	Pile_Statique_Fichier_de_depart_pour_compil_separee.c	/^ { T_tab  tab;$/;"	m	struct:cell	file:	access:public
+tete	Pile_Statique_Fichier_de_depart_pour_compil_separee.c	/^   int    tete; \/*indice du sommet de la pile dans tab*\/$/;"	m	struct:cell	file:	access:public
+value	pile.c	/^	T_element value;$/;"	m	struct:cell	file:	access:public

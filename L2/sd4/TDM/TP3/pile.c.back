@@ -1,0 +1,101 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>  /*contient la constante EXIT_FAILURE*/
+
+#include "pile.h"
+
+/* masquage de types */
+
+typedef T_element T_tab[TAILLEMAX];
+
+struct cell  //totalité de la pile
+ { T_tab  tab;
+   int    tete; /*indice du sommet de la pile dans tab*/
+ } ;
+
+
+void initialiser_pile(T_pile *p)
+{
+   //allocation de la structure dans le tas
+   *p=(T_pile) malloc(sizeof (struct cell));
+   (*p)->tete=-1;
+}
+
+
+void afficher_pile(T_pile p)
+{
+if (!pile_vide(p))
+    {
+    int i;
+    for(i=0; i<=p->tete; i=i+1)
+        afficher_element(p->tab[i]);
+    }
+}
+
+
+bool pile_vide(T_pile p)
+{
+    return (p->tete==-1);
+}
+
+
+bool pile_pleine(T_pile p)
+{
+    return (p->tete==TAILLEMAX-1);
+}
+
+
+void empiler(T_pile *p, T_element el)
+{
+if (pile_pleine(*p))
+    {
+        fprintf(stderr,"\nEmpiler : pile pleine !\n");
+        exit(EXIT_FAILURE);
+    }
+else
+    {
+        (*p)->tete=((*p)->tete) + 1;
+        affecter_element(&((*p)->tab[(*p)->tete]),el);
+    }
+}
+
+
+
+
+void depiler(T_pile *p)
+{
+if (pile_vide(*p))
+    {
+        fprintf(stderr,"\ndepiler: pile vide !\n");
+        exit(EXIT_FAILURE);
+    }
+else (*p)->tete=(*p)->tete-1;
+}
+
+
+
+T_element sommet_pile(T_pile p)
+{
+ if (pile_vide(p))
+    {
+        fprintf(stderr,"\nsommet_pile: pile vide !\n");
+        exit(EXIT_FAILURE);
+    }
+else
+    {
+        return((p->tab)[p->tete]);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
