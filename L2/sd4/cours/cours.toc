@@ -15,33 +15,41 @@
 \contentsline {subsubsection}{\numberline {1.3.1.1}Fichiers}{9}{subsubsection.1.3.1.1}
 \contentsline {subsubsection}{\numberline {1.3.1.2}Compilation}{9}{subsubsection.1.3.1.2}
 \contentsline {subsection}{\numberline {1.3.2}Protection du type}{9}{subsection.1.3.2}
-\contentsline {chapter}{\numberline {A}Cours sur les pointeurs en C}{11}{appendix.A}
-\contentsline {section}{\numberline {A.1}Syntaxe}{11}{section.A.1}
-\contentsline {subsection}{\numberline {A.1.1}D\IeC {\'e}claration}{11}{subsection.A.1.1}
-\contentsline {subsection}{\numberline {A.1.2}Utilisation}{11}{subsection.A.1.2}
-\contentsline {subsection}{\numberline {A.1.3}Constante}{11}{subsection.A.1.3}
-\contentsline {section}{\numberline {A.2}Op\IeC {\'e}rateur autoris\IeC {\'e}s sur les pointeurs}{11}{section.A.2}
-\contentsline {subsection}{\numberline {A.2.1}L'affectation}{11}{subsection.A.2.1}
-\contentsline {subsection}{\numberline {A.2.2}Addition et la soustraction entre un pointeur et un entier}{12}{subsection.A.2.2}
-\contentsline {subsection}{\numberline {A.2.3}Soustraction de deux pointeurs}{12}{subsection.A.2.3}
-\contentsline {subsection}{\numberline {A.2.4}Comparaison sur des pointeurs}{12}{subsection.A.2.4}
-\contentsline {subsection}{\numberline {A.2.5}Allocation dynamique de m\IeC {\'e}moire}{12}{subsection.A.2.5}
-\contentsline {subsection}{\numberline {A.2.6}Lib\IeC {\'e}ration dynamique de m\IeC {\'e}moire}{13}{subsection.A.2.6}
-\contentsline {chapter}{\numberline {B}Exemple de structure de donn\IeC {\'e}es lin\IeC {\'e}aires dynamiques}{14}{appendix.B}
-\contentsline {section}{\numberline {B.1}Pile}{14}{section.B.1}
-\contentsline {section}{\numberline {B.2}File}{14}{section.B.2}
-\contentsline {section}{\numberline {B.3}Pile avec liste doublement chain\IeC {\'e}e}{15}{section.B.3}
-\contentsline {section}{\numberline {B.4}File avec liste doublement cha\IeC {\^\i }n\IeC {\'e}}{15}{section.B.4}
-\contentsline {chapter}{\numberline {C}Liste des codes sources}{16}{appendix.C}
-\contentsline {chapter}{\numberline {D}Table des figures}{17}{appendix.D}
-\contentsline {chapter}{\numberline {E}Exercices}{18}{appendix.E}
-\contentsline {section}{\numberline {E.1}TAD}{18}{section.E.1}
-\contentsline {subsection}{\numberline {E.1.1}Suite du TAD \texttt {Pile}}{18}{subsection.E.1.1}
-\contentsline {subsection}{\numberline {E.1.2}TAD \texttt {File}}{18}{subsection.E.1.2}
-\contentsline {subsubsection}{\numberline {E.1.2.1}Statique}{19}{subsubsection.E.1.2.1}
-\contentsline {subsubsection}{\numberline {E.1.2.2}Dynamique}{20}{subsubsection.E.1.2.2}
-\contentsline {section}{\numberline {E.2}Pointeurs}{22}{section.E.2}
-\contentsline {subsection}{\numberline {E.2.1}Exercice 1}{22}{subsection.E.2.1}
-\contentsline {subsection}{\numberline {E.2.2}Exercice 2}{22}{subsection.E.2.2}
-\contentsline {subsection}{\numberline {E.2.3}Exercice 3}{23}{subsection.E.2.3}
-\contentsline {subsection}{\numberline {E.2.4}Exercice 4 -- M\IeC {\^e}me exercice avec une autre valeur}{23}{subsection.E.2.4}
+\contentsline {chapter}{\numberline {2}Structures de donn\IeC {\'e}es classiques}{11}{chapter.2}
+\contentsline {section}{\numberline {2.1}\texttt {Pile}}{11}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Statique}{11}{subsection.2.1.1}
+\contentsline {section}{\numberline {2.2}\texttt {Dynamique}}{11}{section.2.2}
+\contentsline {section}{\numberline {2.3}\texttt {File}}{13}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Statique}{13}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Dynamique}{15}{subsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.2.1}Application de la \texttt {File} \IeC {\`a} la fusion de voies routi\IeC {\`e}res}{16}{subsubsection.2.3.2.1}
+\contentsline {paragraph}{Am\IeC {\'e}lioration de la \texttt {File} en dynamique}{16}{section*.7}
+\contentsline {paragraph}{\IeC {\'E}crire l'application}{17}{section*.8}
+\contentsline {section}{\numberline {2.4}\texttt {File} avec priorit\IeC {\'e}}{18}{section.2.4}
+\contentsline {section}{\numberline {2.5}\texttt {Liste} avec priorit\IeC {\'e}}{18}{section.2.5}
+\contentsline {chapter}{\numberline {A}Cours sur les pointeurs en C}{22}{appendix.A}
+\contentsline {section}{\numberline {A.1}Syntaxe}{22}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}D\IeC {\'e}claration}{22}{subsection.A.1.1}
+\contentsline {subsection}{\numberline {A.1.2}Utilisation}{22}{subsection.A.1.2}
+\contentsline {subsection}{\numberline {A.1.3}Constante}{22}{subsection.A.1.3}
+\contentsline {section}{\numberline {A.2}Op\IeC {\'e}rateur autoris\IeC {\'e}s sur les pointeurs}{22}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}L'affectation}{22}{subsection.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}Addition et la soustraction entre un pointeur et un entier}{23}{subsection.A.2.2}
+\contentsline {subsection}{\numberline {A.2.3}Soustraction de deux pointeurs}{23}{subsection.A.2.3}
+\contentsline {subsection}{\numberline {A.2.4}Comparaison sur des pointeurs}{23}{subsection.A.2.4}
+\contentsline {subsection}{\numberline {A.2.5}Allocation dynamique de m\IeC {\'e}moire}{23}{subsection.A.2.5}
+\contentsline {subsection}{\numberline {A.2.6}Lib\IeC {\'e}ration dynamique de m\IeC {\'e}moire}{24}{subsection.A.2.6}
+\contentsline {section}{\numberline {A.3}Pointeur sur fonction}{24}{section.A.3}
+\contentsline {subsection}{\numberline {A.3.1}Syntaxe}{24}{subsection.A.3.1}
+\contentsline {subsection}{\numberline {A.3.2}Utilisation}{24}{subsection.A.3.2}
+\contentsline {subsection}{\numberline {A.3.3}Exemple}{24}{subsection.A.3.3}
+\contentsline {chapter}{\numberline {B}Liste des codes sources}{25}{appendix.B}
+\contentsline {chapter}{\numberline {C}Table des figures}{26}{appendix.C}
+\contentsline {chapter}{\numberline {D}Exercices}{27}{appendix.D}
+\contentsline {section}{\numberline {D.1}TAD}{27}{section.D.1}
+\contentsline {subsection}{\numberline {D.1.1}Suite du TAD \texttt {Pile}}{27}{subsection.D.1.1}
+\contentsline {section}{\numberline {D.2}Pointeurs}{27}{section.D.2}
+\contentsline {subsection}{\numberline {D.2.1}Exercice 1}{27}{subsection.D.2.1}
+\contentsline {subsection}{\numberline {D.2.2}Exercice 2}{28}{subsection.D.2.2}
+\contentsline {subsection}{\numberline {D.2.3}Exercice 3}{28}{subsection.D.2.3}
+\contentsline {subsection}{\numberline {D.2.4}Exercice 4 -- M\IeC {\^e}me exercice avec une autre valeur}{29}{subsection.D.2.4}
