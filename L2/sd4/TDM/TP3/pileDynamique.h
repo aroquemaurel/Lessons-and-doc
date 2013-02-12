@@ -1,6 +1,7 @@
 #ifndef __PILEDYNAMIQUE
 #define __PILEDYNAMIQUE
 
+#include "elt_pile.h"
 typedef Cel* Pile;
 
 Pile pile_init();
