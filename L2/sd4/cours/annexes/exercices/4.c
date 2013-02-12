@@ -44,11 +44,30 @@ int estVide(File pFile) {
 }
 
 File defiler(File pFile) {
-	// TODO
+	if(!estVide(pFile)) {
+		File buff = pFile;
+		pFile->premier = pFile->suivant;
+		if(pFile->suivant == NULL) {
+			pFile->dernier = NULL
+		} 
+
+		free(buff);
+	}
+
+	return pFile;
 }
 
 int appartient(File pFile, Elment pElement) {
-	// TODO	
+	Cell* courant;
+	courant = pFile->premier;
+	while(courant != NULL) {
+		if(pFile->premier->element == pElement) {
+			return 1;
+		}
+		courant = courant->suivant;
+	}
+
+	return 0;
 }
 
 Element premier(File pFile) {

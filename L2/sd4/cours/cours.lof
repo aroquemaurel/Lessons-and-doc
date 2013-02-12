@@ -3,16 +3,13 @@
 \contentsline {xchapter}{Types de donn\IeC {\'e}es Abstraits (TAD)}{5}{chapter.1}
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Principe de base d'un TAD}}{5}{figure.1.1}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Cours sur les pointeurs en C}{11}{appendix.A}
+\contentsline {xchapter}{Structures de donn\IeC {\'e}es classiques}{11}{chapter.2}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Liste doublement cha\IeC {\^\i }n\IeC {\'e}e}}{18}{figure.2.1}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Exemple de structure de donn\IeC {\'e}es lin\IeC {\'e}aires dynamiques}{14}{appendix.B}
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Pile avec une liste simplement chain\IeC {\'e}e}}{14}{figure.B.1}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces File avec une liste simplement chain\IeC {\'e}e}}{14}{figure.B.2}
-\contentsline {figure}{\numberline {B.3}{\ignorespaces Pile avec une liste doublement chain\IeC {\'e}e}}{15}{figure.B.3}
-\contentsline {figure}{\numberline {B.4}{\ignorespaces File avec une liste doublement chain\IeC {\'e}e}}{15}{figure.B.4}
+\contentsline {xchapter}{Cours sur les pointeurs en C}{22}{appendix.A}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Liste des codes sources}{16}{appendix.C}
+\contentsline {xchapter}{Liste des codes sources}{25}{appendix.B}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Table des figures}{17}{appendix.D}
+\contentsline {xchapter}{Table des figures}{26}{appendix.C}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Exercices}{18}{appendix.E}
+\contentsline {xchapter}{Exercices}{27}{appendix.D}
