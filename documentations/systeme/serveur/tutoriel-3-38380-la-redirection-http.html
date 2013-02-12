@@ -1,0 +1,2053 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml"><head><link media="all" href="tutoriel-3-38380-la-redirection-http_fichiers/widget53.css" type="text/css" rel="stylesheet">
+
+
+
+
+
+
+
+    
+
+        
+
+
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta name="keywords" content="tutoriels, concernant, les, serveurs, web">
+        <meta name="description" content="Tutoriels concernant les serveurs web">
+        <meta name="robots" content="index,follow">
+        <meta name="verify-v1" content="UL/4+QUCNTv1xBkNcC4sv4EjPUAoVj1yE+fMZClqLsc=">
+
+        <title>
+            La redirection HTTP
+        </title>
+
+        <link rel="shortcut icon" type="image/x-icon" href="http://www.siteduzero.com/Templates/images/designs/2/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="News du Site du Zéro" href="http://www.siteduzero.com/Templates/xml/news_fr.xml">
+        
+        <link rel="alternate" type="application/rss+xml" title="Derniers tutoriels du Site du Zéro" href="http://www.siteduzero.com/Templates/xml/tutoriels_fr.xml">
+        
+
+        <link rel="index" href="http://www.siteduzero.com/plan.html">
+        <link rel="start" title="Accueil" href="http://www.siteduzero.com/">
+        <link rel="search" type="application/opensearchdescription+xml" title="Site Du Zero" href="http://www.siteduzero.com/Templates/xml/xpi/fr/siteduzero.xpi">
+        <link rel="search" href="http://www.siteduzero.com/recherche.html" title="Rechercher">
+        <link rel="help" title="Accessibilité" href="http://www.siteduzero.com/accessibilite.html">
+        <link rel="accesskeys" title="Raccourcis et Accesskeys" href="http://www.siteduzero.com/accessibilite.html">
+
+
+        <link href="tutoriel-3-38380-la-redirection-http_fichiers/design.css" rel="stylesheet" type="text/css" media="screen, handheld, tv, projection">
+        <link href="tutoriel-3-38380-la-redirection-http_fichiers/zcode.css" rel="stylesheet" type="text/css" media="screen, handheld, tv, projection">
+        <link href="tutoriel-3-38380-la-redirection-http_fichiers/impression.css" rel="stylesheet" type="text/css" media="print">
+
+
+        
+
+        
+
+        <!--[if lt IE 8]>
+            <link href="/css/ie_old.min.css?1299748133" rel="stylesheet" type="text/css" media="screen" />
+        <![endif]-->
+
+        
+            <script src="tutoriel-3-38380-la-redirection-http_fichiers/ga.js" type="text/javascript"></script><script type="text/javascript">
+                document.write('<style type="text/css">');
+                document.write('.spoiler3{visibility: hidden;}');           // cache le contenu
+                document.write('.spoiler3_hidden{display: none;}');         // ferme le cadre "secret"
+
+                document.write('.spoiler_hidden a{visibility: visible;}');  // montre le lien pour afficher le contenu
+                document.write('.spoiler a{visibility: visible;');          // montre le lien pour afficher le contenu
+                document.write('</style>');
+            </script><style type="text/css">.spoiler3{visibility: hidden;}.spoiler3_hidden{display: none;}.spoiler_hidden a{visibility: visible;}.spoiler a{visibility: visible;</style>
+        
+        <!--
+        
+            <style type="text/css">
+                .spoiler3
+                {
+                        visibility: hidden;
+                }
+                .spoiler3_hidden
+                {
+                        display: none;
+                }
+            </style>
+        
+        -->
+        
+        <script type="text/javascript" src="tutoriel-3-38380-la-redirection-http_fichiers/jquery.js"></script>
+        <script type="text/javascript" src="tutoriel-3-38380-la-redirection-http_fichiers/jqueryui.js"></script>
+    </head><body><div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; z-index: 100000;"><iframe src="tutoriel-3-38380-la-redirection-http_fichiers/sh33.html" style="border: 0pt none ; height: 1px; width: 1px; position: absolute; z-index: 100000; left: 0pt; top: 0pt;" id="_atssh302"></iframe></div>
+		
+            <div id="acces_rapide">
+                <a href="#menu">Aller au menu</a> - <a href="#corps">Aller au contenu</a>
+            </div>
+
+            <div id="top">
+                <ul class="intersites">
+                    
+                    <li class="selected"><a href="http://www.siteduzero.com/">Informatique</a></li>
+                    <li><a href="#" id="bientot_lien">Bientôt...</a></li>
+                </ul>
+
+		<ul class="stats_sites">
+                    
+                    <li class="last_items"><a href="http://www.siteduzero.com/connectes.html">2 921 Zéros connectés</a> - </li>
+                    <li class="last_items"><a href="http://www.siteduzero.com/membres-292.html">231 617 Membres inscrits</a></li>
+		</ul>
+            </div>
+
+            <div id="header">
+                <div class="header_gauche">
+                    <a href="http://www.siteduzero.com/"><img src="tutoriel-3-38380-la-redirection-http_fichiers/logo_sdz_fr.png" alt=""></a>
+                </div>
+
+                <div class="header_droit">
+                    <div class="fr">
+                        <div id="logbox">
+                            
+                                <div class="bloc_inscription">
+                                    <a href="http://www.siteduzero.com/membres-315.html">
+                                        <strong class="liens_invites">Inscription</strong><br>
+                                        Inscription rapide en 2 minutes
+                                    </a>
+                                </div>
+                                <div class="bloc_connexion">
+                                    <a href="http://www.siteduzero.com/connexion.html">
+                                        <strong class="liens_invites">Connexion</strong><br>
+                                        Utilisez votre compte
+                                    </a>
+                                    <a class="rpxnow" onclick="return false;" href="https://site-du-zero.rpxnow.com/openid/v2/signin?token_url=http%3A%2F%2Fwww.siteduzero.com%2Fmembres-348-1.html%3Freferer%3Dtutoriel-3-38380-la-redirection-http.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/rpx_icons.png" alt="connexion_rpx"></a>
+                                    <script type="text/javascript">
+                                        var rpxJsHost = (("https:" == document.location.protocol) ? "https://" : "http://static.");
+                                        document.write(unescape("%3Cscript src='" + rpxJsHost +
+                                        "rpxnow.com/js/lib/rpx.js' type='text/javascript'%3E%3C/script%3E"));
+                                    </script><script src="tutoriel-3-38380-la-redirection-http_fichiers/rpx.js" type="text/javascript"></script>
+                                    <script type="text/javascript">
+                                        RPXNOW.overlay = true;
+                                        RPXNOW.language_preference = 'fr';
+                                    </script>
+                                </div>
+                            
+                        </div>
+
+                        
+                    </div>
+
+                    <div id="publicite_header">
+                        <div id="publicite_banniere" class="publicite">
+                            <script type="text/javascript">
+                                <!--
+                                ord=Math.random();
+                                ord=ord*10000000000000000000;
+                                document.write('<scr'+'ipt type="text/javascript" src="pub.js.php?cb='+ord+'&amp;l=468&amp;h=60&amp;age=0&amp;pays=0&amp;cid=74"><\/scr'+'ipt>');
+                                -->
+                            </script><script type="text/javascript" src="tutoriel-3-38380-la-redirection-http_fichiers/pub_002.html"></script>
+                        </div>
+
+                    </div>
+                    </div>
+                </div>
+
+                    <div id="speedbarre">
+                            <ul class="smenu">
+                                <li id="speed_accueil" class="home">
+                                    <a href="http://www.siteduzero.com/" accesskey="1">
+                                        <span title="Accueil">Accueil</span>
+                                    </a>
+                                </li>
+                                
+                                <li class="hideOnLoad" id="speed_cours">
+                                    <a href="http://www.siteduzero.com/tutoriel.html">
+                                        <span>Cours</span>
+                                    </a>
+                                    <span class="speedbarre_arrow"></span>
+                                </li>
+                                <li class="hideOnLoad" id="speed_forum">
+                                    <a href="http://www.siteduzero.com/forum.html">
+                                        <span>Forums</span>
+                                    </a>
+                                    <span class="speedbarre_arrow"></span>
+                                </li>
+                                
+                                    <li class="hideOnLoad" id="speed_concours">
+                                        <a href="http://www.siteduzero.com/participez.html">
+                                            <span>Participez</span>
+                                        </a>
+                                        <span class="speedbarre_arrow"></span>
+                                    </li>
+                                    <li class="hideOnLoad" id="speed_etudes">
+                                        <a href="http://www.siteduzero.com/etudes.html" class="last_item">
+                                            <span>Études</span>
+                                        </a>
+                                        <span class="speedbarre_arrow"></span>
+                                    </li>
+                                    <li class="hideOnLoad" id="speed_job">
+                                        <a href="http://www.siteduzero.com/emploi.html" class="last_item">
+                                            <span>Emploi</span>
+                                        </a>
+                                        <span class="speedbarre_arrow"></span>
+                                    </li>
+
+                                    <li class="hideOnLoad" id="speed_boutique">
+                                    <a href="http://www.siteduzero.com/boutique.html" class="last_item">
+                                            <span>Boutique</span>
+                                        </a>
+                                        <span class="speedbarre_arrow"></span>
+                                    </li>
+                                
+                            </ul>
+
+                            <div id="speedbar_expand" class="menuh" style="display: none;">
+                                <div class="menuh_content">
+                                    <div id="menuh_tutorials" style="display: none;">
+                                        
+
+                                        <div id="menu_tutorials">
+                                            <div class="menu_prim">
+                                                <h5>Les cours phares</h5>
+                                                <div class="menuh_list_category">
+                                                    <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-67-site-web.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/67.png" alt=""></a></div>
+                                                    <h6><a href="http://www.siteduzero.com/tutoriel-1-67-site-web.html"><strong>Site Web</strong></a></h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-13666-apprenez-a-creer-votre-site-web.html"><span style="display: block;">XHTML / CSS</span></a></li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-309961-dynamisez-vos-sites-web-avec-javascript.html">Javascript</a></li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-14668-concevez-votre-site-web-avec-php-et-mysql.html">PHP / MySQL</a>
+                                                            <a href="http://www.siteduzero.com/boutique-614-107-concevez-votre-site-web-avec-php-et-mysql.html">
+                                                                <span class="in_book"><img src="tutoriel-3-38380-la-redirection-http_fichiers/ico_livre.png" alt=""></span>
+                                                                <span style="display: none;">Ce cours existe en livre :<br>Concevez votre site web avec PHP et MySQL</span>
+                                                            </a>
+                                                        </li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-112219-apprenez-a-creer-des-applications-web-dynamiques-avec-jee.html">Java EE (J2EE)</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="menuh_list_category">
+                                                    <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-57-programmation.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/57.png" alt=""></a></div>
+                                                    <h6><a href="http://www.siteduzero.com/tutoriel-1-57-programmation.html"><strong>Programmation</strong></a></h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-14189-apprenez-a-programmer-en-c.html">Langage C</a>
+                                                            <a href="http://www.siteduzero.com/boutique-614-65-apprenez-a-programmer-en-c.html">
+                                                                <span class="in_book"><img src="tutoriel-3-38380-la-redirection-http_fichiers/ico_livre.png" alt=""></span>
+                                                                <span style="display: none;">Ce cours existe en livre :<br>Apprenez à programmer en C</span>
+                                                            </a>
+                                                        </li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-11406-apprenez-a-programmer-en-c.html">Langage C++</a></li>
+                                                        <li>
+                                                            <a href="http://www.siteduzero.com/tutoriel-3-10601-programmation-en-java.html">
+                                                                Java
+                                                            </a>
+                                                            <a href="http://server1.evonia.fr/tracking/ads_stats2-32325f35385f323533__77c00fc1a6__2748__2-0/http://www.siteduzero.com/boutique-614-430-apprenez-a-programmer-en-java.html">
+                                                                <span class="in_book"><img src="tutoriel-3-38380-la-redirection-http_fichiers/ico_livre_preco.png" alt=""></span>
+                                                                <span style="display: none;">Ce livre est en précommande :<br>Apprenez à programmer en Java</span>
+                                                            </a>
+                                                        </li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-119239-programmation-en-java-api.html">Java (API)</a></li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-223267-apprendre-python.html">Python</a></li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-134798-visual_basic_net.html">VB .NET </a></li>
+                                                    </ul>
+                                                </div>
+
+
+                                                <div class="menuh_list_category">
+                                                    <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-60-systemes-d-exploitation.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/60.png" alt=""></a></div>
+                                                    <h6><a href="http://www.siteduzero.com/tutoriel-1-60-systemes-d-exploitation.html"><strong>Systèmes d'exploitation</strong></a></h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-12827-reprenez-le-controle-a-l-aide-de-linux.html">Linux</a>
+                                                            <a href="http://www.siteduzero.com/boutique-614-171-reprenez-le-controle-a-l-aide-de-linux.html">
+                                                                <span class="in_book"><img src="tutoriel-3-38380-la-redirection-http_fichiers/ico_livre.png" alt=""></span>
+                                                                <span style="display: none;">Ce cours existe en livre :<br>Reprenez le contrôle a l'aide de Linux</span>
+                                                            </a>
+                                                        </li>                                                    
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-273305-freebsd-et-l-envers-du-decor.html">FreeBSD</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="menuh_list_category">
+                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-56-graphisme.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/56.png" alt=""></a></div>
+                                                    <h6><a href="http://www.siteduzero.com/tutoriel-1-56-graphisme.html"><strong>Graphisme</strong></a></h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-351765-debuter-sur-adobe-photoshop.html">Photoshop</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="menuh_list_category">
+                                                    <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-58-infographie-3d.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/58.png" alt=""></a></div>
+                                                    <h6><a href="http://www.siteduzero.com/tutoriel-1-58-infographie-3d.html"><strong>Infographie 3D</strong></a></h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-11714-debutez-dans-la-3d-avec-blender.html">Blender</a></li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-228998-apprenez-a-modeliser-en-3d-avec-autodesk-maya.html">Maya </a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="menuh_list_category">
+                                                    <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-55-bureautique.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/55.png" alt=""></a></div>
+                                                    <h6><a href="http://www.siteduzero.com/tutoriel-1-55-bureautique.html"><strong>Bureautique</strong></a></h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-258577-redigez-des-documents-de-qualite-professionnelle-avec-latex.html">LaTeX</a>
+                                                            <a href="http://www.siteduzero.com/boutique-614-207-redigez-des-documents-de-qualite-professionnelle-avec-latex.html">
+                                                                <span class="in_book"><img src="tutoriel-3-38380-la-redirection-http_fichiers/ico_livre.png" alt=""></span>
+                                                                <span style="display: none;">Ce cours existe en livre :<br>Rédigez des documents de qualité avec LaTeX</span>
+                                                            </a>
+                                                        </li>
+                                                        <li><a href="http://www.siteduzero.com/tutoriel-3-417000-redigez-facilement-des-documents-avec-word.html">Word<img style="margin-left: 10px;" alt="" src="tutoriel-3-38380-la-redirection-http_fichiers/iconouveau.png"></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="menu_princi menuhcattuto">
+                                                <h5>Tous les cours par catégories</h5>
+                                                <div class="menuh_princi_col">
+                                                    
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-67-site-web.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/67.png" alt=""></a></div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-67-site-web.html">Site Web <span style="font-weight: normal;">(206 Cours)</span></a></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-69-xhtml-css.html">XHTML / CSS</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-1-210-php.html">PHP</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-71-divers.html">Divers</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-73-forums.html">Forums</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-77-hebergement.html">Hébergement</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-70-javascript.html">Javascript</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-74-serveur.html">Serveur</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-309-ide.html">IDE</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-60-systemes-d-exploitation.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/60.png" alt=""></a></div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-60-systemes-d-exploitation.html">Systèmes d'exploitation <span style="font-weight: normal;">(96 Cours)</span></a></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-96-linux.html">Linux</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-147-macos.html">MacOS</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-1-97-windows.html">Windows</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-408-bsd.html">BSD</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-54-mapping.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/54.png" alt=""></a></div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-54-mapping.html">Mapping <span style="font-weight: normal;">(31 Cours)</span></a></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-63-half-life.html">Half-Life</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-66-half-life.html">Half-Life²</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-173-warcraft.html">Warcraft</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-188-autres.html">Autres</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-55-bureautique.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/55.png" alt=""></a></div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-55-bureautique.html">Bureautique <span style="font-weight: normal;">(29 Cours)</span></a></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-1-290-microsoft-office.html">Microsoft Office</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-1-291-openoffice-org.html">OpenOffice.org</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-87-firefox.html">Firefox</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-195-irc.html">IRC</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-192-divers.html">Divers</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-59-jeux-video.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/59.png" alt=""></a></div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-59-jeux-video.html">Jeux Vidéo <span style="font-weight: normal;">(22 Cours)</span></a></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-102-hl-ses-mods.html">HL &amp; ses mods</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-185-autres-jeux.html">Autres jeux</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-61-materiel.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/61.png" alt=""></a></div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-61-materiel.html">Matériel <span style="font-weight: normal;">(11 Cours)</span></a></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-101-general.html">Général</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+
+                                                    <div class="menuh_list_category">
+                                                        <div class="ico"><img src="tutoriel-3-38380-la-redirection-http_fichiers/tuto_cat_thb.png" alt=""></div>
+                                                        <h6>Autres</h6>
+                                                        <ul>
+                                                            
+                                                                <li>
+                                                                    <a style="display: block;" href="http://www.siteduzero.com/tutoriel-2-404-bases-de-donnees.html">Bases de données</a>
+                                                                </li>
+                                                            
+                                                                <li>
+                                                                    <a style="display: block;" href="http://www.siteduzero.com/tutoriel-2-403-mobiles.html">Mobiles</a>
+                                                                </li>
+                                                            
+                                                                <li>
+                                                                    <a style="display: block;" href="http://www.siteduzero.com/tutoriel-2-141-site-du-zero.html">Site du Zéro</a>
+                                                                </li>
+                                                            
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                                <div class="menuh_princi_col">
+                                                    
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-57-programmation.html">
+                                                                    <img src="tutoriel-3-38380-la-redirection-http_fichiers/57.png" alt=""></a>
+                                                                </div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-57-programmation.html">Programmation</a> <span style="font-weight: normal;">(244 Cours)</span></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-91-as-flash-flex.html">AS / Flash / Flex</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-217-algorithmique.html">Algorithmique</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-254-basic-et-derives.html">Basic et dérivés</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-1-344-bibliotheques.html">Bibliothèques</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-262-c.html">C</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-261-c.html">C++</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-201-c-net.html">C# / .NET</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-1-258-calculatrices.html">Calculatrices</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-242-ide.html">IDE</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-336-erlang.html">Erlang</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-227-general.html">Général</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-178-java.html">Java</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-93-mirc.html">mIRC</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-196-python.html">Python</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-355-caml-ocaml.html">Caml / OCaml</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-386-cocoa-objective-c.html">Cocoa / Objective-C</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-253-autres-langages.html">Autres langages</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-56-graphisme.html">
+                                                                    <img src="tutoriel-3-38380-la-redirection-http_fichiers/56.png" alt=""></a>
+                                                                </div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-56-graphisme.html">Graphisme</a> <span style="font-weight: normal;">(27 Cours)</span></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-176-dessin.html">Dessin</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-177-divers.html">Divers</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-79-flash.html">Flash</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-157-gimp.html">Gimp</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-153-dessin-vectoriel.html">Dessin vectoriel</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-190-photofiltre.html">PhotoFiltre</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-78-photoshop.html">Photoshop</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-197-pov-ray.html">POV-Ray</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-58-infographie-3d.html">
+                                                                    <img src="tutoriel-3-38380-la-redirection-http_fichiers/58.png" alt=""></a>
+                                                                </div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-58-infographie-3d.html">Infographie 3D</a> <span style="font-weight: normal;">(25 Cours)</span></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-95-3d-studio-max.html">3D Studio Max</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-152-blender.html">Blender</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-296-maya.html">Maya</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-62-multimedia.html">
+                                                                    <img src="tutoriel-3-38380-la-redirection-http_fichiers/62.png" alt=""></a>
+                                                                </div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-62-multimedia.html">Multimédia</a> <span style="font-weight: normal;">(24 Cours)</span></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-99-audio.html">Audio</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-100-video.html">Vidéo</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-382-after-effects.html">After Effects</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                            <div class="menuh_list_category">
+                                                                <div class="ico"><a href="http://www.siteduzero.com/tutoriel-1-182-reseaux.html">
+                                                                    <img src="tutoriel-3-38380-la-redirection-http_fichiers/182.png" alt=""></a>
+                                                                </div>
+                                                                <h6><a href="http://www.siteduzero.com/tutoriel-1-182-reseaux.html">Réseaux</a> <span style="font-weight: normal;">(18 Cours)</span></h6>
+                                                                <ul>
+                                                                    <li>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-183-general.html">Général</a>,
+                                                                            <a href="http://www.siteduzero.com/tutoriel-2-189-securite.html">Sécurité</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        
+
+                                                    <div class="menuh_list_category">
+                                                        <div id="create_tutorials_button">
+                                                            
+                                                                <div><a href="http://www.siteduzero.com/connexion.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/redigercours.png" alt=""></a></div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div id="menuh_forum" style="display: none;">
+                                        <div class="menu_princi">
+                                            <a class="button_all_forums" href="http://www.siteduzero.com/forum.html">Accueil des forums</a>
+                                            <div class="menuh_princi_col">
+                                                
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-121-site-web.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/121.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-121-site-web.html">Site Web</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-122-xhtml-css.html">XHTML / CSS</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-338-javascript.html">Javascript</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-123-php.html">PHP</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-128-mapping.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/128.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-128-mapping.html">Mapping</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-129-goldsource-hl1.html">GoldSource (HL1)</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-130-source-hl2.html">Source (HL2)</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-24-communaute-des-zeros.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/24.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-24-communaute-des-zeros.html">Communauté des zéros</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-28-discussions-generales.html">Discussions générales</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-278-vos-etudes.html">Vos études</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-239-presentation-de-vos-projets.html">Présentation de vos projets</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-200-recrutements-pour-vos-projets.html">Recrutements pour vos projets</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-440-sciences.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/440.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-440-sciences.html">Sciences</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-441-mathematiques.html">Mathématiques</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-442-physique-chimie.html">Physique - Chimie</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-443-biologie-et-geologie.html">Biologie et Géologie</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-444-autres-sciences.html">Autres sciences</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                            </div>
+
+                                            <div class="menuh_princi_col">
+                                                
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-125-programmation.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/125.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-125-programmation.html">Programmation</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-126-langage-c.html">Langage C</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-237-langage-c.html">Langage C++</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-305-langage-java.html">Langage Java</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-407-langage-python.html">Langage Python</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-406-bases-de-donnees.html">Bases de données</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-127-autres-langages-outils-et-approches.html">Autres langages, outils et approches</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-219-materiel-et-logiciels.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/219.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-219-materiel-et-logiciels.html">Matériel et logiciels</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-339-discussions-informatiques.html">Discussions informatiques</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-220-linux-mac-et-bsd.html">Linux, Mac et *BSD</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-221-windows.html">Windows</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-116-jeux-video.html">Jeux vidéo</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-117-graphisme.html">Graphisme</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-223-materiel.html">Matériel</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-310-concours.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/310.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-310-concours.html">Concours</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-435-innov-game-2011-a-la-gloire-de.html">Innov'Game 2011 : A la gloire de</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-447-atelier-de-noel-faites-votre-jeu.html">Atelier de noël : "Faites votre jeu"</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                                        <div class="menuh_list_category">
+                                                            <div class="ico"><a href="http://www.siteduzero.com/forum-89-143-le-site-du-zero.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/143.png" alt=""></a></div>
+                                                            <h6><a href="http://www.siteduzero.com/forum-89-143-le-site-du-zero.html">Le Site du Zéro</a></h6>
+                                                            <ul>
+                                                                <li>
+                                                                    
+                                                                            <a href="http://www.siteduzero.com/forum-81-144-suggestions-et-commentaires.html">Suggestions et Commentaires</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-145-designs-du-site-du-zero.html">Designs du Site du Zéro</a>
+                                                                        
+                                                                            <a href="http://www.siteduzero.com/forum-81-429-tutoriels-du-site-du-zero.html">Tutoriels du Site du Zéro</a>
+                                                                        
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                            </div>
+                                        </div>
+
+                                        
+                                    <div class="clear"></div>
+                                    </div>
+                                    <div id="menuh_collaborate" style="display: none;">
+                                        <div class="menuh_list_category">
+                                            
+                                                <div class="ico"><a href="http://www.siteduzero.com/membres-315.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/tuto_cat_thb.png" alt=""></a></div>
+                                                <h6><a href="http://www.siteduzero.com/membres-315.html">Cours</a></h6>
+                                                <ul>
+                                                    <li style="font-style: italic;">Pour rédiger et participer à la rédaction d'un tutoriel, <a style="display: inline; font-style: normal;" href="http://www.siteduzero.com/membres-315.html">rejoignez-nous !</a></li>
+                                                </ul>
+                                            
+                                        </div>
+
+                                        <div class="menuh_list_category">
+                                            
+                                                <div class="ico"><a href="http://www.siteduzero.com/membres-315.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/defaut_thb.png" alt=""></a></div>
+                                                <h6><a href="http://www.siteduzero.com/membres-315.html">News</a></h6>
+                                                <ul>
+                                                    <li style="font-style: italic;">Pour partager ou participer à la rédaction d'une news, <a style="display: inline; font-style: normal;" href="http://www.siteduzero.com/membres-315.html"> rejoignez-nous !</a></li>
+                                                </ul>
+                                            
+                                        </div>
+
+                                        <div class="menuh_list_category">
+                                            <div class="ico"><a href="http://www.siteduzero.com/concours.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/cup_thb.png" alt=""></a></div>
+                                            <h6><a href="http://www.siteduzero.com/concours.html">Concours</a></h6>
+                                            <ul>
+                                                
+                                                        <li><a href="http://www.siteduzero.com/concours-654-122-innov-game-2011-a-la-gloire-de.html">Innov'Game 2011 : A la gloire de</a></li>
+                                                    
+                                            </ul>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+
+
+                                    <div id="menuh_job" style="display: none;">
+                                        <div class="menu_princi">
+                                            <div class="menuh_princi_col">
+                                                <div class="menuh_list_category">
+                                                    <h6>Dernières annonces</h6>
+                                                    <div class="menuh_list_category_job">
+                                                        
+                                                            <a title="Consulter le poste : Développeur C/C++ (H/F)" href="http://www.siteduzero.com/emploi/78/developpeur-c-c" class="corpsmenu">
+                                                                <span class="last_jobs">
+                                                                    <span title="CDD" class="job_type jobtypes2">CDD</span>
+                                                                </span>
+                                                                <span>
+                                                                    <span class="job_title">Développeur C/C++ (H/F)</span>
+                                                                    <span style="color: rgb(0, 0, 0);">AYOTLE</span>
+                                                                </span>
+                                                            </a>
+                                                        
+                                                            <a title="Consulter le poste : Développeur web asp.net/aja…" href="http://www.siteduzero.com/emploi/77/developpeur-web-asp-net-ajax-xhtml" class="corpsmenu">
+                                                                <span class="last_jobs">
+                                                                    <span title="Stage" class="job_type jobtypes3">Stage</span>
+                                                                </span>
+                                                                <span>
+                                                                    <span class="job_title">Développeur web asp.net/aja…</span>
+                                                                    <span style="color: rgb(0, 0, 0);">Citizenside.com</span>
+                                                                </span>
+                                                            </a>
+                                                        
+                                                            <a title="Consulter le poste : Ingénieur logiciel C++ (H/F…" href="http://www.siteduzero.com/emploi/3/ingenieur-logiciel-c" class="corpsmenu">
+                                                                <span class="last_jobs">
+                                                                    <span title="Stage" class="job_type jobtypes3">Stage</span> <span title="CDI" class="job_type jobtypes1">CDI</span>
+                                                                </span>
+                                                                <span>
+                                                                    <span class="job_title">Ingénieur logiciel C++ (H/F…</span>
+                                                                    <span style="color: rgb(0, 0, 0);">FACTSET JCF</span>
+                                                                </span>
+                                                            </a>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                
+                                                <div class="menuh_princi_col">
+                                                    
+                                                        <div class="menuh_list_category">
+                                                            <h6>Annonces à la une</h6>
+                                                            <div class="menuh_list_category_job">
+                                                                
+                                                                    <a title="Consulter le poste : 5 Développeurs Java (H/F)" href="http://www.siteduzero.com/emploi/63/5-developpeurs-java" class="corpsmenu">
+
+                                                                        <span class="last_jobs">
+                                                                            <span title="CDI" class="job_type jobtypes1">CDI</span>
+                                                                        </span>
+                                                                        <span>
+                                                                            <span class="job_title">5 Développeurs Java (H/F)</span>
+                                                                            <span style="color: rgb(0, 0, 0);">Small iz beautiful pour AIRP…</span>
+                                                                        </span>
+                                                                    </a>
+                                                                
+                                                                    <a title="Consulter le poste : Développeur PHP Symfony (H/…" href="http://www.siteduzero.com/emploi/58/developpeur-php-symfony" class="corpsmenu">
+
+                                                                        <span class="last_jobs">
+                                                                            <span title="CDI" class="job_type jobtypes1">CDI</span>
+                                                                        </span>
+                                                                        <span>
+                                                                            <span class="job_title">Développeur PHP Symfony (H/…</span>
+                                                                            <span style="color: rgb(0, 0, 0);">Externis Resourcing</span>
+                                                                        </span>
+                                                                    </a>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                      
+                                                    <div class="menuh_list_category">
+                                                        <div>
+                                                            <div><a href="http://www.siteduzero.com/emploi.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/speed_barre_btn_recherche_emploi.png" alt=""></a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="menuh_more2">
+                                                        <a href="http://www.siteduzero.com/emploi/liste.html">Toutes les annonces<img src="tutoriel-3-38380-la-redirection-http_fichiers/fleche_droite.png" alt="►"></a>
+                                                </div>
+                                            </div>
+                                        <div class="clear"></div>
+                                    </div>
+
+                                    <div id="menuh_study" style="display: none; padding-left: 15px;">
+                                        <div class="menu_princi">
+                                            <div class="ico_study"><img src="tutoriel-3-38380-la-redirection-http_fichiers/ico_etude.png" alt="icon etude" width="50"></div>
+                                            <div class="menuh_princi_col">
+                                                <div class="menuh_list_category">
+                                                    <h6>Recrutement à Bac / Bac +1</h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-280-bts.html">BTS</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-269-ecoles-d-ing%C3%A9nieurs-en-informatique.html">Ecoles d'ingénieurs en informatique</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-274-ecoles-d-ing%C3%A9nieurs-generalistes.html">Ecoles d'ingénieurs généralistes</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-283-iut.html">IUT</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-300-universites.html">Universités</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-287-autre-formation-diplomantes.html">Autres formations diplômantes</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-448-cpge.html">CPGE</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="menuh_list_category">
+                                                    <h6>Recrutement à Bac +2</h6>
+                                                    <ul>
+                                                       <li><a href="http://www.siteduzero.com/etudes-550-270-ecoles-d-ing%C3%A9nieurs-en-informatique.html">Ecoles d'ingénieurs en informatique</a></li>
+                                                       <li><a href="http://www.siteduzero.com/etudes-550-273-ecoles-d-ing%C3%A9nieurs-generalistes.html">Ecoles d'ingénieurs généralistes</a></li>
+                                                       <li><a href="http://www.siteduzero.com/etudes-550-289-autre-formation-diplomantes.html">Autres formations diplômantes</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div class="menuh_princi_col">
+                                                <div class="menuh_list_category">
+                                                    <h6>Recrutement à Bac +3 / Bac +4</h6>
+                                                    <ul>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-388-ecoles-d-ing%C3%A9nieurs-en-informatique.html">Ecoles d'ingénieurs en informatique</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-389-ecoles-d-ing%C3%A9nieurs-generalistes.html">Ecoles d'ingénieurs généralistes</a></li>
+                                                        <li><a href="http://www.siteduzero.com/etudes-550-390-autre-formation-diplomantes.html">Autres formations diplômantes</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="menuh_list_category">
+                                                    <h6>Recrutement à Bac +5</h6>
+                                                    <ul>
+                                                       <li><a href="http://www.siteduzero.com/etudes-550-299-doctorats.html">Doctorats</a></li>
+                                                       <li><a href="http://www.siteduzero.com/etudes-550-391-autre-formation-diplomantes.html">Autres formations diplômantes</a></li>
+                                                    </ul>
+                                                    <div class="menuh_list_category">
+                                                        <div id="find_training">
+                                                            <div><a href="http://www.siteduzero.com/etudes.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/ico_recherche_cours.png" alt=""><strong>Trouvez une formation</strong></a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+
+                                    <div id="menuh_shop" style="display: none;">
+                                        <div class="flagship_products headband_preorder">
+                                            <a style="display: block; height: 144px;" href="http://www.siteduzero.com/boutique-614-430-apprenez-a-programmer-en-java.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/livre_cours_java_2d.png" alt="Apprenez à programmer en Java"></a>
+                                            <h5>Apprenez à programmer en Java</h5>
+                                            <div class="price" style="margin-top: 16px;">
+                                                <span class="min_price">Prix de précommande</span><br>
+                                                25 €
+                                            </div>
+                                            <span><a class="bouton_action fl" href="http://www.siteduzero.com/boutique-614-430-apprenez-a-programmer-en-java.html">Acheter</a></span>
+                                        </div>
+                                        <div class="flagship_products">
+                                            <a href="http://www.siteduzero.com/boutique-614-188-cle-usb-du-site-du-zero-8-go.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/image_usb_speedbarre.jpg" alt="cle usb"></a>
+                                            <h5>Clé USB du site du Zéro</h5>
+                                            <a href="http://www.siteduzero.com/boutique-614-184-cle-usb-du-site-du-zero-4-go.html">4 Go</a>
+                                            - <a href="http://www.siteduzero.com/boutique-614-188-cle-usb-du-site-du-zero-8-go.html">8 Go</a>
+                                            - <a href="http://www.siteduzero.com/boutique-614-191-cle-usb-du-site-du-zero-16-go.html">16 Go</a><br>
+                                            <div class="price">
+                                                <span class="min_price">À partir de</span><br>
+                                                15,20 €
+                                            </div>
+                                            <span><a class="bouton_action fl" href="http://www.siteduzero.com/boutique-614-188-cle-usb-du-site-du-zero-8-go.html">Acheter</a></span>
+                                        </div>
+
+                                    <div class="other_products">
+                                        <span>Concevez votre site web avec PHP et MySQL<br>
+                                        <a href="http://www.siteduzero.com/boutique-614-107-concevez-votre-site-web-avec-php-et-mysql.html">En savoir plus ►</a></span>
+                                        <a href="http://www.siteduzero.com/boutique-614-107-concevez-votre-site-web-avec-php-et-mysql.html">
+                                        <img style="margin: 13px 0pt 0pt 22px;" alt="Concevez votre site web avec php et mysql" src="tutoriel-3-38380-la-redirection-http_fichiers/livre_cours_php_2d.png"></a>
+                                    </div>
+
+                                    <div class="other_products">
+                                        <span>Apprenez à programmer en C <br>
+                                        <a href="http://www.siteduzero.com/boutique-614-65-apprenez-a-programmer-en-c.html">En savoir plus ►</a></span>
+                                        <a href="http://www.siteduzero.com/boutique-614-65-apprenez-a-programmer-en-c.html">
+                                        <img style="margin: 13px 0pt 0pt 22px;" alt="Apprenez à programmer en C" src="tutoriel-3-38380-la-redirection-http_fichiers/livre_cours_c_2d.png"></a>
+                                    </div>
+                                    <div class="other_products">
+                                        <span>Reprenez le contrôle à l'aide de Linux <br>
+                                        <a href="http://www.siteduzero.com/boutique-614-171-reprenez-le-controle-a-l-aide-de-linux.html">En savoir plus ►</a></span>
+                                        <a href="http://www.siteduzero.com/boutique-614-171-reprenez-le-controle-a-l-aide-de-linux.html">
+                                        <img style="margin: 13px 0pt 0pt 22px;" alt="Reprenez le contrôle à l'aide de Linux" src="tutoriel-3-38380-la-redirection-http_fichiers/livre_cours_linux_2d.png"></a>
+                                    </div>
+
+                                    <div class="other_products">
+                                        <span>Rédigez des documents de qualité avec LaTeX<br>
+                                        <a href="http://www.siteduzero.com/boutique-614-207-redigez-des-documents-de-qualite-avec-latex.html">En savoir plus ►</a></span>
+                                        <a href="http://www.siteduzero.com/boutique-614-207-redigez-des-documents-de-qualite-avec-latex.html">
+                                        <img style="margin: 13px 0pt 0pt 22px;" alt="Rédigez des documents de qualité avec LaTeX" src="tutoriel-3-38380-la-redirection-http_fichiers/livre_cours_latex_2d.png"></a>
+                                    </div>
+                                      
+                                    <div class="menuh_more">
+                                        <a href="http://www.siteduzero.com/boutique.html">Tous les produits <img src="tutoriel-3-38380-la-redirection-http_fichiers/fleche_droite_002.png" alt="►"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="search_bar">
+                        <div class="ard"></div>
+                        <form method="get" action="recherche.html" id="recherche">
+                            <p>
+                                <input name="src" id="champ_recherche" accesskey="4" value="Rechercher" type="text">
+                                <select name="c" id="section_recherche">
+                                    <option value="3" selected="selected">Cours</option>
+                                    <option value="6">Forums</option>
+                                    <option value="4">News</option>
+                                    <option value="mbr">Membres</option>
+                                    <option value="formation">Études</option>
+                                    <option value="codeweb">Code web</option>
+                                    <option value="mp">MP</option>
+                                </select>
+                                <input class="button_go_search" value="Go" type="submit">
+                                <a class="button_more_search" href="http://www.siteduzero.com/recherche.html">+</a>
+                            </p>
+                        </form>
+                        </div>
+
+                    </div>
+
+<script type="text/javascript">
+
+    
+        //On Hover
+
+    var keyCodeEscape = 27;
+    $(document).keyup(function(f) {
+        if (f.keyCode == keyCodeEscape)
+        {
+            hideBlocMenu();
+        }
+    });
+
+
+    /* Var for speedbar*/
+    showDelay = 300;
+    hiddenDelay = 367;
+    fadeInDelay = 100
+    fadeOutDelay = 100
+    timer = null;
+    hideTimeOut = null
+    // speedbar function
+    function speedShowDelay(){
+        if($('.menuh_content > div').is(':visible'))
+        {
+            showDelay = null;
+        }
+        else
+        {
+            showDelay = 300;
+        }
+    }
+    
+    $("body").mouseleave(function(){
+        $('.menuh_content > div').hide();
+        $('#speedbarre .smenu>li a').removeClass("smenu_hover");
+    });
+    
+    function showMenu(id, id2){
+
+        $(id2).click(function(){
+            clearInterval(timer);
+            hideBlocMenu();
+            return;
+        });
+
+        speedShowDelay();
+
+        $("body").unbind('click');
+
+        clearInterval(timer);
+        if(!$(id).is(':visible'))
+        {
+            $('.menuh_content > div').hide();
+
+            $('#speedbarre .smenu>li a').removeClass("smenu_hover");
+            $('#speedbarre .smenu > li > .speedbarre_arrow').hide();
+
+            timer=setInterval(function(){
+                $(id+' ,#speedbar_expand').fadeIn(fadeInDelay);
+                $(id2+' a').addClass('smenu_hover')
+                clearInterval(timer);
+
+                },showDelay);
+        }
+    }
+
+    function hideMenu(id, id2){
+
+        clearInterval(timer);
+        clearTimeout(hideTimeOut);
+
+        $("body").bind('click',function(){
+            hideBlocMenu();
+        });
+
+        timer=setInterval(function(){
+            $(id).fadeOut(fadeOutDelay,function(){
+                $('#speedbar_expand').hide();
+                $(id2+' a').removeClass("smenu_hover");
+            });
+            clearInterval(timer);
+        },hiddenDelay)
+    }
+
+    function hideBlocMenu(){
+        $('.menuh_content > div').fadeOut(fadeOutDelay, function(){
+            $('#speedbar_expand').hide();
+            $('#speedbarre .smenu>li a').removeClass("smenu_hover");})
+    }
+
+        /* speedbar */
+
+
+    $("#speed_cours").addClass('hideOnLoad');
+    $("#speed_forum").addClass('hideOnLoad');
+    $("#speed_concours").addClass('hideOnLoad');
+    $("#speed_job").addClass('hideOnLoad');
+    $("#speed_etudes").addClass('hideOnLoad');
+    $("#speed_boutique").addClass('hideOnLoad');
+
+
+
+    $(document).mousemove(function(){
+        $("#speed_cours").removeClass('hideOnLoad');
+        $("#speed_forum").removeClass('hideOnLoad');
+        $("#speed_concours").removeClass('hideOnLoad');
+        $("#speed_job").removeClass('hideOnLoad');
+        $("#speed_etudes").removeClass('hideOnLoad');
+        $("#speed_boutique").removeClass('hideOnLoad');
+    })
+
+
+    //TUTORIALS
+    $("#speed_cours, #menuh_tutorials").hover(function(){
+        clearTimeout(hideTimeOut);
+        id = '#menuh_tutorials';
+        id2 = '#speed_cours';
+        if(!$(id2).hasClass('hideOnLoad'))
+        {
+            hideTimeOut = setTimeout(function(){
+                showMenu(id, id2);
+            },100);
+        }
+
+    ;},function(){
+
+        id = '#menuh_tutorials';
+        id2 = '#speed_cours';
+        hideMenu(id, id2);
+    });
+    //FORUMS
+    $("#speed_forum, #menuh_forum").hover(function(){
+        clearTimeout(hideTimeOut);
+        id = '#menuh_forum';
+        id2 = '#speed_forum';
+
+        if(!$(id2).hasClass('hideOnLoad'))
+        {
+            hideTimeOut = setTimeout(function(){
+                showMenu(id, id2);
+            },100);
+        }
+
+    ;},function(){
+
+        id = '#menuh_forum';
+        id2 = '#speed_forum';
+        hideMenu(id, id2);
+    });
+
+    //COLLABORATE
+    $("#speed_concours, #menuh_collaborate").hover(function(){
+        clearTimeout(hideTimeOut);
+        id = '#menuh_collaborate';
+        id2 = '#speed_concours';
+        if(!$(id2).hasClass('hideOnLoad'))
+        {
+            hideTimeOut = setTimeout(function(){
+                showMenu(id, id2);
+            },100);
+        }
+
+    ;},function(){
+
+        id = '#menuh_collaborate';
+        id2 = '#speed_concours';
+        hideMenu(id, id2);
+    });
+
+    //JOB
+    $("#speed_job, #menuh_job").hover(function(){
+        clearTimeout(hideTimeOut);
+        id = '#menuh_job';
+        id2 = '#speed_job';
+        if(!$(id2).hasClass('hideOnLoad'))
+        {
+            hideTimeOut = setTimeout(function(){
+                showMenu(id, id2);
+            },100);
+        }
+
+    ;},function(){
+
+        id = '#menuh_job';
+        id2 = '#speed_job';
+        hideMenu(id, id2);
+    });
+
+    //STUDY
+    $("#speed_etudes, #menuh_study").hover(function(){
+        clearTimeout(hideTimeOut);
+        id = '#menuh_study';
+        id2 = '#speed_etudes';
+        if(!$(id2).hasClass('hideOnLoad'))
+        {
+            hideTimeOut = setTimeout(function(){
+                showMenu(id, id2);
+            },100);
+        }
+
+    ;},function(){
+
+        id = '#menuh_study';
+        id2 = '#speed_etudes';
+        hideMenu(id, id2);
+    });
+
+    //SHOP
+    $("#speed_boutique, #menuh_shop").hover(function(){
+        clearTimeout(hideTimeOut);
+        id = '#menuh_shop';
+        id2 = '#speed_boutique';
+        if(!$(id2).hasClass('hideOnLoad'))
+        {
+            hideTimeOut = setTimeout(function(){
+                showMenu(id, id2);
+            },100);
+        }
+
+    ;},function(){
+
+        id = '#menuh_shop';
+        id2 = '#speed_boutique';
+        hideMenu(id, id2);
+    });
+
+    
+
+</script>
+            
+            <div class="contenu">
+                <div id="menu">
+                    
+
+                    <div class="box_menu">
+                        <h5>Cours</h5>
+
+                        <div class="corpsmenu">
+                            <ul>
+                                
+                                    <li style="border-bottom: 0pt none; padding: 0pt 0pt 2px; background-color: rgb(226, 240, 255);">
+                                        <a href="http://www.siteduzero.com/tutoriel-3-361996-par-ou-commencer.html"><img style="padding-left: 5px;" src="tutoriel-3-38380-la-redirection-http_fichiers/compass.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu" style="margin-left: 43px;">
+                                            <a href="http://www.siteduzero.com/tutoriel-3-361996-par-ou-commencer.html"><strong class="menu_cours_section">Nouveau ?</strong></a>
+                                            <ul>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-361996-par-ou-commencer.html">Suivez le guide !</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.siteduzero.com/tutoriel-1-67-site-web.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/67.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu">
+                                            <a href="http://www.siteduzero.com/tutoriel-1-67-site-web.html"><strong class="menu_cours_section">Site Web</strong></a>
+                                            <ul>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-13666-apprenez-a-creer-votre-site-web.html">XHTML / CSS</a></li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-309961-dynamisez-vos-sites-web-avec-javascript.html">Javascript</a></li>
+                                                <li>
+                                                    <a href="http://www.siteduzero.com/tutoriel-3-14668-concevez-votre-site-web-avec-php-et-mysql.html">
+                                                        PHP / MySQL
+                                                    </a>
+                                                    <a href="http://www.siteduzero.com/boutique-614-107-concevez-votre-site-web-avec-php-et-mysql.html">
+                                                        <span class="in_book"><img src="tutoriel-3-38380-la-redirection-http_fichiers/ico_livre.png" alt=""></span>
+                                                        <span style="display: none;">Ce cours existe en livre :<br>Concevez votre site web avec PHP et MySQL</span>
+                                                    </a>
+                                                </li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-112219-apprenez-a-creer-des-applications-web-dynamiques-avec-jee.html">Java EE (J2EE)</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.siteduzero.com/tutoriel-1-57-programmation.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/57.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu">
+                                            <a href="http://www.siteduzero.com/tutoriel-1-57-programmation.html"><strong class="menu_cours_section">Programmation</strong></a>
+                                            <ul>
+                                                <li>
+                                                    <a href="http://www.siteduzero.com/tutoriel-3-14189-apprenez-a-programmer-en-c.html">
+                                                        Langage C
+                                                    </a>
+                                                    <a href="http://www.siteduzero.com/boutique-614-65-apprenez-a-programmer-en-c.html">
+                                                        <span class="in_book"><img src="tutoriel-3-38380-la-redirection-http_fichiers/ico_livre.png" alt=""></span>
+                                                        <span style="display: none;">Ce cours existe en livre :<br>Apprenez à programmer en C</span>
+                                                    </a>
+                                                </li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-11406-apprenez-a-programmer-en-c.html">Langage C++</a></li>
+                                                <li>
+                                                    <a href="http://www.siteduzero.com/tutoriel-3-10601-programmation-en-Java.html">
+                                                        Java
+                                                    </a>
+                                                        <a href="http://server1.evonia.fr/tracking/ads_stats2-32325f35385f323533__77c00fc1a6__2748__2-0/http://www.siteduzero.com/boutique-614-430-apprenez-a-programmer-en-java.html">
+                                                        <span class="in_book"><img src="tutoriel-3-38380-la-redirection-http_fichiers/ico_livre_preco.png" alt=""></span>
+                                                        <span style="display: none;">Ce livre est en précommande :<br>Apprenez à programmer en Java</span>
+                                                    </a>
+                                                </li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-119239-programmation-en-java-api.html">Java (API)</a></li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-223267-apprendre-python.html">Python </a></li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-134798-visual_basic_net.html">VB .NET</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>                                        
+                                        <a href="http://www.siteduzero.com/tutoriel-1-60-systemes-d-exploitation.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/60.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu">
+                                            <a href="http://www.siteduzero.com/tutoriel-1-60-systemes-d-exploitation.html"><strong class="menu_cours_section">Systèmes d'exploitation</strong></a>
+                                            <ul>
+                                                <li>
+                                                    <a href="http://www.siteduzero.com/tutoriel-3-12827-reprenez-le-controle-a-l-aide-de-linux.html">
+                                                        Linux
+                                                    </a>
+                                                    <a href="http://www.siteduzero.com/boutique-614-171-reprenez-le-controle-a-l-aide-de-linux.html">
+                                                        <span class="in_book"><img src="tutoriel-3-38380-la-redirection-http_fichiers/ico_livre.png" alt=""></span>
+                                                        <span style="display: none;">Ce cours existe en livre :<br>Reprenez le contrôle a l'aide de Linux</span>
+                                                    </a>
+                                                </li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-273305-freebsd-et-l-envers-du-decor.html">FreeBSD</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.siteduzero.com/tutoriel-1-56-graphisme.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/56.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu">
+                                            <a href="http://www.siteduzero.com/tutoriel-1-56-graphisme.html"><strong class="menu_cours_section">Graphisme</strong></a>
+                                            <ul>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-351765-debuter-sur-adobe-photoshop.html">Photoshop</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.siteduzero.com/tutoriel-1-58-infographie-3d.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/58.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu">
+                                            <a href="http://www.siteduzero.com/tutoriel-1-58-infographie-3d.html"><strong class="menu_cours_section">Infographie 3D</strong></a>
+                                            <ul>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-11714-debutez-dans-la-3d-avec-blender.html">Blender</a></li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-228998-apprenez-a-modeliser-en-3d-avec-autodesk-maya.html">Maya</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <a href="http://www.siteduzero.com/tutoriel-1-55-bureautique.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/55.png" class="fl" alt=""></a>
+                                        <div class="liste_cours_menu">
+                                            <a href="http://www.siteduzero.com/tutoriel-1-55-bureautique.html"><strong class="menu_cours_section">Bureautique</strong></a>
+                                            <ul>
+                                                <li>
+                                                    <a href="http://www.siteduzero.com/tutoriel-3-258577-redigez-des-documents-de-qualite-professionnelle-avec-latex.html">
+                                                        LaTeX
+                                                    </a>
+                                                    <a href="http://www.siteduzero.com/boutique-614-207-redigez-des-documents-de-qualite-professionnelle-avec-latex.html">
+                                                        <span class="in_book"><img src="tutoriel-3-38380-la-redirection-http_fichiers/ico_livre.png" alt=""></span>
+                                                        <span style="display: none;">Ce cours existe en livre :<br>Rédigez des documents de qualité avec LaTeX</span>
+                                                    </a>
+                                                </li>
+                                                <li><a href="http://www.siteduzero.com/tutoriel-3-417000-redigez-facilement-des-documents-avec-word.html">Word<img style="margin-left: 10px;" alt="" src="tutoriel-3-38380-la-redirection-http_fichiers/iconouveau.png"></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <li>
+                                        <img src="tutoriel-3-38380-la-redirection-http_fichiers/die.png" class="fl" alt="">
+                                        <div class="liste_cours_menu">
+                                            <strong class="menu_cours_section">Tutoriel du jour</strong><br>
+                                            <ul>
+                                                <li>
+                                                    <a href="http://www.siteduzero.com/tutoriel-3-38032-validation-les-conseils-des-validateurs.html">[Validation] Les conseils des Validateurs</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                
+                                <li class="last_idem_liste">
+                                    <div id="menu_ajout_cours">
+                                        <ul>
+                                            <li>
+                                                
+                                                    <a href="http://www.siteduzero.com/tutoriel-3-256867-devenez-auteur-de-cours-sur-le-site-du-zero-et-le-livre-du-zero.html">
+                                                
+                                                Rédigez un cours <img src="tutoriel-3-38380-la-redirection-http_fichiers/add.png" alt="">&nbsp;</a>
+                                             </li>
+                                             <li>
+                                                 <a href="http://www.siteduzero.com/tutoriel.html" title="Tous les cours">Tous les cours  <img src="tutoriel-3-38380-la-redirection-http_fichiers/fleche_droite.png" alt="">&nbsp;</a>
+                                             </li>
+                                         </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="corps">
+                    <div id="zozor_position">
+                        <div id="zozor">
+                            <div class="centre"><img src="tutoriel-3-38380-la-redirection-http_fichiers/zozor6.png" alt=" Zozor" title=" Zozor"></div>
+                       </div>
+                    </div>
+
+                    <div id="container_bulle_zozor">
+                        
+                    </div>
+
+                    <div id="arbre">
+                        
+			&gt;  <a href="http://www.siteduzero.com/">Le Site du Zéro</a>
+		
+			&gt;  <a href="http://www.siteduzero.com/tutoriel.html">Cours</a>
+			 &gt;  <a href="http://www.siteduzero.com/tutoriel-1-352-tutoriels.html">Tutoriels</a>
+		 &gt;  <a href="http://www.siteduzero.com/tutoriel-1-67-site-web.html">Site Web</a>
+		 &gt;  <a href="http://www.siteduzero.com/tutoriel-2-74-serveur.html">Serveur</a>
+		&gt;  <a href="http://www.siteduzero.com/tutoriel-3-38380-la-redirection-http.html">La redirection HTTP</a> 
+
+&gt; Lecture du tutoriel
+
+                    </div>
+
+                    
+
+
+
+<h1>
+    La redirection HTTP
+    
+</h1>
+
+
+<div id="onglets_tutos" class="onglets_tutos">
+  <ul>
+    
+      <li class="selected">
+      <a href="http://www.siteduzero.com/tutoriel-3-38380-la-redirection-http.html">Tutoriel</a></li>
+    
+      <li>
+      <a href="http://www.siteduzero.com/tutoriel-50-38380-p1-la-redirection-http.html#r68636">16 commentaires</a></li>
+    
+      <li>
+      <a href="http://www.siteduzero.com/tutoriel-21-38380-la-redirection-http.html">Historique</a></li>
+    
+  </ul>
+</div>
+<hr class="bas_onglets">
+
+
+
+
+<div class="cadre_auteur_date">
+    <form action="tutoriel-54-38380.html" method="post">
+        <div class="dnone"><input value="b498c2d24ce2dec2bf993fca4b09d5617abe7f97" name="challenge" type="hidden"></div>
+
+        <div class="infobox">
+<h3 class="special">Informations sur le tutoriel</h3>
+<div class="conteneur_infobox">
+<table>
+  <tbody><tr>
+    <td>
+    <div class="boite_avatar_100px">
+      <img src="tutoriel-3-38380-la-redirection-http_fichiers/63758.png" style="width: 50px; height: 50px; display: block;" alt="Avatar" class="avatar" id="avatar6954">  
+     </div>
+    </td>
+    <td>
+     
+      <strong>Auteur</strong> :
+      
+    
+	    <a class="auteur_tut" href="http://www.siteduzero.com/membres-294-6954.html">Spy-Seth</a>
+    
+      <br>
+    
+      <strong>Licence</strong> : <a href="http://creativecommons.org/licenses/by-nc/2.0/fr/"><img src="tutoriel-3-38380-la-redirection-http_fichiers/5.png" alt="Creative Commons BY-NC" title="Creative Commons BY-NC"></a><br><br>
+      <br>
+      <a href="#tuto_details" onclick="return false;" id="tuto_details_plus">Plus d'informations <img src="tutoriel-3-38380-la-redirection-http_fichiers/fleche_bas.png" alt="Plus d'informations" title="Plus d'informations" id="image_detail"></a>
+      <a href="#onglets_tutos" onclick="return false;" id="tuto_details_moins" style="display: none;">Moins d'informations <img src="tutoriel-3-38380-la-redirection-http_fichiers/fleche_haut.png" alt="Plus d'informations" title="Plus d'informations" id="image_detail_moins"></a>
+      <script type="text/javascript">
+          var lien_plus = document.getElementById('tuto_details_plus');
+          var lien_moins = document.getElementById('tuto_details_moins');
+
+          var toggleDetails = function()
+          {
+              toggle('infos_detaillees');
+              toggle('tuto_details_plus');
+              toggle('tuto_details_moins');
+              return false;
+          };
+
+          if(lien_plus.addEventListener)
+          {
+              lien_plus.addEventListener('click', toggleDetails , false);
+          } else
+          {
+              lien_plus.attachEvent('onclick', toggleDetails);
+          }
+
+          if(lien_moins.addEventListener)
+          {
+              lien_moins.addEventListener('click', toggleDetails , false);
+          } else
+          {
+              lien_moins.attachEvent('onclick', toggleDetails);
+          }
+          
+      </script>
+
+      <div style="display: none;" id="infos_detaillees">
+	<br>			
+<strong>Créé</strong> : Le 05/03/2006 à 00:37:44<br>
+<strong>Modifié</strong> : Le 04/05/2009 à 20:32:11<br>
+
+<strong>Avancement</strong> : 100%<br>
+
+<br>
+
+
+  <a href="http://www.zcorrecteurs.fr/"><img src="tutoriel-3-38380-la-redirection-http_fichiers/zcorrige.png" alt="L'orthographe, la grammaire et la présentation de ce tutoriel ont été vérifiées par les zCorrecteurs." title="L'orthographe, la grammaire et la présentation de ce tutoriel ont été vérifiées par les zCorrecteurs."></a><br>
+
+<a href="http://www.siteduzero.com/tutoriel-50-38380-68636-la-redirection-http.html#r68636">16 commentaires</a><br>
+
+
+      </div>
+
+    </td>
+  </tr>
+</tbody></table>
+</div>
+</div>
+
+
+    <div class="infobox">
+        <h3 class="special">Popularité</h3>
+        <div class="conteneur_infobox">
+            <strong>Visualisations</strong> : 191&nbsp;456<br><br>
+            <div style="padding-top: 1px; float: left;"><strong>Appréciation<br>des lecteurs</strong> : </div>
+            <div class="tut_appreciation">
+                <div class="tut_appreciation_smiley" id="smiley-1-2334--988946" style="background-position: -19px 50%;"><img src="tutoriel-3-38380-la-redirection-http_fichiers/empty.gif" alt=""></div>
+                <span id="eval_nb-1">0</span>
+            </div>
+            <div class="tut_appreciation">
+                <div class="tut_appreciation_smiley" id="smiley-2-2334--988946" style="background-position: -57px 50%;"><img src="tutoriel-3-38380-la-redirection-http_fichiers/empty.gif" alt=""></div>
+                <span id="eval_nb-2">0</span>
+            </div>
+            <div class="tut_appreciation">
+                <div class="tut_appreciation_smiley" id="smiley-3-2334--988946" style="background-position: -95px 50%;"><img src="tutoriel-3-38380-la-redirection-http_fichiers/empty.gif" alt=""></div>
+                <span id="eval_nb-3">1</span>
+            </div>
+            <div class="tut_appreciation">
+                <div class="tut_appreciation_smiley eval_always_color" id="smiley-4-2334--988946" style="background-position: -114px 50%;"><img src="tutoriel-3-38380-la-redirection-http_fichiers/empty.gif" alt=""></div>
+                <span id="eval_nb-4">4</span>
+            </div>
+            
+            <div style="clear: both;"></div>
+                
+                    <p id="tut_vot_ldz" style="text-align: center;"><img src="tutoriel-3-38380-la-redirection-http_fichiers/thb_livre_cours_c.png" id="tut_vot_ldz_img" alt="">
+                    
+                                <b>1 personne</b> souhaite voir ce tutoriel publié en livre ! <br> <a href="http://www.siteduzero.com/vote/ldz/2334.html" id="tut_vot_ldz_link">Vous aussi ?</a>
+                            
+            </p>
+        </div>
+    </div>
+
+
+<div class="infobox" id="pave_pub_tuto" style="display: none;">
+<h3 class="special">Publicité</h3>
+<div class="conteneur_infobox">
+<table style="width: 100%;">
+  <tbody><tr>
+    <td colspan="2" id="menu_pub_tuto">
+
+
+        
+            <script type="text/javascript">
+                <!--
+                ord=Math.random();
+                ord=ord*10000000000000000000;
+                var test = true;
+                document.write('<scr'+'ipt type="text/javascript" src="pub.js.php?cb='+ord+'&amp;l=300&amp;h=250&amp;age=0&amp;afficher_bloc_pub=pave_pub_tuto&amp;cid=74&amp;pays=0"><\/scr'+'ipt>');
+                -->
+            </script><script type="text/javascript" src="tutoriel-3-38380-la-redirection-http_fichiers/pub.html"></script>
+        
+    </td>
+  </tr>
+</tbody></table>
+</div>
+</div>
+
+        
+
+        
+            <div class="infobox expandable">
+                <h3 class="special">Partager</h3>
+                <div class="conteneur_infobox addthis_toolbox" style="text-decoration: none;" addthis:url="http://www.siteduzero.com/tutoriel-3-38380-la-redirection-http.html" addthis:title="La redirection HTTP">
+                    <div class="vertical">
+                        <a class="addthis_button_print at300b" title="Imprimer"><span class="at300bs at15nc at15t_print"></span>Imprimer</a>
+                        <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=pdfonline&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-38380-la-redirection-http.html&amp;title=La%20redirection%20HTTP&amp;ate=AT-simpleit/-/-/4d7df52684cff1d1/1&amp;uid=4d7df5263d78bcae&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-2-74-serveur.html&amp;tt=0" class="addthis_button_pdfonline at300b" title="Convertir au format PDF"><span class="at300bs at15nc at15t_pdfonline"></span>Convertir en PDF</a>
+                        <a class="addthis_button_email at300b" title="Partager via Email"><span class="at300bs at15nc at15t_email"></span>Email</a>
+                        <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=twitter&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-38380-la-redirection-http.html&amp;title=La%20redirection%20HTTP&amp;ate=AT-simpleit/-/-/4d7df52684cff1d1/2&amp;uid=4d7df526c6200717&amp;sms_ss=1&amp;at_xt=1&amp;template=%7B%7Btitle%7D%7D%20%7B%7Burl%7D%7D%20%23SdZ&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-2-74-serveur.html&amp;tt=0" class="addthis_button_twitter at300b" title="Partager via Twitter"><span class="at300bs at15nc at15t_twitter"></span>Twitter</a>
+                        <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=facebook&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-38380-la-redirection-http.html&amp;title=La%20redirection%20HTTP&amp;ate=AT-simpleit/-/-/4d7df52684cff1d1/3&amp;uid=4d7df5263f960125&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-2-74-serveur.html&amp;tt=0" class="addthis_button_facebook at300b" title="Partager via Facebook"><span class="at300bs at15nc at15t_facebook"></span>Facebook</a>
+                        <a class="expend" href="#plus"><span class="more">&nbsp;</span>Plus de services</a>
+                        <div style="display: none;" class="slidable">
+                            <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=myspace&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-38380-la-redirection-http.html&amp;title=La%20redirection%20HTTP&amp;ate=AT-simpleit/-/-/4d7df52684cff1d1/4&amp;uid=4d7df5268aced7ab&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-2-74-serveur.html&amp;tt=0" class="addthis_button_myspace at300b" title="Partager via MySpace"><span class="at300bs at15nc at15t_myspace"></span>MySpace</a>
+                            <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=googlebuzz&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-38380-la-redirection-http.html&amp;title=La%20redirection%20HTTP&amp;ate=AT-simpleit/-/-/4d7df52684cff1d1/5&amp;uid=4d7df526a61edc5f&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-2-74-serveur.html&amp;tt=0" class="addthis_button_googlebuzz at300b" title="Partager via Google Buzz"><span class="at300bs at15nc at15t_googlebuzz"></span>Google Buzz</a>
+                            <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=blogger&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-38380-la-redirection-http.html&amp;title=La%20redirection%20HTTP&amp;ate=AT-simpleit/-/-/4d7df52684cff1d1/6&amp;uid=4d7df5265864ec46&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-2-74-serveur.html&amp;tt=0" class="addthis_button_blogger at300b" title="Partager via Blogger"><span class="at300bs at15nc at15t_blogger"></span>Blogger</a>
+                            <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=buzz&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-38380-la-redirection-http.html&amp;title=La%20redirection%20HTTP&amp;ate=AT-simpleit/-/-/4d7df52684cff1d1/7&amp;uid=4d7df52642c7d60a&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-2-74-serveur.html&amp;tt=0" class="addthis_button_buzz at300b" title="Partager via Yahoo! Buzz"><span class="at300bs at15nc at15t_buzz"></span>Y! Buzz</a>
+                            <a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=simpleit&amp;source=tbx-250&amp;lng=fr&amp;s=live&amp;u508=1&amp;url=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-3-38380-la-redirection-http.html&amp;title=La%20redirection%20HTTP&amp;ate=AT-simpleit/-/-/4d7df52684cff1d1/8&amp;uid=4d7df526aebed680&amp;sms_ss=1&amp;at_xt=1&amp;ui_cobrand=Site%20du%20Z%C3%A9ro&amp;ui_header_color=%23ffffff&amp;ui_header_background=%237AB7FC&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.siteduzero.com%2Ftutoriel-2-74-serveur.html&amp;tt=0" class="addthis_button_live at300b" title="Partager via MSN Live"><span class="at300bs at15nc at15t_live"></span>MSN Live</a>
+                            <a class="addthis_button_expanded at300m" title="Partager via un autre service"><span class="at300bs at15nc at15t_expanded"></span>Encore plus de services</a>
+                        </div>
+                    </div>
+                <div class="atclear"></div></div>
+            </div>
+        
+    </form>
+</div>
+
+
+<div id="chap_intro">Vous venez de déménager votre site ? De changer
+l'URL d'une / de plusieurs page(s) ? D'un dossier ? Mais
+malheureusement vous avez peur que vos visiteurs s'affolent s'ils ne
+trouvent plus la / les pages déplacée(s) ? Que les moteurs de recherche
+soient perdus ?<br>
+<br>
+<br>
+J'ai la solution : les redirections.<br>
+<br>
+Je dis <span class="italique">les</span> et non <span class="italique">la</span> redirections, car il existe plusieurs méthodes de redirection :<br>
+<ul>
+<li>la redirection HTTP ;</li>
+<li>la redirection HTML ;</li>
+<li>la redirection PHP ;</li>
+<li>la redirection Javascript.</li>
+</ul><br>
+<br>
+<br>
+Comme vous vous en doutez, il y en a de meilleures que d'autres, et
+c'est pour cela que je vais essayer de toutes les aborder en montrant
+les points positifs et négatifs de chacune d'elles.<br>
+<br>
+Tout cela se fera sur plusieurs tutoriels ; dans celui-ci, je me
+contenterai de vous expliquer la redirection HTTP qui est à mon avis la
+meilleure de toutes. En tout cas, c'est sûrement la plus utilisée.<br>
+<br>
+<br>
+Avant de commencer, il vous faut savoir une chose : cette redirection fonctionne directement avec Apache.<br>
+<br>
+<div class="rmq attention">Pour utiliser cette fonction, il vous faudra un serveur qui tourne sous Apache et que sa configuration accepte la directive  <span class="courrier">Redirect</span> dans les fichiers <span class="courrier">.htaccess</span>.</div><br>
+La majeure partie des serveurs tournent sous Apache, l'autre partie
+(qui ne tourne pas sous Apache) comprend néanmoins les mêmes fichiers
+que ceux utilisés sur des serveurs Apache : ça ne pose donc pas de
+problème, généralement.<br>
+<br>
+<br>
+<div class="rmq question"><span class="courrier">.htaccess</span> : mais je connais ça, ce n'est pas le fichier dans lequel on configure les erreurs 40<span class="italique">x</span> (400, 401, 402, 403, 404... ) ?  <img src="tutoriel-3-38380-la-redirection-http_fichiers/unsure.gif" alt=":euh:" class="smilies"></div><br>
+Très bonne remarque ! C'est effectivement dans le même fichier que l'on fait ces deux manipulations. <img src="tutoriel-3-38380-la-redirection-http_fichiers/smile.png" alt=":)" class="smilies"><br>
+<br>
+<br>
+Pour commencer, je vais vous donner un fichier d'exemple qui va vous montrer les possibilités de la chose. <img src="tutoriel-3-38380-la-redirection-http_fichiers/hihi.png" alt="^^" class="smilies"><br>
+<br>
+<span class="code">Code : Apache - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 apache"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre>1
+2
+3
+4
+5</pre></td><td class="code"><div class="syntax"><pre><span class="nb">Redirect</span> permanent <span class="sx">/dossier01/page01.html</span> http://nouvelle.adresse.fr/dossier03/page02.html
+<span class="nb">RedirectMatch</span> seeother ^/images/(.*)\.jpg$ http://adresse.actuelle.fr/images/$1.gif
+<span class="nb">Redirect</span> permanent <span class="sx">/dossier01</span> http://nouvelle.adresse.fr/dossier02
+<span class="nb">Redirect</span> permanent / http://nouvelle.adresse.fr/
+<span class="nb">Redirect</span> gone <span class="sx">/vieux.html</span>
+</pre></div>
+</td></tr></tbody></table></div><br>
+<div class="rmq question">Oullaaaalaaalaaa... c'est quoi, ce truc ?  <img src="tutoriel-3-38380-la-redirection-http_fichiers/unsure.gif" alt=":euh:" class="smilies">  <img src="tutoriel-3-38380-la-redirection-http_fichiers/unsure.gif" alt=":euh:" class="smilies"> </div><br>
+Ça, c'est un fichier <span class="courrier">.htaccess</span>
+avec des règles de redirections complexes (les expressions régulières),
+mais pas de panique : je ne vais rien vous faire faire d'aussi
+compliqué !</div>
+
+
+    <div class="sommaire_chap">
+        <span>Sommaire du tutoriel :</span>
+        <div class="icone_chap">
+            
+                <img src="tutoriel-3-38380-la-redirection-http_fichiers/4963.gif" alt="Icône du chapitre" class="icone_chapitre">
+            
+        </div>
+
+        <div class="droite_chapitre">
+            <ul class="liste_sommaire_chap">
+                
+                    <li>
+                        <a href="#ss_part_1">Introduction à la syntaxe</a>
+                    </li>
+                
+                    <li>
+                        <a href="#ss_part_2">Changement permanent de nom de domaine</a>
+                    </li>
+                
+                    <li>
+                        <a href="#ss_part_3">Déplacement définitif d'un dossier</a>
+                    </li>
+                
+                    <li>
+                        <a href="#ss_part_4">Déplacement définitif d'un fichier</a>
+                    </li>
+                
+                    <li>
+                        <a href="#ss_part_5">Suppression définitive d'un fichier</a>
+                    </li>
+                
+                    <li>
+                        <a href="#ss_part_6">Changer l'extension d'un fichier</a>
+                    </li>
+                
+                    <li>
+                        <a href="#ss_part_7">Redirection temporaire</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    <div class="liens_bas_tuto">
+        
+    </div>
+
+
+<hr>
+
+
+                <h2>
+                    <a id="ss_part_1" class="titre_sous_partie">Introduction à la syntaxe</a>
+                    
+                </h2>
+
+                <div class="ss_part_texte"><div class="rmq information">Les fichiers <span class="courrier">.htaccess</span> ont une syntaxe particulière, elle n'est pas dure mais il faut la connaître. <img src="tutoriel-3-38380-la-redirection-http_fichiers/smile.png" alt=":)" class="smilies"></div><br>
+<br>
+Chaque ligne d'un fichier <span class="courrier">.htaccess</span> est une instruction.<br>
+On peut décomposer les lignes en quatre parties :<br>
+<br>
+<span class="code">Code : Apache - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 apache"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre>1</pre></td><td class="code"><div class="syntax"><pre><span class="nb">RedirectMatch</span> seeother ^/images/(.*)\.jpg$ http://adresse.actuelle.fr/images/$1.gif
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+Ici nous avons : <ul>
+<li><span class="courrier">RedirectMatch</span> : c'est la directive, ou pour la redirection : l'instruction de redirection (ça dit ce que l'on va faire) ;</li>
+<li><span class="courrier">seeother</span> : c'est une option de la directive <span class="courrier">RedirectMatch</span> ;</li>
+<li><span class="courrier">^/images/(.*)\.jpg$</span> : la cible de l'instruction de redirection ;</li>
+<li><span class="courrier">http://adresse.actuelle.fr/images/$1.gif</span> : l'URL d'arrivée (dans notre cas : l'URL vers laquelle on redirige).</li>
+</ul><br>
+Pour plus de documentation sur les différentes directives utilisables : voir <a href="http://www.apachefrance.com/Manuels/Apache_1.3_VF/mod/mod_alias.html">la documentation officielle des alias d'Apache (fr)</a> ou <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10">la documentation officielle sur les requêtes HTTP 1.1 (en)</a>.<br>
+</div>
+                <hr>
+            
+                <h2>
+                    <a id="ss_part_2" class="titre_sous_partie">Changement permanent de nom de domaine</a>
+                    
+                </h2>
+
+                <div class="ss_part_texte">Le changement d'adresse est toujours risqué : il a des risques que le site coule suite à un non-suivi des visiteurs et / ou un <span class="italique">déréférencement</span> du site.<br>
+On peut palier ce problème avec un type de redirection HTTP très précise.<br>
+<br>
+Voilà comment ça se formule :<br>
+<br>
+<span class="code">Code : Apache - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 apache"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre>1</pre></td><td class="code"><div class="syntax"><pre><span class="nb">Redirect</span> permanent / http://nouvelle.adresse.fr/
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+<br>
+Prenons l'exemple sur d'un site personnel qui est hébergé chez free
+(http://monsite.free.fr) : le webmaster décide de s'acheter un nom de
+domaine et un hébergement : <a href="http://www.monsite.sdz/">http://www.monsite.sdz</a>.
+Il copie donc tout le site de l'ancienne vers la nouvelle adresse, mais
+pour conserver son référencement, il a mis en place une redirection
+HTTP du type de celui que nous venons de voir.<br>
+<br>
+Il voulait que l'adresse <a href="http://monsite.free.fr/">http://monsite.free.fr</a> redirige vers <a href="http://www.monsite.sdz/">http://www.monsite.sdz</a>, il a donc mis un fichier <span class="courrier">.htaccess</span> à la racine de <a href="http://monsite.free.fr/">http://monsite.free.fr</a> qui contenait :<br>
+<br>
+<span class="code">Code : Apache - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 apache"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre>1</pre></td><td class="code"><div class="syntax"><pre><span class="nb">Redirect</span> permanent / http://www.monsite.sdz/
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+Explication du code :<br>
+<ul>
+<li><span class="courrier">Redirect permanent</span> spécifie le type de redirection ;</li>
+<li><span class="courrier">/</span> après <span class="italique">Redirect permanent</span> dit qu'il faut rediriger toutes les pages ;</li>
+<li><span class="courrier"><a href="http://www.monsite.sdz/">http://www.monsite.sdz/</a></span> est l'adresse de destination de la redirection.</li>
+</ul><br>
+Le gros avantage de cette redirection est que si le visiteur demande la page : <span class="courrier"><a href="http://monsite.free.fr/hot-dog.html">http://monsite.free.fr/hot-dog.html</a></span>, il sera automatiquement redirigé vers <span class="courrier"><a href="http://www.monsite.sdz/hot-dog.html">http://www.monsite.sdz/hot-dog.html</a></span>.  <img src="tutoriel-3-38380-la-redirection-http_fichiers/clin.png" alt=";)" class="smilies"> <br>
+<br>
+<div class="rmq information">C'est bon, vous suivez ? S'il y a un problème, relisez ce passage. <img src="tutoriel-3-38380-la-redirection-http_fichiers/smile.png" alt=":)" class="smilies">
+Si en ayant relu plusieurs fois vous ne comprenez toujours pas, passez
+à la suite, ça rentrera sûrement avec d'autres exemples. ;-) </div></div>
+                <hr>
+            
+                <h2>
+                    <a id="ss_part_3" class="titre_sous_partie">Déplacement définitif d'un dossier</a>
+                    
+                </h2>
+
+                <div class="ss_part_texte">C'est
+le même principe que pour changer l'adresse d'un site, sauf que l'on
+remplace le sélecteur "/" (qui voulait dire "tout") par le chemin du
+dossier. <img src="tutoriel-3-38380-la-redirection-http_fichiers/langue.png" alt=":p" class="smilies"> <br>
+Ce qui nous donne pour déplacer <span class="courrier"><a href="http://www.monsite.com/dossier1/">http://www.monsite.com/dossier1/</a></span> vers <span class="courrier"><a href="http://www.monsite.com/dossier2/">http://www.monsite.com/dossier2/</a></span> :<br>
+<br>
+<span class="code">Code : Apache - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 apache"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre>1</pre></td><td class="code"><div class="syntax"><pre><span class="nb">Redirect</span> permanent <span class="sx">/dossier1</span> http://www.monsite.com/dossier2/
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+<br>
+<div class="rmq question">Qui a dit que c'était compliqué ?  <img src="tutoriel-3-38380-la-redirection-http_fichiers/hihi.png" alt="^^" class="smilies"> </div></div>
+                <hr>
+            
+                <h2>
+                    <a id="ss_part_4" class="titre_sous_partie">Déplacement définitif d'un fichier</a>
+                    
+                </h2>
+
+                <div class="ss_part_texte">Lorsque
+vous renommez un fichier de votre site, il est souvent utile de mettre
+une redirection à l'ancien emplacement vers le nouvel emplacement. Pour
+ce faire, on utilise la même directive de redirection que pour déplacer
+un dossier : <span class="courrier">Redirect permanent</span> ; mais on cible un fichier au lieu de cibler un dossier.<br>
+<br>
+Par exemple, si je veux déplacer <span class="courrier"><a href="http://www.monsite.com/monfichier.html">http://www.monsite.com/monfichier.html</a></span> vers <span class="courrier"><a href="http://www.monsite.com/mondossier/monfichier.html">http://www.monsite.com/mondossier/monfichier.html</a></span>, cela donne :<br>
+<br>
+<span class="code">Code : Apache - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 apache"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre>1</pre></td><td class="code"><div class="syntax"><pre><span class="nb">Redirect</span> permanent <span class="sx">/monfichier.html</span> http://www.monsite.com/mondossier/monfichier.html
+</pre></div>
+</td></tr></tbody></table></div></div>
+                <hr>
+            
+                <h2>
+                    <a id="ss_part_5" class="titre_sous_partie">Suppression définitive d'un fichier</a>
+                    
+                </h2>
+
+                <div class="ss_part_texte">Cette
+technique est utilisée pour indiquer aux visiteurs et aux moteurs de
+recherche que le fichier n'existe plus (et qu'il ne renaîtra pas) ; par
+conséquent, ils peuvent se mettre à jour. Cela se fait par
+l'intermédiaire d'une erreur <span class="italique">410 document n'existe plus</span>.<br>
+<br>
+Ici, on utilise qu'une seule adresse : celle du fichier supprimé (ici : <span class="courrier">/chemin/de_fichier_supprime.html</span>). <br>
+Et comme option de directive, <span class="courrier">gone</span>. Ce qui donne : <br>
+<br>
+<span class="code">Code : Apache - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 apache"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre>1</pre></td><td class="code"><div class="syntax"><pre><span class="nb">Redirect</span> gone <span class="sx">/chemin/du_fichier_supprime.html</span>
+</pre></div>
+</td></tr></tbody></table></div></div>
+                <hr>
+            
+                <h2>
+                    <a id="ss_part_6" class="titre_sous_partie">Changer l'extension d'un fichier</a>
+                    
+                </h2>
+
+                <div class="ss_part_texte">Le
+changement d'extension de fichier est sûrement la redirection la plus
+utilisée. Par exemple sur le SdZ, pour toutes les pages ; si vous
+regardez l'adresse de ce tutoriel : <a href="http://www.siteduzero.com/tuto-3-4963-1-la-redirection-http.html">http://www.siteduzero.com/tuto-3-4963- [...] ion-http.html</a>,
+en réalité cette page n'est pas un fichier HTML, mais un fichier PHP du
+genre /tuto.php?variable1=3&amp;variable2=4963&amp;variable3=1.<br>
+<br>
+<div class="rmq attention">Ce n'est pas réellement comme ça que s'appelle le fichier <span class="bleu">.php</span>, mais c'est un fichier dans le même genre (<span class="italique">M@teo, corrige-moi si je vais droit dans le mur</span> <img src="tutoriel-3-38380-la-redirection-http_fichiers/hihi.png" alt="^^" class="smilies"> ).</div><br>
+<div class="rmq attention">Il faut que je signale que cette instruction
+est souvent bloquée par les hébergeurs car elle est assez gourmande en
+ressources, et qu'il est très facile de se tromper dans l'écriture des
+redirections (ce qui entraîne une surcharge du serveur) ! Vérifiez
+qu'elle est disponible avec la fonction <span class="courrier">phpinfo()</span> de PHP.</div><br>
+<br>
+Revenons à nos moutons.<br>
+<br>
+<div class="rmq question">Pourquoi cacher le nom original d'un fichier ?</div><br>
+Pour deux raisons :<br>
+<ul>
+<li>le référencement : les moteurs de recherche n'aiment pas trop les
+noms de fichiers PHP avec des variables, c'est ce qui est fait ici ;</li>
+<li>la génération d'image en PHP : si l'on veut intégrer une image
+générée par PHP dans un post d'un forum, ou dans une page XHTML, il
+faut qu'elle ait une extension d'image (c'est-à-dire : <span class="bleu">.jpg</span>, <span class="bleu">.jpeg</span>, <span class="bleu">.gif</span>, <span class="bleu">.png</span>...), et cette technique permet de cacher le nom de l'image.</li>
+</ul><br>
+<br>
+<br>
+Prenons pour exemple le deuxième cas : j'ai créé un fichier <span class="bleu">pseudo.php</span> qui génère un texte en image ; ce texte est contenu dans la variable <span class="courrier">$texte</span> qui est récupéré via <span class="courrier">$GET</span>, ce qui donne un fichier <span class="courrier">pseudo.php?texte=sdz</span>.<br>
+<br>
+Ce fichier-là ne peut être affiché dans les forums car il faut afficher une image <span class="bleu">.jpg</span>, <span class="bleu">.jpeg</span>, <span class="bleu">.gif</span>, <span class="bleu">.png</span>. Grâce au changement d'extension de fichier, je peux faire croire aux forums que le fichier <span class="courrier">pseudo.php?texte=SDZ</span> est une image <span class="bleu">.png</span> (ou autre). Pour ce faire, je crée un fichier .htaccess avec comme instruction :<br>
+<br>
+<span class="code">Code : Apache - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 apache"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre>1</pre></td><td class="code"><div class="syntax"><pre><span class="nb">Redirect</span> seeother <span class="sx">/pseudo-texte-sdz.png</span> http://www.monsite.com/pseudo.php?texte=sdz
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+Donc là, si je demande le fichier <span class="courrier"><a href="http://www.monsite.com/pseudo-texte-sdz.png">www.monsite.com/pseudo-texte-sdz.png</a></span>, c'est comme si je demandais le fichier <span class="courrier"><a href="http://www.monsite.com/pseudo.php?texte=SDZ">www.monsite.com/pseudo.php?texte=SDZ</a></span>.<br>
+<br>
+<br>
+<br>
+<div class="rmq question">Si on utilise <span class="courrier"><strong>$get</strong></span> pour récupérer la variable <span class="courrier">$texte</span>, c'est pour pouvoir changer de texte facilement, non ? Et là, avec cette technique, c'est impossible.</div><br>
+Oui, vous avez raison : si on utilise <span class="courrier">$get</span>,
+c'est bien pour pouvoir changer facilement le texte généré. Et en
+utilisant le code précédent, cela est impossible, c'est pour ça que les
+expressions régulières existent. Cela permet de faire passer une
+variable de l'URL cible, à l'URL d'arrivée.<br>
+<br>
+Je vais vous expliquer avec un exemple pratique. Reprenons le code précédent : nous avons donc dans l'URL d'arrivée la variable <span class="courrier">$texte</span> qui a pour valeur <span class="courrier">"SDZ"</span> . si je veux changer sa valeur? il suffit de changer le contenu de <span class="courrier">$texte</span> dans l'URL, par exemple : <span class="courrier">pseudo.php?texte=prout</span>, ce qui donnerait <span class="courrier"><a href="http://www.monsite.com/pseudo-texte-prout.png">www.monsite.com/pseudo-texte-prout.png</a></span>.<br>
+Pour arriver à ce résultat, il faut utiliser les expressions régulières. Ce qui donne : <br>
+<br>
+<span class="code">Code : Apache - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 apache"><table class="syntaxtable"><tbody><tr><td class="linenos"><pre>1</pre></td><td class="code"><div class="syntax"><pre><span class="nb">RewriteRule</span> ^pseudo-texte-([^/]+).png$ pseudo.php?texte=$1 [L]
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+<br>
+Si vous souhaitez plus d'informations sur les expressions régulières et
+cette redirection (elle est poussée, il y a des livres entiers à son
+sujet), je vous conseille, en plus des liens donnés au début de ce
+tutoriel, le tutoriel écrit à ce sujet pour le CMS SPIP (mais qui
+convient très bien à une utilisation hors SPIP) : <a href="http://www.spip-contrib.net/La-reecriture-des-URL-a-la-volee">La réécriture des URL "à la volée"</a> ; et aussi le tutoriel de <a href="http://www.siteduzero.com/membres-294-1494.html">Captain MDS</a> : <a href="http://www.siteduzero.com/tuto-3-6096-1-l-url-rewriting.html">L'URL Rewriting</a>.</div>
+                <hr>
+            
+                <h2>
+                    <a id="ss_part_7" class="titre_sous_partie">Redirection temporaire</a>
+                    
+                </h2>
+
+                <div class="ss_part_texte">Les plus malins d'entre vous auront remarqué que pour toutes les redirections que j'ai présentées, j'ai utilisé les mots <span class="italique">définitif</span> et <span class="italique">permanent</span> : cela n'est pas pour faire joli, mais parce qu'il y a des redirections temporaires.<br>
+<br>
+<div class="rmq question">Temporaire ? Pour quoi faire ?  <img src="tutoriel-3-38380-la-redirection-http_fichiers/unsure.gif" alt=":euh:" class="smilies"> </div><br>
+<br>
+Prenons un exemple pour expliquer : vous réalisez des travaux dans une
+partie de votre site, et vous désirez de fermer cette partie au public
+pour la fignoler. Pour être tranquilles, le mieux est d'utiliser une
+redirection temporaire.<br>
+<br>
+<div class="rmq question">Mais pourquoi s'embêter à utiliser une redirection temporaire alors que les autres feraient l'affaire ?</div><br>
+<br>
+Il est vrai que moi aussi je me suis posé la question à ce sujet-là, et
+j'ai eu la chance d'avoir une réponse très rapide auprès d'amis
+beaucoup plus compétents que moi <img src="tutoriel-3-38380-la-redirection-http_fichiers/smile.png" alt=":)" class="smilies"> .<br>
+Donc, si vous mettez une redirection permanente et qu'un bot de
+référencement vient pendant qu'il y a la redirection, il va mettre à
+jour sa base de données et par conséquent, faire perdre le
+référencement de cette partie <img src="tutoriel-3-38380-la-redirection-http_fichiers/triste.png" alt=":(" class="smilies">
+; alors que si vous utilisez une redirection temporaire, le moteur ne
+mettra pas à jour sa base de données et surtout, vous conservera votre
+référencement <img src="tutoriel-3-38380-la-redirection-http_fichiers/langue.png" alt=":p" class="smilies"> .<br>
+<br>
+Maintenant que l'on sait à quoi ça sert, il faudrait savoir comment on s'en sert. <img src="tutoriel-3-38380-la-redirection-http_fichiers/heureux.png" alt=":D" class="smilies"><br>
+<br>
+C'est toujours aussi simple que les autres : on utilise <span class="courrier">Redirect</span> comme directive, <span class="courrier">temp</span> comme option de directive et les adresses (la cible et l'URL d'arrivée) ; dans notre exemple, nous utiliserons <span class="courrier">/zone_en_finition/</span> comme cible et <span class="courrier">/zone_temporaire/</span> comme URL d'arrivée.<br>
+<br>
+<span class="code">Code : Apache - <a href="#" class="select_code">Sélectionner</a></span><div class="code2 apache"><table class="syntaxtable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="syntax"><pre><span class="nb">Redirect</span> temp <span class="sx">/zone_en_finition/</span> http://www.monsite.com/zone_temporaire/
+</pre></div>
+</td></tr></tbody></table></div><br>
+<br>
+<div class="rmq question">Alors, c'est dur ?</div></div>
+                <hr>
+            
+
+<div id="chap_conclusion">Voilà pour ce qui est de la redirection HTTP
+: c'est très complet et normalement, avec ça et les expressions
+régulières, vous devriez pouvoir rediriger bon nombre de personnes.<br>
+<br>
+Si vous avez un problème, n'hésitez pas à demander de l'aide. ;-)</div>
+
+
+
+    <div class="liens_bas_tuto">
+        
+    </div>
+
+
+<div class="clearer"></div>
+
+<div class="infobox cadre_auteur_date" id="tuto_details">
+    <h3 class="special">Informations sur le tutoriel</h3>
+    <div class="conteneur_infobox">
+        <a href="#onglets_tutos">Retour en haut <img src="tutoriel-3-38380-la-redirection-http_fichiers/fleche_haut.png" alt="Retour en haut" title="Retour en haut"></a>
+        <br>
+        <br>			
+<strong>Créé</strong> : Le 05/03/2006 à 00:37:44<br>
+<strong>Modifié</strong> : Le 04/05/2009 à 20:32:11<br>
+
+<strong>Avancement</strong> : 100%<br>
+
+<br>
+
+
+  <a href="http://www.zcorrecteurs.fr/"><img src="tutoriel-3-38380-la-redirection-http_fichiers/zcorrige.png" alt="L'orthographe, la grammaire et la présentation de ce tutoriel ont été vérifiées par les zCorrecteurs." title="L'orthographe, la grammaire et la présentation de ce tutoriel ont été vérifiées par les zCorrecteurs."></a><br>
+
+<a href="http://www.siteduzero.com/tutoriel-50-38380-68636-la-redirection-http.html#r68636">16 commentaires</a><br>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+            <div id="footer">
+                <ul>
+                    <li>
+                        Le Site du Zéro
+                        <ul>
+                            <li><a href="http://www.siteduzero.com/plan.html">Plan du site</a></li>
+                            <li><a href="http://www.siteduzero.com/membres-304.html">L'équipe</a></li>
+                            <li><a href="http://www.siteduzero.com/mentions.html">Mentions légales</a></li>
+                            <li><a href="http://www.siteduzero.com/accessibilite.html" accesskey="0">Accessibilité</a></li>
+                            <li><a href="http://www.siteduzero.com/livreor.html">Livre d'or</a></li>
+                            <li><a href="http://suggestions.siteduzero.com/"><img alt="logo_user_voice" src="tutoriel-3-38380-la-redirection-http_fichiers/ico_uservoice.png"> Suggestions <img alt="Nouveau" src="tutoriel-3-38380-la-redirection-http_fichiers/iconouveau.png"></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        Simple IT
+                        <ul>
+                            <li><a href="http://www.siteduzero.com/simpleit.html">Qui sommes-nous ? </a></li>
+                            
+                                <li><a href="http://www.siteduzero.com/formations.html">Formation professionnelle</a></li>
+                                <li><a href="http://www.siteduzero.com/recrutement.html">Recrutement</a></li>
+                            
+                            <li><a href="http://www.simple-it.fr/blog/">Notre blog</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        Contacts
+                        <ul>
+                            <li><a href="http://www.siteduzero.com/publicite-440.html">Espace annonceurs</a></li>
+                            <li><a href="http://www.siteduzero.com/presse.html">Espace presse</a></li>
+                            <li><strong><a href="http://www.siteduzero.com/contact.html" accesskey="7">Nous contacter</a></strong></li>
+                            <li><a href="http://www.siteduzero.com/promouvoir.html">Promouvoir le site</a></li>
+                            <li><a href="http://suggestions.siteduzero.com/forums/97879-rapports-de-bugs">Signaler un bug</a></li>
+                        </ul>
+                    </li>
+                    
+                        <li>
+                            Partenaires 
+                            <ul>
+                                <li><a href="http://www.planethoster.net/Site-du-Zero">Hébergement web</a></li>
+                                <li><a href="http://www.zcorrecteurs.fr/">Correction tutoriels</a></li>
+                            </ul>
+                        </li>
+                    
+                    <li>
+                        Suivez-nous
+                        <ul class="dernier">
+                            <li><a href="http://www.siteduzero.com/Templates/xml/news_fr.xml"><img src="tutoriel-3-38380-la-redirection-http_fichiers/rss_mini.png" alt="Flux RSS"> Flux RSS News</a>, <a href="http://www.siteduzero.com/Templates/xml/tutoriels_fr.xml">Cours</a>, <a href="http://www.simple-it.fr/blog/index.php?feed/atom">Blog</a></li>
+                            <li><a href="http://www.siteduzero.com/twitter.html"><img src="tutoriel-3-38380-la-redirection-http_fichiers/twitter_mini.png" alt="Twitter"> Twitter</a></li>
+                            <li><a href="http://www.facebook.com/siteduzero"><img src="tutoriel-3-38380-la-redirection-http_fichiers/fb_mini.png" alt="Facebook"> Facebook</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                
+            </div>
+
+            
+
+
+            
+            <script type="text/javascript" src="tutoriel-3-38380-la-redirection-http_fichiers/scripts_lang.js"></script>
+            <script type="text/javascript" src="tutoriel-3-38380-la-redirection-http_fichiers/scripts.js"></script>
+            <script type="text/javascript" src="tutoriel-3-38380-la-redirection-http_fichiers/lib.js"></script>
+
+            
+                <script type="text/javascript">
+    var addthis_config = {  ui_508_compliant: true,
+                            ui_cobrand: "Site du Zéro",
+                            ui_header_color: "#ffffff",
+                            ui_header_background: "#7AB7FC",
+                            username: "simpleit",
+                            services_exclude: 'print,pdfonline,email,twitter,facebook,myspace,googlebuzz,blogger,buzz,live',
+                            data_track_clickback: true  };
+                        
+    var addthis_share = {templates: { twitter:'{{title}} {{url}} #SdZ' } };
+
+    $('div.slidable').hide();
+    $('a.expend').show();
+    $('a.expend').removeAttr('style');
+    
+    $('.expend').click(function(e)
+    {
+        e.preventDefault();
+        $(this).hide('fast');
+        $(this).next('div.slidable').slideToggle('fast');
+    });
+   
+</script>
+<script type="text/javascript" src="tutoriel-3-38380-la-redirection-http_fichiers/addthis_widget.js"></script>
+            
+
+            <div class="droite printnone">
+                <a href="http://www.xiti.com/xiti.asp?s=129196" title="WebAnalytics">
+                    <script type="text/javascript">
+                        <!--
+                        Xt_param = 's=129196&p=%2Ftutoriel-3-38380-la-redirection-http.html';
+                        try {Xt_r = top.document.referrer;}
+                        catch(e) {Xt_r = document.referrer; }
+                        Xt_h = new Date();
+                        Xt_i = '<img width="80" height="15" border="0" ';
+                        Xt_i += 'src="http://logv23.xiti.com/g.xiti?'+Xt_param;
+                        Xt_i += '&hl='+Xt_h.getHours()+'x'+Xt_h.getMinutes()+'x'+Xt_h.getSeconds();
+                        if(parseFloat(navigator.appVersion)>=4)
+                        {
+                        Xt_s=screen;Xt_i+='&r='+Xt_s.width+'x'+Xt_s.height+'x'+Xt_s.pixelDepth+'x'+Xt_s.colorDepth;
+                        }
+                        document.write(Xt_i+'&ref='+Xt_r.replace(/[<>"]/g, '').replace(/&/g, '$')+'">');
+                        //-->
+                    </script><img src="tutoriel-3-38380-la-redirection-http_fichiers/g.gif" border="0" height="15" width="80">
+                    <object>
+                        <noscript>
+<p><img width="80" height="15"
+src="http://logv23.xiti.com/g.xiti?s=129196&amp;p=&amp;"
+alt="WebAnalytics" /></p> </noscript>
+                    </object>
+                </a>
+                <script type="text/javascript">
+                    var _gaq = _gaq || [];
+                    _gaq.push(['_setAccount', 'UA-19807070-2']);
+                    _gaq.push(['_trackPageview']);
+
+                    (function() {
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                    })();
+                </script>
+            </div>
+
+            <!-- /#2 921/#0.0492/#0.0242/# -->
+	
+    <div aria-labelledby="ui-dialog-title-dialog_bientot" role="dialog" tabindex="-1" class="ui-dialog ui-widget ui-widget-content ui-corner-all" style="overflow: hidden; display: none; position: absolute; z-index: 1000; outline-color: -moz-use-text-color; outline-style: none; outline-width: 0px;"><div style="-moz-user-select: none;" unselectable="on" class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span style="-moz-user-select: none;" unselectable="on" id="ui-dialog-title-dialog_bientot" class="ui-dialog-title">Bientôt sur le Site du Zéro.</span><a style="-moz-user-select: none;" unselectable="on" role="button" class="ui-dialog-titlebar-close ui-corner-all" href="#"><span style="-moz-user-select: none;" unselectable="on" class="ui-icon ui-icon-closethick">close</span></a></div><div class="ui-dialog-content ui-widget-content" id="dialog_bientot" style="">
+                <p>Le Site du Zéro vous proposera bientôt de nouveaux cours partant de Zéro dans d'autres domaines que l'informatique ! </p>
+                 <a style="color: rgb(38, 119, 201); text-decoration: none;" href="http://www.siteduzero.com/tutoriel-1-433-sciences.html">Découvrir les cours scientifiques</a>
+            </div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><button class="ui-state-default ui-corner-all" type="button">Ok</button></div></div><div style="display: none;" id="tooltip"><h3></h3><div class="body"></div><div class="url"></div></div></body></html>
