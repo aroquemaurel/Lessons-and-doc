@@ -1,0 +1,3 @@
+@R3 <- R0 + (R1-R2)
+SUB R3,R1,R2
+ADD R3,R0,R3
