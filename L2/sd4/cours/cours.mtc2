@@ -1,13 +1,1 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.1}\texttt {Pile}}{\reset@font\mtcSfont 9}{section.2.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.1.1}Statique}{\reset@font\mtcSSfont 9}{subsection.2.1.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.1.1.1}Sans protection du type}{\reset@font\mtcSSSfont 9}{subsubsection.2.1.1.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.1.1.2}Avec protection du type}{\reset@font\mtcSSSfont 11}{subsubsection.2.1.1.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.1.2}\texttt {Dynamique}}{\reset@font\mtcSSfont 11}{subsection.2.1.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.2}\texttt {File}}{\reset@font\mtcSfont 13}{section.2.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.1}Statique}{\reset@font\mtcSSfont 14}{subsection.2.2.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.2}Dynamique}{\reset@font\mtcSSfont 15}{subsection.2.2.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.2.2.1}Application de la \texttt {File} \IeC {\`a} la fusion de voies routi\IeC {\`e}res}{\reset@font\mtcSSSfont 17}{subsubsection.2.2.2.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Am\IeC {\'e}lioration de la \texttt {File} en dynamique}{\reset@font\mtcPfont 17}{section*.7}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \IeC {\'E}crire l'application}{\reset@font\mtcPfont 18}{section*.8}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.3}\texttt {File} avec priorit\IeC {\'e}}{\reset@font\mtcSfont 18}{section.2.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.4}\texttt {Liste} avec priorit\IeC {\'e}}{\reset@font\mtcSfont 19}{section.2.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.1}It\IeC {\'e}rateur sur la liste doublement cha\IeC {\^\i }n\IeC {\'e}e}{\reset@font\mtcSfont 16}{section.3.1}}

@@ -58,7 +58,44 @@ execlp("date", "date", NULL);
 		\section{Exercice 6}
 		Il va afficher deux fois le pid du programme courant.
 		\section{Exercice 7}
+		\lstinputlisting[language=C, caption=Exercice 7]{codes/7.c}
 	\chapter{Gestion de la mémoire: mémoire virtuelle et allocation non contiguë}
+		\section{Exercice 8}
+		\subsection{}
+		\begin{itemize}
+			\item \textbf{Pages 2 et 3} $[5 \times 1024 ; 6 \times 1024 -1] = [2048 ; 4095]$ 
+			\item \textbf{Page 5} $[7 \times 1024 ; 8 \times 1024 -1] = [5120 ; 6143]$
+			\item \textbf{Page 7} $[2 \times 1024 ; 4 \times 1024 -1] = [7168 ; 8191]$
+		\end{itemize}
+		\subsection{}
+		\remarque{Numéro de cadre $\times$ 1024 + décalage}
+		\begin{tabular}{c|c|c|c}
+			\textbf{Adresse virtuelle} & \textbf{Page virtuelle} & \textbf{Page physique} & \textbf{Adresse physique}\\
+			\hline
+			0 &  0 & 3 & $3\times 1024=3072$\\
+			3728 & 3 & défaut de page & défaut de page\\
+			1023 & 0 & 3 & $3 \times 1024 + 1023 = 4095$\\ 
+			1024 & 1 & 1 & 1024\\
+			1025 & 1 & 1 & 1025\\
+			7800 & 7 & défaut de page & défaut de page\\
+			4096 & 4 & 2 & 2048
+		\end{tabular}
+		\section{Exercice 9}
+		d: taux de défaut de page.
+
+		\subsection{Temps d'accès moyen}
+		$$(1-d) \times 2 \times 0.5 + d \times (20 + 2 \times 0.5) = (1-d)+21d = 1+20d$$
+		\subsection{Taux maximal de défaut de page}
+		\begin{eqnarray*}
+			1 + 20d &<& 1.2\\
+			d &<& \frac{0.2}{20}\\
+			d &<& 0.01
+		\end{eqnarray*}
+		\section{Exercice 10}
+		\subsection{}
+			Chaque processus provoque 5 défauts de page correspondants aux changements initiaux des 5 pages.
+
+			Soit $n$ le nombre de page référencancés par un processus. Le taux de défaut de page est $\frac{5}{n}$.
 	\chapter{Structure interne du système de fichier d'Unix}
 	\chapter{Primitives Unix (POSIX.1) de manipulation des fichiers}
 \end{document}

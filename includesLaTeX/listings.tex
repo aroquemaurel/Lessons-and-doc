@@ -135,17 +135,6 @@
       emphstyle=[3]\color{bleu3},
     %%% FONCTIONS NUMERIQUES
 }
-\lstdefinelanguage{SQL}{%
-   morekeywords={%
-    %%% couleur 1
-	INSERT, if, end, begin,UPDATE, DELETE, SET, WHERE, 
-	CREATE, OR, REPLACE, AND, FROM, SELECT, VIEW, TRIGGER, AS, GROUP, GRANT,
-	BY, ORDER, after, for, each, then, else, of, on, to
-	},
-  sensitive=true,
-  morecomment=[l]{--},
-  morestring=[b]',
-}
 
 \lstset{language=SQL,
     %%% BOUCLE, TEST & Co.
@@ -163,6 +152,15 @@
       emph={[4]entree, maj, sortie, entrée},	
       emphstyle=[4]\color{gris1},
 }
+\lstdefinelanguage{ARM}{%
+   morekeywords={%
+   ADD, SUB, MOV, MUL
+	},
+  sensitive=true,
+  morecomment=[l]{@},
+  morestring=[b]',
+}
+
 \lstset{ % general style for listings 
    numbers=left 
    , literate={é}{{\'e}}1 {è}{{\`e}}1 {à}{{\`a}}1 {ê}{{\^e}}1 {É}{{\'E}}1 {ô}{{\^o}}1 {€}{{\euro}}1{°}{{$^{\circ}$}}1 {ç}{ {c}}1
