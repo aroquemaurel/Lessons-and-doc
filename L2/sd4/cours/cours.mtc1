@@ -1,13 +1,11 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.1}\texttt {Pile}}{\reset@font\mtcSfont 9}{section.2.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.1.1}Statique}{\reset@font\mtcSSfont 9}{subsection.2.1.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.1.1.1}Sans protection du type}{\reset@font\mtcSSSfont 9}{subsubsection.2.1.1.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.1.1.2}Avec protection du type}{\reset@font\mtcSSSfont 9}{subsubsection.2.1.1.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.1.2}\texttt {Dynamique}}{\reset@font\mtcSSfont 9}{subsection.2.1.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.2}\texttt {File}}{\reset@font\mtcSfont 11}{section.2.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.1}Statique}{\reset@font\mtcSSfont 12}{subsection.2.2.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.2}Dynamique}{\reset@font\mtcSSfont 12}{subsection.2.2.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.2.2.1}Application de la \texttt {File} \IeC {\`a} la fusion de voies routi\IeC {\`e}res}{\reset@font\mtcSSSfont 13}{subsubsection.2.2.2.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Am\IeC {\'e}lioration de la \texttt {File} en dynamique}{\reset@font\mtcPfont 13}{section*.7}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \IeC {\'E}crire l'application}{\reset@font\mtcPfont 13}{section*.8}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.3}\texttt {File} avec priorit\IeC {\'e}}{\reset@font\mtcSfont 14}{section.2.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.4}\texttt {Liste} avec priorit\IeC {\'e}}{\reset@font\mtcSfont 14}{section.2.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.1}Syntaxe des TAD}{\reset@font\mtcSfont 5}{section.1.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.1.1}Signature du TAD \texttt {Pile}}{\reset@font\mtcSSfont 6}{subsection.1.1.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Signature de base}{\reset@font\mtcPfont 6}{section*.5}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Signature \IeC {\'e}tandue}{\reset@font\mtcPfont 6}{section*.6}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.2}Impl\IeC {\'e}mentation d'un TAD}{\reset@font\mtcSfont 6}{section.1.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.2.1}Impl\IeC {\'e}mentation de la structure de donn\IeC {\'e}es et des op\IeC {\'e}rateurs}{\reset@font\mtcSSfont 7}{subsection.1.2.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.3}Protection du TAD}{\reset@font\mtcSfont 7}{section.1.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.3.1}S\IeC {\'e}paration du corps et de l'interface}{\reset@font\mtcSSfont 7}{subsection.1.3.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {1.3.1.1}Fichiers}{\reset@font\mtcSSSfont 7}{subsubsection.1.3.1.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {1.3.1.2}Compilation}{\reset@font\mtcSSSfont 7}{subsubsection.1.3.1.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.3.2}Protection du type}{\reset@font\mtcSSfont 7}{subsection.1.3.2}}
