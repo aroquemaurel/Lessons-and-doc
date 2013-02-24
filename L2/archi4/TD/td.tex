@@ -36,14 +36,43 @@
 	\maketitle
 	\tableofcontents
 	\chapter{Opérations}
-	\section{Opération arithmétiques}
 	\lstinputlisting[language=ARM, caption=\texttt{R3 <- R0 + (R1-R2)}]{1-1.s}
 	\lstinputlisting[language=ARM, caption=\texttt{R0 <- R1 + R2 + R3}]{1-2.s}
 
 	\lstinputlisting[language=ARM, caption=\texttt{R0 <- R1+(R2-4)}]{1-3.s}
 
 	\lstinputlisting[language=ARM, caption=\texttt{R0 <- R2 + R2*4}]{1-4.s}
+	\attention{\texttt{MUL R3,R2,\#4} n'est pas possible}
+	\lstinputlisting[language=ARM, caption=\texttt{R0 <- -R1} sous 3 formes différentes]{1-5.s}
+	\lstinputlisting[language=ARM, caption=\texttt{R0 <- 10 * R1} sans utiliser la multipliation]{1-6.s}
+	\chapter{TD1}
+	\section{}
+\subsection{}
+	ON considère l'algorithme suivant : 
+\begin{lstlisting}[language=Algo]
+si r0  > 0 alors
+	s1;
+sinon
+	s2;
+fin si;
+\end{lstlisting}
+Traduire cette forme algorithmique en assembleur.
+\lstinputlisting[language=ARM]{2.s}
+\subsection{}
+\begin{lstlisting}[language=Algo]
+tantque 0 > 0 faire
+	s;
+fin tantque;
+\end{lstlisting}
+\lstinputlisting[language=ARM]{2-1.s}
 
+\section{}
+\subsection{}
+\lstinputlisting[language=Algo]{2-2.algo}
+\lstinputlisting[language=ARM]{2-2.s}
+\subsection{}
+\'Ecrire un programme qui calcule la multiplication de r0 par r1 et range le résultat dans r2 sans l'opération de multiplication
+\lstinputlisting[language=ARM]{2-3.s}
 \end{document}
 
 

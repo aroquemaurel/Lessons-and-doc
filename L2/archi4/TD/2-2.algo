@@ -1,0 +1,5 @@
+r0 <- 0;
+tantque R0 < N faire
+	r1 <- r1 + r0;
+	r0 <- r0 + 1;	
+fin tantque;	
