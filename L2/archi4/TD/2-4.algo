@@ -1,0 +1,11 @@
+si r1 > 0 alors
+	multiplication non signé;
+sinon 
+	r1 <- 0 - r1;
+	r3 <- 0;
+fin si;
+
+si r3 = 0 alors
+	r1 <- 0 - r1;
+sinon
+	on sort;
