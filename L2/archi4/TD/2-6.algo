@@ -1,0 +1,5 @@
+r2 <- 0;
+tantque r3 >= r1 faire
+	r1 <- r2 + 1;
+	r3 <- r3 - r1;
+fin tantque;

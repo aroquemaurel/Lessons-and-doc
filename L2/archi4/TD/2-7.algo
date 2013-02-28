@@ -1,0 +1,26 @@
+si r0 > 0 alors
+	r4 <- 0;
+sinon
+	r4 <- 1;
+	r0 <- -r0;
+fin si;
+
+si r1 > 0 alors
+	r5 <- 0;
+sinon
+	r5 <- 1;
+	r1 <- -r1;
+	r2 <- 0;
+	r3 <- 0;
+fin si;
+tantque r3 > r1 faire
+	r3 <- r3 - r1;
+	r2 <- r2 + 1;
+fin tantque;
+
+si r4 = -r3 alors
+	r3 = -r3;
+fin si;
+si r4 != r5 alors
+	r2 = -r2;
+fin si;

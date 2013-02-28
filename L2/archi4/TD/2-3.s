@@ -6,3 +6,5 @@ tq: CMP r3,r1 @ tantque(i < r1)
 	ADD r3, r3, #1 @i++
 	B tq
 ftq:
+
+

@@ -1,0 +1,9 @@
+si r1 < 0 alors
+	r1 <- -r1;
+	r0 <- -r0;
+fin si;
+i <- 0;
+tantque i < r1 faire
+	r2 <- r2 + r0;
+	i <- i - 1;
+fin tantque
