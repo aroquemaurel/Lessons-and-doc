@@ -1,22 +1,26 @@
 \select@language {french}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Types de donn\IeC {\'e}es Abstraits (TAD)}{5}{chapter.1}
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Principe de base d'un TAD}}{5}{figure.1.1}
+\contentsline {xchapter}{Types de donn\IeC {\'e}es Abstraits (TAD)}{6}{chapter.1}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Principe de base d'un TAD}}{6}{figure.1.1}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Structures de donn\IeC {\'e}es classiques}{9}{chapter.2}
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Pile avec une liste simplement chain\IeC {\'e}e}}{12}{figure.2.1}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Pile avec une liste doublement chain\IeC {\'e}e}}{12}{figure.2.2}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces File avec une liste simplement chain\IeC {\'e}e}}{15}{figure.2.3}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces File avec une liste doublement chain\IeC {\'e}e}}{16}{figure.2.4}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Liste doublement cha\IeC {\^\i }n\IeC {\'e}e}}{19}{figure.2.5}
+\contentsline {xchapter}{Structures de donn\IeC {\'e}es classiques}{10}{chapter.2}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Pile avec une liste simplement chain\IeC {\'e}e}}{13}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Pile avec une liste doublement chain\IeC {\'e}e}}{13}{figure.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces File avec une liste simplement chain\IeC {\'e}e}}{16}{figure.2.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces File avec une liste doublement chain\IeC {\'e}e}}{17}{figure.2.4}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Liste doublement cha\IeC {\^\i }n\IeC {\'e}e}}{20}{figure.2.5}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Parcourir une collection}{23}{chapter.3}
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Liste doublement chain\IeC {\'e}e avec iterateur}}{23}{figure.3.1}
+\contentsline {xchapter}{Parcourir une collection}{24}{chapter.3}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Liste doublement chain\IeC {\'e}e avec iterateur}}{24}{figure.3.1}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Cours sur les pointeurs en C}{26}{appendix.A}
+\contentsline {xchapter}{Les structures arborescentes}{27}{chapter.4}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Arbre GRB}}{28}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Impl\IeC {\'e}mentation de l'arbre GRB}}{28}{figure.4.2}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Liste des codes sources}{30}{appendix.B}
+\contentsline {xchapter}{Cours sur les pointeurs en C}{30}{appendix.A}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Table des figures}{31}{appendix.C}
+\contentsline {xchapter}{Liste des codes sources}{34}{appendix.B}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Exercices}{32}{appendix.D}
+\contentsline {xchapter}{Table des figures}{35}{appendix.C}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Exercices}{36}{appendix.D}
