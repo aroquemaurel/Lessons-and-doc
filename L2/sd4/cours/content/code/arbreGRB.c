@@ -27,6 +27,7 @@ Arbre ajout(const Arbre arbre, int e) {
 	return arbre;
 }
 
+// Parcours infixe
 void afficher(const Arbre arbre) {
 	Cell* cous = a;
 	if(!estVide(a)) {
@@ -50,6 +51,7 @@ int appartient(const Arbre arbre, int val) {
 
 	return 1;
 }
+// Private
 Arbre restructure(Arbre pArbre) {
 	// on est sur le noeud à creer
 	Arbre droit, gauche, aux;
@@ -69,6 +71,7 @@ Arbre restructure(Arbre pArbre) {
 
 	return droit;
 }
+// Private
 Arbre supprimerUnElement(Arbre pArbre, int val) {
 	assert(!estVide(pArbre));
 	if(pArbre->racine == val) {
@@ -89,3 +92,4 @@ Arbre supprime(Arbre pArbre, int v) {
 	}
 	return pArbre;
 }
+
