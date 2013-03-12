@@ -7,6 +7,7 @@ typedef struct etCell {
 Arbre creerGrd(void) {
 	return (NULL);
 }
+
 Arbre ajout(const Arbre arbre, int e) {
 	Cell* newCell;
 	newCell = (Cell*)malloc(sizeof(Cell));
@@ -25,6 +26,7 @@ Arbre ajout(const Arbre arbre, int e) {
 
 	return arbre;
 }
+
 void afficher(const Arbre arbre) {
 	Cell* cous = a;
 	if(!estVide(a)) {
@@ -33,9 +35,11 @@ void afficher(const Arbre arbre) {
 		afficher(a->droite);
 	} 
 }
+
 int estVide(const Arbre arbre) {
 	return (arbre != NULL);
 }
+
 int appartient(const Arbre arbre, int val) {
 	if(estVide(arbre))
 		return 0;
@@ -46,4 +50,42 @@ int appartient(const Arbre arbre, int val) {
 
 	return 1;
 }
+Arbre restructure(Arbre pArbre) {
+	// on est sur le noeud à creer
+	Arbre droit, gauche, aux;
+	droit = pArbre->droit;
+	gauche = pArbre->gauche;
 
+	if(droit == NULL) {
+		// on a rien à insérer
+		return gauche;
+	} 
+	aux = droit;
+	while(aux->gauche != NULL) {
+		aux = aux->gauche;
+	}
+	aux->gauche = gauche;
+	free(pArbre);
+
+	return droit;
+}
+Arbre supprimerUnElement(Arbre pArbre, int val) {
+	assert(!estVide(pArbre));
+	if(pArbre->racine == val) {
+		return(restructure(pArbre,val);
+	} 
+	if((pArbre->racine < val) && (pArbre->gauche != NULL)) {
+		pArbre->droit = supprimerUnElement(a->droit, val);
+	} else if((a->racine > val) && (a->gauche != NULL)) {
+		pArbre->gauche = supprimerUnElement(a->gauche, val);
+	}
+
+	return pArbre;
+}
+
+Arbre supprime(Arbre pArbre, int v) {
+	while(appartient(pArbre,v)) {
+		pArbre = supprimerUnElement(pArbre,v);
+	}
+	return pArbre;
+}
