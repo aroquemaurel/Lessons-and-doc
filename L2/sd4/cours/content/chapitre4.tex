@@ -19,6 +19,7 @@ Ce sont des arbres binaires: chaque noeud de l'arbre à au lu deux fils.
 \includegraphics[width=6cm]{content/schemas/arbresGRB.eps}
 \caption{Arbre GRB}
 \end{figure}
+Cet arbre est prévu pour effectuer un parcours en profondeur.
 	\subsection{Implémentation du TAD}
 \begin{figure}[H]
 \centering
@@ -27,4 +28,22 @@ Ce sont des arbres binaires: chaque noeud de l'arbre à au lu deux fils.
 \end{figure}
 \lstinputlisting[language=C, caption=Arbre GRD -- Header]{content/code/arbreGRB.h}
 \lstinputlisting[language=C, caption=Arbre GRD -- Implémentation]{content/code/arbreGRB.c}
+
+\subsection{Différents types de parcours}
+\begin{description}
+	\item[Parcours infixe] On parcours à gauche, on appel la valeur, on parcours à droite.
+	\item[Parcours préfixe] On parcours on appel la valeur puis on parcours à gauche et à droite.
+	\item[Parcours postfixe] On parcours à droite puis à droite et ensuite on appel la valeur.
+\end{description}
+\subsubsection{Exercices de parcours}
+Écrire une fonction qui permette l'affichage en profondeur d'un arbre GRD mais sans utiliser la récursivité.\\
+Nous avons utilisé une Pile afin de simuler des appels récursifs (Pile système). La pile contient le n\oe{}ud courant.
+
+On suppose que l'on dispose du TAD \texttt{Pile} d'\texttt{Element} avec le type élément qui est une \texttt{Cel}.
+\lstinputlisting[language=C, caption=Arbre GRD -- Implémentation fonction affichage en profondeur itératif]{content/code/arbreGRB-1.c}
+
+Pour parcourir l'arbre en largeur, le principe est le même, à la place d'utiliser une \texttt{Pile} nous allons utiliser une \texttt{File}.
+\lstinputlisting[language=C, caption=Arbre GRD -- Implémentation fonction affichage en longueur]{content/code/arbreGRB-2.c}
+
 \section{Les arbres rouges noirs}
+
