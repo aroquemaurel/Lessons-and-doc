@@ -3,48 +3,75 @@
 !_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
-!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-Cel	pileDynamque.c	/^} Cel;$/;"	t	typeref:struct:etCel	file:
-Element	pileDynamque.c	/^typedef int Element;$/;"	t	file:
-PileDynamiqueAfficher	pileDynamique.h	/^void PileDynamiqueAfficher(PileDynamique pStack);$/;"	p	signature:(PileDynamique pStack)
-PileDynamiqueAfficher	pileDynamque.c	/^void PileDynamiqueAfficher(PileDynamique pStack) {$/;"	f	signature:(PileDynamique pStack)
-PileDynamiqueCreer	pileDynamque.c	/^PileDynamique PileDynamiqueCreer() {$/;"	f
-PileDynamiqueDepiler	pileDynamque.c	/^Element PileDynamiqueDepiler(PileDynamique* pStack) {$/;"	f	signature:(PileDynamique* pStack)
-PileDynamiqueEmpiler	pileDynamque.c	/^void PileDynamiqueEmpiler(PileDynamique* pStack, Element pElem) {$/;"	f	signature:(PileDynamique* pStack, Element pElem)
-PileDynamiqueEstPleine	pileDynamque.c	/^bool PileDynamiqueEstPleine(const PileDynamique pStack) {$/;"	f	signature:(const PileDynamique pStack)
-PileDynamiqueEstVide	pileDynamque.c	/^bool PileDynamiqueEstVide(const PileDynamique pStack) {$/;"	f	signature:(const PileDynamique pStack)
-PileDynamiqueSommet	pileDynamque.c	/^Element PileDynamiqueSommet(PileDynamique pStack) { $/;"	f	signature:(PileDynamique pStack)
-PileMixteAfficher	pileMixte.c	/^void PileMixteAfficher(PileMixte pStack) {$/;"	f	signature:(PileMixte pStack)
+!_TAG_PROGRAM_VERSION	5.8	//
+Cell	pileDynamique.c	/^} Cell;$/;"	t	typeref:struct:etCell	file:
+DYNAMIC_STACK_H	pileDynamique.h	2;"	d
+ELEMENT_H	element.h	2;"	d
+Element	element.h	/^ typedef int Element; \/\/ Pour testPileDynamique, celle-ci est testée avec des entiers afin d'avoir des tests simples$/;"	t
+MIXTE_STACK_H	pileMixte.h	2;"	d
+PileDynamique	pileDynamique.h	/^typedef struct etCell* PileDynamique; \/\/TODO$/;"	t	typeref:struct:etCell
+PileMixte	pileMixte.h	/^typedef PileDynamique PileMixte;$/;"	t
 PileStatique	pileStatique.h	/^typedef struct pileStatiqueCachee *PileStatique;$/;"	t	typeref:struct:pileStatiqueCachee
 STATIC_STACK_H	pileStatique.h	2;"	d
-__PILE_DYNAMIQUE	pileDynamique.h	2;"	d
-__PILE_MIXTE	pileMixte.h	2;"	d
-etCel	pileDynamque.c	/^typedef struct etCel {$/;"	s	file:
-etCel::next	pileDynamque.c	/^	struct etCel* next;$/;"	m	struct:etCel	typeref:struct:etCel::etCel	file:	access:public
-etCel::value	pileDynamque.c	/^	Element value;$/;"	m	struct:etCel	file:	access:public
-next	pileDynamque.c	/^	struct etCel* next;$/;"	m	struct:etCel	typeref:struct:etCel::etCel	file:	access:public
+TAILLE_MAX	pileStatique.h	5;"	d
+etCell	pileDynamique.c	/^typedef struct etCell {$/;"	s	file:
+etCell::next	pileDynamique.c	/^	struct etCell* next;$/;"	m	struct:etCell	typeref:struct:etCell::etCell	file:	access:public
+etCell::value	pileDynamique.c	/^	Element value;$/;"	m	struct:etCell	file:	access:public
+main	testPileDynamique.c	/^int main(void) {$/;"	f	signature:(void)
+main	testPileMixte.c	/^int main(void) {$/;"	f	signature:(void)
+main	testPileStatique.c	/^int main(void) {$/;"	f	signature:(void)
+nb	pileStatique.c	/^	int nb;$/;"	m	struct:pileStatiqueCachee	file:	access:public
+next	pileDynamique.c	/^	struct etCell* next;$/;"	m	struct:etCell	typeref:struct:etCell::etCell	file:	access:public
+pileDynamiqueAfficher	pileDynamique.c	/^void pileDynamiqueAfficher(PileDynamique pPile) {$/;"	f	signature:(PileDynamique pPile)
+pileDynamiqueCreer	pileDynamique.c	/^PileDynamique pileDynamiqueCreer(void) {$/;"	f	signature:(void)
 pileDynamiqueCreer	pileDynamique.h	/^PileDynamique pileDynamiqueCreer();$/;"	p	signature:()
-pileDynamiqueDepiler	pileDynamique.h	/^int pileDynamiqueDepiler(PileDynamique p);$/;"	p	signature:(PileDynamique p)
-pileDynamiqueEmpiler	pileDynamique.h	/^void pileDynamiqueEmpiler(PileDynamique p, Element v);$/;"	p	signature:(PileDynamique p, Element v)
+pileDynamiqueDepiler	pileDynamique.c	/^Element pileDynamiqueDepiler(PileDynamique* pPile) {$/;"	f	signature:(PileDynamique* pPile)
+pileDynamiqueDepiler	pileDynamique.h	/^Element pileDynamiqueDepiler(PileDynamique* p);$/;"	p	signature:(PileDynamique* p)
+pileDynamiqueDetruire	pileDynamique.c	/^void pileDynamiqueDetruire(PileDynamique *pPile) {$/;"	f	signature:(PileDynamique *pPile)
+pileDynamiqueDetruire	pileDynamique.h	/^void pileDynamiqueDetruire(PileDynamique *p);$/;"	p	signature:(PileDynamique *p)
+pileDynamiqueEmpiler	pileDynamique.c	/^void pileDynamiqueEmpiler(PileDynamique* pPile, Element pElement) {$/;"	f	signature:(PileDynamique* pPile, Element pElement)
+pileDynamiqueEmpiler	pileDynamique.h	/^void pileDynamiqueEmpiler(PileDynamique* p, int v);$/;"	p	signature:(PileDynamique* p, int v)
+pileDynamiqueEstPleine	pileDynamique.c	/^int pileDynamiqueEstPleine(PileDynamique pPile) {$/;"	f	signature:(PileDynamique pPile)
 pileDynamiqueEstPleine	pileDynamique.h	/^int pileDynamiqueEstPleine(PileDynamique p);$/;"	p	signature:(PileDynamique p)
+pileDynamiqueEstVide	pileDynamique.c	/^int pileDynamiqueEstVide(PileDynamique pPile) {$/;"	f	signature:(PileDynamique pPile)
 pileDynamiqueEstVide	pileDynamique.h	/^int pileDynamiqueEstVide(PileDynamique p);$/;"	p	signature:(PileDynamique p)
-pileDynamiqueSommet	pileDynamique.h	/^int pileDynamiqueSommet(PileDynamique p);$/;"	p	signature:(PileDynamique p)
-pileMixteCreer	pileMixte.c	/^PileMixte pileMixteCreer() {$/;"	f
+pileDynamiqueSommet	pileDynamique.c	/^Element pileDynamiqueSommet(PileDynamique pPile) {$/;"	f	signature:(PileDynamique pPile)
+pileDynamiqueSommet	pileDynamique.h	/^Element pileDynamiqueSommet(PileDynamique p);$/;"	p	signature:(PileDynamique p)
+pileMixteAfficher	pileMixte.c	/^void pileMixteAfficher(PileMixte pPile) {$/;"	f	signature:(PileMixte pPile)
+pileMixteCreer	pileMixte.c	/^PileMixte pileMixteCreer(void) {$/;"	f	signature:(void)
 pileMixteCreer	pileMixte.h	/^PileMixte pileMixteCreer();$/;"	p	signature:()
-pileMixteDepiler	pileMixte.c	/^int pileMixteDepiler(PileMixte p) {$/;"	f	signature:(PileMixte p)
-pileMixteDepiler	pileMixte.h	/^int pileMixteDepiler(PileMixte p);$/;"	p	signature:(PileMixte p)
-pileMixteEmpiler	pileMixte.c	/^void pileMixteEmpiler(PileMixte p, int v) {$/;"	f	signature:(PileMixte p, int v)
-pileMixteEmpiler	pileMixte.h	/^void pileMixteEmpiler(PileMixte p, int v);$/;"	p	signature:(PileMixte p, int v)
-pileMixteEstPleine	pileMixte.c	/^int pileMixteEstPleine(PileMixte p) {$/;"	f	signature:(PileMixte p)
+pileMixteDepiler	pileMixte.c	/^Element pileMixteDepiler(PileMixte* pPile) {$/;"	f	signature:(PileMixte* pPile)
+pileMixteDepiler	pileMixte.h	/^Element pileMixteDepiler(PileMixte* p);$/;"	p	signature:(PileMixte* p)
+pileMixteDetruire	pileMixte.c	/^void pileMixteDetruire(PileMixte *pPile) {$/;"	f	signature:(PileMixte *pPile)
+pileMixteDetruire	pileMixte.h	/^void pileMixteDetruire(PileMixte *p);$/;"	p	signature:(PileMixte *p)
+pileMixteEmpiler	pileMixte.c	/^void pileMixteEmpiler(PileMixte* pPile, Element pElement) {$/;"	f	signature:(PileMixte* pPile, Element pElement)
+pileMixteEmpiler	pileMixte.h	/^void pileMixteEmpiler(PileMixte* p, int v);$/;"	p	signature:(PileMixte* p, int v)
+pileMixteEstPleine	pileMixte.c	/^int pileMixteEstPleine(PileMixte pPile) {$/;"	f	signature:(PileMixte pPile)
 pileMixteEstPleine	pileMixte.h	/^int pileMixteEstPleine(PileMixte p);$/;"	p	signature:(PileMixte p)
-pileMixteEstVide	pileMixte.c	/^int pileMixteEstVide(PileMixte p) {$/;"	f	signature:(PileMixte p)
+pileMixteEstVide	pileMixte.c	/^int pileMixteEstVide(PileMixte pPile) {$/;"	f	signature:(PileMixte pPile)
 pileMixteEstVide	pileMixte.h	/^int pileMixteEstVide(PileMixte p);$/;"	p	signature:(PileMixte p)
-pileMixteSommet	pileMixte.c	/^int pileMixteSommet(PileMixte p) {$/;"	f	signature:(PileMixte p)
+pileMixteSommet	pileMixte.c	/^Element pileMixteSommet(PileMixte pPile) {$/;"	f	signature:(PileMixte pPile)
+pileMixteSommet	pileMixte.h	/^Element pileMixteSommet(PileMixte p);$/;"	p	signature:(PileMixte p)
+pileStatiqueCachee	pileStatique.c	/^struct pileStatiqueCachee {$/;"	s	file:
+pileStatiqueCachee::nb	pileStatique.c	/^	int nb;$/;"	m	struct:pileStatiqueCachee	file:	access:public
+pileStatiqueCachee::tab	pileStatique.c	/^	int tab[TAILLE_MAX];$/;"	m	struct:pileStatiqueCachee	file:	access:public
+pileStatiqueCreer	pileStatique.c	/^PileStatique pileStatiqueCreer(void) {$/;"	f	signature:(void)
 pileStatiqueCreer	pileStatique.h	/^PileStatique pileStatiqueCreer();$/;"	p	signature:()
+pileStatiqueDepiler	pileStatique.c	/^int pileStatiqueDepiler(PileStatique pPile) {$/;"	f	signature:(PileStatique pPile)
 pileStatiqueDepiler	pileStatique.h	/^int pileStatiqueDepiler(PileStatique p);$/;"	p	signature:(PileStatique p)
+pileStatiqueDetruire	pileStatique.c	/^void pileStatiqueDetruire(PileStatique *p) {$/;"	f	signature:(PileStatique *p)
 pileStatiqueDetruire	pileStatique.h	/^void pileStatiqueDetruire(PileStatique *p);$/;"	p	signature:(PileStatique *p)
+pileStatiqueEmpiler	pileStatique.c	/^void pileStatiqueEmpiler(PileStatique pPile, int pValeur) {$/;"	f	signature:(PileStatique pPile, int pValeur)
 pileStatiqueEmpiler	pileStatique.h	/^void pileStatiqueEmpiler(PileStatique p, int v);$/;"	p	signature:(PileStatique p, int v)
+pileStatiqueEstPleine	pileStatique.c	/^int pileStatiqueEstPleine(PileStatique pPile) {$/;"	f	signature:(PileStatique pPile)
 pileStatiqueEstPleine	pileStatique.h	/^int pileStatiqueEstPleine(PileStatique p);$/;"	p	signature:(PileStatique p)
+pileStatiqueEstVide	pileStatique.c	/^int pileStatiqueEstVide(PileStatique pPile) {$/;"	f	signature:(PileStatique pPile)
 pileStatiqueEstVide	pileStatique.h	/^int pileStatiqueEstVide(PileStatique p);$/;"	p	signature:(PileStatique p)
+pileStatiqueSommet	pileStatique.c	/^int pileStatiqueSommet(PileStatique pPile) {$/;"	f	signature:(PileStatique pPile)
 pileStatiqueSommet	pileStatique.h	/^int pileStatiqueSommet(PileStatique p);$/;"	p	signature:(PileStatique p)
-value	pileDynamque.c	/^	Element value;$/;"	m	struct:etCel	file:	access:public
+tab	pileStatique.c	/^	int tab[TAILLE_MAX];$/;"	m	struct:pileStatiqueCachee	file:	access:public
+test	testPileDynamique.c	/^void test(int pReussite, char* message) {$/;"	f	signature:(int pReussite, char* message)
+test	testPileDynamique.c	/^void test(int pReussite, char* message);$/;"	p	file:	signature:(int pReussite, char* message)
+test	testPileStatique.c	/^void test(int pReussite, char* message) {$/;"	f	signature:(int pReussite, char* message)
+test	testPileStatique.c	/^void test(int pReussite, char* message);$/;"	p	file:	signature:(int pReussite, char* message)
+value	pileDynamique.c	/^	Element value;$/;"	m	struct:etCell	file:	access:public
