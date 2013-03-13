@@ -1,0 +1,59 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+-std	Makefile	/^	gcc -c test.c --std=c99$/;"	m
+Arbre	arbreGRB.h	/^typedef struct etCell* Arbre;$/;"	t	typeref:struct:etCell
+Cell	arbreGRB.c	/^} Cell;$/;"	t	typeref:struct:etCell	file:
+Element	element.h	/^typedef int Element;$/;"	t
+File	file.h	/^typedef struct eltFile* File ;$/;"	t	typeref:struct:eltFile
+FileInterne	file.h	/^} FileInterne;$/;"	v	typeref:struct:eltFile
+N	file.h	2;"	d
+afficherElement	element.c	/^void afficherElement(const Element pElem) {$/;"	f	signature:(const Element pElem)
+ajouterEntier	arbreGRB.c	/^Arbre ajouterEntier(Arbre arbre, int e) {$/;"	f	signature:(Arbre arbre, int e)
+ajouterEntier	arbreGRB.h	/^Arbre ajouterEntier(const Arbre arbre, int e);$/;"	p	signature:(const Arbre arbre, int e)
+appartient	file.c	/^int appartient(File f, Element x) {$/;"	f	signature:(File f, Element x)
+appartient	file.h	/^int appartient(File f, Element x);$/;"	p	signature:(File f, Element x)
+appartientGRB	arbreGRB.c	/^int appartientGRB(const Arbre arbre, int val) {$/;"	f	signature:(const Arbre arbre, int val)
+appartientGRB	arbreGRB.h	/^int appartientGRB(const Arbre arbre, int racine);$/;"	p	signature:(const Arbre arbre, int racine)
+compare	element.c	/^int compare(const Element pElem1, const Element pElem2) {$/;"	f	signature:(const Element pElem1, const Element pElem2)
+creerArbreGRD	arbreGRB.c	/^Arbre creerArbreGRD(void) {$/;"	f	signature:(void)
+creerArbreGRD	arbreGRB.h	/^Arbre creerArbreGRD(void);$/;"	p	signature:(void)
+creerFile	file.c	/^File creerFile() {$/;"	f
+creerFile	file.h	/^File creerFile();$/;"	p	signature:()
+defiler	file.c	/^File defiler(File pFile) {$/;"	f	signature:(File pFile)
+defiler	file.h	/^File defiler(File pFile);$/;"	p	signature:(File pFile)
+dernier	file.c	/^Element dernier(File pFile) {$/;"	f	signature:(File pFile)
+dernier	file.h	/^Element dernier(File pFile);$/;"	p	signature:(File pFile)
+droite	arbreGRB.c	/^	struct etCell* droite;$/;"	m	struct:etCell	typeref:struct:etCell::etCell	file:	access:public
+eltFile	file.h	/^struct eltFile {$/;"	s
+eltFile::nb	file.h	/^	int nb;$/;"	m	struct:eltFile	access:public
+eltFile::tab	file.h	/^	Element tab[N];$/;"	m	struct:eltFile	access:public
+eltFile::tete	file.h	/^	int tete; \/\/ Buffer en rond$/;"	m	struct:eltFile	access:public
+enfile	file.c	/^File enfile(File pFile, Element pElement) {$/;"	f	signature:(File pFile, Element pElement)
+enfile	file.h	/^File enfile(File pFile, Element pElement);$/;"	p	signature:(File pFile, Element pElement)
+estVideGRD	arbreGRB.c	/^int estVideGRD(const Arbre arbre) {$/;"	f	signature:(const Arbre arbre)
+estVideGRD	arbreGRB.h	/^int estVideGRD(const Arbre arbre);$/;"	p	signature:(const Arbre arbre)
+etCell	arbreGRB.c	/^typedef struct etCell {$/;"	s	file:
+etCell::droite	arbreGRB.c	/^	struct etCell* droite;$/;"	m	struct:etCell	typeref:struct:etCell::etCell	file:	access:public
+etCell::gauche	arbreGRB.c	/^	struct etCell* gauche;$/;"	m	struct:etCell	typeref:struct:etCell::etCell	file:	access:public
+etCell::racine	arbreGRB.c	/^	int racine;$/;"	m	struct:etCell	file:	access:public
+fileEstPleine	file.c	/^int fileEstPleine(File pFile) {$/;"	f	signature:(File pFile)
+fileEstPleine	file.h	/^int fileEstPleine(File pFile);$/;"	p	signature:(File pFile)
+fileEstVide	file.c	/^int fileEstVide(File pFile) {$/;"	f	signature:(File pFile)
+fileEstVide	file.h	/^int fileEstVide(File pFile);$/;"	p	signature:(File pFile)
+gauche	arbreGRB.c	/^	struct etCell* gauche;$/;"	m	struct:etCell	typeref:struct:etCell::etCell	file:	access:public
+main	main.c	/^int main(void) {$/;"	f	signature:(void)
+main	test.c	/^int main(void) {$/;"	f	signature:(void)
+nb	file.h	/^	int nb;$/;"	m	struct:eltFile	access:public
+premier	file.c	/^Element premier(File pFile) {$/;"	f	signature:(File pFile)
+premier	file.h	/^Element premier(File pFile);$/;"	p	signature:(File pFile)
+racine	arbreGRB.c	/^	int racine;$/;"	m	struct:etCell	file:	access:public
+tab	file.h	/^	Element tab[N];$/;"	m	struct:eltFile	access:public
+tete	file.h	/^	int tete; \/\/ Buffer en rond$/;"	m	struct:eltFile	access:public
+triGRD	arbreGRB.c	/^void triGRD(const Arbre a) {$/;"	f	signature:(const Arbre a)
+triGRD	arbreGRB.h	/^void triGRD(const Arbre arbre);$/;"	p	signature:(const Arbre arbre)
+viderTampon	main.c	/^void viderTampon(File* tampon, Arbre* arbre) {$/;"	f	signature:(File* tampon, Arbre* arbre)
+viderTampon	main.c	/^void viderTampon(File* tampon, Arbre* arbre);$/;"	p	file:	signature:(File* tampon, Arbre* arbre)

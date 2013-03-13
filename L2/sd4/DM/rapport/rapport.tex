@@ -1,0 +1,130 @@
+\documentclass[a4paper, 11pt]{article}
+
+\usepackage{xcolor}
+\input{/home/aroquemaurel/cours/includesLaTeX/couleurs.tex}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{verbatim}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, linkcolor=vert1, urlcolor=bleu, colorlinks=true]{hyperref}
+
+\newcommand{\titre}{La \texttt{PileMixte}}
+\newcommand{\numero}{1}
+\newcommand{\typeDoc}{DM}
+\newcommand{\module}{Structures de données}
+\newcommand{\sigle}{sd}
+\newcommand{\semestre}{4}
+\newcommand{\pfp}{\texttt{pfp}}
+	
+\newcommand{\ifp}{\texttt{if}}
+	
+\newcommand{\elsep}{\texttt{else}}
+
+
+\input{/home/aroquemaurel/cours/includesLaTeX/l2/tddm.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex} %prise en charge du langage C 
+\input{/home/aroquemaurel/cours/includesLaTeX/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
+\makeatother
+\begin{document}
+	\maketitle
+	\section{Compilation}
+	\begin{itemize}
+		\item \texttt{make} Compile les différents fichiers et produit l'exécutable de tests
+		\item \texttt{make clean} supprime les fichiers binaires (.o)
+		\item \texttt{make all} Recompile le projet après avoir supprimés tous les fichiers binaires 
+	\end{itemize}
+
+	Les différents tests sont situés dans le fichier \texttt{./tests.c}dans 3 fonctions différentes. 
+	\begin{itemize}
+		\item \texttt{testPileStatique}
+		\item \texttt{testPileMixte}
+		\item \texttt{testPileDynamique}
+	\end{itemize}
+	Pour lancer les tests, il faut lancer le fichier executables \texttt{./tests}, ceux-ci afficheront <<Passed>> 
+	si le test à réussis et <<Failed>> si celui-ci à échoué. (Si le test ne retourne pas la valeur attendue.). 
+
+	Certains tests sont en commentaire, c'est parce que ce sont des tests qui fonctionnent dans un état anormal et doivent couper le programme à l'aide d'un
+	\texttt{assert}. Afin d'éviter les problèmes dans le programme de tests, ceux-ci sont commentés mais peuvent être exécutés afin de vérifier que le programme s'arrête
+	bien.
+
+	Les tests effectués sont les même pour les trois piles, afin de pouvoir remarquer que la pile s'utilise de la même manière indépendamment de l'implémentation
+	de la structure de donnée.
+
+	\section{Petite modification au niveau de la spécification}
+	Afin de pouvoir effectuer ce DM, j'ai dut modifier la spécification qui nous étais donné pour \texttt{empiler} et \texttt{depiler}, cette modification est présente dans les
+	trois modules afin de garder une cohérence, bien que celle-ci n'était pas utile pour le module \texttt{pileStatique}. 
+
+	En effet, la spécification demandée était la suivante:
+\begin{lstlisting}[language=C, numbers=none]
+void pileDynamiqueEmpiler(PileDynamique pPile, Element pElement);
+Element pileDynamiqueDepiler(PileDynamique pPile);
+\end{lstlisting}
+
+	Cependant, lorsque l'ont empile ou dépile, le pointeur de début de pile est modifié, ainsi en gardant la spécification demandée, la pile ne pouvait pas etre
+	modifiée lorsque l'on empilait ou dépilait.
+
+	Deux solutions se présentaient à moi pour palier à ce problème :
+	\begin{itemize}
+		\item Changer le prototype afin de retourner une nouvelle Pile
+		\item Changer le premier paramètre afin d'y faire passer la pile via un pointeur
+	\end{itemize}
+
+	Afin de garder une cohérence avec les autres fonctions du module, j'ai choisis la seconde solution, ainsi les prototypes des fonction \texttt{empiler} et
+	\texttt{depiler} sont devenus ceux-ci : 
+\begin{lstlisting}[language=C, numbers=none]
+void pileDynamiqueEmpiler(PileDynamique* pPile, Element pElement);
+Element pileDynamiqueDepiler(PileDynamique* pPile);
+\end{lstlisting}
+\section{État incohérent du programme}
+	Afin d'être sûr que le programme n'entre pas dans un état incohérent, en cas de problème le programme s'arrête à l'aide de assert. En effet, je pars du
+	principe que l'utilisateur de la pile connait les pré-conditions et ne doit pas essayer de dépiler une pile vide ou d'empiler si la pile est pleine. 
+	Si cela se produit, le programme s'arrêtera et il se rencontrera de lui même qu'il à effectué une erreur.
+
+	De plus, la fonction \texttt{depiler} doit renvoyer l'élément courant, cependant ci la pile est vide, renvoyer la valeur est impossible.
+
+\section{Exemple d'exécution des tests}
+\begin{lstlisting}[language=sh, basicstyle=\scriptsize\ttfamily, caption=Exemple d'execution des tests]
+aroquemaurel@Garp:~/cours/L2/sd4/DM
+$\$$ ./tests
+[Passed] PileStatique  Création de la pile
+[Passed] PileStatique  Sommet
+[Passed] PileStatique  Empiler un élément
+[Passed] PileStatique  Depiler un élément
+[Passed] PileStatique  La pile est vide
+[Passed] PileStatique  La pile est pleine
+[Passed] PileStatique  On n'empile pas si la pile est pleine
+[Passed] PileStatique  La pile est vide
+
+[Passed] PileMixte Création de la pile
+[Passed] PileMixte Sommet
+[Passed] PileMixte Empiler un élément
+[Passed] PileMixte Depiler un élément
+[Passed] PileMixte La pile est vide
+[Passed] PileMixte Pile est pleine
+[Passed] PileMixte On n'empile pas si la pile est pleine
+[Passed] PileMixte La pile est vide
+[Passed] PileMixte On ne dépile pas si la pile est vide
+
+[Passed] PileDynamique Création de la pile
+[Passed] PileDynamique Sommet
+[Passed] PileDynamique Empiler un élément
+[Passed] PileDynamique Depiler un élément
+[Passed] PileDynamique La pile est vide
+[Passed] PileDynamique Pile est pleine
+[Passed] PileDynamique On n'empile pas si la pile est pleine
+[Passed] PileDynamique La pile est vide
+[Passed] PileDynamique On ne dépile pas si la pile est vide
+\end{lstlisting}
+
+\end{document}
