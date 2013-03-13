@@ -23,6 +23,8 @@
 \newcommand{\sigle}{siaweb}
 
 \newcommand{\semestre}{4}
+\newcommand{\acount}{\texttt{COUNT}}
+\newcommand{\asum}{\texttt{SUM}}
 
 \input{/home/aroquemaurel/cours/includesLaTeX/listings.tex} %prise en charge du langage algo
 \input{/home/aroquemaurel/cours/includesLaTeX/l2/cours.tex}
@@ -35,11 +37,72 @@
 	\setcounter{secnumdepth}{3}
 	\maketitle
 	\tableofcontents
-	\chapter{TD1}
+	\chapter{Rappel sur le SQL -- LDD/LMD }
 	\lstinputlisting[language=SQL]{1.sql}
 	\lstinputlisting[language=SQL]{1-1.sql}
 	\lstinputlisting[language=SQL]{1-2.sql}
 	\lstinputlisting[language=SQL]{1-3.sql}
+	\chapter{Projection -- Sélection -- Agrégation}
+	\begin{enumerate}
+		\item 
+			\begin{tabular}{p{8cm}p{4cm}}
+			$R = \Pi_{ne}\ equipe$ & $R[ne]$
+			\end{tabular}
+	\begin{lstlisting}[language=SQL, numbers=none]
+select distinct NE from equipe; 
+	\end{lstlisting}
+	 ~
+\item 
+			\begin{tabular}{p{8cm}p{4cm}}
+		$R=\Pi_{nomP,\; pBudget}(\sigma_{Ne='e1'}\ equipe)$ & $R[nomp,\; pbudget]$
+			\end{tabular}
+	\begin{lstlisting}[language=SQL, numbers=none]
+select distinct nomp, pbudget from projet where ne='e1'; 
+select distinct nomp, pbudget from (select * from projets where ne='e1'); 
+	\end{lstlisting}
+	 ~
+\item 
+			\begin{tabular}{p{8cm}p{4cm}}
+	$R = \Pi_{nomC,\; nc} (\sigma_{nomc\ {like}\ '\%a\%'}\ chercheur)$ & $R[nomc]$
+			\end{tabular}
+	\begin{lstlisting}[language=SQL, numbers=none]
+select distinct nomc from chercheur where nomC like '%a%';
+select distinct nomc from (select * from chercheur where nomC like '%a%'); 
+	\end{lstlisting}
+	 ~
+\item 
+			\begin{tabular}{p{8cm}p{4cm}}
+	$R = \acount(projet,\; ne,\; np)$ & $R[ne,\; count(np)]$ 
+			\end{tabular}
+	\begin{lstlisting}[language=SQL, numbers=none]
+select ne, count(np) as COUNT_NP from projet group by ne;
+	\end{lstlisting}
+	 ~
+
+	\item 
+			\begin{tabular}{p{8cm}p{4cm}}
+	$R = \acount(aff,\; np,\; nc)$  & $R[np,\; count(nc)]$
+			\end{tabular}
+	\begin{lstlisting}[language=SQL, numbers=none]
+select np, count(nc) as COUNT_NC from aff group by np;
+	\end{lstlisting}
+	 ~
+	\item 
+			\begin{tabular}{p{8cm}p{4cm}}
+	$R = \asum(projet,\; ne,\; pBudget)$  & $R[ne,\; count(pBudget)]$
+			\end{tabular}
+	\begin{lstlisting}[language=SQL, numbers=none]
+select ne, sum(pBudget) as SUM_PBUDGET from projet group by ne;
+	\end{lstlisting}
+	 ~
+	\item 
+			\begin{tabular}{p{8cm}p{4cm}}
+	$R = \acount(aff,\; np,\; nc,\; count(nc) = 2)$ & $R[np,\; count(nc)]$
+			\end{tabular}
+	\begin{lstlisting}[language=SQL, numbers=none]
+select np, count(nc) as COUNT_NC from aff group by np having COUNT_NC = 2;
+	\end{lstlisting}
+	\end{enumerate}
 \end{document}
 
 
