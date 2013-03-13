@@ -19,6 +19,8 @@
 int main(int argc, char* argv[])
 {
     char donnees[TAILLE_MAX]; /* Taille max des donnees : A DEFINIR */
+	char addest[6] = {'A','A','A','A','A','\0'};
+	char adsource[6] = {'A','A','A','A','A','\0'};
  
     int i, lg_donnees;
     int cpt=0;
@@ -40,13 +42,11 @@ int main(int argc, char* argv[])
 	
     /* Tant qu'on n'a pas fini de recevoir */
     while (continuer) {
-
         /* On reinitialise le tableau donnees */
         for (i = 0; i < TAILLE_MAX; i++)
             donnees[i] = '\0';
-        
         /* XXX A FAIRE : invoquer primitive liaison pour reception */ 
-                
+		lg_donnees = recevoir_de_liaison(adsource,addest,donnees);
         /* On regarde si c'est le dernier message */
         if (lg_donnees==1 && donnees[0]=='\a') {
             
