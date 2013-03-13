@@ -18,6 +18,8 @@
  */
 int main(int argc, char* argv[])
 {
+	char addest[6] = {'A','A','A','A','A','\0'};
+	char adsource[6] = {'A','A','A','A','A','\0'};
     char donnees[TAILLE_MAX]; /* Taille max des donnees : A DEFINIR */ 
     FILE*	fich;
     int	lg, cpt = 0;
@@ -49,6 +51,7 @@ int main(int argc, char* argv[])
             printf("\n[couche appli] Envoi numero %d\n",cpt);
             
             /* XXX A FAIRE : invoquer primitive liaison pour emission */
+			emettre_sur_liaison(adsource,addest,donnees,lg);
 
             cpt++;          
         }
@@ -58,6 +61,7 @@ int main(int argc, char* argv[])
 	donnees[0] = '\a';
 
 	/* XXX A FAIRE : emission du message de fin */
+	emettre_sur_liaison(adsource,addest, donnees,1);
 
 	printf("[couche appli] Fin de transmission.\n");
 	fclose(fich);
