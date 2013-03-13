@@ -1,0 +1,49 @@
+\documentclass[12pt,a4paper,openany]{book}
+
+
+\usepackage{lmodern}
+\usepackage{xcolor}
+\input{/home/aroquemaurel/cours/includesLaTeX/couleurs.tex}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, linkcolor=vert1, urlcolor=bleu, colorlinks=true]{hyperref}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+
+\newcommand{\titre}{Système d'informations et applications web -- TD}
+
+\newcommand{\pole}{}
+\newcommand{\sigle}{siaweb}
+
+\newcommand{\semestre}{4}
+
+\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex} %prise en charge du langage algo
+\input{/home/aroquemaurel/cours/includesLaTeX/l2/cours.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
+
+\begin{document}
+	\setcounter{tocdepth}{2}
+	\setcounter{secnumdepth}{3}
+	\maketitle
+	\tableofcontents
+	\chapter{TD1}
+	\lstinputlisting[language=SQL]{1.sql}
+	\lstinputlisting[language=SQL]{1-1.sql}
+	\lstinputlisting[language=SQL]{1-2.sql}
+	\lstinputlisting[language=SQL]{1-3.sql}
+\end{document}
+
+
+
+
+
+
