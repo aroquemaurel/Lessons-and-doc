@@ -1,0 +1,40 @@
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<name>voyageur de commerce</name>
+	<groupId>L2</groupId>
+	<artifactId>voyageurDeCommerce</artifactId>
+	<version>1</version>
+	<properties>
+		<sonar.jdbc.url>jdbc:mysql://localhost:3306/sonar?useUnicode=true&amp;characterEncoding=utf8</sonar.jdbc.url>
+		<sonar.jdbc.driver>com.mysql.jdbc.Driver</sonar.jdbc.driver>
+		<sonar.jdbc.username>sonar</sonar.jdbc.username>
+		<sonar.jdbc.password>sonar</sonar.jdbc.password>
+	</properties>
+   <build>   
+     <plugins>
+       <plugin>
+         <groupId>org.codehaus.mojo</groupId>
+         <artifactId>native-maven-plugin</artifactId>
+         <extensions>true</extensions>
+         <configuration>
+           <sources>
+             <source>
+               <directory>src</directory>
+               <includes>
+                 <include>**/*.c</include>
+               </includes>
+             </source>
+<!--             <source>
+               <directory>src/main/native</directory> 
+               <fileNames>
+                 <fileName>file3.c</fileName>
+                 <fileName>file4.c</fileName>
+                 <fileName>...</fileName>
+               </fileNames>
+             </source>          
+     -->       
+         </configuration>
+       </plugin>
+     </plugins>
+   </build>
+</project>
