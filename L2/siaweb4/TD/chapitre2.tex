@@ -1,0 +1,59 @@
+	\chapter{Imbrication -- Ensembliste}
+	\remarque{Interdiction d'utiliser les jointures}
+	\begin{enumerate}
+		\item 
+				$R = \Pi_{nome} (\sigma_{ne\ \in\ (\Pi_{ne}\ Projet)})$\\
+	\begin{lstlisting}[language=SQL, numbers=none]
+select distinct nome from equipe e1 
+where e1.ne in (select distinct ne from projet); 
+	\end{lstlisting}
+
+\item 
+	$ R = \Pi_{nomc}(\sigma_{nc \in\ (\Pi_{nc}(\sigma_{np = 'p1'}aff)})Chercheur)$
+	\begin{lstlisting}[language=SQL, numbers=none]
+select distinct nomc from chercheur
+where nc in (select distinct nc from aff where np='p1');
+	\end{lstlisting}
+\item 
+	\begin{eqnarray*}
+	R &=& \Pi_{nomc}(\sigma_{nc\ \in R_1} chercheur)\\
+	R_1 &=& \Pi_{nc}(\sigma_{np\ \in\ R_2} aff)\\
+	R_2 &=& \Pi_{np}(\sigma_{ne = 'e1'} Projet)
+	\end{eqnarray*}
+	\begin{lstlisting}[language=SQL, numbers=none]
+select distinct nomc from chercheur 
+where nc IN (select nc from aff 
+						where np in (select np from projet where ne = 'e1'));
+	\end{lstlisting}
+\item 
+	$\Pi_{nomc} (\sigma_{nc\ \in\ (\Pi_{nc}\ aff)} chercheur)$
+	\begin{lstlisting}[language=SQL, numbers=none]
+select distinct nomc from chercheur where nc in (select distinct n from aff);
+	\end{lstlisting}
+\item 
+	$\Pi_{nomc} (\sigma_{nc\ \notin\ (\Pi_{nc}\ aff)} chercheur)$
+	\begin{lstlisting}[language=SQL, numbers=none]
+select distinct nomc from chercheur where nc not in (select distinct n from aff);
+	\end{lstlisting}
+\item ~ 
+	\remarque{À partir de cette question la notation algébrique n'est pas indispensable.\\
+	L'utilisation des opérateurs ensembliste est indispensable, chercher ensuite une requete non ensembliste}
+	\begin{lstlisting}[language=SQL, numbers=none]
+select nomc from chercheur where nc in (
+	select ne from aff 
+	where np in(select np from projet where nomp = 'SRI')
+)
+intersect
+select nomc from chercheur where nc in (
+	select ne from aff 
+	where np in(select np from projet where nomp = 'BIG')
+)
+	\end{lstlisting}
+	\begin{lstlisting}[language=SQL, numbers=none]
+	\end{lstlisting}
+\item 
+\begin{lstlisting}[language=SQL, numbers=none]
+\end{lstlisting}
+% TODO
+	\end{enumerate}
+

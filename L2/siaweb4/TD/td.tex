@@ -97,12 +97,13 @@ select ne, sum(pBudget) as SUM_PBUDGET from projet group by ne;
 	 ~
 	\item 
 			\begin{tabular}{p{8cm}p{4cm}}
-	$R = \acount(aff,\; np,\; nc,\; count(nc) = 2)$ & $R[np,\; count(nc)]$
+	$R = \acount(aff,\; nc;\; ;\; count(np) = 2)$ & $R[nc]$
 			\end{tabular}
 	\begin{lstlisting}[language=SQL, numbers=none]
-select np, count(nc) as COUNT_NC from aff group by np having COUNT_NC = 2;
+select nc from aff group by nc having count(np) = 2;
 	\end{lstlisting}
 	\end{enumerate}
+	\include{chapitre2}
 \end{document}
 
 
