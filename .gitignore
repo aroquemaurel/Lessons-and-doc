@@ -7,7 +7,7 @@ IUT/
 *out
 *swo 
 *swp
+*.o
 /L2/algo3/TP/voyageurDeCommerce/build/
 /L2/algo3/TP/voyageurDeCommerce/dist/
-*.o
 docProjets
