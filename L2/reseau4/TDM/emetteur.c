@@ -28,7 +28,7 @@ int main(int argc, char* argv[])
     // initialisation(0.f, 0.f, (short) atoi(argv[1]), argv[2], (short) atoi(argv[3]));
     
     /* Pour la version simple */
-    initialisation_simple(0.f, 0.f, 0);
+    initialisation_simple(0.2, 0.2, 0);
     
     /* Ouverture du fichier en lecture */
     fich = fopen("in.txt", "r");
