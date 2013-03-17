@@ -4,7 +4,10 @@
 void emettre_sur_liaison(char* adr_src, char* adr_dest, char* msg, int lg_msg) {
  	int i;
 	int ev;
+	static int numeroTrame = 0;
+	static int premierAppel = 1;
 	trame_t trame;
+	trame_t ack;
 	trame.deb_trame = 0;
 	trame.fin_trame = 1;
  	for(i=0; i < 6 ; ++i) {
@@ -20,8 +23,23 @@ void emettre_sur_liaison(char* adr_src, char* adr_dest, char* msg, int lg_msg) {
 	trame.fcs = 0;
 	trame.ctrl = 4;
 	
-	sleep(1);
-	vers_canal(&trame, sizeof(trame_t));
+	if(premierAppel) { // c'est la première trame
+		printf("Première trame ! \n");
+		vers_canal(&trame, sizeof(trame_t));
+		premierAppel = 0;
+	} else { 
+		ev = attendre();
+		if(ev == RECEPTION) { // on a reçus qque chose 
+			de_canal(&ack,sizeof(trame_t));
+			if(ack.info[0] == numeroTrame) { // c'est le bon acquittement
+				 // c'est le bon acquittement
+				numeroTrame++;
+				trame.num_seq = numeroTrame;
+				vers_canal(&trame, sizeof(trame_t));
+				printf("On peut passer à la trame suivante!\n");
+			}
+		}
+	}
 	ev = attendre();
 }
 int recevoir_de_liaison(char* adr_src, char* adr_dest,char* msg) {
@@ -46,7 +64,8 @@ int recevoir_de_liaison(char* adr_src, char* adr_dest,char* msg) {
 		}
 		acquitement.lg_info = 1;
 		acquitement.info[0] = trame.num_seq;
-		vers_canal(&trame, sizeof(trame_t));	
+		sleep(1);
+		vers_canal(&acquitement, sizeof(trame_t));	
 					
 	}
 	return trame.lg_info;
