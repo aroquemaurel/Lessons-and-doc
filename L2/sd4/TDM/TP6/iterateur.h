@@ -1,3 +1,4 @@
+#include "element.h"
 typedef struct etIte* Iterateur;
 
 Iterateur creerIterateur(LDC);

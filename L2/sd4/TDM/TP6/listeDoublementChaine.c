@@ -4,7 +4,6 @@
 #include "element.h"
 #include "listeDoublementChaine.h"
 
-typedef Element (*ptrFctMap)(Element);
 int estVide(LDC l) {
 	return (l->premier == NULL);
 }
@@ -96,14 +95,3 @@ LDC supprimer(LDC liste, Element pElement) {
 	return liste;
 }
 
-LDC map(ptrFctMap fct, LDC liste) {  
-	Cell* courant ;
-	courant = liste->premier;
-	LDC listeResultat = creer();
-	while (courant != NULL) { // TODO utiliser itérateur
-		listeResultat = ajouter(listeResultat, fct(courant->val)) ;
-		courant = courant->suiv;
-	}
-
-	return liste;
-}
