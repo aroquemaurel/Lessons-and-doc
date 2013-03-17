@@ -49,11 +49,17 @@ select nomc from chercheur where nc in (
 	where np in(select np from projet where nomp = 'BIG')
 )
 	\end{lstlisting}
-	\begin{lstlisting}[language=SQL, numbers=none]
-	\end{lstlisting}
-\item 
+\item ~ 
 \begin{lstlisting}[language=SQL, numbers=none]
+	select nomc from chercheur c 
+	where ne = (select ne from projet where ne = c.ne and nomp<>'SRI')
+	intersect
+	select nomc from chercheur c 
+	where ne = (select ne from projet where ne = c.ne and nomp<>'BIG')
 \end{lstlisting}
-% TODO
-	\end{enumerate}
+\item 
+	\begin{lstlisting}[language=SQL, numbers=none]
+
+	\end{lstlisting}
+\end{enumerate}
 
