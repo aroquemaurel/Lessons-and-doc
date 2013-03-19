@@ -2,3 +2,4 @@
 \contentsline {chapter}{\numberline {1}Rappel sur le SQL -- LDD/LMD }{4}{chapter.1}
 \contentsline {chapter}{\numberline {2}Projection -- S\IeC {\'e}lection -- Agr\IeC {\'e}gation}{5}{chapter.2}
 \contentsline {chapter}{\numberline {3}Imbrication -- Ensembliste}{6}{chapter.3}
+\contentsline {chapter}{\numberline {4}Jointure}{8}{chapter.4}

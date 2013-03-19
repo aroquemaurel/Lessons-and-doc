@@ -50,16 +50,41 @@ select nomc from chercheur where nc in (
 )
 	\end{lstlisting}
 \item ~ 
-\begin{lstlisting}[language=SQL, numbers=none]
-	select nomc from chercheur c 
-	where ne = (select ne from projet where ne = c.ne and nomp<>'SRI')
-	intersect
-	select nomc from chercheur c 
-	where ne = (select ne from projet where ne = c.ne and nomp<>'BIG')
-\end{lstlisting}
-\item 
 	\begin{lstlisting}[language=SQL, numbers=none]
-
+(select nomc from chercheur where nc in (
+	select ne from aff 
+	where np in(select np from projet where nomp = 'SRI')
+)
+intersect
+select nomc from chercheur where nc in (
+	select ne from aff 
+	where np in(select np from projet where nomp = 'BIG')
+))
+except
+(select nomc from chercheur where nc in (
+	select ne from aff 
+	where np in(select np from projet where nomp <> 'SRI' and nomp <> 'BIG')
+)
+);
 	\end{lstlisting}
 \end{enumerate}
+
+\chapter{Jointure}
+\begin{enumerate}
+	\item 
+	\begin{lstlisting}[language=SQL, numbers=none]
+select ne, nome, pbudget from equipe, projet 
+where equipe.ne = projet.ne and equipe.ne = 'e1';
+	\end{lstlisting}
+\item ~ 
+	\begin{lstlisting}[language=SQL, numbers=none]
+select nomc, nome from equipe, chercheur, aff 
+where aff.nc = chercheur.nc and aff.ne = equipe.ne;
+	\end{lstlisting}
+\item ~
+	\begin{lstlisting}[language=SQL, numbers=none]
+select count(nc) from equipe, aff group by equipe,aff having equipe.nc = aff.nc
+	\end{lstlisting}
+\end{enumerate}
+
 
