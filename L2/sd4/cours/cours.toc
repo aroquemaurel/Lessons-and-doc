@@ -37,29 +37,36 @@
 \contentsline {subsubsection}{\numberline {4.1.3.1}Exercices de parcours}{30}{subsubsection.4.1.3.1}
 \contentsline {subsection}{\numberline {4.1.4}Hauteur}{31}{subsection.4.1.4}
 \contentsline {section}{\numberline {4.2}Les arbres rouges noirs}{32}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Utilisation de rotation}{32}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Ajout d'une valeur dans un arbre rouge-noir}{32}{subsection.4.2.2}
-\contentsline {chapter}{\numberline {A}Cours sur les pointeurs en C}{34}{appendix.A}
-\contentsline {section}{\numberline {A.1}Syntaxe}{34}{section.A.1}
-\contentsline {subsection}{\numberline {A.1.1}D\IeC {\'e}claration}{34}{subsection.A.1.1}
-\contentsline {subsection}{\numberline {A.1.2}Utilisation}{34}{subsection.A.1.2}
-\contentsline {subsection}{\numberline {A.1.3}Constante}{34}{subsection.A.1.3}
-\contentsline {section}{\numberline {A.2}Op\IeC {\'e}rateur autoris\IeC {\'e}s sur les pointeurs}{35}{section.A.2}
-\contentsline {subsection}{\numberline {A.2.1}L'affectation}{35}{subsection.A.2.1}
-\contentsline {subsection}{\numberline {A.2.2}Addition et la soustraction entre un pointeur et un entier}{35}{subsection.A.2.2}
-\contentsline {subsection}{\numberline {A.2.3}Soustraction de deux pointeurs}{35}{subsection.A.2.3}
-\contentsline {subsection}{\numberline {A.2.4}Comparaison sur des pointeurs}{35}{subsection.A.2.4}
-\contentsline {subsection}{\numberline {A.2.5}Allocation dynamique de m\IeC {\'e}moire}{35}{subsection.A.2.5}
-\contentsline {subsection}{\numberline {A.2.6}Lib\IeC {\'e}ration dynamique de m\IeC {\'e}moire}{36}{subsection.A.2.6}
-\contentsline {section}{\numberline {A.3}Pointeur sur fonction}{36}{section.A.3}
-\contentsline {subsection}{\numberline {A.3.1}Syntaxe}{36}{subsection.A.3.1}
-\contentsline {subsection}{\numberline {A.3.2}Utilisation}{36}{subsection.A.3.2}
-\contentsline {subsection}{\numberline {A.3.3}Exemple}{36}{subsection.A.3.3}
-\contentsline {chapter}{\numberline {B}Liste des codes sources}{38}{appendix.B}
-\contentsline {chapter}{\numberline {C}Table des figures}{39}{appendix.C}
-\contentsline {chapter}{\numberline {D}Exercices}{40}{appendix.D}
-\contentsline {section}{\numberline {D.1}Pointeurs}{40}{section.D.1}
-\contentsline {subsection}{\numberline {D.1.1}Exercice 1}{40}{subsection.D.1.1}
-\contentsline {subsection}{\numberline {D.1.2}Exercice 2}{40}{subsection.D.1.2}
-\contentsline {subsection}{\numberline {D.1.3}Exercice 3}{41}{subsection.D.1.3}
-\contentsline {subsection}{\numberline {D.1.4}Exercice 4 -- M\IeC {\^e}me exercice avec une autre valeur}{41}{subsection.D.1.4}
+\contentsline {subsection}{\numberline {4.2.1}Utilisation de rotation}{33}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Ajout d'une valeur dans un arbre rouge-noir}{33}{subsection.4.2.2}
+\contentsline {chapter}{\numberline {A}Cours sur les pointeurs en C}{36}{appendix.A}
+\contentsline {section}{\numberline {A.1}Syntaxe}{36}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}D\IeC {\'e}claration}{36}{subsection.A.1.1}
+\contentsline {subsection}{\numberline {A.1.2}Utilisation}{36}{subsection.A.1.2}
+\contentsline {subsection}{\numberline {A.1.3}Constante}{36}{subsection.A.1.3}
+\contentsline {section}{\numberline {A.2}Op\IeC {\'e}rateur autoris\IeC {\'e}s sur les pointeurs}{37}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}L'affectation}{37}{subsection.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}Addition et la soustraction entre un pointeur et un entier}{37}{subsection.A.2.2}
+\contentsline {subsection}{\numberline {A.2.3}Soustraction de deux pointeurs}{37}{subsection.A.2.3}
+\contentsline {subsection}{\numberline {A.2.4}Comparaison sur des pointeurs}{37}{subsection.A.2.4}
+\contentsline {subsection}{\numberline {A.2.5}Allocation dynamique de m\IeC {\'e}moire}{37}{subsection.A.2.5}
+\contentsline {subsection}{\numberline {A.2.6}Lib\IeC {\'e}ration dynamique de m\IeC {\'e}moire}{38}{subsection.A.2.6}
+\contentsline {section}{\numberline {A.3}Pointeur sur fonction}{38}{section.A.3}
+\contentsline {subsection}{\numberline {A.3.1}Syntaxe}{38}{subsection.A.3.1}
+\contentsline {subsection}{\numberline {A.3.2}Utilisation}{38}{subsection.A.3.2}
+\contentsline {subsection}{\numberline {A.3.3}Exemple}{38}{subsection.A.3.3}
+\contentsline {chapter}{\numberline {B}Liste des codes sources}{40}{appendix.B}
+\contentsline {chapter}{\numberline {C}Table des figures}{41}{appendix.C}
+\contentsline {chapter}{\numberline {D}Exercices}{42}{appendix.D}
+\contentsline {section}{\numberline {D.1}Pointeurs}{42}{section.D.1}
+\contentsline {subsection}{\numberline {D.1.1}Exercice 1}{42}{subsection.D.1.1}
+\contentsline {subsection}{\numberline {D.1.2}Exercice 2}{42}{subsection.D.1.2}
+\contentsline {subsection}{\numberline {D.1.3}Exercice 3}{43}{subsection.D.1.3}
+\contentsline {subsection}{\numberline {D.1.4}Exercice 4 -- M\IeC {\^e}me exercice avec une autre valeur}{43}{subsection.D.1.4}
+\contentsline {chapter}{\numberline {E}Cours obtenu sur Moodle}{45}{lstnumber.D.4.15}
+\contentsline {section}{\numberline {E.1} Les Types Abstraits de Donn\IeC {\'e}es}{45}{section*.9}
+\contentsline {section}{\numberline {E.2} Le TAD \texttt {File} et ses impl\IeC {\'e}mentations}{62}{section*.9}
+\contentsline {section}{\numberline {E.3} Liste doublement cha\IeC {\^\i }n\IeC {\'e}e en dynamique}{64}{section*.9}
+\contentsline {section}{\numberline {E.4} It\IeC {\'e}rateur pour Liste doublement chain\IeC {\'e}e en dynamique}{66}{section*.9}
+\contentsline {section}{\numberline {E.5} Arbre binaire d'entiers en dynamique}{68}{section*.9}
+\contentsline {section}{\numberline {E.6} Arbres rouges et noirs}{72}{section*.9}
