@@ -1,0 +1,10 @@
+
+t[N]
+r1 <- @t;
+r2 <- @tfin;
+r0 <- 1;
+tantque r1 != r2 faire
+	MEM32[r1] <- r0;
+	r1 <- r1 + 1;
+	r0 <- r0 + ;
+fin tantque;

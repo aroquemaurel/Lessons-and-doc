@@ -85,11 +85,49 @@ par r1 qui donne dans r2 le quotient et dans r3
 le reste}
 \subsubsection{Non signé}
 $r0 = r1 \times r2 + 3$, $0 \leq r3 < r1$
-\lstinputlisting[language=Algo]{2-6.algo}
-\lstinputlisting[language=ARM]{2-6.s}
+\lstinputlisting[numbers=none,language=Algo]{2-6.algo}
+\lstinputlisting[numbers=none,language=ARM]{2-6.s}
 \subsubsection{Signé}
 \lstinputlisting[language=Algo]{2-7.algo}
 \lstinputlisting[language=ARM]{2-7.s}
+\chapter{TD2 -- Manipulation de la mémoire}
+\section{}
+\subsubsection{Avec un itérateur}
+\begin{tabular}{p{8cm}p{8cm}}
+\lstinputlisting[language=Algo,linewidth=8cm]{3-1.algo}
+	&
+\lstinputlisting[linewidth=8cm,language=ARM]{3-1.s}
+\end{tabular}
+\subsection{Avec un pointeur}
+\begin{tabular}{p{6cm}p{6cm}}
+\lstinputlisting[language=Algo,linewidth=8cm]{3-1-1.algo}
+	&
+\lstinputlisting[linewidth=8cm,language=ARM]{3-1-1.s}
+\end{tabular}
+\section{}
+\begin{tabular}{p{6cm}p{6cm}}
+\lstinputlisting[language=Algo,linewidth=8cm]{3-2.algo}
+	&
+\lstinputlisting[linewidth=8cm,language=ARM]{3-2.s}
+\end{tabular}
+\section{Que fais le programme suivant ? }
+\begin{lstlisting}[language=ARM]
+	LDR r0,=t
+	MOV f1,#111
+	STR r1,[r0]
+	ADD r1,r0,#4
+	MOV r2,#0
+tq: CMP r2,#4
+	BEQ ftq
+	LDR r3,[r0,r2,LSL#2]
+	STR r3,[r1],#4
+	ADD r2,r2,#1
+	B tq
+ftq:
+\end{lstlisting}
+\begin{tabular}{ccccccc}
+	NST & r0 & r1 & r2 & r3& @t & @t+4
+\end{tabular}
 \end{document}
 
 
