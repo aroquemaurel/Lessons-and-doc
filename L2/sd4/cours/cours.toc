@@ -1,62 +1,65 @@
 \select@language {french}
 \chapterbegin 
 \chapterbegin 
-\contentsline {chapter}{\numberline {1}Types de donn\IeC {\'e}es Abstraits (TAD)}{5}{chapter.1}
-\contentsline {section}{\numberline {1.1}Syntaxe des TAD}{5}{section.1.1}
-\contentsline {subsection}{\numberline {1.1.1}Signature du TAD \texttt {Pile}}{6}{subsection.1.1.1}
-\contentsline {paragraph}{Signature de base}{6}{section*.5}
-\contentsline {paragraph}{Signature \IeC {\'e}tandue}{6}{section*.6}
-\contentsline {section}{\numberline {1.2}Impl\IeC {\'e}mentation d'un TAD}{6}{section.1.2}
-\contentsline {subsection}{\numberline {1.2.1}Impl\IeC {\'e}mentation de la structure de donn\IeC {\'e}es et des op\IeC {\'e}rateurs}{7}{subsection.1.2.1}
-\contentsline {section}{\numberline {1.3}Protection du TAD}{7}{section.1.3}
-\contentsline {subsection}{\numberline {1.3.1}S\IeC {\'e}paration du corps et de l'interface}{7}{subsection.1.3.1}
-\contentsline {subsubsection}{\numberline {1.3.1.1}Fichiers}{7}{subsubsection.1.3.1.1}
-\contentsline {subsubsection}{\numberline {1.3.1.2}Compilation}{7}{subsubsection.1.3.1.2}
-\contentsline {subsection}{\numberline {1.3.2}Protection du type}{7}{subsection.1.3.2}
-\contentsline {chapter}{\numberline {2}Structures de donn\IeC {\'e}es classiques}{9}{chapter.2}
-\contentsline {section}{\numberline {2.1}\texttt {Pile}}{9}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Statique}{9}{subsection.2.1.1}
-\contentsline {subsubsection}{\numberline {2.1.1.1}Sans protection du type}{9}{subsubsection.2.1.1.1}
-\contentsline {subsubsection}{\numberline {2.1.1.2}Avec protection du type}{11}{subsubsection.2.1.1.2}
-\contentsline {subsection}{\numberline {2.1.2}\texttt {Dynamique}}{12}{subsection.2.1.2}
-\contentsline {section}{\numberline {2.2}\texttt {File}}{13}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Statique}{14}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Dynamique}{15}{subsection.2.2.2}
-\contentsline {subsubsection}{\numberline {2.2.2.1}Application de la \texttt {File} \IeC {\`a} la fusion de voies routi\IeC {\`e}res}{17}{subsubsection.2.2.2.1}
-\contentsline {paragraph}{Am\IeC {\'e}lioration de la \texttt {File} en dynamique}{17}{section*.7}
-\contentsline {paragraph}{\IeC {\'E}crire l'application}{18}{section*.8}
-\contentsline {section}{\numberline {2.3}\texttt {File} avec priorit\IeC {\'e}}{18}{section.2.3}
-\contentsline {section}{\numberline {2.4}\texttt {Liste} avec priorit\IeC {\'e}}{19}{section.2.4}
-\contentsline {chapter}{\numberline {3}Parcourir une collection}{23}{chapter.3}
-\contentsline {section}{\numberline {3.1}It\IeC {\'e}rateur sur la liste doublement cha\IeC {\^\i }n\IeC {\'e}e}{23}{section.3.1}
-\contentsline {chapter}{\numberline {4}Les structures arborescentes}{26}{chapter.4}
-\contentsline {section}{\numberline {4.1}L'arbre GRD : <<Gauche Racine Droite>>}{26}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Crit\IeC {\`e}re de rangement}{26}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Impl\IeC {\'e}mentation du TAD}{27}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}Diff\IeC {\'e}rents types de parcours}{29}{subsection.4.1.3}
-\contentsline {subsubsection}{\numberline {4.1.3.1}Exercices de parcours}{29}{subsubsection.4.1.3.1}
-\contentsline {section}{\numberline {4.2}Les arbres rouges noirs}{30}{section.4.2}
-\contentsline {chapter}{\numberline {A}Cours sur les pointeurs en C}{31}{appendix.A}
-\contentsline {section}{\numberline {A.1}Syntaxe}{31}{section.A.1}
-\contentsline {subsection}{\numberline {A.1.1}D\IeC {\'e}claration}{31}{subsection.A.1.1}
-\contentsline {subsection}{\numberline {A.1.2}Utilisation}{31}{subsection.A.1.2}
-\contentsline {subsection}{\numberline {A.1.3}Constante}{31}{subsection.A.1.3}
-\contentsline {section}{\numberline {A.2}Op\IeC {\'e}rateur autoris\IeC {\'e}s sur les pointeurs}{32}{section.A.2}
-\contentsline {subsection}{\numberline {A.2.1}L'affectation}{32}{subsection.A.2.1}
-\contentsline {subsection}{\numberline {A.2.2}Addition et la soustraction entre un pointeur et un entier}{32}{subsection.A.2.2}
-\contentsline {subsection}{\numberline {A.2.3}Soustraction de deux pointeurs}{32}{subsection.A.2.3}
-\contentsline {subsection}{\numberline {A.2.4}Comparaison sur des pointeurs}{32}{subsection.A.2.4}
-\contentsline {subsection}{\numberline {A.2.5}Allocation dynamique de m\IeC {\'e}moire}{32}{subsection.A.2.5}
-\contentsline {subsection}{\numberline {A.2.6}Lib\IeC {\'e}ration dynamique de m\IeC {\'e}moire}{33}{subsection.A.2.6}
-\contentsline {section}{\numberline {A.3}Pointeur sur fonction}{33}{section.A.3}
-\contentsline {subsection}{\numberline {A.3.1}Syntaxe}{33}{subsection.A.3.1}
-\contentsline {subsection}{\numberline {A.3.2}Utilisation}{33}{subsection.A.3.2}
-\contentsline {subsection}{\numberline {A.3.3}Exemple}{33}{subsection.A.3.3}
-\contentsline {chapter}{\numberline {B}Liste des codes sources}{35}{appendix.B}
-\contentsline {chapter}{\numberline {C}Table des figures}{36}{appendix.C}
-\contentsline {chapter}{\numberline {D}Exercices}{37}{appendix.D}
-\contentsline {section}{\numberline {D.1}Pointeurs}{37}{section.D.1}
-\contentsline {subsection}{\numberline {D.1.1}Exercice 1}{37}{subsection.D.1.1}
-\contentsline {subsection}{\numberline {D.1.2}Exercice 2}{37}{subsection.D.1.2}
-\contentsline {subsection}{\numberline {D.1.3}Exercice 3}{38}{subsection.D.1.3}
-\contentsline {subsection}{\numberline {D.1.4}Exercice 4 -- M\IeC {\^e}me exercice avec une autre valeur}{38}{subsection.D.1.4}
+\contentsline {chapter}{\numberline {1}Types de donn\IeC {\'e}es Abstraits (TAD)}{6}{chapter.1}
+\contentsline {section}{\numberline {1.1}Syntaxe des TAD}{6}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Signature du TAD \texttt {Pile}}{7}{subsection.1.1.1}
+\contentsline {paragraph}{Signature de base}{7}{section*.5}
+\contentsline {paragraph}{Signature \IeC {\'e}tandue}{7}{section*.6}
+\contentsline {section}{\numberline {1.2}Impl\IeC {\'e}mentation d'un TAD}{7}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Impl\IeC {\'e}mentation de la structure de donn\IeC {\'e}es et des op\IeC {\'e}rateurs}{8}{subsection.1.2.1}
+\contentsline {section}{\numberline {1.3}Protection du TAD}{8}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}S\IeC {\'e}paration du corps et de l'interface}{8}{subsection.1.3.1}
+\contentsline {subsubsection}{\numberline {1.3.1.1}Fichiers}{8}{subsubsection.1.3.1.1}
+\contentsline {subsubsection}{\numberline {1.3.1.2}Compilation}{8}{subsubsection.1.3.1.2}
+\contentsline {subsection}{\numberline {1.3.2}Protection du type}{8}{subsection.1.3.2}
+\contentsline {chapter}{\numberline {2}Structures de donn\IeC {\'e}es classiques}{10}{chapter.2}
+\contentsline {section}{\numberline {2.1}\texttt {Pile}}{10}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Statique}{10}{subsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.1.1}Sans protection du type}{10}{subsubsection.2.1.1.1}
+\contentsline {subsubsection}{\numberline {2.1.1.2}Avec protection du type}{12}{subsubsection.2.1.1.2}
+\contentsline {subsection}{\numberline {2.1.2}\texttt {Dynamique}}{13}{subsection.2.1.2}
+\contentsline {section}{\numberline {2.2}\texttt {File}}{14}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Statique}{15}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Dynamique}{16}{subsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.2.1}Application de la \texttt {File} \IeC {\`a} la fusion de voies routi\IeC {\`e}res}{18}{subsubsection.2.2.2.1}
+\contentsline {paragraph}{Am\IeC {\'e}lioration de la \texttt {File} en dynamique}{18}{section*.7}
+\contentsline {paragraph}{\IeC {\'E}crire l'application}{19}{section*.8}
+\contentsline {section}{\numberline {2.3}\texttt {File} avec priorit\IeC {\'e}}{19}{section.2.3}
+\contentsline {section}{\numberline {2.4}\texttt {Liste} avec priorit\IeC {\'e}}{20}{section.2.4}
+\contentsline {chapter}{\numberline {3}Parcourir une collection}{24}{chapter.3}
+\contentsline {section}{\numberline {3.1}It\IeC {\'e}rateur sur la liste doublement cha\IeC {\^\i }n\IeC {\'e}e}{24}{section.3.1}
+\contentsline {chapter}{\numberline {4}Les structures arborescentes}{27}{chapter.4}
+\contentsline {section}{\numberline {4.1}L'arbre GRD : <<Gauche Racine Droite>>}{27}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Crit\IeC {\`e}re de rangement}{27}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Impl\IeC {\'e}mentation du TAD}{28}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Diff\IeC {\'e}rents types de parcours}{30}{subsection.4.1.3}
+\contentsline {subsubsection}{\numberline {4.1.3.1}Exercices de parcours}{30}{subsubsection.4.1.3.1}
+\contentsline {subsection}{\numberline {4.1.4}Hauteur}{31}{subsection.4.1.4}
+\contentsline {section}{\numberline {4.2}Les arbres rouges noirs}{32}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Utilisation de rotation}{32}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Ajout d'une valeur dans un arbre rouge-noir}{32}{subsection.4.2.2}
+\contentsline {chapter}{\numberline {A}Cours sur les pointeurs en C}{34}{appendix.A}
+\contentsline {section}{\numberline {A.1}Syntaxe}{34}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}D\IeC {\'e}claration}{34}{subsection.A.1.1}
+\contentsline {subsection}{\numberline {A.1.2}Utilisation}{34}{subsection.A.1.2}
+\contentsline {subsection}{\numberline {A.1.3}Constante}{34}{subsection.A.1.3}
+\contentsline {section}{\numberline {A.2}Op\IeC {\'e}rateur autoris\IeC {\'e}s sur les pointeurs}{35}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}L'affectation}{35}{subsection.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}Addition et la soustraction entre un pointeur et un entier}{35}{subsection.A.2.2}
+\contentsline {subsection}{\numberline {A.2.3}Soustraction de deux pointeurs}{35}{subsection.A.2.3}
+\contentsline {subsection}{\numberline {A.2.4}Comparaison sur des pointeurs}{35}{subsection.A.2.4}
+\contentsline {subsection}{\numberline {A.2.5}Allocation dynamique de m\IeC {\'e}moire}{35}{subsection.A.2.5}
+\contentsline {subsection}{\numberline {A.2.6}Lib\IeC {\'e}ration dynamique de m\IeC {\'e}moire}{36}{subsection.A.2.6}
+\contentsline {section}{\numberline {A.3}Pointeur sur fonction}{36}{section.A.3}
+\contentsline {subsection}{\numberline {A.3.1}Syntaxe}{36}{subsection.A.3.1}
+\contentsline {subsection}{\numberline {A.3.2}Utilisation}{36}{subsection.A.3.2}
+\contentsline {subsection}{\numberline {A.3.3}Exemple}{36}{subsection.A.3.3}
+\contentsline {chapter}{\numberline {B}Liste des codes sources}{38}{appendix.B}
+\contentsline {chapter}{\numberline {C}Table des figures}{39}{appendix.C}
+\contentsline {chapter}{\numberline {D}Exercices}{40}{appendix.D}
+\contentsline {section}{\numberline {D.1}Pointeurs}{40}{section.D.1}
+\contentsline {subsection}{\numberline {D.1.1}Exercice 1}{40}{subsection.D.1.1}
+\contentsline {subsection}{\numberline {D.1.2}Exercice 2}{40}{subsection.D.1.2}
+\contentsline {subsection}{\numberline {D.1.3}Exercice 3}{41}{subsection.D.1.3}
+\contentsline {subsection}{\numberline {D.1.4}Exercice 4 -- M\IeC {\^e}me exercice avec une autre valeur}{41}{subsection.D.1.4}
