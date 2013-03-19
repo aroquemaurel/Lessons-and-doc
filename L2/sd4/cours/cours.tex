@@ -15,6 +15,7 @@
 \usepackage{amssymb}
 \usepackage{float}
 \usepackage[francais]{minitoc}
+\usepackage[final]{pdfpages} 
 
 \newcommand{\titre}{Structures de données}
 
@@ -84,4 +85,24 @@
 	\lstlistoflistings
 	\listoffigures
 	\include{annexes/exercices/indexExercices}
+	\addtocounter{chapter}{1}
+	\addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}Cours obtenu sur Moodle}
+	\addcontentsline{toc}{section}{\protect\numberline{\thesection} Les Types Abstraits de Données}
+	\addtocounter{section}{1}
+	\includepdf[pages={1-}]{annexes/TAD1.pdf}
+	\addcontentsline{toc}{section}{\protect\numberline{\thesection} Le TAD \texttt{File} et ses implémentations}
+	\addtocounter{section}{1}
+	\includepdf[pages={1-}]{annexes/TAD2-sh.pdf}
+	\addcontentsline{toc}{section}{\protect\numberline{\thesection} Liste doublement chaînée en dynamique}
+	\addtocounter{section}{1}
+	\includepdf[pages={1-}]{annexes/TAD3-sh.pdf}
+	\addcontentsline{toc}{section}{\protect\numberline{\thesection} Itérateur pour Liste doublement chainée en dynamique}
+	\addtocounter{section}{1}
+	\includepdf[pages={1-}]{annexes/TAD4-sh.pdf}
+	\addcontentsline{toc}{section}{\protect\numberline{\thesection} Arbre binaire d'entiers en dynamique}
+	\addtocounter{section}{1}
+	\includepdf[pages={1-}]{annexes/TAD5-sh.pdf}
+	\addcontentsline{toc}{section}{\protect\numberline{\thesection} Arbres rouges et noirs}
+	\addtocounter{section}{1}
+	\includepdf[pages={1-}]{annexes/TAD7-sh.pdf}
 \end{document}

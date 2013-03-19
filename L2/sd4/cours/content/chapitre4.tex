@@ -60,6 +60,13 @@ Cet arbre est presque équilibre, il comporte plusieurs propriétés.
 
 Le problème principal est donc de maintenir l'arbre rouge-noir.
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=10cm]{content/schemas/arbreRN.png}
+	\caption{Exemple d'un arbre Rouge-Noir}
+	\includegraphics[width=10cm]{content/schemas/arbreNonRN.png}
+	\caption{Exemple d'un arbre non Rouge-Noir}
+\end{figure}
 \subsection{Utilisation de rotation}
 \begin{figure}[H]
 	\centering
@@ -78,8 +85,32 @@ Plusieurs cas sont possibles:
 	\item Son père est rouge $\Rightarrow$ plusieurs sous cas.
 		\begin{enumerate}
 			\item Le père est la racine de l'arbre $\Rightarrow$ la racine devient noire
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=7cm]{content/schemas/arbreRNcas0.png}
+	\caption{Le père est la racine de l'arbre}
+\end{figure}
 			\item Le frère du père est rouge $\Rightarrow$ Alors le frère du père et le père passe noir et le grand-père devient rouge et on propage
-			\item Le frère du père est noir $\Rightarrow$ rotation droite si le fis est à gauche ou rotation à gauche(pour se ramener au premier cas) puis à droite
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=12.5cm]{content/schemas/arbreRNcas1.png}
+	\caption{Le frère du père est rouge}
+\end{figure}
+			\item Le frère f de p est noir 
+				\begin{enumerate}
+					\item[a.] x est le fils gauche de p 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=12.5cm]{content/schemas/arbreRNcas2a.png}
+	\caption{x est le fils gauche de p}
+\end{figure}
+					\item[b.] x est le fils droit de p 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=12.5cm]{content/schemas/arbreRNcas2b.png}
+	\caption{x est le fils droit de p}
+\end{figure}
+				\end{enumerate}
 		\end{enumerate}
 		\remarque{La seule propagation se fait dans le cas 1 (pas de propagation dans le cas 2}
 \end{itemize}

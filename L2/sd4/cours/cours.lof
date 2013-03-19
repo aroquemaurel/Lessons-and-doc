@@ -16,12 +16,18 @@
 \contentsline {xchapter}{Les structures arborescentes}{27}{chapter.4}
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Arbre GRB}}{28}{figure.4.1}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Impl\IeC {\'e}mentation de l'arbre GRB}}{28}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Principe de la rotation}}{32}{figure.4.3}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Exemple d'un arbre Rouge-Noir}}{32}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Exemple d'un arbre non Rouge-Noir}}{32}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Principe de la rotation}}{33}{figure.4.5}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Le p\IeC {\`e}re est la racine de l'arbre}}{33}{figure.4.6}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Le fr\IeC {\`e}re du p\IeC {\`e}re est rouge}}{34}{figure.4.7}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces x est le fils gauche de p}}{34}{figure.4.8}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces x est le fils droit de p}}{34}{figure.4.9}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Cours sur les pointeurs en C}{34}{appendix.A}
+\contentsline {xchapter}{Cours sur les pointeurs en C}{36}{appendix.A}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Liste des codes sources}{38}{appendix.B}
+\contentsline {xchapter}{Liste des codes sources}{40}{appendix.B}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Table des figures}{39}{appendix.C}
+\contentsline {xchapter}{Table des figures}{41}{appendix.C}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Exercices}{40}{appendix.D}
+\contentsline {xchapter}{Exercices}{42}{appendix.D}
