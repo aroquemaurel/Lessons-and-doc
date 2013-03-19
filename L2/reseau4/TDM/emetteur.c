@@ -19,13 +19,13 @@
 int main(int argc, char* argv[])
 {
 	char addest[6] = {'A','A','A','A','A','\0'};
-	char adsource[6] = {'A','A','A','A','A','\0'};
+	char adsource[6] = {'B','B','B','B','B','\0'};
     char donnees[TAILLE_MAX]; /* Taille max des donnees : A DEFINIR */ 
     FILE*	fich;
     int	lg, cpt = 0;
     
     /* Pour la version distribuee */ 
-    // initialisation(0.f, 0.f, (short) atoi(argv[1]), argv[2], (short) atoi(argv[3]));
+    //initialisation(0.f, 0.f, (short) atoi(argv[1]), argv[2], (short) atoi(argv[3]));
     
     /* Pour la version simple */
     initialisation_simple(0.2, 0.2, 0);
