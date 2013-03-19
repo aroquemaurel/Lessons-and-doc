@@ -45,5 +45,42 @@ On suppose que l'on dispose du TAD \texttt{Pile} d'\texttt{Element} avec le type
 Pour parcourir l'arbre en largeur, le principe est le même, à la place d'utiliser une \texttt{Pile} nous allons utiliser une \texttt{File}.
 \lstinputlisting[language=C, caption=Arbre GRD -- Implémentation fonction affichage en longueur]{content/code/arbreGRB-2.c}
 
-\section{Les arbres rouges noirs}
+\subsection{Hauteur}
+Si on considère $h$ la hauteur d'un arbre\footnote{La hauteur d'un arbre est la distance entre la racine et les feuilles}, la complexité des fonctions d'ajout et de recherche d'un arbre sont de complexité $O(h)$, $h$ doit donc être le plus petit possible.  
 
+Pour cela, l'arbre doit être le plus équilibré possible pour cela, nous pouvons utiliser un arbre rouge-noir.
+
+\section{Les arbres rouges noirs}
+Cet arbre est presque équilibre, il comporte plusieurs propriétés.
+\begin{enumerate}
+	\item Par convention, un arbre vide est \textbf{noir}
+	\item Les fils d'un nœud rouge sont \textbf{noirs}
+	\item Le nombre de nœud noirs le long d'une branche dans l'arbre est indépendant de la branche 
+\end{enumerate}
+
+Le problème principal est donc de maintenir l'arbre rouge-noir.
+
+\subsection{Utilisation de rotation}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=12cm]{content/schemas/arbresRotation.eps}
+	\caption{Principe de la rotation}
+\end{figure}
+\attention{Les arbres rouges noirs sont des arbres GRD particuliers, ils possèdent donc les propriétés de l'arbre GRD}
+
+\subsection{Ajout d'une valeur dans un arbre rouge-noir}
+La valeur ajouté sera mise dans un noeud rouge dont les fils sont vies (donc noirs) avec une instruction classique dans l'arbre (comme un arbre GRD)
+
+Plusieurs cas sont possibles:
+\begin{itemize}
+	\item C'est le 1\ier noeud de l'arbre $\Rightarrow$ rien à faire
+	\item Son père est noir $\Rightarrow$ rien à faire
+	\item Son père est rouge $\Rightarrow$ plusieurs sous cas.
+		\begin{enumerate}
+			\item Le père est la racine de l'arbre $\Rightarrow$ la racine devient noire
+			\item Le frère du père est rouge $\Rightarrow$ Alors le frère du père et le père passe noir et le grand-père devient rouge et on propage
+			\item Le frère du père est noir $\Rightarrow$ rotation droite si le fis est à gauche ou rotation à gauche(pour se ramener au premier cas) puis à droite
+		\end{enumerate}
+		\remarque{La seule propagation se fait dans le cas 1 (pas de propagation dans le cas 2}
+\end{itemize}
+\lstinputlisting[language=C, caption=Arbre GRD -- Implémentation]{content/code/arbreRougeNoir.c}
