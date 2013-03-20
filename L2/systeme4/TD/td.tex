@@ -98,7 +98,29 @@ execlp("date", "date", NULL);
 			Soit $n$ le nombre de page référencancés par un processus. Le taux de défaut de page est $\frac{5}{n}$.
 	\chapter{Structure interne du système de fichier d'Unix}
 	\chapter{Primitives Unix (POSIX.1) de manipulation des fichiers}
+		\section{Exercice 16}
 		\lstinputlisting[language=C, caption=Exercie 16]{codes/16.c}
+		\section{Exercice 17}
+		\begin{lstlisting}[language=C, caption=Exercice 17]
+position=lseek(fd,0,seek_cur);
+lseek(fd,position,seek_set);
+		\end{lstlisting}
+		\section{Exercice 18}
+		\begin{lstlisting}[language=C, caption=Exercice 18]
+off_t taille;
+taille=lseek(fd,0,seek_end);
+		\end{lstlisting}
+		\section{Exercice 19}
+		\lstinputlisting[language=C, caption=Exercie 19]{codes/19.c}
+		\section{Exercice 20}
+		\lstinputlisting[language=C, caption=Exercie 20]{codes/20.c}
+		\section{Exercice 21}
+		\lstinputlisting[language=C, caption=Exercie 21]{codes/21.c}
+		\chapter{Fonctions de la bibliothèque standard pour la manipulation des fichiers}
+		\lstinputlisting[language=C, caption=Exemple 1]{codes/ex1.c}
+		\lstinputlisting[language=C, caption=Exemple 2]{codes/ex2.c}
+		\lstinputlisting[language=C, caption=Exemple 3]{codes/ex3.c}
+
 \end{document}
 
 
