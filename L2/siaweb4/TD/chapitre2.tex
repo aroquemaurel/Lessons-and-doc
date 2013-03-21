@@ -77,14 +77,52 @@ select ne, nome, pbudget from equipe, projet
 where equipe.ne = projet.ne and equipe.ne = 'e1';
 	\end{lstlisting}
 \item ~ 
+	$R = \Pi_{nomc, nome}( ( (chercheur \bowtie_{nc = nc})\bowtie_{np=np}projet)\bowtie_{ne = ne}equipe)$
 	\begin{lstlisting}[language=SQL, numbers=none]
 select nomc, nome from equipe, chercheur, aff 
-where aff.nc = chercheur.nc and aff.ne = equipe.ne;
+where aff.nc = chercheur.nc and aff.ne = equipe.ne and aff.np = projet.np;
+	\end{lstlisting}
+\item ~
+	$R = count( (\Pi_{ne,nc}(aff\bowtie_{np=np}projet))\bowtie_{ne=ne}equipe,nome,nc);$
+	\begin{lstlisting}[language=SQL, numbers=none]
+select nome, count(nc) 
+from equipe, aff a, projet p 
+where a.np = p.np and p.ne = a.ne group by nome;
+	\end{lstlisting}
+\item ~
+	\begin{eqnarray*}
+	R_1 &=& \Pi_{numc, nomc}( (chercheur \bowtie_{nc = nc}aff) \bowtie_{np=np}(\sigma_{nomp='sri'}projet))\\
+	R_2 &=& \Pi_{numc, nomc}( (chercheur \bowtie_{nc = nc}aff) \bowtie_{np=np}(\sigma_{nomp='big'}projet))\\
+	R &=& R_1 \cap R_2 
+	\end{eqnarray*}
+	\begin{lstlisting}[language=SQL, numbers=none]
+(select nc, nomc 
+from chercheur c, aff a, projet p 
+where p.nomp = 'SRI'
+and c.nc = aff.nc 
+and aff.np = p.np ) 
+	intersect
+(select nc, nomc 
+from chercheur c, aff a, projet p 
+where p.nomp = 'BIG'
+	and c.nc = aff.nc 
+	and aff.np = p.np )
 	\end{lstlisting}
 \item ~
 	\begin{lstlisting}[language=SQL, numbers=none]
-select count(nc) from equipe, aff group by equipe,aff having equipe.nc = aff.nc
+select nomc, count(np) 
+from chercheur c, aff a, projet p 
+where c.nc = a.nc and a.np = p.np 
+group by nomc;
 	\end{lstlisting}
+\item ~
+	\begin{lstlisting}[language=SQL, numbers=none]
+select nomc, avg(pbudge) 
+from chercheur c, aff a, projet
+where c.nc = a.nc and a.np = p.np 
+group by nomc
+	\end{lstlisting}
+
 \end{enumerate}
 
 
