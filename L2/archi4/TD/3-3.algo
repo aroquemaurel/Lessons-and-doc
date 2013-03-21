@@ -1,0 +1,10 @@
+
+
+
+r0 <- @t;
+r1 <- @fins;
+i <- 0;
+tantque i < N faire
+	t[N-1-i] = s[i];
+	i <- i + 1;
+fin tantque;

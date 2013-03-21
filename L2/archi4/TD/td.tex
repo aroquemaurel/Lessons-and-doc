@@ -125,13 +125,23 @@ tq: CMP r2,#4
 	B tq
 ftq:
 \end{lstlisting}
-\begin{tabular}{ccccccc}
-	NST & r0 & r1 & r2 & r3& @t & @t+4
+\begin{tabular}{p{6cm}p{6cm}}
+\lstinputlisting[language=Algo,linewidth=8cm]{3-3.algo}
+	&
+\lstinputlisting[linewidth=8cm,language=ARM]{3-3.s}
+\end{tabular}
+\appendix
+\begin{tabular}{l l}
+	[rj] & \texttt{Mem32[Rj]}\\
+	\hline
+	[rj,rk] & \texttt{Mem32[rj+rk]}\\
+	\hline
+	[rj,rk,LSL\#l] & \texttt{Mem32[rj+rk*2l]}\\
+	\hline
+	[rj],\#k & \texttt{Mem32[rj] ; rj <- rj+k;}\\
+	\hline
+	[rj,\#k] & \texttt{Mem32 <- [rj+k]}\\
 \end{tabular}
 \end{document}
-
-
-
-
 
 
