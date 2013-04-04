@@ -1,15 +1,15 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.1}Syntaxe}{\reset@font\mtcSfont 36}{section.A.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.1.1}D\IeC {\'e}claration}{\reset@font\mtcSSfont 36}{subsection.A.1.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.1.2}Utilisation}{\reset@font\mtcSSfont 36}{subsection.A.1.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.1.3}Constante}{\reset@font\mtcSSfont 36}{subsection.A.1.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.2}Op\IeC {\'e}rateur autoris\IeC {\'e}s sur les pointeurs}{\reset@font\mtcSfont 37}{section.A.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.2.1}L'affectation}{\reset@font\mtcSSfont 37}{subsection.A.2.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.2.2}Addition et la soustraction entre un pointeur et un entier}{\reset@font\mtcSSfont 37}{subsection.A.2.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.2.3}Soustraction de deux pointeurs}{\reset@font\mtcSSfont 37}{subsection.A.2.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.2.4}Comparaison sur des pointeurs}{\reset@font\mtcSSfont 37}{subsection.A.2.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.2.5}Allocation dynamique de m\IeC {\'e}moire}{\reset@font\mtcSSfont 37}{subsection.A.2.5}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.2.6}Lib\IeC {\'e}ration dynamique de m\IeC {\'e}moire}{\reset@font\mtcSSfont 38}{subsection.A.2.6}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.3}Pointeur sur fonction}{\reset@font\mtcSfont 38}{section.A.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.3.1}Syntaxe}{\reset@font\mtcSSfont 38}{subsection.A.3.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.3.2}Utilisation}{\reset@font\mtcSSfont 38}{subsection.A.3.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.3.3}Exemple}{\reset@font\mtcSSfont 38}{subsection.A.3.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.1}Syntaxe}{\reset@font\mtcSfont 37}{section.A.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.1.1}D\IeC {\'e}claration}{\reset@font\mtcSSfont 37}{subsection.A.1.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.1.2}Utilisation}{\reset@font\mtcSSfont 37}{subsection.A.1.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.1.3}Constante}{\reset@font\mtcSSfont 37}{subsection.A.1.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.2}Op\IeC {\'e}rateur autoris\IeC {\'e}s sur les pointeurs}{\reset@font\mtcSfont 38}{section.A.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.2.1}L'affectation}{\reset@font\mtcSSfont 38}{subsection.A.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.2.2}Addition et la soustraction entre un pointeur et un entier}{\reset@font\mtcSSfont 38}{subsection.A.2.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.2.3}Soustraction de deux pointeurs}{\reset@font\mtcSSfont 38}{subsection.A.2.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.2.4}Comparaison sur des pointeurs}{\reset@font\mtcSSfont 38}{subsection.A.2.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.2.5}Allocation dynamique de m\IeC {\'e}moire}{\reset@font\mtcSSfont 38}{subsection.A.2.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.2.6}Lib\IeC {\'e}ration dynamique de m\IeC {\'e}moire}{\reset@font\mtcSSfont 39}{subsection.A.2.6}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.3}Pointeur sur fonction}{\reset@font\mtcSfont 39}{section.A.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.3.1}Syntaxe}{\reset@font\mtcSSfont 39}{subsection.A.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.3.2}Utilisation}{\reset@font\mtcSSfont 39}{subsection.A.3.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.3.3}Exemple}{\reset@font\mtcSSfont 39}{subsection.A.3.3}}
