@@ -8,3 +8,5 @@
 \contentsline {chapter}{\numberline {5}XHTML}{11}{chapter.5}
 \contentsline {chapter}{\numberline {6}CSS}{12}{chapter.6}
 \contentsline {part}{III\hspace {1em}PHP et MySQL}{13}{part.3}
+\contentsline {chapter}{\numberline {7}PHP}{14}{chapter.7}
+\contentsline {section}{\numberline {7.1}Affichage de la table de multiplication par 9}{14}{section.7.1}
