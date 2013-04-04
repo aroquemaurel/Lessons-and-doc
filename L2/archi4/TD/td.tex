@@ -47,49 +47,49 @@
 	\lstinputlisting[language=ARM, caption=\texttt{R0 <- 10 * R1} sans utiliser la multipliation]{1-6.s}
 	\chapter{TD1}
 	\section{}
-\subsection{}
+	\subsection{}
 	ON considère l'algorithme suivant : 
-\begin{lstlisting}[language=Algo]
-si r0  > 0 alors
+	\begin{lstlisting}[language=Algo]
+	si r0  > 0 alors
 	s1;
-sinon
+	sinon
 	s2;
-fin si;
-\end{lstlisting}
-Traduire cette forme algorithmique en assembleur.
-\lstinputlisting[language=ARM]{2.s}
-\subsection{}
-\begin{lstlisting}[language=Algo]
-tantque 0 > 0 faire
+	fin si;
+	\end{lstlisting}
+	Traduire cette forme algorithmique en assembleur.
+	\lstinputlisting[language=ARM]{2.s}
+	\subsection{}
+	\begin{lstlisting}[language=Algo]
+	tantque 0 > 0 faire
 	s;
-fin tantque;
-\end{lstlisting}
-\lstinputlisting[language=ARM]{2-1.s}
+	fin tantque;
+	\end{lstlisting}
+	\lstinputlisting[language=ARM]{2-1.s}
 
-\section{}
-\subsection{}
-\lstinputlisting[language=Algo]{2-2.algo}
-\lstinputlisting[language=ARM]{2-2.s}
-\subsection{}
-\'Ecrire un programme qui calcule la multiplication de r0 par r1 et range le résultat dans r2 sans l'opération de multiplication
-\subsubsection{Nombres non signés}
-\lstinputlisting[language=ARM]{2-3.s}
-\subsubsection{Nombres signés}
-\lstinputlisting[language=Algo]{2-4.algo}
-\lstinputlisting[language=ARM]{2-4.s}
-\subsubsection{Autres solutions pour nombres signés}
-\lstinputlisting[language=Algo]{2-5.algo}
-\lstinputlisting[language=ARM]{2-5.s}
-\subsection{Réaliser la division de r0
-par r1 qui donne dans r2 le quotient et dans r3
-le reste}
-\subsubsection{Non signé}
-$r0 = r1 \times r2 + 3$, $0 \leq r3 < r1$
-\lstinputlisting[numbers=none,language=Algo]{2-6.algo}
-\lstinputlisting[numbers=none,language=ARM]{2-6.s}
-\subsubsection{Signé}
-\lstinputlisting[language=Algo]{2-7.algo}
-\lstinputlisting[language=ARM]{2-7.s}
+	\section{}
+	\subsection{}
+	\lstinputlisting[language=Algo]{2-2.algo}
+	\lstinputlisting[language=ARM]{2-2.s}
+	\subsection{}
+	\'Ecrire un programme qui calcule la multiplication de r0 par r1 et range le résultat dans r2 sans l'opération de multiplication
+	\subsubsection{Nombres non signés}
+	\lstinputlisting[language=ARM]{2-3.s}
+	\subsubsection{Nombres signés}
+	\lstinputlisting[language=Algo]{2-4.algo}
+	\lstinputlisting[language=ARM]{2-4.s}
+	\subsubsection{Autres solutions pour nombres signés}
+	\lstinputlisting[language=Algo]{2-5.algo}
+	\lstinputlisting[language=ARM]{2-5.s}
+	\subsection{Réaliser la division de r0
+	par r1 qui donne dans r2 le quotient et dans r3
+	le reste}
+	\subsubsection{Non signé}
+	$r0 = r1 \times r2 + 3$, $0 \leq r3 < r1$
+	\lstinputlisting[numbers=none,language=Algo]{2-6.algo}
+	\lstinputlisting[numbers=none,language=ARM]{2-6.s}
+	\subsubsection{Signé}
+	\lstinputlisting[language=Algo]{2-7.algo}
+	\lstinputlisting[language=ARM]{2-7.s}
 \chapter{TD2 -- Manipulation de la mémoire}
 \section{}
 \subsubsection{Avec un itérateur}
@@ -141,6 +141,12 @@ ftq:
 	[rj],\#k & \texttt{Mem32[rj] ; rj <- rj+k;}\\
 	\hline
 	[rj,\#k] & \texttt{Mem32 <- [rj+k]}\\
+\end{tabular}
+\section{Chevauchement de tableaux}
+\begin{tabular}{p{6cm}p{6cm}}
+\lstinputlisting[language=Algo,linewidth=8cm]{4.algo}
+	&
+\lstinputlisting[linewidth=8cm,language=ARM]{4.s}
 \end{tabular}
 \end{document}
 

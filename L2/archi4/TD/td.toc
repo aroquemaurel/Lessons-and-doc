@@ -19,3 +19,4 @@
 \contentsline {subsection}{\numberline {3.1.1}Avec un pointeur}{9}{subsection.3.1.1}
 \contentsline {section}{\numberline {3.2}}{10}{section.3.2}
 \contentsline {section}{\numberline {3.3}Que fais le programme suivant ? }{10}{section.3.3}
+\contentsline {section}{\numberline {.1}Chevauchement de tableaux}{12}{section.Alph0.1}
