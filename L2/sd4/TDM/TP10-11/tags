@@ -1,0 +1,39 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ARN	arbreRougeNoir.h	/^typedef struct etNoeud* ARN;$/;"	t	typeref:struct:etNoeud
+NOIR	arbreRougeNoir.c	6;"	d	file:
+Noeud	arbreRougeNoir.c	/^} Noeud;$/;"	t	typeref:struct:etNoeud	file:
+ROUGE	arbreRougeNoir.c	7;"	d	file:
+__ARBRERN	arbreRougeNoir.h	2;"	d
+ajoutGrd	arbreRougeNoir.c	/^ARN ajoutGrd(ARN a, int v, ARN* aux) {$/;"	f	signature:(ARN a, int v, ARN* aux)
+ajoutGrd	arbreRougeNoir.h	/^ARN ajoutGrd(ARN a, int v, ARN* aux);$/;"	p	signature:(ARN a, int v, ARN* aux)
+ajoutGrdAux	arbreRougeNoir.c	/^ARN ajoutGrdAux(ARN a, int v, ARN* aux, ARN pere) {$/;"	f	signature:(ARN a, int v, ARN* aux, ARN pere)
+ajoutGrdAux	arbreRougeNoir.h	/^ARN ajoutGrdAux(ARN a, int v, ARN* aux, ARN pere);$/;"	p	signature:(ARN a, int v, ARN* aux, ARN pere)
+ajouterARN	arbreRougeNoir.c	/^ARN ajouterARN(ARN a, int v) {$/;"	f	signature:(ARN a, int v)
+ajouterARN	arbreRougeNoir.h	/^ARN ajouterARN(ARN a, int v);$/;"	p	signature:(ARN a, int v)
+couleur	arbreRougeNoir.c	/^	int couleur; \/* 1 = noir, 0 rouge *\/$/;"	m	struct:etNoeud	file:	access:public
+creerRN	arbreRougeNoir.c	/^ARN creerRN(void) {$/;"	f	signature:(void)
+creerRN	arbreRougeNoir.h	/^ARN creerRN(void);$/;"	p	signature:(void)
+equilibre	arbreRougeNoir.c	/^ARN equilibre(ARN aux, ARN* a) { $/;"	f	signature:(ARN aux, ARN* a)
+equilibre	arbreRougeNoir.h	/^ARN equilibre(ARN aux, ARN* a);$/;"	p	signature:(ARN aux, ARN* a)
+etNoeud	arbreRougeNoir.c	/^typedef struct etNoeud {$/;"	s	file:
+etNoeud::couleur	arbreRougeNoir.c	/^	int couleur; \/* 1 = noir, 0 rouge *\/$/;"	m	struct:etNoeud	file:	access:public
+etNoeud::pere	arbreRougeNoir.c	/^	struct etNoeud *pere;$/;"	m	struct:etNoeud	typeref:struct:etNoeud::etNoeud	file:	access:public
+etNoeud::racine	arbreRougeNoir.c	/^	int racine;$/;"	m	struct:etNoeud	file:	access:public
+etNoeud::sad	arbreRougeNoir.c	/^	struct etNoeud *sad;$/;"	m	struct:etNoeud	typeref:struct:etNoeud::etNoeud	file:	access:public
+etNoeud::sag	arbreRougeNoir.c	/^	struct etNoeud *sag;$/;"	m	struct:etNoeud	typeref:struct:etNoeud::etNoeud	file:	access:public
+main	main.c	/^int main(void) {$/;"	f	signature:(void)
+miseAJourLien	arbreRougeNoir.c	/^void miseAJourLien(ARN nouveauFils, ARN ancienFils, ARN pere, ARN* origineArbre) {$/;"	f	signature:(ARN nouveauFils, ARN ancienFils, ARN pere, ARN* origineArbre)
+miseAJourLien	arbreRougeNoir.h	/^void miseAJourLien(ARN nouveauFils, ARN ancienFils, ARN pere, ARN* origineArbre);$/;"	p	signature:(ARN nouveauFils, ARN ancienFils, ARN pere, ARN* origineArbre)
+pere	arbreRougeNoir.c	/^	struct etNoeud *pere;$/;"	m	struct:etNoeud	typeref:struct:etNoeud::etNoeud	file:	access:public
+racine	arbreRougeNoir.c	/^	int racine;$/;"	m	struct:etNoeud	file:	access:public
+rotationDroite	arbreRougeNoir.c	/^ARN rotationDroite(ARN a) {$/;"	f	signature:(ARN a)
+rotationDroite	arbreRougeNoir.h	/^ARN rotationDroite(ARN a);$/;"	p	signature:(ARN a)
+rotationGauche	arbreRougeNoir.c	/^ARN rotationGauche(ARN a) {$/;"	f	signature:(ARN a)
+rotationGauche	arbreRougeNoir.h	/^ARN rotationGauche(ARN a);$/;"	p	signature:(ARN a)
+sad	arbreRougeNoir.c	/^	struct etNoeud *sad;$/;"	m	struct:etNoeud	typeref:struct:etNoeud::etNoeud	file:	access:public
+sag	arbreRougeNoir.c	/^	struct etNoeud *sag;$/;"	m	struct:etNoeud	typeref:struct:etNoeud::etNoeud	file:	access:public
