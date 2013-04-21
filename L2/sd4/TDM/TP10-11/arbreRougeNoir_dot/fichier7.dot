@@ -1,0 +1,24 @@
+digraph G {
+	51 [color=black]
+51->18	
+	51->70
+		18 [color=black]
+18->null27
+	null27 [label="null", color="gray"]
+	18->42
+		42 [color=red]
+42->null28
+	null28 [label="null", color="gray"]
+	42->null29
+	null29 [label="null", color="gray"]
+		70 [color=black]
+70->62	
+	70->null30
+	null30 [label="null", color="gray"]
+		62 [color=red]
+62->null31
+	null31 [label="null", color="gray"]
+	62->null32
+	null32 [label="null", color="gray"]
+	
+}

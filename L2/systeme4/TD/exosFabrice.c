@@ -49,7 +49,7 @@ void commande(char commande,fichier f1,fichier f2){
 //ouvrir le premier fichier(argv[1]) en lecture et le deuxieme fichier argv[2] en ecriture
 
 
-//si erreur ferme fichier ouvert en lecture, exit!alaa ne sert a rien, c'est qu'un petite bite afghanne.Cdt alaa.
+//si erreur ferme fichier ouvert en lecture, exit!
 //dub2 descipteur pur le deuxieme fichier
 	int d;
 	d=open("fich", O_WRONLY|O_CREAT|O_TRUNC, S_IRUSR|S_IWUSR);
