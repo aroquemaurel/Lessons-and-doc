@@ -20,3 +20,4 @@
 \contentsline {section}{\numberline {3.2}}{10}{section.3.2}
 \contentsline {section}{\numberline {3.3}Que fais le programme suivant ? }{10}{section.3.3}
 \contentsline {section}{\numberline {.1}Chevauchement de tableaux}{12}{section.Alph0.1}
+\contentsline {section}{\numberline {.2}Tris \IeC {\`a} bulles}{13}{section.Alph0.2}
