@@ -155,11 +155,20 @@
 \lstdefinelanguage{ARM}{%
    morekeywords={%
    ADD, SUB, MOV, MUL, RSB,CMP, BLS, BLE, B,BHI,LDR,
-   BGE, RSBLT, BGT, BEQ, BNE,BLT,BHS,STR,STRB
+   BGE, RSBLT, BGT, BEQ, BNE,BLT,BHS,STR,STRB,ADR
 	},
   sensitive=true,
   morecomment=[l]{@},
   morestring=[b]',
+}
+\lstdefinelanguage{PHP}{%
+   morekeywords={%
+   function, echo, switch,case,break,return
+	},
+  sensitive=true,
+  morecomment=[l]{@},
+  morestring=[b]',
+  morestring=[b]",
 }
 
 \lstset{ % general style for listings 
