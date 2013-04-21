@@ -167,6 +167,7 @@
    , literate={é}{{\'e}}1 {è}{{\`e}}1 {à}{{\`a}}1 {ê}{{\^e}}1 {É}{{\'E}}1 {ô}{{\^o}}1 {€}{{\euro}}1{°}{{$^{\circ}$}}1 {ç}{ {c}}1 {ù}{u}1
 	, extendedchars=\true
    , tabsize=2 
+   , stepnumber=2
    , frame=l
    , framerule=1.1pt
    , linewidth=520px
@@ -182,6 +183,9 @@
 	, showstringspaces=false
 	, extendedchars=true
 	, mathescape=true
+	, prebreak=\raisebox{0ex}[0ex][0ex]
+		   {\ensuremath{\hookleftarrow}}
+	,breakatwhitespace=true
 } 
 %	\lstlistoflistings
 %	\addcontentsline{toc}{part}{List of code examples}
