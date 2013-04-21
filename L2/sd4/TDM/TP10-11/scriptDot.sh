@@ -7,6 +7,7 @@ then
 fi
 i=1
 files=""
+dir=`dirname $1`
 while [ -f "$1$i.dot" ]
 do
 	dot -Tpng "$1$i.dot" -o "$1$i.png"
@@ -14,8 +15,11 @@ do
 	i=`expr $i + 1`
 done
 i=`expr $i - 1`
-size_temp=`identify "$1$i.png" | cut -d " " -f 3`
-size_temp_x=`echo $size_temp | cut -d 'x' -f1`
-size_temp_y=`echo $size_temp | cut -d 'x' -f2`
+taille=`identify "$1$i.png" | cut -d " " -f 3`
+x=`echo $taille|cut -d 'x' -f1`
+y=`echo $taille|cut -d 'x' -f2`
 
-convert -loop 0 -extent ${size_temp_x}x${size_temp_y} -dispose Background -background white -delay 150 $files "animation.gif"
+x=`expr $x + 150`
+y=`expr $y + 700`
+
+convert -loop 0 -extent 1000x1000 -delay 150 -dispose Background -background white $files "$dir/animation.gif"

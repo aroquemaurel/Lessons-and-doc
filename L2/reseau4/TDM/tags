@@ -4,18 +4,27 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
+BIN	Makefile	/^BIN=bin$/;"	m
 CC	Makefile	/^CC=gcc$/;"	m
 NBR_MAX_TIMERS	physique.c	3;"	d	file:
-OBJ_COMMON	Makefile	/^OBJ_COMMON=physique.o couche_liaison.o$/;"	m
-OBJ_ENVOIE	Makefile	/^OBJ_ENVOIE=emetteur.o$/;"	m
-OBJ_LSAP0	Makefile	/^OBJ_LSAP0=service_liaison0.o$/;"	m
-OBJ_LSAP1	Makefile	/^OBJ_LSAP1=service_liaison1.o$/;"	m
-OBJ_LSAP2	Makefile	/^OBJ_LSAP2=service_liaison2.o$/;"	m
-OBJ_RECOIT	Makefile	/^OBJ_RECOIT=recepteur.o$/;"	m
+OBJ_COMMON	Makefile	/^OBJ_COMMON=$(BIN)\/physique.o $(BIN)\/couche_liaison.o$/;"	m
+OBJ_ENVOIE	Makefile	/^OBJ_ENVOIE=$(BIN)\/emetteur.o$/;"	m
+OBJ_ENVOIE_CONNECT	Makefile	/^OBJ_ENVOIE_CONNECT=$(BIN)\/sl3\/emetteur.o$/;"	m
+OBJ_LSAP0	Makefile	/^OBJ_LSAP0=$(SL0)\/$(BIN)\/service_liaison0.o$/;"	m
+OBJ_LSAP1	Makefile	/^OBJ_LSAP1=$(SL1)\/$(BIN)\/service_liaison1.o$/;"	m
+OBJ_LSAP2	Makefile	/^OBJ_LSAP2=$(SL2)\/$(BIN)\/service_liaison2.o$/;"	m
+OBJ_LSAP3	Makefile	/^OBJ_LSAP3=$(SL3)\/$(BIN)\/service_liaison3.o$/;"	m
+OBJ_RECOIT	Makefile	/^OBJ_RECOIT=$(BIN)\/recepteur.o$/;"	m
+OBJ_RECOIT_CONNECT	Makefile	/^OBJ_RECOIT_CONNECT=$(BIN)\/sl3\/recepteur.o$/;"	m
 PRG	Makefile	/^PRG=emetteur recepteur$/;"	m
 RECEPTION	physique.h	4;"	d
+SL0	Makefile	/^SL0=sl0$/;"	m
+SL1	Makefile	/^SL1=sl1$/;"	m
+SL2	Makefile	/^SL2=sl2$/;"	m
+SL3	Makefile	/^SL3=sl3$/;"	m
 SYS	Makefile	/^SYS= -Wall -DUNIX -I.$/;"	m
 TAILLE_MAX	service_liaison.h	3;"	d
+TPS_TIMER	service_liaison.h	4;"	d
 __COUCHE_LIAISON	couche_liaison.h	2;"	d
 __PROTOCOLE_H__	physique.h	2;"	d
 __SERVICE_LIAISON	service_liaison.h	2;"	d
@@ -25,6 +34,7 @@ arreter_compteur	physique.c	/^void arreter_compteur(int n) {$/;"	f	signature:(in
 arreter_compteur	physique.h	/^void arreter_compteur(int n);$/;"	p	signature:(int n)
 attendre	physique.c	/^int attendre() {$/;"	f
 attendre	physique.h	/^int attendre();$/;"	p	signature:()
+connexionEnCours	sl3/service_liaison3.c	/^int connexionEnCours=0;$/;"	v
 ctrl	couche_liaison.h	/^	unsigned char ctrl;$/;"	m	struct:trame_s	access:public
 de_canal	physique.c	/^void de_canal(void *trame, int taille) {$/;"	f	signature:(void *trame, int taille)
 de_canal	physique.h	/^void de_canal(void *trame, int taille);$/;"	p	signature:(void *trame, int taille)
@@ -32,13 +42,18 @@ deb_trame	couche_liaison.h	/^	unsigned char deb_trame;$/;"	m	struct:trame_s	acce
 depart_compteur	physique.c	/^void depart_compteur(int n, int ms) {$/;"	f	signature:(int n, int ms)
 depart_compteur	physique.h	/^void depart_compteur(int n, int ms);$/;"	p	signature:(int n, int ms)
 emettre_sur_liaison	service_liaison.h	/^void emettre_sur_liaison(char* adr_src, char* adr_dest, char* msg, int lg_msg);$/;"	p	signature:(char* adr_src, char* adr_dest, char* msg, int lg_msg)
-emettre_sur_liaison	service_liaison0.c	/^void emettre_sur_liaison(char* adr_src, char* adr_dest, char* msg, int lg_msg) {$/;"	f	signature:(char* adr_src, char* adr_dest, char* msg, int lg_msg)
-emettre_sur_liaison	service_liaison1.c	/^void emettre_sur_liaison(char* adr_src, char* adr_dest, char* msg, int lg_msg) {$/;"	f	signature:(char* adr_src, char* adr_dest, char* msg, int lg_msg)
-emettre_sur_liaison	service_liaison2.c	/^void emettre_sur_liaison(char* adr_src, char* adr_dest, char* msg, int lg_msg) {$/;"	f	signature:(char* adr_src, char* adr_dest, char* msg, int lg_msg)
+emettre_sur_liaison	sl0/service_liaison0.c	/^void emettre_sur_liaison(char* adr_src, char* adr_dest, char* msg, int lg_msg) {$/;"	f	signature:(char* adr_src, char* adr_dest, char* msg, int lg_msg)
+emettre_sur_liaison	sl1/service_liaison1.c	/^void emettre_sur_liaison(char* adr_src, char* adr_dest, char* msg, int lg_msg) {$/;"	f	signature:(char* adr_src, char* adr_dest, char* msg, int lg_msg)
+emettre_sur_liaison	sl2/service_liaison2.c	/^void emettre_sur_liaison(char* adr_src, char* adr_dest, char* msg, int lg_msg) {$/;"	f	signature:(char* adr_src, char* adr_dest, char* msg, int lg_msg)
 emettre_sur_liaison_connectee	service_liaison.h	/^void emettre_sur_liaison_connectee(char* msg, int lg_msg);$/;"	p	signature:(char* msg, int lg_msg)
+emettre_sur_liaison_connectee	sl3/service_liaison3.c	/^void emettre_sur_liaison_connectee(char* msg, int lg_msg) {$/;"	f	signature:(char* msg, int lg_msg)
+envoyerAckTerminaisonConnexion	sl3/service_liaison3.c	/^void envoyerAckTerminaisonConnexion() {$/;"	f
 etablir_connexion_liaison	service_liaison.h	/^int etablir_connexion_liaison(char* adr_src, char* adr_dest);$/;"	p	signature:(char* adr_src, char* adr_dest)
+etablir_connexion_liaison	sl3/service_liaison3.c	/^int etablir_connexion_liaison(char* adr_src, char* adr_dest) {$/;"	f	signature:(char* adr_src, char* adr_dest)
 fcs	couche_liaison.h	/^	unsigned char fcs;$/;"	m	struct:trame_s	access:public
 fin_trame	couche_liaison.h	/^	unsigned char fin_trame;$/;"	m	struct:trame_s	access:public
+gAdrDst	sl3/service_liaison3.c	/^char gAdrDst[6];$/;"	v
+gAdrSrc	sl3/service_liaison3.c	/^char gAdrSrc[6];$/;"	v
 info	couche_liaison.h	/^	unsigned char info[82];$/;"	m	struct:trame_s	access:public
 initialisation	physique.c	/^void initialisation(float proba_perte, float proba_erreur,$/;"	f	signature:(float proba_perte, float proba_erreur, unsigned short port_local, char* destination, unsigned short port_dest)
 initialisation	physique.h	/^void initialisation(float proba_perte, float proba_erreur, unsigned short port_local, char* destination, unsigned short port_destination);$/;"	p	signature:(float proba_perte, float proba_erreur, unsigned short port_local, char* destination, unsigned short port_destination)
@@ -48,6 +63,8 @@ initialiser_trame	service_liaison.h	/^trame_t initialiser_trame(void);$/;"	p	sig
 lg_info	couche_liaison.h	/^	unsigned char lg_info;$/;"	m	struct:trame_s	access:public
 main	emetteur.c	/^int main(int argc, char* argv[])$/;"	f	signature:(int argc, char* argv[])
 main	recepteur.c	/^int main(int argc, char* argv[])$/;"	f	signature:(int argc, char* argv[])
+main	sl3/emetteur.c	/^int main(int argc, char* argv[])$/;"	f	signature:(int argc, char* argv[])
+main	sl3/recepteur.c	/^int main(int argc, char* argv[])$/;"	f	signature:(int argc, char* argv[])
 num_seq	couche_liaison.h	/^	unsigned char num_seq;$/;"	m	struct:trame_s	access:public
 physique_destination	physique.c	/^char*	physique_destination = NULL;$/;"	v
 physique_initialise	physique.c	/^int	physique_initialise = 0;$/;"	v
@@ -59,15 +76,21 @@ physique_socket	physique.c	/^SOCKET	physique_socket;$/;"	v
 physique_socket	physique.c	/^int physique_socket;$/;"	v
 physique_timers	physique.c	/^int	physique_timers[NBR_MAX_TIMERS+1];$/;"	v
 recevoir_de_liaison	service_liaison.h	/^int recevoir_de_liaison(char* adr_src, char* adr_dest, char* msg);$/;"	p	signature:(char* adr_src, char* adr_dest, char* msg)
-recevoir_de_liaison	service_liaison0.c	/^int recevoir_de_liaison(char* adr_src, char* adr_dest,char* msg) {$/;"	f	signature:(char* adr_src, char* adr_dest,char* msg)
-recevoir_de_liaison	service_liaison1.c	/^int recevoir_de_liaison(char* adr_src, char* adr_dest,char* msg) {$/;"	f	signature:(char* adr_src, char* adr_dest,char* msg)
-recevoir_de_liaison	service_liaison2.c	/^int recevoir_de_liaison(char* adr_src, char* adr_dest,char* msg) {$/;"	f	signature:(char* adr_src, char* adr_dest,char* msg)
+recevoir_de_liaison	sl0/service_liaison0.c	/^int recevoir_de_liaison(char* adr_src, char* adr_dest,char* msg) {$/;"	f	signature:(char* adr_src, char* adr_dest,char* msg)
+recevoir_de_liaison	sl1/service_liaison1.c	/^int recevoir_de_liaison(char* adr_src, char* adr_dest,char* msg) {$/;"	f	signature:(char* adr_src, char* adr_dest,char* msg)
+recevoir_de_liaison	sl2/service_liaison2.c	/^int recevoir_de_liaison(char* adr_src, char* adr_dest,char* msg) {$/;"	f	signature:(char* adr_src, char* adr_dest,char* msg)
 recevoir_de_liaison_connectee	service_liaison.h	/^int recevoir_de_liaison_connectee(char* msg);$/;"	p	signature:(char* msg)
+recevoir_de_liaison_connectee	sl3/service_liaison3.c	/^int recevoir_de_liaison_connectee(char* msg){$/;"	f	signature:(char* msg)
 recevoir_demande_connexion_liaison	service_liaison.h	/^void recevoir_demande_connexion_liaison(char* adr_src, char* adr_dest);$/;"	p	signature:(char* adr_src, char* adr_dest)
+recevoir_demande_connexion_liaison	sl3/service_liaison3.c	/^void recevoir_demande_connexion_liaison(char* adr_src, char* adr_dest) {$/;"	f	signature:(char* adr_src, char* adr_dest)
 recevoir_terminaison_connexion_liaison	service_liaison.h	/^void recevoir_terminaison_connexion_liaison();$/;"	p	signature:()
-remplirTrame	service_liaison2.c	/^trame_t remplirTrame(char* adr_src, char* adr_dest, char* msg, int lg_msg) {$/;"	f	signature:(char* adr_src, char* adr_dest, char* msg, int lg_msg)
+recevoir_terminaison_connexion_liaison	sl3/service_liaison3.c	/^void recevoir_terminaison_connexion_liaison() {$/;"	f
+remplirTrame	sl2/service_liaison2.c	/^trame_t remplirTrame(char* adr_src, char* adr_dest, char* msg, int lg_msg, int num_seq) {$/;"	f	signature:(char* adr_src, char* adr_dest, char* msg, int lg_msg, int num_seq)
+remplirTrame	sl3/service_liaison3.c	/^trame_t remplirTrame(char* msg, int lg_msg, int num_seq) {$/;"	f	signature:(char* msg, int lg_msg, int num_seq)
 repondre_demande_connexion_liaison	service_liaison.h	/^void repondre_demande_connexion_liaison(int reponse);$/;"	p	signature:(int reponse)
+repondre_demande_connexion_liaison	sl3/service_liaison3.c	/^void repondre_demande_connexion_liaison(int reponse) {$/;"	f	signature:(int reponse)
 terminer_connexion_liaison	service_liaison.h	/^void terminer_connexion_liaison();$/;"	p	signature:()
+terminer_connexion_liaison	sl3/service_liaison3.c	/^void terminer_connexion_liaison(void) {$/;"	f	signature:(void)
 trame_s	couche_liaison.h	/^typedef struct trame_s {$/;"	s
 trame_s::adr_dst	couche_liaison.h	/^	unsigned char adr_dst[6];$/;"	m	struct:trame_s	access:public
 trame_s::adr_src	couche_liaison.h	/^	unsigned char adr_src[6];$/;"	m	struct:trame_s	access:public
