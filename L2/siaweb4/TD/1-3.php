@@ -18,4 +18,5 @@ echo '<form method="post" action="traitement.php">';
 		echo '<option value="'.$equipe->ne.'">'.$equipe->nome.'</option>';
 	}
 	echo '</select>';
+	echo '<input type="submit" />
 echo '</form>';
