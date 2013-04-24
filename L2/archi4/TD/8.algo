@@ -1,0 +1,7 @@
+
+-- r0 : valeur entière
+-- r1 : adresse du taleau ou stocker la chaîne de caractère
+fonction itoa(entree r0, entree r1)
+debut
+
+fin
