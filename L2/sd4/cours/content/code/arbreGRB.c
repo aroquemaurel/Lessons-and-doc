@@ -75,7 +75,7 @@ Arbre restructure(Arbre pArbre) {
 Arbre supprimerUnElement(Arbre pArbre, int val) {
 	assert(!estVide(pArbre));
 	if(pArbre->racine == val) {
-		return(restructure(pArbre,val);
+		return(restructure(pArbre,val));
 	} 
 	if((pArbre->racine < val) && (pArbre->gauche != NULL)) {
 		pArbre->droit = supprimerUnElement(a->droit, val);

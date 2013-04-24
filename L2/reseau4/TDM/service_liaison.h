@@ -1,6 +1,7 @@
 #ifndef __SERVICE_LIAISON
 #define __SERVICE_LIAISON
 #define TAILLE_MAX 82 
+#define TPS_TIMER  1000
 #include "couche_liaison.h"
 #include "physique.h"
 trame_t initialiser_trame(void);
