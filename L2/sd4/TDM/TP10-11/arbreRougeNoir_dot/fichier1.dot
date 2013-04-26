@@ -1,8 +1,0 @@
-digraph G {
-	18 [color=black]
-18->null0
-	null0 [label="null", color="gray"]
-	18->null1
-	null1 [label="null", color="gray"]
-	
-}
