@@ -161,16 +161,28 @@
   morecomment=[l]{@},
   morestring=[b]',
 }
-\lstdefinelanguage{PHP}{%
+
+\lstdefinelanguage{javascript}{
    morekeywords={%
-   function, echo, switch,case,break,return
+		if, while, else
 	},
   sensitive=true,
-  morecomment=[l]{@},
-  morestring=[b]',
+  comment=[s]{/*}{*/},
+  morecomment=[l]{//},
+  string=[b]',
   morestring=[b]",
 }
-
+\lstdefinelanguage{PHP}{
+   morekeywords={%
+	foreach, echo, include, div, a, as, return, while, function, array
+	},
+  sensitive=true,
+  morecomment=[s]{<!--}{-->},
+  morecomment=[s]{/*}{*/},
+  morecomment=[l]{//},
+  string=[b]',
+  morestring=[b]",
+}
 \lstset{ % general style for listings 
    numbers=left 
    , literate={é}{{\'e}}1 {è}{{\`e}}1 {à}{{\`a}}1 {ê}{{\^e}}1 {É}{{\'E}}1 {ô}{{\^o}}1 {€}{{\euro}}1{°}{{$^{\circ}$}}1 {ç}{ {c}}1 {ù}{u}1
@@ -179,7 +191,7 @@
    , stepnumber=2
    , frame=l
    , framerule=1.1pt
-   , linewidth=520px
+   , linewidth=510px
    , breaklines=true 
    , basicstyle=\footnotesize\ttfamily 
    , numberstyle=\tiny\ttfamily 
