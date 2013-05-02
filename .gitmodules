@@ -4,3 +4,6 @@
 [submodule "L2/siaweb4/superVod"]
 	path = L2/siaweb4/superVod
 	url = ssh://gitolite@dev.joohoo.fr:443/web/L2/superVod.git
+[submodule "IUT/2-s4-stage"]
+	path = IUT/2-s4-stage
+	url = ssh://gitolite@garp/latex/IUT/stage.git
