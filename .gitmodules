@@ -1,3 +1,6 @@
 [submodule "L2/siaweb4/folksonomies"]
 	path = L2/siaweb4/folksonomies
 	url = ssh://gitolite@garp/web/L2/folksonomies.git
+[submodule "L2/siaweb4/superVod"]
+	path = L2/siaweb4/superVod
+	url = ssh://gitolite@garp/web/L2/superVod.git
