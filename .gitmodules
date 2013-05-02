@@ -10,3 +10,6 @@
 [submodule "L2/projet4/boggle"]
 	path = L2/projet4/boggle
 	url = ssh://git@dev.joohoo.fr:443/data/dev/git/repositories/logiciel/L2/boggle
+[submodule "L2/reseau4/reseauCouche2"]
+	path = L2/reseau4/reseauCouche2
+	url = ssh://gitolite@dev.joohoo.fr:443/logiciel/L2/reseauCouche2.git
