@@ -7,3 +7,6 @@
 [submodule "IUT/2-s4-stage"]
 	path = IUT/2-s4-stage
 	url = ssh://gitolite@garp/latex/IUT/stage.git
+[submodule "L2/projet4/boggle"]
+	path = L2/projet4/boggle
+	url = ssh://git@dev.joohoo.fr:443/data/dev/git/repositories/logiciel/L2/boggle
