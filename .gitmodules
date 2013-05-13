@@ -19,3 +19,6 @@
 [submodule "L2/systeme4/sgf"]
 	path = L2/systeme4/sgf
 	url = ssh://gitolite@dev.joohoo.fr:443/logiciel/L2/sgf.git
+[submodule "IUT/libUML"]
+	path = IUT/libUML
+	url = ssh://gitolite@garp/logiciel/IUT/libUML.git
