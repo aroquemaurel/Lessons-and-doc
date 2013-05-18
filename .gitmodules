@@ -16,9 +16,9 @@
 [submodule "L2/systeme3/gestionPhotos"]
 	path = L2/systeme3/gestionPhotos
 	url = ssh://gitolite@dev.joohoo.fr:443/scripts/L2/gestionPhotos.git
-[submodule "L2/systeme4/sgf"]
-	path = L2/systeme4/sgf
-	url = ssh://gitolite@dev.joohoo.fr:443/logiciel/L2/sgf.git
 [submodule "IUT/libUML"]
 	path = IUT/libUML
 	url = ssh://gitolite@garp/logiciel/IUT/libUML.git
+[submodule "L2/systeme4/sgf"]
+	path = L2/systeme4/sgf
+	url = ssh://gitolite@dev.joohoo.fr:443/logiciel/L2/sgf.git
