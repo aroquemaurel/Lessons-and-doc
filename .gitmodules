@@ -19,6 +19,3 @@
 [submodule "IUT/libUML"]
 	path = IUT/libUML
 	url = ssh://gitolite@garp/logiciel/IUT/libUML.git
-[submodule "a/L2/systeme4/systemeGestionFichier"]
-	path = a/L2/systeme4/systemeGestionFichier
-	url = ssh://gitolite@garp/logiciel/L2/sgf.git
