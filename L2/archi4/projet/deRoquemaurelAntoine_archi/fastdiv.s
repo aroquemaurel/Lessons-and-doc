@@ -152,4 +152,4 @@ endFillTab:
 
 finoctetPow2:
 @ Déclaration du tableau des puissance de 2
-tabPow2:	.fill	512,1,32	
+tabPow2:	.fill	256,1,32	
