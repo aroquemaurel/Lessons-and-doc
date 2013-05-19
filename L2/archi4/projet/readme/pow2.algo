@@ -1,0 +1,50 @@
+r4 <- @tabPow2;
+r5 <- r1 < 24; -- r5 contient le 1er octet
+r6 <- Mem32(r4+r5); 
+		
+r5 <- r1 < 8;
+r5 <- r5 < 24; -- r5 contient le 2nd octet
+r7 <- Mem32(r4+r5); 
+
+r5 <- r1 < 16;
+r5 <- r5 < 24; -- r5 contient le 3eme octet
+r8 <- Mem32(r4+r5); 
+
+r5 <- r1 < 24;
+r5 <- r5 < 24; -- r5 contient le 4eme octet
+
+r10 <- 0;
+
+si r6 != 32 alors
+	r10 <- r6 + 24;
+fin si;
+
+si r7 != 32alors
+	si r10 = 0 alors
+		goto fsitab;
+	fin si;
+	r10 <- r7 + 16;
+fin si;
+
+si r8 != 32 alors
+	si r10 = 0 alors
+		goto fsitab;
+	fin si;
+	r10 <- r8 + 8;
+fin si;
+
+si r9 != 32 alors
+	si r10 = 0 alors
+		goto fsitab;
+	fin si;
+	r10 <- r9;
+fin si;
+
+si r10 != 0 alors
+	r0 <- r0 < r10;
+	r1 <- 0;
+ -- Fin de la fonction de division fastdiv
+	retourner;
+fin si;
+
+fsitab:
