@@ -1,0 +1,7 @@
+\beamer@endinputifotherversion {3.07pt}
+\select@language {french}
+\beamer@sectionintoc {1}{Pr\'esentation de l'\'etudiant}{3}{0}{1}
+\beamer@sectionintoc {2}{Pr\'esentation du stage}{8}{0}{2}
+\beamer@sectionintoc {3}{Contexte professionnel}{20}{0}{3}
+\beamer@sectionintoc {4}{Travail effectu\'e}{26}{0}{4}
+\beamer@sectionintoc {5}{Conclusion}{56}{0}{5}
