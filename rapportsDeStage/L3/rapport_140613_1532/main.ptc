@@ -1,0 +1,122 @@
+\select@language {english}
+\thispagestyle {empty}
+\select@language {french}
+\select@language {english}
+\select@language {french}
+\ttl@starttoc {default@1}
+\contentsline {chapter}{\numberline {1}Objet et but du document}{3}{chapter.1}
+\ttl@stoptoc {default@1}
+\ttl@starttoc {default@2}
+\contentsline {section}{\numberline {1.1}Pr\IeC {\'e}sentation du projet}{3}{section.1.1}
+\select@language {english}
+\select@language {french}
+\contentsline {section}{\numberline {1.2}Pr\IeC {\'e}sentation du document}{3}{section.1.2}
+\contentsline {chapter}{\numberline {2}Documents de r\IeC {\'e}f\IeC {\'e}rence}{5}{chapter.2}
+\ttl@stoptoc {default@2}
+\ttl@starttoc {default@3}
+\contentsline {section}{\numberline {2.1}Panorama du domaine des syst\IeC {\`e}mes d'information \citep {shaping}}{5}{section.2.1}
+\select@language {english}
+\select@language {french}
+\contentsline {section}{\numberline {2.2}Cours de concepts fondamentaux de bases de donn\IeC {\'e}es}{5}{section.2.2}
+\contentsline {section}{\numberline {2.3}Cours d'optimisation de requ\IeC {\^e}te}{5}{section.2.3}
+\contentsline {section}{\numberline {2.4}Cours de langage de requ\IeC {\^e}tes}{5}{section.2.4}
+\contentsline {section}{\numberline {2.5}Cours de statistiques exploratoires et inf\IeC {\'e}rentielles}{5}{section.2.5}
+\contentsline {section}{\numberline {2.6}DUT Informatique}{6}{section.2.6}
+\contentsline {chapter}{\numberline {3}Terminologie}{7}{chapter.3}
+\ttl@stoptoc {default@3}
+\ttl@starttoc {default@4}
+\contentsline {section}{\numberline {3.1}Recherche scientifique}{7}{section.3.1}
+\contentsline {section}{\numberline {3.2}Base de donn\IeC {\'e}es}{8}{section.3.2}
+\contentsline {section}{\numberline {3.3}Statistiques}{8}{section.3.3}
+\contentsline {section}{\numberline {3.4}Web}{9}{section.3.4}
+\contentsline {section}{\numberline {3.5}Divers}{9}{section.3.5}
+\contentsline {chapter}{\numberline {4}Organisation}{11}{chapter.4}
+\ttl@stoptoc {default@4}
+\ttl@starttoc {default@5}
+\contentsline {section}{\numberline {4.1}Entreprise}{11}{section.4.1}
+\contentsline {section}{\numberline {4.2}\IeC {\'E}quipe du projet}{12}{section.4.2}
+\contentsline {section}{\numberline {4.3}Planification}{12}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Planning pr\IeC {\'e}visionnel}{12}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Planning effectif}{12}{subsection.4.3.2}
+\contentsline {chapter}{\numberline {5}Valorisation d'Inforsid}{15}{chapter.5}
+\ttl@stoptoc {default@5}
+\ttl@starttoc {default@6}
+\contentsline {section}{\numberline {5.1}Pr\IeC {\'e}sentation du contexte}{15}{section.5.1}
+\contentsline {section}{\numberline {5.2}Int\IeC {\'e}gration des donn\IeC {\'e}es des \IeC {\'e}ditions 2012 et 2013}{16}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Fonctionnement de la transformation des donn\IeC {\'e}es}{16}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Am\IeC {\'e}liorations apport\IeC {\'e}es au processus d'int\IeC {\'e}gration des donn\IeC {\'e}es}{16}{subsection.5.2.2}
+\contentsline {subsubsection}{Gestion des \IeC {\guillemotleft }~synonymes~\IeC {\guillemotright }}{16}{section*.12}
+\contentsline {subsubsection}{Gestion des pays}{17}{section*.13}
+\contentsline {section}{\numberline {5.3}Valorisation du congr\IeC {\`e}s}{18}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}P\IeC {\^o}les principaux}{18}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Th\IeC {\`e}mes du congr\IeC {\`e}s}{19}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Influence des membres}{21}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}Villes ayant accueilli le congr\IeC {\`e}s}{21}{subsection.5.3.4}
+\contentsline {section}{\numberline {5.4}Modification du site web}{21}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Optimisation des proc\IeC {\'e}dures PL/SQL}{21}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Cr\IeC {\'e}ation d'{}un nouveau style graphique}{24}{subsection.5.4.2}
+\contentsline {chapter}{\numberline {6}\IeC {\'E}tude de genre}{27}{chapter.6}
+\ttl@stoptoc {default@6}
+\ttl@starttoc {default@7}
+\contentsline {section}{\numberline {6.1}Pr\IeC {\'e}sentation du contexte}{27}{section.6.1}
+\contentsline {section}{\numberline {6.2}R\IeC {\'e}cup\IeC {\'e}ration et mise en forme des donn\IeC {\'e}es}{27}{section.6.2}
+\contentsline {section}{\numberline {6.3}Pr\IeC {\'e}sentation des donn\IeC {\'e}es et des tests utilis\IeC {\'e}s}{27}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Pr\IeC {\'e}sentation g\IeC {\'e}n\IeC {\'e}rale des donn\IeC {\'e}es}{27}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Pr\IeC {\'e}sentation des tests statistiques}{28}{subsection.6.3.2}
+\contentsline {subsubsection}{Shapiro-Wilk}{28}{section*.31}
+\contentsline {subsubsection}{Kolmogorov-Smirnov}{29}{section*.32}
+\contentsline {subsubsection}{Wilcoxon / Mann-Whitney U}{29}{section*.33}
+\contentsline {section}{\numberline {6.4}R\IeC {\'e}partition g\IeC {\'e}ographique}{29}{section.6.4}
+\contentsline {section}{\numberline {6.5}Comparaison de g\IeC {\'e}n\IeC {\'e}rations}{31}{section.6.5}
+\contentsline {subsubsection}{Production et productivit\IeC {\'e}}{33}{section*.37}
+\contentsline {subsubsection}{$\varphi $-index}{35}{section*.47}
+\contentsline {section}{\numberline {6.6}Conclusions de l'\IeC {\'e}tude}{38}{section.6.6}
+\contentsline {chapter}{\numberline {7}M\IeC {\'e}thodes et outils utilis\IeC {\'e}s}{41}{chapter.7}
+\ttl@stoptoc {default@7}
+\ttl@starttoc {default@8}
+\contentsline {section}{\numberline {7.1}Base de donn\IeC {\'e}es}{41}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Oracle Database}{41}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}SqlDeveloper}{41}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}Sql*Loader}{41}{subsection.7.1.3}
+\contentsline {section}{\numberline {7.2}Analyse et mise en forme des donn\IeC {\'e}es}{42}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Sofa Statistics}{42}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}R et RStudio}{42}{subsection.7.2.2}
+\contentsline {subsection}{\numberline {7.2.3}Gnuplot}{42}{subsection.7.2.3}
+\contentsline {subsection}{\numberline {7.2.4}\textlatin {\LaTeX }}{42}{subsection.7.2.4}
+\contentsline {subsection}{\numberline {7.2.5}BibTeX}{43}{subsection.7.2.5}
+\contentsline {section}{\numberline {7.3}Gestion de configuration}{43}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Apache Subversion}{43}{subsection.7.3.1}
+\contentsline {chapter}{\numberline {8}Assurance et contr\IeC {\^o}le qualit\IeC {\'e}}{45}{chapter.8}
+\ttl@stoptoc {default@8}
+\ttl@starttoc {default@9}
+\contentsline {section}{\numberline {8.1}Compte-rendus hebdomadaires}{45}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Semaine 1}{45}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.2}Semaine 2}{45}{subsection.8.1.2}
+\contentsline {subsection}{\numberline {8.1.3}Semaine 3}{45}{subsection.8.1.3}
+\contentsline {subsection}{\numberline {8.1.4}Semaine 4}{46}{subsection.8.1.4}
+\contentsline {subsection}{\numberline {8.1.5}Semaine 5}{46}{subsection.8.1.5}
+\contentsline {subsection}{\numberline {8.1.6}Semaine 6}{46}{subsection.8.1.6}
+\contentsline {subsection}{\numberline {8.1.7}Semaine 7}{46}{subsection.8.1.7}
+\contentsline {subsection}{\numberline {8.1.8}Semaine 8}{46}{subsection.8.1.8}
+\contentsline {subsection}{\numberline {8.1.9}Semaine 9}{46}{subsection.8.1.9}
+\contentsline {section}{\numberline {8.2}Revues}{46}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}8 Avril 2013}{47}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2}19 Avril 2013}{47}{subsection.8.2.2}
+\contentsline {subsection}{\numberline {8.2.3}30 Avril 2013}{47}{subsection.8.2.3}
+\contentsline {subsection}{\numberline {8.2.4}7 Mai 2013}{47}{subsection.8.2.4}
+\contentsline {subsection}{\numberline {8.2.5}21 Mai 2013}{47}{subsection.8.2.5}
+\contentsline {subsection}{\numberline {8.2.6}27 Mai 2013}{47}{subsection.8.2.6}
+\contentsline {subsection}{\numberline {8.2.7}4 Juin 2013}{48}{subsection.8.2.7}
+\contentsline {subsection}{\numberline {8.2.8}7 Juin 2013}{48}{subsection.8.2.8}
+\contentsline {chapter}{\numberline {9}Bilan}{49}{chapter.9}
+\ttl@stoptoc {default@9}
+\ttl@starttoc {default@10}
+\contentsline {section}{\numberline {9.1}Bilan du projet}{49}{section.9.1}
+\contentsline {section}{\numberline {9.2}Bilan personnel}{49}{section.9.2}
+\select@language {english}
+\ttl@stoptoc {default@10}
+\ttl@starttoc {default@11}
+\select@language {french}
+\ttl@stoptoc {default@11}
+\ttl@starttoc {default@12}
+\contentsfinish 

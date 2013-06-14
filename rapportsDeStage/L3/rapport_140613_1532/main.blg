@@ -1,0 +1,64 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: main.aux
+A level-1 auxiliary file: frontPage.aux
+A level-1 auxiliary file: frontPageBw.aux
+A level-1 auxiliary file: resume.aux
+A level-1 auxiliary file: summary.aux
+A level-1 auxiliary file: historique.aux
+A level-1 auxiliary file: remerciements.aux
+A level-1 auxiliary file: chapitre1.aux
+A level-1 auxiliary file: chapitre2.aux
+A level-1 auxiliary file: chapitre3.aux
+A level-1 auxiliary file: chapitre4.aux
+A level-1 auxiliary file: chapitre5.aux
+A level-1 auxiliary file: chapitre5-2.aux
+A level-1 auxiliary file: chapitre6.aux
+A level-1 auxiliary file: chapitre7.aux
+A level-1 auxiliary file: chapitre8.aux
+The style file: apacite.bst
+A level-1 auxiliary file: annexes.aux
+Reallocated wiz_functions (elt_size=4) to 6000 items from 17179872184.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Database file #1: biblio.bib
+apacite.bst [2012/02/25 v6.01 APA bibliography style]
+You've used 26 entries,
+            6735 wiz_defined-function locations,
+            1438 strings with 15600 characters,
+and the built_in function-call counts, 52807 in all, are:
+= -- 6420
+> -- 387
+< -- 2842
++ -- 2832
+- -- 58
+* -- 3599
+:= -- 10453
+add.period$ -- 112
+call.type$ -- 26
+change.case$ -- 479
+chr.to.int$ -- 0
+cite$ -- 52
+duplicate$ -- 1191
+empty$ -- 1956
+format.name$ -- 609
+if$ -- 9627
+int.to.chr$ -- 0
+int.to.str$ -- 52
+missing$ -- 0
+newline$ -- 675
+num.names$ -- 211
+pop$ -- 994
+preamble$ -- 1
+purify$ -- 140
+quote$ -- 0
+skip$ -- 2985
+stack$ -- 0
+substring$ -- 3075
+swap$ -- 720
+text.length$ -- 105
+text.prefix$ -- 0
+top$ -- 1
+type$ -- 2144
+warning$ -- 0
+while$ -- 249
+width$ -- 0
+write$ -- 812
