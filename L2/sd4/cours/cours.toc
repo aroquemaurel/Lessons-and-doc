@@ -1,22 +1,72 @@
 \select@language {french}
 \chapterbegin 
 \chapterbegin 
-\contentsline {chapter}{\numberline {1}Les structures arborescentes}{5}{chapter.1}
-\contentsline {section}{\numberline {1.1}L'arbre GRD : <<Gauche Racine Droite>>}{5}{section.1.1}
-\contentsline {subsection}{\numberline {1.1.1}Crit\IeC {\`e}re de rangement}{5}{subsection.1.1.1}
-\contentsline {subsection}{\numberline {1.1.2}Impl\IeC {\'e}mentation du TAD}{6}{subsection.1.1.2}
-\contentsline {subsection}{\numberline {1.1.3}Diff\IeC {\'e}rents types de parcours}{8}{subsection.1.1.3}
-\contentsline {subsubsection}{\numberline {1.1.3.1}Exercices de parcours}{8}{subsubsection.1.1.3.1}
-\contentsline {subsection}{\numberline {1.1.4}Hauteur}{9}{subsection.1.1.4}
-\contentsline {section}{\numberline {1.2}Les arbres rouges noirs}{10}{section.1.2}
-\contentsline {subsection}{\numberline {1.2.1}Utilisation de rotation}{11}{subsection.1.2.1}
-\contentsline {subsection}{\numberline {1.2.2}Ajout d'une valeur dans un arbre rouge-noir}{11}{subsection.1.2.2}
-\contentsline {chapter}{\numberline {A}Liste des codes sources}{18}{appendix.A}
-\contentsline {chapter}{\numberline {B}Table des figures}{19}{appendix.B}
-\contentsline {chapter}{\numberline {C}Cours obtenu sur Moodle}{20}{appendix.B}
-\contentsline {section}{\numberline {C.0} Les Types Abstraits de Donn\IeC {\'e}es}{20}{section*.5}
-\contentsline {section}{\numberline {C.1} Le TAD \texttt {File} et ses impl\IeC {\'e}mentations}{37}{section*.5}
-\contentsline {section}{\numberline {C.2} Liste doublement cha\IeC {\^\i }n\IeC {\'e}e en dynamique}{39}{section*.5}
-\contentsline {section}{\numberline {C.3} It\IeC {\'e}rateur pour Liste doublement chain\IeC {\'e}e en dynamique}{41}{section*.5}
-\contentsline {section}{\numberline {C.4} Arbre binaire d'entiers en dynamique}{43}{section*.5}
-\contentsline {section}{\numberline {C.5} Arbres rouges et noirs}{47}{section*.5}
+\contentsline {chapter}{\numberline {1}Types de donn\IeC {\'e}es Abstraits (TAD)}{5}{chapter.1}
+\contentsline {section}{\numberline {1.1}Syntaxe des TAD}{5}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Signature du TAD \texttt {Pile}}{6}{subsection.1.1.1}
+\contentsline {paragraph}{Signature de base}{6}{section*.5}
+\contentsline {paragraph}{Signature \IeC {\'e}tandue}{6}{section*.6}
+\contentsline {section}{\numberline {1.2}Impl\IeC {\'e}mentation d'un TAD}{6}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Impl\IeC {\'e}mentation de la structure de donn\IeC {\'e}es et des op\IeC {\'e}rateurs}{7}{subsection.1.2.1}
+\contentsline {section}{\numberline {1.3}Protection du TAD}{7}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}S\IeC {\'e}paration du corps et de l'interface}{7}{subsection.1.3.1}
+\contentsline {subsubsection}{\numberline {1.3.1.1}Fichiers}{7}{subsubsection.1.3.1.1}
+\contentsline {subsubsection}{\numberline {1.3.1.2}Compilation}{7}{subsubsection.1.3.1.2}
+\contentsline {subsection}{\numberline {1.3.2}Protection du type}{7}{subsection.1.3.2}
+\contentsline {chapter}{\numberline {2}Structures de donn\IeC {\'e}es classiques}{9}{chapter.2}
+\contentsline {section}{\numberline {2.1}\texttt {Pile}}{9}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Statique}{9}{subsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.1.1}Sans protection du type}{9}{subsubsection.2.1.1.1}
+\contentsline {subsubsection}{\numberline {2.1.1.2}Avec protection du type}{11}{subsubsection.2.1.1.2}
+\contentsline {subsection}{\numberline {2.1.2}\texttt {Dynamique}}{12}{subsection.2.1.2}
+\contentsline {section}{\numberline {2.2}\texttt {File}}{13}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Statique}{14}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Dynamique}{15}{subsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.2.1}Application de la \texttt {File} \IeC {\`a} la fusion de voies routi\IeC {\`e}res}{17}{subsubsection.2.2.2.1}
+\contentsline {paragraph}{Am\IeC {\'e}lioration de la \texttt {File} en dynamique}{17}{section*.7}
+\contentsline {paragraph}{\IeC {\'E}crire l'application}{18}{section*.8}
+\contentsline {section}{\numberline {2.3}\texttt {File} avec priorit\IeC {\'e}}{18}{section.2.3}
+\contentsline {section}{\numberline {2.4}\texttt {Liste} avec priorit\IeC {\'e}}{19}{section.2.4}
+\contentsline {chapter}{\numberline {3}Parcourir une collection}{23}{chapter.3}
+\contentsline {section}{\numberline {3.1}It\IeC {\'e}rateur sur la liste doublement cha\IeC {\^\i }n\IeC {\'e}e}{23}{section.3.1}
+\contentsline {chapter}{\numberline {4}Les structures arborescentes}{26}{chapter.4}
+\contentsline {section}{\numberline {4.1}L'arbre GRD : <<Gauche Racine Droite>>}{26}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Crit\IeC {\`e}re de rangement}{26}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Impl\IeC {\'e}mentation du TAD}{27}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Diff\IeC {\'e}rents types de parcours}{29}{subsection.4.1.3}
+\contentsline {subsubsection}{\numberline {4.1.3.1}Exercices de parcours}{29}{subsubsection.4.1.3.1}
+\contentsline {subsection}{\numberline {4.1.4}Hauteur}{30}{subsection.4.1.4}
+\contentsline {section}{\numberline {4.2}Les arbres rouges noirs}{31}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Utilisation de rotation}{32}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Ajout d'une valeur dans un arbre rouge-noir}{32}{subsection.4.2.2}
+\contentsline {chapter}{\numberline {A}Cours sur les pointeurs en C}{39}{appendix.A}
+\contentsline {section}{\numberline {A.1}Syntaxe}{39}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}D\IeC {\'e}claration}{39}{subsection.A.1.1}
+\contentsline {subsection}{\numberline {A.1.2}Utilisation}{39}{subsection.A.1.2}
+\contentsline {subsection}{\numberline {A.1.3}Constante}{39}{subsection.A.1.3}
+\contentsline {section}{\numberline {A.2}Op\IeC {\'e}rateur autoris\IeC {\'e}s sur les pointeurs}{40}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}L'affectation}{40}{subsection.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}Addition et la soustraction entre un pointeur et un entier}{40}{subsection.A.2.2}
+\contentsline {subsection}{\numberline {A.2.3}Soustraction de deux pointeurs}{40}{subsection.A.2.3}
+\contentsline {subsection}{\numberline {A.2.4}Comparaison sur des pointeurs}{40}{subsection.A.2.4}
+\contentsline {subsection}{\numberline {A.2.5}Allocation dynamique de m\IeC {\'e}moire}{40}{subsection.A.2.5}
+\contentsline {subsection}{\numberline {A.2.6}Lib\IeC {\'e}ration dynamique de m\IeC {\'e}moire}{41}{subsection.A.2.6}
+\contentsline {section}{\numberline {A.3}Pointeur sur fonction}{41}{section.A.3}
+\contentsline {subsection}{\numberline {A.3.1}Syntaxe}{41}{subsection.A.3.1}
+\contentsline {subsection}{\numberline {A.3.2}Utilisation}{41}{subsection.A.3.2}
+\contentsline {subsection}{\numberline {A.3.3}Exemple}{41}{subsection.A.3.3}
+\contentsline {chapter}{\numberline {B}Liste des codes sources}{43}{appendix.B}
+\contentsline {chapter}{\numberline {C}Table des figures}{44}{appendix.C}
+\contentsline {chapter}{\numberline {D}Exercices}{45}{appendix.D}
+\contentsline {section}{\numberline {D.1}Pointeurs}{45}{section.D.1}
+\contentsline {subsection}{\numberline {D.1.1}Exercice 1}{45}{subsection.D.1.1}
+\contentsline {subsection}{\numberline {D.1.2}Exercice 2}{45}{subsection.D.1.2}
+\contentsline {subsection}{\numberline {D.1.3}Exercice 3}{46}{subsection.D.1.3}
+\contentsline {subsection}{\numberline {D.1.4}Exercice 4 -- M\IeC {\^e}me exercice avec une autre valeur}{46}{subsection.D.1.4}
+\contentsline {chapter}{\numberline {E}Cours obtenu sur Moodle}{48}{lstnumber.D.4.15}
+\contentsline {section}{\numberline {E.1} Les Types Abstraits de Donn\IeC {\'e}es}{48}{section*.9}
+\contentsline {section}{\numberline {E.2} Le TAD \texttt {File} et ses impl\IeC {\'e}mentations}{65}{section*.9}
+\contentsline {section}{\numberline {E.3} Liste doublement cha\IeC {\^\i }n\IeC {\'e}e en dynamique}{67}{section*.9}
+\contentsline {section}{\numberline {E.4} It\IeC {\'e}rateur pour Liste doublement chain\IeC {\'e}e en dynamique}{69}{section*.9}
+\contentsline {section}{\numberline {E.5} Arbre binaire d'entiers en dynamique}{71}{section*.9}
+\contentsline {section}{\numberline {E.6} Arbres rouges et noirs}{75}{section*.9}
