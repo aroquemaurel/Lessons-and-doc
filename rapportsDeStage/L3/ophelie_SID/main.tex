@@ -1,0 +1,90 @@
+% Important note:
+% Chapter heading images should have a 2:1 width:height ratio,
+% e.g. 920px width and 460px height.
+\documentclass[11pt,fleqn]{book} % Default font size and left-justified equations
+\input{structure}
+
+\AtBeginDocument{\addtocontents{toc}{\protect\thispagestyle{empty}}} 
+
+\includeonly{
+frontPage,
+frontPageBw,
+resume,
+summary,
+historique,
+remerciements,
+chapitre1,
+chapitre2,
+chapitre3,
+chapitre4,
+chapitre5,
+chapitre5-2,
+chapitre6,
+chapitre7,
+chapitre8,
+annexes
+}
+
+\begin{document}
+\selectlanguage{french}
+
+%----------------------------------------------------------------------------------------
+% AVANT-PROPOS
+%----------------------------------------------------------------------------------------
+\include{frontPage}
+\include{frontPageBw}
+\include{resume}
+\selectlanguage{english}
+\setcounter{footnote}{0}
+\include{summary}
+\selectlanguage{french}
+\include{historique}
+\include{remerciements}
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+\cleardoublepage
+\setcounter{page}{1}
+\setcounter{tocdepth}{1}
+\renewcommand{\contentsname}{Table des matières}
+\chapterimage{bg/1}
+
+\pagestyle{empty}
+\thispagestyle{empty}
+\tableofcontents
+\pagestyle{empty}
+\clearpage
+
+%----------------------------------------------------------------------------------------
+%	CHAPITRES
+%----------------------------------------------------------------------------------------
+\pagestyle{fancy}
+\include{chapitre1}
+\include{chapitre2}
+\include{chapitre3}
+\include{chapitre4}
+\include{chapitre5}
+\include{chapitre5-2}
+\include{chapitre6}
+\include{chapitre7}
+\include{chapitre8}
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHIE
+%----------------------------------------------------------------------------------------
+\chapterimage{bg/6}
+\nocite{*}
+\bibliographystyle{apacite}
+\bibliography{biblio}
+
+%----------------------------------------------------------------------------------------
+%	ANNEXES
+%----------------------------------------------------------------------------------------
+\cleardoublepage
+\renewcommand{\leftmark}{\sffamily\normalsize\textbf{Annexes}}
+\renewcommand{\thepage}{\roman{page}}% Roman numerals for page counter
+\setcounter{page}{1}
+\include{annexes}
+
+\end{document}
