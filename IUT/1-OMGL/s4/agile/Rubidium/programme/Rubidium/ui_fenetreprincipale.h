@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'fenetreprincipale.ui'
 **
-** Created: Sat Mar 31 16:04:39 2012
-**      by: Qt User Interface Compiler version 4.6.3
+** Created: Sat Aug 3 00:47:19 2013
+**      by: Qt User Interface Compiler version 4.8.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -152,7 +152,7 @@ public:
         FenetrePrincipale->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(FenetrePrincipale);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 829, 23));
+        menuBar->setGeometry(QRect(0, 0, 829, 19));
         menuFichier = new QMenu(menuBar);
         menuFichier->setObjectName(QString::fromUtf8("menuFichier"));
         menuImprimer = new QMenu(menuFichier);

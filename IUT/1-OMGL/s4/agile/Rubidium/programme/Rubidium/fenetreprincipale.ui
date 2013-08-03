@@ -30,7 +30,7 @@
      <x>0</x>
      <y>0</y>
      <width>829</width>
-     <height>23</height>
+     <height>19</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFichier">
@@ -129,7 +129,7 @@
   </widget>
   <action name="actionConnexion">
    <property name="icon">
-    <iconset resource="ressources.qrc">
+    <iconset>
      <normaloff>:/icones/connexion</normaloff>:/icones/connexion</iconset>
    </property>
    <property name="text">
@@ -138,7 +138,7 @@
   </action>
   <action name="actionDeconnexion">
    <property name="icon">
-    <iconset resource="ressources.qrc">
+    <iconset>
      <normaloff>:/icones/deconnexion</normaloff>:/icones/deconnexion</iconset>
    </property>
    <property name="text">
@@ -147,7 +147,7 @@
   </action>
   <action name="actionQuitter">
    <property name="icon">
-    <iconset resource="ressources.qrc">
+    <iconset>
      <normaloff>:/icones/quitter</normaloff>:/icones/quitter</iconset>
    </property>
    <property name="text">
@@ -156,7 +156,7 @@
   </action>
   <action name="actionAdminPoles">
    <property name="icon">
-    <iconset resource="ressources.qrc">
+    <iconset>
      <normaloff>:/icones/options</normaloff>:/icones/options</iconset>
    </property>
    <property name="text">
@@ -165,7 +165,7 @@
   </action>
   <action name="actionAdminMatieres">
    <property name="icon">
-    <iconset resource="ressources.qrc">
+    <iconset>
      <normaloff>:/icones/options</normaloff>:/icones/options</iconset>
    </property>
    <property name="text">
@@ -174,7 +174,7 @@
   </action>
   <action name="actionAdminTypesControle">
    <property name="icon">
-    <iconset resource="ressources.qrc">
+    <iconset>
      <normaloff>:/icones/options</normaloff>:/icones/options</iconset>
    </property>
    <property name="text">
@@ -183,7 +183,7 @@
   </action>
   <action name="actionAdminSalles">
    <property name="icon">
-    <iconset resource="ressources.qrc">
+    <iconset>
      <normaloff>:/icones/options</normaloff>:/icones/options</iconset>
    </property>
    <property name="text">
@@ -192,7 +192,7 @@
   </action>
   <action name="actionAdminUtilisateurs">
    <property name="icon">
-    <iconset resource="ressources.qrc">
+    <iconset>
      <normaloff>:/icones/options</normaloff>:/icones/options</iconset>
    </property>
    <property name="text">
@@ -201,7 +201,7 @@
   </action>
   <action name="actionNouveau_controle">
    <property name="icon">
-    <iconset resource="ressources.qrc">
+    <iconset>
      <normaloff>:/icones/ajouter</normaloff>:/icones/ajouter</iconset>
    </property>
    <property name="text">
@@ -218,7 +218,7 @@
   </action>
   <action name="actionJeuEssai">
    <property name="icon">
-    <iconset resource="ressources.qrc">
+    <iconset>
      <normaloff>:/icones/options</normaloff>:/icones/options</iconset>
    </property>
    <property name="text">
@@ -227,7 +227,7 @@
   </action>
   <action name="actionViderBd">
    <property name="icon">
-    <iconset resource="ressources.qrc">
+    <iconset>
      <normaloff>:/icones/options</normaloff>:/icones/options</iconset>
    </property>
    <property name="text">
@@ -236,7 +236,7 @@
   </action>
   <action name="actionEditer">
    <property name="icon">
-    <iconset resource="ressources.qrc">
+    <iconset>
      <normaloff>:/icones/editer</normaloff>:/icones/editer</iconset>
    </property>
    <property name="text">
@@ -251,7 +251,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="ressources.qrc">
+    <iconset>
      <normaloff>:/icones/surveiller</normaloff>:/icones/surveiller</iconset>
    </property>
    <property name="text">
@@ -263,7 +263,7 @@
   </action>
   <action name="actionToutImprimer">
    <property name="icon">
-    <iconset resource="ressources.qrc">
+    <iconset>
      <normaloff>:/icones/imprimer</normaloff>:/icones/imprimer</iconset>
    </property>
    <property name="text">
@@ -272,7 +272,7 @@
   </action>
   <action name="actionImprimerDetailsHeuresdesurveillance">
    <property name="icon">
-    <iconset resource="ressources.qrc">
+    <iconset>
      <normaloff>:/icones/imprimer</normaloff>:/icones/imprimer</iconset>
    </property>
    <property name="text">
@@ -281,7 +281,7 @@
   </action>
   <action name="actionImprimerControlesSurveilles">
    <property name="icon">
-    <iconset resource="ressources.qrc">
+    <iconset>
      <normaloff>:/icones/imprimer</normaloff>:/icones/imprimer</iconset>
    </property>
    <property name="text">
@@ -290,7 +290,7 @@
   </action>
   <action name="actionImprimerDetailsHeuresdesurveillanceTrieParQuota">
    <property name="icon">
-    <iconset resource="ressources.qrc">
+    <iconset>
      <normaloff>:/icones/imprimer</normaloff>:/icones/imprimer</iconset>
    </property>
    <property name="text">

@@ -1,30 +1,112 @@
-\definecolor{exemple}{HTML}{dde5ed}
-\definecolor{remarque}{HTML}{dde5ed}
-\newcommand{\exemple}[1]{
-	\begin{center}
-	\medskip
-	\colorbox{exemple}{
-	\begin{minipage}{0.8\textwidth}\vspace{10px}\textbf{Ex }\medskip#1 \medskip\end{minipage}
-	}
-	\medskip
-	\end{center}
-}
-\newcommand{\remarque}[1]{
-	\begin{center}
-	\medskip
-	\colorbox{remarque}{
-		\begin{minipage}{0.8\textwidth}\medskip\includegraphics[height=10px]{/home/aroquemaurel/cours/includesLaTeX/images/remarque.png} #1 \medskip\end{minipage}
-	}
-	\medskip
-	\end{center}
-}
 
-\newcommand{\attention}[1]{
-	\begin{center}
-	\medskip
-	\colorbox{remarque}{
-		\begin{minipage}{0.8\textwidth}\medskip\includegraphics[height=10px]{/home/aroquemaurel/cours/includesLaTeX/images/attention.png} #1 \medskip\end{minipage}
-	}
-	\medskip
-	\end{center}
-}
+
+
+
+%----------------------------------------------------------------------------------------
+%	DEFINITION OF COLORED BOXES
+%----------------------------------------------------------------------------------------
+
+\RequirePackage[framemethod=default]{mdframed} % Required for creating the theorem, definition, exercise and corollary boxes
+
+% Theorem box
+\newmdenv[skipabove=7pt,
+skipbelow=7pt,
+backgroundcolor=black!5,
+linecolor=ocre,
+innerleftmargin=5pt,
+innerrightmargin=5pt,
+innertopmargin=5pt,
+leftmargin=0cm,
+rightmargin=0cm,
+innerbottommargin=5pt]{tBox}
+
+% Exercise box	  
+\newmdenv[skipabove=7pt,
+skipbelow=7pt,
+rightline=false,
+leftline=true,
+topline=false,
+bottomline=false,
+backgroundcolor=ocre!10,
+linecolor=ocre,
+innerleftmargin=5pt,
+innerrightmargin=5pt,
+innertopmargin=5pt,
+innerbottommargin=5pt,
+leftmargin=0cm,
+rightmargin=0cm,
+linewidth=4pt]{eBox}	
+
+% Definition box
+\newmdenv[skipabove=10pt,
+skipbelow=10pt,
+rightline=false,
+leftline=true,
+topline=false,
+bottomline=false,
+linecolor=ocre,
+innerleftmargin=5pt,
+innerrightmargin=5pt,
+innertopmargin=0pt,
+leftmargin=0cm,
+rightmargin=0cm,
+linewidth=4pt,
+innerbottommargin=0pt]{dBox}	
+
+% Corollary box
+\newmdenv[skipabove=7pt,
+skipbelow=7pt,
+rightline=false,
+leftline=true,
+topline=false,
+bottomline=false,
+linecolor=gray,
+backgroundcolor=black!5,
+innerleftmargin=5pt,
+innerrightmargin=5pt,
+innertopmargin=5pt,
+leftmargin=0cm,
+rightmargin=0cm,
+linewidth=4pt,
+innerbottommargin=5pt]{cBox}		
+
+% Corollary box
+\newmdenv[skipabove=7pt,
+skipbelow=7pt,
+rightline=true,
+leftline=false,
+topline=false,
+bottomline=true,
+linecolor=gray,
+backgroundcolor=black!5,
+innerleftmargin=5pt,
+innerrightmargin=5pt,
+innertopmargin=5pt,
+leftmargin=0cm,
+rightmargin=0cm,
+linewidth=1pt,
+innerbottommargin=5pt]{rBox}				  
+		  
+
+% Creates an environment for each type of theorem and assigns it a theorem text style from the "Theorem Styles" section above and a colored box from above
+\newenvironment{theorem}{\begin{tBox}\begin{theoremeT}}{\end{theoremeT}\end{tBox}}
+\newenvironment{example}{\begin{exampleT}}{\hfill{\tiny\ensuremath{\blacksquare}}\end{exampleT}}
+\newenvironment{definition}{\begin{dBox}\begin{definitionT}}{\end{definitionT}\end{dBox}}
+\newenvironment{attention}{\begin{eBox}\small}{\end{eBox}}				  	
+\newenvironment{exemple}{\begin{cBox}\small}{\end{cBox}}	
+
+%----------------------------------------------------------------------------------------
+%	REMARK ENVIRONMENT
+%----------------------------------------------------------------------------------------
+
+\newenvironment{remarque}{\par\vskip10pt\small
+\begin{rBox}
+\begin{list}{}{
+\leftmargin=35pt % Indentation on the left
+\rightmargin=25pt}\item\ignorespaces % Indentation on the right
+\makebox[-2.5pt]{\begin{tikzpicture}[overlay]
+\node[draw=ocre!60,line width=1pt,circle,fill=ocre!25,font=\sffamily\bfseries,inner sep=2pt,outer sep=0pt] at (-15pt,0pt){\textcolor{ocre}{R}};\end{tikzpicture}} % Orange R in a circle
+\advance\baselineskip -1pt}
+{\end{list}\vskip1mm\end{rBox}\vskip5pt} % Tighter line spacing and white space after remark
+
+
