@@ -1,0 +1,14 @@
+\select@language {french}
+\contentsline {chapter}{\numberline {1}Concept de base de donn\IeC {\'e}es et fonction d'un SGBD}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}Concepts}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}Objectifs d'une base de donn\IeC {\'e}es{}}{3}{section.1.2}
+\contentsline {section}{\numberline {1.3}Avantages}{3}{section.1.3}
+\contentsline {section}{\numberline {1.4}Le SGBD}{4}{section.1.4}
+\contentsline {section}{\numberline {1.5}Principale fonction d'un SGBD}{4}{section.1.5}
+\contentsline {subsection}{\numberline {1.5.1}Fonction de description -- Description des donn\IeC {\'e}es (LDD)}{4}{subsection.1.5.1}
+\contentsline {subsection}{\numberline {1.5.2}Fonction de Manipulation -- Manipulation des donn\IeC {\'e}es (LMD)}{5}{subsection.1.5.2}
+\contentsline {subsection}{\numberline {1.5.3}Autres fonctions}{5}{subsection.1.5.3}
+\contentsline {section}{\numberline {1.6}Types d'utilisateurs d'un SGBD}{5}{section.1.6}
+\contentsline {chapter}{\numberline {2}L'alg\IeC {\`e}bre relationnelle}{6}{chapter.2}
+\contentsline {section}{\numberline {2.1}Les op\IeC {\'e}rations ensemblistes}{6}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Union}{6}{subsection.2.1.1}

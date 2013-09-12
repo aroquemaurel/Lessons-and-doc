@@ -1,0 +1,193 @@
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage{lmodern}
+\usepackage[svgnames]{xcolor} % Required to specify font color
+\input{/home/aroquemaurel/cours/includesLaTeX/couleurs.tex}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, linkcolor=vert1, urlcolor=bleu, colorlinks=true]{hyperref}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage[francais]{minitoc}
+\usepackage[final]{pdfpages} 
+\usepackage{graphicx} % Required for box manipulation
+
+\newcommand{\titre}{Base de données}
+\newcommand{\subtitle}{SQL}
+\newcommand{\auteur}{Antoine de \bsc{Roquemaurel}}
+\newcommand{\formation}{L3 Informatique}
+\newcommand{\semestre}{5}
+\newcommand{\annee}{2013}
+\newcommand{\prof}{~}
+
+
+\newcommand{\pole}{}
+\newcommand{\sigle}{bdd}
+
+
+\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/l2/cours.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
+\newcommand{\pfp}{\texttt{pfp}}
+
+\newcommand{\ifp}{\texttt{if}}
+\newcommand{\bd}{base de données}
+\newcommand{\elsep}{\texttt{else}}
+
+\input{/home/aroquemaurel/cours/includesLaTeX/couverture.tex}
+\makeatother
+\includeonly {
+}
+\begin{document}
+	\thispagestyle{empty} % Removes page numbers
+	\titleBC 
+	\dominitoc
+	\setcounter{tocdepth}{1}
+	\setcounter{secnumdepth}{3}
+	\setcounter{minitocdepth}{1}
+	\tableofcontents
+	\chapter{Concept de base de données et fonction d'un SGBD}
+		\section{Concepts}
+		\begin{definition}
+			Un base de données est un ensemble structurée de données enregistrées sur des supports accessibles par l'ordinateur pour satisfaire
+			simultanément plusieurs utilisateurs.
+		\end{definition}
+
+		Les utilisateurs n'ont pas la même vue de la donnée, ce qui induit l'administrateur.
+		\begin{remarque}
+			On construit une \bd{} en vue de traiter plusieurs application utilisant plusieurs programmes spécifiques. 
+		\end{remarque}
+
+		\section{Objectifs d'une \bd{}}
+			\begin{description}
+				\item[Centralisation de l'information] La centralisation de l'information permet de réduire les couts matériels, réduire les couts humains\footnote{Saisie qu'une fois de l'information} et augmente la lisibilité.
+				\item[Assurer l'indépendance données / programmes] Lors de la modification de la \bd{} il faut essayer de conserver les programmes d'application.
+				\begin{description}
+					\item[Indépendance physique] Modifier la représentation physique des données sans changer les programmes.
+					\item[Indépendance logique] Modification du schéma conceptuel sans changer le programme.
+				\end{description}
+				\item[Permettre les liaisons entre les données] 
+				\item[Intégrité des données] Il faut qu'a tout moment les données soient cohérentes
+				\item[Droits d'accès] Offrir les moyens de gérer les conflits. Partage + Concurrence $\Rightarrow$ conflits
+			\end{description}
+		
+		\section{Avantages}
+		\begin{itemize}
+			\item La redondance est réduite.
+			\item Les données peuvent être partagées
+			\item Construction d'application sur des données existantes
+			\item Maintient de l'intégrité
+			\item Amélioration de la sécurité et de la disponibilité des données : Garantir une exploitation continue face aux pannes
+			\item Résolution des conflits
+			\item Les données sont relativement indépendantes des programmes
+		\end{itemize}
+
+		\section{Le SGBD}
+		\begin{definition}
+			Le Système de Gestion de Base de Données est un ensemble de programmes permettant à un utilisateur d'interagir avec une \bd
+		\end{definition}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=10cm]{sgbd.eps}
+			\caption{Système de Gestion de Base de Données}
+		\end{figure}
+		\begin{remarque}
+			Le SGBD est un écran entre les usagers et les mémoires secondaires.\\ ~
+		\end{remarque}
+		
+		Cet ensemble de programmes permet:
+		\begin{itemize}
+			\item La description des données
+			\item L'accès aux données
+			\item La mise à jour des données (insertions, modifications, destructions)
+			\item La réalisation d'associations entre les données
+			\item Le maintient de l'intégrité
+			\item La sécurité d'exploitation
+		\end{itemize}
+		\section{Principale fonction d'un SGBD}
+		\subsection{Fonction de description -- Description des données (LDD)}
+		On doit pouvoir définir les entités se rapportant à un monde réel bien précis, préciser les attributs et les liaisons entre les entités. Le LDD
+		est un outil à la disposition de l'administrateur.
+
+		\subsection{Fonction de Manipulation -- Manipulation des données (LMD)}
+		La structure de la \bd{} étant décrite : 
+		\begin{itemize}
+			\item Stocker / Changer les données
+			\item Accéder aux enregistrements pour les mettre à jour
+			\item Interroger la \bd{}
+		\end{itemize}
+
+		\subsection{Autres fonctions}
+		Sécurité, intégrité, \ldots
+
+		\section{Types d'utilisateurs d'un SGBD}
+		Différents rôles que doivent jouer une personne ou un groupe de personnes pour concevoir, créer, mettre en œuvre et exploiter une \bd{} :
+		\begin{description}
+			\item[Administrateur]~
+				\begin{itemize}
+					\item Description formelle de la \bd
+					\item Création des schémas externes pour les applications
+					\item Définition des droits d'accès
+					\item Spécifier les organisations physiques et méthodes d'accès utilisées dans l'optique de garantir les meilleures performances
+					\item Définir les procédures de sécurité
+				\end{itemize}
+			\item[Administrateur d'application] Il est chargé de décrire la portion de la base de données concernée par une application. 
+			\item[Utilisateur] 
+		\end{description}
+
+		\chapter{L'algèbre relationnelle}
+		\section{Les opérations ensemblistes}
+		Ce sont les opérations qui sont directement issues de la théorie des ensembles.
+		\subsection{Union}
+		\begin{definition}
+			Opération portant sur deux relations de même schéma $R_1$ et $R_2$ consistant à construire une relation $R_3$ de même schéma et ayant
+			pour tuples ceux appartenant à $R_1$, $R_2$ ou aux deux relations.
+		\end{definition}
+		\begin{notation}
+			$R_3 = Union(R_1, R_2)$
+		\end{notation}
+		\begin{exemple}
+			\begin{table}[H]
+			\centering
+			\begin{tabular}{c|c|c|c}
+				\textbf{Cru} & \textbf{Millésime} & \textbf{Région} & \textbf{Couleur}\\
+				\hline
+				Chablis & 2008 & Bourgogne & Blanc\\
+				Tavel & 2010 & Rhône & Rosé\\
+			\end{tabular}
+			\caption{$Vins_1$}
+		\end{table}
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{c|c|c|c}
+				\textbf{Cru} & \textbf{Millésime} & \textbf{Région} & \textbf{Couleur}\\
+				\hline
+				Lirac & 2009 & Rhône & Rouge \\
+				Tavel & 2010 & Rhône & Rosé\\
+			\end{tabular}
+			\caption{$Vins_2$}
+		\end{table}
+		$$Vins_3 = Union(Vins_1, Vins_2)$$
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{c|c|c|c}
+				\textbf{Cru} & \textbf{Millésime} & \textbf{Région} & \textbf{Couleur}\\
+				\hline
+				Chablis & 2008 & Bourgogne & Blanc\\
+				Tavel & 2010 & Rhône & Rosé\\
+				Lirac & 2009 & Rhône & Rouge \\
+			\end{tabular}
+			\caption{$Vins_3$}
+		\end{table}
+		\end{exemple}
+\end{document}
+
