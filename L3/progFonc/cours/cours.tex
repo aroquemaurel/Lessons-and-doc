@@ -1,0 +1,158 @@
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage{lmodern}
+\usepackage[svgnames]{xcolor} % Required to specify font color
+\input{/home/aroquemaurel/cours/includesLaTeX/couleurs.tex}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, linkcolor=vert1, urlcolor=bleu, colorlinks=true]{hyperref}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage[francais]{minitoc}
+\usepackage[final]{pdfpages} 
+\usepackage{graphicx} % Required for box manipulation
+
+\newcommand{\titre}{Programmation fonctionnelle 1}
+\newcommand{\subtitle}{Caml}
+\newcommand{\auteur}{Antoine de \bsc{Roquemaurel}}
+\newcommand{\formation}{L3 Informatique}
+\newcommand{\semestre}{5}
+\newcommand{\annee}{2013}
+\newcommand{\prof}{Christine \bsc{Maurel}}
+
+
+\newcommand{\pole}{}
+\newcommand{\sigle}{pf1}
+
+
+\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/l2/cours.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
+\newcommand{\pfp}{\texttt{pfp}}
+
+\newcommand{\ifp}{\texttt{if}}
+\newcommand{\elsep}{\texttt{else}}
+
+\input{/home/aroquemaurel/cours/includesLaTeX/couverture.tex}
+\makeatother
+\includeonly {
+}
+\begin{document}
+	\thispagestyle{empty} % Removes page numbers
+	\titleBC 
+	\dominitoc
+	\setcounter{tocdepth}{1}
+	\setcounter{secnumdepth}{3}
+	\setcounter{minitocdepth}{1}
+	\chapter{La programmation fonctionnelle}
+	\section{Différents paradigmes de programmation}
+	\begin{itemize}
+		\item Impératif : C, Java, Ada, \ldots
+		\item Objet: Java, C++, \ldots
+		\item Fonctionnel : Lisp, Shceme, ML, Caml, Haskell, \ldots
+		\item Déclarative ou logique : Prolog
+	\end{itemize}
+	\section{Le fonctionnel}
+	L'outil de base de la programmation fonctionnel est les fonctions. On peut les définir, les appliquer et les composer. Il n'y a pas d'affectation
+	en fonctionnel.
+
+	Le fonctionnel est partis d'une base théorique avec le $\lambda$ calcul en 1936,c'est un langage sûr. C'était d'abord non typé\footnote{Comme le
+	lisp ou, Scheme}, les langages typés sont arrivés ensuite avec la famille Ocaml vers les années 2000.
+	
+	Un langage fonctionnel typé possède plusieurs propriétés.
+	\begin{description}
+		\item[Inférence de type] On ne déclare pas le type expressément.
+		\item[Vérification de type] Vérifier à la compilation, pas de risque de problème lors de l'execution
+		\item[Polymorphe]~ 
+		\item[Syntaxe simple] Syntaxe non verbeuse, sémantique solide, environnement de développement solide, mise au point facilitée et programmation sûre
+	\end{description}
+
+	\subsection{Mode de compilation}
+	Le Caml peut être soit compilé soit interprété, l'avantage de la compilation étant l'efficacité et l'interprétation « convivial ». Historiquement
+	ceux-ci étaient uniquement compilés.
+	\chapter{Syntaxe}
+	\section{Action}
+	\begin{lstlisting}[language=Caml, caption=Syntaxe de base]
+# expression ;;
+-: valeur : type
+#
+	\end{lstlisting}
+	\begin{itemize}
+		\item Lire l'expression jusqu'au \texttt{;;}
+		\item Typer
+			\begin{itemize}
+				\item Si ko $\Rightarrow$ Message d'erreur
+				\item Si ok $\Rightarrow$ Évaluation $\Rightarrow$ << Réduire, calculer >> $\Rightarrow$ Résultat / Valeur
+			\end{itemize}
+	\end{itemize}
+	\section{Types de base}
+	\begin{tabular}{c|c|c|c|c}
+		\textbf{Type} & \textbf{Mot clé }& \textbf{Opération} & \textbf{Comparaison} & \textbf{Exemple} \\
+		\hline
+		Entiers($\mathbb Z$) & int & \texttt{+, -, *, /, mod}& \texttt{=, >, <, >=, <=, <>}&2013\\
+		Flottants & float &\texttt{+., -., *., /., sqrt, **} &Polymorphe  &2013.0\\
+		Chaines & string & \texttt{"\_\_", \^} & Polymorphe &\texttt{"coucou"}\\
+		Caractères & char &\texttt{'\_'} &\texttt{}Polymorphe & 'c'\\
+		Booléens & bool & \texttt{true, false, \&\&, ||, not}&\texttt{}Polymorphe &\\
+	\end{tabular}
+	\section{Structures de contrôles}
+	\begin{lstlisting}[language=Caml, caption=Syntaxe de la condition]
+# if condition then action else alternative ;;		
+	\end{lstlisting}
+	\begin{remarque}
+		\begin{itemize}
+			\item La condition doit être un booléen.
+			\item L'action et l'alternative doit être du même type
+		\end{itemize}
+	\end{remarque}
+	\section{Variables}
+	Un définition peut être de plusieurs type : 
+	\begin{itemize}
+		\item Globale
+		\item Locale
+		\item Simultanée
+	\end{itemize}
+~
+	\subsection{Définition globale}
+	\begin{lstlisting}[language=Caml, caption=Définition de variable]
+# let variable = expression;;
+	\end{lstlisting}
+	L'interpréteur va évaluer la valeur et donner un type à la variable, il effectue une liaison \texttt{<var,val>}.
+
+	On ajoute la liaison à l'environnement, un environnement est donc un ensemble ordonné de liaisons.
+	\subsection{Définition Locale}
+	\begin{lstlisting}[language=Caml, caption=Définition de variable]
+# let variable = expression 1
+	in expression2 ;;
+	\end{lstlisting}
+	La définition et temporaire
+	\begin{enumerate}
+		\item Évaluer l'expression dans l'environnement ourant
+		\item Ajouter à l'environnement courantla nouvelle. Liaison \texttt{var,val1}
+		\item Évaluer l'expression 2 dans ce nouvel environnement augmenté $\Rightarrow$ Résultat
+		\item Restituer environnement de départ
+	\end{enumerate}
+
+	\subsection{Définitions simultanées}
+	\begin{lstlisting}[language=Caml, caption=Définition de variable]
+# let var1 = expression1 
+and var2 = expression2
+and var3 = expression3;;
+\end{lstlisting}
+	
+
+	
+	
+
+
+
+\end{document}
