@@ -1,3 +1,59 @@
+%	THEOREM STYLES
+%----------------------------------------------------------------------------------------
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm} % For including math equations, theorems, symbols, etc
+
+\newcommand{\intoo}[2]{\mathopen{]}#1\,;#2\mathclose{[}}
+\newcommand{\ud}{\mathop{\mathrm{{}d}}\mathopen{}}
+\newcommand{\intff}[2]{\mathopen{[}#1\,;#2\mathclose{]}}
+\newtheorem{notation}{Notation}[chapter]
+
+\newtheoremstyle{ocrenum} % Theorem style name
+{7pt} % Space above
+{7pt} % Space below
+{\normalfont} % Body font
+{} % Indent amount
+{\small\bf\sffamily\color{ocre}} % Theorem head font
+{\;\;} % Punctuation after theorem head
+{0.25em} % Space after theorem head
+{\small\sffamily\color{ocre}\thmname{#1}\thmnumber{\@ifnotempty{#1}{ }\@upn{#2}} % Theorem text (e.g. Theorem 2.1)
+\thmnote{\ {\the\thm@notefont\sffamily\bfseries\color{black}--- #3.}}} % Optional theorem note
+\renewcommand{\qedsymbol}{$\blacksquare$} % Optional qed square
+
+\newtheoremstyle{blacknumex} % Theorem style name
+{7pt} % Space above
+{7pt} % Space below
+{\normalfont} % Body font
+{} % Indent amount
+{\small\bf\sffamily} % Theorem head font
+{\;\;} % Punctuation after theorem head
+{0.25em} % Space after theorem head
+{\small\sffamily{\tiny\ensuremath{\blacksquare}}\ \thmname{#1}\thmnumber{\@ifnotempty{#1}{ }\@upn{#2}} % Theorem text (e.g. Theorem 2.1)
+\thmnote{\ {\the\thm@notefont\sffamily\bfseries--- #3.}}} % Optional theorem note
+
+\newtheoremstyle{blacknum} % Theorem style name
+{7pt} % Space above
+{7pt} % Space below
+{\normalfont} % Body font
+{} % Indent amount
+{\small\bf\sffamily} % Theorem head font
+{\;\;} % Punctuation after theorem head
+{0.25em} % Space after theorem head
+{} % Optional theorem note
+\makeatother
+
+% Defines the theorem text style for each type of theorem to one of the three styles above
+\theoremstyle{ocrenum}
+\newtheorem{theoremeT}{Theorem}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\newtheorem{problem}{Problem}[chapter]
+\newtheorem{attentionT}{}[chapter]
+\theoremstyle{blacknumex}
+\newtheorem{exampleT}{Example}[chapter]
+\theoremstyle{blacknum}
+\newtheorem{vocabulary}{Vocabulary}[chapter]
+\newtheorem{definitionT}{Definition}[chapter]
+\newtheorem{exempleT}{}[chapter]
 
 
 
