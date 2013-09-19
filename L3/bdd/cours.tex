@@ -189,5 +189,213 @@
 			\caption{$Vins_3$}
 		\end{table}
 		\end{exemple}
+		\subsection{Différence}
+		\begin{definition}
+			Opération portant sur deux relations de même schéma $R_1$ et $R_2$ consistant à construire une relation $R_3$ de même schéma ayant pour
+			tuples ceux appartenant à $R_1$ et n'appartenant pas à $R_2$.
+		\end{definition}
+
+		\begin{notation}
+			$R = difference(R_1,R_2)$
+		\end{notation}
+		\begin{exemple}
+			\begin{table}[H]
+			\centering
+			\begin{tabular}{c|c|c|c}
+				\textbf{Cru} & \textbf{Millésime} & \textbf{Région} & \textbf{Couleur}\\
+				\hline
+				Chablis & 2008 & Bourgogne & Blanc\\
+				Tavel & 2010 & Rhône & Rosé\\
+			\end{tabular}
+			\caption{$Vins_1$}
+		\end{table}
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{c|c|c|c}
+				\textbf{Cru} & \textbf{Millésime} & \textbf{Région} & \textbf{Couleur}\\
+				\hline
+				Lirac & 2009 & Rhône & Rouge \\
+				Tavel & 2010 & Rhône & Rosé\\
+			\end{tabular}
+			\caption{$Vins_2$}
+		\end{table}
+		$$Vins_3 = difference(Vins_1, Vins_2)$$
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{c|c|c|c}
+				\textbf{Cru} & \textbf{Millésime} & \textbf{Région} & \textbf{Couleur}\\
+				\hline
+				Chablis & 2008 & Bourgogne & Blanc
+			\end{tabular}
+			\caption{$Vins_3$}
+		\end{table}
+		\end{exemple}
+		\subsection{Produit}
+		\begin{definition}
+			Opération portant sur deux relations $R_1$ et $R_2$ consistant à construire une relation $R_3$ ayant pour schéma la concaténation
+			de ceux de $R_1$ et $R_2$ et pour tuples les combinaisons des tuples de $R_1$ et $R_2$.
+		\end{definition}
+		\begin{notation}
+			$R_3 =  pc(R_1, R_2)$
+		\end{notation}
+		\begin{exemple}
+			\begin{table}[H]
+			\centering
+			\begin{tabular}{c|c|c|c}
+				\textbf{Cru} & \textbf{Millésime} & \textbf{Région} & \textbf{Couleur}\\
+				\hline
+				Chablis & 2008 & Bourgogne & Blanc\\
+				Tavel & 2010 & Rhône & Rosé\\
+			\end{tabular}
+			\caption{$Vins_3$}
+		\end{table}
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{c|c|c|c}
+				\textbf{Cru} & \textbf{Millésime} & \textbf{Région} & \textbf{Couleur}\\
+				\hline
+				Lirac & 2009 & Rhône & Rouge \\
+				Tavel & 2010 & Rhône & Rosé\\
+			\end{tabular}
+			\caption{$Vins_2$}
+		\end{table}
+		$$Vins_6 = produit(Vins_1, Vins_2)$$
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{c|c|c|c}
+				\textbf{Cru} & \textbf{Millésime} & \textbf{Région} & \textbf{Couleur}\\
+				\hline
+				Chablis & 2008 & Bourgogne & Blanc\\
+				Tavel & 2010 & Rhône & Rosé\\
+				Lirac & 2009 & Rhône & Rouge \\
+				Tavel & 2010 & Rhône & Rosé\\
+			\end{tabular}
+			\caption{$Vins_6$}
+		\end{table}
+		\end{exemple}
+		\section{Les opérations spécifiques}
+		\subsection{Projection}
+		\begin{definition}
+			Opération sur une relation $R_1$ consistant à construire une relation $R_2$ en enlevant de $R_1$ tous les attributs non mentionnés en
+			opérande.
+		\end{definition}
+		\begin{notation}
+			$R_2 = \Pi_{attr_1, attr_2, \ldots, attr_n}(R_1)$
+		\end{notation}
+		\begin{exemple}
+		\begin{table}[H]
+			\centering
+			$vins_7 = \Pi_{cru, region}(vins_6)$\\
+			\begin{tabular}{c|c|c|c}
+				\textbf{Cru} & \textbf{Région} \\
+				\hline
+				Chablis &Bourgogne \\
+				Tavel & Rhône \\
+				Lirac & Rhône \\
+				Tavel & Rhône \\
+			\end{tabular}
+			\caption{$Vins_7$}
+		\end{table}
+	\end{exemple}
+
+	\subsection{Restriction}
+	\begin{definition}
+	Opération sur une relation $R_1$ produisant une relation $R_2$ de même schéma mais comportant uniquement les tuples vérifiant la
+	condition booléenne précisée en argument.
+	\end{definition}
+	\begin{notation}
+		$R_2 = \sigma_{condition}(R_1)$
+	\end{notation}
+	\begin{exemple}
+		$Vins_8 = \sigma_{region='Rhone'}(vins_6)$
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{c|c|c|c}
+				\textbf{Cru} & \textbf{Millésime} & \textbf{Région} & \textbf{Couleur}\\
+				\hline
+				Tavel & 2010 & Rhône & Rosé\\
+				Lirac & 2009 & Rhône & Rouge \\
+			\end{tabular}
+			\caption{$Vins_8$}
+		\end{table}
+	\end{exemple}
+
+	\section{Les opérations dérivées}
+	\subsection{Jointure}
+	\begin{definition}
+		Opération consistant à rapprocher les tuples de deux relations $R_1$ et $R_2$ afin de former une relation $R_3$ dont les attributs
+		sont l'union de attributs de $R_1$ et $R_2$ et un tuple de $R_2$ vérifiant la condition précisée en argument.
+	\end{definition}
+	\begin{notation}
+		$R_3 = join(R_1, R_2, cond)$
+	\end{notation}
+	\begin{exemple}
+		$Vins_{10} = join(Vins_7, Vins_9, vins_7, cru=vins9.cru)$
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{c|c|c|c}
+				\textbf{Cru} & \textbf{Millésime} & \textbf{Région} & \textbf{Couleur}\\
+				\hline
+				Chablis & 2008 & Bourgogne & Blanc\\
+				Tavel & 2010 & Rhône & Rosé\\
+			\end{tabular}
+			\caption{$Vins_9$}
+		\end{table}
+	\end{exemple}
+
+		L'opération de jointure est dérivée de l'opération de multiplication suivie d'une restriction: $join(R_1,R_2,cond) = \sigma_{cond}(pc(R_1,R_2))$
+
+	\subsection{Intersection}
+	\begin{definition}
+		Opération portant sur deux relations $R_1$ et $R_2$ de même schéma consistant à construire une relation $R_3$ de même schéma ayant pour tuples
+		ceux appartenant à $R_1$ et appartenant à $R_2$.
+	\end{definition}
+	\begin{notation}
+		$R_3 = intersect(R_1, R_2)$
+	\end{notation}
+
+	L'opération d'intersection est dérivée de deux différences : \\$intersect(R_1, R_2) = difference(R_1, difference(R_1, R_2))$.
+
+	\subsection{Division}
+	To be continued\ldots
+
+	\begin{definition}
+		
+	\end{definition}
+
+	\begin{notation}
+		
+	\end{notation}
+
+	\section{Expression de l'algèbre relationnelle}
+	A partir de l'algèbre relationnelle il est possible de composer un langage algébrique.
+	\subsection{Opérateur algébriques}
+	Comment obtenir les couleurs de vins de cru Morgon ou Volnay ? 	
+
+	Deux solutions sont possibles : 
+	\subsubsection{Opérateur algébriques}
+	\begin{eqnarray*}
+		T_1 &=& \sigma_{cru='morgon'}(vins)\\
+		T_2 &=&  \sigma_{cru='volnay'}(vins)\\
+		T_3 &=& union(T_1, T_2)\\
+		resultat &=& \Pi_{couleur}(T3)\\
+	\end{eqnarray*}
+
+	\subsubsection{Langage algébrique}
+	Une autre solution, plus performante permettant de ne pas utiliser de variables temporaires en utilisant le langage algébrique : 
+	\begin{eqnarray*}
+		\Pi_{couleur}(union(\sigma_{cru='morgon'}(vins), \sigma_{cru='volvay'}(vins))
+	\end{eqnarray*}
+
+	\subsubsection{Arbre algébrique}
+	celui-ci peut aussi être représentée sous forme d'un arbre relationnel. Les n\oe{}ud correspondent au représentation graphiques des opérations et
+	les arcs aux flots de données entre les opérations.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=15cm]{arbreRelationnel.eps}
+		\caption{Arbre relationnel}
+	\end{figure}
+
 \end{document}
+
 
