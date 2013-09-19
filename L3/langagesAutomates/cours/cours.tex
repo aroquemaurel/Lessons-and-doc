@@ -137,9 +137,50 @@
 		\end{itemize}
 	\end{attention}
 
-\item $L \subseteq X^*$ $L^* = \bigcup_{n >= 0}L^n$ avec $L^n$ tel que $L^0 = \lambda$
+\item $L \subseteq X^*$ Langage\\
+$L^* = \bigcup_{n >= 0}L^n$ avec $L^n$ tel que $L^0 = \lambda$
+	\begin{displaymath}
+	L^n
+	\left\{\begin{array}{ccc}si & n=0 & L^0=\{\lambda\}\\
+		\;&n>0&L^n=L.L^{n-1}
+	\end{array}\right.
+	\end{displaymath}
 	\end{itemize}
+	\chapter{Grammaire}
+		Dérivation, arbre de dérivation, ambigüité, langage engendré, classification
 
+		\begin{definition}
+			Moyen précis, concis, explicite pour exprimer comment sont construit les mots d'un langage. Une grammaire $G=<N, X, P, S>$\\
+			\begin{itemize}
+				\item X: alphabet, ensemble de terminaux(minuscule).
+				\item N : ensemble de non terminaux (majuscule)
+				\item S : axiome, $S\in N$
+				\item P : ensemble de règle de production (réécriture) $=\{\lambda \rightarrow \beta, \lambda \in(NUX)^+, \beta\in(NUX)^*\}$
+					\begin{exemple}
+						\begin{eqnarray*}
+							G'_1 &=&  <N,X,P,S>\\
+							N &=&  \{S,A\} X\{a,b,c\}\\
+							P&=& \{S \rightarrow aAc\\
+							&&\ A \rightarrow bAb\\
+							&&\ A \rightarrow b\}
+						\end{eqnarray*}
+					\end{exemple}
+			\end{itemize}
+		\end{definition}
+		\section{Dérivation}
+			\begin{eqnarray*}
+				G &=&  <N,X,P,S>\\
+				W &\in& (NUX)^+\\
+				w_1&\in& (NUX)^* 
+			\end{eqnarray*}
+			w se dérive en $w_1$. Si $\exists x, y \in (NUX)^*$ tel que $w=xuy$ et $w_1=xvy$ avec $u\rightarrow v \in p$
 
+			w se dérive en plusieurs étapes en w.
+			\begin{definition}
+				Un arbre de dérivation est un outil visuel pour exprimer la dérivation des mots.
+			\end{definition}
+			Soit G une grammaire $= <N,X,P,S>$, le langage engendré par $G=L(G)$ est $=$ l'ensemble de tous les mots de $X^*$ que l'on peut engendré à
+			a partir de l'axiome S.
 
+			$L(G) = \{w \in X^*/S\Rightarrow^* w\}$
 \end{document}

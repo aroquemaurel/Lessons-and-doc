@@ -126,7 +126,8 @@
 	\begin{lstlisting}[language=Caml, caption=Définition de variable]
 # let variable = expression;;
 	\end{lstlisting}
-	L'interpréteur va évaluer la valeur et donner un type à la variable, il effectue une liaison \texttt{<var,val>}.
+	L'interpréteur va évaluer la valeur et donner un type à la variable, il effectue une liaison \texttt{<var,val>}, ceci peut aussi s'appeler une
+	fermeture.
 
 	On ajoute la liaison à l'environnement, un environnement est donc un ensemble ordonné de liaisons.
 	\subsection{Définition Locale}
@@ -149,10 +150,49 @@ and var2 = expression2
 and var3 = expression3;;
 \end{lstlisting}
 	
-
-	
-	
-
+\section{Fonctions}
+\subsection{Définition}
+	\begin{lstlisting}[language=Caml, caption=Sytaxe d'une définition de fonction]
+# fun param -> corps;;		
+# function param -> corps;;
+\end{lstlisting}
+		\begin{remarque}{Il existe une différence entre \texttt{fun} et \texttt{function}, cette différence sera vu plus tard}\\~\end{remarque}
+			\begin{exemple}
+	\begin{lstlisting}[language=Caml, caption=Sytaxe d'une définition de fonction, numbers=none]
+# fun x -> x + 1;;		
+int -> int = <fun>
+# let succ = func x -> x + 1;; 
+succ: int -> int = <fun>
+\end{lstlisting}
+				\end{exemple}
+				\subsection{Application}
+				\subsubsection{Valeur d'une fonction dans un environnement $\Gamma$}
+				Évaluer une fonction \texttt{fun x -> corps} dans $\Gamma$ nous donne la fermeture suivante $<\Gamma, x, cors>$
+				\subsubsection{Application d'une fonction à un argument dans $\Gamma_2$}
+				\begin{itemize}
+					\item Évaluer f dans $\Gamma_1$
+					\item Évaluer a dans $\Gamma_1$ Soit v la valeur de a dans $\Gamma_1$
+					\item Soit $<\Gamma, x, corps>$ la valeur de f dans $\Gamma_1$
+					\item On << branche x et v >> et on évalue le corps de la fonction dans l'environnement où x est lié à v a été ajouté à $\Gamma$
+					\item Résultat
+				\end{itemize}
+			\begin{exemple}
+	\begin{lstlisting}[language=Caml, caption=Exemple d'utilisation de fonctions, numbers=none]
+# let x = 2013;;
+val x : int = 2013
+# let y = x + 10
+	and z = x * 10;;
+val y : int = 2013 z = int : 20130
+# let f = func x -> x + z + y;;
+val f: int -> int = <fun>
+# f(y+1);;
+\end{lstlisting}
+			\end{exemple}
+			\subsection{Fonction à n paramètres}
+	\begin{lstlisting}[language=Caml, caption=Sytaxe d'une définition de fonction à n paramètres, numbers=none]
+# fun x1 -> fun x2 -> fun x3 -> ... -> fun xn -> corps;;
+# fun x1 x2 x3 ... xn -> corps;;
+\end{lstlisting}
 
 
 \end{document}
