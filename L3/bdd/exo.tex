@@ -1,0 +1,34 @@
+\chapter{Exercices}
+\section{Algèbres relationnel}
+\subsection{Opérateurs algébriques}
+\texttt{ vins(numv, cru, mill, region, degré) } \\
+\texttt{ buveurs(nums, nom, prenom, ville) } \\	
+\texttt{ abus(nomv, nomb, date, quantite, place) } \\
+
+	
+\begin{attention}
+Avec les opérateurs algébriques et uniquement les opérateurs de base. 
+\end{attention}
+
+\subsubsection{ Donner le degré des vins de cru Morgon et Millésime 2001 }
+\begin{eqnarray*}
+	T_1 &=& \sigma_{cru='morgon'~and~mill=2001}(vins)\\
+	T_2 &=& \pi_{degré}(T_2)
+\end{eqnarray*}
+\subsubsection{Numéro des buveurs de Chenas}
+\begin{eqnarray*}
+	T_1 &=& \sigma_{cru='chenas'}\\
+	T_2 &=&  pc(T_1, abus)\\
+	T_3 &=& \sigma_{T_1.numV = abus.numV}(T_2)\\
+	Res &=& \Pi_{numB}(T3)
+\end{eqnarray*}
+
+\subsubsection{Nom et prénom des buveurs de chénon et de Tariquet}
+\remarque{Autorisation d'utiliser le join\\~}
+
+\begin{eqnarray*}
+	T_1 &=&  \sigma_{cru='chenon' ou cru='tariquet'}(vins)\
+	T_2&=&   join(T_1, abus, T_2.numV= abus.numV)\\
+	T_3 &=& join(T_2, buveurs, T_2.numB=buveurs.numB)\\
+	Res &=& \Pi_{nom, prenom}(T_3)
+\end{eqnarray*}
