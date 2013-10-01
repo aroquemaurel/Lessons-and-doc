@@ -13,7 +13,7 @@ Avec les opérateurs algébriques et uniquement les opérateurs de base.
 \subsubsection{ Donner le degré des vins de cru Morgon et Millésime 2001 }
 \begin{eqnarray*}
 	T_1 &=& \sigma_{cru='morgon'~and~mill=2001}(vins)\\
-	T_2 &=& \pi_{degré}(T_2)
+	T_2 &=& \pi_{degré}(T_1)
 \end{eqnarray*}
 \subsubsection{Numéro des buveurs de Chenas}
 \begin{eqnarray*}
@@ -24,11 +24,41 @@ Avec les opérateurs algébriques et uniquement les opérateurs de base.
 \end{eqnarray*}
 
 \subsubsection{Nom et prénom des buveurs de chénon et de Tariquet}
-\remarque{Autorisation d'utiliser le join\\~}
+\begin{remarque}{Autorisation d'utiliser le join\\~}\end{remarque}
 
 \begin{eqnarray*}
-	T_1 &=&  \sigma_{cru='chenon' ou cru='tariquet'}(vins)\
+	T_1 &=&  \sigma_{cru='chenon'\ ou\ cru='tariquet'}(vins)\\
 	T_2&=&   join(T_1, abus, T_2.numV= abus.numV)\\
 	T_3 &=& join(T_2, buveurs, T_2.numB=buveurs.numB)\\
 	Res &=& \Pi_{nom, prenom}(T_3)
 \end{eqnarray*}
+
+\subsubsection{Noms des buveurs ayant bu uniquement du Tavel}\label{q4}
+\begin{eqnarray*}
+	T_1 &=& \sigma_{cru = 'Tavel'}(vins)\\
+	T_2 &=& \sigma_{cru \neq tavel}(vins)\\
+	T_3 &=& join(abus, T_1, t_1.numv=abus.numv)\\
+	T_4 &=& join(abus, T_2, T_2.numv=abus.numv)\\
+	T_5 &=& \Pi_{numB}(T_3)\\
+	T_6 &=& \Pi_{numB}(T_4)\\
+	T_7 &=& difference(T_5, T_6)\\
+	T_8 &=& join(T_7,\ buveurs,\ T_7.numB = buveurs.num7)\\
+	Res &=& \Pi_{nom}(T_8)
+\end{eqnarray*}
+\subsubsection{Écrire \ref{q4} en langage algébrique} 
+\begin{eqnarray*}
+	&&\Pi_{nom}(join(difference(\Pi_{numB}(\\
+	&&join(abus a, \sigma_{cru='Tavel'}(vins), abus.numv=vins.numv)), \\
+	&&\Pi_{numB}(join(abus, \sigma_{cru\neq 'tavel'(vins)}, abus.numv=vins.numv))),\\
+	&& buveurs, a.numB=buveurs.numB))
+\end{eqnarray*}
+\subsection{Arbres algébriques}
+\texttt{Trafic(nTrain, nLige, gare)} \\
+\texttt{Trains(nTrains, nRegion)} \\	
+\texttt{lignes(nLignes, rang, gare)} \\
+\texttt{wagons(nWagon, type, poidsVide, capacie, etat)} \\
+\subsubsection{Types de wagons du train 4001}
+\subsubsection{Numéro et types des wagons des ligne l11 et l12}
+\subsubsection{Numéro des wagons communcs aux lignes l11 e l12}
+\subsubsection{Numéro des trains ayant au moins 2 wagons vides}
+\subsubsection{Liste des gares de dessertes pour le train 4001}
