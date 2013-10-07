@@ -53,6 +53,7 @@
 	\setcounter{tocdepth}{1}
 	\setcounter{secnumdepth}{3}
 	\setcounter{minitocdepth}{1}
+	\tableofcontents
 	\chapter{La programmation fonctionnelle}
 	\section{Différents paradigmes de programmation}
 	\begin{itemize}
@@ -158,7 +159,7 @@ and var3 = expression3;;
 \end{lstlisting}
 		\begin{remarque}{Il existe une différence entre \texttt{fun} et \texttt{function}, cette différence sera vu plus tard}\\~\end{remarque}
 			\begin{exemple}
-	\begin{lstlisting}[language=Caml, caption=Sytaxe d'une définition de fonction, numbers=none]
+	\begin{lstlisting}[language=Caml, caption=Sytaxe d'une définition de fonction, numbers=none, framerule=0pt]
 # fun x -> x + 1;;		
 int -> int = <fun>
 # let succ = func x -> x + 1;; 
@@ -194,5 +195,82 @@ val f: int -> int = <fun>
 # fun x1 x2 x3 ... xn -> corps;;
 \end{lstlisting}
 
+Une fonction à N paramètre fonctionne à l'aide de N fonctions à 1 paramètre.  
+\subsection{Application partielle}
+	\begin{lstlisting}[language=Caml, caption=Application partielle, numbers=none]
+# let creerPredPGQ = fun x -> fun y -> x > y;;
+# let plusGrandQue10 = fun creePredPGQ 10;
+# plusGrandQue10 5;;
+- : bool = false 
+\end{lstlisting}
+\section{Nuplets}
+Permet de rassembler eds informations dont on connait à l'avance le nombre et le type éventuellement hétérogène.
+	\begin{lstlisting}[language=Caml, caption=Syntaxe de n-uplets, numbers=none]
+(x1, x2, ..., xn)		
+tx1 * tx2 * ... * txn
+\end{lstlisting}
+
+\begin{exemple}
+	\begin{lstlisting}[language=Caml, caption=Exemple n-uplets, numbers=none, framerule=0pt]
+# (1, 2, 3);;
+-: int * int * int = 1, 2, 3
+# (1, (2,3));; 
+int * (int * int)
+# let first = fun (x,y) -> x ;;
+val first = ('a*'b) -> 'a = <fun>
+# let consCple = fun x -> fun y -> (x, y);;
+val consCple = 'a -> 'b -> ('a*'b) = <fun>
+\end{lstlisting}
+\end{exemple}
+
+\section{Filtrage (pattern matching)}
+	Filtre ou motif, permet d'exprimer la syntaxe d'une donnée. On écrit la fonction par cas, c'est-à-dire on filtre la donnée avec un
+	filtre\footnote{ou pattern}.
+	\begin{lstlisting}[language=Caml, caption=Syntaxe du filtrage, numbers=none]
+match expr with
+pat1 -> expr1
+| pat2 -> expr2
+| pat31|pat32|pat33 -> expr3 (* un des pattern retourne expr3 *)
+| patn -> exprn
+| _ -> not b;; (* default *)
+	\end{lstlisting}
+	On examine en séquence et essaye de filtrer successivement l'expression avec le pattern i, le premier à marcher sera appliqué. 
+
+	\begin{remarque}
+		Les pattern doivent tous être de même type afin que cela fonctionne.\\~
+	\end{remarque}
+\begin{exemple}
+	\begin{lstlisting}[language=Caml, caption=Exemple filtrage, numbers=none, framerule=0pt]
+# let nand = fun a -> fun b -> 
+match a with false -> true
+			| _ -> not b;;
+
+\end{lstlisting}
+Écrire la fonction d'implication.
+\begin{tabular}{c|c||c}
+	A&B&A$\rightarrow$B\\
+	T&T&T\\
+	T&F&F\\
+	F&T&T\\
+	F&F&T\\
+\end{tabular}
+	\begin{lstlisting}[language=Caml, caption=Exemple filtrage -- Implication, numbers=none, framerule=0pt]
+# let impl = fun a -> fun b -> 
+	match (a,b) with 
+	 (true,true) -> true
+	|(true,false) -> false
+	|(false,true) -> true
+	|(false,false) -> true;;
+(* Autre manière plus élégante *)
+# let imp = fun a -> fun b -> 
+	match (a,b) with
+	 (true, false) -> false
+	|_ -> true;;
+\end{lstlisting}
+\end{exemple}
+
+
+\appendix
+\lstlistoflistings
 
 \end{document}

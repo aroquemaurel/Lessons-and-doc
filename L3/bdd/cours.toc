@@ -31,3 +31,9 @@
 \contentsline {subsection}{\numberline {A.1.1}Op\IeC {\'e}rateurs alg\IeC {\'e}briques}{12}{subsection.A.1.1}
 \contentsline {subsubsection}{\numberline {A.1.1.1} Donner le degr\IeC {\'e} des vins de cru Morgon et Mill\IeC {\'e}sime 2001 }{12}{subsubsection.A.1.1.1}
 \contentsline {subsubsection}{\numberline {A.1.1.2}Num\IeC {\'e}ro des buveurs de Chenas}{12}{subsubsection.A.1.1.2}
+\contentsline {subsubsection}{\numberline {A.1.1.3}Nom et pr\IeC {\'e}nom des buveurs de ch\IeC {\'e}non et de Tariquet}{12}{subsubsection.A.1.1.3}
+\contentsline {subsubsection}{\numberline {A.1.1.4}Noms des buveurs ayant bu uniquement du Tavel}{13}{subsubsection.A.1.1.4}
+\contentsline {subsubsection}{\numberline {A.1.1.5}\IeC {\'E}crire \ref {q4} en langage alg\IeC {\'e}brique}{13}{subsubsection.A.1.1.5}
+\contentsline {subsection}{\numberline {A.1.2}Arbres alg\IeC {\'e}briques}{13}{subsection.A.1.2}
+\contentsline {subsubsection}{\numberline {A.1.2.1}Types de wagons du train 4001}{13}{subsubsection.A.1.2.1}
+\contentsline {subsubsection}{\numberline {A.1.2.2}Num\IeC {\'e}ro et types des wagons des ligne l11 et l22}{13}{subsubsection.A.1.2.2}
