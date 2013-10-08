@@ -1,0 +1,99 @@
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage{lmodern}
+\usepackage[svgnames]{xcolor} % Required to specify font color
+\input{/home/aroquemaurel/cours/includesLaTeX/couleurs.tex}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, linkcolor=vert1, urlcolor=bleu, colorlinks=true]{hyperref}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage[francais]{minitoc}
+\usepackage[final]{pdfpages} 
+\usepackage{graphicx} % Required for box manipulation
+
+\newcommand{\titre}{Réseaux}
+\newcommand{\subtitle}{~}
+\newcommand{\auteur}{Antoine de \bsc{Roquemaurel}}
+\newcommand{\formation}{L3 Informatique}
+\newcommand{\semestre}{5}
+\newcommand{\annee}{2013}
+\newcommand{\prof}{Jean-Marc \bsc{Pierson} -- Michelle \bsc{Sibilla}}
+
+
+\newcommand{\pole}{}
+\newcommand{\sigle}{pf1}
+
+
+\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/l2/cours.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
+\newcommand{\pfp}{\texttt{pfp}}
+
+\newcommand{\ifp}{\texttt{if}}
+\newcommand{\elsep}{\texttt{else}}
+
+\input{/home/aroquemaurel/cours/includesLaTeX/couverture.tex}
+\makeatother
+\includeonly {
+}
+\begin{document}
+	\thispagestyle{empty} % Removes page numbers
+	\titleBC{} 
+	\dominitoc
+	\setcounter{tocdepth}{1}
+	\setcounter{secnumdepth}{3}
+	\setcounter{minitocdepth}{1}
+	\chapter*{Avant-propos}
+	\section*{Équipe enseignante}
+	\begin{itemize}
+		\item Jean-Marc \bsc{Pierson}
+		\item Michelle \bsc{Sibilla}
+		\item Rabin \bsc{Kacimi}
+		\item George \bsc{Da Costa}
+	\end{itemize}
+	\section*{Plan}
+	\begin{enumerate}
+		\item Architecture en couche OSI -- Ethernet
+		\item Couche Réseau -- TCP / ICMP
+		\item Couche Transport -- TCP / UDP
+		\item Sécurité, administration
+	\end{enumerate}
+	\section*{Livres}
+	\begin{itemize}
+		\item A. Tanenbaum
+		\item G. Pujolle
+	\end{itemize}
+	\chapter{Modèle OSI}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=13cm]{osi-model.png}
+	\end{figure}
+	\begin{description}
+		\item[Application]
+		\item[Présentation]
+		\item[Session]
+		\item[Transport] Contrôle de bout en bout
+		\item[Réseau] Routage, IP, Adressage, contrôle de congestion
+		\item[Liaison de données] Ethernet. Contrôle de flux, contrôle d'erreur
+		\item[Physique] Transforme les données en signal
+	\end{description}
+	\begin{description}
+		\item[Notion de service] la couche offre des services à la coche immédiatement supérieur en s'appuyant sur ceux offerts par celle immédiatement inférieure.
+		\item[Notion d'encapsulation] Comment encapsuler le données venant de la couche supérieur pour --- les services offert à la couche
+	\end{description}
+
+	\chapter{Connexion}
+	\begin{description}
+		\item[Connexion] S'assurer de la présence du destinataire avant de communiquer
+	\end{description}
+\end{document}
