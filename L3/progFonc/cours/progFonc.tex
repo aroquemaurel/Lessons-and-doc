@@ -1,0 +1,26 @@
+\chapter{La programmation fonctionnelle}
+\section{Différents paradigmes de programmation}
+\begin{itemize}
+	\item Impératif : C, Java, Ada, \ldots
+	\item Objet: Java, C++, \ldots
+	\item Fonctionnel : Lisp, Shceme, ML, Caml, Haskell, \ldots
+	\item Déclarative ou logique : Prolog
+\end{itemize}
+\section{Le fonctionnel}
+L'outil de base de la programmation fonctionnel est les fonctions. On peut les définir, les appliquer et les composer. Il n'y a pas d'affectation
+en fonctionnel.
+
+Le fonctionnel est partis d'une base théorique avec le $\lambda$ calcul en 1936,c'est un langage sûr. C'était d'abord non typé\footnote{Comme le
+lisp ou, Scheme}, les langages typés sont arrivés ensuite avec la famille Ocaml vers les années 2000.
+
+Un langage fonctionnel typé possède plusieurs propriétés.
+\begin{description}
+	\item[Inférence de type] On ne déclare pas le type expressément.
+	\item[Vérification de type] Vérifier à la compilation, pas de risque de problème lors de l'execution
+	\item[Polymorphe]~ 
+	\item[Syntaxe simple] Syntaxe non verbeuse, sémantique solide, environnement de développement solide, mise au point facilitée et programmation sûre
+\end{description}
+
+\subsection{Mode de compilation}
+Le Caml peut être soit compilé soit interprété, l'avantage de la compilation étant l'efficacité et l'interprétation « convivial ». Historiquement
+ceux-ci étaient uniquement compilés.

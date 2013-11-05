@@ -1,0 +1,123 @@
+\chapter{Syntaxe de base}
+\section{Action}
+\begin{lstlisting}[language=Caml, caption=Syntaxe de base]
+# expression ;;
+-: valeur : type
+#
+\end{lstlisting}
+\begin{itemize}
+	\item Lire l'expression jusqu'au \texttt{;;}
+	\item Typer
+		\begin{itemize}
+			\item Si ko $\Rightarrow$ Message d'erreur
+			\item Si ok $\Rightarrow$ Évaluation $\Rightarrow$ << Réduire, calculer >> $\Rightarrow$ Résultat / Valeur
+		\end{itemize}
+\end{itemize}
+\section{Types de base}
+\begin{tabular}{c|c|c|c|c}
+	\textbf{Type} & \textbf{Mot clé }& \textbf{Opération} & \textbf{Comparaison} & \textbf{Exemple} \\
+	\hline
+	Entiers($\mathbb Z$) & int & \texttt{+, -, *, /, mod}& \texttt{=, >, <, >=, <=, <>}&2013\\
+	Flottants & float &\texttt{+., -., *., /., sqrt, **} &Polymorphe  &2013.0\\
+	Chaines & string & \texttt{"\_\_", \^} & Polymorphe &\texttt{"coucou"}\\
+	Caractères & char &\texttt{'\_'} &\texttt{}Polymorphe & 'c'\\
+	Booléens & bool & \texttt{true, false, \&\&, ||, not}&\texttt{}Polymorphe &\\
+\end{tabular}
+\section{Structures de contrôles}
+\subsection{Conditions}
+\begin{lstlisting}[language=Caml, caption=Syntaxe de la condition]
+# if condition then action else alternative ;;		
+\end{lstlisting}
+\begin{remarque}
+	\begin{itemize}
+		\item La condition doit être un booléen.
+		\item L'action et l'alternative doit être du même type
+	\end{itemize}
+\end{remarque}
+\subsection{Filtrage (pattern matching)}
+	Filtre ou motif, permet d'exprimer la syntaxe d'une donnée. On écrit la fonction par cas, c'est-à-dire on filtre la donnée avec un
+	filtre\footnote{ou pattern}.
+	\begin{lstlisting}[language=Caml, caption=Syntaxe du filtrage, numbers=none]
+match expr with
+pat1 -> expr1
+| pat2 -> expr2
+| pat31|pat32|pat33 -> expr3 (* un des pattern retourne expr3 *)
+| patn -> exprn
+| _ -> not b;; (* default *)
+	\end{lstlisting}
+	On examine en séquence et essaye de filtrer successivement l'expression avec le pattern i, le premier à marcher sera appliqué. 
+
+	\begin{attention}
+		Les pattern doivent tous être de même type afin que cela fonctionne.\\~
+	\end{attention}
+\begin{exemple}
+	Les exemples ci-dessous utilisent des fonctions, celles-ci sont détaillées dans le chapitre \ref{fonctions}.
+	\begin{lstlisting}[language=Caml, caption=Exemple filtrage, numbers=none, framerule=0pt]
+# let nand = fun a -> fun b -> 
+match a with false -> true
+			| _ -> not b;;
+
+\end{lstlisting}
+Écrire la fonction d'implication.
+\begin{tabular}{c|c||c}
+	A&B&A$\rightarrow$B\\
+	T&T&T\\
+	T&F&F\\
+	F&T&T\\
+	F&F&T\\
+\end{tabular}
+	\begin{lstlisting}[language=Caml, caption=Exemple filtrage -- Implication, numbers=none, framerule=0pt]
+# let impl = fun a -> fun b -> 
+	match (a,b) with 
+	 (true,true) -> true
+	|(true,false) -> false
+	|(false,true) -> true
+	|(false,false) -> true;;
+(* Autre manière plus élégante *)
+# let imp = fun a -> fun b -> 
+	match (a,b) with
+	 (true, false) -> false
+	|_ -> true;;
+\end{lstlisting}
+\end{exemple}
+
+\section{Variables}
+Un définition peut être de plusieurs type : 
+\begin{itemize}
+	\item Globale
+	\item Locale
+	\item Simultanée
+\end{itemize}
+~
+\subsection{Définition globale}
+\begin{lstlisting}[language=Caml, caption=Définition de variable]
+# let variable = expression;;
+\end{lstlisting}
+L'interpréteur va évaluer la valeur et donner un type à la variable, il effectue une liaison \texttt{<var,val>}, ceci peut aussi s'appeler une
+fermeture.
+
+On ajoute la liaison à l'environnement, un environnement est donc un ensemble ordonné de liaisons.
+\subsection{Définition Locale}
+\begin{lstlisting}[language=Caml, caption=Définition de variable]
+# let variable = expression 1
+in expression2 ;;
+\end{lstlisting}
+La définition et temporaire
+\begin{enumerate}
+	\item Évaluer l'expression dans l'environnement ourant
+	\item Ajouter à l'environnement courantla nouvelle. Liaison \texttt{var,val1}
+	\item Évaluer l'expression 2 dans ce nouvel environnement augmenté $\Rightarrow$ Résultat
+	\item Restituer environnement de départ
+\end{enumerate}
+
+\subsection{Définitions simultanées}
+\begin{lstlisting}[language=Caml, caption=Définition de variable]
+# let var1 = expression1 
+and var2 = expression2
+and var3 = expression3;;
+\end{lstlisting}
+
+\section{Exceptions}
+Dans le cas où on ne veut pas rattraper une exception, celles-ci peuvent s'effectuer simplement à l'aide de \texttt{failwith} suivi du message
+d'erreur.
+
