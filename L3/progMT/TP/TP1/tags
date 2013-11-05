@@ -1,0 +1,16 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+NB_MAX	1.c	5;"	d	file:
+__ERREUR	erreur.h	2;"	d
+__UTIL	util.h	2;"	d
+erreur	erreur.h	/^void erreur(char* message, int retour);$/;"	p	signature:(char* message, int retour)
+error	erreur.c	/^void error(char* message, int returnCode) {$/;"	f	signature:(char* message, int returnCode)
+main	1.c	/^int main(int argc, char** argv) {$/;"	f	signature:(int argc, char** argv)
+main	2.c	/^int main(int argc, char** argv) {$/;"	f	signature:(int argc, char** argv)
+main	3.c	/^int main(int argc, char** argv) {$/;"	f	signature:(int argc, char** argv)
+str_split	util.c	/^char** str_split(char* a_str, const char a_delim)$/;"	f	signature:(char* a_str, const char a_delim)
+str_split	util.h	/^char** str_split(char* a_str, const char a_delim);$/;"	p	signature:(char* a_str, const char a_delim)
