@@ -12,7 +12,7 @@ int main(int argc,char** argv) {
 	int redirection = util_searchFirstOccurenceInArray(argv,argc,">");
 
 	if(redirection != -1) {
-		if((fout = open(argv[redirection+1], O_CREAT|O_WRONLY)) == -1) {
+		if((fout = open(argv[redirection+1], O_CREAT|O_WRONLY, 0666)) == -1) {
 			error("Erreur lors de l'ouverture du fichier", EXIT_FAILURE);
 		}
 		dup2(fout, 1);
