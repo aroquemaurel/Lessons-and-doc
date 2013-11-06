@@ -30,7 +30,7 @@ int main(int argc, char** argv)
 		return 1337;
 	}
 	printf("Quelle est la réponse à la question sur la vie l'univers et le reste ? (Tu as 10 sec et encore %d chances...)\n", nbChances - 1);
-	alarm(2);
+	alarm(10);
 	--nbChances;
 
 	scanf("%s", &reponse);
