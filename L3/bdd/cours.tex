@@ -358,15 +358,55 @@ exo
 	L'opération d'intersection est dérivée de deux différences : \\$intersect(R_1, R_2) = difference(R_1, difference(R_1, R_2))$.
 
 	\subsection{Division}
-	To be continued\ldots
-
 	\begin{definition}
-		
+		\begin{eqnarray*}
+		Q = D/d = \{ <a_1,a_2,\cdots,a_p>/\forall <a_p1,ap_2,\cdots,a_n>\in d\\
+		<a_1,a_2, \cdots, a_p, a_{p+1}, a_{p+2}\cdots,a_n>\in D\}&
+		\end{eqnarray*}
 	\end{definition}
 
 	\begin{notation}
 		
 	\end{notation}
+
+	\begin{exemple}
+			\begin{table}[H]
+			\centering
+			\begin{tabular}{c|c}
+				\textbf{NumC} & \textbf{nom}\\
+				\hline
+				1 & bdd\\
+				2 & Archi\\
+				2 & Graphe
+			\end{tabular}
+			\caption{$cours$}
+		\end{table}
+			\begin{table}[H]
+			\centering
+			\begin{tabular}{c|c}
+				\textbf{numC} & \textbf{numE}\\
+				\hline
+				1&1\\
+				2&1\\
+				3&1\\
+				1&2\\
+				3&2
+			\end{tabular}
+			\caption{$suit$}
+		\end{table}
+		$$T = suit/ \Pi_{numC}(cours)$$
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{c}
+				\textbf{numE}\\
+				\hline
+				1
+			\end{tabular}
+			\caption{$T$}
+		\end{table}
+
+		<< Quels sont les numéros d'étudiants qui suivent tous les cours ? >> 
+	\end{exemple}
 
 	\section{Expression de l'algèbre relationnelle}
 	A partir de l'algèbre relationnelle il est possible de composer un langage algébrique.
