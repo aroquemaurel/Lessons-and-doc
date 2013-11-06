@@ -1,0 +1,150 @@
+\chapter{Fonctions}
+\label{fonctions}
+\section{Définition}
+	\begin{lstlisting}[language=Caml, caption=Sytaxe d'une définition de fonction]
+# fun param -> corps;;		
+# function param -> corps;;
+\end{lstlisting}
+\begin{remarque}Il existe une différence entre \texttt{fun} et \texttt{function}. \texttt{function} permet d'alléger l'écriture en cas
+	de pattern matching. En effet 
+	\begin{lstlisting}[language=Caml, numbers=none, framerule=0pt]
+	fun x -> match x with (* contenu du match ... *);;
+\end{lstlisting}
+
+	est équivalent à l'écriture suivante : 	
+	\begin{lstlisting}[language=Caml, numbers=none, framerule=0pt]
+	function (* contenu du match ... *);;
+	\end{lstlisting}
+	\end{remarque}
+			\begin{exemple}
+	\begin{lstlisting}[language=Caml, caption=Sytaxe d'une définition de fonction, numbers=none, framerule=0pt]
+# fun x -> x + 1;;		
+int -> int = <fun>
+# let succ = func x -> x + 1;; 
+succ: int -> int = <fun>
+\end{lstlisting}
+				\end{exemple}
+\begin{remarque}
+Il est possible de tracer une fonction, ceci- s'effectue à l'aide de la commande suiante, cette trace est succinte mais permet de savoir ce qui se
+passe lors de l'exécution de la fonction:  \texttt{\#trace fonction}
+
+Afin d'enlever la trace, il suffit d'utiliser \texttt{\#untrace fonction}
+
+	Cela peut s'avérer particulièrement utile pour les fonctions récursives, cf \ref{recurseInt}.
+\end{remarque}
+
+				\section{Application}
+				\subsection{Valeur d'une fonction dans un environnement $\Gamma$}
+				Évaluer une fonction \texttt{fun x -> corps} dans $\Gamma$ nous donne la fermeture suivante $<\Gamma, x, cors>$
+				\subsection{Application d'une fonction à un argument dans $\Gamma_2$}
+				\begin{itemize}
+					\item Évaluer f dans $\Gamma_1$
+					\item Évaluer a dans $\Gamma_1$ Soit v la valeur de a dans $\Gamma_1$
+					\item Soit $<\Gamma, x, corps>$ la valeur de f dans $\Gamma_1$
+					\item On << branche x et v >> et on évalue le corps de la fonction dans l'environnement où x est lié à v a été ajouté à $\Gamma$
+					\item Résultat
+				\end{itemize}
+			\begin{exemple}
+	\begin{lstlisting}[language=Caml, caption=Exemple d'utilisation de fonctions, numbers=none]
+# let x = 2013;;
+val x : int = 2013
+# let y = x + 10
+	and z = x * 10;;
+val y : int = 2013 z = int : 20130
+# let f = func x -> x + z + y;;
+val f: int -> int = <fun>
+# f(y+1);;
+\end{lstlisting}
+			\end{exemple}
+			\section{Fonction à n paramètres}
+	\begin{lstlisting}[language=Caml, caption=Sytaxe d'une définition de fonction à n paramètres, numbers=none]
+# fun x1 -> fun x2 -> fun x3 -> ... -> fun xn -> corps;;
+# fun x1 x2 x3 ... xn -> corps;;
+\end{lstlisting}
+
+Une fonction à N paramètre fonctionne à l'aide de N fonctions à 1 paramètre.  
+\section{Application partielle}
+	\begin{lstlisting}[language=Caml, caption=Application partielle, numbers=none]
+# let creerPredPGQ = fun x -> fun y -> x > y;;
+# let plusGrandQue10 = creePredPGQ 10;
+# plusGrandQue10 5;;
+- : bool = false 
+\end{lstlisting}
+
+\section{Fonctions récursives sur les entiers}\label{recurseInt}
+Une récursive implique qu'il y ai une référence au nom de la fonction dans le corps de cette même fonction. Systématiquement un cas d'arrêt de la
+fonction doit être présent, ceci afin que la fonction se termine, éventuellement des cas d'erreurs peuvent être gérés.
+\begin{exemple}
+	Fonction qui étant donné un entier n, calcule sa factorielle c'est-à-dire $n!$ en sachant que : 
+	\begin{eqnarray*}
+		n &\leq& 0\\\ &&\\
+		0 &\neq& 1\\
+		n &\neq& n\times (n-1)! = 1\times 2\times 3\times\cdots\times (n-1)\times n
+	\end{eqnarray*}
+	\begin{lstlisting}[language=Caml, caption=Exemple de la fonction factorielle en récursif, numbers=none, framerule=0pt]
+let rec fact = fun n -> 
+	if n = 0 then 1 (* arrêt *)
+	else n * fact(n-1);; (* cas général*)
+	\end{lstlisting}
+	 
+	La solution en utilisant le filtrage : 
+	\begin{lstlisting}[language=Caml, caption=Exemple de la fonction factorielle avec filtrage, numbers=none, framerule=0pt]
+let rec fact = fun n ->
+	match n with
+		 0 -1 1
+		|p -> p*fact(p-1);;
+	\end{lstlisting}
+\end{exemple}
+
+Les vérifications du domaine d'application doivent se faire en dehors de la fonction récursives. En effet, il est inutile de tester le cas d'erreur à
+chaque appel récursif. Ceci peut s'effectuer de la manière suivante : 
+	\begin{lstlisting}[language=Caml, caption=Exemple de la fonction factorielle avec un cas d'erreur, numbers=none]
+let fact = fun n ->
+	let rec calcul = fun x ->
+		if x = 0 then 1 (* cas d'arrêt *)
+		else x * calcul(x-1) (* cas général *)
+	in if n < 0 then failwith "erreur nombre négatif"
+		else calcul n;;
+	\end{lstlisting}
+
+	\begin{remarque}
+		Il faut faire attention, dans ce cas il est donc impossible de tracer le cas d'erreur, en effet la fonction n'est pas visible de l'extérieur.
+	\end{remarque}
+
+	\subsection{Fonction mutuellement récursives}
+	Il est également possible d'avoir deux fonctions que l'on appelle mutuellement récursives. C'est-à-dire que les fonctions s'appellent les une les
+	autres, la première fonction appelle la seconde et la seconde appelle la première.
+
+	\begin{exemple}
+		Écriture de la fonction pair avec deux fonctions mutuellement récursives.	
+\begin{lstlisting}[language=algo, numbers=none, framerule=0pt, caption=Algorithme de la récursivité mutuelle pour pair]
+fonction pair	
+	si n = 0 alors true
+	sinon impair(n-1)
+
+-- Avec la fonction impair comme ceci : 
+fonction impair
+	si n = 0 alors false 
+	sinon pair(n-1)
+\end{lstlisting}
+Ce qui se traduirait de la façon suivante en caml, les deux fonctions doivent être déclarés en même temps, pour ceci on utilise le \texttt{and}.
+\begin{lstlisting}[language=Caml, caption=Récursivité mutuelle pour pair, numbers=none, framerule=0pt]
+# let rec pair = fun n ->
+	if n = 0 then true
+	else impair(n-1)
+and impair = fun n -> 
+	if n = 0 then false
+	else pair (n-1);;
+\end{lstlisting}
+
+	\end{exemple}
+
+	\begin{tabular}{c|c}
+		Cas d'arrêt & Diminution taille du problème\\
+		\hline
+		$n=0$ & $n - 1$\\
+		$n=1$ & $n - 2$\\
+		$a=b$ & $a-b$\\
+		$n<10$ & $\frac{n}{10}$
+	\end{tabular}
+

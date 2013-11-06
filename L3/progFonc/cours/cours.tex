@@ -45,6 +45,12 @@
 \input{/home/aroquemaurel/cours/includesLaTeX/couverture.tex}
 \makeatother
 \includeonly {
+progFonc,
+syntaxe,
+specificite,
+fonctions,
+exos,
+structuresDonnees
 }
 \begin{document}
 	\thispagestyle{empty} % Removes page numbers
@@ -54,223 +60,15 @@
 	\setcounter{secnumdepth}{3}
 	\setcounter{minitocdepth}{1}
 	\tableofcontents
-	\chapter{La programmation fonctionnelle}
-	\section{Différents paradigmes de programmation}
-	\begin{itemize}
-		\item Impératif : C, Java, Ada, \ldots
-		\item Objet: Java, C++, \ldots
-		\item Fonctionnel : Lisp, Shceme, ML, Caml, Haskell, \ldots
-		\item Déclarative ou logique : Prolog
-	\end{itemize}
-	\section{Le fonctionnel}
-	L'outil de base de la programmation fonctionnel est les fonctions. On peut les définir, les appliquer et les composer. Il n'y a pas d'affectation
-	en fonctionnel.
-
-	Le fonctionnel est partis d'une base théorique avec le $\lambda$ calcul en 1936,c'est un langage sûr. C'était d'abord non typé\footnote{Comme le
-	lisp ou, Scheme}, les langages typés sont arrivés ensuite avec la famille Ocaml vers les années 2000.
-	
-	Un langage fonctionnel typé possède plusieurs propriétés.
-	\begin{description}
-		\item[Inférence de type] On ne déclare pas le type expressément.
-		\item[Vérification de type] Vérifier à la compilation, pas de risque de problème lors de l'execution
-		\item[Polymorphe]~ 
-		\item[Syntaxe simple] Syntaxe non verbeuse, sémantique solide, environnement de développement solide, mise au point facilitée et programmation sûre
-	\end{description}
-
-	\subsection{Mode de compilation}
-	Le Caml peut être soit compilé soit interprété, l'avantage de la compilation étant l'efficacité et l'interprétation « convivial ». Historiquement
-	ceux-ci étaient uniquement compilés.
-	\chapter{Syntaxe}
-	\section{Action}
-	\begin{lstlisting}[language=Caml, caption=Syntaxe de base]
-# expression ;;
--: valeur : type
-#
-	\end{lstlisting}
-	\begin{itemize}
-		\item Lire l'expression jusqu'au \texttt{;;}
-		\item Typer
-			\begin{itemize}
-				\item Si ko $\Rightarrow$ Message d'erreur
-				\item Si ok $\Rightarrow$ Évaluation $\Rightarrow$ << Réduire, calculer >> $\Rightarrow$ Résultat / Valeur
-			\end{itemize}
-	\end{itemize}
-	\section{Types de base}
-	\begin{tabular}{c|c|c|c|c}
-		\textbf{Type} & \textbf{Mot clé }& \textbf{Opération} & \textbf{Comparaison} & \textbf{Exemple} \\
-		\hline
-		Entiers($\mathbb Z$) & int & \texttt{+, -, *, /, mod}& \texttt{=, >, <, >=, <=, <>}&2013\\
-		Flottants & float &\texttt{+., -., *., /., sqrt, **} &Polymorphe  &2013.0\\
-		Chaines & string & \texttt{"\_\_", \^} & Polymorphe &\texttt{"coucou"}\\
-		Caractères & char &\texttt{'\_'} &\texttt{}Polymorphe & 'c'\\
-		Booléens & bool & \texttt{true, false, \&\&, ||, not}&\texttt{}Polymorphe &\\
-	\end{tabular}
-	\section{Structures de contrôles}
-	\begin{lstlisting}[language=Caml, caption=Syntaxe de la condition]
-# if condition then action else alternative ;;		
-	\end{lstlisting}
-	\begin{remarque}
-		\begin{itemize}
-			\item La condition doit être un booléen.
-			\item L'action et l'alternative doit être du même type
-		\end{itemize}
-	\end{remarque}
-	\section{Variables}
-	Un définition peut être de plusieurs type : 
-	\begin{itemize}
-		\item Globale
-		\item Locale
-		\item Simultanée
-	\end{itemize}
-~
-	\subsection{Définition globale}
-	\begin{lstlisting}[language=Caml, caption=Définition de variable]
-# let variable = expression;;
-	\end{lstlisting}
-	L'interpréteur va évaluer la valeur et donner un type à la variable, il effectue une liaison \texttt{<var,val>}, ceci peut aussi s'appeler une
-	fermeture.
-
-	On ajoute la liaison à l'environnement, un environnement est donc un ensemble ordonné de liaisons.
-	\subsection{Définition Locale}
-	\begin{lstlisting}[language=Caml, caption=Définition de variable]
-# let variable = expression 1
-	in expression2 ;;
-	\end{lstlisting}
-	La définition et temporaire
-	\begin{enumerate}
-		\item Évaluer l'expression dans l'environnement ourant
-		\item Ajouter à l'environnement courantla nouvelle. Liaison \texttt{var,val1}
-		\item Évaluer l'expression 2 dans ce nouvel environnement augmenté $\Rightarrow$ Résultat
-		\item Restituer environnement de départ
-	\end{enumerate}
-
-	\subsection{Définitions simultanées}
-	\begin{lstlisting}[language=Caml, caption=Définition de variable]
-# let var1 = expression1 
-and var2 = expression2
-and var3 = expression3;;
-\end{lstlisting}
-	
-\section{Fonctions}
-\subsection{Définition}
-	\begin{lstlisting}[language=Caml, caption=Sytaxe d'une définition de fonction]
-# fun param -> corps;;		
-# function param -> corps;;
-\end{lstlisting}
-		\begin{remarque}{Il existe une différence entre \texttt{fun} et \texttt{function}, cette différence sera vu plus tard}\\~\end{remarque}
-			\begin{exemple}
-	\begin{lstlisting}[language=Caml, caption=Sytaxe d'une définition de fonction, numbers=none, framerule=0pt]
-# fun x -> x + 1;;		
-int -> int = <fun>
-# let succ = func x -> x + 1;; 
-succ: int -> int = <fun>
-\end{lstlisting}
-				\end{exemple}
-				\subsection{Application}
-				\subsubsection{Valeur d'une fonction dans un environnement $\Gamma$}
-				Évaluer une fonction \texttt{fun x -> corps} dans $\Gamma$ nous donne la fermeture suivante $<\Gamma, x, cors>$
-				\subsubsection{Application d'une fonction à un argument dans $\Gamma_2$}
-				\begin{itemize}
-					\item Évaluer f dans $\Gamma_1$
-					\item Évaluer a dans $\Gamma_1$ Soit v la valeur de a dans $\Gamma_1$
-					\item Soit $<\Gamma, x, corps>$ la valeur de f dans $\Gamma_1$
-					\item On << branche x et v >> et on évalue le corps de la fonction dans l'environnement où x est lié à v a été ajouté à $\Gamma$
-					\item Résultat
-				\end{itemize}
-			\begin{exemple}
-	\begin{lstlisting}[language=Caml, caption=Exemple d'utilisation de fonctions, numbers=none]
-# let x = 2013;;
-val x : int = 2013
-# let y = x + 10
-	and z = x * 10;;
-val y : int = 2013 z = int : 20130
-# let f = func x -> x + z + y;;
-val f: int -> int = <fun>
-# f(y+1);;
-\end{lstlisting}
-			\end{exemple}
-			\subsection{Fonction à n paramètres}
-	\begin{lstlisting}[language=Caml, caption=Sytaxe d'une définition de fonction à n paramètres, numbers=none]
-# fun x1 -> fun x2 -> fun x3 -> ... -> fun xn -> corps;;
-# fun x1 x2 x3 ... xn -> corps;;
-\end{lstlisting}
-
-Une fonction à N paramètre fonctionne à l'aide de N fonctions à 1 paramètre.  
-\subsection{Application partielle}
-	\begin{lstlisting}[language=Caml, caption=Application partielle, numbers=none]
-# let creerPredPGQ = fun x -> fun y -> x > y;;
-# let plusGrandQue10 = fun creePredPGQ 10;
-# plusGrandQue10 5;;
-- : bool = false 
-\end{lstlisting}
-\section{Nuplets}
-Permet de rassembler eds informations dont on connait à l'avance le nombre et le type éventuellement hétérogène.
-	\begin{lstlisting}[language=Caml, caption=Syntaxe de n-uplets, numbers=none]
-(x1, x2, ..., xn)		
-tx1 * tx2 * ... * txn
-\end{lstlisting}
-
-\begin{exemple}
-	\begin{lstlisting}[language=Caml, caption=Exemple n-uplets, numbers=none, framerule=0pt]
-# (1, 2, 3);;
--: int * int * int = 1, 2, 3
-# (1, (2,3));; 
-int * (int * int)
-# let first = fun (x,y) -> x ;;
-val first = ('a*'b) -> 'a = <fun>
-# let consCple = fun x -> fun y -> (x, y);;
-val consCple = 'a -> 'b -> ('a*'b) = <fun>
-\end{lstlisting}
-\end{exemple}
-
-\section{Filtrage (pattern matching)}
-	Filtre ou motif, permet d'exprimer la syntaxe d'une donnée. On écrit la fonction par cas, c'est-à-dire on filtre la donnée avec un
-	filtre\footnote{ou pattern}.
-	\begin{lstlisting}[language=Caml, caption=Syntaxe du filtrage, numbers=none]
-match expr with
-pat1 -> expr1
-| pat2 -> expr2
-| pat31|pat32|pat33 -> expr3 (* un des pattern retourne expr3 *)
-| patn -> exprn
-| _ -> not b;; (* default *)
-	\end{lstlisting}
-	On examine en séquence et essaye de filtrer successivement l'expression avec le pattern i, le premier à marcher sera appliqué. 
-
-	\begin{remarque}
-		Les pattern doivent tous être de même type afin que cela fonctionne.\\~
-	\end{remarque}
-\begin{exemple}
-	\begin{lstlisting}[language=Caml, caption=Exemple filtrage, numbers=none, framerule=0pt]
-# let nand = fun a -> fun b -> 
-match a with false -> true
-			| _ -> not b;;
-
-\end{lstlisting}
-Écrire la fonction d'implication.
-\begin{tabular}{c|c||c}
-	A&B&A$\rightarrow$B\\
-	T&T&T\\
-	T&F&F\\
-	F&T&T\\
-	F&F&T\\
-\end{tabular}
-	\begin{lstlisting}[language=Caml, caption=Exemple filtrage -- Implication, numbers=none, framerule=0pt]
-# let impl = fun a -> fun b -> 
-	match (a,b) with 
-	 (true,true) -> true
-	|(true,false) -> false
-	|(false,true) -> true
-	|(false,false) -> true;;
-(* Autre manière plus élégante *)
-# let imp = fun a -> fun b -> 
-	match (a,b) with
-	 (true, false) -> false
-	|_ -> true;;
-\end{lstlisting}
-\end{exemple}
-
+\include{progFonc}
+\include{syntaxe}
+\include{specificite}
+\include{fonctions}
+\include{structuresDonnees}
 
 \appendix
 \lstlistoflistings
+\include{exos}
+
 
 \end{document}
