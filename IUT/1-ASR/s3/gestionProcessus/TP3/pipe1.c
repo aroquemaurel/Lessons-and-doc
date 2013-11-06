@@ -72,7 +72,6 @@ int main(int argc, char *argv[]) {
 				exit(0);
 		}
 	} else {
-
 		if (ptr == NULL)
 			printf("Oh my GOOOD !!");
 

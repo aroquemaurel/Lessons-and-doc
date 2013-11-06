@@ -1,4 +1,4 @@
-all: moncat compiler exo4
+all: moncat compiler monps 
 
 moncat: moncat.o afficher.o util.o erreur.o
 	gcc moncat.o afficher.o util.o erreur.o -o moncat 
@@ -6,12 +6,12 @@ moncat: moncat.o afficher.o util.o erreur.o
 compiler: compiler.o
 	gcc compiler.o -o compiler 
 
-exo4: exo4.o
-	gcc exo4.o -o exo4
+monps: monps.o
+	gcc monps.o -o monps 
 
 %.o : %.c
 		$(CC) $(CFLAGS) -o $@ -c $<
 
 clean:
 	rm *.o
-	rm moncat exo3 exo4
+	rm moncat compiler monps 
