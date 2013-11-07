@@ -31,11 +31,12 @@
 
 
 \newcommand{\pole}{}
-\newcommand{\sigle}{pf1}
-\input{/home/aroquemaurel/cours/includesLaTeX/l2/tddm.tex}
+\newcommand{\sigle}{reseau}
+\input{/home/aroquemaurel/cours/includesLaTeX/l3/tddm.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/l3/remarquesExempleAttention.tex}
 \input{/home/aroquemaurel/cours/includesLaTeX/listings.tex} %prise en charge du langage algo
 \input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
-\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/l3/affichageChapitre_td.tex}
 \makeatother
 %
 % kacimi@irit.fr
@@ -48,13 +49,10 @@
 	%% Figure, screen
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=8cm]{capture1.jpeg}
+		\includegraphics[width=15cm]{capture1.jpeg}
+		\includegraphics[width=15cm]{capture2.jpeg}
 		\label{fig:dhcpudp}
-	\end{figure}
-
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=8cm]{capture2.jpeg}
+		\caption{Messages DHCP}
 	\end{figure}
 	%%% Diagramme
 
@@ -67,21 +65,44 @@
 	\section{Telnet}
 	Ils sont envoyés sur TCP. Cf figure \ref{fig:telnettcp}.
 	
-	Le login est << guest >> et le mot de passe est << trivial >>, cela permet de se connecter au serveur d'adresse IP 192.168.0.6.
+	Le login est << guest >> et le mot de passe est << trivial >>, cela permet de se connecter au serveur d'adresse IP \texttt{192.168.0.6}.
 
 	La commande tapée est \texttt{pwd} ayant pour réponse \texttt{/home/guest}. 
 
 	%% Diagramme
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=8cm]{capture3.jpeg}
+		\includegraphics[width=10cm]{capture3.jpeg}
+		\caption{Messages telnet}
+		\label{fig:telnettcp}
+	\end{figure}
+	
+	Figure \ref{fig:telnetdiag} est disponible le diagramme temporel d'échange.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=13cm]{capture4.jpeg}
+		\caption{Diagramme temporel d'échange}
+		\label{fig:telnetdiag}
 	\end{figure}
 
+	\begin{remarque}
+		C'est le fait que le protocole telnet ne soit pas sécurisé qui nous permet de pouvoir analyser le login et le mot de passe de l'utilisateur,
+		ainsi l'utilisation d'un autre protocole tel que SSH permettrai que personne utilisant un analyseur réseau puisse obtenir ces informations
+	\end{remarque}
 	\section{DNS}
 	Les messages sont envoyés en UDP, c'est une requête de type << standad query A >>.
 
 	Plusieurs réponses sont situées dans la requête 114, celle-ci répondant avec les adresses IP et sous domaines de kernel.org\footnote{c'est à dire
 	ftp.kernel.org, pub.kernel.org qui correspondent au adresses ip de pub.us.kernel.org, 204.152.191.37 et 204.152.191.5}. Cf figure \ref{fig:kernel}.
+
+	Le protocole DNS permet de faire le lien entre un domaine (ftp.kernel.org) et une adresse ip (204.152.191.37).
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=13cm]{Capture5.jpeg}
+		\caption{Les messages DNS}
+		\label{fig:kernel}
+	\end{figure}
 
 	\section{Ping}
 	Le protocole du ping est le protocole ICMP.
@@ -96,7 +117,19 @@
 
 	L'utilisateur est << anonymous >> et le mot de passe << toto@titi.fr >>, il a téléchargé le fichier welcom.msg d'une taille de 1912 octets.
 	
-	Le message est dans l'échange 218, de protocole ftp-data, le message commence par « \t\t\t Welcome to the\n\n\t\t\ldots » 
+	Le message est dans l'échange 218, de protocole ftp-data, le message commence par « Welcome to the\ldots » 
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=13cm]{Capture6.jpeg}
+		\caption{Diagramme temporel d'échange FTP}
+		\label{fig:kernel}
+	\end{figure}
+
+	\begin{remarque}
+		De la même manière que Telnet, FTP n'est pas un protocole sécurisé, ainsi l'utilisation du protocole FTP encapsulé dans du SSH (utilisation de
+		sftp) semblerai meilleur. Ainsi il n'aurai pas été possible d'obtenir le contenu des échanges et les logins et mot de passe.
+	\end{remarque}
 
 	\section{HTTP}
 	\subsection{Image}
@@ -106,12 +139,24 @@
 
 	La requête HTTP à une taille totale de 23754 octets.
 
+	Le fichier est grand, ainsi lors de la demande du fichier par l'utilisateur, le serveur HTTP envoie un acquittement, et découpe le fichier en 36
+	trames\footnote{jusqu'à la trame 272}. Pour chaque trame, le serveur envoie la trame numérotée, et le client un acquittement (protocole TCP), une
+	fois que toutes les trames sont envoyées et acquittées, le serveur peut envoyer \texttt{HTTP/1.1 200 ok} afin de signaler la fin de la
+	communication et le bon envoie du fichier.
+
 	\subsection{Site Web}
 	Le client est sur le système Linux(Debian 2.0). 
 
 	Le nombre maximal de fichier demandé simultanément est 
 
 	Cette image à été mise en cache dans le navigateur, elle n'est ainsi pas redemandée.
+
+	\subsection{Traceroute}
+	Traceroute envoie des messages aux serveurs jusqu'à que ceux-ci atteignent un TTL de 1, ainsi les messages envoyés ont un TTL de plus en plus grand
+	afin de passer de plu en plus de routeurs. Une fois qu'un routeur atteind le TTL de 1, celui-ci envoie « time to lie excedeed ».
+
+	\appendix
+	\listoffigures
 	\end{document}
 
 
