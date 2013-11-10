@@ -31,7 +31,7 @@ int main(int argc, char *argv[]) {
 	struct hostent *server;
 
 	// Arguments error
-	if((strcmp(argv[1], "get") != 0 && strcmp(argv[1], "put") != 0 && strcmp(argv[1], "test") != 0) || argc < 5) {
+	if(argc < 5 || (strcmp(argv[1], "get") != 0 && strcmp(argv[1], "put") != 0 && strcmp(argv[1], "test") != 0)) {
 		strcpy(buffer, error_usage());
 		error(buffer, 2);
 	}
