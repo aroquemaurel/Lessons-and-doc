@@ -3,4 +3,22 @@
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.1}Fonctions r\IeC {\'e}cursives sur les listes}{\reset@font\mtcSSfont 13}{subsection.4.2.1}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.2.1.1}La fonction \texttt {append}}{\reset@font\mtcSSSfont 13}{subsubsection.4.2.1.1}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.2}La fonction \texttt {reverse}}{\reset@font\mtcSSfont 14}{subsection.4.2.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.3}La fonction \texttt {nbOcc}}{\reset@font\mtcSSfont 14}{subsection.4.2.3}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.2.2.1}La fonction \texttt {nbOcc}}{\reset@font\mtcSSSfont 14}{subsubsection.4.2.2.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.2.2.2}La fonction \texttt {remove}}{\reset@font\mtcSSSfont 14}{subsubsection.4.2.2.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.3}Fonctions de tris}{\reset@font\mtcSSfont 15}{subsection.4.2.3}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.2.3.1}Tri par insertion}{\reset@font\mtcSSSfont 15}{subsubsection.4.2.3.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.2.3.2}Tri par fusion}{\reset@font\mtcSSSfont 15}{subsubsection.4.2.3.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.3}Types utilisateurs}{\reset@font\mtcSfont 15}{section.4.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.1}D\IeC {\'e}finition d'un type}{\reset@font\mtcSSfont 16}{subsection.4.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.2}Fonctions r\IeC {\'e}cursives sur les listes}{\reset@font\mtcSSfont 16}{subsection.4.3.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.3.2.1}La fonction \texttt {append}}{\reset@font\mtcSSSfont 17}{subsubsection.4.3.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.3}La fonction \texttt {reverse}}{\reset@font\mtcSSfont 17}{subsection.4.3.3}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.3.3.1}La fonction \texttt {nbOcc}}{\reset@font\mtcSSSfont 17}{subsubsection.4.3.3.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.3.3.2}La fonction \texttt {remove}}{\reset@font\mtcSSSfont 18}{subsubsection.4.3.3.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.4}Fonctions de tris}{\reset@font\mtcSSfont 18}{subsection.4.3.4}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.3.4.1}Tri par insertion}{\reset@font\mtcSSSfont 18}{subsubsection.4.3.4.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.3.4.2}Tri par fusion}{\reset@font\mtcSSSfont 18}{subsubsection.4.3.4.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.4}Types utilisateurs}{\reset@font\mtcSfont 19}{section.4.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.1}D\IeC {\'e}finition d'un type}{\reset@font\mtcSSfont 19}{subsection.4.4.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.2}Instanciation de type}{\reset@font\mtcSSfont 20}{subsection.4.4.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.3}Fonctions manipulant des objets de type utilisateur}{\reset@font\mtcSSfont 21}{subsection.4.4.3}}
