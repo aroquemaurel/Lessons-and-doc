@@ -4,9 +4,6 @@
 #include <ctype.h>
 #include <stdio.h>
 
-/* 
- * FOnctions utiles pour myShell (exo3)
- */
 char *trim (char *str) {
 	char *ibuf, *obuf;
 
