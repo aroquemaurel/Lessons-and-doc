@@ -1,0 +1,26 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+TAILLEMAXPORT	server.c	8;"	d	file:
+decaler	client.c	/^void decaler(char* buff);$/;"	p	file:	signature:(char* buff)
+decaler	client.c	/^void decaler(char* tab) {$/;"	f	signature:(char* tab)
+error	client.c	/^void error(char *msg, const int code) {$/;"	f	signature:(char *msg, const int code)
+error	server.c	/^void error(char *msg) {$/;"	f	signature:(char *msg)
+error_usage	client.c	/^char* error_usage(void) {$/;"	f	signature:(void)
+get	client.c	/^void get(const int sockfd, char* file) {$/;"	f	signature:(const int sockfd, char* file)
+get	client.c	/^void get(const int sockfd, char* file);$/;"	p	file:	signature:(const int sockfd, char* file)
+main	client.c	/^int main(int argc, char *argv[]) {$/;"	f	signature:(int argc, char *argv[])
+main	server.c	/^int main(int argc, char *argv[])$/;"	f	signature:(int argc, char *argv[])
+put	client.c	/^void put(const int sockfd, char* file) {$/;"	f	signature:(const int sockfd, char* file)
+put	client.c	/^void put(const int sockfd, char* file);$/;"	p	file:	signature:(const int sockfd, char* file)
+query	client.c	/^void query(const int sockfd, char* msg, char* file) {$/;"	f	signature:(const int sockfd, char* msg, char* file)
+query	client.c	/^void query(const int sockfd, char* msg, char* file);$/;"	p	file:	signature:(const int sockfd, char* msg, char* file)
+str_split	util.c	/^char **str_split(char *s, const char c) {$/;"	f	signature:(char *s, const char c)
+str_split	util.h	/^char **str_split(char *s, const char c) {$/;"	f	signature:(char *s, const char c)
+trim	util.c	/^char *trim (char *str) {$/;"	f	signature:(char *str)
+trim	util.h	/^char *trim (char *str) {$/;"	f	signature:(char *str)
+trimTab	util.c	/^char** trimTab(char** s, int nb) {$/;"	f	signature:(char** s, int nb)
+trimTab	util.h	/^char** trimTab(char** s, int nb) {$/;"	f	signature:(char** s, int nb)
