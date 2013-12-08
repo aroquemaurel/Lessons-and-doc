@@ -1,6 +1,4 @@
 \select@language {french}
-\contentsline {section}{\numberline {0.1}*}{2}{section.0.1}
-\contentsline {section}{\numberline {0.2}*}{2}{section.0.2}
 \contentsline {chapter}{\numberline {1}Introduction}{4}{chapter.1}
 \contentsline {chapter}{\numberline {2}Langages et grammaires}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}D\IeC {\'e}finitions}{5}{section.2.1}
