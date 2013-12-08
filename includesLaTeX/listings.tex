@@ -42,7 +42,7 @@
 	},
       emphstyle=[2]\color{bleu1},
     %%% FONCTIONS NUMERIQUES
-      emph={[3]Entier, Reel, Booleen, Caractere, Booléen, Réél, Caractère},
+     % emph={[3]Entier, Reel, Booleen, Caractere, Booléen, Réél, Caractère},
       emphstyle=[3]\color{gris1},
     %%% FONCTIONS NUMERIQUES
       emph={[4]entree, maj, sortie, entrée},	
@@ -80,8 +80,8 @@
 	},
       emphstyle=[2]\color{bleu1},
     %%% FONCTIONS NUMERIQUES
-      emph={[3]Entier, Reel, Booleen, Caractere, Booléen, Réél, Caractère},
-      emphstyle=[3]\color{gris1},
+%      emph={[3]Entier, Reel, Booleen, Caractere, Booléen, Réél, Caractère},
+ %     emphstyle=[3]\color{gris1},
     %%% FONCTIONS NUMERIQUES
       emph={[4]entree, maj, sortie, entrée},	
       emphstyle=[4]\color{gris1},
@@ -146,8 +146,8 @@
 	},
       emphstyle=[2]\color{bleu1},
     %%% FONCTIONS NUMERIQUES
-      emph={[3]Entier, Reel, Booleen, Caractere, Booléen, Réél, Caractère},
-      emphstyle=[3]\color{gris1},
+%      emph={[3]Entier, Reel, Booleen, Caractere, Booléen, Réél, Caractère},
+ %     emphstyle=[3]\color{gris1},
     %%% FONCTIONS NUMERIQUES
       emph={[4]entree, maj, sortie, entrée},	
       emphstyle=[4]\color{gris1},
@@ -183,6 +183,12 @@
   string=[b]',
   morestring=[b]",
 }
+\lstset{language=Caml,
+    %%% BOUCLE, TEST & Co.
+      emph={int,bool, float},
+      emphstyle=\color{bleu2},
+}
+
 \lstset{ % general style for listings 
    numbers=left 
    , literate={é}{{\'e}}1 {è}{{\`e}}1 {à}{{\`a}}1 {ê}{{\^e}}1 {É}{{\'E}}1 {ô}{{\^o}}1 {€}{{\euro}}1{°}{{$^{\circ}$}}1 {ç}{ {c}}1 {ù}{u}1
