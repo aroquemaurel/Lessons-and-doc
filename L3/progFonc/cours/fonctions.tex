@@ -25,7 +25,7 @@ succ: int -> int = <fun>
 \end{lstlisting}
 				\end{exemple}
 \begin{remarque}
-Il est possible de tracer une fonction, ceci- s'effectue à l'aide de la commande suiante, cette trace est succinte mais permet de savoir ce qui se
+Il est possible de tracer une fonction, ceci- s'effectue à l'aide de la commande suivante, cette trace est succincte mais permet de savoir ce qui se
 passe lors de l'exécution de la fonction:  \texttt{\#trace fonction}
 
 Afin d'enlever la trace, il suffit d'utiliser \texttt{\#untrace fonction}
@@ -127,7 +127,7 @@ fonction impair
 	si n = 0 alors false 
 	sinon pair(n-1)
 \end{lstlisting}
-Ce qui se traduirait de la façon suivante en caml, les deux fonctions doivent être déclarés en même temps, pour ceci on utilise le \texttt{and}.
+Ce qui se traduirait de la façon suivante en Caml, les deux fonctions doivent être déclarés en même temps, pour ceci on utilise le \texttt{and}.
 \begin{lstlisting}[language=Caml, caption=Récursivité mutuelle pour pair, numbers=none, framerule=0pt]
 # let rec pair = fun n ->
 	if n = 0 then true

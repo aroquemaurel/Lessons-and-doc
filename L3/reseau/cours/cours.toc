@@ -19,3 +19,6 @@
 \contentsline {chapter}{\numberline {4}Les services et protocoles de l'Internet}{9}{chapter.4}
 \contentsline {section}{\numberline {4.1}Le service et le protocole TCP}{9}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Les primitives du service TCP}{9}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Le protocole TCP}{10}{subsection.4.1.2}
+\contentsline {subsubsection}{\numberline {4.1.2.1}Gestion de la Fiabilit\IeC {\'e}}{10}{subsubsection.4.1.2.1}
+\contentsline {subsubsection}{\numberline {4.1.2.2}Calcul de la valeur de la temporisation}{10}{subsubsection.4.1.2.2}
