@@ -205,8 +205,57 @@
 		\item[close]  
 		\item[status] Elle permet d'obtenir des informations d'états de la connexion. Comme par exemple l'identificateur du socket, l'état de la
 			connexion, la valeur de la fenêtre de réception.
-		\item[abort]  Permet d'interrompre la conexion avec la suppression de toutes les données en cours d'émission ou de récéptino
+		\item[abort]  Permet d'interrompre la connexion avec la suppression de toutes les données en cours d'émission ou de réception
 	\end{description}
+	Pour avoir un service TCP, il faut créer deux extrémités  de connexion, l'un côtés source l'autre destinataire, ces extrémités sont appelés socket
+	et correspondant à la combinaison adresse IP et numéro de port\footnote{Adresse ip sur 4 octets et numéro de port sur 2}
 
+	La connexion est bidirectionnelle en mode point à point, on ne parle donc pas dans TCP de diffusion,celle-ci correspond à un flux d'octet.
+
+	\subsection{Le protocole TCP}
+	Les entités TCP s'échangent des TPDU appelés segment dont un entête de 20 octets fixes + une partie optionnel puis l partie données. Un segment TCP
+	peut comporter jusqu'à $2^{16} = 65515$octets de données.
+
+	Le protocole TCP utilise de base le principe de fenêtre d'anticipation, il arme un timer lorsque le segment arrive à destination, l'entité TCP
+	réceptrice renvoit un segment sortant un numéro d'accusé de réception. 
+
+	\subsubsection{Gestion de la Fiabilité}
+		La retransmission du segment est déclenché par des temporisateur..
+
+		\subsubsection{Calcul de la valeur de la temporisation}
+		Cet algorithme à été proposé en 1988 par Jacobson.
+
+		$RTT = (\alpha\times RTT_{estime} + (1-\alpha)\times NouveauRTT$ avec $0 \leq \alpha < 1$.
+
+		Plusieurs échantillons sont nécessaire à partir de plusieurs segments transmis, il est calculé à partir de la formule ci-dessus avec le nouveau
+		délai d'aller-retour observé et la valeur du RTT précédemment calculé.
+
+		$RTO = \min\{BorneSuppRTO, \max\{borneInfRTO, RTO, RTT_{estime} \times \beta\}\}$ avec $\beta > 1$
+
+		\begin{remarque}
+			Cas particuliers du calcul d'aller:retour étant donné que l'ack reçu peut être soit celui du premier segment envoyé soit celui du second
+			retransmis.
+		\end{remarque}
+
+		\paragraph{Cas particulier avec l'algorithme de Karn}
+		TCP ne doit pas mettre à jour de RTT estimé dans le cadre de celui du segment retransmis.
+		\subsubsection{Gestion de la congestion du réseau}
+		Numéo en séquence codé sur 32bits, Raale de $2^{32}$octets.
+
+		Conséquence d'un tel comportement: 
+		\begin{enumerate}
+			\item Encas d'erreur nombre élevé de retransmission
+			\item Le récepteur peut être saturé
+			\item Le réseau également
+		\end{enumerate}
+
+		Dans les échanges bidirectionnelles de TCP chaque émetteur annonce son crédit de nombre d'octets dans le champ fenêtre des segments qu'il
+		envoi pour indiquer  le nombre d'octet qu'il est prêt à recevoir.
+
+		Quand cette fenêtre est nulle, pas d'envoie de données de la part du correspondant sauf deux cas particulier : 
+		\begin{itemize}
+			\item Envoi possible de données d'urgences
+			\item Envoi d'un segment contenant 1 seul octet pour obliger le correspondant à réannoncer le prochain octet attendu
+		\end{itemize}<++>
 \end{document}
  
