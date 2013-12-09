@@ -1,0 +1,85 @@
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage{lmodern}
+\usepackage[svgnames]{xcolor} % Required to specify font color
+\input{/home/aroquemaurel/cours/includesLaTeX/couleurs.tex}
+
+\usepackage{eurosym}
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, linkcolor=vert1, urlcolor=bleu, colorlinks=true]{hyperref}
+\usepackage{pgf}
+\usepackage{tikz} %Vectoriel
+\usetikzlibrary{arrows,automata}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage[francais]{minitoc}
+\usepackage[final]{pdfpages} 
+\usepackage{graphicx} % Required for box manipulation
+
+\newcommand{\titre}{Langages et automates}
+\newcommand{\subtitle}{Travaux dirigés}
+\newcommand{\auteur}{Antoine de \bsc{Roquemaurel}}
+\newcommand{\formation}{L3 Informatique}
+\newcommand{\semestre}{5}
+\newcommand{\annee}{2013}
+\newcommand{\prof}{Christine \bsc{Maurel} -- JP \bsc{Arcangeli}}
+
+
+\newcommand{\pole}{}
+\newcommand{\sigle}{langage}
+
+
+\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/l2/cours.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
+\newcommand{\pfp}{\texttt{pfp}}
+
+\newcommand{\ifp}{\texttt{if}}
+\newcommand{\elsep}{\texttt{else}}
+
+\input{/home/aroquemaurel/cours/includesLaTeX/couverture.tex}
+\makeatother
+\includeonly {
+}
+\begin{document}
+	\thispagestyle{empty} % Removes page numbers
+	\titleBC 
+	\dominitoc
+	\setcounter{tocdepth}{1}
+	\setcounter{secnumdepth}{3}
+	\setcounter{minitocdepth}{1}
+	\chapter{Automates finis}
+	\section{Construction d'automates}
+	\subsection{}
+	Un distributeur délivre des tasses de café au prix 0.25\euro{}. Il accepte des pièces de 5, 10 et 20 cents. On suppose que le distributeur ne rend pas la
+	monnaie et qu'il accepte des sommes allant jusqu'à 0.40\euro{}. Construire l'automate fini qui modélise un tel distributeur.
+
+		\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm, semithick]
+			\tikzstyle{every state}=[fill=red,draw=none,text=white]
+			\node[initial,state] (A) {$q_0$};
+			\node[state] (B)		[below right of=A] {$q_{5}$};
+			\node[state] (C)		[right of=A]{$q_{10}$};
+			\node[state] (D)		[right of=A]{$q_{15}$};
+			\node[state] (E)		[right of=D]{$q_{20}$};
+			\node[state] (F)		[right of=D]{$q_{25}$};
+%			\node[state] (G)		[above of=C]{$q_{30}$};
+%			\node[state] (H)		[above of=D]{$q_{35}$};
+%			\node[state] (I)		[right of=H]{$q_{40}$};
+
+			\path	(A)	edge		node {10} (C)
+						edge		[bend left]node {20} (E)
+						edge		node {5} (B)
+					(B) edge		node {10} (D)
+						edge		node {20} (F)
+						;
+	\end{tikzpicture}
+
+\end{document}
