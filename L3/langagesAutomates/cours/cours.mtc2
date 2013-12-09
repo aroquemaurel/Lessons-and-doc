@@ -1,4 +1,10 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.1}D\IeC {\'e}finitions}{\reset@font\mtcSfont 5}{section.2.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.2}Op\IeC {\'e}rations sur les mots}{\reset@font\mtcSfont 5}{section.2.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.3}Langage L}{\reset@font\mtcSfont 5}{section.2.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.4}Op\IeC {\'e}rations sur les langages}{\reset@font\mtcSfont 6}{section.2.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.1}Introduction}{\reset@font\mtcSfont 7}{section.2.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.2}D\IeC {\'e}finition}{\reset@font\mtcSfont 7}{section.2.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.1}Informelle}{\reset@font\mtcSSfont 7}{subsection.2.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.2}Formelle}{\reset@font\mtcSSfont 8}{subsection.2.2.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.3}Configuration}{\reset@font\mtcSfont 8}{section.2.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.3.1}D\IeC {\'e}finition}{\reset@font\mtcSSfont 8}{subsection.2.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.3.2}Relation entre deux configuration}{\reset@font\mtcSSfont 9}{subsection.2.3.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.3.3}Reconnaissance}{\reset@font\mtcSSfont 9}{subsection.2.3.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.4}D\IeC {\'e}terminisme}{\reset@font\mtcSfont 10}{section.2.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.5}Automate \IeC {\`a} pile d\IeC {\'e}duit d'une grammaire}{\reset@font\mtcSfont 10}{section.2.5}}

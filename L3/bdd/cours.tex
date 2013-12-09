@@ -56,94 +56,94 @@ exo
 	\setcounter{secnumdepth}{3}
 	\setcounter{minitocdepth}{1}
 	\tableofcontents
-	\chapter{Concept de base de données et fonction d'un SGBD}
-		\section{Concepts}
-		\begin{definition}
-			Un base de données est un ensemble structurée de données enregistrées sur des supports accessibles par l'ordinateur pour satisfaire
-			simultanément plusieurs utilisateurs.
-		\end{definition}
+\chapter{Concept de base de données et fonction d'un SGBD}
+	\section{Concepts}
+	\begin{definition}
+		Un base de données est un ensemble structurée de données enregistrées sur des supports accessibles par l'ordinateur pour satisfaire
+		simultanément plusieurs utilisateurs.
+	\end{definition}
 
-		Les utilisateurs n'ont pas la même vue de la donnée, ce qui induit l'administrateur.
-		\begin{remarque}
-			On construit une \bd{} en vue de traiter plusieurs application utilisant plusieurs programmes spécifiques. 
-		\end{remarque}
+	Les utilisateurs n'ont pas la même vue de la donnée, ce qui induit l'administrateur.
+	\begin{remarque}
+		On construit une \bd{} en vue de traiter plusieurs application utilisant plusieurs programmes spécifiques. 
+	\end{remarque}
 
-		\section{Objectifs d'une \bd{}}
-			\begin{description}
-				\item[Centralisation de l'information] La centralisation de l'information permet de réduire les couts matériels, réduire les couts humains\footnote{Saisie qu'une fois de l'information} et augmente la lisibilité.
-				\item[Assurer l'indépendance données / programmes] Lors de la modification de la \bd{} il faut essayer de conserver les programmes d'application.
-				\begin{description}
-					\item[Indépendance physique] Modifier la représentation physique des données sans changer les programmes.
-					\item[Indépendance logique] Modification du schéma conceptuel sans changer le programme.
-				\end{description}
-				\item[Permettre les liaisons entre les données] 
-				\item[Intégrité des données] Il faut qu'a tout moment les données soient cohérentes
-				\item[Droits d'accès] Offrir les moyens de gérer les conflits. Partage + Concurrence $\Rightarrow$ conflits
-			\end{description}
-		
-		\section{Avantages}
-		\begin{itemize}
-			\item La redondance est réduite.
-			\item Les données peuvent être partagées
-			\item Construction d'application sur des données existantes
-			\item Maintient de l'intégrité
-			\item Amélioration de la sécurité et de la disponibilité des données : Garantir une exploitation continue face aux pannes
-			\item Résolution des conflits
-			\item Les données sont relativement indépendantes des programmes
-		\end{itemize}
-
-		\section{Le SGBD}
-		\begin{definition}
-			Le Système de Gestion de Base de Données est un ensemble de programmes permettant à un utilisateur d'interagir avec une \bd
-		\end{definition}
-		\begin{figure}[H]
-			\centering
-			\includegraphics[width=10cm]{sgbd.eps}
-			\caption{Système de Gestion de Base de Données}
-		\end{figure}
-		\begin{remarque}
-			Le SGBD est un écran entre les usagers et les mémoires secondaires.\\ ~
-		\end{remarque}
-		
-		Cet ensemble de programmes permet:
-		\begin{itemize}
-			\item La description des données
-			\item L'accès aux données
-			\item La mise à jour des données (insertions, modifications, destructions)
-			\item La réalisation d'associations entre les données
-			\item Le maintient de l'intégrité
-			\item La sécurité d'exploitation
-		\end{itemize}
-		\section{Principale fonction d'un SGBD}
-		\subsection{Fonction de description -- Description des données (LDD)}
-		On doit pouvoir définir les entités se rapportant à un monde réel bien précis, préciser les attributs et les liaisons entre les entités. Le LDD
-		est un outil à la disposition de l'administrateur.
-
-		\subsection{Fonction de Manipulation -- Manipulation des données (LMD)}
-		La structure de la \bd{} étant décrite : 
-		\begin{itemize}
-			\item Stocker / Changer les données
-			\item Accéder aux enregistrements pour les mettre à jour
-			\item Interroger la \bd{}
-		\end{itemize}
-
-		\subsection{Autres fonctions}
-		Sécurité, intégrité, \ldots
-
-		\section{Types d'utilisateurs d'un SGBD}
-		Différents rôles que doivent jouer une personne ou un groupe de personnes pour concevoir, créer, mettre en œuvre et exploiter une \bd{} :
+	\section{Objectifs d'une \bd{}}
 		\begin{description}
-			\item[Administrateur]~
-				\begin{itemize}
-					\item Description formelle de la \bd
-					\item Création des schémas externes pour les applications
-					\item Définition des droits d'accès
-					\item Spécifier les organisations physiques et méthodes d'accès utilisées dans l'optique de garantir les meilleures performances
-					\item Définir les procédures de sécurité
-				\end{itemize}
-			\item[Administrateur d'application] Il est chargé de décrire la portion de la base de données concernée par une application. 
-			\item[Utilisateur] 
+			\item[Centralisation de l'information] La centralisation de l'information permet de réduire les couts matériels, réduire les couts humains\footnote{Saisie qu'une fois de l'information} et augmente la lisibilité.
+			\item[Assurer l'indépendance données / programmes] Lors de la modification de la \bd{} il faut essayer de conserver les programmes d'application.
+			\begin{description}
+				\item[Indépendance physique] Modifier la représentation physique des données sans changer les programmes.
+				\item[Indépendance logique] Modification du schéma conceptuel sans changer le programme.
+			\end{description}
+			\item[Permettre les liaisons entre les données] 
+			\item[Intégrité des données] Il faut qu'a tout moment les données soient cohérentes
+			\item[Droits d'accès] Offrir les moyens de gérer les conflits. Partage + Concurrence $\Rightarrow$ conflits
 		\end{description}
+	
+	\section{Avantages}
+	\begin{itemize}
+		\item La redondance est réduite.
+		\item Les données peuvent être partagées
+		\item Construction d'application sur des données existantes
+		\item Maintient de l'intégrité
+		\item Amélioration de la sécurité et de la disponibilité des données : Garantir une exploitation continue face aux pannes
+		\item Résolution des conflits
+		\item Les données sont relativement indépendantes des programmes
+	\end{itemize}
+
+	\section{Le SGBD}
+	\begin{definition}
+		Le Système de Gestion de Base de Données est un ensemble de programmes permettant à un utilisateur d'interagir avec une \bd
+	\end{definition}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=10cm]{sgbd.eps}
+		\caption{Système de Gestion de Base de Données}
+	\end{figure}
+	\begin{remarque}
+		Le SGBD est un écran entre les usagers et les mémoires secondaires.\\ ~
+	\end{remarque}
+	
+	Cet ensemble de programmes permet:
+	\begin{itemize}
+		\item La description des données
+		\item L'accès aux données
+		\item La mise à jour des données (insertions, modifications, destructions)
+		\item La réalisation d'associations entre les données
+		\item Le maintient de l'intégrité
+		\item La sécurité d'exploitation
+	\end{itemize}
+	\section{Principale fonction d'un SGBD}
+	\subsection{Fonction de description -- Description des données (LDD)}
+	On doit pouvoir définir les entités se rapportant à un monde réel bien précis, préciser les attributs et les liaisons entre les entités. Le LDD
+	est un outil à la disposition de l'administrateur.
+
+	\subsection{Fonction de Manipulation -- Manipulation des données (LMD)}
+	La structure de la \bd{} étant décrite : 
+	\begin{itemize}
+		\item Stocker / Changer les données
+		\item Accéder aux enregistrements pour les mettre à jour
+		\item Interroger la \bd{}
+	\end{itemize}
+
+	\subsection{Autres fonctions}
+	Sécurité, intégrité, \ldots
+
+	\section{Types d'utilisateurs d'un SGBD}
+	Différents rôles que doivent jouer une personne ou un groupe de personnes pour concevoir, créer, mettre en œuvre et exploiter une \bd{} :
+	\begin{description}
+		\item[Administrateur]~
+			\begin{itemize}
+				\item Description formelle de la \bd
+				\item Création des schémas externes pour les applications
+				\item Définition des droits d'accès
+				\item Spécifier les organisations physiques et méthodes d'accès utilisées dans l'optique de garantir les meilleures performances
+				\item Définir les procédures de sécurité
+			\end{itemize}
+		\item[Administrateur d'application] Il est chargé de décrire la portion de la base de données concernée par une application. 
+		\item[Utilisateur] 
+	\end{description}
 
 		\chapter{L'algèbre relationnelle}
 		\section{Les opérations ensemblistes}
@@ -437,8 +437,235 @@ exo
 		\caption{Arbre relationnel}
 	\end{figure}
 
+\chapter{Dépendances fonctionnelles}
+	\section{Problèmes posés par une mauvaise perception du réel}
+		\begin{table}[H]
+			\begin{tabular}{cccccccccc}
+				\textbf{numIm} & \textbf{Marque} & \textbf{Type} & \textbf{Puissce} & \textbf{Couleur} & \textbf{numSecu} & \textbf{nom} & \textbf{prenom} &
+				\textbf{date}  & \textbf{prix}\\
+				\hline
+				61A3631 &Renaut & clio & 4 & Rouge & 1 & Dupont & Pierre & 10.2.13 & 10500\\
+				80XA631 &Renaut & clio & 4 & bleue & 1 & Dupont & Pierre & 11.6.13 & 11600\\
+				31AA31 & Citroëne & C5 & 9 & bleue & 2 & Martin & Jacques & 22.07.13 & 22000\\
+				12X531 & Citroëne & C3 & 4 & verte & 2 & Martin & Jacques & 13.09.13 & 9800\\
+			\end{tabular}
+			\caption{Relation propriétaire}
+		\end{table}
+
+		La relation propriétaires souffre de plusieurs anomalies : 
+		\begin{enumerate}
+			\item \textbf{Données redondantes} Risque d'incohérence, par exemple si Jacques Martin veut changer de nom, il faudra changer tous les tuples
+			\item Il est nécessaire d'autoriser les valeurs \texttt{NULL} afin de pouvoir conserver des voitures sans propriétaires ou des personnes ne
+				possédant pas de voitures.
+			\item \textbf{Risque de perte de données} la suppression d'un tuple peut entrainer la perte d'un type de voiture ou d'un propriétaire.
+		\end{enumerate}
+
+		\section{Approche par décomposition}
+		L'approche par décomposition, pour concevoir des schémas relationnels tend à partir d'une relation universelle à découper cette relation en
+		sous relation qui ne souffriraient pas des anomalies précédentes.
+
+		\begin{definition}
+			La décomposition est le remplacement d'une relation $R(A_1,A_2,\cdots,A_n)$ par une cllection de relations $R_1,R_2,\cdots R_m$ obtenus par
+			des projections de R et tels que la relation résultat des jointures $R_1\bowtie R_2\bowtie \cdots \bowtie R_m$ ait le même schéma que R.
+		\end{definition}
+
+		\begin{exemple}
+		\begin{table}[H]
+			\centering
+				\begin{tabular}{cccccccccc}
+					\textbf{numIm} & \textbf{Marque} & \textbf{Type} & \textbf{Puissce} & \textbf{Couleur} \\
+					\hline
+					872RH75 & Renaut & Clio & 6 & Verte\\ 
+					31AA31 & Renaut & Clio & 6 & Rouge\\
+				\end{tabular}
+				\caption{Relation Voiture}
+				\begin{tabular}{ccc}
+					\textbf{numIm} & \textbf{Type} & \textbf{Couleur} \\
+					\hline
+					872RH75 & Clio & Verte\\ 
+					31AA31 & Clio & Rouge\\
+				\end{tabular}\hspace{20px}
+				\begin{tabular}{ccc}
+					\textbf{type} & \textbf{Marque} & \textbf{Puissance}\\
+					\hline
+					Clio & Renault & 6\\
+				\end{tabular}
+				\caption{Décomposition 1}
+				$T_1 = R_1 \bowtie R_2$\\
+				\begin{tabular}{cc}
+					\textbf{numIm} & \textbf{Type} \\
+					872RH75 & Clio\\ 
+					31AA31 & Clio\\
+				\end{tabular}
+				\begin{tabular}{ccc}
+					\textbf{type} & \textbf{Marque}\\
+					Clio & Renault\\
+				\end{tabular} 
+				\begin{tabular}{ccc}
+					\textbf{type} & \textbf{Puissance} & \textbf{Couleur}\\
+					Clio & 6 & Verte\\
+					Clio & 6 & Rouge\\
+				\end{tabular} \\
+				$T_2 = \bowtie v_1 \bowtie v_2 \bowtie v_3$\\
+				\begin{tabular}{cccccccccc}
+					\textbf{numIm} & \textbf{Marque} & \textbf{Type} & \textbf{Puissce} & \textbf{Couleur} \\
+					\hline
+					872RH75 & Renaut & Clio & 6 & Verte \\ 
+					31AA31 & Renaut & Clio & 6 & Rouge\\
+				\end{tabular}
+				\caption{Décomposition 2}
+			\end{table}
+			Perte d'information sur la couleur.
+		\end{exemple}
+		La décomposition 1 permet de retrouver l'information par jointure alors que la décomposition 2 ne permet pas de retrouver la couleur d'une
+		voiture.
+
+		\begin{definition}
+			La décomposition sans perte d'informations, ou spi est la décomposition d'une relation R en $R_1,R_2,\cdots,R_n$ par toute extension de R,
+			on ait $R=_1\bowtie R_2\bowtie \ldots \bowtie R_4$.
+		\end{definition}
+		
+		\section{Notion de dépendances fonctionnelles}
+		La notion de dépendances fonctionnelles (df) permet de caractériser les relations qui peuvent être décomposée sans perte d'information.
+
+		\begin{definition}
+			\textbf{Dépendance fonctionnelle}: soit $R(A_1,R_2,\cdots,R_n)$ un schéma de relation et $X$ et $Y$ des sous-enembles de
+			$\{A_1,A_2,\cdots,A_n\}$. On dit que $X\rightarrow Y$ ($x$ détermine $Y$) si pour tout extensions $r$ de $R$, pour tout tuple $t_1$ et
+			$t_2$ de $r$ on a $\Pi_X(t_1) = \Pi_X(t_2) \Rightarrow \Pi_Y(t_1) = \Pi_Y(t_2)$
+		\end{definition}
+\begin{remarque}
+	$X\rightarrow$Y si étant donné une valeur de $X$, il lui correspond une valeur unique de $Y$
+\end{remarque}
+		\begin{exemple}
+			\begin{tabular}{cc}
+				numIm $\rightarrow$ Type & Type $\rightarrow$ Puisance\\
+				numIn $\rightarrow$ Couleur & Type $\rightarrow$ marque\\
+				Type,Marque $\rightarrow $puissance
+			\end{tabular}\\
+			Par contre on a pas Puissance $\not\rightarrow$ type.
+
+			Il est possible de visualiser cet ensemble de df par un graphe appelé graphe de dépendance fonctionnelle.
+		\end{exemple}
+
+		\subsection{Théorèmes}
+		\subsubsection{Axiomes d'Amstrong}
+		\begin{description}
+			\item[Réfléxivité] $Y \subseteq X \Rightarrow X \rightarrow Y$ Tout ensemble d'attribut détermine les même où une partie de lui même
+			\item[Augmentation] $X\rightarrow Y \Rightarrow X,Z \rightarrow Y,Z$ si $X\rightarrow Y$ les deux ensembles d'attributs peuvent être
+				enrichis par une troisième
+			\item[Transitivité: $X\rightarrow Y$ et $Y \rightarrow Z \Rightarrow X\rightarrow Z$] Cette règle provient du fait que le composé de deux
+				fonctions dont l'image de l'une et le domaine de l'autre est une fonction.
+		\end{description}
+
+		\subsubsection{Règles déduites}
+		Plusieurs règles se déduisent de ces axiomes : 
+		\begin{description}
+			\item[Union] $X\rightarrow Y$ et $X\rightarrow Z \Rightarrow X \rightarrow y,Z$
+			\item[Pseudo transitivité] X$\rightarrow Y$ et $W,Y \rightarrow Z \Rightarrow W,X \rightarrow Z$ 
+			\item[Décomposition] $X\rightarrow Y$ et $Z\subseteq  \Rightarrow X\rightarrow Z$ 
+		\end{description}
+
+		\begin{definition}
+			Une dépendance fonctionnelle élémentaire est une dépendance de a forme $X \rightarrow A$, ou $A$ est un attribut unique $\not\in X$ et où
+			$\not\exists X \subset X$ tel que $X \rightarrow A$.
+		\end{definition}
+		\begin{exemple}
+			type $\rightarrow$ puissance n'est pas élémentaire
+		\end{exemple}
+		\begin{remarque}
+			La seule règle d'inférance qui s'applique au dépendances fonctionnelles et la transitivté.~\\
+		\end{remarque}
+
+		\begin{definition}
+			Une clé est un sous ensemble $X$ des attributs d'une relation $R(A_1,A_2,\cdots,A_n)$
+			tel que $X\rightarrow A_1,A_2,\cdots,A_n$ et $\not\exists Y \subset Y$ tel que $Y\rightarrow A_1,A_2,\cdots,A_n$.
+		\end{definition}
+		
+		\begin{definition}
+			La fermeture transitive est un ensemble de dépendances fonctionnelles considéré enrichi de toutes les dépendances fonctionnelles déduites
+			par transitivité.
+
+			Notation: La fermeture transitive de F est noté $F^+$
+		\end{definition}
+
+		\begin{definition}
+			2 ensembles $F_1$ et $F_2$ sont équivalent ssi $F_1^+ = F_2^+$	
+		\end{definition}
+
+		\begin{definition}
+			La convention minimale est un ensemble F de dfe associé à un ensemble d'attributs vérfiant les propriétés suivantes : 
+			\begin{enumerate}
+				\item Aucune df n'est redondante $\forall f \in F$, $F.f$ n'est pas équivalent à $F$.
+				\item Toute dfe est dans $F^+$
+			\end{enumerate}
+		\end{definition}
+
+		\begin{proposition}
+			Si une relation $R(X,Y,Z)$ possède une dépendance $X\rightarrow Y$ alors $R$ est décomposable sans perte d'information en $R_1(X,Y)$ et
+			$R_2(X,Z)$.
+		\end{proposition}
+		\section{Formes Normales (NF)}
+		\begin{definition}
+			Une relation est en première forme normale si tout attriut contient une valeur atomique, éviter le domaine composé de plusieurs valeurs	
+		\end{definition}
+		\begin{definition}
+			Une relation R est en 2eme forme normale si : 
+			\begin{itemize}
+				\item Elle est en 1NF
+				\item Tout attribut n'appartenant pas à une clé ne dépend pas d'une partie de la clé
+			\end{itemize}
+		\end{definition}
+		\begin{exemple}
+			Fournisseur(\underline{nom, article}, adresse, prix)\\
+			d1: nom,article $\rightarrow$ prix\\
+			d2: nom $\rightarrow$ adresse
+
+			Cette relation n'est pas en 2NF à cause de d2
+		\end{exemple}
+		\begin{definition}
+			Une relation est en 3e forme normal si et seulement si : 
+			\begin{itemize}
+				\item Elle est en 2NF
+				\item Tout attribut n'appartenant pas à une clé ne dépend pas d'un attribut n'appartenant pas à un clé.
+			\end{itemize}
+		\end{definition}
+		\begin{exemple}
+			voitures(\underline{numIm, type}, marque)\\
+			d1: numIm $\rightarrow$ type\\
+			d2: type $\rightarrow$ marque
+
+			Voiture n'est pas en 3NF à cause de d2.
+		\end{exemple}
+
+		\begin{definition}
+			Une relation est en 3NF BKC, Bayo-Codd Kent, si et seulement si les seules différences sont celles dans lesquelles une clé détermine un
+			attribut.
+		\end{definition}
+
+		\section{Algorithme de décomposition 3NF}
+		Pour toute relation, il existe au moins une décomposition en 3NF préservant les dépendances fonctionnelles sans perte d'information. Le but d'un
+		algorithme de décomposition en 3NF est de convertir un schéma de relation qui n'est pas 3NF en un ensemble de schémas 3NF.
+
+		Le principe de l'algorithme consiste à appliquer les règle e décomposition suivantes tel que les schémas ne sont pas 3NF:
+		\begin{description}
+			\item[Schéma non 2NF] R(k1, k2, x, y); La relation doit être décomposée en R1(\underline{k2}, X) et R2(\underline{k1,k2}, Y)
+			\item[Schéma non 3NF] R(k,x,y,z), la relation doit être décomposée en R1(\underline{X},Z) et R2(\underline{k},x,y)
+		\end{description}
+		\begin{itemize}
+			\item Schéma non 2NF
+		\end{itemize}
+		\section{Propriétés d'une décomposition en 3NF}
+		Les dépendances fonctionnelles des règles indépendants du temps qui doivent vérifier les attributs, il est nécessaire qu'une décomposition
+		préserve les règles
+
+		\begin{definition}
+			Une décomposition $\{R_1,R_2,\cdots,R_n\}$ d'une relation R tel que la fermeture transitive de la df de R est le même que l'union des
+			dépendances fonctionnelles de $\{R_1,R_2,\cdots,R_n\}$.
+		\end{definition}
+
+		Dans toute relation, il existe au moins une décomposition en 3NF préservant les dépendances fonctionnelles sans perte d'information. Le but
+		d'un algorithme de décomposition en 3NF est de convertir un schéma de relation qui n'est pas 3NF.
+
 	\appendix
 	\include{exo}
 \end{document}
-
-

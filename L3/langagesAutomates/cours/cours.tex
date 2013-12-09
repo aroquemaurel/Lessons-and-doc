@@ -45,6 +45,9 @@
 \input{/home/aroquemaurel/cours/includesLaTeX/couverture.tex}
 \makeatother
 \includeonly {
+%langage,
+automatesPile,
+machineTuring
 }
 \begin{document}
 	\thispagestyle{empty} % Removes page numbers
@@ -71,118 +74,9 @@
 	Le but est de nous apprendre ce qu'est un \textbf{automate} et ce qu'est une \textbf{grammaire}.
 	\end{description}
 	\tableofcontents
-	\chapter{Introduction}
-	L'information doit être exprimée à l'aide d'une \textit{grammaire} et reconnue, vérifiée grâce aux \textit{automates}.
+	\include{langage}
+	\include{automatesPile}
+	\include{machineTuring}
 
-	Les langages sont plus ou moins compliqué, il en existe plusieurs types: 
-	\begin{itemize}
-		\item les langages les plus simples sont les langages \textit{régulier}, soit une grammaire \textit{linéaire à droite} et un
-	automate fini.
-		\item Les langages plus complexes sont les langages hors contexte lié à une grammaire hors contexte et un automate à pile.
-		\item Langages sensible au contexte, avec une grammaire sensible au contexte et une machine de Turing
-	\end{itemize}
-	\begin{remarque}
-		langage régulier $\subset$ langage hors contexte $\subset$ langage sensible au contexte 
-	\end{remarque}
 
-	\chapter{Langages et grammaires}
-	\section{Définitions}
-	\begin{description}
-		\item[Langage] Un langage est engendré par une grammaire et reconnu par un automate	
-		\item[Alphabet] Ensemble fini non vide de symboles tous différents
-			\begin{exemple}
-				$X = \{0,2,4,6,8\}$ $X=\{do, re, mi, fa, sol, la, si\}$ $X=\{if, then, else\}$	
-			\end{exemple}
-		\item[Mot] Sur un alphabet X une suite finie, éventuellement vide de symboles de X
-			\begin{exemple}
-				$a_1 = 2246$ $a_2 = fasolsi$
-			\end{exemple}
-		\item[Longueur d'un mot $\omega$] $|\omega|=$Nombre de symboles de x qui contient $\omega$
-		\item[Mot vide] $\lambda$ tel que $|\lambda|=0\ \forall x,\; \lambda \not\in x$
-		\item[Nombre d'occurences] d'un sybole $s\in x$ dans un mot $omega$ $|\omega|s$
-	\end{description}
-	\section{Opérations sur les mots}
-	\begin{description}
-		\item[Concaténation de mots] Soient X un alphabet et deux mots $\omega_1$ et $\omega_2$.\\
-			$\omega = x_1x_2\ldots x_n, x_1 \in x \forall i\in[1,n]$
-			\begin{attention}
-				\begin{itemize}
-					\item La concaténation n'est pas commutative.	
-					\item La concaténation est associative
-				\end{itemize}
-			\end{attention}
-			\begin{remarque}
-				$\lambda$ est l'élément neutre de la concaténation
-				\\
-			\end{remarque}
-		\item[Puissance] soit $w \in X$, $w^n = \lambda$ si $n=0$ et $w^n = w.w^{n-A}$ pour $n > 0$.
-			\begin{remarque}
-				L'ensemble $X^{*}$ de mots construits sur X muni de la concaténation $.$ est un monoïde libre ayant X pour générateur.
-			\end{remarque}
-	\end{description}
-	\section{Langage L}
-	Un langage est un ensemble de mots. $L \subseteq X^*$. $X=\{a,b,c\} X^*$\\
-	L = ensemble de mots sur  qui commencent par a = $\{w \in X^* / w = a.w', w'\in X^*$
-	\section{Opérations sur les langages}
-	Les opérateurs ensemblistes fonctionnent sur les langages, mais également une opération induite par la concaténation: le produit.
-	
-	Soit X un alphabet. $L_1 \subseteq X^*, L_2 \subseteq X^*$.
-	\begin{itemize}
-		\item $L_1 \cup L_2 = L_1 + L_2 = \{w \in X^*/w \in L_1 ou w\in L_2\}$
-		\item $L_1 \cap L_2 = \{w \in X^*/w\in L_1 et w\in L_2\}$
-		\item $\overline{L_1} = X^* - L_1 = \{w \in X^* / w \not\in L_1\}$
-		\item Produit $L_1 . L_2 = L_1 L_2 = \{w\in X^* / \exists w_1 \in _1 \exists w_2 \in L_2$ tel que$w = w_1 . w_2$ 
-	\begin{attention}
-		\begin{itemize}
-			\item Le produit de langages n'est pas commutatif.
-			\item Le produit de langages est associatif
-		\end{itemize}
-	\end{attention}
-
-\item $L \subseteq X^*$ Langage\\
-$L^* = \bigcup_{n >= 0}L^n$ avec $L^n$ tel que $L^0 = \lambda$
-	\begin{displaymath}
-	L^n
-	\left\{\begin{array}{ccc}si & n=0 & L^0=\{\lambda\}\\
-		\;&n>0&L^n=L.L^{n-1}
-	\end{array}\right.
-	\end{displaymath}
-	\end{itemize}
-	\chapter{Grammaire}
-		Dérivation, arbre de dérivation, ambigüité, langage engendré, classification
-
-		\begin{definition}
-			Moyen précis, concis, explicite pour exprimer comment sont construit les mots d'un langage. Une grammaire $G=<N, X, P, S>$\\
-			\begin{itemize}
-				\item X: alphabet, ensemble de terminaux(minuscule).
-				\item N : ensemble de non terminaux (majuscule)
-				\item S : axiome, $S\in N$
-				\item P : ensemble de règle de production (réécriture) $=\{\lambda \rightarrow \beta, \lambda \in(NUX)^+, \beta\in(NUX)^*\}$
-					\begin{exemple}
-						\begin{eqnarray*}
-							G'_1 &=&  <N,X,P,S>\\
-							N &=&  \{S,A\} X\{a,b,c\}\\
-							P&=& \{S \rightarrow aAc\\
-							&&\ A \rightarrow bAb\\
-							&&\ A \rightarrow b\}
-						\end{eqnarray*}
-					\end{exemple}
-			\end{itemize}
-		\end{definition}
-		\section{Dérivation}
-			\begin{eqnarray*}
-				G &=&  <N,X,P,S>\\
-				W &\in& (NUX)^+\\
-				w_1&\in& (NUX)^* 
-			\end{eqnarray*}
-			w se dérive en $w_1$. Si $\exists x, y \in (NUX)^*$ tel que $w=xuy$ et $w_1=xvy$ avec $u\rightarrow v \in p$
-
-			w se dérive en plusieurs étapes en w.
-			\begin{definition}
-				Un arbre de dérivation est un outil visuel pour exprimer la dérivation des mots.
-			\end{definition}
-			Soit G une grammaire $= <N,X,P,S>$, le langage engendré par $G=L(G)$ est $=$ l'ensemble de tous les mots de $X^*$ que l'on peut engendré à
-			a partir de l'axiome S.
-
-			$L(G) = \{w \in X^*/S\Rightarrow^* w\}$
 \end{document}
