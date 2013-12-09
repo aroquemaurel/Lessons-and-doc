@@ -86,21 +86,41 @@ void put(const int sockfd, char* file) {
 	char msg[256] = "PUT "; // TODO taille tableau allocation
 	int f;
 	char buff[256];
+	char answer;
+	int sizeFile;
+	struct stat stats;
 
 	strcat(msg, file);
-	strcat(msg, " HTTP/1.0\r\n\r\n");
+	strcat(msg, " HTTP/1.0\r\n");
 	strcpy(buff,"./");
 	strcat(buff,file);
 	if((f = open(buff, O_RDONLY, 0755)) == -1) {
 		fprintf(stderr, "erreur file");
 	} 
 	
+	fstat(f, &stats);
+	sizeFile = stats.st_size;
+
+	sprintf(buff, "Contents-length: %d", sizeFile);
+	strcat(msg, buff);
+	strcat(msg, "\r\n\r\n");
+
+	buff[0] = "\0";
+
 	write(sockfd,msg,strlen(msg));
-	while(read(f, buff, 1) > 0) {
-		write(sockfd,buff,1);
+	int nbBytes;
+	while((nbBytes = read(f, buff, 1)) > 0) {
+		// Write abortait le programme et retournait 141(?).
+		// Fonctionne correctement avec send
+		send(sockfd, buff, 1, MSG_NOSIGNAL); 
 	}
 	printf("%s", msg);
 //	query(sockfd, msg, file, NULL, PUT);
+
+	// get result
+  while(read(sockfd,&answer,1) != 0) {
+		printf("%c", answer);
+	}
 }
 
 void query(const int sockfd, char* msg, char* file, char* outputFile, const TypeQuery typeQuery) {
@@ -134,7 +154,6 @@ void query(const int sockfd, char* msg, char* file, char* outputFile, const Type
 		printf("%c", msg[i]);
 		write(sockfd,msg+i,1);
 	}
-	printf("test");
 
 	// get result
 	while(read(sockfd,&answer,1) != 0) {
