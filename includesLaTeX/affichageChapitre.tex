@@ -1,62 +1,29 @@
-\makeatletter
-\def\thickhrulefill{\leavevmode \leaders \hrule height 1ex \hfill \kern \z@}
-%% \chapter
-\def\@makechapterhead#1{%
-  \reset@font
-  \parindent \z@
-  \vspace*{10\p@}%
-  \hbox{%
-    \vbox{%
-      \advance\hsize by -2cm
-      \hrule height 0.4pt depth 0pt width \hsize
-      \par
-      \vskip 6pt%
-      \hspace{20pt}%
-      \parbox{420pt}{%
-        \LARGE \bfseries #1
-		}%
-      \par
-      \vskip 6pt%
-      \hspace{20pt}%
-      \hrule height 0.4pt depth 0pt width \hsize
-	  \vspace{-30pt}
-      }%
-    \vbox{%
-      \hsize=1.5cm%
-      \begin{tabular}{c}
-        \scshape \large \strut \@chapapp{} \\
-        \colorbox{black}{\vbox{\hbox{\vbox to 1mm{}}\hbox{
-			\color{white} \LARGE \bfseries \hspace{1mm}\thechapter\hspace{1mm}
-		}\hbox{\vbox to 2cm{}}}}%
-      \end{tabular}%
-      }%
-    }%
-  \vskip 20\p@
-}
-%% \chapter*
-\def\@makeschapterhead#1{%
-  \reset@font
-  \parindent \z@
-  \vspace*{10\p@}%
-  \hbox{%
-    \vbox{%
-      \advance\hsize by -0cm
-      \hrule height 0.4pt depth 0pt width \hsize
-      \par
-      \vskip 6pt%
-      \hspace{20pt}%
-      \parbox{420pt}{%
-        \LARGE \bfseries #1
-		}%
-      \par
-      \vskip 6pt%
-      \hspace{20pt}%
-      \hrule height 0.4pt depth 0pt width \hsize
-      }%
-    }%
-  \vskip 20\p@
+\usepackage[explicit]{titlesec}
+\usepackage{lmodern}
 
-}
+\newlength\chapnumb
+\setlength\chapnumb{4cm}
+
+\titleformat{\chapter}[block]
+{\normalfont\sffamily}{}{0pt}
+{\parbox[b]{\chapnumb}{%
+\vspace{-80px}%
+   \fontsize{120}{110}\selectfont\thechapter}%
+  \parbox[b]{\dimexpr\textwidth-\chapnumb\relax}{%
+    \raggedleft%
+    \hfill{\LARGE#1}\\
+    \rule{\dimexpr\textwidth-\chapnumb\relax}{0.4pt}}}
+\titleformat{name=\chapter,numberless}[block]
+{\normalfont\sffamily}{}{0pt}
+{\parbox[b]{\chapnumb}{%
+   \mbox{}}%
+  \parbox[b]{\dimexpr\textwidth-\chapnumb\relax}{%
+    \raggedleft%
+    \hfill{\LARGE#1}\\
+    \rule{\dimexpr\textwidth-\chapnumb\relax}{0.4pt}}}
+
+
+\makeatletter
 
 \newlength{\sectiontitleindent}
 \newlength{\subsectiontitleindent}
