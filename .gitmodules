@@ -1,24 +1,24 @@
 [submodule "L2/siaweb4/folksonomies"]
 	path = L2/siaweb4/folksonomies
-	url = ssh://gitolite@dev.joohoo.fr:443/web/L2/folksonomies.git
+	url = ssh://gitolite@garp/web/L2/folksonomies.git
 [submodule "L2/siaweb4/superVod"]
 	path = L2/siaweb4/superVod
-	url = ssh://gitolite@dev.joohoo.fr:443/web/L2/superVod.git
+	url = ssh://gitolite@garp/web/L2/superVod.git
 [submodule "IUT/2-s4-stage"]
 	path = IUT/2-s4-stage
-	url = ssh://gitolite@dev.joohoo.fr:443/latex/IUT/stage.git
+	url = ssh://gitolite@garp/latex/IUT/stage.git
 [submodule "L2/projet4/boggle"]
 	path = L2/projet4/boggle
-	url = ssh://git@dev.joohoo.fr:443/data/dev/git/repositories/logiciel/L2/boggle
+	url = ssh://git@garp/data/dev/git/repositories/logiciel/L2/boggle
 [submodule "L2/reseau4/reseauCouche2"]
 	path = L2/reseau4/reseauCouche2
-	url = ssh://gitolite@dev.joohoo.fr:443/logiciel/L2/reseauCouche2.git
+	url = ssh://gitolite@garp/logiciel/L2/reseauCouche2.git
 [submodule "L2/systeme3/gestionPhotos"]
 	path = L2/systeme3/gestionPhotos
-	url = ssh://gitolite@dev.joohoo.fr:443/scripts/L2/gestionPhotos.git
+	url = ssh://gitolite@garp/scripts/L2/gestionPhotos.git
 [submodule "IUT/libUML"]
 	path = IUT/libUML
-	url = ssh://gitolite@dev.joohoo.fr:443/logiciel/IUT/libUML.git
+	url = ssh://gitolite@garp/logiciel/IUT/libUML.git
 [submodule "L2/systeme4/systemeGestionFichier"]
 	path = L2/systeme4/systemeGestionFichier
-	url = ssh://gitolite@dev.joohoo.fr:443/logiciel/L2/sgf.git
+	url = ssh://gitolite@garp/logiciel/L2/sgf.git
