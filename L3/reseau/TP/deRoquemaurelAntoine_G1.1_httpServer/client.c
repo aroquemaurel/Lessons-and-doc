@@ -22,7 +22,7 @@ void decaler(char* buff);
 bool supprimerEntete(char c);
 
 
-int main(int argc, char *argv[]) {
+int main(int argc, char** argv) {
 	int portno, sockfd;
 	char buffer[256];
 	char* file = argv[4];
@@ -31,7 +31,7 @@ int main(int argc, char *argv[]) {
 	struct hostent *server;
 
 	// Arguments error
-	if(argc < 5 || (strcmp(argv[1], "get") != 0 && strcmp(argv[1], "put") != 0 && strcmp(argv[1], "test") != 0)) {
+	if((strcmp(argv[1], "get") != 0 && strcmp(argv[1], "put") != 0 && strcmp(argv[1], "test") != 0) || argc < 5) {
 		strcpy(buffer, error_usage());
 		error(buffer, 2);
 	}
@@ -62,7 +62,7 @@ int main(int argc, char *argv[]) {
 	if(strcmp(argv[1], "get") == 0){
 		get(sockfd, file, outputFile);
 	} else if(strcmp(argv[1], "put") == 0) {
-
+		put(sockfd, file);
 	} else if(strcmp(argv[1], "test") == 0) {
 		strcat(buffer, argv[4]);
 		strcat(buffer, "\r\n\r\n");
@@ -83,12 +83,47 @@ void get(const int sockfd, char* file, char* output) {
 }
 
 void put(const int sockfd, char* file) {
-	char msg[256] = "PUT ";
+	char msg[256] = "PUT "; // TODO taille tableau allocation
+	int f;
+	char buff[256];
+	char answer;
+	int sizeFile;
+	struct stat stats;
+	char buffChar;
 
 	strcat(msg, file);
-	strcat(msg, " HTTP/1.0\r\n\r\n");
-	query(sockfd, msg, file, NULL, PUT);
-	// TODO put
+	strcat(msg, " HTTP/1.0\r\n");
+	strcpy(buff,"./");
+	strcat(buff,file);
+	if((f = open(buff, O_RDONLY, 0755)) == -1) {
+		fprintf(stderr, "erreur file");
+	} 
+	strcat(buff, "\r\n");
+	
+	fstat(f, &stats);
+	sizeFile = stats.st_size;
+
+	sprintf(buff, "Contents-length: %d", sizeFile);
+	strcat(msg, buff);
+	strcat(msg, "\r\n\r\n");
+
+//	buff[0] = "\0";
+
+	write(sockfd,msg,strlen(msg));
+	int nbBytes;
+	while((nbBytes = read(f, &buffChar, 1)) > 0) {
+		// Write abortait le programme et retournait 141(?).
+		// Fonctionne correctement avec send
+//		write(sockfd,&buffChar,1);
+		send(sockfd, &buffChar, 1, MSG_NOSIGNAL); 
+	}
+	printf("%s", msg);
+
+	// get result
+	// FIXME → Provoque bloquage du put.
+//  while(read(sockfd,&answer,1) != 0) {
+///		printf("%c", answer);
+//	}
 }
 
 void query(const int sockfd, char* msg, char* file, char* outputFile, const TypeQuery typeQuery) {
@@ -119,6 +154,7 @@ void query(const int sockfd, char* msg, char* file, char* outputFile, const Type
 
 	// send requete
 	for(i=0 ; i < strlen(msg); ++i) {
+		printf("%c", msg[i]);
 		write(sockfd,msg+i,1);
 	}
 
