@@ -18,3 +18,8 @@ let access = function
 let accessBis = function
     (_,deux)::_::[] -> deux;;
 
+let substituerPred = fun e p ->
+    let rec subs l = function ->
+         [] -> []
+        | t::q -> if p t then e::(substituerPred e p q) else t::(substituerPred e p q);;
+    in subs;;

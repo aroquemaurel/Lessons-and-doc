@@ -1,1 +1,18 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {B.1}Alg\IeC {\`e}bres relationnel}{\reset@font\mtcSfont 13}{section.B.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.1}Alg\IeC {\`e}bres relationnel}{\reset@font\mtcSfont 17}{section.A.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.1.1}Op\IeC {\'e}rateurs alg\IeC {\'e}briques}{\reset@font\mtcSSfont 17}{subsection.A.1.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.1.1.1} Donner le degr\IeC {\'e} des vins de cru Morgon et Mill\IeC {\'e}sime 2001 }{\reset@font\mtcSSSfont 17}{subsubsection.A.1.1.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.1.1.2}Num\IeC {\'e}ro des buveurs de Chenas}{\reset@font\mtcSSSfont 17}{subsubsection.A.1.1.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.1.1.3}Nom et pr\IeC {\'e}nom des buveurs de ch\IeC {\'e}non et de Tariquet}{\reset@font\mtcSSSfont 17}{subsubsection.A.1.1.3}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.1.1.4}Noms des buveurs ayant bu uniquement du Tavel}{\reset@font\mtcSSSfont 18}{subsubsection.A.1.1.4}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.1.1.5}\IeC {\'E}crire \ref {q4} en langage alg\IeC {\'e}brique}{\reset@font\mtcSSSfont 18}{subsubsection.A.1.1.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.1.2}Arbres alg\IeC {\'e}briques}{\reset@font\mtcSSfont 18}{subsection.A.1.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.1.2.1}Types de wagons du train 4001}{\reset@font\mtcSSSfont 19}{subsubsection.A.1.2.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.1.2.2}Num\IeC {\'e}ro et types des wagons des ligne l11 et l12}{\reset@font\mtcSSSfont 19}{subsubsection.A.1.2.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.1.2.3}Num\IeC {\'e}ro des wagons communcs aux lignes l11 e l12}{\reset@font\mtcSSSfont 19}{subsubsection.A.1.2.3}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.1.2.4}Num\IeC {\'e}ro des trains ayant au moins 2 wagons vides}{\reset@font\mtcSSSfont 19}{subsubsection.A.1.2.4}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.1.2.5}Liste des gares de dessertes pour le train 4001}{\reset@font\mtcSSSfont 19}{subsubsection.A.1.2.5}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.1.2.6}Num\IeC {\'e}ro des lignes qui partent de la gare de Toulouse}{\reset@font\mtcSSSfont 19}{subsubsection.A.1.2.6}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.2}D\IeC {\'e}pendances fonctionnelles}{\reset@font\mtcSfont 19}{section.A.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.2.1}}{\reset@font\mtcSSfont 19}{subsection.A.2.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.2.1.1}Forme normale de $R_1$ ?}{\reset@font\mtcSSSfont 19}{subsubsection.A.2.1.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.2.1.2}Proposer un sch\IeC {\'e}ma en 3NF}{\reset@font\mtcSSSfont 19}{subsubsection.A.2.1.2}}
