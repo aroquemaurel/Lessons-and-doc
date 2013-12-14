@@ -89,6 +89,7 @@ void put(const int sockfd, char* file) {
 	char answer;
 	int sizeFile;
 	struct stat stats;
+	char buffChar;
 
 	strcat(msg, file);
 	strcat(msg, " HTTP/1.0\r\n");
@@ -97,6 +98,7 @@ void put(const int sockfd, char* file) {
 	if((f = open(buff, O_RDONLY, 0755)) == -1) {
 		fprintf(stderr, "erreur file");
 	} 
+	strcat(buff, "\r\n");
 	
 	fstat(f, &stats);
 	sizeFile = stats.st_size;
@@ -105,22 +107,23 @@ void put(const int sockfd, char* file) {
 	strcat(msg, buff);
 	strcat(msg, "\r\n\r\n");
 
-	buff[0] = "\0";
+//	buff[0] = "\0";
 
 	write(sockfd,msg,strlen(msg));
 	int nbBytes;
-	while((nbBytes = read(f, buff, 1)) > 0) {
+	while((nbBytes = read(f, &buffChar, 1)) > 0) {
 		// Write abortait le programme et retournait 141(?).
 		// Fonctionne correctement avec send
-		send(sockfd, buff, 1, MSG_NOSIGNAL); 
+//		write(sockfd,&buffChar,1);
+		send(sockfd, &buffChar, 1, MSG_NOSIGNAL); 
 	}
 	printf("%s", msg);
-//	query(sockfd, msg, file, NULL, PUT);
 
 	// get result
-  while(read(sockfd,&answer,1) != 0) {
-		printf("%c", answer);
-	}
+	// FIXME → Provoque bloquage du put.
+//  while(read(sockfd,&answer,1) != 0) {
+///		printf("%c", answer);
+//	}
 }
 
 void query(const int sockfd, char* msg, char* file, char* outputFile, const TypeQuery typeQuery) {
