@@ -16,8 +16,8 @@
 \contentsline {section}{\numberline {2.5}Exceptions}{7}{section.2.5}
 \contentsline {chapter}{\numberline {3}Fonctions}{8}{chapter.3}
 \contentsline {section}{\numberline {3.1}D\IeC {\'e}finition}{8}{section.3.1}
-\contentsline {section}{\numberline {3.2}Application}{8}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Valeur d'une fonction dans un environnement $\Gamma $}{8}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.2}Application}{9}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Valeur d'une fonction dans un environnement $\Gamma $}{9}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Application d'une fonction \IeC {\`a} un argument dans $\Gamma _2$}{9}{subsection.3.2.2}
 \contentsline {section}{\numberline {3.3}Fonction \IeC {\`a} n param\IeC {\`e}tres}{9}{section.3.3}
 \contentsline {section}{\numberline {3.4}Application partielle}{9}{section.3.4}
