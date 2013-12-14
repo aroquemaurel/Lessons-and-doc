@@ -1,4 +1,14 @@
 \select@language {french}
+<<<<<<< HEAD
+\contentsline {chapter}{\numberline {1}Introduction}{4}{chapter.1}
+\contentsline {chapter}{\numberline {2}Langages et grammaires}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}D\IeC {\'e}finitions}{5}{section.2.1}
+\contentsline {section}{\numberline {2.2}Op\IeC {\'e}rations sur les mots}{5}{section.2.2}
+\contentsline {section}{\numberline {2.3}Langage L}{5}{section.2.3}
+\contentsline {section}{\numberline {2.4}Op\IeC {\'e}rations sur les langages}{6}{section.2.4}
+\contentsline {chapter}{\numberline {3}Grammaire}{7}{chapter.3}
+\contentsline {section}{\numberline {3.1}D\IeC {\'e}rivation}{7}{section.3.1}
+=======
 \contentsline {section}{\numberline {0.1}*}{2}{section.0.1}
 \contentsline {section}{\numberline {0.2}*}{2}{section.0.2}
 \contentsline {chapter}{\numberline {1}Langage}{4}{chapter.1}
@@ -28,3 +38,4 @@
 \contentsline {section}{\numberline {3.4}Relation entre configuration}{12}{section.3.4}
 \contentsline {section}{\numberline {3.5}Langages accept\IeC {\'e}s ; langages d\IeC {\'e}cid\IeC {\'e}s}{12}{section.3.5}
 \contentsline {section}{\numberline {3.6}Introduction \IeC {\`a} la calculabilit\IeC {\'e}}{12}{section.3.6}
+>>>>>>> b4e44a21f3380e093198929cf9c4ee5d7cd1810e
