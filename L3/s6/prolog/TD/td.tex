@@ -1,0 +1,71 @@
+\documentclass[12pt,a4paper,openany]{book}
+
+\usepackage{lmodern}
+\usepackage[svgnames]{xcolor} % Required to specify font color
+\input{/home/aroquemaurel/cours/includesLaTeX/couleurs.tex}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, linkcolor=vert1, urlcolor=bleu, colorlinks=true]{hyperref}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{graphicx} % Required for box manipulation
+
+\newcommand{\titre}{Programmation logique}
+\newcommand{\subtitle}{Prolog}
+\newcommand{\auteur}{Antoine de \bsc{Roquemaurel}}
+\newcommand{\formation}{L3 Informatique}
+\newcommand{\semestre}{6}
+\newcommand{\annee}{2014}
+\newcommand{\prof}{Maurel et Arcangeli}
+
+
+\newcommand{\pole}{}
+\newcommand{\sigle}{tml}
+\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex} %prise en charge du langage algo
+\input{/home/aroquemaurel/cours/includesLaTeX/l2/cours.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/couverture.tex}
+\makeatother
+
+\begin{document}
+	\thispagestyle{empty} % Removes page numbers
+	\titleBC 
+	\setcounter{tocdepth}{2}
+	\setcounter{secnumdepth}{3}
+	\tableofcontents
+	\chapter{Programmation par induction -- unification}
+	\section{Exercice 1}
+	\lstinputlisting[language=Prolog,caption=Entiers de K à 0]{1.pl}
+
+	Pour l'ordre croisant, il suffit d'inverser les clauses 2 et 3.
+	\lstinputlisting[language=Prolog,caption=Entiers de 0 à K]{1-1.pl}
+
+	\section{Exercice 2 -- Unification}
+	Une structure de données est nécessaire pour cet exercice,
+	ici nous allons utiliser un tuple.
+	\lstinputlisting[language=Prolog,caption=Exercice 2]{exo2.pl}
+	
+	\section{Exercice 3 -- Unification}
+	\lstinputlisting[language=Prolog,caption=Exercice 3]{exo3.pl}
+
+	\section{Exercice 4 -- Induction}
+	\lstinputlisting[language=Prolog,caption=Exercice 3]{exo4.pl}
+
+	
+
+	\appendix
+	\lstlistoflistings
+		
+\end{document}
+
+
