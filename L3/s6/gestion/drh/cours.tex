@@ -1,0 +1,85 @@
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage{lmodern}
+\usepackage[svgnames]{xcolor} % Required to specify font color
+\input{/home/aroquemaurel/cours/includesLaTeX/couleurs.tex}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}
+\usepackage{wrapfig}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, linkcolor=vert1, urlcolor=bleu, colorlinks=true]{hyperref}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage[francais]{minitoc}
+\usepackage[final]{pdfpages} 
+\usepackage{graphicx} % Required for box manipulation
+
+\newcommand{\titre}{Ressources humaines}
+\newcommand{\subtitle}{UE d'ouverture}
+\newcommand{\auteur}{Antoine de \bsc{Roquemaurel}}
+\newcommand{\formation}{L3 Informatique}
+\newcommand{\semestre}{6}
+\newcommand{\annee}{2014}
+\newcommand{\prof}{}
+
+
+\newcommand{\pole}{}
+\newcommand{\sigle}{drh}
+
+
+\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/l2/cours.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
+\newcommand{\pfp}{\texttt{pfp}}
+
+\newcommand{\ifp}{\texttt{if}}
+\newcommand{\elsep}{\texttt{else}}
+
+\input{/home/aroquemaurel/cours/includesLaTeX/couverture.tex}
+\makeatother
+\includeonly {
+}
+\begin{document}
+	\thispagestyle{empty} % Removes page numbers
+	\titleBC 
+	\dominitoc
+	\setcounter{tocdepth}{1}
+	\setcounter{secnumdepth}{3}
+	\setcounter{minitocdepth}{1}
+	\tableofcontents
+	\chapter*{Introduction}
+	Dans une entreprise, il y a 6 ressources : 
+	\begin{itemize}
+		\item Humaines
+		\item Recherche et développement
+		\item Production 
+		\item Commerciale
+		\item Finances 
+		\item Information
+	\end{itemize}
+
+	Chacune de ces ressources à un directeur\footnote{Directeur commercial, Directeur
+	Ressources humains, Directeur financier, \ldots}, ici nous aborderons principalement
+	les ressources humaines.
+
+	En arrivant dans une entreprise on demande un projet, à distinguer avec un
+	objectif\footnote{Exemple d'objectif, devenir ingénieur développement}, un projet est
+	lié à la motivation : << qu'est ce que j'ai envie de faire ? >>, afin d'être pris au
+	sérieux il faut donc dire ce qu'on veut faire, ce qu'on va apporter à
+	l'entreprise.
+
+	Afin d'effectuer une bonne carrière, deux compétences sont très importantes: 
+	\begin{description}
+		\item[Communication] Clients, Hiérarchie, \ldots
+		\item[Négociation] Salaires, postes, clients, \ldots
+		\item[Management] Gérer une équipe, motiver les gens, les faire collaborer, donner envie de travailler,\ldots
+	\end{description}
+\end{document}

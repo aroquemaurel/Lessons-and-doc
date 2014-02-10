@@ -1,0 +1,82 @@
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage{lmodern}
+\usepackage[svgnames]{xcolor} % Required to specify font color
+\input{/home/aroquemaurel/cours/includesLaTeX/couleurs.tex}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, linkcolor=vert1, urlcolor=bleu, colorlinks=true]{hyperref}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage[francais]{minitoc}
+\usepackage[final]{pdfpages} 
+\usepackage{graphicx} % Required for box manipulation
+
+\newcommand{\titre}{Langages et automates}
+\newcommand{\subtitle}{~}
+\newcommand{\auteur}{Antoine de \bsc{Roquemaurel}}
+\newcommand{\formation}{L3 Informatique}
+\newcommand{\semestre}{5}
+\newcommand{\annee}{2013}
+\newcommand{\prof}{Christine \bsc{Maurel} -- JP \bsc{Arcangeli}}
+
+
+\newcommand{\pole}{}
+\newcommand{\sigle}{langage}
+
+
+\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/l2/cours.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
+\newcommand{\pfp}{\texttt{pfp}}
+
+\newcommand{\ifp}{\texttt{if}}
+\newcommand{\elsep}{\texttt{else}}
+
+\input{/home/aroquemaurel/cours/includesLaTeX/couverture.tex}
+\makeatother
+\includeonly {
+%langage,
+automatesPile,
+machineTuring
+}
+\begin{document}
+	\thispagestyle{empty} % Removes page numbers
+	\titleBC 
+	\dominitoc
+	\setcounter{tocdepth}{1}
+	\setcounter{secnumdepth}{3}
+	\setcounter{minitocdepth}{1}
+	\chapter*{Avant-Propos}
+	\begin{itemize}
+		\item 3 séances CM
+		\item 8 séances JPA
+		\item 4 séances CM
+	\end{itemize}
+	\begin{description}
+		\item[MCC]~
+	\begin{description}
+		\item[Contrôle continue] 30\%
+		\item[Contrôle terminal] 70\%
+	\end{description}
+\item[Objectifs] 
+	Avoir les bases pour aborder la compilation lors du S7 en master.
+
+	Le but est de nous apprendre ce qu'est un \textbf{automate} et ce qu'est une \textbf{grammaire}.
+	\end{description}
+	\tableofcontents
+	\include{langage}
+	\include{automatesPile}
+	\include{machineTuring}
+
+
+\end{document}

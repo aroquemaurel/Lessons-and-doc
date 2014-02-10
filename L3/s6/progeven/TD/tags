@@ -1,0 +1,97 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Arbre	td.tex	/^	\\lstinputlisting[language=Java, caption=Répertoire]{codes\/7.java}$/;"	s
+Boutons	td.tex	/^	\\lstinputlisting[language=Java, caption=\\texttt{InputDialog}]{codes\/2.java}$/;"	s
+Color.BLUE	codes/3.java	/^b.setBackground(Color.BLUE);$/;"	typedefs
+Exo1	codes/1.java	/^	public Exo1() {$/;"	m	class:Exo1	access:public	signature:()
+Exo1	codes/1.java	/^public class Exo1 extends JFrame {$/;"	c	inherits:JFrame
+Exo1.Exo1	codes/1.java	/^	public Exo1() {$/;"	m	class:Exo1	access:public	signature:()
+Exo1.main	codes/1.java	/^	public static void main(String[] args) {$/;"	m	class:Exo1	access:public	signature:(String[] args)
+Fen   tres	td.tex	/^	\\tableofcontents$/;"	c
+KeyEvent.B_K	codes/3.java	/^b.setMneonic(KeyEvent.B_K);$/;"	typedefs
+Mod   les	td.tex	/^	\\chapter{Table, Arbres et Modèles}$/;"	s
+Model	codes/5.java	/^public class Model extends AbstractTableModel {$/;"	c	inherits:AbstractTableModel
+Model	codes/6.java	/^public class Model extends AbstractTableModel {$/;"	c	inherits:AbstractTableModel
+Model.data	codes/6.java	/^	private Object[][] data;$/;"	f	class:Model	file:	access:private
+Model.getColumnCount	codes/5.java	/^	public int getColumnCount() {$/;"	m	class:Model	access:public	signature:()
+Model.getColumnCount	codes/6.java	/^	public int getColumnCount() {$/;"	m	class:Model	access:public	signature:()
+Model.getColumnName	codes/5.java	/^	public String getColumnName(int column) {$/;"	m	class:Model	access:public	signature:(int column)
+Model.getColumnName	codes/6.java	/^	public String getColumnName(int column) {$/;"	m	class:Model	access:public	signature:(int column)
+Model.getRowCount	codes/5.java	/^	public int getRowCount() {$/;"	m	class:Model	access:public	signature:()
+Model.getRowCount	codes/6.java	/^	public int getRowCount() {$/;"	m	class:Model	access:public	signature:()
+Model.getValueAt	codes/5.java	/^	public Object getValueAt(int row, int column) {$/;"	m	class:Model	access:public	signature:(int row, int column)
+Model.getValueAt	codes/6.java	/^	public Object getValueAt(int row, int column) {$/;"	m	class:Model	access:public	signature:(int row, int column)
+Model.isCellEditable	codes/5.java	/^	public boolean isCellEditable(int rowIndex, int columnIndex) {$/;"	m	class:Model	access:public	signature:(int rowIndex, int columnIndex)
+Model.isCellEditable	codes/6.java	/^	public boolean isCellEditable(int rowindex, int columnindex) {$/;"	m	class:Model	access:public	signature:(int rowindex, int columnindex)
+Model.setValueAt	codes/6.java	/^	publi Object setValueAt(Object aValue, int row, int column) {$/;"	m	class:Model	access:default	signature:(Object aValue, int row, int column)
+Render	7.java	/^public class Render extends DefaultTableCellRenderer {$/;"	c	inherits:DefaultTableCellRenderer
+Rendus	td.tex	/^	\\lstinputlisting[language=Java, caption=Répertoire]{codes\/6.java}$/;"	s
+Table  Arbres et Mod   les	td.tex	/^	\\lstinputlisting[language=Java, caption=\\texttt{JButton}]{codes\/3.java}$/;"	c
+_POSIX_C_SOURCE	exosFabrice.c	70;"	d	file:
+appelerEric	codes/2-1.java	/^Tache appelerEric = new TacheTelephone("Ertineric", "0211223344");$/;"	typedefs
+appelerEric	codes/2-1.java	/^tachesAppel.add(appelerEric);$/;"	typedefs
+appelerEric	codes/2-1.java	/^tachesLundi.remove(appelerEric);$/;"	typedefs
+appelerMartine	codes/2-1.java	/^Tache appelerMartine = new TacheTelephone("", "0211223344");$/;"	typedefs
+appelerMartine	codes/2-1.java	/^tachesAppel.add(appelerMartine);$/;"	typedefs
+appelerMartine	codes/2-1.java	/^tachesLundi.add(appelerMartine);$/;"	typedefs
+appelerMartine	codes/2-1.java	/^tachesMardi.contains(appelerMartine);$/;"	typedefs
+b	codes/3.java	/^JButton b = new JButton("Bouton");$/;"	typedefs
+bg1	codes/4.java	/^ButtonGroup bg1 = new ButtonGroup();$/;"	typedefs
+bg2	codes/4.java	/^ButtonGroup bg2 = new ButtonGroup();$/;"	typedefs
+c	codes/truc.java	/^Container c = f.getContentPane();$/;"	typedefs
+c.setLayout	codes/truc.java	/^c.setLayout(new BorderLayout());$/;"	m	signature:(new BorderLayout())
+coderBd	codes/2-1.java	/^Tache coderBd = new TacheCodage("bd");$/;"	typedefs
+coderBd	codes/2-1.java	/^tachesCodage.add(coderBd);$/;"	typedefs
+coderIHM	codes/2-1.java	/^Tache coderIHM = new TacheCodage("ihm");$/;"	typedefs
+coderLogique	codes/2-1.java	/^Tache coderLogique = new TacheCodage("logique");$/;"	typedefs
+coderLogique	codes/2-1.java	/^tachesCodage.add(coderLogique);$/;"	typedefs
+coderLogique	codes/2-1.java	/^tachesLundi.add(coderLogique);$/;"	typedefs
+commande	19.c	/^void commande(char commande,fichier f1,fichier f2){$/;"	f	signature:(char commande,fichier f1,fichier f2)
+commande	exosFabrice.c	/^void commande(char commande,fichier f1,fichier f2){$/;"	f	signature:(char commande,fichier f1,fichier f2)
+containers	codes/8.java	/^DefaultMutableTreeNode containers = new DefaultMutableTreeNode("Containers");$/;"	typedefs
+containers	codes/8.java	/^swing.add(containers);$/;"	typedefs
+controls	codes/8.java	/^DefaultMutableTreeNode controls = new DefaultMutableTreeNode("Controls");$/;"	typedefs
+controls	codes/8.java	/^swing.add(controls);$/;"	typedefs
+data	codes/6.java	/^	private Object[][] data;$/;"	f	class:Model	file:	access:private
+fonction	test.c	/^void fonction() {$/;"	f
+getColumnCount	codes/5.java	/^	public int getColumnCount() {$/;"	m	class:Model	access:public	signature:()
+getColumnCount	codes/6.java	/^	public int getColumnCount() {$/;"	m	class:Model	access:public	signature:()
+getColumnName	codes/5.java	/^	public String getColumnName(int column) {$/;"	m	class:Model	access:public	signature:(int column)
+getColumnName	codes/6.java	/^	public String getColumnName(int column) {$/;"	m	class:Model	access:public	signature:(int column)
+getRowCount	codes/5.java	/^	public int getRowCount() {$/;"	m	class:Model	access:public	signature:()
+getRowCount	codes/6.java	/^	public int getRowCount() {$/;"	m	class:Model	access:public	signature:()
+getValueAt	codes/5.java	/^	public Object getValueAt(int row, int column) {$/;"	m	class:Model	access:public	signature:(int row, int column)
+getValueAt	codes/6.java	/^	public Object getValueAt(int row, int column) {$/;"	m	class:Model	access:public	signature:(int row, int column)
+isCellEditable	codes/5.java	/^	public boolean isCellEditable(int rowIndex, int columnIndex) {$/;"	m	class:Model	access:public	signature:(int rowIndex, int columnIndex)
+isCellEditable	codes/6.java	/^	public boolean isCellEditable(int rowindex, int columnindex) {$/;"	m	class:Model	access:public	signature:(int rowindex, int columnindex)
+jtree	codes/8.java	/^JTree jtree = new JTree(swing);$/;"	typedefs
+kamolox	test.c	/^void kamolox() {$/;"	f
+main	codes/1.java	/^	public static void main(String[] args) {$/;"	m	class:Exo1	access:public	signature:(String[] args)
+main	exosFabrice.c	/^int main(int argc,char * argv[])$/;"	f	signature:(int argc,char * argv[])
+main	test.c	/^int main(int argc, char *argv[])$/;"	f	signature:(int argc, char *argv[])
+menus	codes/8.java	/^DefaultMutableTreeNode menus = new DefaultMutableTreeNode("Menus");$/;"	typedefs
+menus	codes/8.java	/^swing.add(menus);$/;"	typedefs
+options	codes/2.java	/^Object[] options = {"Truc", "Machin", "Chose", "Chouette"};$/;"	typedefs
+position	exosFabrice.c	/^position=lseek(fd,0,seek_cur);$/;"	v
+r1	codes/4.java	/^JRadioButton r1 = new JRadioButton("opt1"); $/;"	typedefs
+r2	codes/4.java	/^JRadioButton r2 = new JRadioButton("opt2"); $/;"	typedefs
+r3	codes/4.java	/^JRadioButton r3 = new JRadioButton("opt3"); $/;"	typedefs
+r4	codes/4.java	/^JRadioButton r4 = new JRadioButton("opt4"); $/;"	typedefs
+retourNieme	exosFabrice.c	/^int retourNieme(int fd,int n,int *err){$/;"	f	signature:(int fd,int n,int *err)
+setValueAt	codes/6.java	/^	publi Object setValueAt(Object aValue, int row, int column) {$/;"	m	class:Model	access:default	signature:(Object aValue, int row, int column)
+swing	codes/8.java	/^DefaultMutableTreeNode swing = new DefaultMutableTreeNode("Swing");$/;"	typedefs
+tachesMardi	codes/2-1.java	/^toutesLesTaches.addAll(tachesMardi);$/;"	typedefs
+tachesMardiAppel	codes/2-1.java	/^tachesMardi.containsAll(tachesMardiAppel);$/;"	typedefs
+tachesMardiNonAppel	codes/2-1.java	/^List tachesMardiNonAppel = new ArrayList(tachesMardi);$/;"	typedefs
+tachsAppel	codes/2-1.java	/^List tachsAppel = new ArrayList();$/;"	typedefs
+tachsAppel	codes/2-1.java	/^tachesMardiNonAppel.removeAll(tachsAppel);$/;"	typedefs
+tachsCodage	codes/2-1.java	/^List tachsCodage = new ArrayList();$/;"	typedefs
+tachsLundi	codes/2-1.java	/^List tachsLundi = new ArrayList(8);$/;"	typedefs
+tachsMardi	codes/2-1.java	/^List tachsMardi = new ArrayList(8);$/;"	typedefs
+taille	exosFabrice.c	/^off_t taille;$/;"	v
+test	test.c	/^void test(int a) {$/;"	f	signature:(int a)
+toutesLesTaches	codes/2-1.java	/^Tache toutesLesTaches = new ArrayList(tachesLundi);$/;"	typedefs

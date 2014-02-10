@@ -1,0 +1,79 @@
+\chapter{Exercices}
+\section{Fonctions}
+\subsection{Récursivité sur les entiers}
+\subsubsection{Parité}
+Donner la définition récursive de la fonction pair qui retourne un booléen si n est pair : 
+\begin{lstlisting}[language=algo]
+si n = 0 alors true
+si n = 1 alors false
+si n > 1 alors pair(n-2)
+si n < 0 alors erreur
+\end{lstlisting}
+\begin{lstlisting}[language=Caml, caption=Exercice -- Fonction pair en récursif]
+# let pair = fun n ->
+	let rec verifMult2 = fun x ->
+		match x with
+			 0 -> true
+			|1 -> false
+			|p -> verifMult2(p-2)
+	in if n < 0 then verifMult2(-n)
+		else verifMult2 n;;
+int -> bool = <fun>
+\end{lstlisting}
+
+\subsubsection{\texttt{sommeCarres}}
+Écriture d'une fonction qui effectue la somme des carrés : $1^2+2^2+3^2+\cdots+n^2$
+\begin{lstlisting}[language=Caml, caption=Exercice -- Fonction pair en récursif]
+# let sommeCarres = fun n ->
+	let rec funRecCarres = fun x -> 
+		if x = 0 then 0
+		else (x*x) + funRecCarres(x-1)
+	in if n < 0 then funRecCarres (-n)
+		else funRecCarres n;;
+\end{lstlisting}
+
+\subsubsection{\texttt{sommeFonctions}}
+\begin{lstlisting}[language=Caml, caption=Exercice -- Fonction pair en récursif]
+# let sommeFonctions = fun f -> fun n ->
+	let rec calcul = fun x ->
+		if x = 0 then 0
+		else (f x) + calcul(x-1)
+	in if n < 0 then calcul(-n)
+		else calcul n;;
+\end{lstlisting}
+\subsection{\texttt{PGCD}}
+Écrire la fonction pgcd tel que \texttt{pgcd a b} est égale au lus grand diviseur de a et de b.
+
+Par soustraction successive, le pgcd de a et b est le pgcd du plus petit des 2 et de la valeur absolue de leur différence $a>0$ et
+$b>0$.
+\begin{lstlisting}[language=algo, caption=Exercices -- Algorithme pgcd]
+	si a = b alors a
+	si a < b alrs pgcd a (b-a)
+	si a > b alors pgcd (a-b) b
+\end{lstlisting}
+
+\begin{lstlisting}[language=Caml, caption=Exercice -- Fonction pgcd]
+let pgcd = fun a -> fun b ->
+	let rec trait = fun x -> fun y -> (* x > 0 et y > 0*)
+		if x = y then x (* cas d'arrêt *)
+		else if x < y then trait x (y-x) (* Appel récursif *)
+		else trait (x-y) y (* Appel récursif *)
+	in if(a > 0) && (b > 0) then trait a b
+	   else failwith "PGCD, entiers négatifs ou nuls";;
+\end{lstlisting}
+
+\subsection{Exercices diverses sur les fonctions}
+\subsubsection{dernierChiffre}
+\subsubsection{Son argument privé de son dernier chiffre}
+\subsubsection{nombre d'occurence d'un chiffre}
+Compte le nombre d'occurrence d'un chiffre dans l'écriture décimale d'un entier
+\section{Structures de données}
+\subsection{Liste}
+\lstinputlisting[language=Caml, caption=Exercice -- listes]{exos/listes.ml}
+
+\lstinputlisting[language=Caml, caption=Exercice -- fonctions sur les listes]{exos/listes2.ml}
+\subsection{Types utilisateurs}
+\lstinputlisting[language=Caml, caption=TDM -- types utilisateur]{exos/typesTDM.ml}
+
+\lstinputlisting[language=Caml, caption=TDM -- types utilisateur -- Mobiles]{exos/mobiles.ml}
+

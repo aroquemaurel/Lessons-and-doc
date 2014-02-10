@@ -1,0 +1,4 @@
+JComboBox j1 = new JComboBox();
+JComboBox j2 = new JComboBox();
+JComboBox j3 = new JComboBox();
+JComboBox j4 = new JComboBox();

@@ -1,0 +1,73 @@
+(* 
+ * ===================
+ * Utiles 
+ * ===================
+ *)
+let string_of_char = String.make 1 ;;
+
+(* 
+ * ===================
+ * Définition des types 
+ * ===================
+ *)
+type expr =  Const of int
+            |Var of char
+            |Add of expr*expr
+            |Sub of expr*expr
+            |Mul of expr*expr
+            |Div of expr*expr
+            |Opp of expr;;
+
+type liaison = Liaison of (char*int);;
+type environnement = Environnement of liaison list;;
+
+let liaisonGetVar = function Liaison(v,c) -> v;;
+let liaisonGetConst = function Liaison(v,c) -> c;;
+(**
+ *)
+let rec getStringExpr = function 
+      Const(c) -> string_of_int c
+    | Var(v) -> string_of_char v
+    | Add(e1,e2) -> "("^(getStringExpr e1)^" + "^(getStringExpr e2)^")"
+    | Sub(e1,e2) -> "("^(getStringExpr e1)^" - "^(getStringExpr e2)^")"
+    | Mul(e1,e2) -> "("^(getStringExpr e1)^" * "^(getStringExpr e2)^")"
+    | Div(e1,e2) -> "("^(getStringExpr e1)^" / "^(getStringExpr e2)^")"
+    | Opp(e) -> "(-"^(getStringExpr e)^")"
+;;
+
+(**
+ *)
+let displayExpr = fun expr -> print_string ((getStringExpr expr)^"\n");;
+
+let evalReplaceLiaison = fun expr liaison ->
+    let rec interne = function
+      Const(c) -> Const(c)
+    | Var(v) -> if(v = (liaisonGetVar liaison)) then Const(liaisonGetConst liaison) else Var(v)
+    | Add(e1,e2) -> Add((interne e1), (interne e2))
+    | Mul(e1,e2) -> Mul((interne e1), (interne e2))
+    | Sub(e1,e2) -> Sub((interne e1), (interne e2))
+    | Div(e1,e2) -> Div((interne e1), (interne e2))
+    | Opp(e) -> Opp((interne e))
+    in (interne expr);;
+
+let rec evalWithEnvironment = fun expr environnement ->
+    match environnement with
+      Environnement([]) -> expr
+    | Environnement(t::q) -> evalWithEnvironment (evalReplaceLiaison expr t) (Environnement(q)) ;;
+    
+    
+
+(*
+ * ===================
+ * Tests unitaires
+ * ===================
+ *)
+let e1 = Add(Add(Mul(Var('x'), Const(1)), Opp(Var('y'))), Sub(Const(5), Const(7)));;
+let e2 = Add(Add(Var('x'), Var('y')), Const(5));;
+let env1 = Environnement([Liaison('x',1);Liaison('y',5)]);;
+displayExpr e1;;
+displayExpr e2;;
+
+displayExpr (evalWithEnvironment e1 env1);; 
+
+

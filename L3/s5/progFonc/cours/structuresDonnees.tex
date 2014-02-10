@@ -1,0 +1,357 @@
+\chapter{Structures de données}
+\section{N-uplets}
+Permet de rassembler des informations dont on connait à l'avance le nombre et le type éventuellement hétérogène.
+	\begin{lstlisting}[language=Caml, caption=Syntaxe de n-uplets, numbers=none]
+(x1, x2, ..., xn)		
+tx1 * tx2 * ... * txn
+\end{lstlisting}
+
+\begin{exemple}
+	\begin{lstlisting}[language=Caml, caption=Exemple n-uplets, numbers=none, framerule=0pt]
+# (1, 2, 3);;
+-: int * int * int = 1, 2, 3
+# (1, (2,3));; 
+int * (int * int)
+# let first = fun (x,y) -> x ;;
+val first = ('a*'b) -> 'a = <fun>
+# let consCple = fun x -> fun y -> (x, y);;
+val consCple = 'a -> 'b -> ('a*'b) = <fun>
+\end{lstlisting}
+\end{exemple}
+
+Ils permettent de mettre des informations hétérogènes, cependant la dimension doit être connue à l'avance. L'avantage étant l'accès aux informations
+par filtrage.
+
+Il faut que N soit raisonnable, pour un grand nombre d'informations ce n'est pas adapté
+
+\section{Listes}
+Elles permettent de rassembler N informations avec un N quelconque, cependant les informations doivent être homogènes.
+
+On définie une liste par induction : la liste est vide, ou l'ajout d'un élément.
+
+En Caml le type est list, noté \texttt{'a list}, correspondant à une liste dont tous les éléments sont de type a. Le constructeur d'une liste vide se
+fait avec \texttt{[]}.  L'ajout d'un élément se fait systématiquement en tête, à l'aide de l'opérateur \texttt{::}, \texttt{e::l} ajoute l'élément e en tête de la liste.
+
+	\begin{lstlisting}[language=Caml, numbers=none, framerule=0pt]
+e1::e2::...::en::[]	
+[e1;e2;...;e3]
+	\end{lstlisting}
+	\begin{exemple}
+	\begin{lstlisting}[language=Caml, caption=Exemple de listes, numbers=none, framerule=0pt]
+#[];;
+- : 'a list = []
+#let ex = 1::[];;
+val ex : int list = [1]
+#let ex1 = 1 ::2::3::[];;
+val ex1 : int list = [1;2;3]
+#let ex2 = 0::ex1
+val ex2 : int list = [0;1;2;3]
+#let ex3 = [1,2]::({3,4]::[]);;
+[[(1,2)];[(3,4)]]
+let ex4 = (1,tue)::[(2,false)}
+ex4 : (int * bool) lt = [(1,true);(2,false)]
+	\end{lstlisting}
+	\end{exemple}
+
+	On peut utiliser le filtrage sur les listes avec les filtrage \texttt[] et \texttt{::l} permettant respectivement de savoir si une liste est vide ou
+	d'accéder aux informations: tête(e), reste(l)
+
+	\subsection{Fonctions récursives sur les listes}
+	Le cas d'arrêt est 1 ou plusieurs élément, le cas général correspond souvent à diminuer la taille de la liste.
+
+\lstinputlisting[language=Caml, caption=Fonctions sur les listes]{listes.ml}
+
+\subsubsection{La fonction \texttt{append}}
+La fonction \texttt{append} est une fonction qui concatène deux listes, elle pourrait être implémenter comme ceci: 
+\begin{lstlisting}[language=Caml, caption=Exemple d'implémentation de \texttt{append}]
+(* Concatène deux liste, version naive *)
+let rec append = fun l1 l2 
+    match (l1,l2) with
+     ([],[]) -> [] 
+    |([]::e, t::q) -> t::q
+    |([t1:::q1, []) -> t1::q1
+    |(t1::q1, t2::q2) -> t1::(append q1 (t2::q2));;
+
+(* Bonne version de append *)
+let rec append = fun l1 l2 ->
+    match l1 with
+     [] -> l2
+    |t::q -> t::(append q l2);;
+\end{lstlisting}
+
+\begin{remarque}
+Cette fonction est déjà disponible dans le langage OCaml, pour cela on peut utiliser l'opérateur \texttt{@} : \texttt{l1@l2}
+\end{remarque}
+
+\subsection{La fonction \texttt{reverse}}
+La fonction \texttt{reverse} retourne la liste construite à l'envers.
+\lstinputlisting[language=Caml, caption=Fonction \texttt{reverse}]{reverse.ml}
+
+\subsubsection{La fonction \texttt{nbOcc}}
+Fonction qui compte le nombre d'occurrence d'un élément dans une liste.
+\lstinputlisting[language=Caml, caption=Fonction \texttt{nbOcc}]{nbOcc.ml}
+\subsubsection{La fonction \texttt{remove}}
+Fonction qui supprime toutes les occurrences du premier paramètre de la liste présente dans le second paramètre.
+\lstinputlisting[language=Caml, caption=Fonction \texttt{remove}]{remove.ml}
+
+\subsection{Fonctions de tris}
+\subsubsection{Tri par insertion}
+\begin{description}
+	\item[Fonction \texttt{inserer}] Cette fonction insère un élément dans une liste déjà trié.\\
+\lstinputlisting[language=Caml, caption=Fonction \texttt{inserer}]{inserer.ml}
+	\item[Fonction \texttt{triInsertion}] Tri la liste avec l'algorithme du tri par insertion\\
+		\lstinputlisting[language=Caml, caption=Fonction \texttt{triInsertion}]{triInsertion.ml}
+\end{description}
+
+\subsubsection{Tri par fusion}
+\begin{description}
+	\item[Fonction \texttt{partage}]Partage une liste en deux. Prend une liste en paramètre et retourne deux lites.
+	\lstinputlisting[language=Caml, caption=Fonction \texttt{partage}]{partage.ml}
+	\item[Fonction \texttt{merge}] Fusionne deux listes en une seule.
+	\lstinputlisting[language=Caml, caption=Fonction \texttt{merge}]{merge.ml}
+\end{description}
+
+\section{Types utilisateurs}
+L'objectif est de pouvoir définir un type représentant l'union de types existants.
+Par exemple comment faire pour manipuler des nombres qui
+soient des entiers, des réels ou des complexes ? Définition d'un type par l'utilisateur qui représente une
+union de type
+
+\subsection{Définition d'un type}
+\lstinputlisting[language=Caml, caption=Définition d'un type utilisateur]{defType.ml}
+\begin{exemple}
+	\begin{lstlisting}[language=Caml, caption=Exemple de listes, numbers=none, framerule=0pt]
+#[];;
+- : 'a list = []
+#let ex = 1::[];;
+val ex : int list = [1]
+#let ex1 = 1 ::2::3::[];;
+val ex1 : int list = [1;2;3]
+#let ex2 = 0::ex1
+val ex2 : int list = [0;1;2;3]
+#let ex3 = [1,2]::({3,4]::[]);;
+[[(1,2)];[(3,4)]]
+let ex4 = (1,tue)::[(2,false)}
+ex4 : (int * bool) lt = [(1,true);(2,false)]
+	\end{lstlisting}
+	\end{exemple}
+
+	On peut utiliser le filtrage sur les listes avec les filtrage \texttt[] et \texttt{::l} permettant respectivement de savoir si une liste est vide ou
+	d'accéder aux informations: tête(e), reste(l)
+
+	\subsection{Fonctions récursives sur les listes}
+	Le cas d'arrêt est 1 ou plusieurs élément, le cas général correspond souvent à diminuer la taille de la liste.
+
+\lstinputlisting[language=Caml, caption=Fonctions sur les listes]{listes.ml}
+
+\subsubsection{La fonction \texttt{append}}
+La fonction \texttt{append} est une fonction qui concatène deux listes, elle pourrait être implémenter comme ceci: 
+\begin{lstlisting}[language=Caml, caption=Exemple d'implémentation de \texttt{append}]
+(* Concatène deux liste, version naive *)
+let rec append = fun l1 l2 
+    match (l1,l2) with
+     ([],[]) -> [] 
+    |([]::e, t::q) -> t::q
+    |([t1:::q1, []) -> t1::q1
+    |(t1::q1, t2::q2) -> t1::(append q1 (t2::q2));;
+
+(* Bonne version de append *)
+let rec append = fun l1 l2 ->
+    match l1 with
+     [] -> l2
+    |t::q -> t::(append q l2);;
+\end{lstlisting}
+
+\begin{remarque}
+Cette fonction est déjà disponible dans le langage OCaml, pour cela on peut utiliser l'opérateur \texttt{@} : \texttt{l1@l2}
+\end{remarque}
+
+\subsection{La fonction \texttt{reverse}}
+La fonction \texttt{reverse} retourne la liste construite à l'envers.
+\lstinputlisting[language=Caml, caption=Fonction \texttt{reverse}]{reverse.ml}
+
+\subsubsection{La fonction \texttt{nbOcc}}
+Fonction qui compte le nombre d'occurrence d'un élément dans une liste.
+\lstinputlisting[language=Caml, caption=Fonction \texttt{nbOcc}]{nbOcc.ml}
+\subsubsection{La fonction \texttt{remove}}
+Fonction qui supprime toutes les occurrences du premier paramètre de la liste présente dans le second paramètre.
+\lstinputlisting[language=Caml, caption=Fonction \texttt{remove}]{remove.ml}
+
+\subsection{Fonctions de tris}
+\subsubsection{Tri par insertion}
+\begin{description}
+	\item[Fonction \texttt{inserer}] Cette fonction insère un élément dans une liste déjà trié.\\
+\lstinputlisting[language=Caml, caption=Fonction \texttt{inserer}]{inserer.ml}
+	\item[Fonction \texttt{triInsertion}] Tri la liste avec l'algorithme du tri par insertion\\
+		\lstinputlisting[language=Caml, caption=Fonction \texttt{triInsertion}]{triInsertion.ml}
+\end{description}
+
+\subsubsection{Tri par fusion}
+\begin{description}
+	\item[Fonction \texttt{partage}]Partage une liste en deux. Prend une liste en paramètre et retourne deux lites.
+	\lstinputlisting[language=Caml, caption=Fonction \texttt{partage}]{partage.ml}
+	\item[Fonction \texttt{merge}] Fusionne deux listes en une seule.
+	\lstinputlisting[language=Caml, caption=Fonction \texttt{merge}]{merge.ml}
+\end{description}
+
+\section{Types utilisateurs}
+L'objectif est de pouvoir définir un type représentant l'union de types existants.
+Par exemple comment faire pour manipuler des nombres qui
+soient des entiers, des réels ou des complexes ? Définition d'un type par l'utilisateur qui représente une
+union de type
+
+\subsection{Définition d'un type}
+\lstinputlisting[language=Caml, caption=Définition d'un type utilisateur]{defType.ml}
+\begin{exemple}
+	\begin{itemize}
+		\item Définir le type \texttt{couleur} avec les 3 couleurs : bleu, blanc et rouge
+	\begin{lstlisting}[language=Caml, numbers=none, framerule=0pt]
+type couleur = Bleu | Blanc | Rouge;;		
+	\end{lstlisting}
+\item Définir le type \texttt{carte} à jouer avec les 3 figures (roi, dame et valet) et les cartes numérotées de 1 à 10
+	\begin{lstlisting}[language=Caml, numbers=none, framerule=0pt]
+type carte = Valet | Dame | Roi | Valeur of int
+	\end{lstlisting}
+\item Définir le type \texttt{nombre} comme étant soit un entier, soit un réel, soit un complexe (couple de 2 réels)
+	\begin{lstlisting}[language=Caml, numbers=none, framerule=0pt]
+type nombre = Entier of int | Reel of float | Complexe of float * float;;	
+	\end{lstlisting}
+\item Définir le type \texttt{automateFini} non déterministe comme étant un triplet avec son état initial, la fonction de transition qui associe à un
+	état et un symbole la liste es états successeurs, et le prédicat qui indique si un état est final ou non.
+	\begin{lstlisting}[language=Caml, numbers=none, framerule=0pt]
+type ('e, 's) automate = ('e * 
+						 ('e -> 's -> 'e list) *
+						 ('e -> bool));;
+	\end{lstlisting}
+\item Définir le type de \texttt{monAutomate}, instanciation du type générique précédent, avec des entiers pour représenter les états et des caractères
+	pour représenter les symboles
+	\begin{lstlisting}[language=Caml, numbers=none, framerule=0pt]
+type monAutomate = (int,int) automate;;
+	\end{lstlisting}
+\item Définir le type des \texttt{arbres binaires} comme étant soit une feuille contenant une information, soit un nœud avec 2 sous arbres.
+	\begin{lstlisting}[language=Caml, numbers=none, framerule=0pt]
+type 'a arbreBinaire = 
+	 Feuille of 'a 
+	|Noeud of 'a arbreBinaire * 'a arbreBinaire;;
+	\end{lstlisting}
+\item Définir le type des \texttt{arbres n-aires} comme étant un noeud contenant une information et un nombre quelconque d'arbres n-aire comme fils
+	\begin{lstlisting}[language=Caml, numbers=none, framerule=0pt]
+type 'a arbreNaire = 
+Node of 'a * 'a arbreNaire lits
+	\end{lstlisting}
+\item Définir le type \texttt{jour} de la semaine
+	\begin{lstlisting}[language=Caml, numbers=none, framerule=0pt]
+type jour = Lundi|Mardi|Mercredi|Jeudi|Vendredi|Samedi|Dimanche;;
+	\end{lstlisting}
+\item Définir le type Résultats comme étant soit un entiers, soit une erreur
+	\begin{lstlisting}[language=Caml, numbers=none, framerule=0pt]
+	type resultat = Entier of int | Erreur;;
+	\end{lstlisting}
+\item Définir le type option paramètre cmme étant soit rien soit un élément du type paramètre
+	\begin{lstlisting}[language=Caml, numbers=none, framerule=0pt]
+	type option = Rien | Quelque chose of 'a;;
+	\end{lstlisting}
+\item Définir le type action du langage LOGO sachant qu'une action peut être: tourner d'un certain nombre de degrés, avancer d'une certaine distance,
+	lever ou poser le crayon, une séquence de 2 actions ou la répétition d'une action un certain nombre de fois.
+	\begin{lstlisting}[language=Caml, numbers=none, framerule=0pt]
+type actionLogo = 
+	 Tourner of int
+	|Avancer of int
+	|Lever
+	|Poser
+	|Seq of actionLogo * actionLogo
+	|Rep of actionLogo * int;;
+	\end{lstlisting}
+	\end{itemize}
+\end{exemple}
+
+\begin{attention}
+	Un constructeur doit toujours commencer par une majuscule.
+\end{attention}
+
+\subsection{Instanciation de type}
+Cela se fait à l'aide de l'appel au constructeur
+\begin{exemple}
+\begin{itemize}
+	\item Définir un objet bleu du type \texttt{couleur}
+	\begin{lstlisting}[language=Caml, numbers=none, framerule=0pt]
+let c = Bleu;
+	\end{lstlisting}
+\item Définir les objets valets, 3 et 10 du type \texttt{carte}
+	\begin{lstlisting}[language=Caml, numbers=none, framerule=0pt]
+let c1 = Valet and c2 = Valeur 3 and c3 = Valeur 10;;
+	\end{lstlisting}
+\item Définir un complexe et un réel du type \texttt{nombre}
+	\begin{lstlisting}[language=Caml, numbers=none, framerule=0pt]
+let nbCom = Complexe(1.0, 2.0) and nbR = Reel 5.6;;
+	\end{lstlisting}
+\item Définir un arbre binaire du type \texttt{ab} contenant les entiers 4,5,6
+	\begin{lstlisting}[language=Caml, numbers=none, framerule=0pt]
+let monArbre = Noeud (Feuille 4,
+					  Noeud (Feuille 5, Feuille 6)
+					  );;
+	\end{lstlisting}
+	\item Définir l'arbre n-aire du type \texttt{arbreNaire} suivant
+	\begin{lstlisting}[language=Caml, numbers=none, framerule=0pt]
+let monArbre = Node(1 [	Node (2,[]) ; 
+						Node (3, [Node (5, []) ; Node(6, [])]) ;
+						Node (4, []]
+					);;
+	\end{lstlisting}
+	~\\~\\~
+	\item Définir un objet de type \texttt{actionLogo} qui dessine un carré e 10 cm de côté à l'endroit ou se trouve le crayon.
+	\begin{lstlisting}[language=Caml, numbers=none, framerule=0pt]
+let carre = ActionLogo Seq(Poser, 
+							Rep(Seq(Avancer 1à, Tourner 90),
+								4)
+							);
+	\end{lstlisting}
+\end{itemize}
+\end{exemple}
+
+\subsection{Fonctions manipulant des objets de type utilisateur}
+\begin{exemple}
+	\begin{itemize}
+		\item Écrire la fonction qui associe un numéro (1,2 ou 3) à chaque couleur ; donner son type.
+	\begin{lstlisting}[language=Caml, numbers=none, framerule=0pt]
+let assoCouleur = function 
+	 Bleu -> 1
+	|Blanc -> 2
+	|Rouge -> 3
+(* var assoCouleur : couleur -> int = <fun> *)	
+	\end{lstlisting}
+\item Écrire la fonction qui donne le lendemain d'un jour de la semaine ; donner son type.
+	\begin{lstlisting}[language=Caml, numbers=none, framerule=0pt]
+let lendemain = function
+	 Lundi -> Mardi
+	|Mardi -> Mercredi
+	|Mercredi -> Jeudi
+	|Jeudi -> Vendredi
+	|Vendredi -> Samedi
+	|Samedi -> Dimanche
+	|Dimanche -> Lundi;;
+(* val lendemain  : jour -> jour = <fun> *)	
+	\end{lstlisting}
+\item Écrire la somme des points d'une liste de cartes (les figures valent 10)
+	\begin{lstlisting}[language=Caml, numbers=none, framerule=0pt]
+let valeurCarte = function
+	 Valeur n -> n 
+	|_ -> 10;; (* figures forcément *)
+let rec calculPointsPaqets = function ->
+	 [] -> 0	
+	|t::q ->  valeurCarte t + (sommePts q);;
+	\end{lstlisting}
+\item Écrire la fonction qui fait la somme de 2 objets de types nombres : on peut faire la somme de 2 entiers, de 2 réels, de 2 complexes, sinon c'est
+	une erreur.
+	\begin{lstlisting}[language=Caml, numbers=none, framerule=0pt]
+let sommeNombre = fun nb1 -> fun nb2 ->
+	match(nb1,nb2) with
+	 (Entier n, Entier m) -> Entier (n + m)
+	|(Reel r1, Reel r2) -> Reel(r1 +. r2)
+	|(Complexe(r1,i1), Complexe(r2,i2)) -> Complexe(r1 +. r2, i1 +. i2);;
+	|_ failith "On ne mélange pas !";
+	(* val somme: nombre -> nombre -> nombre = <fun> *)
+	\end{lstlisting}
+	\end{itemize}
+\end{exemple}
+
