@@ -1,0 +1,162 @@
+\documentclass[12pt,a4paper,openany]{article}
+
+\usepackage{lmodern}
+\usepackage[svgnames]{xcolor} % Required to specify font color
+\input{/home/aroquemaurel/cours/includesLaTeX/couleurs.tex}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, linkcolor=vert1, urlcolor=bleu, colorlinks=true]{hyperref}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{graphicx} % Required for box manipulation
+
+\newcommand{\titre}{Observation bas niveau de protocoles}
+\newcommand{\module}{Réseau}
+\newcommand{\subtitle}{Observation bas niveau de protocoles}
+\newcommand{\auteur}{Antoine de \bsc{Roquemaurel}}
+\newcommand{\formation}{L3 Informatique}
+\newcommand{\semestre}{5}
+\newcommand{\annee}{2013}
+\newcommand{\prof}{\bsc{Kacimi}}
+\newcommand{\numero}{1}
+\newcommand{\typeDoc}{TP}
+
+
+\newcommand{\pole}{}
+\newcommand{\sigle}{reseau}
+\input{/home/aroquemaurel/cours/includesLaTeX/l3/tddm.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/l3/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex} %prise en charge du langage algo
+\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/l3/affichageChapitre_td.tex}
+\makeatother
+%
+% kacimi@irit.fr
+% [L3][G1.1][Rx] TP1
+%
+\begin{document}
+	\maketitle
+	\section{DHCP}
+	Les messages DHCP sont envoyés au dessus d'UDP, cf figure \ref{fig:dhcpudp}.
+	%% Figure, screen
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=15cm]{capture1.jpeg}
+		\includegraphics[width=15cm]{capture2.jpeg}
+		\label{fig:dhcpudp}
+		\caption{Messages DHCP}
+	\end{figure}
+	%%% Diagramme
+
+	\textbf{IP du serveur DHCP}: 192.168.0.254, cela correspond à la source du second message, la réponse.
+
+	Le message \No{}2, à l'instant 0.013422 contient la nouvelle IP, il fait également office d'acquittement, cette IP est 192.168.0.10.
+
+	L'adresse IP à une durée de vie de 10 jours, cette durée de vie est transmise dans le protocole bootstrap via le champ \textit{Address Lease Time}.
+
+	\section{Telnet}
+	Ils sont envoyés sur TCP. Cf figure \ref{fig:telnettcp}.
+	
+	Le login est << guest >> et le mot de passe est << trivial >>, cela permet de se connecter au serveur d'adresse IP \texttt{192.168.0.6}.
+
+	La commande tapée est \texttt{pwd} ayant pour réponse \texttt{/home/guest}. 
+
+	%% Diagramme
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=10cm]{capture3.jpeg}
+		\caption{Messages telnet}
+		\label{fig:telnettcp}
+	\end{figure}
+	
+	Figure \ref{fig:telnetdiag} est disponible le diagramme temporel d'échange.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=13cm]{capture4.jpeg}
+		\caption{Diagramme temporel d'échange}
+		\label{fig:telnetdiag}
+	\end{figure}
+
+	\begin{remarque}
+		C'est le fait que le protocole telnet ne soit pas sécurisé qui nous permet de pouvoir analyser le login et le mot de passe de l'utilisateur,
+		ainsi l'utilisation d'un autre protocole tel que SSH permettrai que personne utilisant un analyseur réseau puisse obtenir ces informations
+	\end{remarque}
+	\section{DNS}
+	Les messages sont envoyés en UDP, c'est une requête de type << standad query A >>.
+
+	Plusieurs réponses sont situées dans la requête 114, celle-ci répondant avec les adresses IP et sous domaines de kernel.org\footnote{c'est à dire
+	ftp.kernel.org, pub.kernel.org qui correspondent au adresses ip de pub.us.kernel.org, 204.152.191.37 et 204.152.191.5}. Cf figure \ref{fig:kernel}.
+
+	Le protocole DNS permet de faire le lien entre un domaine (ftp.kernel.org) et une adresse ip (204.152.191.37).
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=13cm]{Capture5.jpeg}
+		\caption{Les messages DNS}
+		\label{fig:kernel}
+	\end{figure}
+
+	\section{Ping}
+	Le protocole du ping est le protocole ICMP.
+
+	Pour le second message, contrairement à la requête 101, le client ne connait pas l'adresse, ainsi avant d'effectuer le ping, il effectue une
+	résolution de nom à l'aide du serveur DNS. Dans le premier cas, le ping s'effectue immédiatement.
+	
+	Le protocole ICMP n'a pas de numéro de port car il est situé au même niveau que TCP et UDP.
+
+	\section{FTP}
+	Les échanges s'effectuent en TCP, j'utilise le filtre \texttt{ftp || ftp-data} afin d'avoir tous les échanges ftp, y compris les données.
+
+	L'utilisateur est << anonymous >> et le mot de passe << toto@titi.fr >>, il a téléchargé le fichier welcom.msg d'une taille de 1912 octets.
+	
+	Le message est dans l'échange 218, de protocole ftp-data, le message commence par « Welcome to the\ldots » 
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=13cm]{Capture6.jpeg}
+		\caption{Diagramme temporel d'échange FTP}
+		\label{fig:kernel}
+	\end{figure}
+
+	\begin{remarque}
+		De la même manière que Telnet, FTP n'est pas un protocole sécurisé, ainsi l'utilisation du protocole FTP encapsulé dans du SSH (utilisation de
+		sftp) semblerai meilleur. Ainsi il n'aurai pas été possible d'obtenir le contenu des échanges et les logins et mot de passe.
+	\end{remarque}
+
+	\section{HTTP}
+	\subsection{Image}
+	Le client demande la version 1.1 de http, le serveur renvoit bien la version 1.1 avec le statut 200 (signifiant que tout est ok).
+
+	Le fichier a été modifié le Lundi 21 Janvier 2008 a 10h55 et 2 secondes.
+
+	La requête HTTP à une taille totale de 23754 octets.
+
+	Le fichier est grand, ainsi lors de la demande du fichier par l'utilisateur, le serveur HTTP envoie un acquittement, et découpe le fichier en 36
+	trames\footnote{jusqu'à la trame 272}. Pour chaque trame, le serveur envoie la trame numérotée, et le client un acquittement (protocole TCP), une
+	fois que toutes les trames sont envoyées et acquittées, le serveur peut envoyer \texttt{HTTP/1.1 200 ok} afin de signaler la fin de la
+	communication et le bon envoie du fichier.
+
+	\subsection{Site Web}
+	Le client est sur le système Linux(Debian 2.0). 
+
+	Le nombre maximal de fichier demandé simultanément est 
+
+	Cette image à été mise en cache dans le navigateur, elle n'est ainsi pas redemandée.
+
+	\subsection{Traceroute}
+	Traceroute envoie des messages aux serveurs jusqu'à que ceux-ci atteignent un TTL de 1, ainsi les messages envoyés ont un TTL de plus en plus grand
+	afin de passer de plu en plus de routeurs. Une fois qu'un routeur atteind le TTL de 1, celui-ci envoie « time to lie excedeed ».
+
+	\appendix
+	\listoffigures
+	\end{document}
+
+

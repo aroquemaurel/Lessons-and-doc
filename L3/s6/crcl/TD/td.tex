@@ -1,0 +1,60 @@
+\documentclass[12pt,a4paper,openany]{book}
+
+\usepackage{lmodern}
+\usepackage[svgnames]{xcolor} % Required to specify font color
+\input{/home/aroquemaurel/cours/includesLaTeX/couleurs.tex}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, linkcolor=vert1, urlcolor=bleu, colorlinks=true]{hyperref}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+\usepackage{graphicx} % Required for box manipulation
+
+\newcommand{\titre}{Construction et réutilisation de composants logiciel}
+\newcommand{\subtitle}{Collections et généricité}
+\newcommand{\auteur}{Antoine de \bsc{Roquemaurel}}
+\newcommand{\formation}{L3 Informatique}
+\newcommand{\semestre}{6}
+\newcommand{\annee}{2014}
+\newcommand{\prof}{}
+
+
+\newcommand{\pole}{}
+\newcommand{\sigle}{crcl}
+\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex} %prise en charge du langage algo
+\input{/home/aroquemaurel/cours/includesLaTeX/l2/cours.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/couverture.tex}
+\makeatother
+
+\begin{document}
+	\thispagestyle{empty} % Removes page numbers
+	\titleBC 
+	\setcounter{tocdepth}{2}
+	\setcounter{secnumdepth}{3}
+	\tableofcontents
+	\chapter{\texttt{ArrayList} et \texttt{Iterator}}
+	\section{Détection d'un Palindrome}
+	\lstinputlisting[language=Java,caption=Palinrome]{codes/1.java}	
+	\section{Gestion de tâches}
+	\lstinputlisting[language=Java,caption=Classes \texttt{Tache} \texttt{TacheCodage} et \texttt{TacheTelephone}]{codes/2.java}	
+	\lstinputlisting[language=Java,caption=Exercices sur les taches]{codes/2-1.java}	
+	\chapter{Généricité}
+	\lstinputlisting[language=Java,caption=TD belotte]{codes/3.java}	
+	\chapter{ArrayList an LinkedList}
+	\lstinputlisting[language=Java,caption=ArrayList and Linkedlist]{codes/4.java}	
+	\appendix
+	\chapter{Rappels}
+	\lstlistoflistings
+\end{document}
+
+

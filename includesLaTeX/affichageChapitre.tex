@@ -8,10 +8,10 @@
 {\normalfont\sffamily}{}{0pt}
 {\parbox[b]{\chapnumb}{%
 \vspace{-80px}%
-   \fontsize{120}{110}\selectfont\thechapter}%
+   \fontsize{85}{110}\selectfont\thechapter}%
   \parbox[b]{\dimexpr\textwidth-\chapnumb\relax}{%
     \raggedleft%
-    \hfill{\LARGE#1}\\
+    \hfill{\Huge#1}\\
     \rule{\dimexpr\textwidth-\chapnumb\relax}{0.4pt}}}
 \titleformat{name=\chapter,numberless}[block]
 {\normalfont\sffamily}{}{0pt}
@@ -19,7 +19,7 @@
    \mbox{}}%
   \parbox[b]{\dimexpr\textwidth-\chapnumb\relax}{%
     \raggedleft%
-    \hfill{\LARGE#1}\\
+    \hfill{\Huge#1}\\
     \rule{\dimexpr\textwidth-\chapnumb\relax}{0.4pt}}}
 
 
@@ -33,13 +33,23 @@
 \setlength{\subsubsectiontitleindent}{-.25cm}
 
 \renewcommand{\section}{%
-	\@startsection%
-	{section}%
-	{1}%
-	{\sectiontitleindent}%
-	{-3.5ex plus -1ex minus -.2ex}%
-	{2.3ex plus.2ex}%
-	{\sectionfont\Large}
+  \@ifstar{%
+\@startsection%
+{section}%
+{1}%
+{\sectiontitleindent}%
+{-3.5ex plus -1ex minus -.2ex}%
+{2.3ex plus.2ex}%
+{\sectionfont\Large}
+	    }{%
+\@startsection%
+{section}%
+{1}%
+{\sectiontitleindent}%
+{-3.5ex plus -1ex minus -.2ex}%
+{2.3ex plus.2ex}%
+{\sectionfont\Large}
+  }%
 }
 \renewcommand{\subsection}{%
 	\@startsection%

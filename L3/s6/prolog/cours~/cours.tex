@@ -1,0 +1,327 @@
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage{lmodern}
+\usepackage[svgnames]{xcolor} % Required to specify font color
+\input{/home/aroquemaurel/cours/includesLaTeX/couleurs.tex}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}
+\usepackage{wrapfig}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, linkcolor=vert1, urlcolor=bleu, colorlinks=true]{hyperref}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage[francais]{minitoc}
+\usepackage[final]{pdfpages} 
+\usepackage{graphicx} % Required for box manipulation
+
+\newcommand{\titre}{Programmation logique}
+\newcommand{\subtitle}{Prolog}
+\newcommand{\auteur}{Antoine de \bsc{Roquemaurel}}
+\newcommand{\formation}{L3 Informatique}
+\newcommand{\semestre}{6}
+\newcommand{\annee}{2014}
+\newcommand{\prof}{Christine \bsc{Maurel} -- Jean-Paul \bsc{Arcangeli}}
+
+
+\newcommand{\pole}{}
+\newcommand{\sigle}{prolog}
+
+
+\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/l2/cours.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
+\newcommand{\pfp}{\texttt{pfp}}
+
+\newcommand{\ifp}{\texttt{if}}
+\newcommand{\elsep}{\texttt{else}}
+
+\input{/home/aroquemaurel/cours/includesLaTeX/couverture.tex}
+\makeatother
+\includeonly {
+}
+\begin{document}
+	\thispagestyle{empty} % Removes page numbers
+	\titleBC 
+	\dominitoc
+	\setcounter{tocdepth}{1}
+	\setcounter{secnumdepth}{3}
+	\setcounter{minitocdepth}{1}
+	\chapter*{Avant-propos}
+	Même organisation que pour langage et automates. Cinq cours avec Christine \bsc{Maurel} et 5 cours avec Jean-Paul \bsc{Arcangeli}.
+
+	8 séances de TP, utilisation de Swi-Prolog\footnote{\url{http://www.swi-prolog.org}}.
+	\tableofcontents
+	\chapter{Introduction}
+	\textbf{Nouvelle façon de penser} la programmation, nouveau paradigme venant la communauté de l'Intelligence Artificielle avec la formalisation d'un
+	raisonnement logique : des hypothèses vers la conclusion, principe de résolution Robinson(1965). Implémentation du principe de Robinson en 1972.
+
+	Prolog par du principe qu'il faut \textbf{décrire} le problème plutôt que la solution
+
+	Le Prolog est un langage \textbf{normalisé} résultant du principe de résolution \textbf{non typé}.
+
+	Nous allons travailler avec de la logique donc des \textbf{prédicats} et des \textbf{relations}, résoudre et \textbf{unification}.
+
+	\chapter{Prolog par l'exemple}
+	Un programme Prolog est un ensemble ordonné d'énoncés (\textbf{clauses}) qui décrivent les 
+	\begin{itemize}
+		\item Connaissances
+		\item Propriétés
+		\item Relations entre les objets du monde décrit.
+	\end{itemize}
+
+	On décrit ce monde avec 
+	\begin{itemize}
+		\item Des assertions qui mettent en relation des informations : affirmation de faits
+		\item Des règles qui mettent en relation des objets
+	\end{itemize}
+		\section{Premier programme Prolog}
+		\begin{lstlisting}[language=Prolog]
+/* biographie(enfant, sexe, ne_en, dcd_en, pere, mere). */
+		\end{lstlisting}
+	\begin{description}
+		\item[Commentaires] /* */
+		\item[biographie] Nom de la relation : c'est un nom de prédicat à 6 argments : le nom de l'enfant, son sexe, son année de naissance, son année
+			de décès, le nom de son père et celui de sa mère.
+		\item[Arguments] Les arguments sont entre parenthèses et séparés par des virgules.
+		\item[]La clause qui exprime un fat se termine par un point 
+	\end{description}
+	\begin{exemple}
+		\begin{lstlisting}[language=Prolog]
+biographie(louis13,m,1601,1643,henri4, truc)
+		\end{lstlisting}
+	\end{exemple}
+
+	\section{Nouvelles relations : règles}
+		\begin{lstlisting}[language=Prolog]
+/* pere(homme,enfant) */
+		\end{lstlisting}
+	homme est le père de enfant SI dans l'ensemble des clauses qui décrit la biographie il y a une relation biographie qui met en relation homme et
+	enfant.
+		\begin{lstlisting}[language=Prolog]
+pere(P,E) :- biographie(E,_,_,_,P,_).
+		\end{lstlisting}
+		\begin{itemize}
+			\item On a des variables qui sont en majuscule : E, 
+			\item Des variables anonymes \texttt{\_} (on se moque de leur nom dans ce cas)
+			\item Exprimer la règle << a si b >> en Prolog par la clause \texttt{a :- b}.
+			\item a est la \textbf{tête} de clause (la conclusion) et b la \textbf{queue} de clause (hypothèse)
+		\end{itemize}
+		\begin{lstlisting}[language=Prolog]
+/* dureeDeVie(personne,age) */
+		\end{lstlisting}
+		age sera la durée de vie de personne SI dans l'ensemble de clauses qui décrit la biographie, il y a une relation biograhie qui met en relation
+		son année de naissance et on année de décès, et si on fait leur différence entre ces 2 nombres.
+		\begin{lstlisting}[language=Prolog]
+dureeDeVie(P,A) :- biographie(P,_,N,D,_,_),A is D-N			
+		\end{lstlisting}
+		\begin{itemize}
+			\item Exprimer la règle << a si b et c >> en Prolog par la clause \texttt{a :- b, c}.
+			\item a est la tête de clause et b,c la queue de clause.
+		\end{itemize}
+		Pour faire une opération arithmétique on utilise 'is' qui permet d'associer la valeur de \texttt{D-N} à A; le A étant le nom de variable qui
+		symbolise la durée de vie que l'on cherche.
+
+		\begin{attention}
+			On associe par unification, ce n'est pas une affectation, cela n'existe pas en Prolog.
+		\end{attention}
+
+		\section{Utilisation du programme}
+		On va poser des questions (requêtes), interroger le programme, ce sera la conclusion d'un raisonnement logique décrit par les hypothèses que
+		sont les faits et les règles contenus dans le programme.
+
+		Le système Prolog va résoudre cette requête : il va chercher à prouver, satisfaire la requête.
+
+		\begin{exemple}
+		\begin{lstlisting}[language=Prolog, framerule=0pt]
+/* Est ce que Louis XIV est mort en 1715 */
+?- biographie(loui14,_,_,1715,_,_).
+true
+
+/*Quel est la date de naissance de louis XIV*/
+?- biographie(louis14,_,X,_,_,_).
+X = 1638
+
+/* Les personnes masculines */
+?- biographie(E,m,_,_,_,_).
+E = louis13 ; 
+E = louis14
+
+/* Combien d'année louis XIV a-t-il survécu à son père */
+?- biographie(louis14,_,_,X,P,_),biographie(P,_,_,Y,_,_).
+R is X-Y
+| X = 1715
+P = louis13,
+Y = 1643,
+R = 72
+
+/* */
+biographie(X,_,_,Y,_,_à,Y>1650.
+X = louis14
+Y = 1715
+
+/* durée de vie > 40 ans */
+?- dureeDeVie(P,A),A>40
+P = louis13,
+A = 42;
+P = elisabeth_france
+A = 77
+		\end{lstlisting}
+		\begin{remarque}
+			Prolog attend un \texttt{;} afin de donner la suite des solutions. \\Il donnera toutes les solutions possibles.
+		\end{remarque}
+		\end{exemple}
+		\subsection{Conditions}
+		\begin{lstlisting}[language=Prolog, framerule=0pt]
+		a :- b,c. /* a si b et c */
+	a:- d. /* ou a si d */
+	a :-e,f,g. /* ou a si e et f et g */
+		\end{lstlisting}
+
+		\section{Syntaxe}
+		\begin{itemize}
+			\item Constante: commence par une minuscule
+			\item Variable: commence par une majuscule
+			\item Nombre
+			\item Prédicat: \texttt{predicat(a1,\ldots,an)}  << Met en relation a1, \ldots,an >>
+		\end{itemize}
+		\begin{remarque}
+			Un programme Prolog est un ensemble ordonné de clauses : Faits (affirmation) ou Règles.\\~
+		\end{remarque}
+
+		\section{Autres exemples}
+		\subsection{Le graphe}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=10cm]{Diagramme1.eps}
+			\caption{Exemple de graphe}
+		\end{figure}
+		\begin{lstlisting}[language=Prolog, framerule=0pt]
+/* arc(source,destination) */
+arc(a,b).
+arc(a,e).
+arc(b,e).
+arc(c,e).
+arc(e,d).
+arc(d,a).
+
+/* chemin(source,destination) */
+chemin(S,D) :- arc(S,D).
+chemin(S,D) :- arc(S,I),chemin(I,D).
+
+/* y a-t-il un arc de b a e
+arc(b,e).
+
+/* Y a-t-il un arc qui arrive à d
+arc(_,d).
+
+/* Y a-t-il un arc qui arrrive à e */
+arc(X,e).
+
+/* Quels sont les sommets atteignables directement de d? */
+arc(d,X)
+
+/* Quels sont les sommets atteignables depuis d */
+?- chemin(d,X)
+X = a;
+X = b;
+X = e;
+X = e;
+X = d
+X = a;
+X = b;
+X = e;
+X = e;
+X = d.  /* boucle infinie */
+	\end{lstlisting}
+	\begin{attention}
+		Notre définition du graphe implique qu'en cas de circuit, Prolog restera dans une boucle infinie.
+	\end{attention}
+
+	\subsection{Le crypthogramme}
+		\begin{wrapfigure}{r}{0.3\textwidth}
+			\vspace{40px}	
+	\begin{tabular}{ccccc}
+		&S&E&N&D\\
+		+&M&O&R&E\\
+		\hline
+		M&O&N&E&Y\\
+	\end{tabular}
+	\end{wrapfigure}
+
+$S,E,N,D,M,O,R,Y \in\{0,\cdots,9\}$ toutes différentes.
+\begin{eqnarray*}
+	O+D+E&=& R_1\times 10+Y\\
+	R_1+N+R &=&  R_2\times 10 + E\\
+	R_2 + E + 0 &=&  R_3 \times 10 + N\\
+	R_3 + S + M &=&  R_4 \times 10 + 0\\
+	R_4 &=&  M
+\end{eqnarray*}
+		\begin{lstlisting}[language=Prolog, framerule=0pt]
+chiffre(0).
+chiffre(1).
+chiffre(2).
+chiffre(3).
+chiffre(4).
+chiffre(5).
+chiffre(6).
+chiffre(7).
+chiffre(8).
+chiffre(9).
+
+addpartielle(R,C1,C2,D,U) :- X is R+C1+C2, D is X/10, U i X mod 10.
+		\end{lstlisting}
+
+	\chapter{Sémantique}.
+	\section{Formaliser les fais et règles en logique et en prolog}
+	\begin{itemize}
+		\item H1: Jean est heureux si un de ses employés travaille
+		\item H2: Ceux qui s'amusent sont heureux
+		\item H3: Pierre et Paul sont des employés de Jean
+		\item H4: Pierre Travaille et Paul s'amuse
+	\end{itemize}
+
+	\begin{tabular}{cc}
+		Logique & Prolog\\
+		\hline
+		3 constantes : Jean, Pierre, Paul & 3 constantes jean, pierre, paul\\
+		\begin{minipage}{200px}
+			Prédicats: 
+			\begin{itemize}
+				\item heureux(x), x est heureux
+				\item travaille(x) : x travaille
+				\item employé(x,y) x l'emloyé de y 
+				\item amuse(x) : x s'amuse
+			\end{itemize}
+		\end{minipage}
+		&
+		\begin{minipage}{200px}
+			\begin{itemize}
+				\item heureux(X)
+				\item employé(X,Y)
+				\item travaille(X)
+				\item amuse(X)
+			\end{itemize}
+	\end{minipage}\\
+	$ H1 : (\exists X(employe(jean,X) \wedge traaille(X)) \rightarrow heureux(jean))$ & \texttt{heureux(jean) :- employe(X,jean),travailler(X)}\\
+	$ H2 : (\exists X(amuse(jean,X) \rightarrow heureux(X)))$ & \texttt{employe(paul,jean).employe(pierre,jean).}\\
+	$ H3 : employe(pierre,jean) \wedge employe(paul,jean)$ & \texttt{amuse(paul).travaille(pierre)}\\ 
+
+	\end{tabular}
+
+	\section{Résoudre une question : Arbre de recherche}
+	
+	
+	\chapter{Gestion du contrôle}
+
+\appendix
+\lstlistoflistings
+
+\end{document}
