@@ -42,19 +42,47 @@
 	\setcounter{tocdepth}{2}
 	\setcounter{secnumdepth}{3}
 	\tableofcontents
-	\chapter{\texttt{ArrayList} et \texttt{Iterator}}
+	\chapter{Listes : \texttt{ArrayList} et \texttt{Iterator}}
 	\section{Détection d'un Palindrome}
 	\lstinputlisting[language=Java,caption=Palinrome]{codes/1.java}	
 	\section{Gestion de tâches}
 	\lstinputlisting[language=Java,caption=Classes \texttt{Tache} \texttt{TacheCodage} et \texttt{TacheTelephone}]{codes/2.java}	
 	\lstinputlisting[language=Java,caption=Exercices sur les taches]{codes/2-1.java}	
+
 	\chapter{Généricité}
 	\lstinputlisting[language=Java,caption=TD belotte]{codes/3.java}	
-	\chapter{ArrayList an LinkedList}
-	\lstinputlisting[language=Java,caption=ArrayList and Linkedlist]{codes/4.java}	
+	\chapter{Files : Queue}
+	\section{Travail sur la collection \texttt{ArrayQueue}}
+	\lstinputlisting[language=Java,caption=\texttt{ArrayDeque}]{codes/5.java}	
+	\section{Travail sur l'ordre naturel avec \texttt{Comparable}}
+	\lstinputlisting[language=Java,caption=\texttt{Comparable}]{codes/6.java}	
+	\lstinputlisting[language=Java,caption=\texttt{TachesAvecPriorite}]{codes/7.java}	
+	\section{Travail sur la collection \texttt{PriorityQueue}}
+	\lstinputlisting[language=Java,caption=\texttt{TachesAvecPriorite}]{codes/8.java}	
+	\section{Pour aller plus loin \ldots Problème : gestion d'un planning}
+	\lstinputlisting[language=Java,caption=\texttt{FileTachesPrioritaires}]{codes/9-1.java}	
+	\lstinputlisting[language=Java,caption=\texttt{OrdonnanceurTaches}]{codes/9-2.java}	
+	
+	\chapter{Ensembles : \texttt{Set}}
+	\section{\texttt{EnumSet}}
+	\lstinputlisting[language=Java,caption=\texttt{EnumSet}]{codes/10-1.java}	
+	\section{Arbre rouge-noir : \texttt{TreeSet}}
+	\lstinputlisting[language=Java,caption=Classe \texttt{Video}]{codes/10-2.java}	
+	\lstinputlisting[language=Java,caption={Affichage}]{codes/10-3.java}	
+	\section{\texttt{HashSet}}
+	\lstinputlisting[language=Java]{codes/11.java}	
+	\lstinputlisting[language=Java,caption=Ajout du hashCode et equals dans \texttt{Video}]{codes/11-1.java}	
+	\lstinputlisting[language=Java,caption=]{codes/11-2.java}	
+
+	On doit ajouter dans le equals la possibilité de comparer une \texttt{VideoAppreciation}.
+	\lstinputlisting[language=Java,caption=]{codes/11-3.java}	
+	\lstinputlisting[language=Java,caption=]{codes/11-4.java}	
+	Les vidéos sont affichés triés car\texttt{ensembleTrie} était trié. Si on ajoute une nouvelle vidéo celle-ci sera à la fin : affichage dans
+	l'ordre d'insertion.
+
 	\appendix
-	\chapter{Rappels}
 	\lstlistoflistings
+
 \end{document}
 
 

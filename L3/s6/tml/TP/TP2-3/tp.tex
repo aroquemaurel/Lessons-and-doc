@@ -60,18 +60,18 @@
 		\centering
 		\includegraphics[width=7.5cm]{screens/ajout1-5.png}
 		\label{fig:1erEntiers}
+		\caption{Ajout des entiers 1 et 5 dans une liste vide}
 	\end{figure}
 
 	\subsection{Ajout de l'entier 4}
 	Afin d'insérer l'entier 4, les entiers 1 et 5 devaient être déjà présents dans la liste, afin
-	d'éviter que le rapport d'emma soit faussé par ces deux insertions, une nouvelle méthode à été créé insérant ces deux entiers, cette méthode est
-	disponible ci-dessous.
+	d'éviter que le rapport d'emma soit faussé par ces deux insertions, une nouvelle méthode à été créé insérant ces deux entiers.
 
-	% TODO
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=7.5cm]{screens/ajout4.png}
 		\label{fig:entier4}
+		\caption{Ajout de l'entier 4 dans une liste possédant 1 et 5}
 	\end{figure}
 	
 	Comme le montre la figure \ref{fig:entier4}, l'insertion du 4 ne passe que par une portion du code, en effet, les instructions d'insertion en tête
@@ -81,4 +81,95 @@
 
 	On peut donc en déduire que c'est ce test qui permet à l'insertion intermédiaire de fonctionner : ça permet d'insérer notre élément à une place
 	correct dans la liste triée.
+	\section{Jeu de test minimal}
+	Afin de pouvoir tester toutes les instructions du
+	programme, il faut utiliser un jeu de test gérant tous
+	les cas possibles. 
+
+	Pour l'insertion dans une liste, 3 cas ressortent et sont
+	donc représentés dans le code : insertion en début de
+	liste, insertion en fin de liste, insertion en position
+	intermédiaire. Ainsi, notre jeu de test devra comporter 3
+	entiers afin de tester ces trois cas.
+
+	\begin{description}
+		\item[Insertion en début] 1
+		\item[Insertion en queue] 20
+		\item[Insertion en position intermédiaire] 4
+	\end{description}
+
+	L'insertion consécutive de ces 3 entiers ci-dessous
+	couvriront l'intégralité du code comme le montre la
+	figure \ref{fig:couvmin1}
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=13cm]{screens/testMin1.png}\\
+		\includegraphics[width=6cm]{screens/testMin2.png}
+		\includegraphics[width=6cm]{screens/testMin3.png}
+		\label{fig:couvmin1}
+		\caption{Tests de couverture avec un jeu de test minimal}
+	\end{figure}
+	\newpage
+	\begin{remarque}
+		Le fichier de Test ne possède pas 100\% de couverture
+		car nous n'utilisons que le \texttt{main} et pas la
+		classe qui le contient.
+
+		Cependant, cela n'est pas important car nous testons
+		le package \texttt{list}, celui-ci possède bien
+		100\%.
+	\end{remarque}
+
+	\section{Cas d'insertion et instructions}
+	Oui, la couverture de toutes les instructions permettent ici de tester les cas possible.
+
+	En effet, notre fonction d'insertion possède différentes conditions en fonction du placement du chiffre :
+
+	\begin{description}
+		\item[Insertion en début] Nous ne rentrons pas dans la boucle, et passons dans le cas \texttt{previous == null} afin d'affecter la tête
+			à courant.
+		\item[Insertion en position intermédiaire] C'est le seul cas permettant de vérifier que nous sortons bien de la boucle avant la fin : 
+			ce qui nous permet d'insérer ensuite notre entier au milieu de la liste. Ceci est fait grâce à la condition \texttt{current.getData() > data}.
+		\item[Insertion en queue] C'est le cas ou l'intégralité de la boucle est parcourue, afin de vérifier que nous sortons bien de la boucle une
+			fois la fin de liste atteint. C'est l'instruction \texttt{current != null} qui est dans le test de la boucle.
+	\end{description}
+
+	Nous testons tous les cas possibles, cependant nos tests ne permettent pas de dire si la liste en sortis est bien triée, en effet, rien ne nous
+	permet de dire si les entiers sont insérés au bon endroit.
+
+	\section{Graphe de contrôle et PLCS}
+	\subsection{Graphe de contrôle}
+	Figure \ref{fig:graphe} est disponible le graphe de contrôle du programme, en utilisant le constructeur permettant une insertion multiple.
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=7cm]{Diagramme.eps}
+		\caption{Graphe de contrôle}
+		\label{fig:graphe}
+	\end{figure}
+	\subsection{PLCS}
+	\begin{itemize}
+		\item 1\&2\&3\&4,6
+		\item 1\&2\&3, 5
+		\item 1\&2\&3,7
+		\item 2\&3, 5
+		\item 2\&3,7
+		\item 2\&3\&4,6	
+		\item 3,7
+		\item 3\&4,7
+		\item 3,5
+		\item 5\&6\&7,9
+		\item 5\&6,3
+		\item 5\&6\&7\&8,10
+		\item 6\&7\&8,10
+		\item 6\&7,9
+		\item 6,3
+		\item 7,9
+		\item 7\&8,10
+		\item 9\&10,2
+		\item 9\&10,-1
+		\item 10, -1
+	\end{itemize}
+	
 \end{document}

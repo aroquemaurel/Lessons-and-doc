@@ -28,7 +28,7 @@
 
 
 \newcommand{\pole}{}
-\newcommand{\sigle}{tml}
+\newcommand{\sigle}{prolog}
 \input{/home/aroquemaurel/cours/includesLaTeX/listings.tex} %prise en charge du langage algo
 \input{/home/aroquemaurel/cours/includesLaTeX/l2/cours.tex}
 \input{/home/aroquemaurel/cours/includesLaTeX/remarquesExempleAttention.tex}
@@ -44,13 +44,14 @@
 	\setcounter{secnumdepth}{3}
 	\tableofcontents
 	\chapter{Programmation par induction -- unification}
-	\section{Exercice 1}
+	\section{Unification}
+	\subsection{Exercice 1}
 	\lstinputlisting[language=Prolog,caption=Entiers de K à 0]{1.pl}
 
 	Pour l'ordre croisant, il suffit d'inverser les clauses 2 et 3.
 	\lstinputlisting[language=Prolog,caption=Entiers de 0 à K]{1-1.pl}
 
-	\section{Exercice 2 -- Unification}
+	\subsection{Exercice 2}
 	Une structure de données est nécessaire pour cet exercice,
 	ici nous allons utiliser un tuple.
 	\lstinputlisting[language=Prolog,caption=Exercice 2]{exo2.pl}
@@ -58,11 +59,16 @@
 	\section{Exercice 3 -- Unification}
 	\lstinputlisting[language=Prolog,caption=Exercice 3]{exo3.pl}
 
-	\section{Exercice 4 -- Induction}
-	\lstinputlisting[language=Prolog,caption=Exercice 3]{exo4.pl}
-
-	
-
+	\section{Induction}
+	\subsection{Arbre binaire}
+	\lstinputlisting[language=Prolog,caption=Arbre binaire]{exo4.pl}
+	\subsection{Exercice 4 -- Arbre binaire étiqueté}
+	\lstinputlisting[language=Prolog,caption=Arbre binaire étiqueté]{exo4-1.pl}
+	\subsection{Listes}
+	\lstinputlisting[language=Prolog,caption=Méthodes sur les listes]{exo5.pl}
+	\lstinputlisting[language=Prolog,caption=Tri pivot]{exo6.pl}
+	\lstinputlisting[language=Prolog,caption=Tri par insertion]{exo7.pl}
+	\lstinputlisting[language=Prolog,caption=Nuplet]{exo8.pl}
 	\appendix
 	\lstlistoflistings
 		
