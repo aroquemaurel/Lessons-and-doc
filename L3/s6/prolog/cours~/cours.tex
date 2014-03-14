@@ -320,6 +320,26 @@ addpartielle(R,C1,C2,D,U) :- X is R+C1+C2, D is X/10, U i X mod 10.
 	
 	
 	\chapter{Gestion du contrôle}
+\section{Introduction par l'exemple}
+Écrire le prédicat eliminer tel que eliminer(X,L,R) est vrai si R est la liste L ou toutes les occurences de x ont été supprimées.
+\lstinputlisting[language=Prolog]{code1.pl}
+
+Écrire le prédicat maximum \texttt{maximum(L, M)} est vrai si M est le plus grand élément de la liste L.
+\lstinputlisting[language=Prolog]{code2.pl}
+
+Écrire le prédicat intersection \texttt{intersection(E1, E2, I)} est vrai si I est l'intersection des deux ensembles E1 et E2. Un ensemble est
+représenté par une liste où chaque élément n'apparait qu'une seule fois.
+\lstinputlisting[language=Prolog]{code3.pl}
+
+\section{Définition, utilisation du CUT}
+Prédicat << coupe choix >> dit \textit{cut} noté \texttt{!}.
+\begin{definition}
+	La résolution d'un \textit{cut} supprime tous les points de choix encore possible entre le littéral qui a provoqué son apparition dans la résolvante
+	et le \textit{cut} lui même. Tous les points de choix restent possible avant L et après \textit{cut}.
+\end{definition}
+\lstinputlisting[language=Prolog, caption=eliminer avec \textit{Cut}]{code4.pl}
+\lstinputlisting[language=Prolog, caption=maximum avec \textit{Cut}]{code5.pl}
+\lstinputlisting[language=Prolog, caption=intersection avec \textit{Cut}]{code6.pl}
 
 \appendix
 \lstlistoflistings
