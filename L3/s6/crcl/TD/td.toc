@@ -12,4 +12,7 @@
 \contentsline {section}{\numberline {4.1}\texttt {EnumSet}}{12}{section.4.1}
 \contentsline {section}{\numberline {4.2}Arbre rouge-noir : \texttt {TreeSet}}{12}{section.4.2}
 \contentsline {section}{\numberline {4.3}\texttt {HashSet}}{14}{section.4.3}
-\contentsline {chapter}{\numberline {A}Liste des codes sources}{16}{appendix.A}
+\contentsline {chapter}{\numberline {5}Association : \texttt {Map}}{16}{chapter.5}
+\contentsline {section}{\numberline {5.1}\texttt {EnumMap}}{16}{section.5.1}
+\contentsline {section}{\numberline {5.2}\texttt {HashMap}}{16}{section.5.2}
+\contentsline {chapter}{\numberline {A}Liste des codes sources}{19}{appendix.A}
