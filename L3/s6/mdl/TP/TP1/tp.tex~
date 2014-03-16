@@ -1,0 +1,126 @@
+\documentclass[a4paper, 11pt]{article}
+
+\usepackage{xcolor}
+\input{/home/aroquemaurel/cours/includesLaTeX/couleurs.tex}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{verbatim}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, linkcolor=vert1, urlcolor=bleu, colorlinks=true]{hyperref}
+
+\newcommand{\titre}{OpenUP}
+\newcommand{\numero}{1}
+\newcommand{\typeDoc}{TDM}
+\newcommand{\module}{Méthodologies de Dév. Logiciel}
+\newcommand{\sigle}{MDL}
+\newcommand{\semestre}{6}
+
+\input{/home/aroquemaurel/cours/includesLaTeX/l3/tddm.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex} %prise en charge du langage C 
+\input{/home/aroquemaurel/cours/includesLaTeX/l3/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
+\makeatother
+\begin{document}
+	\maketitle
+	\section{Que représente cet ensemble de pages web ?}
+	Cet ensemble de site web est la documentation de la méthode OpenUP, comment celle-ci fonctionne. Une équipe utilisant cette méthode devrait se
+	référer à cet ensemble de pages comme référence.
+	
+	\section{Phases de openUP} 
+	La méthode OpenUp est composé de 4 phases exécuté consécutivement : 
+	\begin{description}
+		\item[Inception] Compréhension du projet, de ses objectifs et obtention
+			d'informations pour confirmer la faisabilité du
+			projet.
+		\item[Elaboration] Établir les bases de l'architecture du logiciel
+		\item[Construction] Implémenter et tester les fonctions du logiciel pour développer un système complet. 
+		\item[Transition] Phase finale permettant de s'assurer que le logiciel est prêt pour le déploiement du logiciel. 
+	\end{description}
+%	1 Inception
+%	2 Elaboration
+%	3 Construction
+%	4 Transition
+%> Dans quel ordre sont-elles effectuées ? 
+%	Cf num.
+%> Quels sont les objectifs de chacune d'elles ?
+
+\section{Les itérations}
+%> Quest-ce quune itération ?
+Une itération est une période de temps pendant laquelle une fonctionnalité du programme est développé. 
+Elle amène à un produit stable, avec une version exécutable du produit possédant une documentation.
+
+%> Quels buts vise-t-on lors de la définition du contenu dune itération ?
+\subsection{Durée}
+Une itération dure 4 à 6 semaines.
+
+\subsection{Résultat}
+Une itération donne un exécutable stable du produit, avec sa documentation et les éventuels scripts d'installations.
+%> Quel est le résultat dune itération ?
+%	Une démonstration (Demo-able or Shippable build)
+	
+\section{Rôles principaux}
+7 rôles sont présent dans une équipe OpenUP : 
+\begin{description}
+	\item[Stackeholder (Parties prenantes)] Représente les intérêts du groupe dont les besoins doivent être satisfait par le projet.
+	\item[Analyst (Analyste)] Représente le client et l'utilisateur final préoccupé par le recueillement des commentaires des
+		parties prenantes pour comprendre le problème à résoudre. 
+	\item[Architect (Architecte)] Il est responsable de la conception du logiciel. 
+	\item[Developer (Développeur)] Il doit développer une partie du système, incluant la conception s'insérant dans l'architecture.
+	\item[Tester (Testeur)] Le responsable des tests, comme identifié, implémenté et conduire les tests nécessaires. 
+	\item[Project Manager (Chef de projet)] Conduit la planification en collaboration avec les parties prenantes et l'équipe.
+	\item[Any role (Tous les rôles)] Représente n'importe qui dans l'équipe qui peut effectuer des tâches d'ordre général.
+\end{description}
+\begin{table}[H]
+\hspace{-30px}
+\begin{tabular}{l |p{4cm}|c|p{5cm}}
+	\textbf{Acteur}  & \textbf{Activités} & \textbf{Produit}\\
+\hline
+Stackeholder& Assess result, créer les cas d'utilisations, define vision&\\
+Analyst& Assess result, créer les cas d'utilisations, & Glossary, spécifications, use case, vision, \\
+Architect&  &Architecture notebook, define vision\\
+Developer& Créer les cas d'utilisations& Implementation, build, Developer Test, Design\\
+Tester&& Test case, Test script, Test log\\
+Project Manager&define vision& Iteration plan, Project plan, work items list\\
+\end{tabular}
+\caption{Acteurs OpenUP}
+\end{table}
+
+%Analyst &
+%Any Role &
+%Architect &
+%Developer &
+%Project Manager &
+%Stakeholder &
+%Tester &
+%\end{tabular}
+%> Quels sont les rôles principaux ?
+\section{Build}
+Un build est un livrable incrémental pour l'utilisateur et le client, il fourni un outil testable pour vérification.
+
+Cette version fonctionnelle du système ou partie du système est le résultat de l'itération.
+ 
+%> Qui le produit ?
+\subsection{Qui le produit ? }
+Le build est produit par les développeurs.
+
+%> Lors de quelle activité ?
+\subsection{Lors de quelle activité ?}
+Lors de l'activité "Develop Solution Increment", présent dans les phases 2,3,4.
+
+\section{Définitions du logiciel à développer}
+%> Où définit-on le logiciel à développer ?
+%> Quel(s) rôle (s) participe(nt) à cette définition ?
+%> Quelles sont les activités correspondantes ?
+%> Quelle forme prend cette définition ?
+	
+\end{document}
