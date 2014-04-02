@@ -1,0 +1,98 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage{xcolor}
+\input{/home/aroquemaurel/cours/includesLaTeX/couleurs.tex}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.3cm, right=2.3cm]{geometry}
+\usepackage{verbatim}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, linkcolor=vert1, urlcolor=bleu, colorlinks=true]{hyperref}
+
+\newcommand{\titre}{OpenUP}
+\newcommand{\numero}{3}
+\newcommand{\typeDoc}{TDM}
+\newcommand{\module}{Méthodologies de Dév. Logiciel}
+\newcommand{\sigle}{MDL}
+\newcommand{\semestre}{6}
+
+\input{./tddm.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex} %prise en charge du langage C 
+\input{/home/aroquemaurel/cours/includesLaTeX/l3/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
+\makeatother
+\begin{document}
+	\maketitle
+~\newline
+Par rapport aux préconisations d'OpenUp relatives aux documents que vous avez fournis sur votre projet, procédez à une analyse critique de ces documents, en termes de : 
+\begin{itemize}
+	\item Contenu des documents demandés :
+	\item Objectifs de ces documents (autres que l'obtention d'une note) et degré de satisfaction de ces objectifs 
+	\item Utilité de ces documents 
+	\item Besoin d’autres documents 
+\end{itemize}
+~\\
+Le sujet de notre projet était de modifier un projet existant programmé en Java afin de développer un jeu en réseau, ce sont des << robots >> qui se
+battent dans une arène jusqu'à qu'il n'y ai plus qu'un seul vainqueur.
+
+		\section{Plan type}
+\begin{description}
+	\item[Deployment Plan] Le \textit{Deployment Plan} est un plan auquel se réfèrent les développeurs avant et pendant la phase du développement. \\ 
+		Ce plan doit contenir les instructions sur la réalisation d'une version du projet. Ces instructions portent sur le temps désigné pour le développement des components, les risques qui doivent être pris en compte lors de développement, la répartition des tâches du projet.
+
+Concernant notre projet, ce plan aurait dû être fait avant la phase où on est entré dans le projet, s'il nous avait été fourni au  début du projet, on
+aurait eu plus de facilité pour développer le projet.\\ 
+Cependant nous aurions pu rédiger certains points de ce plan, comme la gestion du temps pour harmoniser notre progression dans le projet et éviter les
+modifications à la dernière minute qui n'ont pas toujours été les meilleures implémentations.
+\end{description}
+
+\section{Guide}
+\begin{description}
+	\item[User documentation] Documents qui peuvent être utilisés par les utilisateurs finaux du projet. Ce type de documentation est généralement rédigé
+		pour faciliter aux utilisateurs la recherche de l'information concernant le projet. \\
+	Cette documentation peut contenir tous les types de manuels-utilisateurs (éléctroniques comme papier), les questions fréquemment posés sur
+	l'utilisation du logiciel. \\
+	L'utilisation du User Documentation est très important pour un projet informatique. Sans elle le projet peut-être très bien développé, mais ne pas
+	plaire aux utilisateurs qui ne sauront pas utiliser le logiciel correctement, ou qui ne connaîtront pas toutes les fonctionnalités du logiciel, 
+	il faut particulièrement soigner sa rédaction et sa mise en page afin qu'il soit attrayant et donne l'envie d'être lu.
+
+	Dans le cadre de notre projet, nous avions reçus un document expliquant comment lancer le logiciel : serveur, IHM, \ldots Celui-ci nous a été utile
+	afin de pouvoir tester rapidement le projet initial.
+	\end{description}
+
+\section{Conclusion}
+Pour ce projet, nous avons du rédiger un rapport de projet, celui-ci était complet, mais cependant contenant beaucoup de documents recommandés par
+OpenUP mélangé dans ce document. Ainsi cela rendait sa lecture difficile et noyait l'information importante. De plus, le rapport était rédigé à la fin
+du projet alors que certains document sont nécessaire avant même le développement.
+
+Nous avions du mettre des screenshots et une brève description des différentes phases de lancement du programme (Lancer le serveur, lancer la console,
+lancer le joueur) ce qui permet au client de facilement tester notre logiciel. Le document contenait également une explication des fonctions, et des différentes
+fonctionnalités avec leur implémentation et enfin une rapide explication de notre gestion de projet.\\
+Tout ceci est un mélange de << user Documentation >>, << Deployment plan >>, << Iteration Plan >> etc\ldots Le rapport reste lisible mais n'apportait
+aucune aide au développement. Il pouvait être considéré comme << User Documentation >> si le rapport c'était accès su cette partie et avait été rédigé
+dans ce but, et que l'information n'était pas noyée dans des informations de conceptions n'intéressant pas le client.
+
+	Si nous avions connu OpenUP plus tôt, nous aurions surement rédigé un meilleur rapport. De plus, l'absence d'itérations (et de plans d'itérations)
+	nous entrainait dans les erreurs permanents de compatibilité de modules.\\
+	Une fois la version << locale >> terminée nous avions eu du mal à passer à la deuxième version du projet\footnote{Cette version devait être lancée
+	directement sur un serveur du CICT afin que la promotion combattent les uns contre les autres.}, ces problèmes viennent d'une mauvaise information
+	de la part du client : problème de comptabilité, le serveur possédant une JVM 1.5. Ce problème aurait pu être réglé si le client était plus impliqué
+	dans le projet, et si on nous avait fournis des documents corrects.
+
+	Le besoin de ces document s'est donc fait sentir : comme vu plus haut, ils auraient réglé certains problèmes, ce n'est cependant pas pour autant que
+	l'intégralité de la méthode OpenUP aurait pus être appliqué à ce projet comme nous l'avons dis lors du rapport du TDM~\no{}2, en effet le projet
+	était trop petit et trop court dans le temps. \\
+	Cependant, ce n'est pas pour autant que l'intégralité de la méthode doit être mis de côtés, comme nous venons de le voir, la méthode propose des
+	plan et des guides qui peuvent s'appliquer à notre projet et aux problèmes que nous avons eu.
+
+
+\end{document}

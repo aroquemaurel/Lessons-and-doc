@@ -15,4 +15,5 @@
 \contentsline {chapter}{\numberline {5}Association : \texttt {Map}}{16}{chapter.5}
 \contentsline {section}{\numberline {5.1}\texttt {EnumMap}}{16}{section.5.1}
 \contentsline {section}{\numberline {5.2}\texttt {HashMap}}{16}{section.5.2}
-\contentsline {chapter}{\numberline {A}Liste des codes sources}{19}{appendix.A}
+\contentsline {chapter}{\numberline {6}Synth\IeC {\`e}se : La ludoth\IeC {\`e}que}{19}{chapter.6}
+\contentsline {chapter}{\numberline {A}Liste des codes sources}{22}{appendix.A}

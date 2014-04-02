@@ -33,3 +33,6 @@
 \contentsline {subsection}{\numberline {4.2.6}Organiser}{14}{subsection.4.2.6}
 \contentsline {subsection}{\numberline {4.2.7}Communication}{14}{subsection.4.2.7}
 \contentsline {xpart}{Ressources humaines}{11}{part.2}
+\contentsline {part}{III\hspace {1em}Gouvernance des entreprises cot\IeC {\'e}es}{15}{part.3}
+\contentsline {chapter}{\numberline {5}Droits des actionnaires}{16}{chapter.5}
+\contentsline {xpart}{Gouvernance des entreprises cot\IeC {\'e}es}{16}{part.3}
