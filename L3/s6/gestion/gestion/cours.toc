@@ -1,38 +1,48 @@
 \select@language {french}
-\contentsline {part}{I\hspace {1em}\IeC {\'E}conomie}{3}{part.1}
-\contentsline {subsection}{\numberline {0.0.1}D\IeC {\'e}finitions pr\IeC {\'e}alables}{4}{subsection.0.0.1}
-\contentsline {subsection}{\numberline {0.0.2}Economie}{4}{subsection.0.0.2}
-\contentsline {subsection}{\numberline {0.0.3}Science \IeC {\'e}conomique}{4}{subsection.0.0.3}
-\contentsline {subsection}{\numberline {0.0.4}Macro-\IeC {\'e}conomie}{4}{subsection.0.0.4}
-\contentsline {subsection}{\numberline {0.0.5}Micro-\IeC {\'e}conomie}{4}{subsection.0.0.5}
-\contentsline {subsection}{\numberline {0.0.6}M\IeC {\'e}so-\IeC {\'e}conomie}{5}{subsection.0.0.6}
-\contentsline {subsection}{\numberline {0.0.7}Questions r\IeC {\'e}currentes aujourd'hui}{5}{subsection.0.0.7}
-\contentsline {subsection}{\numberline {0.0.8}Les types d'entreprises}{5}{subsection.0.0.8}
-\contentsline {subsection}{\numberline {0.0.9}L'activit\IeC {\'e} \IeC {\'e}conomique et ses agents}{5}{subsection.0.0.9}
-\contentsline {chapter}{\numberline {1}Qu'est-ce que l'\IeC {\'e}conomie ? }{7}{chapter.1}
-\contentsline {section}{\numberline {1.1}Le circuit \IeC {\'e}conomique}{7}{section.1.1}
-\contentsline {subsection}{\numberline {1.1.1}La comptabilit\IeC {\'e} nationale et la mesure de l'activit\IeC {\'e}}{7}{subsection.1.1.1}
-\contentsline {section}{\numberline {1.2}Le march\IeC {\'e} \IeC {\'e}conomique}{7}{section.1.2}
-\contentsline {subsection}{\numberline {1.2.1}Introduction}{7}{subsection.1.2.1}
-\contentsline {subsection}{\numberline {1.2.2}Les march\IeC {\'e}s \IeC {\'e}conomique}{8}{subsection.1.2.2}
-\contentsline {subsection}{\numberline {1.2.3}Le march\IeC {\'e} des biens et sevices}{8}{subsection.1.2.3}
-\contentsline {subsection}{\numberline {1.2.4}Biens mat\IeC {\'e}riels}{8}{subsection.1.2.4}
-\contentsline {subsection}{\numberline {1.2.5}Services}{8}{subsection.1.2.5}
-\contentsline {chapter}{\numberline {2}Les politiques \IeC {\'e}conomiques}{9}{chapter.2}
-\contentsline {xpart}{\IeC {\'E}conomie}{4}{part.1}
-\contentsline {part}{II\hspace {1em}Ressources humaines}{10}{part.2}
-\contentsline {chapter}{\numberline {3}R\IeC {\'e}ussir un entretien}{12}{chapter.3}
-\contentsline {chapter}{\numberline {4}Les ressources humaines}{13}{chapter.4}
-\contentsline {section}{\numberline {4.1}Objectifs d'un DRH}{13}{section.4.1}
-\contentsline {section}{\numberline {4.2}Finalit\IeC {\'e} de la RH}{13}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Recruter}{13}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Former}{14}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}G\IeC {\'e}rer}{14}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Administration}{14}{subsection.4.2.4}
-\contentsline {subsection}{\numberline {4.2.5}N\IeC {\'e}gocier}{14}{subsection.4.2.5}
-\contentsline {subsection}{\numberline {4.2.6}Organiser}{14}{subsection.4.2.6}
-\contentsline {subsection}{\numberline {4.2.7}Communication}{14}{subsection.4.2.7}
-\contentsline {xpart}{Ressources humaines}{11}{part.2}
-\contentsline {part}{III\hspace {1em}Gouvernance des entreprises cot\IeC {\'e}es}{15}{part.3}
-\contentsline {chapter}{\numberline {5}Droits des actionnaires}{16}{chapter.5}
-\contentsline {xpart}{Gouvernance des entreprises cot\IeC {\'e}es}{16}{part.3}
+\contentsline {part}{I\hspace {1em}\IeC {\'E}conomie}{4}{part.1}
+\contentsline {chapter}{\numberline {1}Introduction}{5}{chapter.1}
+\contentsline {section}{\numberline {1.1}D\IeC {\'e}finitions pr\IeC {\'e}alables}{5}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Economie}{5}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Science \IeC {\'e}conomique}{5}{subsection.1.1.2}
+\contentsline {subsection}{\numberline {1.1.3}Macro-\IeC {\'e}conomie}{5}{subsection.1.1.3}
+\contentsline {subsection}{\numberline {1.1.4}Micro-\IeC {\'e}conomie}{5}{subsection.1.1.4}
+\contentsline {subsection}{\numberline {1.1.5}M\IeC {\'e}so-\IeC {\'e}conomie}{6}{subsection.1.1.5}
+\contentsline {subsection}{\numberline {1.1.6}Questions r\IeC {\'e}currentes aujourd'hui}{6}{subsection.1.1.6}
+\contentsline {subsection}{\numberline {1.1.7}Les types d'entreprises}{6}{subsection.1.1.7}
+\contentsline {subsection}{\numberline {1.1.8}L'activit\IeC {\'e} \IeC {\'e}conomique et ses agents}{6}{subsection.1.1.8}
+\contentsline {chapter}{\numberline {2}Qu'est-ce que l'\IeC {\'e}conomie ? }{8}{chapter.2}
+\contentsline {section}{\numberline {2.1}Le circuit \IeC {\'e}conomique}{8}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}La comptabilit\IeC {\'e} nationale et la mesure de l'activit\IeC {\'e}}{8}{subsection.2.1.1}
+\contentsline {section}{\numberline {2.2}Le march\IeC {\'e} \IeC {\'e}conomique}{8}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Introduction}{8}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Les march\IeC {\'e}s \IeC {\'e}conomique}{9}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Le march\IeC {\'e} des biens et sevices}{9}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Biens mat\IeC {\'e}riels}{9}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}Services}{9}{subsection.2.2.5}
+\contentsline {chapter}{\numberline {3}Les politiques \IeC {\'e}conomiques}{10}{chapter.3}
+\contentsline {xpart}{\IeC {\'E}conomie}{5}{part.1}
+\contentsline {part}{II\hspace {1em}Ressources humaines}{11}{part.2}
+\contentsline {chapter}{\numberline {4}R\IeC {\'e}ussir un entretien}{13}{chapter.4}
+\contentsline {chapter}{\numberline {5}Les ressources humaines}{14}{chapter.5}
+\contentsline {section}{\numberline {5.1}Objectifs d'un DRH}{14}{section.5.1}
+\contentsline {section}{\numberline {5.2}Finalit\IeC {\'e} de la RH}{14}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Recruter}{14}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Former}{15}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}G\IeC {\'e}rer}{15}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}Administration}{15}{subsection.5.2.4}
+\contentsline {subsection}{\numberline {5.2.5}N\IeC {\'e}gocier}{15}{subsection.5.2.5}
+\contentsline {subsection}{\numberline {5.2.6}Organiser}{15}{subsection.5.2.6}
+\contentsline {subsection}{\numberline {5.2.7}Communication}{15}{subsection.5.2.7}
+\contentsline {xpart}{Ressources humaines}{12}{part.2}
+\contentsline {part}{III\hspace {1em}Gouvernance des entreprises cot\IeC {\'e}es}{16}{part.3}
+\contentsline {chapter}{\numberline {6}Gouvernance des entreprises}{17}{chapter.6}
+\contentsline {xpart}{Gouvernance des entreprises cot\IeC {\'e}es}{17}{part.3}
+\contentsline {part}{IV\hspace {1em}Le march\IeC {\'e} du travail}{19}{part.4}
+\contentsline {xpart}{Le march\IeC {\'e} du travail}{20}{part.4}
+\contentsline {chapter}{\numberline {7}Le march\IeC {\'e} du travail}{20}{chapter.7}
+\contentsline {section}{\numberline {7.1}R\IeC {\`e}gle des 4P}{20}{section.7.1}
+\contentsline {section}{\numberline {7.2}Le march\IeC {\'e} des comp\IeC {\'e}tences}{20}{section.7.2}
+\contentsline {section}{\numberline {7.3}Pour trouver un travail, il faut donc\ldots }{20}{section.7.3}
+\contentsline {section}{\numberline {7.4}CV}{21}{section.7.4}
+\contentsline {section}{\numberline {7.5}Lettre de motivation}{21}{section.7.5}
+\contentsline {section}{\numberline {7.6}Quelques conseils}{21}{section.7.6}
