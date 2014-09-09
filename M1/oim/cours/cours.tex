@@ -1,0 +1,202 @@
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage{lmodern}
+\usepackage[svgnames]{xcolor} % Required to specify font color
+\input{/home/aroquemaurel/cours/includesLaTeX/couleurs.tex}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}
+\usepackage{wrapfig}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, linkcolor=vert1, urlcolor=bleu, colorlinks=true]{hyperref}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage[francais]{minitoc}
+\usepackage[final]{pdfpages} 
+\usepackage{graphicx} % Required for box manipulation
+
+\newcommand{\titre}{Outils Informatiques pour le Multimédia}
+\newcommand{\subtitle}{~}
+\newcommand{\auteur}{Antoine de \bsc{Roquemaurel}}
+\newcommand{\formation}{M1 Informatique -- Développement Logiciel}
+\newcommand{\semestre}{7}
+\newcommand{\annee}{2014}
+\newcommand{\prof}{Mathias \bsc{Paulin}}
+
+
+\newcommand{\pole}{}
+\newcommand{\sigle}{oim}
+
+
+\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/l2/cours.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
+\newcommand{\pfp}{\texttt{pfp}}
+
+\newcommand{\ifp}{\texttt{if}}
+\newcommand{\elsep}{\texttt{else}}
+
+\input{/home/aroquemaurel/cours/includesLaTeX/couverture.tex}
+\makeatother
+\includeonly {
+}
+\begin{document}
+	\thispagestyle{empty} % Removes page numbers
+	\titleBC 
+	\dominitoc
+	\setcounter{tocdepth}{1}
+	\setcounter{secnumdepth}{3}
+	\setcounter{minitocdepth}{1}
+	\tableofcontents
+	\chapter{Introduction}
+	\begin{description}
+		\item[Données Multimédia] Données numériques représentant un son, une image ou une vidéo
+		\item[Origine des données] Mesures à partir du monde réel, synthétisées par ordinateur
+		\item[Application multimédia] Procédé informatique de traitement d'un phénomène physique. Utilise des outils mathématique pour la modélisation
+	\end{description}
+\begin{exemple}
+	Phénomène physique : \oe{}uil et lumière.
+
+	\paragraph{Modélisation mathématique}$$R = \int V(\lambda)F(\lambda)E(\lambda)d\lambda$$
+	\paragraph{Procédé Informatique}
+	~
+	\begin{lstlisting}[language=Algo,numbers=none,framerule=0pt]
+R = 0;
+for($\lambda$ = 400 ; $\lambda$ < 780; ++$\lambda$) 
+	R += V($\lambda$) * F($\lambda$) * E($\lambda$);
+	\end{lstlisting}
+\end{exemple}
+
+\section{Concepts fondamentaux du multimédia}
+\begin{definition}
+Une application multimédia, c'est : 
+\begin{itemize}
+	\item Une chaîne d'acquisition/traitement/restitution d'informations
+	\item Intégrée dans des espaces discrets de représentation de l'information
+	\item Automatisation ou accélération de tâches répétitives
+\end{itemize}
+\end{definition}
+
+\section{Quelques termes utiles}
+Une information multimédia c'est une suite de valeurs $x(k) = x(0), x(1), \ldots, x(n)$ où :
+\begin{description}
+	\item[Grandeur(nombre) mesurée] $x(k))$
+	\item[Dimension de mesure] $k$
+	\item[Résolution] Distance entre $x(k)$ et $x(k+1)$
+	\item[Précision] Nombres de bits pour coder x(k)
+\end{description}
+
+	\chapter{Perception humaine}
+\section{Perception du son}
+\begin{definition}
+	Un son est le résultat de la perception de la vibration de l'air, engendrée par un source, se propageant sous la forme d'une onde.
+\end{definition}
+	Caractéristiques importantes : 
+	\begin{itemize}
+		\item Fréquence
+		\item Intensité
+	\end{itemize}
+
+	Unité : Hertz, Zone optimale de perception : 1500 à 4000Hz.
+	\subsection{Intensité sonore}
+	\begin{description}
+		\item[Unité] dB
+		\item[Seuil audition humaine] 0db
+		\item[Seuil de la douleur] 130db
+	\end{description}
+
+	Perception non linéaire de l'intensité en fonction de la fréquence
+
+	\section{Perception des couleurs}
+	\begin{definition}
+		Une couleur et le résultat de la perception d'une onde électromagnétique
+	Caractéristiques importantes : 
+	\begin{itemize}
+		\item Fréquence
+		\item Intensité
+	\end{itemize}
+	\end{definition}
+
+	Plage visible du spectre : 400 à 700nm\footnote{750000 à 430000GHz}
+
+	\subsection{Espace de couleurs XYZ}
+	\begin{itemize}
+		\item Toute couleur doit avoir 3 composantes positives
+		\item La composante Y correspond à la sensibilité photopique
+	\end{itemize}
+
+	\begin{tabular}{l r}
+		\begin{minipage}{0.5\linewidth}
+\begin{eqnarray*}
+	X &=& k\int^{720}_{380} P(\lambda)\bar x(\lambda)d\lambda\\
+	Y &=& k\int^{720}_{380} P(\lambda)\bar y(\lambda)d\lambda\\
+	Z &=& k\int^{720}_{380} P(\lambda)\bar z(\lambda)d\lambda\\
+\end{eqnarray*}
+		\end{minipage}
+		&
+		\begin{minipage}{0.3\linewidth}
+\begin{eqnarray*}
+	x &=& \frac{X}{X+Y+Z}\\
+	y &=& \frac{Y}{X+Y+Z}
+\end{eqnarray*}
+		\end{minipage}
+	\end{tabular}
+
+	\subsection{Espace de couleurs RGB}
+	\begin{itemize}
+		\item Espace utilisé pour l'affichage
+		\item Souvent utilisé (à tort) comme espace de calcul
+		\item Conversion RGB vers XYZ
+			\begin{displaymath}
+				\left[\begin{array}{c}X\\Y\\Z\end{array}\right]
+					 =
+				\left[ \begin{array}{ccc}
+					X_r & X_{g} & X_b \\
+					Y_r & Y_{g} & Y_b \\
+					Z_r & Z_g & Z_b
+				\end{array} \right]
+				.
+				\left[
+				\begin{array}{c}
+					R\\V\\B
+				\end{array}
+				\right]
+			\end{displaymath}
+
+			Avec $[X_rY_rZ_r]$, $[X_G,Y_G,Z_G]$, $[X_b,Y_b,Z_b]$ les coordonnées $XYZ$ des luminophores $R$,$G$ et $B$ de l'afficheur.
+	\end{itemize}
+
+	\chapter{Notion de fréquence}
+	\section{Transformée de Fourier}
+\begin{itemize}
+	\item Outil d'analyse mathématique
+	\item Décomposition d'une fonction $f(y)$ comme somme pondérée de fonctions trigonométriques de toutes fréquences
+	\item Associe à une fonction $f(x)$ un spectre en fréquences
+\end{itemize}
+\subsection{Transformée de Fourier Discrète}
+\begin{itemize}
+	\item Une information multimédia = s(n) avec $n$ discret
+	\item Utilisation de la transformée de Fourier Discrète
+		$$S(k) = \sum^{N-1}_{n=0}s(n) \times e^{-2i\pi k\frac{n}{N}}$$
+	\item La transformée inverse est
+		$$s(n) = \frac{1}{N}\sum^{N-1}_{k=0}S(k) \times e^{2i\pi n\frac{k}{N}}$$
+\end{itemize}
+
+\section{Chaine compression / Décompression JPEG}
+\begin{verbatim}
+Image Raw -> Découpage	-> Transformer  ->	Sous échantillonage	->	DCT	-> Quantification > Codage RLE & Huffman
+				en bloc		de couleurs 
+																																			v
+Image reconstituée <- Reconstituion image	<- Transforme couleurs	<-	sur échantillonage	<-	DCT Inverse	<- Quantification inverse	<-	Décodage RLE & Huff
+\end{verbatim}<++>
+	\chapter{Programmation d'applications multimédia}
+	\chapter{Courbes de remplissage de l'espace}
+\end{document}
+
