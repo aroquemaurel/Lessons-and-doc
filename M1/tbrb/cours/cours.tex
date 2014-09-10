@@ -1,0 +1,230 @@
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage{lmodern}
+\usepackage[svgnames]{xcolor} % Required to specify font color
+\input{/home/aroquemaurel/cours/includesLaTeX/couleurs.tex}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}
+\usepackage{wrapfig}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, linkcolor=vert1, urlcolor=bleu, colorlinks=true]{hyperref}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage[francais]{minitoc}
+\usepackage[final]{pdfpages} 
+\usepackage{graphicx} % Required for box manipulation
+
+\newcommand{\titre}{Techniques de base de résolution de problèmes}
+\newcommand{\subtitle}{IA}
+\newcommand{\auteur}{Antoine de \bsc{Roquemaurel}}
+\newcommand{\formation}{M1 Informatique -- Développement Logiciel}
+\newcommand{\semestre}{7}
+\newcommand{\annee}{2014}
+\newcommand{\prof}{C. \bsc{Cayrol}}
+
+
+\newcommand{\pole}{}
+\newcommand{\sigle}{oim}
+
+
+\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/l2/cours.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
+\newcommand{\pfp}{\texttt{pfp}}
+
+\newcommand{\ifp}{\texttt{if}}
+\newcommand{\elsep}{\texttt{else}}
+
+\input{/home/aroquemaurel/cours/includesLaTeX/couverture.tex}
+\makeatother
+\includeonly {
+}
+\begin{document}
+	\thispagestyle{empty} % Removes page numbers
+	\titleBC 
+	\dominitoc
+	\setcounter{tocdepth}{1}
+	\setcounter{secnumdepth}{3}
+	\setcounter{minitocdepth}{1}
+
+	\chapter{Introduction : Les agents résolveurs de problème}
+	\section*{Les agents rationnels}
+	Il est dans l'environnement et peut le percevoir. 
+
+	\begin{definition}
+	L'agent est rationnel s'il agit toujours au mieux sur l'environnement de manière à atteindre ses objectifs mais en tenant compte de ses
+	compétences ou capacités.
+	\end{definition}
+
+	Un agent rationnel peut possèder les fonctions importantes suivantes : 
+	\begin{itemize}
+		\item Perception, Modélisation, Représentation	
+		\item Raisonnement (inférence)
+		\item Communication
+		\item Apprentissage
+		\item Élaboration de projets collectifs
+	\end{itemize}
+
+	On ajoute à un agent une mesure de performance, plus ses performances seront élevés plu il sera rationnel.
+
+	Un agent rationnel peut être plus ou moins autonome. S'il n'est pas autonome il va avoir un comportement dit << Réflexe >>, dans l'autre cas il va
+	apprendre au fur et a mesure qu'il résous sont environnement, ou son comportement, il sera de plus en plus rationnel. \\
+
+\begin{exemple}
+	\begin{tabular}{cccc}
+		\textbf{Perceptions} & \textbf{Environnement} & \textbf{Actions} & \textbf{Buts}\\
+		\hline
+		\begin{minipage}{0.2\textwidth}
+			\begin{itemize}
+				\item GPS
+				\item Compteur de vitesse
+				\item Radar
+			\end{itemize}
+		\end{minipage}
+		&
+		\begin{minipage}{0.25\textwidth}
+			\begin{itemize}
+				\item Piéton 
+				\item Véhicules
+				\item Réseau routier
+				\item Client
+			\end{itemize}
+		\end{minipage}
+		&
+		\begin{minipage}{0.17\textwidth}
+			\begin{itemize}
+				\item Accélérer
+				\item Freiner
+			\end{itemize}
+		\end{minipage}
+		&
+		\begin{minipage}{0.3\textwidth}
+			\begin{itemize}
+				\item Satisfaire la démarche 
+			\end{itemize}
+		\end{minipage}
+	\end{tabular}
+\end{exemple}
+
+\section{L'intelligence artificielle : situation d'une discipline}
+L'intelligence artificielle est à la fois une science et une technique. On cherche à observer, étudier, comprendre, modéliser on les appel les
+capacités cognitives.
+
+Un agent intelligent est un agent qui peut effectuer des tâches qui serait qualifiée d'intelligentes si un humain les avaient réalisés.
+
+En Intelligence Artificiel, on utilise des notions dans plusieurs domaines : 
+\begin{description}
+	\item[Philosophique] Notamment les travaux de Platon ou Aristote.
+	\item[Mathématiques] Utilisation de théorèmes 
+	\item[Psychologie] Étude du comportement humain
+	\item[Neuro-sciences] Essayer de comprendre le fonctionnement du cerveau humain
+	\item[Ethologie] Étude du comportement animal dans son milieu naturel : reproduire des modèles de comportement animals. Fourmis, abeilles,
+		corbeaux, pies, \ldots
+	\item[Linguistique] Étude des langues naturelles
+	\item[Économie] 
+	\item[Informatique] Pour le développement
+\end{description}
+
+\section{Développement de l'Intelligence Artificiel}
+En 1956, lors d'une conférence assez célèbre, J. Mac Carthy à lancé un projet avec l'idée que tout ce qui relève de l'intelligence peut être modéliser
+afin qu'une machine puisse le reproduire.
+
+À la fin des années 1960, il y a eu les premiers logiciel d'IA, puis l'algorithme A*
+
+Dans la fin des années 1980, c'était la grande mode, on pensait pouvoir utiliser l'informatique n'importe où, nous étions trop ambitieux, ce qui à
+provoqué une retombée néfaste due à la déception.
+
+Dans la fin des années 1990, cela repart, souvent couplée à d'autres disciplines tel que la robotique, il y a de nouveau des avancées, mais nous
+sommes devenus conscient du fait qu'il soit nécessaire de travailler avec d'autres personnes.
+
+\begin{exemple}
+	\begin{itemize}
+		\item Recherche dans les jeux difficiles, tel que les Echecs, le Go.	
+		\item Robotique
+		\item Vision par ordinateur
+	\end{itemize}
+\end{exemple}
+
+	\tableofcontents
+	\chapter{Le formalisme des espaces d'états}
+		\section{Introduction}
+
+		Formalisme: 
+		\begin{itemize}
+			\item État initial
+			\item État but (Explicite ou implicite)
+			\item Actions autorisées (ou opérateurs)
+		\end{itemize}
+~
+
+		\begin{definition}{ -- \textbf{Un descendant d'un état S}}
+			État accessible de S par une séquence non ide d'opérateurs fils (descendant immédiats)
+		\end{definition}
+
+		\begin{definition}{ -- \textbf{Espace de recherche}}
+			Les états accessibles de l'état initial\\
+			~
+		\end{definition}
+
+		\begin{exemple}
+			\paragraph{Ordonnance des tâches d'un robot}
+\begin{itemize}
+	\item N Stations
+	\item Temps entre les stations
+	\item Temps de durée d'une tâche
+\end{itemize}
+Le problème de fonctionnement est décrit.
+
+\begin{description}
+	\item[Etat] Planning partiel
+	\item[Etat but] 
+\end{description}
+\paragraph{Missionnaires et cannibales}
+$(cg,mg,sb)$ : Canibal Gauche, Missionaire Gauche, SB
+\begin{description}
+	\item[Etat initial] $(0,0,d)$ 
+	\item[Etat but] $(3,3,g)$
+	\item[Opérateur] Traversée en respectant les contraintes 
+\end{description}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=10cm]{Diagramme1.eps}
+	\includegraphics[width=5.5cm]{Diagramme2.eps}
+\end{figure}
+		\end{exemple}
+		\section{Recherche euristique}
+		C'est une stratégie d'exploration de l'espace de recherche en fonction de choix. Il va nous dire comment choisir le prochain état à examiner.
+
+		Une stratégie peut utiliser un heuristique.
+
+			\begin{exemple}
+				Exemples d'heuristiques : 
+				\begin{itemize}
+					\item Information qui classe les opérateurs applicables à un état
+					\item Fonction d'évaluation d'état
+			\end{itemize}
+		\end{exemple}
+
+		\begin{exemple}
+			\paragraph{Coloration d'une carte}
+			Carte planaire avec différentes régions colorée avec N couleurs différentes.
+
+			Le problème est de colorer la carte tel que 2 régions adjacentes sont de couleurs différentes.
+		\end{exemple}<++>
+		\section{Algorithmes de recherche}
+
+	\chapter{Le formalisme des arbres de buts}
+	\chapter{Les arbres de jeux}
+	\chapter{Le formalisme des CSP}
+
+\end{document}
+
