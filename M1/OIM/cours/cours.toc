@@ -1,0 +1,18 @@
+\select@language {french}
+\contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}
+\contentsline {paragraph}{Mod\IeC {\'e}lisation math\IeC {\'e}matique}{3}{chapter.1}
+\contentsline {paragraph}{Proc\IeC {\'e}d\IeC {\'e} Informatique}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}Concepts fondamentaux du multim\IeC {\'e}dia}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}Quelques termes utiles}{3}{section.1.2}
+\contentsline {chapter}{\numberline {2}Perception humaine}{4}{chapter.2}
+\contentsline {section}{\numberline {2.1}Perception du son}{4}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Intensit\IeC {\'e} sonore}{4}{subsection.2.1.1}
+\contentsline {section}{\numberline {2.2}Perception des couleurs}{4}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Espace de couleurs XYZ}{4}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Espace de couleurs RGB}{5}{subsection.2.2.2}
+\contentsline {chapter}{\numberline {3}Notion de fr\IeC {\'e}quence}{6}{chapter.3}
+\contentsline {section}{\numberline {3.1}Transform\IeC {\'e}e de Fourier}{6}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Transform\IeC {\'e}e de Fourier Discr\IeC {\`e}te}{6}{subsection.3.1.1}
+\contentsline {section}{\numberline {3.2}Chaine compression / D\IeC {\'e}compression JPEG}{6}{section.3.2}
+\contentsline {chapter}{\numberline {4}Programmation d'applications multim\IeC {\'e}dia}{7}{chapter.4}
+\contentsline {chapter}{\numberline {5}Courbes de remplissage de l'espace}{8}{chapter.5}
