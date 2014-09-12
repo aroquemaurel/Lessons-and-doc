@@ -218,11 +218,165 @@ $(cg,mg,sb)$ : Canibal Gauche, Missionaire Gauche, SB
 			\paragraph{Coloration d'une carte}
 			Carte planaire avec différentes régions colorée avec N couleurs différentes.
 
-			Le problème est de colorer la carte tel que 2 régions adjacentes sont de couleurs différentes.
-		\end{exemple}<++>
+			Le problème est de colorer la carte tel que 2 régions adjacentes soient de couleurs différentes.
+
+			\begin{description}
+				\item[Etat]Coloration partielle. Liste de paires (région, couleur)
+				\item[Etat but] Coloration acceptable complète
+			\end{description}
+
+			Ici on peut évaluer un état en mesurant la distance  au but
+		\end{exemple}
+
+		\subsection{Stratégies}
+		\begin{definition}
+			\textbf{Stratégie}\\ Fonction de choix du prochain état à explorer (Ou à développer)
+		\end{definition}
+
+		\begin{definition}
+			\textbf{Stratégie aveugle vs stratégie informée}\\ou non informée une stratégie qui ne dépend pas du problème(Ex: en profondeurd'abord, largeur d'abord)
+
+			Inversement, on parle de stratégie informée ou de recherche heuristique.
+		\end{definition}
+
+		\subsection{Critères d'évaluation}
+		\begin{definition}
+			\textbf{Complétude}\\ 
+			Un algo de recherche est dit complet si l'espace d'état contient l'état but
+		\end{definition}
+
+		\begin{definition}
+			\textbf{Complexité}\\
+			On se base sur le facteur de branchement de l'algorithme (Membres max de fils/états, profondeur max, profondeur de l'état but le moins éloigné de la
+			racine)
+		\end{definition}
 		\section{Algorithmes de recherche}
+		\subsection{Version de base}
+		\lstinputlisting[language=algo, caption=Recherche sans optimisation]{algos/1.algo}
+		\lstinputlisting[language=algo, caption=Recherche avec optimisation]{algos/2.algo}
+		\subsection{Recherche en profondeur d'abord}
+		On met toujours le fils du prochain en file d'attente. La complétude est garantie si etseulement si lafonction est optimisée.
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=11cm]{Diag1.eps}
+			\caption{Exemple de parcours en profondeur d'abord}
+		\end{figure}
+		\subsection{Rercherche en largeur d'abord}
+		On met le fils en queue de la file d'attente, c'est complet mais plus long.
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=11cm]{Diag2.eps}
+			\caption{Exemple de parcours en largeur d'abord}
+		\end{figure}
+
+		\subsection{Recherche informée}
+		Meilleur d'abord: on doit utiliser une fonction d'évaluation d'un état. (ex: nombre de jetons mal placés).
+
+		\textbf{Recherche d'une solution optimale à un problème} On appelle $f^*(e)$ le coût d'un chemin optima allant de $ei$ a un but passant par l'état courant $e$.
+
+		Je cherche une fonction $f$ qui estime $f(e)=g(e)+h(e)$, $h$ étant la composante heuristique.
+
+		\subsection{Algorithme $A^*$}
+		\begin{definition}~\\
+			$h$ est minorante si on a $h(e) \leq h^*(e)$
+		\end{definition}
+		\subsubsection{Propriétés d'un $A^*$}
+		\begin{itemize}
+			\item Si le nombre de fils par état est fini, il existe un minorant $>0$ du coût des opérateurs
+			\item Complétude
+			\item Si l'heuristique $h$ est minorante, ou optimiste, alors $A^*$ est admissible
+		\end{itemize}
+
+		\subsubsection{Cas particuliers d'un $A^*$}
+		On prend $h=0(cst)$ un coût uniforme.
+
+		\begin{exemple}
+			Chaque opérateurs coûte 1.
+		\end{exemple}
 
 	\chapter{Le formalisme des arbres de buts}
+	\begin{tabular}{cc}
+		\begin{minipage}{0.5\textwidth}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=9cm]{diag3.eps}
+			\caption{Schéma du nœud Ou}
+		\end{figure}
+		\end{minipage}
+		&
+		\begin{minipage}{0.5\textwidth}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=9cm]{diag4.eps}
+			\caption{Schéma du nœud Et}
+		\end{figure}
+		\end{minipage}
+	\end{tabular}
+
+	Si l'on a un problème initial, on suppose que l'on a 3 méthodes de résolutions,ou alors qu'une seule.
+
+	On construit alors un arbre de but qui est un cas particulier des arbres Et/Ou.
+
+	\begin{exemple}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=13cm]{diag5.eps}
+			\caption{Exemple de noeuds Et/Ou}
+		\end{figure}
+	\end{exemple}
+
+	\section{Définitions}
+	On distingue différents noeuds 
+	\begin{itemize}
+		\item Nœud non terminal ET
+		\item Nœud non terminal OU
+		\item Nœud terminal
+	\end{itemize}
+	On dira qu'un arbre est résolu si sa racine est résolu	On dira qu'un arbre est résolu si sa racine est résoluee
+
+	\begin{definition}
+		Un nœud terminal est :
+
+		\begin{itemize}
+			\item resolu: quand le problème associé a une solution connu sans continuer le travail
+			\item en echec: 
+		\end{itemize}
+	\end{definition}
+
+
+	\begin{definition}
+		Un nœud OU est résolu ssi un de ses fils est résolu.
+	\end{definition}
+
+	\begin{definition}
+		Un nœud ET est résolu ssi tout ses fils sont résolus et la contrainte est satisfaite
+	\end{definition}
+
+	\begin{remarque}
+	La coloration d'une carte sera mieux formalisée ici car on peut la former en utilisant de arbres Et/Ou.
+		\end{remarque}
+
+	\section{Recherche d'une solution}
+	Ici un état est un plan partiel de résolution du but initial
+	\begin{description}
+		\item[Etat initial]Plan vide
+		\item[Etat but] Plan complet
+		\item[Transition] Compléter un plan en ajoutant une action 
+	\end{description}
+	
+~
+	\begin{definition}
+		Un plan partiel issu de $n$ est un sous arbre de l'arbre de but de racine $n$ qui contient au plus un fils par nœud Ou.
+	\end{definition}
+
+	\begin{definition}
+		Un plan complet issu de $n$ est un sous arbre de l'arbre de but de racine $n$ contenant un fils exactement par nœud Ou et tous les fils par
+		nœud Et.
+	\end{definition}
+
+	\subsection{Cas d'un environnement non déterministe}
+	Dans ce cas là, on doit prendre en compte les réactions de l'environnement.
 	\chapter{Les arbres de jeux}
 	\chapter{Le formalisme des CSP}
 
