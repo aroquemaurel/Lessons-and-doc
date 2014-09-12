@@ -8,7 +8,19 @@
 \contentsline {paragraph}{Ordonnance des t\IeC {\^a}ches d'un robot}{5}{definitionT.2.2}
 \contentsline {paragraph}{Missionnaires et cannibales}{5}{definitionT.2.2}
 \contentsline {section}{\numberline {2.2}Recherche euristique}{6}{section.2.2}
-\contentsline {section}{\numberline {2.3}Algorithmes de recherche}{6}{section.2.3}
-\contentsline {chapter}{\numberline {3}Le formalisme des arbres de buts}{7}{chapter.3}
-\contentsline {chapter}{\numberline {4}Les arbres de jeux}{8}{chapter.4}
-\contentsline {chapter}{\numberline {5}Le formalisme des CSP}{9}{chapter.5}
+\contentsline {paragraph}{Coloration d'une carte}{6}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Strat\IeC {\'e}gies}{6}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Crit\IeC {\`e}res d'\IeC {\'e}valuation}{6}{subsection.2.2.2}
+\contentsline {section}{\numberline {2.3}Algorithmes de recherche}{7}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Version de base}{7}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Recherche en profondeur d'abord}{7}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Rercherche en largeur d'abord}{8}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}Recherche inform\IeC {\'e}e}{8}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {2.3.5}Algorithme $A^*$}{8}{subsection.2.3.5}
+\contentsline {subsubsection}{\numberline {2.3.5.1}Propri\IeC {\'e}t\IeC {\'e}s d'un $A^*$}{9}{subsubsection.2.3.5.1}
+\contentsline {subsubsection}{\numberline {2.3.5.2}Cas particuliers d'un $A^*$}{9}{subsubsection.2.3.5.2}
+\contentsline {chapter}{\numberline {3}Le formalisme des arbres de buts}{10}{chapter.3}
+\contentsline {section}{\numberline {3.1}D\IeC {\'e}finitions}{10}{section.3.1}
+\contentsline {section}{\numberline {3.2}Recherche d'une solution}{11}{section.3.2}
+\contentsline {chapter}{\numberline {4}Les arbres de jeux}{12}{chapter.4}
+\contentsline {chapter}{\numberline {5}Le formalisme des CSP}{13}{chapter.5}
