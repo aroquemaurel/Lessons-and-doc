@@ -18,7 +18,7 @@
 	url = ssh://gitolite@garp/scripts/L2/gestionPhotos.git
 [submodule "IUT/libUML"]
 	path = IUT/libUML
-	url = ssh://gitolite@garp/logiciel/IUT/libUML.git
+	url = ssh://git@garp/data/dev/git/repositories/satenske/libuml.git
 [submodule "L2/systeme4/systemeGestionFichier"]
 	path = L2/systeme4/systemeGestionFichier
 	url = ssh://gitolite@garp/logiciel/L2/sgf.git
