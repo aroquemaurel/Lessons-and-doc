@@ -1,0 +1,310 @@
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage{lmodern}
+\usepackage[svgnames]{xcolor} % Required to specify font color
+\input{/home/aroquemaurel/cours/includesLaTeX/couleurs.tex}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}
+\usepackage{wrapfig}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, linkcolor=vert1, urlcolor=bleu, colorlinks=true]{hyperref}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage[francais]{minitoc}
+\usepackage[final]{pdfpages} 
+\usepackage{graphicx} % Required for box manipulation
+
+\newcommand{\titre}{Traduction des langages}
+\newcommand{\subtitle}{~}
+\newcommand{\auteur}{Antoine de \bsc{Roquemaurel}}
+\newcommand{\formation}{M1 Informatique -- Développement Logiciel}
+\newcommand{\semestre}{7}
+\newcommand{\annee}{2014}
+\newcommand{\prof}{Christine \bsc{Maurel}}
+
+
+\newcommand{\pole}{}
+\newcommand{\sigle}{TL}
+
+
+\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/l2/cours.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
+\newcommand{\pfp}{\texttt{pfp}}
+
+\newcommand{\ifp}{\texttt{if}}
+\newcommand{\elsep}{\texttt{else}}
+\newcommand{\tokens}{\textit{tokens} }
+
+\input{/home/aroquemaurel/cours/includesLaTeX/couverture.tex}
+\makeatother
+\includeonly {
+}
+\begin{document}
+	\thispagestyle{empty} % Removes page numbers
+	\titleBC 
+	\dominitoc
+	\setcounter{tocdepth}{1}
+	\setcounter{secnumdepth}{3}
+	\setcounter{minitocdepth}{1}
+	\chapter*{Avant-propos}
+	\begin{attention}
+		\begin{itemize}
+			\item 7 séances de cours, 7 séances de TD $\Rightarrow$ Rapide
+			\item MCC : 1CT = 100\%\footnote{22 Novembre}
+			\item Plus de cours/TD $\Rightarrow$  Cours magistraux.
+			\item Moyenne S7 doit être >= 10 + note UE >= 6
+		\end{itemize}
+	\end{attention}
+	\tableofcontents
+	\chapter{Introduction}
+	La traduction des langaes peut être assimilée à de la << compilation >>.  C'est à dire comprendre pourquoi un programmae dans un langage de programmation est compris la machine où que les erreurs sont détectés.
+
+	\section{Intéprétation ou Compilation}
+	Une intérprétation utilise un intérpréteur et calcul lors de l'execution du programme.
+
+	Une compilation utilise un compilateur et traduit le programme. Aucune execution n'est nécessaire. 
+	% Diagramme 2
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=6cm]{Diagramme2.eps}
+	\end{figure}
+
+	\begin{tabular}{c||c|c}
+		&Avantages&Inconvénients\\
+		\hline
+		Interpréteur &
+		\begin{minipage}{0.3\textwidth}
+			\begin{itemize}
+				\item Convivial
+				\item Mise au point rapide
+			\end{itemize}
+		\end{minipage}&
+		\begin{minipage}{0.3\textwidth}
+			\begin{itemize}
+				\item Moins efficace
+			\end{itemize}
+		\end{minipage}
+		\\
+		\hline
+		Compilateur&
+		\begin{minipage}{0.3\textwidth}
+			\begin{itemize}
+				\item Efficacité
+				\item Optimisation possible
+			\end{itemize}
+		\end{minipage}&
+		\begin{minipage}{0.3\textwidth}
+			\begin{itemize}
+				\item Plus lourd
+			\end{itemize}
+		\end{minipage}
+	\end{tabular}
+
+	%% DIag 3
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=19cm]{Diagramme3.eps}
+		\caption{Phases de compilation}
+	\end{figure}
+
+	\chapter{Analyse lexicale}
+	Un analyseur lexical doit découper un texte source en \tokens, l'analyseur lexicale peut aussi être appelé scanner. L'analyseur lexical ne
+	fonctionne pas tout seul, il est en général guidé par un analyseur syntaxique.
+	% Diag 4
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=12cm]{Diagramme4.eps}
+		\caption{Diagramme de traduction}
+	\end{figure}
+
+	\section{Token}
+	\begin{itemize}
+		\item Identificateur
+		\item Mots clés
+		\item Constantes numériques
+		\item Opérateurs arithmétiques
+		\item Opérateurs de comparaison
+		\item Séparateur
+		\item Commentaires
+		\item Séparateurs
+	\end{itemize}
+	\section{Identificateurs}
+	\begin{itemize}
+		\item Commence par une lettre
+		\item Suivi d'une suite éventuellement vide de lettres, de chiffres (et de caractères spéciaux)
+	\end{itemize}
+	\begin{description}
+		\item[Nombres entiers signés]2014, +2014, -2014
+		\item[Alphabet] $X=\{a,\cdots,z,\cdots 0,\cdots,9,(+),(-)\}$
+	\end{description}
+
+	\begin{exemple}
+		\paragraph{Automate fini qui reconnait identificateurs et nombres}
+		\begin{eqnarray*}
+			L_0 &=&  l(L+c)^* + cc^* + (+) cc^* +(-)cc^*\\
+			L_0 &=& 
+		\end{eqnarray*}
+	\end{exemple}
+
+	\section{Fonctionnement}
+	L'analyseur lexicale lit le texte caractère par caractère, découpe et reconnait des tokens(lexèmes) exprimé avec une regex.
+
+	Il existe des outils générateurs de scanner.
+
+	\subsection{Les problèmes posés par l'analyse lexicale}
+	\subsubsection{Sur langage}
+	Éventualité de faire un automate plus petit qui reconnait $L'$ tel que $L\subseteq L'$\footnote{C'est-à-dire un sur langage de $L$} avec des actions
+	sémantiques plus << importantes >>.
+
+	\subsubsection{Le recul}
+	Si on a $<$, on sait que l’unité syntaxique c’est $<$. Mais si on tombe sur $<=$ on a une autre unité syntaxique ; $\leq$.
+
+	Ce n'est pas réellement un problème car on a vu qu'on privilégie l'Unité Syntaxique(US) la plus longue.
+	Si on tombe sur $<$ 1 , il faut remettre 1 dans le flot d’entrée
+
+	\subsection{La table des symboles}
+	La table des symboles, appelé TDS, est un endroit où ranger les \tokens rencontrés avec toutes les informations associées. Cela permet de calcul le <<
+	hashcode>> pour la gestion des synonymes.
+
+	\chapter{Analyse syntaxique}
+	\paragraph{Objectif} Voir si les \tokens trouvés par l'AL forment une << phrase correcte>> ou non par rapport à la grammaire du langage.
+
+	L'analyseur syntaxique est une grammaire reconnue par un automate à pile.
+	\chapter{Génération de code}
+
+	\appendix
+	\chapter{Rappels}
+	\section{Grammaire}
+	Une grammaire est fait pour raconter de quelle manières les mots du langages sont construit. On part de l'axiome S et on applique les règles de
+	productions, ou réécriture.
+
+	Une grammaire $G=<N,X,P,S>$ avec : 
+	\begin{description}
+		\item[N] L'ensemble des non terminaux. Majuscules. $\{A,S,B\}$
+		\item[X] Alphabet, ensemble des terminaux. Minuscules $\{a,b,c\}$
+		\item[P] Règles de productions. À gauche on a un seul non terminal $P\{A \rightarrow \alpha, A\in N, \alpha\in(N \cup X)\}$ 
+		\item[S] $S\in N$ Axiome 
+	\end{description}
+~
+
+\begin{exemple}
+	\begin{eqnarray*}
+	G_1&=& <N,X,P,S>\\
+	N&=& \{S\}\\
+	X&=& \{a,b\}\\
+	P&=& \{S \rightarrow abS, S\rightarrow a\}
+	\end{eqnarray*}
+	\end{exemple}
+	\begin{exemple}
+	\begin{eqnarray*}
+		G_2 &=&  <N,X,P,S>\\
+		N &=& \{S,A\}\\
+		X&=& \{a,b,c\}\\
+		P&=& \{S \rightarrow aAc\\
+		&& \ A\rightarrow bbA\\
+		&& \ A\rightarrow b\}
+	\end{eqnarray*}
+\end{exemple}
+
+$\omega \in X^*$ est un mot engendré par G, $\Rightarrow \omega \in L(G)$, avec $L(G)$ qui est un langage engendré par G.
+
+\begin{exemple}
+	Avec $G_1$ : 
+	$S \Rightarrow abS \Rightarrow ababS \Rightarrow ababa\in L(G_1)$
+\end{exemple}
+
+\subsection{Théorèmes}
+\subsubsection{Théorème d'Arden}
+$P$ règle de production $G$, système d'équation de langages, c'est à dire résoudre L(G).
+
+	$X =  r_1 X + r_2 \Rightarrow X = r_1\* r_2$ est solution. Si $\lambda \not\in r_1$ alors la solution est unique.
+\begin{exemple}
+	\begin{eqnarray*}
+		G_1 &\leadsto& S = \underbrace{ab}_{r_1}S + \underbrace{a}_{r_2}\\
+		G_2 &\leadsto& \left\{\begin{array}{ccc} S& =& aAc\\
+			A& =& \underbrace{bb}_{r_1}A+\underbrace{b}_{r_2}\end{array}\right.
+	\end{eqnarray*}
+\end{exemple}
+
+\subsubsection{Théorème d'Arden bis}
+$$X = Xr_1+r_2 \Rightarrow X=r_2r_1^{\;*}$$
+
+\subsubsection{Théorème $A^nB^n$}
+$$X = YXZ+T \Rightarrow X = Y^nTZ^n$$
+
+\section{Reconnaître un langage avec un automate à pile}
+	Un automate à pile est défini par $<Q,X,q_0,\Gamma, Z_0,F$
+	\begin{description}
+		\item[Q] Ensemble d'état
+		\item[X] Alphabet
+		\item[$q_0 \in Q$] Etat initial
+		\item[$\Gamma$] Alphabet de pile
+		\item[$Z_0$] Fond de pile $Z_0 \in \Gamma$
+		\item[F] Ensemble d'états finales $F\subseteq Q$
+		\item[$\sigma$] Fonction de transition 
+	\end{description}
+
+	\begin{exemple}
+		\begin{eqnarray}
+			S &\rightarrow& aAc\\
+			A &\rightarrow& bbA \\
+			A &\rightarrow& b \\
+			N &=& S,\\
+			X &=& a, b, c\\
+			\sigma(q, \lambda, S)& =& (q, aAc) \\
+			\sigma(q, \lambda, A) &=& (q, bbA)\\
+			\sigma(q, \lambda, A) &=& (q, b)\\
+			\sigma(q, a, a) &=& (q, \lambda)\\
+			\sigma(q, b, b) &=& (q, \lambda)\\
+			\sigma(q, c, c) &=& (q, \lambda)
+		\end{eqnarray}
+
+		\begin{center}
+		Analyse de la séquence abbbbbc
+
+		\begin{tabular}{ccc}
+			\textbf{Ruban} & \textbf{Pile} & \textbf{Règle}\\
+			\hline
+			$\lambda abbbbbc$ &$S$ &A.6\\
+			$abbbbbc$ &$aAc$& A.9\\
+			$\lambda bbbbbc$ &$Ac$ &A.7\\
+			$\lambda bbbbbc$ &$bbAc$& A.10\\
+			$bbbbc$ &$bAc$& A.10\\
+			$bbbc$ &$Ac$ &A.7\\
+			$bbbc$ &$bbAc$& A.10\\
+			$bbc$& $bAc$& A.10\\
+			$\lambda bc$&$ Ac$& A.8\\
+			$bc$& $bc$& A.10\\
+			c &$c$& A.11\\
+			mot lu &pile vide&
+		\end{tabular}
+	\end{center}
+
+	L'analyse doit se faire en une seule lecture du ruban et de façon déterministe. 
+	
+	Pour cela, on regarde $k$ symboles sur le ruban pour pouvoir décider de façon unique de la règle à appliquer. 
+	Cette analyse efficace est appelée analyse k-prédictive.
+
+	On peut écrire un algo déterministe pour la reconnaissance de $\omega \in L(G_2 )$
+	\begin{lstlisting}[language=C,numbers=none]
+Utiliser A.6;
+Utiliser A.9 pour dépiler "a"
+while il y a "bb" sur le ruban, do:
+	Utiliser A.7;
+	Utiliser deux fois A.10 pour dépiler les 2 "b"
+end
+	\end{lstlisting}
+	\end{exemple}
+	\listoffigures
+
+\end{document}
+

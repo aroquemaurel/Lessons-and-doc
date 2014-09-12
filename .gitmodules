@@ -1,24 +1,33 @@
 [submodule "L2/siaweb4/folksonomies"]
 	path = L2/siaweb4/folksonomies
-	url = ssh://gitolite@garp/web/L2/folksonomies.git
+	url = http://gitlab.joohoo.fr/web/folksonomy.git
 [submodule "L2/siaweb4/superVod"]
 	path = L2/siaweb4/superVod
-	url = ssh://gitolite@garp/web/L2/superVod.git
+	url = http://gitlab.joohoo.fr/web/supervod.git
 [submodule "IUT/2-s4-stage"]
 	path = IUT/2-s4-stage
-	url = ssh://gitolite@garp/latex/IUT/stage.git
+	url = http://gitlab.joohoo.fr/latex/stage-iut.git
 [submodule "L2/projet4/boggle"]
 	path = L2/projet4/boggle
-	url = ssh://git@garp/data/dev/git/repositories/logiciel/L2/boggle
+	url = http://gitlab.joohoo.fr/software/boggle.git
 [submodule "L2/reseau4/reseauCouche2"]
 	path = L2/reseau4/reseauCouche2
-	url = ssh://gitolite@garp/logiciel/L2/reseauCouche2.git
+	url = http://gitlab.joohoo.fr/software/network-2nd-layer.git
 [submodule "L2/systeme3/gestionPhotos"]
 	path = L2/systeme3/gestionPhotos
-	url = ssh://gitolite@garp/scripts/L2/gestionPhotos.git
+	url = http://gitlab.joohoo.fr/scripts/photo-management.git
 [submodule "IUT/libUML"]
 	path = IUT/libUML
-	url = ssh://git@garp/data/dev/git/repositories/satenske/libuml.git
+	url = http://gitlab.joohoo.fr/software/libuml.git
 [submodule "L2/systeme4/systemeGestionFichier"]
 	path = L2/systeme4/systemeGestionFichier
-	url = ssh://gitolite@garp/logiciel/L2/sgf.git
+	url = http://gitlab/software/file-management-system.git
+[submodule "L3/s5/projet/java"]
+	path = L3/s5/projet/java
+	url = http://gitlab.joohoo.fr/software/arenas.git
+[submodule "L3/s5/progMT/TP/progMT"]
+	path = L3/s5/progMT/TP/progMT
+	url = http://gitlab.joohoo.fr/software/progMT.git
+[submodule "L3/s6/progeven/catchGame"]
+	path = L3/s6/progeven/catchGame
+	url = http://gitlab.joohoo.fr/software/catchgame.git
