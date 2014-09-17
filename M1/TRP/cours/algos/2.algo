@@ -1,0 +1,20 @@
+-- Arguments : départ, test_etat_but, fils_etat, estime_etat, classe.
+-- Variables locales : file_attente, prochain, continuer (booléen), vus.
+Debut
+	file_attente <- {départ};
+	continuer <- vrai;
+	tantque continuer et file_attente non vide faire
+		prochain <- pop(file_attente);
+		vus <- push(prochain,vus);
+		si test_etat_but(prochain) alors
+			continuer <- faux;
+		sinon
+			file_attente <- 
+					classe_b(file_attente, fils_etat(prochain), estime_etat, vus);
+	fin tantque;
+
+	si continuer alors
+		print(Echec);
+	sinon
+		retourner(prochain);
+Fin

@@ -22,5 +22,12 @@
 \contentsline {chapter}{\numberline {3}Le formalisme des arbres de buts}{10}{chapter.3}
 \contentsline {section}{\numberline {3.1}D\IeC {\'e}finitions}{10}{section.3.1}
 \contentsline {section}{\numberline {3.2}Recherche d'une solution}{11}{section.3.2}
-\contentsline {chapter}{\numberline {4}Les arbres de jeux}{12}{chapter.4}
-\contentsline {chapter}{\numberline {5}Le formalisme des CSP}{13}{chapter.5}
+\contentsline {subsection}{\numberline {3.2.1}Cas d'un environnement non d\IeC {\'e}terministe}{11}{subsection.3.2.1}
+\contentsline {chapter}{\numberline {4}Recherche dans les arbres de jeux}{12}{chapter.4}
+\contentsline {section}{\numberline {4.1}Arbres de jeu et arbres de buts}{12}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}D\IeC {\'e}finitions}{13}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Int\IeC {\'e}ressement au gain}{13}{subsection.4.1.2}
+\contentsline {subsubsection}{\numberline {4.1.2.1}Trouver le gain garanti}{14}{subsubsection.4.1.2.1}
+\contentsline {paragraph}{<< Brute Force >>}{14}{subsubsection.4.1.2.1}
+\contentsline {paragraph}{Proc\IeC {\'e}dure minimax}{14}{subsubsection.4.1.2.1}
+\contentsline {chapter}{\numberline {5}Le formalisme des CSP}{15}{chapter.5}
