@@ -60,7 +60,7 @@
 	Il est dans l'environnement et peut le percevoir. 
 
 	\begin{definition}
-	L'agent est rationnel s'il agit toujours au mieux sur l'environnement de manière à atteindre ses objectifs mais en tenant compte de ses
+		L'\textbf{agent} est \textbf{rationnel} s'il agit toujours au mieux sur l'environnement de manière à atteindre ses objectifs mais en tenant compte de ses
 	compétences ou capacités.
 	\end{definition}
 
@@ -165,12 +165,12 @@ sommes devenus conscient du fait qu'il soit nécessaire de travailler avec d'aut
 		\end{itemize}
 ~
 
-		\begin{definition}{ -- \textbf{Un descendant d'un état S}}
-			État accessible de S par une séquence non ide d'opérateurs fils (descendant immédiats)
+		\begin{definition}
+			Un \textbf{Un descendant d'un état S} est un état accessible de S par une séquence non ide d'opérateurs fils (descendant immédiats)
 		\end{definition}
 
-		\begin{definition}{ -- \textbf{Espace de recherche}}
-			Les états accessibles de l'état initial\\
+		\begin{definition}
+			Un \textbf{espace de recherche} possède les états accessibles de l'état initial\\
 			~
 		\end{definition}
 
@@ -377,7 +377,121 @@ $(cg,mg,sb)$ : Canibal Gauche, Missionaire Gauche, SB
 
 	\subsection{Cas d'un environnement non déterministe}
 	Dans ce cas là, on doit prendre en compte les réactions de l'environnement.
-	\chapter{Les arbres de jeux}
+	\chapter{Recherche dans les arbres de jeux}
+	\section{Arbres de jeu et arbres de buts}
+		On appelle joueur de référence le joueur auquel on
+		s'intéresse, c'est celui qui veut gagner.
+
+		On construit un arbre de but, les n\oe{}représentant
+		les différents choix de jeu sont des n\oe{}uds OU.
+		 \begin{figure}[H]
+			 \centering
+			 \includegraphics[width=8cm]{ch4_1_1.eps}
+		 \end{figure}
+
+	\begin{remarque}
+		On a une alternance entre les nœuds ET et les nœuds OU
+
+	\end{remarque}
+
+	\begin{exemple}
+		 On a une pile de 7 jetons, il faut choisir une pile
+		 et la couper en deux piles de tailles différentes, le
+		 premier qui ne peut plus jouer à perdu.
+
+		 On peut dessiner un arbre de jeu complet,
+		 indépendant des joueurs qui représente tous les coups
+		 positives.
+
+		 \begin{figure}[H]
+			 \centering
+			 \includegraphics[width=15cm]{Diagramme7.eps}
+			 \caption{Exemple d'arbre complet}
+		 \end{figure}
+	\end{exemple}
+	\subsection{Définitions}
+		Soit A un arbre de jeu étiqueté ET/OU.
+
+	\begin{definition}
+		Une \textbf{stratégie partielle} (Sp) est un sous arbre de A de même
+		racine que A contenant au plus un fils / nœud ou.
+	\end{definition}
+
+	\begin{definition}
+		Une \textbf{stratégie complète} (pour le joueur de
+		référence) est 
+		un sous arbre de A, de même racine, contenant un
+		fils/nœud OU et tous les fils / nœud ET.
+	\end{definition}
+
+	\begin{definition}
+		Une \textbf{stratégie gagnante} (pou le joueur de référence)
+		est une stratégie complète dont toutes les feuilles sont
+		gagnantes, on va gagner dans tous les cas 
+	\end{definition}
+
+	\begin{attention}
+		Il existe au moins une stratégie gagnante pour l'un des joueurs
+	\end{attention}
+
+	\subsection{Intéressement au gain}
+	On ajoute un intéressement au gain du jeu.
+
+	\begin{definition}
+		Pour un joueur J, le \textbf{gain garanti} est le gain qui est assuré à J quelque soit la réponse de l'adversaire.
+	\end{definition}
+
+	\begin{definition}
+		Le \textbf{gain garanti maximal} est le meilleur gain que le joueur puisse avoir.
+	\end{definition}
+
+
+	\subsubsection{Trouver le gain garanti}
+	Plusieurs méthodes existent : 
+	\paragraph{<< Brute Force >>} On cherche toutes les stratégies gagnantes pour J, on a le gain garanti pour chaque stratégie gagnante, et on peut trouver la meilleure stratégie gagnante associée au gain garanti maximum.
+
+	\paragraph{Procédure minimax} Soit A un arbre de jeu étiqueté ET/OU, les feuilles sont valuées pour le joueur de référence.
+
+On remonte une valeur à la racine:
+\begin{itemize}
+	\item OU max(valeurs des fils);
+	\item ET min(valeurs des fils);
+\end{itemize}
+~
+
+	\begin{attention}
+		La valeur minimax de l'arbre est le gain garanti maximum, c'est-à-dire le gain garanti par la meilleur stratégie gagnante.
+	\end{attention}
+
+	\begin{remarque}
+		Si le joueur de référence commence, on obtient aussi le meilleurs 1er coup.
+
+~
+	\end{remarque}
+	
+	\subsection{Cas d'un arbre de jeu incomplet}
+	\begin{attention}
+		Les feuilles ne sont plus des situations terminales du jeu.
+	\end{attention}
+
+	Une estimation statique de la On applique une fonction à ces feuilles qui estiment l promese de la situation, pour pouvoir comprer 2 situations.
+	
+	La valeur minmax de l'arbre est la promesse de la situation la plus prométteuse pour J qui peut être atteinte contre toute riposte de
+	l'adversaire.
+	
+\begin{itemize}
+	\item Développer l'arbre de jeu à profondeur 4
+	\item Appliquer l'estimation aux feuilles
+	\item Remonter le minmax et voir le coup à jouer
+	\item J Joue
+	\item L'adversaire répond
+	\item Recommencer
+\end{itemize}
+
+\section{Recherche du minmax}
+Soit A un arbre, complet ou incomplet.
+
+
 	\chapter{Le formalisme des CSP}
 
 \end{document}
