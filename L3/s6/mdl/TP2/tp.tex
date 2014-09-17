@@ -1,0 +1,79 @@
+\documentclass[a4paper, 11pt]{article}
+
+\usepackage{xcolor}
+\input{/home/aroquemaurel/cours/includesLaTeX/couleurs.tex}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=2.7cm, bottom=2.7cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{verbatim}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, linkcolor=vert1, urlcolor=bleu, colorlinks=true]{hyperref}
+
+\newcommand{\titre}{OpenUP}
+\newcommand{\numero}{2}
+\newcommand{\typeDoc}{TDM}
+\newcommand{\module}{Méthodologies de Dév. Logiciel}
+\newcommand{\sigle}{MDL}
+\newcommand{\semestre}{6}
+
+\input{/home/aroquemaurel/cours/includesLaTeX/l3/tddm.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex} %prise en charge du langage C 
+\input{/home/aroquemaurel/cours/includesLaTeX/l3/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
+\makeatother
+\begin{document}
+	\maketitle
+	\section{Sujet du projet}
+	Le projet était le développement de personnage pouvant interagir en réseau en utilisant le serveur fourni, ceci en utilisant le langage Java.
+
+	Les personnages pouvaient ensuite se déplacer, ramasser des objets et se battre, chaque personnage et/ou objet possédant ses propres caractéristiques. Le
+	serveur ne devait pas être modifié.
+	\section{Phases du projet}
+	\begin{description}
+		\item[Inception] Effectué par l'université, en effet la conception était déjà faite
+		\item[Elaboration] Effectué par l'université
+		\item[Construction] Développement de nos personnages
+		\item[Transition] Tests de notre projet en réseau, afin de vérifier que tout fonctionne correctement
+	\end{description}
+
+	À l'issue de ce projet, nous avons livrés le logiciel contenant les sources et le fichier jar, ainsi qu'une documentation au format PDF et
+	HTML\footnote{Générée à l'aide de Doxygen} et enfin, un rapport expliquant nos choix de conception et expliquant le fonctionnement du logiciel.
+
+	La documentation à été effectué durant le développement, les choix de conception ont été posé au début de la phase de construction, quant au source, elles
+	ont été écrites durant la phase de construction.
+	\section{Difficultés}
+	Les difficultés de ce projet ont principalement été de la compréhension plutôt que de l'organisation, en effet, ayant travaillé plusieurs fois ensemble, nous
+	nous connaissions et avons l'habitude de notre organisation. De plus, mon expérience du DUT Informatique m'a apparis un certain nombre de chose, notamment
+	la gestion de petits projets : Utilisation de Redmine pour la répartition des tâches, de Sonar pour l'analyse du code, de Git pour le travail en équipe, mise
+	en place de conventions d'écritures, \ldots
+
+	Cependant, notre principale difficulté à été de comprendre le code fournis par l'université, notamment parce que celui-ci était assez mal conçu, et donc difficilement
+	compréhensible afin de le modifier au mieux, d'autant plus que son adaptation n'était pas envisageable : nous avons ainsi passé trop de temps sur la
+	compréhension de l'existant par rapport au temps que nous aurions du y passer.
+
+	Afin de pouvoir réaliser notre projet plus rapidement et simplement, il aurait été agréable que le projet existant possède des tests unitaires et des tests
+	d'intégration : ainsi nous aurions facilement pus éviter certaines régression du projet ceci en lançant les tests régulièrement, et en utilisant un outil
+	d'intégration continue.
+
+	\newpage
+	\section{Conclusion}
+	L'utilisation de la méthode OpenUP aurait été inutile dans ce projet. Et ceci pour plusieurs raisons.
+
+	Tout d'abord, la taille du projet était trop petit, que ça soit dans le temps ou en charge de travail, ainsi l'utilisation de cette méthode nous aurait
+	plutôt gêné, notamment car ne nous la connaissions pas parfaitement : une formation aurait été nécessaire.\\
+	OpenUP à un fonctionnement incrémental, chaque incrément ayant une durée assez conséquente, en une semaine sa mise en place aurait été laborieuse.
+	
+	Également, nous n'étions que deux, l'utilisation d'OpenUP pour deux personnes est quasiment inutile, et pose de nombreux problèmes, comme la répartition des
+	rôles.
+
+	Enfin, la méthode OpenUP nécessite l'implication du client, or notre client n'était pas clairement définis.
+\end{document}
