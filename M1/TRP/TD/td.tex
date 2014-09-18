@@ -1,0 +1,106 @@
+\documentclass[12pt,a4paper,openany]{book}
+
+\usepackage{lmodern}
+\usepackage[svgnames]{xcolor} % Required to specify font color
+\input{/home/aroquemaurel/cours/includesLaTeX/couleurs.tex}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, linkcolor=vert1, urlcolor=bleu, colorlinks=true]{hyperref}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+\usepackage{graphicx} % Required for box manipulation
+\usepackage{float}
+
+\newcommand{\titre}{Techniques de base de résolution de problèmes}
+\newcommand{\subtitle}{IA}
+\newcommand{\auteur}{Antoine de \bsc{Roquemaurel}}
+\newcommand{\formation}{M1 Informatique -- Développement Logiciel}
+\newcommand{\semestre}{7}
+\newcommand{\annee}{2014}
+\newcommand{\prof}{Pierre \bsc{Regner}}
+
+
+\newcommand{\pole}{}
+\newcommand{\sigle}{crcl}
+\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex} %prise en charge du langage algo
+\input{/home/aroquemaurel/cours/includesLaTeX/l2/cours.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/couverture.tex}
+\makeatother
+
+\begin{document}
+	\thispagestyle{empty} % Removes page numbers
+	\titleBC 
+	\setcounter{tocdepth}{2}
+	\setcounter{secnumdepth}{3}
+	\tableofcontents
+	\chapter{Problèmes dans les espaces d'états}
+	\section{La réécriture}
+	\subsection{Algorithme en largeur d'abord}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=15cm]{Diagramme1.eps}
+		\caption{Réécriture avec l'algorithme en largeur d'abord}
+	\end{figure}
+	\begin{description}
+		\item[Chemin solution] \texttt{<r1, r5, r1, r5, r4>}
+		\item[Nœuds développés] 14
+		\item[Nœuds crées] 19
+		\item[Algorithme optimal] Longueur dans plans solution 
+		\item[Algorithme complet] S'il existe une solution, il l'a trouve, sous condition de couper les branches déjà explorées
+	\end{description}
+
+	\begin{remarque}
+		Cet algorithme consomme beaucoup de mémoire est peut être très long à dérouler : il n'est donc pas très utilisé
+	\end{remarque}
+
+	\subsection{Algorithme en profondeur d'abord}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=15cm]{Diagramme2.eps}
+		\caption{Réécriture avec l'algorithme en profondeur d'abord}
+	\end{figure}
+	\begin{description}
+		\item[Chemin solution] \texttt{<r1, r5, r1, r5, r4>}
+		\item[Nœuds développés] 8
+		\item[Nœuds crées] 10
+		\item[Algorithme optimal] Non optimal 
+		\item[Algorithme complet] S'il existe une solution, il l'a trouve, sous condition de couper les branches déjà explorées
+	\end{description}
+	\begin{remarque}
+		Cet algorithme consomme beaucoup moins de mémoire que la profondeur d'abord
+\\~
+	\end{remarque}
+
+	\section{Le taquin $3\times 3$}
+	\subsection{Algorithme << Glouton >>}
+	\begin{remarque}
+		L'algorithme Glouton peut aussi s'appeler Algorithme de Gradient
+		\\~
+	\end{remarque}
+	\includegraphics[width=11.8cm]{Diagramme3.eps}	
+	\begin{description}
+		\item[Heuristique] Nombre de cases non en place
+		\item[Opérateurs] H,D,B,G
+		\item[Chemin solution] 9 étapes : \texttt{<H,H,D,B,G,H,D,B,G>}
+		\item[Nœuds développés] 9
+		\item[Nœuds crées] 20
+	\end{description}
+	\subsection{Un autre problème}
+	\subsection{Algorithme de recherche << meilleur d'abord >>}
+	\subsection{Algorithme de recherche $A^*$}
+	\subsection{Algorithme A$^*$, heuristique P (mieux informée)}
+	\subsection{Un autre problème}
+	\appendix
+	\lstlistoflistings
+
+\end{document}

@@ -1,0 +1,13 @@
+\select@language {french}
+\contentsline {chapter}{\numberline {1}Probl\IeC {\`e}mes dans les espaces d'\IeC {\'e}tats}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}La r\IeC {\'e}\IeC {\'e}criture}{3}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Algorithme en largeur d'abord}{3}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Algorithme en profondeur d'abord}{4}{subsection.1.1.2}
+\contentsline {section}{\numberline {1.2}Le taquin $3\times 3$}{5}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Algorithme << Glouton >>}{5}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}Un autre probl\IeC {\`e}me}{6}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.3}Algorithme de recherche << meilleur d'abord >>}{6}{subsection.1.2.3}
+\contentsline {subsection}{\numberline {1.2.4}Algorithme de recherche $A^*$}{6}{subsection.1.2.4}
+\contentsline {subsection}{\numberline {1.2.5}Algorithme A$^*$, heuristique P (mieux inform\IeC {\'e}e)}{6}{subsection.1.2.5}
+\contentsline {subsection}{\numberline {1.2.6}Un autre probl\IeC {\`e}me}{6}{subsection.1.2.6}
+\contentsline {chapter}{\numberline {A}Liste des codes sources}{7}{appendix.A}
