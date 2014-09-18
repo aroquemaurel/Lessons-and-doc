@@ -1,15 +1,16 @@
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.1}Introduction}{\reset@font\mtcSfont 5}{section.2.1}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Ordonnance des t\IeC {\^a}ches d'un robot}{\reset@font\mtcPfont 5}{definitionT.2.2}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Missionnaires et cannibales}{\reset@font\mtcPfont 5}{definitionT.2.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.1.1}Repr\IeC {\'e}sentation de l'espace d'\IeC {\'e}tats}{\reset@font\mtcSSfont 6}{subsection.2.1.1}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.2}Recherche euristique}{\reset@font\mtcSfont 6}{section.2.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Coloration d'une carte}{\reset@font\mtcPfont 6}{section.2.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.1}Strat\IeC {\'e}gies}{\reset@font\mtcSSfont 6}{subsection.2.2.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.2}Crit\IeC {\`e}res d'\IeC {\'e}valuation}{\reset@font\mtcSSfont 6}{subsection.2.2.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Coloration d'une carte}{\reset@font\mtcPfont 7}{section.2.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.1}Strat\IeC {\'e}gies}{\reset@font\mtcSSfont 7}{subsection.2.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.2}Crit\IeC {\`e}res d'\IeC {\'e}valuation}{\reset@font\mtcSSfont 7}{subsection.2.2.2}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.3}Algorithmes de recherche}{\reset@font\mtcSfont 7}{section.2.3}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.3.1}Version de base}{\reset@font\mtcSSfont 7}{subsection.2.3.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.3.2}Recherche en profondeur d'abord}{\reset@font\mtcSSfont 7}{subsection.2.3.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.3.2}Recherche en profondeur d'abord}{\reset@font\mtcSSfont 8}{subsection.2.3.2}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.3.3}Rercherche en largeur d'abord}{\reset@font\mtcSSfont 8}{subsection.2.3.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.3.4}Recherche inform\IeC {\'e}e}{\reset@font\mtcSSfont 8}{subsection.2.3.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.3.5}Algorithme $A^*$}{\reset@font\mtcSSfont 8}{subsection.2.3.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.3.4}Recherche inform\IeC {\'e}e}{\reset@font\mtcSSfont 9}{subsection.2.3.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.3.5}Algorithme $A^*$}{\reset@font\mtcSSfont 9}{subsection.2.3.5}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.3.5.1}Propri\IeC {\'e}t\IeC {\'e}s d'un $A^*$}{\reset@font\mtcSSSfont 9}{subsubsection.2.3.5.1}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.3.5.2}Cas particuliers d'un $A^*$}{\reset@font\mtcSSSfont 9}{subsubsection.2.3.5.2}}

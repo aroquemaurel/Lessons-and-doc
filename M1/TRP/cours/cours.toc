@@ -7,16 +7,17 @@
 \contentsline {section}{\numberline {2.1}Introduction}{5}{section.2.1}
 \contentsline {paragraph}{Ordonnance des t\IeC {\^a}ches d'un robot}{5}{definitionT.2.2}
 \contentsline {paragraph}{Missionnaires et cannibales}{5}{definitionT.2.2}
+\contentsline {subsection}{\numberline {2.1.1}Repr\IeC {\'e}sentation de l'espace d'\IeC {\'e}tats}{6}{subsection.2.1.1}
 \contentsline {section}{\numberline {2.2}Recherche euristique}{6}{section.2.2}
-\contentsline {paragraph}{Coloration d'une carte}{6}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Strat\IeC {\'e}gies}{6}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Crit\IeC {\`e}res d'\IeC {\'e}valuation}{6}{subsection.2.2.2}
+\contentsline {paragraph}{Coloration d'une carte}{7}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Strat\IeC {\'e}gies}{7}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Crit\IeC {\`e}res d'\IeC {\'e}valuation}{7}{subsection.2.2.2}
 \contentsline {section}{\numberline {2.3}Algorithmes de recherche}{7}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Version de base}{7}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Recherche en profondeur d'abord}{7}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.2}Recherche en profondeur d'abord}{8}{subsection.2.3.2}
 \contentsline {subsection}{\numberline {2.3.3}Rercherche en largeur d'abord}{8}{subsection.2.3.3}
-\contentsline {subsection}{\numberline {2.3.4}Recherche inform\IeC {\'e}e}{8}{subsection.2.3.4}
-\contentsline {subsection}{\numberline {2.3.5}Algorithme $A^*$}{8}{subsection.2.3.5}
+\contentsline {subsection}{\numberline {2.3.4}Recherche inform\IeC {\'e}e}{9}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {2.3.5}Algorithme $A^*$}{9}{subsection.2.3.5}
 \contentsline {subsubsection}{\numberline {2.3.5.1}Propri\IeC {\'e}t\IeC {\'e}s d'un $A^*$}{9}{subsubsection.2.3.5.1}
 \contentsline {subsubsection}{\numberline {2.3.5.2}Cas particuliers d'un $A^*$}{9}{subsubsection.2.3.5.2}
 \contentsline {chapter}{\numberline {3}Le formalisme des arbres de buts}{10}{chapter.3}
@@ -30,4 +31,6 @@
 \contentsline {subsubsection}{\numberline {4.1.2.1}Trouver le gain garanti}{14}{subsubsection.4.1.2.1}
 \contentsline {paragraph}{<< Brute Force >>}{14}{subsubsection.4.1.2.1}
 \contentsline {paragraph}{Proc\IeC {\'e}dure minimax}{14}{subsubsection.4.1.2.1}
+\contentsline {subsection}{\numberline {4.1.3}Cas d'un arbre de jeu incomplet}{14}{subsection.4.1.3}
+\contentsline {section}{\numberline {4.2}Recherche du minmax}{14}{section.4.2}
 \contentsline {chapter}{\numberline {5}Le formalisme des CSP}{15}{chapter.5}

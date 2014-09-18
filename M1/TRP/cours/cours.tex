@@ -201,6 +201,35 @@ $(cg,mg,sb)$ : Canibal Gauche, Missionaire Gauche, SB
 	\includegraphics[width=5.5cm]{Diagramme2.eps}
 \end{figure}
 		\end{exemple}
+
+		\begin{remarque}
+			La taille des espaces d'états pour des problèmes réels est extrêmement importante  : nécessité de techniques ou d'algorithmes
+			spécifiques pour ne pas développer tout l'ensemble d'état et pouvoir néanmoins trouver une solution.
+		\end{remarque}
+
+		\subsection{Représentation de l'espace d'états}
+		\begin{description}
+			\item[En extension] On explicite tous les états possibles\footnote{Pour un taquin $3\times 3 = 181440$ états, ce qui est une taille trop
+				importante pour l'expliciter, c'est-à-dire le dessiner}
+
+			\item[En intention] 3 données sont nécessaires :
+				\begin{itemize}
+					\item État initial
+					\item But
+					\item Les opérateurs de changement d'état : une modélisation astucieuse peut amener un gain de performance\footnote{Taquin
+						$3\times 3$ 32 opérateurs
+						$\Leftrightarrow$ 4 opérateurs pour la case vide}
+				\end{itemize}
+			\item[Objectif] Utiliser des algorithmes qui vont développer une partie, la plus petite possible de l'espace d'état pour trouver un
+				chemin qui mène de l'état initial à un état qui satisfait le but. Pour ça l'algorithme va développer un espace de recherche
+			\item[Deux catégories d'algorithmes] ~
+				\begin{itemize}
+					\item Algorithmes aveugles (non informés) (Profondeur d'abord, largeur d'abord, \textit{Deep First iterative Depending} DFD,
+						\ldots)
+					\item Algorithmes informés : Nécessite une fonction d'estimation, appelé fonction heuristique (Glouton ou Gradient, Meilleur
+						d'abord, A, A$^*$, IDA$^*$, B, C,\ldots)
+				\end{itemize}
+		\end{description}
 		\section{Recherche euristique}
 		C'est une stratégie d'exploration de l'espace de recherche en fonction de choix. Il va nous dire comment choisir le prochain état à examiner.
 
@@ -278,6 +307,12 @@ $(cg,mg,sb)$ : Canibal Gauche, Missionaire Gauche, SB
 		Je cherche une fonction $f$ qui estime $f(e)=g(e)+h(e)$, $h$ étant la composante heuristique.
 
 		\subsection{Algorithme $A^*$}
+		On calcule $f(N) = \underbrace{g(N)}_{Dynamique} + \underbrace{h(N)}_{Statique}$ pour chaque nœud N, ces nœuds sont classés en fonction de
+		$f(N)$ dans une lite d'attente, les plus petites valeurs d'abord. On développe toujours le nœud qui est en tête de la liste.
+
+		Pour avoir un $A^*$ il faut que l'heuristique soit minorante, c'est-à-dire qu'elle sous estime toujours la réalité. Dans le cas contraire, nous aurons
+		un algorithme $A$.
+		
 		\begin{definition}~\\
 			$h$ est minorante si on a $h(e) \leq h^*(e)$
 		\end{definition}
