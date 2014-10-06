@@ -524,8 +524,74 @@ On remonte une valeur à la racine:
 \end{itemize}
 
 \section{Recherche du minmax}
-Soit A un arbre, complet ou incomplet.
+Soit A un arbre de jeu étiqueté ET/OU, les feuilles sont valuées pour le joueur de référence.
 
+On remonte une valeur à la racine de l'arbre:
+\begin{itemize}
+\item OU : max(valeurs des fils) 
+\item ET : min(valeurs des fils)
+\end{itemize}
+
+Cette valeur est le minimax de l'arbre.  La valeur minimax de l'arbre est le gain garanti maximum (gain garanti par la meilleure sg.)
+Si J commence on obtient aussi le meilleur $1^{er}$ coup.
+
+\subsection{Cas d'un arbre de jeu incomplet.}
+Les feuilles ne sont plus des situations terminales du jeu. On applique une fonction a ces feuilles qui estime la promesse de la situation. Pour pouvoir comparer 2 situations.
+
+\begin{definition}
+	La \textbf{valeur minimax} de l'arbre est une promesse de la situation la plus prometteuse pour J qui peut être atteinte contre toute riposte de l'adversaire.
+\end{definition}
+
+\begin{itemize}
+\item Développer l'arbre de jeu à profondeur 4 
+\item Appliquer l'estimation aux feuilles
+\item Remonter le minimax et voir le voup à jouer
+\item J joue
+\item L'adversaire répond
+\item Recommencer
+\end{itemize}
+
+
+Soit A arbre (complet ou incomplet).
+
+%Recopier 2%
+
+2 classes de méthodes:
+Espace d'état de stratégies partielles $\to$ SSS*
+\begin{description}
+\item [Etat] Stratégie partielle 
+\item [État initial] Stratégie partielle réduite à la racine de A
+\item [État but] stratégie complète
+\end{description}
+
+Opérateur étendre la stratégie partielle e, rajoutant d'un fils à un nœud extensible. 
+Fonction évaluation d'état plus petit majorant de la valeur de la meilleure stratégie complète qui peut être atteinte. 
+
+\begin{remarque}
+Il serait possible d'effectuer une optimisation, en effet dans une stratégie partielle, si on a un nœud OU extensible on a autant de successeurs que de fils dans A.
+Nœud ET extensible on a 1 successeur prochain fils.
+\end{remarque}<++>
+
+\subsection{Algorithme Alpha-Beta}
+C'est l'algorithme le plus ancien et le plus étudié dans les arbres de jeux. On cg
+
+\subsubsection{Convention Negamax}
+\begin{lstlisting}[language=Algo]
+si noeud terminal alors
+	negamax <- valeur noeud;
+sinon
+	developper noeud;
+	i <- 1;
+	mp <- $-\infty$
+	tanque i <= n faire
+		vloc <- -negamax(fils(noeud));
+		si vloc > mp alors
+			mp <- vloc;
+		fin si;
+		i <- i + 1;
+	fin tantque;
+fin si;
+\end{lstlisting}
 
 	\chapter{Le formalisme des CSP}
 
