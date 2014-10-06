@@ -31,3 +31,6 @@
 [submodule "L3/s6/progeven/catchGame"]
 	path = L3/s6/progeven/catchGame
 	url = http://gitlab.joohoo.fr/software/catchgame.git
+[submodule "M1/OIM/jpg-compression"]
+	path = M1/OIM/jpg-compression
+	url = git@garp:software/jpg-compression.git
