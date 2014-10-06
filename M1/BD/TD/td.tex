@@ -1,0 +1,47 @@
+\documentclass[12pt,a4paper,openany]{book}
+
+\usepackage{lmodern}
+\usepackage[svgnames]{xcolor} % Required to specify font color
+\input{/home/aroquemaurel/cours/includesLaTeX/couleurs.tex}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, linkcolor=vert1, urlcolor=bleu, colorlinks=true]{hyperref}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+\usepackage{graphicx} % Required for box manipulation
+\usepackage{float}
+
+\newcommand{\titre}{Optimisation de base de données}
+\newcommand{\subtitle}{BD}
+\newcommand{\auteur}{Antoine de \bsc{Roquemaurel}}
+\newcommand{\formation}{M1 Informatique -- Développement Logiciel}
+\newcommand{\semestre}{7}
+\newcommand{\annee}{2014}
+\newcommand{\prof}{\bsc{Morvant}}
+
+
+\newcommand{\pole}{}
+\newcommand{\sigle}{bd}
+\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex} %prise en charge du langage algo
+\input{/home/aroquemaurel/cours/includesLaTeX/l2/cours.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/couverture.tex}
+\makeatother
+
+\begin{document}
+	\thispagestyle{empty} % Removes page numbers
+	\titleBC 
+	\setcounter{tocdepth}{2}
+	\setcounter{secnumdepth}{3}
+	\tableofcontents
+	\chapter{Algèbre relationnelle}
+\end{document}

@@ -1,0 +1,68 @@
+\documentclass[12pt,a4paper,openany]{book}
+
+\usepackage{lmodern}
+\usepackage[svgnames]{xcolor} % Required to specify font color
+\input{/home/aroquemaurel/cours/includesLaTeX/couleurs.tex}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, linkcolor=vert1, urlcolor=bleu, colorlinks=true]{hyperref}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+\usepackage{graphicx} % Required for box manipulation
+\usepackage{float}
+
+\newcommand{\titre}{Outils et Informations Multimédias}
+\newcommand{\subtitle}{OIM}
+\newcommand{\auteur}{Antoine de \bsc{Roquemaurel}}
+\newcommand{\formation}{M1 Informatique -- Développement Logiciel}
+\newcommand{\semestre}{7}
+\newcommand{\annee}{2014}
+\newcommand{\prof}{vdh}
+
+
+\newcommand{\pole}{}
+\newcommand{\sigle}{oim}
+\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex} %prise en charge du langage algo
+\input{/home/aroquemaurel/cours/includesLaTeX/l2/cours.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/couverture.tex}
+\makeatother
+
+\begin{document}
+	\thispagestyle{empty} % Removes page numbers
+	\titleBC 
+	\setcounter{tocdepth}{2}
+	\setcounter{secnumdepth}{3}
+	\tableofcontents
+	\chapter{Traitement de l'audio}
+	\section{Codage de l'information}
+	\begin{enumerate}
+		\item Stéréo, donc 2 échantillons. $44100 \times 2$
+		\item $\frac{44100}{2} = 22050$
+		\item $2^{-15} \cdots 2^{15}$
+		\item $\underbrace{60}_{s} \times \underbrace{60}_{m} \times
+	\underbrace{44100}_{Fréquence} \times
+	\underbrace{2}_{Stéréo} \times \underbrace{2}_{16 bits = 2
+	octets}$
+	\end{enumerate}
+
+	\section{Échantillonnage et quantification}
+	\subsection{Sous échantillonnage}
+	\lstinputlisting[language=C]{1-1.c}
+	\section{Calcul des moments d'un signal audio}
+	\begin{enumerate}
+		\item $5 \times 22000 \times \underbrace{1}_{8bits} = 110000$
+		\item $Taille  = \frac{n-r}{ws - r} = \frac{5000 - 15}{30 - 15} = 332$ Le type doit donc être du \texttt{float} ou \texttt{double}.
+		\item 
+	\lstinputlisting[language=C]{1-2.c}
+	\end{enumerate}
+\end{document}
