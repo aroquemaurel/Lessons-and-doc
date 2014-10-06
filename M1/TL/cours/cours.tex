@@ -161,6 +161,15 @@
 	Il existe des outils générateurs de scanner.
 
 	\subsection{Les problèmes posés par l'analyse lexicale}
+	\subsubsection{Reconnaissance}
+	Si on a \texttt{let} en mot clé et on a un identificateur \texttt{lettre}. On donne la priorité à l'unité syntaxique la plus longue, cf figure
+	\ref{fig:recoPb} 
+
+	\begin{figure}[H]
+		\includegraphics[width=12cm]{Diagramme5.eps}
+		\centering
+		\label{fig:recoPb}
+	\end{figure}
 	\subsubsection{Sur langage}
 	Éventualité de faire un automate plus petit qui reconnait $L'$ tel que $L\subseteq L'$\footnote{C'est-à-dire un sur langage de $L$} avec des actions
 	sémantiques plus << importantes >>.
@@ -179,6 +188,14 @@
 	\paragraph{Objectif} Voir si les \tokens trouvés par l'AL forment une << phrase correcte>> ou non par rapport à la grammaire du langage.
 
 	L'analyseur syntaxique est une grammaire reconnue par un automate à pile.
+
+	\section{Analyse descendante}
+Reconnaître(ou pas) un mot u ∈ X ∗ sur le ruban, On part de S et on a la pile.
+
+A un instant donné, on a travaillé et on a reconnu un préfixe $\omega$ de u, $\omega \in X∗$ .
+Pour ça on a mis $A\alpha$ dans la pile,$ A \in N$
+
+A est le sommet de pile et $\alpha \in (N \cup X)^*$
 	\chapter{Génération de code}
 
 	\appendix
