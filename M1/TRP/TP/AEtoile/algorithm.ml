@@ -1,8 +1,9 @@
 #use "graphes.ml";;
+open List;;
 
 
-let estBut e = estBut2 e;;
-let etatsSuivants e = etatsSuivants2 e;;
+let estBut e = estBut1 e;;
+let etatsSuivants e = etatsSuivants1 e;;
 let opPoss  = opPoss1;;
 
 
@@ -60,13 +61,17 @@ let getChemin (triplet : string * char list * int) =
 let getCout (triplet : string * char list * int) = 	
     match triplet with
     (_,_,c) -> c;;
-let getTriplet (op : (char * string * int) list) : (string * char list * int) = 
-    match op with
-     [] -> []
-    |t::q -> ;;
-let rec profondeur (la : (string  * char list * int) list) : (string * char list * int) = 
-    match la with
-	 [] -> failwith "Pas de solution"
-	| t::q -> if estBut (getEtat t) then t 
-			  else (* opPoss (getEtat t) *)
-;;
+
+let getStates (views: 'a list) (etat: string) 
+                    : (char * string * int) list
+                = filter(fun(_, element, _) -> not(mem element views)) (opPoss (etat));;
+
+let rec profondeur  (queue: ('a*('b list)*'c) list) 
+                    (views: 'a list) 
+                    :('a*('b list)*'c)
+ = match(queue) with
+	 [] -> ("",[],0)
+    | (e::t) -> if(estBut (getEtat e)) then e 
+                else let newStates = (getStates views (getEtat e)) in 
+                    profondeur ((map (fun((a,b,c))->(b,(a::(getChemin e)),(c+(getCout e)))) newStates )@t)
+                               ((map (fun((a,b,c))->b) newStates)@views);; 
