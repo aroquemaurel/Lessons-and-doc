@@ -1,0 +1,239 @@
+\documentclass[12pt,a4paper,openany]{book}
+
+\usepackage{lmodern}
+\usepackage[svgnames]{xcolor} % Required to specify font color
+\input{/home/aroquemaurel/cours/includesLaTeX/couleurs.tex}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, linkcolor=vert1, urlcolor=bleu, colorlinks=true]{hyperref}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+\usepackage{graphicx} % Required for box manipulation
+\usepackage{float}
+
+\newcommand{\titre}{Traduction de langages}
+\newcommand{\subtitle}{TL}
+\newcommand{\auteur}{Antoine de \bsc{Roquemaurel}}
+\newcommand{\formation}{M1 Informatique -- Développement Logiciel}
+\newcommand{\semestre}{7}
+\newcommand{\annee}{2014}
+\newcommand{\prof}{Christine \bsc{Maurel}}
+
+
+\newcommand{\pole}{}
+\newcommand{\sigle}{oim}
+\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex} %prise en charge du langage algo
+\input{/home/aroquemaurel/cours/includesLaTeX/l2/cours.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
+\input{/home/aroquemaurel/cours/includesLaTeX/couverture.tex}
+\makeatother
+
+\begin{document}
+	\thispagestyle{empty} % Removes page numbers
+	\titleBC 
+	\setcounter{tocdepth}{2}
+	\setcounter{secnumdepth}{3}
+	\tableofcontents
+	\chapter{Analyse Lexicale -- Système d'équations de langages}
+	\section{Analyse lexicale}
+	$$C = \{0,1,\cdots,8,9\}$$
+	\subsection{}
+\begin{eqnarray}
+	L &=&  O^*2\$(0+1)^{+}+0^*3\$(0+1+2)+\cdots +0^*10\$(0+1+\cdots+9)^{+}+(0+\cdots+9)^+\\
+	&=& C^+\$c^++c^+ = cc^*\$cc^*+cc^*
+\end{eqnarray}
+\begin{remarque}
+	\begin{itemize}
+		\item Solution (1.1) est à déterminiser 
+		\item Solution (1.2) il faudra ajouter des contraintes
+	\end{itemize}
+\end{remarque}
+
+
+%%%%%%%
+\subsection{}
+\begin{figure}[H]
+	\includegraphics[width=15cm]{Diagramme1.eps}
+	\caption{Automate fini}
+	\centering
+\end{figure}
+\lstinputlisting[language=Algo]{1-1.algo}
+
+\subsection{Langage ALGOL60}
+\begin{remarque}
+	Une écriture en grammaire est également une écriture en langages, ainsi : 
+	\begin{displaymath}
+		P = \left\{ \begin{array}{ccc}
+			A &\rightarrow& \alpha_1\\
+			A &\rightarrow& \alpha_2\\
+			&\cdots&\\
+			A &\rightarrow& \alpha_n\\
+		\end{array}\right.
+		\Leftrightarrow
+		L(A) = \alpha_1 + \alpha_2 + \cdots + \alpha_n
+	\end{displaymath}
+\end{remarque}
+\subsubsection{Définition de la grammaire}
+\begin{eqnarray*}
+X &=&   \{0, \cdots, 9, +, -, ., e\}\\
+N &=& \{I,J,K,L,M,N,O\}\\
+S &=& O\\
+P &=&I + \lambda = cP + \lambda
+\end{eqnarray*}
+\subsubsection{Système d'équation de langage égaux à G}
+\begin{displaymath}
+	\left\{
+	\begin{array}{ccc}
+	I &=& c + cI\\
+	J &=& I +sI\\
+	K &=& . I\\
+	L &=& \underbrace{I + K + IK}_{Problème de régularité ?}\\
+	M &=&  eJ\\
+	N &=& \L + M + LM\\
+	O &=&  N + sN
+\end{array}\right.
+\end{displaymath}
+
+\begin{description}
+	\item[I] Entier signé
+	\item[c] $c \in \{0\cdots9\}$
+	\item[J] Entier
+	\item[s] $s \in \{+,-\}$
+	\item[K] Partie fractionnaire
+	\item[L] Nombre décimal
+	\item[M] Partie exponentiel
+	\item[N] Nombre non signé
+	\item[O] Nombre
+\end{description}
+
+\begin{remarque}
+	Un automate fini ne peut reconnaître que les langages réguliers, qui sont engendrés par des grammaires linéaires à droite.
+
+	L'union de langages régulier engendre un langage régulier, de même le produit de deux langages réguliers donnent un langage régulier. 
+\end{remarque}
+
+Dans notre cas, $L$ ne pose donc aucun problème de régularité étant donné que $I$ et $K$ sont des langages réguliers ainsi, l'union et le produit de
+langages réguliers engendrant des langages réguliers, $L$ sera régulier. 
+
+Le problème pourrait se poser pour $L$ mais aussi pour $N$ et $M$ : la
+réponse étant la même.
+
+$O$ est régulier, on peut donc trouver un automate finis le reconnaissant.
+
+\begin{eqnarray*}
+	I &=&  c(\lambda + I)  cP\\
+	P &=& I + \lambda = cP+\lambda\\
+	J &=&  I+sI = cP+sI\\
+	K &=& . I\\
+	L &=& I+K+IK = \underline{c}P+.I + \underline{c}PK = \underbrace{c(P+PK)}_{Q} + .I\\ &=&  cQ+.I\\
+	Q &=& P + PK = cP + \lambda + (cP+\lambda)K = cP + \lambda + cPK + K = c(\underbrace{P+PK}_{Q}) + .I + \lambda\\ &=&  cQ+.I+\lambda\\
+	M &=& eJ\\
+	N &=&  L+M+LM = cQ + .I + eJ + (cQ+.I)M = cQ + .I + eJ + cQM + .IM + .IM\\ &=& c(\underbrace{Q + QM}_{R}) + .(\underbrace{I+IM}_{S})+ eJ\\
+	R &=& Q + QM = cQ+.I+\lambda+cQM+.IM+eJM = c(Q+QM) + .(I+IM)+ eJ+ \lambda\\
+	S &=& I + IM = cP + cPM = c(P+PM)\\
+	T &=& P+PM = cP+\lambda + cPM + \underbrace{eJ}^{M} = c(P+PM) = e + \lambda\\
+	O &=& N + sN = cR+.S+eJJ+sN
+\end{eqnarray*}
+
+D'où le système d'équation de langage suivant : 
+\begin{displaymath}
+	\left\{ \begin{array}{ccc}
+		I &=& cP\\
+		P &=&cP+\lambda\\
+		J &=& cP+sI\\
+		K &=&  .I\\
+		L &=& cQ+.I\\
+		Q &=&  cQ+.I+\lambda\\
+		M &=& eJ\\
+		N &=&  cR+.S+eJ\\
+		R &=& cR + .s+eJ+\lambda\\
+		S &=& cT\\
+		T &=& cT+eJ+\lambda\\
+		O &=&  cR+.s+eJ+sN\\
+	\end{array}
+	\right.
+\end{displaymath}
+
+L'axiome $O$ est un état initial et \{T,R,Q,P\} sont des états finaux.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=12cm]{Diagramme2.eps}
+	\caption{Automate fini}
+\end{figure}
+
+\section{Systèmes d'équations algébriques de langages}
+\begin{remarque}
+	3 théorèmes :
+	\begin{description}
+		\item[Arden] $X = r_1X + r_2 \Rightarrow X = r_1^*r_2$
+		\item[Arden Bis] $X = Xr_{1}+r_2 \Rightarrow X = r_2r_1^*$
+		\item[AnBn] $X = Yr_1+r_ \Rightarrow X = r_2r_1^*$
+	\end{description}
+\end{remarque}
+
+\subsection{G1}
+\begin{eqnarray*}
+	S &=&  S\underbrace{a}_{r_1} + \underbrace{b}_{r_2} \Rightarrow S\\
+	&\stackrel{Ardenbis}{=}&  ba* = ba^n n\geq 0
+\end{eqnarray*}
+
+\subsection{G2}
+\begin{displaymath}
+	\left\{
+	\begin{array}{ccc}
+		S &=&  aSb + T \stackrel{AnBn}{\Longrightarrow} S = a^nTb^n, n \geq 0 = a^nb^+b^n n\geq 0\\
+		T &=& Tb+b \stackrel{Ardenbis}{\Longrightarrow} \\
+	\end{array}
+	\right.
+\end{displaymath}
+
+\chapter{Gramaires LL(1) -- Descente récursive}
+\section{}
+\subsection{Firsts}
+\begin{eqnarray}
+	S' &\rightarrow& S\$\\
+	S  &\rightarrow& bRS\\
+	S  &\rightarrow& RcSa\\
+	S  &\rightarrow& \lambda\\
+	R  &\rightarrow& acR\\
+	R  &\rightarrow& b\\
+\end{eqnarray}
+
+\begin{eqnarray*}
+	first_1(R) &=&\{a,b\}\\
+	first_1(S &=&  \{a,b,\lambda\}\\
+	first_2(R) &=& \{ac,b\}\\
+	first_2(S) &=& \{\underbrace{\lambda}_{2.3},\underbrace{bb}_{2.2 + R}\}
+\end{eqnarray*}
+\begin{remarque}
+	Pour le $first_2(R)$, $ac$ est le préfixe de longueur 2 des mots prouits par R, et $b$ est le mot de longueur inférieur ou égale à 2 produit par
+	R.
+\end{remarque}
+
+Nous avons chercher les $first$ intuitivement, cependant nous nous sommes servis de la formule suivante : $first_k(\alpha_1 \alpha_2 \cdots \alpha_n) =
+first_k(first_k(\alpha_a)first(\alpha_2) \cdots first_k(\alpha_n)$
+\end{document}
+
+\subsection{Follows}
+\begin{remarque}
+	$follow_k(y) = \cup first_k(S follow_k(x)))$
+\end{remarque}
+
+%%%%% TODO
+\paragraphð{k = 2}
+Pour s:
+\begin{enumerate}
+	\item $2lookahead(S \rightarow bRS) first_2 (bRS follow_2(S)) = b first_1(RS follow_2(S)) = \{ba,bb\} = E_1)$
+	\item $2lookahead(S \rightarrow RcSa) = first_2(Sa = follow_2(S)) = \{ac,bc\}$
+	\item $2lookahead(S \rightarrow RcSa) = first_2(RcSa = follow_2(S)) = first_2(first_2(R)c\cdots) = \{ac,bc\}
+\end{enumerate}

@@ -1,0 +1,30 @@
+	carrcour ; 	val(carrcour)
+variables:
+	base; -- valeur décimale de la base avant '$\$$'
+	ecart; -- Valeur décimale d'un écart
+	cpt; -- Compter les '+' ou '-' ou '0' successifs
+	signe; -- Indique si on a des '+' ou '-' ou '0'
+	--  +1 si on a '+'
+	--  -1 si on a '-'
+	--  0 si on a '0'
+
+A1:  {base := base * 10 + val(valcarcour);}
+A2:  {$\varnothing$}
+A3:  {cpt := 1; signe := 1;\}
+A4:  {cpt := 1 ; signe := -1;\}
+A5:  {cpt := 1; signe := 0; \}
+A6:  {cpt := cpt + 1;\}
+A7:  {ecart := val(carcours)\}
+A8 = A10 = A6
+A9 = A7
+A12: \{ecart := ecart * 10 + val(carcours)}
+A13: {
+		tantque cpt != 0 faire
+			printf(base + (signe * ecart));
+			cpt := cpt - 1;
+		fin tanque;
+	 }
+ A11 = A13
+ A14 = A3
+ A15 = A4
+ A16 = A5
