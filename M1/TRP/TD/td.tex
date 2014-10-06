@@ -96,10 +96,140 @@
 		\item[Nœuds crées] 20
 	\end{description}
 	\subsection{Un autre problème}
-	\subsection{Algorithme de recherche << meilleur d'abord >>}
-	\subsection{Algorithme de recherche $A^*$}
-	\subsection{Algorithme A$^*$, heuristique P (mieux informée)}
-	\subsection{Un autre problème}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=11cm]{Diagramme5.eps}
+		\caption{Pas de solution}
+	\end{figure}
+	\begin{remarque}
+		Aucune solution, on est dans un autre espace d'état
+	\end{remarque}
+	\section{Le jeu de cartes}
+	On peut considérer les opérateurs prendre à droite/ prendre à gauche, mais on peut aussi conceptualiser un opérateur prendre 2 cartes ou seul la
+	première compte : à ce moment là, notre arbre de recherche sera pratiquement deux fois moins long.
+
+	\subsection{Modélisation des opérateurs}
+	\begin{tabular}{cc}
+		\begin{minipage}{0.5\textwidth}
+			Solution à profondeur 5: 
+			\begin{itemize}
+				\item Prendre droite impair
+				\item Prendre droite pair
+				\item Prendre gauche impair
+				\item Prendre droite impair
+			\end{itemize}
+		\end{minipage}
+		&
+		\begin{minipage}{0.5\textwidth}
+			Solution à profondeur 3: 
+			\begin{itemize}
+				\item Prendre droite gauche
+				\item Prendre droite droite
+				\item Prendre gauche droite
+				\item Prendre gauche gauche
+			\end{itemize}
+		\end{minipage}
+	\end{tabular}
+
+	C'est un problème de recherche dans les espaces d'états avec une optimisation des gains : c'est la différence entre un algorithme A et un
+	algorithme $A^*$.
+
+	En théorie, afin d'avoir le meilleur gain, nous devrions parcours l'intégralité de l'arbre, cependant un algorithme nous évite de faire cela :
+	l'algorithme <<Meilleur d'abord>>
+
+	On utilise une fonction d'estimation des états (heuristique) : la somme des n plus grandes valeurs de cartes avec n définis comme le nombre de
+	cartes peuvent encore rapporter es gains. Cette fonction sur estime la réalité.
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=12cm]{Diagramme6.eps} 
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=12cm]{Diagramme7.eps} 
+	\end{figure}
+	Notre heuristique est majorante : ainsi, il est inutile de backtraquer l'intégralité de l'arbre, les autres branches ne nous proposent pas plus
+	que 14.
+
+	\chapter{Arbres de jeux, stratégies, minimax}
+	\section{Arbre de jeu, stratégies}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=16cm]{Diagramme8.eps}
+		\caption{Arbre de jeu}
+		\label{fig:diag8}
+	\end{figure}
+
+	A commence, on choisit A comme joueur de référence, donc
+	B est l'adversaire.
+
+	\begin{description}
+		\item[G] A Gagne
+		\item[P] A Perd
+		\item[E] Égalité
+	\end{description}
+
+	\subsection{Hypothèse} Chaque joueur joue du mieux possible !
+	\subsection{Convention Minimax}
+	\begin{itemize}
+		\item Le joueur de référence, A, remonte le maximum de ses fils
+		\item L'adversaire, B, remonte le minimum de ses
+			fils.
+	\end{itemize}
+
+	On pose $G > E > P$.
+
+	Cet arbre représente l'ensemble des parties possibles :
+	une partie est une chemin partant de la racine pour
+	aboutir à une feuille.
+
+	P remonté à la racine, A ne peut donc pas gagner : en bleu nous avons une stratégie gagnante pour B.
+
+	\begin{definition}
+		Une \textbf{stragégie gagnante} est un sous arbre de
+		l'arbre de jeu tel que : 
+		\begin{itemize}
+			\item La racine est identique
+			\item Les n\oe{}uds du gagnant (celui qui possède
+				une stratégie gagnante) sont les
+				n\oe{}uds OU
+			\item Les nœuds du perdant sont des nœuds ET.
+			\item Pour chaque nœud OU on choisi une branche
+				gagnante (pour le gagnant)
+			\item Pour chaque nœud ET on retient toutes les
+				branches
+			\item Toutes les feuilles doivent être gagnantes
+				(pour le gagnant)
+		\end{itemize}
+	\end{definition}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=12cm]{Diagramme9.eps}
+		\caption{Arbre de jeu}
+	\end{figure}
+\begin{remarque}
+	La construction de cet arbre à été effectué à l'aide de
+	l'arbre \ref{fig:diag8}.
+\end{remarque}
+	Dans ce cas là, il existe une stratégie gagnante pour celui  
+	qui commence
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=9cm]{Diagramme10.eps}
+		\caption{Arbre de jeu}
+	\end{figure}
+	Il existe une stratégie gagnante pour A : inutile de
+	développer le sous arbre gauche étant donné que nous
+	savons qu'il en existe au moins une. 
+
+	\section{Minimax d'un arbre de jeu}
+	Il existe une stratégie gagnante pour B, et le minimum
+	des gaints possibles pour B, si celui joue bien, est de 1
+	(-1 en racine).
+
+	Si A joue mal, pendant que B conserve son jeu, alors B
+	pourrait gagner plus, jusqu'à 17.
 	\appendix
 	\lstlistoflistings
 
