@@ -1,0 +1,2 @@
+\select@language {french}
+\contentsline {chapter}{\numberline {1}Alg\IeC {\`e}bre}{3}{chapter.1}
