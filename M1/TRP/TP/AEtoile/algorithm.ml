@@ -6,6 +6,18 @@ let estBut e = estBut1 e;;
 let etatsSuivants e = etatsSuivants1 e;;
 let opPoss  = opPoss1;;
 
+let getStates (views: 'a list) (etat: string) 
+                    : (char * string * int) list
+                = filter(fun(_, element, _) -> not(mem element views)) (opPoss (etat));;
+let rec profondeurVu  (queue: ('a*('b list)*'c) list) 
+                    :('a*('b list)*'c)
+ = match(queue) with
+	 [] -> ("",[],0)
+    | (e::t) -> if(estBut (getEtat e)) then e 
+                else let newStates = (opPoss (getEtat e)) in 
+                    profondeur  ((map 
+                        (fun((a,b,c))->(b,(a::(getChemin e)),(c+(getCout e)))) newStates )@t
+                                ) ;; 
 
 let rec print_list_string (l : string list) : unit = 
 	match l with
@@ -50,28 +62,32 @@ match la with
 end			  
 ;;
 
-let getEtat (triplet : string * char list * int) = 	
+let getEtat (triplet : 'a * char list * int) = 	
     match triplet with
     (e,_,_) -> e;;
 	
-let getChemin (triplet : string * char list * int) = 	
+let getChemin (triplet : 'a * char list * int) = 	
     match triplet with
     (_,c,_) -> c;;
 
-let getCout (triplet : string * char list * int) = 	
+let getCout (triplet : 'a * char list * int) = 	
     match triplet with
     (_,_,c) -> c;;
 
-let getStates (views: 'a list) (etat: string) 
-                    : (char * string * int) list
-                = filter(fun(_, element, _) -> not(mem element views)) (opPoss (etat));;
 
 let rec profondeur  (queue: ('a*('b list)*'c) list) 
-                    (views: 'a list) 
                     :('a*('b list)*'c)
  = match(queue) with
 	 [] -> ("",[],0)
     | (e::t) -> if(estBut (getEtat e)) then e 
-                else let newStates = (getStates views (getEtat e)) in 
-                    profondeur ((map (fun((a,b,c))->(b,(a::(getChemin e)),(c+(getCout e)))) newStates )@t)
-                               ((map (fun((a,b,c))->b) newStates)@views);; 
+                else let newStates = (opPoss (getEtat e)) in 
+                    profondeur ((map (fun((a,b,c))->(b,(a::(getChemin e)),(c+(getCout e)))) 
+                    newStates )@t);; 
+
+
+
+
+
+
+
+
