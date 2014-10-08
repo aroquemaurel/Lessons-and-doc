@@ -401,3 +401,10 @@ Donc $G'$ est LL(1).
 \end{tabular}
 
 \end{document}
+\paragraphð{k = 2}
+Pour s:
+\begin{enumerate}
+	\item $2lookahead(S \rightarow bRS) first_2 (bRS follow_2(S)) = b first_1(RS follow_2(S)) = \{ba,bb\} = E_1)$
+	\item $2lookahead(S \rightarrow RcSa) = first_2(Sa = follow_2(S)) = \{ac,bc\}$
+	\item $2lookahead(S \rightarrow RcSa) = first_2(RcSa = follow_2(S)) = first_2(first_2(R)c\cdots) = \{ac,bc\}
+\end{enumerate}
