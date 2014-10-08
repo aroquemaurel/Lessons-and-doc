@@ -1,0 +1,5 @@
+procedure S is
+begin
+	SKIP(number.val);
+	T;
+end S

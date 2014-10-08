@@ -1,0 +1,10 @@
+procedure $\theta$ is
+begin
+	switch NEXTS
+		 number : SKIP(number.val); R;
+		|. : SKIP('.') ; S ;
+		| e : SKIP('e') ; J;
+		| + : SKIP('+') ; N;
+		| - : SKIP('-') ; N;
+		| others : ERREUR;
+end $\theta$

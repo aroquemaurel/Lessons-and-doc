@@ -1,0 +1,5 @@
+procedure SUITEINST is
+begin
+	INST; 
+	SUITEINSTPRIME;
+end SUITEINST 

@@ -1,0 +1,6 @@
+procedure $S'$ is
+begin
+	scan;
+	$\theta$;
+	SKIP('$\$$');
+end $S'$

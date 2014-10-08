@@ -1,0 +1,7 @@
+procedure SUITEINSTPRIME is
+begin
+	switch NEXTS
+	';' : SKIP(';') ; INST ; SUITEINSTPRIME ; 
+	|end|endif|else|endloop|until : NULL;
+	|others : ERREUR;
+end SUITEINSTPRIME

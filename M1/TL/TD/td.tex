@@ -222,7 +222,6 @@ L'axiome $O$ est un état initial et \{T,R,Q,P\} sont des états finaux.
 
 Nous avons chercher les $first$ intuitivement, cependant nous nous sommes servis de la formule suivante : $first_k(\alpha_1 \alpha_2 \cdots \alpha_n) =
 first_k(first_k(\alpha_a)first(\alpha_2) \cdots first_k(\alpha_n)$
-\end{document}
 
 \subsection{Follows}
 \begin{remarque}
@@ -230,10 +229,175 @@ first_k(first_k(\alpha_a)first(\alpha_2) \cdots first_k(\alpha_n)$
 \end{remarque}
 
 %%%%% TODO
-\paragraphð{k = 2}
+\paragraph{k = 2}
 Pour s:
 \begin{enumerate}
-	\item $2lookahead(S \rightarow bRS) first_2 (bRS follow_2(S)) = b first_1(RS follow_2(S)) = \{ba,bb\} = E_1)$
+	\item $2lookahead(S \rightarrow bRS) first_2 (bRS follow_2(S)) = b first_1(RS follow_2(S)) = \{ba,bb\} = E_1)$
 	\item $2lookahead(S \rightarrow RcSa) = first_2(Sa = follow_2(S)) = \{ac,bc\}$
-	\item $2lookahead(S \rightarrow RcSa) = first_2(RcSa = follow_2(S)) = first_2(first_2(R)c\cdots) = \{ac,bc\}
+	\item $2lookahead(S \rightarrow RcSa) = first_2(RcSa = follow_2(S)) = first_2(first_2(R)c\cdots) = \{ac,bc\}$
 \end{enumerate}
+\section{}
+Grammaire d'axiome $\theta$ puis augmentée : 
+\begin{displaymath}
+	\left \{\begin{array}{ccc}
+	S' &\rightarrow& \theta\$^R	\\
+	\theta &\rightarrow& cR\;|.S\;|eJ\;|\;sN\\
+	R &\rightarrow& cR \;|\; .S \;|\; J \;|\; \lambda\\
+	S &\rightarrow& cT\\
+	J &\rightarrow& cP\;|\;sI\\
+	N &\rightarrow& cR\;|\;.S\;|\;eJ\\
+	T &\rightarrow& cT\;|\;eJ\;|\;\lambda\\
+	P &\rightarrow& cP\; |\;\lambda\\
+	I &\rightarrow& cP
+\end{array} \right .
+\end{displaymath}
+\subsection{LL(1) ?}
+\begin{eqnarray*}
+	1lookahead(\theta \rightarrow cR) &=& \{c\} = \{0,1,\cdots,9\}\\
+	1lookahead(\theta \rightarrow .S) &=& \{.\}\\ 
+	1lookahead(\theta \rightarrow eJ) &=& \{e\}\\ 
+	1lookahead(\theta \rightarrow sN) &=& \{s\} = \{+,\; -\}
+\end{eqnarray*}
+
+\subsection{Vérifions pour R, T et P}
+\subsubsection{$R$ ?}
+\begin{eqnarray*}
+	1lookahead(R \rightarrow \lambda) &=& first_1(\lambda.follow_1(R)) = \{\$\}\\ 
+	1lookahead(R \rightarrow cR) &=& \{c\}\\
+	1lookahead(R \rightarrow .S) &=& \{.\}\\
+	1lookahead(R \rightarrow eJ) &=& \{e\}
+\end{eqnarray*}
+OK, pas de conflit
+
+\subsubsection{$P$ ?}
+$$follow_2(P) = \{\$\}$$
+Ok, pas de conflit.
+
+\subsubsection{$T$ ?}
+\begin{eqnarray*}
+	1lookahead(T \rightarrow \lambda) &=& first_1(\lambda follow_1(T)) = \{\$\}\\
+	&\Rightarrow& follow_1(T) = follow_1(S) = follow_1(\theta) \cup follow_1(R) \cup follow_1(N) = \{\$\}
+\end{eqnarray*}
+Ok, pas de conflit
+
+\begin{remarque}
+	Si on a une grammaire linéaire à droite, on est sûr qu'elle est $LL(1)$.\\
+	
+	Quelque soit la règle de l'ensemble des règles de production P, $\forall A : A \rightarrow \lambda, A \rightarrow xB$
+\end{remarque}
+
+\subsection{Procédures de descente récursive}
+A chaque $A\in N$ on associe une procédure de nom $A$ qui contient << l'image de $\beta$ >>.
+
+\begin{displaymath}
+	Si\ A \rightarrow \beta\ avec\ \left\{
+	\begin{array}{ccccc}
+		\beta &=& x\in X &\Longrightarrow& SKIP('x')\\
+		\beta &=& \lambda &\Longrightarrow& NULL\\
+		\beta &=& B \in N &\Longrightarrow& B\\
+		\beta_1 &=&  \beta_1\beta_2 \cdots \beta_n &\Longrightarrow& image(\beta_1) ; image(\beta_2); \cdots; image(\beta_n);
+	\end{array}
+	\right .
+\end{displaymath}
+\\
+
+\begin{displaymath}
+	\left .
+	\begin{array}{ccc}
+	Si\ A &\rightarrow& \beta_1\\
+	Si\ A &\rightarrow& \beta_1\\
+	Si\ A &\rightarrow& \beta_1
+\end{array}
+\right\}
+\Longleftrightarrow
+\left .
+\begin{array}{ccccc}
+	&& 1lookahead(A \rightarrow \beta_1) &:& image\beta_1\\
+	&|&\;1lookahead(A \rightarrow \beta_2) &:&image\beta_2\\
+	&&&\vdots&\\
+	&|&\;1lookahead(A \rightarrow \beta_n) &:&image\beta_n\\
+	&|&\;Others &:& ERREUR;
+\end{array}
+\right .
+\end{displaymath}
+
+\begin{tabular}{ll}
+\lstinputlisting[language=Algo]{1.algo}
+&
+\lstinputlisting[language=Algo]{2.algo}\\
+&\\
+\lstinputlisting[language=Algo]{3.algo}&
+\lstinputlisting[language=Algo]{4.algo}
+\end{tabular}
+
+\section{}
+\begin{eqnarray*}
+	<program> &\rightarrow& program<suiteDct> begin <switchInst> end \\
+	<suiteInst> &\rightarrow& <inst> | <suiteInst> ; <inst>\\
+	<inst> &\rightarrow& if <exp> then <suiteInst> else <suiteInst> end if\\
+	&& |while<exp> loop <suiteInst> endloop\\
+	&& | repeat<suiteInst> until <exp> endloop \\
+	<suiteDcl> &\rightarrow& \cdots\\
+	<exp> &\rightarrow& \cdots
+\end{eqnarray*}
+
+\begin{remarque}
+	\begin{itemize}
+		\item Non terminal : $< \cdots >$
+		\item Terminal : $X = \{program, begin, end, if, \cdots\}$
+	\end{itemize}
+\end{remarque}
+
+\subsection{Procédure de descente récursive}
+\subsubsection{LL(1) ?}
+Pour $<program>$ : ok\\
+Pour $<inst>$  : ok 
+\begin{eqnarray*}
+	1lookahead() &=& \{if\}\\
+	1lookahead() &=& \{while\}\\
+	1lookahead() &=& \{repeat\}
+\end{eqnarray*}
+
+Pour $<suiteInst>$ : 
+\begin{eqnarray*}
+	1look(<suiteInst> &\rightarrow& <inst>) = \{if, while, repeat\}\\
+	1look(<suiteInst> &\rightarrow& <suiteInst> ; <inst>) = \{if, while, repeat\}\\
+\end{eqnarray*}
+La grammaire est non LL(1) car elle est récursive à gauche !, à cause de $<suiteInst> \rightarrow <suiteInst> ; <inst>$
+
+On peut la transformer en une grammaire linéaire à droite grâce à Arden.
+
+\begin{eqnarray*}
+	A &\rightarrow& A\beta|\alpha \overbrace{\Longrightarrow}^{ArgenBis} = \alpha\beta^*
+\end{eqnarray*}
+Éliminer la récursivité à gauche : 
+\begin{eqnarray*}
+	L(A) &=&  \alpha\beta^* = \alpha L(A')\\
+	L(A') &=& \beta^* \lambda \Longrightarrow \beta L(A') + \lambda
+\end{eqnarray*}
+
+Donc $<suiteInst> \rightarrow <inst> | <suiteInst> ; <inst>$ devient:
+\begin{eqnarray*}
+\overbrace{<suiteInst>}^A &\rightarrow& \overbrace{<inst>}^{\alpha}\overbrace{<suiteInstPrime>}^{A'}\\
+<suiteInstPrime> &\rightarrow& ; <inst><suiteInstPrime>|\lambda
+\end{eqnarray*}
+
+On vérifie de nouveau qu'elle soit bien LL(1);
+
+Pour <suiteInst> pas de problème, car une seule règle.
+
+Pour $<suiteInstPrime>$:
+\begin{eqnarray*}
+1lookahead(<suiteInstPrime> \rightarrow ; <inst> \leftrightarrow) &=& \{;\}\\
+1lookahead(<suiteInstPrime> \rightarrow \lambda) = first_1(\lambda.follow_1(<suiteInstPrime>) = \{end, endif, else, endloop, until\} = E_2.
+\end{eqnarray*}
+
+Donc $G'$ est LL(1).
+
+\begin{tabular}{ll}
+\lstinputlisting[language=Algo]{5.algo}
+&
+\lstinputlisting[language=Algo]{6.algo}
+\end{tabular}
+
+\end{document}

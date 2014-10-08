@@ -1,0 +1,8 @@
+procedure R is
+begin
+	switch NEXTS
+		 number : SKIP(number.val); R;
+		|. : SKIP('.'); S;
+		|e : SKIP('e') ; J ;
+		|$\$$ : NULL; 
+		|others : ERREUR; 
