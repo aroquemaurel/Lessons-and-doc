@@ -1,7 +1,7 @@
 \documentclass[12pt,a4paper,openany]{book}
 \usepackage{lmodern}
 \usepackage[svgnames]{xcolor} % Required to specify font color
-\input{/home/aroquemaurel/cours/includesLaTeX/couleurs.tex}
+\input{/home/aroquemaurel/cours/templates/templates/couleurs.tex}
 
 \usepackage[utf8]{inputenc} 
 \usepackage[T1]{fontenc}
@@ -33,18 +33,18 @@
 \newcommand{\sigle}{TL}
 
 
-\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex}
-\input{/home/aroquemaurel/cours/includesLaTeX/l2/cours.tex}
-\input{/home/aroquemaurel/cours/includesLaTeX/remarquesExempleAttention.tex}
-\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
-\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
+\input{/home/aroquemaurel/cours/templates/templates/listings.tex}
+\input{/home/aroquemaurel/cours/templates/templates/classroomsTemplates/l2/cours.tex}
+\input{/home/aroquemaurel/cours/templates/templates/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/templates/templates/polices.tex}
+\input{/home/aroquemaurel/cours/templates/templates/affichageChapitre.tex}
 \newcommand{\pfp}{\texttt{pfp}}
 
 \newcommand{\ifp}{\texttt{if}}
 \newcommand{\elsep}{\texttt{else}}
 \newcommand{\tokens}{\textit{tokens} }
 
-\input{/home/aroquemaurel/cours/includesLaTeX/couverture.tex}
+\input{/home/aroquemaurel/cours/templates/templates/cover/couverture.tex}
 \makeatother
 \includeonly {
 }
@@ -190,10 +190,10 @@
 	L'analyseur syntaxique est une grammaire reconnue par un automate à pile.
 
 	\section{Analyse descendante}
-Reconnaître(ou pas) un mot u ∈ X ∗ sur le ruban, On part de S et on a la pile.
+Reconnaître(ou pas) un mot $u \in X^*$ sur le ruban, on part de $S$ et on a la pile.
 
-A un instant donné, on a travaillé et on a reconnu un préfixe $\omega$ de u, $\omega \in X∗$ .
-Pour ça on a mis $A\alpha$ dans la pile,$ A \in N$
+À un instant donné, on a travaillé et on a reconnu un préfixe $\omega$ de u, $\omega \in X^*$.
+Pour ça on a mis $A\alpha$ dans la pile, $A \in N$
 
 A est le sommet de pile et $\alpha \in (N \cup X)^*$
 	\chapter{Génération de code}
