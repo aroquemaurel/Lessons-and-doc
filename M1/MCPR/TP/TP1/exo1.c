@@ -14,7 +14,7 @@ nombre d’incrémentations/décrémentations à réaliser.
 #include <unistd.h>
 /* 
  * Les variables ne sont pas partagées, un processus va juqsu'à 30 l'autre -30
- * Aucun changement si variable globale plutôt que globale
+ * Aucun changement si variable globale plutôt que locale
  * */
 int cpt = 0;
 
@@ -22,12 +22,16 @@ void treatmentIncrement(const int nbIncrement);
 void treatmentDecrement(const int nbDecrement);
 
 int main(int argc, char** argv) {
+	if(argc <= 1) {
+		perror("Argumetns errors");
+		exit(1);
+	}
 	switch(fork()) {
 		case 0:
-			treatmentIncrement(30);
+			treatmentIncrement(atoi(argv[1]));
 			break;
 		default:
-			treatmentDecrement(30);
+			treatmentDecrement(atoi(argv[1]));
 			break;
 	}
 }
