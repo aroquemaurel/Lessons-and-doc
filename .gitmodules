@@ -31,3 +31,6 @@
 [submodule "L3/s6/progeven/catchGame"]
 	path = L3/s6/progeven/catchGame
 	url = http://gitlab.joohoo.fr/software/catchgame.git
+[submodule "templates"]
+	path = templates
+	url = git@github.com:aroquemaurel/LaTexTemplate.git

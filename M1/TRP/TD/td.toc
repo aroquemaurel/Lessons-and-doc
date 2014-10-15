@@ -13,4 +13,7 @@
 \contentsline {subsection}{\numberline {2.1.1}Hypoth\IeC {\`e}se}{9}{subsection.2.1.1}
 \contentsline {subsection}{\numberline {2.1.2}Convention Minimax}{10}{subsection.2.1.2}
 \contentsline {section}{\numberline {2.2}Minimax d'un arbre de jeu}{11}{section.2.2}
-\contentsline {chapter}{\numberline {A}Liste des codes sources}{12}{appendix.A}
+\contentsline {chapter}{\numberline {3}Arbres de jeux, algorithme Alpha/B\IeC {\'e}ta}{12}{chapter.3}
+\contentsline {section}{\numberline {3.1}Exercice 1 Minimax / N\IeC {\'e}gamax}{12}{section.3.1}
+\contentsline {section}{\numberline {3.2}Algorithme Alpha-B\IeC {\'e}ta}{12}{section.3.2}
+\contentsline {chapter}{\numberline {A}Liste des codes sources}{13}{appendix.A}

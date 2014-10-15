@@ -230,6 +230,47 @@
 
 	Si A joue mal, pendant que B conserve son jeu, alors B
 	pourrait gagner plus, jusqu'à 17.
+	\chapter{Arbres de jeux, algorithme Alpha/Béta}
+	La convention Négamax fonctionne ainsi : 
+	\begin{itemize}
+		\item Pas de joueur de référence
+		\item Chaque étape de l'arbre est valué en onctino des gains de celui qui va jouer
+		\item Pour un nœud on remonte le max des opposé des valeurs des fils
+	\end{itemize}
+
+	Alpha-Béta fonctionne en convention Négamax.
+
+	\begin{tabular}{cc}
+		\begin{minipage}{0.5\textwidth}
+	\begin{figure}[H]
+		\includegraphics[width=8cm]{Diagramme11.eps}
+		\caption{Convention Minimax}
+	\end{figure}
+\end{minipage}
+	&
+		\begin{minipage}{0.5\textwidth}
+	\begin{figure}[H]
+		\includegraphics[width=8cm]{Diagramme12.eps}
+		\caption{Convention Négamax}
+	\end{figure}
+\end{minipage}
+\end{tabular}
+	\section{Exercice 1 Minimax / Négamax}
+	Si on était en Négamax, les feuilles seraient valuées par B car c'est celui qui doit jouer. Or elles sont valuées pour A, on est donc pas en
+	Négamax mais en Minimax avec A comme joueur de référence.
+	
+	\section{Algorithme Alpha-Béta}
+\begin{itemize}
+	\item $\alpha$ : Maximum provisoire d'un nœud.
+	\item $\beta$ : Valeur à ne pas dépasser
+\end{itemize}
+
+\begin{enumerate}
+	\item On est en convention Minimax
+	\item Pour appliquer Alpha-Béta, il faut passer en Négamax : prendre l'opposé des valeurs des feuilles
+	\item Si on applique Négamax la valeur qui remonte est 8 : il existe une stratégie gagnante pour B.
+\end{enumerate}<++>
+
 	\appendix
 	\lstlistoflistings
 

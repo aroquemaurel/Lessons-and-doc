@@ -1,7 +1,7 @@
 \documentclass[12pt,a4paper,openany]{book}
 \usepackage{lmodern}
 \usepackage[svgnames]{xcolor} % Required to specify font color
-\input{/home/aroquemaurel/cours/includesLaTeX/couleurs.tex}
+\input{/home/aroquemaurel/cours/templates/templates/couleurs.tex}
 
 \usepackage[utf8]{inputenc} 
 \usepackage[T1]{fontenc}
@@ -27,24 +27,25 @@
 \newcommand{\semestre}{7}
 \newcommand{\annee}{2014}
 \newcommand{\prof}{Christine \bsc{Maurel}}
+\newcommand{\logo}{/home/aroquemaurel/cours/templates/templates/ups.jpg}
 
 
 \newcommand{\pole}{}
 \newcommand{\sigle}{TL}
 
 
-\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex}
-\input{/home/aroquemaurel/cours/includesLaTeX/l2/cours.tex}
-\input{/home/aroquemaurel/cours/includesLaTeX/remarquesExempleAttention.tex}
-\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
-\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
+\input{/home/aroquemaurel/cours/templates/templates/listings.tex}
+\input{/home/aroquemaurel/cours/templates/templates/classroomsTemplates/l2/cours.tex}
+\input{/home/aroquemaurel/cours/templates/templates/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/templates/templates/polices.tex}
+\input{/home/aroquemaurel/cours/templates/templates/affichageChapitre.tex}
 \newcommand{\pfp}{\texttt{pfp}}
 
 \newcommand{\ifp}{\texttt{if}}
 \newcommand{\elsep}{\texttt{else}}
 \newcommand{\tokens}{\textit{tokens} }
 
-\input{/home/aroquemaurel/cours/includesLaTeX/couverture.tex}
+\input{/home/aroquemaurel/cours/templates/templates/cover/couverture.tex}
 \makeatother
 \includeonly {
 }
@@ -190,13 +191,102 @@
 	L'analyseur syntaxique est une grammaire reconnue par un automate à pile.
 
 	\section{Analyse descendante}
-Reconnaître(ou pas) un mot u ∈ X ∗ sur le ruban, On part de S et on a la pile.
+Reconnaître(ou pas) un mot $u \in X^*$ sur le ruban, on part de $S$ et on a la pile.
 
-A un instant donné, on a travaillé et on a reconnu un préfixe $\omega$ de u, $\omega \in X∗$ .
-Pour ça on a mis $A\alpha$ dans la pile,$ A \in N$
+À un instant donné, on a travaillé et on a reconnu un préfixe $\omega$ de u, $\omega \in X^*$.
+Pour ça on a mis $A\alpha$ dans la pile, $A \in N$
 
 A est le sommet de pile et $\alpha \in (N \cup X)^*$
 	\chapter{Génération de code}
+	On veut traduire les instructions du langage de haut niveau $L_1$ dans un
+	langage intermédiaire plus proche du langage cible. On a 3 langages:
+	\begin{itemize}
+		\item Pour $L_1$ c’est un langage impératif composé de l'affectation, et toutes les structures de 
+			contrôle(\texttt{if}, \texttt{else}, \texttt{case}, \texttt{switch}, \ldots) et des boucles (\texttt{for},
+			\texttt{while}, \texttt{repeat}, \ldots)
+		\item Pour $L_2$ (langage intermédiaire) on prend un langage de quadruplets. (choix)
+		\item Pour $\sigma$, on va utiliser un langage impératif style ADA, Pascal
+			Traduction $\sigma$ tq $\forall$ programme $P$ , $\forall$ donnée $PD \equiv \sigma(P)D$
+	\end{itemize}
+
+	\section{Langage intermédiaire des quadruplets}
+	Nous avons un langage cible intermédiaire, qui ne ressemble pas vraiment à l'assembleur.\\
+	Les opérations se font directement en mémoire, pas de registres. Un quadruplet est une instruction à 4 champs dont 3 adresses mémoire: 
+	opération, opérande1, opérande2, résultat.
+
+	On peut faire l'affectation, les opérations arithmétiques, les branchements conditionnels ou inconditionnels.
+	\begin{description}
+		\item[Affectation] \texttt{(:=, d, nil, e)}
+		\item[Opération Arithmétique] \texttt{(+, a, b, c)}
+		\item[Branchemnet inconditionnel] \texttt{(goto, nil, nil @)} 
+	\end{description}
+
+	\begin{lstlisting}[language=Algo, caption=Exemple de quadriplets]
+@i		+, a, b, t1 -- t1 := a + b
+@i+1	*, t1, c, t2 -- t2 := c * 1
+@i+2	:=, t2, nil, d -- d := t2
+@i+3	>?, a, b, alpha1 -- si a > b aller en alph1 sinon faire suivant
+	\end{lstlisting}
+	\section{Actions sémantiques couplées à l'analyseur descendant}
+	L'analyseur syntaxique c’est le chef d’orchestre. Il est descendant et $LL(1)$
+
+	Il s’occupe de l'analyse lexicale(AL) et de faire les actions sémantiques.
+	\begin{itemize}
+		\item Il va engendrer un programme équivalent en quadruplets.
+			\begin{attention}
+				Il n'y a pas d'exécution !
+			\end{attention}
+		\item Pour ça on va avoir besoin d’informations à mémoriser ou à modifier.
+		\item Les procédures de descente récursive vont avoir besoin de paramètres en entrée ou en sortie et de variables locales.
+	\end{itemize}
+
+	\begin{exemple}
+		Les expressions arithmétiques définies par la grammaire suivante :
+		\begin{eqnarray*}
+			E &\rightarrow& T\{+T\}*\\
+			T &\rightarrow& F\{*F\}*\\
+			F &\rightarrow& ident|(E)
+		\end{eqnarray*}
+		Notons que le symbole * sert ici pour le langage et pour définir l'opérateur de multiplication.
+\begin{lstlisting}[language=Algo, framerule=0pt,  numbers=none]
+Procedure E is
+begin
+	T;
+	while NEXTS = '+' loop
+		SKIP('+');
+		T;
+		-- * => engendre un quadruplet boite a outils
+		GEN(QUAD: String);
+		-- engendre le prochain quadruplet (A,B,C,D)
+		GEN("+, ?, ?, ?")
+	endloop 
+end -- E
+\end{lstlisting}
+Il faut ajouter des arguments aux procédures E et T : $E \rightarrow T\{+T\}*$
+\begin{lstlisting}[language=Algo, framerule=0pt,  numbers=none]
+Procedure E (out r :String) is u, t :String;
+begin
+	T(r);
+	while NEXTS = '+' loop
+		SKIP('+');
+		T(t); --2e operande
+		u := NEWTEMP; -- Permet de créer une variable temporaire
+		GEN("+","^r^", "^t^", "^u"); -- ^ est la concaténation 
+		r := u;
+	endloop
+end //E
+\end{lstlisting}
+%% TODO NEXT p34
+	\end{exemple}
+	\section{Méthodologie pour la traduction des structures de contrôle}
+	Traduction dirigée par la syntaxe, en un seul passage(lecture) du programme. Pour le moment, l'analyseur est descendant $LL(1)$. Il y a 3 étapes
+	: 
+	\begin{itemize}
+		\item Donner le schéma en quadruplets correspond à la structure de contrôle traduite. Donner la sémantique de la structure de controle en quadruplets. ie ce qu'on veut savoir
+		\item Donner l'inventaire des problèmes qui peuvent apparaitre et leurs solutions
+		\item Écrire les procédures de traduction pour obtenir le schéma en quadruplets, ie comment on fait pour y arriver.
+	\end{itemize}
+	Pour ça, on a la boite à outils
 
 	\appendix
 	\chapter{Rappels}
@@ -211,117 +301,117 @@ A est le sommet de pile et $\alpha \in (N \cup X)^*$
 		\item[P] Règles de productions. À gauche on a un seul non terminal $P\{A \rightarrow \alpha, A\in N, \alpha\in(N \cup X)\}$ 
 		\item[S] $S\in N$ Axiome 
 	\end{description}
-~
+	~
 
-\begin{exemple}
-	\begin{eqnarray*}
-	G_1&=& <N,X,P,S>\\
-	N&=& \{S\}\\
-	X&=& \{a,b\}\\
-	P&=& \{S \rightarrow abS, S\rightarrow a\}
-	\end{eqnarray*}
+	\begin{exemple}
+		\begin{eqnarray*}
+			G_1&=& <N,X,P,S>\\
+			N&=& \{S\}\\
+			X&=& \{a,b\}\\
+			P&=& \{S \rightarrow abS, S\rightarrow a\}
+		\end{eqnarray*}
 	\end{exemple}
 	\begin{exemple}
-	\begin{eqnarray*}
-		G_2 &=&  <N,X,P,S>\\
-		N &=& \{S,A\}\\
-		X&=& \{a,b,c\}\\
-		P&=& \{S \rightarrow aAc\\
-		&& \ A\rightarrow bbA\\
-		&& \ A\rightarrow b\}
-	\end{eqnarray*}
-\end{exemple}
+		\begin{eqnarray*}
+			G_2 &=&  <N,X,P,S>\\
+			N &=& \{S,A\}\\
+			X&=& \{a,b,c\}\\
+			P&=& \{S \rightarrow aAc\\
+			&& \ A\rightarrow bbA\\
+			&& \ A\rightarrow b\}
+		\end{eqnarray*}
+	\end{exemple}
 
-$\omega \in X^*$ est un mot engendré par G, $\Rightarrow \omega \in L(G)$, avec $L(G)$ qui est un langage engendré par G.
+	$\omega \in X^*$ est un mot engendré par G, $\Rightarrow \omega \in L(G)$, avec $L(G)$ qui est un langage engendré par G.
 
-\begin{exemple}
-	Avec $G_1$ : 
-	$S \Rightarrow abS \Rightarrow ababS \Rightarrow ababa\in L(G_1)$
-\end{exemple}
+	\begin{exemple}
+		Avec $G_1$ : 
+		$S \Rightarrow abS \Rightarrow ababS \Rightarrow ababa\in L(G_1)$
+	\end{exemple}
 
-\subsection{Théorèmes}
-\subsubsection{Théorème d'Arden}
-$P$ règle de production $G$, système d'équation de langages, c'est à dire résoudre L(G).
+	\subsection{Théorèmes}
+	\subsubsection{Théorème d'Arden}
+	$P$ règle de production $G$, système d'équation de langages, c'est à dire résoudre L(G).
 
 	$X =  r_1 X + r_2 \Rightarrow X = r_1\* r_2$ est solution. Si $\lambda \not\in r_1$ alors la solution est unique.
-\begin{exemple}
-	\begin{eqnarray*}
-		G_1 &\leadsto& S = \underbrace{ab}_{r_1}S + \underbrace{a}_{r_2}\\
-		G_2 &\leadsto& \left\{\begin{array}{ccc} S& =& aAc\\
-			A& =& \underbrace{bb}_{r_1}A+\underbrace{b}_{r_2}\end{array}\right.
-	\end{eqnarray*}
-\end{exemple}
-
-\subsubsection{Théorème d'Arden bis}
-$$X = Xr_1+r_2 \Rightarrow X=r_2r_1^{\;*}$$
-
-\subsubsection{Théorème $A^nB^n$}
-$$X = YXZ+T \Rightarrow X = Y^nTZ^n$$
-
-\section{Reconnaître un langage avec un automate à pile}
-	Un automate à pile est défini par $<Q,X,q_0,\Gamma, Z_0,F$
-	\begin{description}
-		\item[Q] Ensemble d'état
-		\item[X] Alphabet
-		\item[$q_0 \in Q$] Etat initial
-		\item[$\Gamma$] Alphabet de pile
-		\item[$Z_0$] Fond de pile $Z_0 \in \Gamma$
-		\item[F] Ensemble d'états finales $F\subseteq Q$
-		\item[$\sigma$] Fonction de transition 
-	\end{description}
-
 	\begin{exemple}
-		\begin{eqnarray}
-			S &\rightarrow& aAc\\
-			A &\rightarrow& bbA \\
-			A &\rightarrow& b \\
-			N &=& S,\\
-			X &=& a, b, c\\
-			\sigma(q, \lambda, S)& =& (q, aAc) \\
-			\sigma(q, \lambda, A) &=& (q, bbA)\\
-			\sigma(q, \lambda, A) &=& (q, b)\\
-			\sigma(q, a, a) &=& (q, \lambda)\\
-			\sigma(q, b, b) &=& (q, \lambda)\\
-			\sigma(q, c, c) &=& (q, \lambda)
-		\end{eqnarray}
+		\begin{eqnarray*}
+			G_1 &\leadsto& S = \underbrace{ab}_{r_1}S + \underbrace{a}_{r_2}\\
+			G_2 &\leadsto& \left\{\begin{array}{ccc} S& =& aAc\\
+				A& =& \underbrace{bb}_{r_1}A+\underbrace{b}_{r_2}\end{array}\right.
+			\end{eqnarray*}
+		\end{exemple}
 
-		\begin{center}
-		Analyse de la séquence abbbbbc
+		\subsubsection{Théorème d'Arden bis}
+		$$X = Xr_1+r_2 \Rightarrow X=r_2r_1^{\;*}$$
 
-		\begin{tabular}{ccc}
-			\textbf{Ruban} & \textbf{Pile} & \textbf{Règle}\\
-			\hline
-			$\lambda abbbbbc$ &$S$ &A.6\\
-			$abbbbbc$ &$aAc$& A.9\\
-			$\lambda bbbbbc$ &$Ac$ &A.7\\
-			$\lambda bbbbbc$ &$bbAc$& A.10\\
-			$bbbbc$ &$bAc$& A.10\\
-			$bbbc$ &$Ac$ &A.7\\
-			$bbbc$ &$bbAc$& A.10\\
-			$bbc$& $bAc$& A.10\\
-			$\lambda bc$&$ Ac$& A.8\\
-			$bc$& $bc$& A.10\\
-			c &$c$& A.11\\
-			mot lu &pile vide&
-		\end{tabular}
-	\end{center}
+		\subsubsection{Théorème $A^nB^n$}
+		$$X = YXZ+T \Rightarrow X = Y^nTZ^n$$
 
-	L'analyse doit se faire en une seule lecture du ruban et de façon déterministe. 
-	
-	Pour cela, on regarde $k$ symboles sur le ruban pour pouvoir décider de façon unique de la règle à appliquer. 
-	Cette analyse efficace est appelée analyse k-prédictive.
+		\section{Reconnaître un langage avec un automate à pile}
+		Un automate à pile est défini par $<Q,X,q_0,\Gamma, Z_0,F$
+		\begin{description}
+			\item[Q] Ensemble d'état
+			\item[X] Alphabet
+			\item[$q_0 \in Q$] Etat initial
+			\item[$\Gamma$] Alphabet de pile
+			\item[$Z_0$] Fond de pile $Z_0 \in \Gamma$
+			\item[F] Ensemble d'états finales $F\subseteq Q$
+			\item[$\sigma$] Fonction de transition 
+		\end{description}
 
-	On peut écrire un algo déterministe pour la reconnaissance de $\omega \in L(G_2 )$
-	\begin{lstlisting}[language=C,numbers=none]
-Utiliser A.6;
-Utiliser A.9 pour dépiler "a"
-while il y a "bb" sur le ruban, do:
-	Utiliser A.7;
-	Utiliser deux fois A.10 pour dépiler les 2 "b"
-end
-	\end{lstlisting}
-	\end{exemple}
-	\listoffigures
+		\begin{exemple}
+			\begin{eqnarray}
+				S &\rightarrow& aAc\\
+				A &\rightarrow& bbA \\
+				A &\rightarrow& b \\
+				N &=& S,\\
+				X &=& a, b, c\\
+				\sigma(q, \lambda, S)& =& (q, aAc) \\
+				\sigma(q, \lambda, A) &=& (q, bbA)\\
+				\sigma(q, \lambda, A) &=& (q, b)\\
+				\sigma(q, a, a) &=& (q, \lambda)\\
+				\sigma(q, b, b) &=& (q, \lambda)\\
+				\sigma(q, c, c) &=& (q, \lambda)
+			\end{eqnarray}
 
-\end{document}
+			\begin{center}
+				Analyse de la séquence abbbbbc
+
+				\begin{tabular}{ccc}
+					\textbf{Ruban} & \textbf{Pile} & \textbf{Règle}\\
+					\hline
+					$\lambda abbbbbc$ &$S$ &A.6\\
+					$abbbbbc$ &$aAc$& A.9\\
+					$\lambda bbbbbc$ &$Ac$ &A.7\\
+					$\lambda bbbbbc$ &$bbAc$& A.10\\
+					$bbbbc$ &$bAc$& A.10\\
+					$bbbc$ &$Ac$ &A.7\\
+					$bbbc$ &$bbAc$& A.10\\
+					$bbc$& $bAc$& A.10\\
+					$\lambda bc$&$ Ac$& A.8\\
+					$bc$& $bc$& A.10\\
+					c &$c$& A.11\\
+					mot lu &pile vide&
+				\end{tabular}
+			\end{center}
+
+			L'analyse doit se faire en une seule lecture du ruban et de façon déterministe. 
+
+			Pour cela, on regarde $k$ symboles sur le ruban pour pouvoir décider de façon unique de la règle à appliquer. 
+			Cette analyse efficace est appelée analyse k-prédictive.
+
+			On peut écrire un algo déterministe pour la reconnaissance de $\omega \in L(G_2 )$
+			\begin{lstlisting}[language=C,numbers=none]
+				Utiliser A.6;
+				Utiliser A.9 pour dépiler "a"
+				while il y a "bb" sur le ruban, do:
+				Utiliser A.7;
+				Utiliser deux fois A.10 pour dépiler les 2 "b"
+				end
+			\end{lstlisting}
+		\end{exemple}
+		\listoffigures
+
+		\end{document}
 
