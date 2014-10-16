@@ -1,0 +1,21 @@
+procedure REPEATSTAT is
+	// declaration
+	DEBUT : Integer
+	TEST : Integer
+	RES : String
+
+	// instruction    
+	begin
+		SKIP('repeat');
+		DEBUT := NEXTQUAD;
+		EXP(Res);
+		GEN("=?,"^Res^", 0, nil");
+		SKIP('until');      
+		EXPR(RES);
+		CHECKTYPE(Res, Boolean);
+		STATLIST;
+		SKIP('endloop');
+		GEN("goto, nil, nil, " ^str(debut));
+		BACKPATCH([TEST], NEXTQUAD);
+end REPEATSTAT
+

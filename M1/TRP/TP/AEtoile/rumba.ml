@@ -1,7 +1,7 @@
 (*
     Rumba des chiffres
 
-    - Choisi d'une représentatino Interne
+    - Choisi d'une représentation Interne
     - Petite fonction d'affichage
     - opPos
         (deplacer etat picDepart picArrive) -> nouvel etat
