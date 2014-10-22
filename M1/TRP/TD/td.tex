@@ -2,7 +2,7 @@
 
 \usepackage{lmodern}
 \usepackage[svgnames]{xcolor} % Required to specify font color
-\input{/home/aroquemaurel/cours/includesLaTeX/couleurs.tex}
+\input{/home/aroquemaurel/cours/templates/templates/couleurs.tex}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -25,16 +25,17 @@
 \newcommand{\semestre}{7}
 \newcommand{\annee}{2014}
 \newcommand{\prof}{Pierre \bsc{Regner}}
+\newcommand{\logo}{/home/aroquemaurel/cours/templates/templates/ups.jpg}
 
 
 \newcommand{\pole}{}
-\newcommand{\sigle}{crcl}
-\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex} %prise en charge du langage algo
-\input{/home/aroquemaurel/cours/includesLaTeX/l2/cours.tex}
-\input{/home/aroquemaurel/cours/includesLaTeX/remarquesExempleAttention.tex}
-\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
-\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
-\input{/home/aroquemaurel/cours/includesLaTeX/couverture.tex}
+\newcommand{\sigle}{trp}
+\input{/home/aroquemaurel/cours/templates/templates/listings.tex} %prise en charge du langage algo
+\input{/home/aroquemaurel/cours/templates/templates/classroomsTemplates/l2/cours.tex}
+\input{/home/aroquemaurel/cours/templates/templates/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/templates/templates/polices.tex}
+\input{/home/aroquemaurel/cours/templates/templates/affichageChapitre.tex}
+\input{/home/aroquemaurel/cours/templates/templates/cover/couverture.tex}
 \makeatother
 
 \begin{document}
@@ -269,9 +270,119 @@
 	\item On est en convention Minimax
 	\item Pour appliquer Alpha-Béta, il faut passer en Négamax : prendre l'opposé des valeurs des feuilles
 	\item Si on applique Négamax la valeur qui remonte est 8 : il existe une stratégie gagnante pour B.
-\end{enumerate}<++>
+\end{enumerate}
+	\chapter{Problèmes de satisfaction de contraintes}
+	Les problèmes de satisfaction de contraintes font parties des problèmes très utilisés en dehors de l'IA : agencement dans un avion, agencement de
+	composants sur un circuit imprimé, …
+	\section{Le coloriage de carte}
+	\begin{remarque}
+		Il est possible de colorier n'importe quelle carte n'importe quelle carte découpée en régions connexes, de sorte que deux régions adjacentes (ou limitrophes), c'est-à-dire ayant toute une
+		frontière (et non simplement un point) en commun reçoivent toujours deux couleurs distinctes. 
+	\end{remarque}
+	% TODO Figure 13
+	\subsection{Modélisation par un CSP}
+	\begin{itemize}
+		\item $variables = \{ B, C, H, K, M, P\}$
+		\item $Domaines = D(B) = D(C) = D(H) = D(K) = D(M) = D(P) = \{ J, R, B, V\}$
+	\end{itemize}
+	 % TODO Figure 14, graphe de contraintes
+	 \begin{figure}[H]
+		 \centering
+		 \includegraphics[width=14cm]{Diagramme14.eps}
+		 \caption{Graphe de contraintes}
+	 \end{figure}
+
+	Pour la modélisation par CSP, deux heuristiques classiques fonctionnent : 
+	\begin{itemize}
+		\item Les variables de plus petit domaine d'abord
+		\item Les variables de plus petites contraintes d'abord (Avec les valeurs les moins contraintes d'abord)
+	\end{itemize}
+
+	\subsection{Algorithme << backtrack >>}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=19cm]{Diagramme15.eps}
+		\caption{Arbre d'algorithme << backtrack >>}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=19cm]{Diagramme17.eps}
+		\caption{Arbre d'algorithme << backtrack >>}
+	\end{figure}
+	\begin{center}
+	\begin{tabular}{|c|c|}
+		\hline
+		BT & BT + Heuristique\\
+		\hline
+		NC : 16 & 6\\
+		ND : 7 & 6\\
+		BT : 8 & 5\\
+		FBM : $\frac{16}{7}$ & $\frac{12}{6}$\\
+		\hline
+	\end{tabular}
+\end{center}
+
+\subsection{Algorithme << forward checking >>}
+\begin{table}[H]
+\centering
+\begin{tabular}{c|c c c c c c}
+	Variables & B & C & H& K& M& P\\
+	\hline
+	Domaines I & FRBV & FRBV & FRBV & FRBV &FRBV & FRBV\\
+	$B\leftarrow J$ & J & RBV & RBV & RBV & RBV & RBV\\
+	$C\leftarrow R$ & J & R   &  BV & RBV &  BV &  BV\\
+	$H\leftarrow B$ & J & R   &  B  & RBV &   V &  BV\\
+	$K\leftarrow R$ & J & R   &  B  &  R  &   V &  BV\\
+	$M\leftarrow V$ & J & R   &  B  &  R  &   V &  B \\
+	$P\leftarrow B$ & J & R   &  B  &  R  &   V &  B\\
+\end{tabular}
+\caption{Algorithme << forward checking >>}
+\end{table}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=6cm]{Diagramme16.eps}
+	\caption{Carte une fois correctement colorée}
+\end{figure}
+\section{Le design de Jolioto}
+\subsection{Modélisation par un CSP}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=12cm]{Diagramme18.eps}
+	\caption{Graphe de contraintes -- Jolioto}
+\end{figure}
+
+\begin{itemize}
+	\item Plus petit domaine d'abord : $\{BA, PC, EJ, CP, PO, CA\}$
+	\item Variable la plus contrainte d'abord : $\{CA, CP, PO, BA, EF, PC\}$
+\end{itemize}
+\begin{remarque}
+	Un ensemble vide mène à un backtrack\\~\\
+\end{remarque}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c|cccccc}
+		Variables& CA & CP & PO & BA & EJ & PC\\
+		\hline
+		Domaine I & BRVN & RVN & RVN & V & RV & B\\
+		$CA \leftarrow B$ & B & $\emptyset$BT & & \\
+		\hline
+		$CA \leftarrow R$ & B & R &R &$\emptyset$ BT& & \\
+		\hline
+		$CA \leftarrow V$ & V & V & V&$\emptyset$ BT &&\\
+		\hline
+		$CA \leftarrow N$ & N & N &N & V & RV & B\\
+		$CP \leftarrow N$ & N & N &N & V & RV & B\\
+		$PO \leftarrow N$ & N & N &N & V & RV & B\\
+		$BA \leftarrow V$ & N & N &N & V & RV & B\\
+		$EJ \leftarrow R$ & N & N &N & V & R  & B\\
+		$PC \leftarrow B$ & N & N &N & V & R & B\\
+		
+
+	\end{tabular}
+\end{table}
 
 	\appendix
 	\lstlistoflistings
+
 
 \end{document}

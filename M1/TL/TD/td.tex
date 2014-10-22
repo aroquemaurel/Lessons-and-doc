@@ -2,7 +2,7 @@
 
 \usepackage{lmodern}
 \usepackage[svgnames]{xcolor} % Required to specify font color
-\input{/home/aroquemaurel/cours/includesLaTeX/couleurs.tex}
+\input{/home/aroquemaurel/cours/templates/templates/couleurs.tex}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -29,12 +29,14 @@
 
 \newcommand{\pole}{}
 \newcommand{\sigle}{oim}
-\input{/home/aroquemaurel/cours/includesLaTeX/listings.tex} %prise en charge du langage algo
-\input{/home/aroquemaurel/cours/includesLaTeX/l2/cours.tex}
-\input{/home/aroquemaurel/cours/includesLaTeX/remarquesExempleAttention.tex}
-\input{/home/aroquemaurel/cours/includesLaTeX/polices.tex}
-\input{/home/aroquemaurel/cours/includesLaTeX/affichageChapitre.tex}
-\input{/home/aroquemaurel/cours/includesLaTeX/couverture.tex}
+\newcommand{\logo}{/home/aroquemaurel/cours/templates/templates/ups.jpg}
+\input{/home/aroquemaurel/cours/templates/templates/listings.tex} %prise en charge du langage algo
+\input{/home/aroquemaurel/cours/templates/templates/classroomsTemplates/l2/cours.tex}
+\input{/home/aroquemaurel/cours/templates/templates/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/templates/templates/polices.tex}
+\input{/home/aroquemaurel/cours/templates/templates/affichageChapitre.tex}
+\input{/home/aroquemaurel/cours/templates/templates/cover/couverture.tex}
+
 \makeatother
 
 \begin{document}
@@ -389,7 +391,7 @@ Pour <suiteInst> pas de problème, car une seule règle.
 Pour $<suiteInstPrime>$:
 \begin{eqnarray*}
 1lookahead(<suiteInstPrime> \rightarrow ; <inst> \leftrightarrow) &=& \{;\}\\
-1lookahead(<suiteInstPrime> \rightarrow \lambda) = first_1(\lambda.follow_1(<suiteInstPrime>) = \{end, endif, else, endloop, until\} = E_2.
+1lookahead(<suiteInstPrime> \rightarrow \lambda) &=&  first_1(\lambda.follow_1(<suiteInstPrime>) \\&=&  \{end, endif, else, endloop, until\} = E_2.
 \end{eqnarray*}
 
 Donc $G'$ est LL(1).
@@ -400,11 +402,45 @@ Donc $G'$ est LL(1).
 \lstinputlisting[language=Algo]{6.algo}
 \end{tabular}
 
-\end{document}
-\paragraphð{k = 2}
+\paragraph{k = 2}
 Pour s:
 \begin{enumerate}
-	\item $2lookahead(S \rightarow bRS) first_2 (bRS follow_2(S)) = b first_1(RS follow_2(S)) = \{ba,bb\} = E_1)$
+	\item $2lookahead(S \rightarrow bRS) first_2 (bRS follow_2(S)) = b first_1(RS follow_2(S)) = \{ba,bb\} = E_1$
 	\item $2lookahead(S \rightarrow RcSa) = first_2(Sa = follow_2(S)) = \{ac,bc\}$
-	\item $2lookahead(S \rightarrow RcSa) = first_2(RcSa = follow_2(S)) = first_2(first_2(R)c\cdots) = \{ac,bc\}
+	\item $2lookahead(S \rightarrow RcSa) = first_2(RcSa = follow_2(S)) = first_2(first_2(R)c\cdots) = \{ac,bc\}$
 \end{enumerate}
+\chapter{Génération de code en quadruplets}
+Mettre en œuvre un processus de traduction en quadruplets des structures de contrôle <repeatstat>, <forstat> et <casestat> par la méthode de la
+descente récursive.
+
+\begin{remarque}
+	\paragraph{Rappels}
+	\begin{lstlisting}
+<statlist > := <inst> <suite>
+<suite> := ; <statlist >  $\lambda$ 
+<inst> := \ldots<ifstat><whilestat><repeatstat><forstat><casestat>\ldots
+\end{lstlisting}
+\paragraph{Méthodologie}
+\begin{enumerate}
+	\item Donner le schéma équivalent en quadruplets
+	\item Inventaire des << problèmes >> et solution apportées
+	\item Mise en œuvre des porcédures de descente récursive pour engendrer le schéma en quadruplets voulus en tenant compte des solutions
+\end{enumerate}
+
+\begin{enumerate}
+	\item \texttt{<repeatstat> \dots=     repeat <statlist> until <exp> endrepeat}
+	\item \texttt{<forstat> \dots=     for ident := <exp1> step <exp2> until <exp3>
+		do <statlist> endfor }
+	\item \texttt{<casestat> \dots=     case <exp> of <alternative> \{ ; <alternative> \}*
+		otherwise <statlist> endcase
+		}
+	\item \texttt{<alternative> \dots= nombre : <statlist>}
+\end{enumerate}
+\end{remarque}
+\section{}
+\lstinputlisting[language=Algo]{7.algo}
+\begin{figure}[H]
+	\centering
+\includegraphics[width=14cm]{repeatstat.eps}
+\end{figure}
+\end{document}
