@@ -4,16 +4,17 @@
  * Modifier le code précédent pour utiliser maintenant un segment de mémoire
  * partagée pour implanter ce compteur.
  */
+#define _XOPEN_SOURCE
 
 #include <sys/types.h>
 #include <sys/ipc.h>
 #include <sys/shm.h>
+#include <sys/wait.h>
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 
-const int KEY = 1234;
 int* cpt;
 
 void treatmentIncrement(const int nbIncrement);
@@ -21,6 +22,7 @@ void treatmentDecrement(const int nbDecrement);
 
 int main(int argc, char** argv) {
 	int memId;
+	key_t KEY = ftok("main.c", 'r');
 	if(argc <= 1) {
 		perror("Arguments errors");
 		exit(1);

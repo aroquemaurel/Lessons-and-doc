@@ -8,6 +8,7 @@ On écrira une fonction pour représenter le traitement de chacun de ces process
 pour créer ces processus dans le programme principal. Ce programme sera paramétré par le
 nombre d’incrémentations/décrémentations à réaliser.
 */
+#define _XOPEN_SOURCE
 
 #include <stdio.h>
 #include <stdlib.h>
