@@ -9,28 +9,28 @@
 	url = http://gitlab.joohoo.fr/latex/stage-iut.git
 [submodule "L2/projet4/boggle"]
 	path = L2/projet4/boggle
-	url = http://gitlab.joohoo.fr/software/boggle.git
+	url = http://github.com/aroquemaurel/boggle.git
 [submodule "L2/reseau4/reseauCouche2"]
 	path = L2/reseau4/reseauCouche2
-	url = http://gitlab.joohoo.fr/software/network-2nd-layer.git
+	url = http://github.com/aroquemaurel/network-2nd-layer.git
 [submodule "L2/systeme3/gestionPhotos"]
 	path = L2/systeme3/gestionPhotos
 	url = http://gitlab.joohoo.fr/scripts/photo-management.git
 [submodule "IUT/libUML"]
 	path = IUT/libUML
-	url = http://gitlab.joohoo.fr/software/libuml.git
+	url = http://github.com/aroquemaurel/libuml.git
 [submodule "L2/systeme4/systemeGestionFichier"]
 	path = L2/systeme4/systemeGestionFichier
 	url = http://gitlab/software/file-management-system.git
 [submodule "L3/s5/projet/java"]
 	path = L3/s5/projet/java
-	url = http://gitlab.joohoo.fr/software/arenas.git
+	url = http://github.com/aroquemaurel/arenas.git
 [submodule "L3/s5/progMT/TP/progMT"]
 	path = L3/s5/progMT/TP/progMT
-	url = http://gitlab.joohoo.fr/software/progMT.git
+	url = http://github.com/aroquemaurel/progMT.git
 [submodule "L3/s6/progeven/catchGame"]
 	path = L3/s6/progeven/catchGame
-	url = http://gitlab.joohoo.fr/software/catchgame.git
+	url = http://github.com/aroquemaurel/catchgame.git
 [submodule "templates"]
 	path = templates
 	url = git@github.com:aroquemaurel/LaTexTemplate.git
