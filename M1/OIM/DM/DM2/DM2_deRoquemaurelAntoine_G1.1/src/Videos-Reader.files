@@ -1,0 +1,12 @@
+backend.cpp
+backend.h
+lecteuraudio.cpp
+lecteuraudiovideo.cpp
+Makefile
+ui.cpp
+ui.h
+player.h
+player.cpp
+main.cpp
+gstreamercommands.h
+gstreamercommands.cpp
