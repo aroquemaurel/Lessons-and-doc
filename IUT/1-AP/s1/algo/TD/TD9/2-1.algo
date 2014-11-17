@@ -1,8 +1,0 @@
-lire l'annee;
-se positionner sur le premier mois de l'annee;
-
-tantque il reste un moi a afficher faire
-	afficher mois;
-	passer au mois suivant;
-
-fin tantque;

@@ -1,3 +1,0 @@
-class AnimalEauDouce extends Animal
-
-}

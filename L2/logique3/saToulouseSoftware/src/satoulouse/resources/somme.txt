@@ -1,5 +1,0 @@
-(bigand i (0 1 2 3) ((s i) equiv  ( ((r i) and (a i) and (b i)) or  ((r i) and (not (a i)) and (not (b i)) ) or ( (a i) and (not (r i)) and (not (b i)) ) or ( (b i) and (not (r i)) and (not (a i)) ) ) ) )  
-(bigand i (0 1 2 3) ((r (i + 1)) equiv (((r i) and (a i)) or ((b i) and (a i)) or ((r i) and (b i)))))
-(not (r 0))
-((s 2) and (s 3))
-((not (b 2)) and (not (b 1)) and (not (a 2)))

@@ -1,5 +1,0 @@
-			Accès		Contenu rO
-[r0]		r0				r0	
-[r0,m]		r0+m			r0
-[r0,m]!		r0+m			r0+m
-[r0],m		r0				r0+m

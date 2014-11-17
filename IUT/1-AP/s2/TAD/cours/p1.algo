@@ -1,3 +1,0 @@
-type Point : enregistrement
-	abscisse <Reel>,
-	ordonnee <Reel>;

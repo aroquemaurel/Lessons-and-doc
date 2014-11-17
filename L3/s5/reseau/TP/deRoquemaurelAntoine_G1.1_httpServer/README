@@ -1,7 +1,0 @@
-Le serveur est capable de traiter les requêtes GET, PUT et HEAD.
-Le multi-threading est presque mis en place, cependant un bug sur le put m'a obligé de le désactiver, cependant toute
-l'architecture est en place.
-
-Pour compiler, utiliser le makefile
-Usage du client : ./client get|put|test hostname portno file
-Usage du serveur : java httpserver.HttpServer

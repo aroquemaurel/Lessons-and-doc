@@ -1,7 +1,0 @@
-(bigand m (musique poterie dessin theatre cinema philo lettres) (bigor j (lundi mardi jeudi vendredi) (bigor c (matin aprem) (m j c))))
-(bigand m (musique poterie dessin theatre cinema  philo lettres) (bigand j (lundi mardi jeudi vendredi) (bigand c (matin aprem)  (bigand m2 (musique poterie dessin theatre cinema philo lettres) (m diff m2) ((m j c) imply (not (m2 j c)))))))
-(musique vendredi aprem)
-(bigor j (lundi mardi jeudi vendredi) (theatre j matin))
-(bigand j (lundi mardi jeudi vendredi) ((lettres j matin) imply (cinema j aprem)))
-(bigand j (lundi mardi jeudi vendredi) ((lettres j aprem) imply (cinema j matin)))
-(bigor c (matin aprem) (philo lundi c))
