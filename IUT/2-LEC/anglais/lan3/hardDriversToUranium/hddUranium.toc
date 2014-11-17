@@ -1,7 +1,0 @@
-\beamer@endinputifotherversion {3.07pt}
-\select@language {french}
-\beamer@sectionintoc {1}{The magnetic hard disk}{6}{0}{1}
-\beamer@sectionintoc {2}{The uranium hard disk}{8}{0}{2}
-\beamer@subsectionintoc {2}{1}{The Di-Uranium molecule}{9}{0}{2}
-\beamer@subsectionintoc {2}{2}{Advantages}{10}{0}{2}
-\beamer@sectionintoc {3}{The application}{11}{0}{3}

@@ -1,8 +1,0 @@
-constante MAX_ELEM <Entier> = 100;
-type TabEleme = tableau[1 a MAX_ELEM] de <Entier>;
-type TabSuite = enregistrement
-	elem <TabElem>,
-	nbElem <Entier>;
-type Couple = enregistrement 
-	valeur <Entier>,
-	nbValeur <Entier>;

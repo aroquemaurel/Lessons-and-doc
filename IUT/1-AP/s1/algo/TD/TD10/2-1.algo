@@ -1,3 +1,0 @@
-fonction pgcd(entree a <Entier>,
-			  entree b <Entier>)
-				retourne <Entier>;

@@ -1,6 +1,0 @@
-type Liste[T] : enregistrement
-	tab <TabValeur[T]>,
-	nbElements <Entier>;
-constante LG_MAX <Entier> = 10000;
-
-type TabValeurs[T] : tableau [1 à LG_MAX] de <T>;

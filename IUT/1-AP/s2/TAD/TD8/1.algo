@@ -1,3 +1,0 @@
-type Cellule [T] : enregistrement
-	valeur <T>,
-	suivant <Liste[T]>;

@@ -1,4 +1,0 @@
-type Duree: enregistrement
-	h <Entier>,
-	m <Entier>,
-	s <Entier>;

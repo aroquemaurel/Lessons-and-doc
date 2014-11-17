@@ -1,3 +1,0 @@
-@R0 <- R1 + R2 + R3
-ADD R3,R1,R2
-ADD R3,R1,R3

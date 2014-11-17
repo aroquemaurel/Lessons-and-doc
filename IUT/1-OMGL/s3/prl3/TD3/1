@@ -1,9 +1,0 @@
-+allumerPersonnage()\\
-+eteindrePanneaux()\\
-+EditerClassement()\\
-+EditerParticipants()\\
-+EditerAbandons()\\
-+InscrireCoureur(p\_nom:String, p\_prenom:String, p\_equipe):integer (dossard) 
-	 leve "Equipe inexistante" si l'equipe n'existe pas
-		  "paramêtre invalide" si p\_nom, p\_prenom sont vide													   
-																 

@@ -1,4 +1,0 @@
--- modifier la taille des points p avec la valeur t
--- necessite t >0
-procedure modifierTaille(maj p <Point>, entree t <Reel>)
-	declanche tailleInvalide;

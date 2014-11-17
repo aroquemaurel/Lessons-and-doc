@@ -1,4 +1,0 @@
-type PtrCellule : pointeur sur <Cellule>;
-type Cellule : enregistrement
-	valeur <Entier>,
-	suivant <PtrCellule>;

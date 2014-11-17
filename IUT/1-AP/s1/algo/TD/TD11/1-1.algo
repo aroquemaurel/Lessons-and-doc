@@ -1,4 +1,0 @@
--- Recherche de facon sequentielle le rang du plus petit element d'un tableau tab (premiere occurence)
-fonction indiceMin (entree tab <TabEntier>,
-					entree nbElem <Entier>)
-					retourne <Entier>;

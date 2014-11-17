@@ -1,7 +1,0 @@
---recherche s'il existe le rang de l'occurence d'une valeur v dans un taleau tabOcc de n elements
--- s'il n'existe pas rang nous indique la position qu'elle devrait occuper
-procedure rechercherOccurence (entree tabOccs <TabCouples>,
-							entree n <Entier>,
-							entree v <Entier>,
-							sortie existe <Booleen>,
-							sortie rang <Entier>);
