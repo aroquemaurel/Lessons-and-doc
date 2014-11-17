@@ -1,6 +1,8 @@
 // Joueur dans le jeu de ping pong avec synchronisation via un "moniteur" Table
 
 public class Joueur implements Runnable {
+	public static int PING = 1;
+	public static int PONG = 0;
 	// Lee type de coup joue
 	private int monType;
 	// Le numero associe au joueur
@@ -27,7 +29,8 @@ public class Joueur implements Runnable {
 			for (int j = 0; j < 10; j++)
 				System.out.println("Joueur " + monNum + " (de type " + monType + ") : je joue pour la " + i + "me fois");
 			// Relacher l'acces a la table pour laisser jouer le suivant
-			// A completer : appeler l'operation qui convient de la classe "moniteur"
+			// TODO : appeler l'operation qui convient de la classe "moniteur"
+
 			// maTable.le nom de l'operation();
 		}
 		System.out.println("Joueur " + monNum + " (de type " + monType + ") : termine");
