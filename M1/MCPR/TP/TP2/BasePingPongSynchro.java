@@ -1,8 +1,7 @@
 // Base pour le jeu de ping pong avec synchronisation entre joueurs
 
-// A modifier pour faire jouer un joueur Ping et un joueur Pong
-// puis N joueurs Ping et M joueurs Pong
-// avec N et M = parametres de l'application
+// TODO A modifier pour faire jouer un joueur Ping et un joueur Pong
+// TODO puis N joueurs Ping et M joueurs Pong avec N et M = parametres de l'application
 
 public class BasePingPongSynchro {
 
