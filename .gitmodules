@@ -1,6 +1,9 @@
+[submodule "templates"]
+	path = templates
+	url = git@github.com:aroquemaurel/LaTexTemplate.git
 [submodule "L2/siaweb4/folksonomies"]
 	path = L2/siaweb4/folksonomies
-	url = http://gitlab.joohoo.fr/web/folksonomy.git
+	url = git@github.com:aroquemaurel/Folksonomy.git
 [submodule "L2/siaweb4/superVod"]
 	path = L2/siaweb4/superVod
 	url = http://gitlab.joohoo.fr/web/supervod.git
@@ -31,6 +34,6 @@
 [submodule "L3/s6/progeven/catchGame"]
 	path = L3/s6/progeven/catchGame
 	url = http://github.com/aroquemaurel/catchgame.git
-[submodule "templates"]
-	path = templates
-	url = git@github.com:aroquemaurel/LaTexTemplate.git
+[submodule "L3/s6/stage"]
+	path = L3/s6/stage
+	url = http://github.com/aroquemaurel/catchgame.git
