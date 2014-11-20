@@ -1,0 +1,129 @@
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage{lmodern}
+\usepackage[svgnames]{xcolor} % Required to specify font color
+\input{/home/aroquemaurel/cours/templates/templates/couleurs.tex}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}
+\usepackage{wrapfig}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, linkcolor=vert1, urlcolor=bleu, colorlinks=true]{hyperref}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage[francais]{minitoc}
+\usepackage[final]{pdfpages} 
+\usepackage{graphicx} % Required for box manipulation
+
+\newcommand{\titre}{Système de Base de données Relationnelles}
+\newcommand{\subtitle}{Optimisation de requêtes}
+\newcommand{\auteur}{Antoine de \bsc{Roquemaurel} et Florent \bsc{Berbie}}
+\newcommand{\formation}{M1 Informatique -- Développement Logiciel}
+\newcommand{\semestre}{7}
+\newcommand{\annee}{2014}
+\newcommand{\prof}{Abdelkader \bsc{Hameurlain}}
+\newcommand{\logo}{/home/aroquemaurel/cours/templates/templates/ups.jpg}
+
+
+\newcommand{\pole}{}
+\newcommand{\sigle}{TL}
+
+
+\input{/home/aroquemaurel/cours/templates/templates/listings.tex}
+\input{/home/aroquemaurel/cours/templates/templates/classroomsTemplates/l2/cours.tex}
+\input{/home/aroquemaurel/cours/templates/templates/remarquesExempleAttention.tex}
+\input{/home/aroquemaurel/cours/templates/templates/polices.tex}
+\input{/home/aroquemaurel/cours/templates/templates/affichageChapitre.tex}
+\newcommand{\pfp}{\texttt{pfp}}
+
+\newcommand{\ifp}{\texttt{if}}
+\newcommand{\elsep}{\texttt{else}}
+\newcommand{\tokens}{\textit{tokens} }
+
+\input{/home/aroquemaurel/cours/templates/templates/cover/couverture.tex}
+\makeatother
+\includeonly {
+}
+\begin{document}
+	\thispagestyle{empty} % Removes page numbers
+	\titleBC 
+	\dominitoc
+	\setcounter{tocdepth}{1}
+	\setcounter{secnumdepth}{3}
+	\setcounter{minitocdepth}{1}
+	\chapter*{Avant-propos}
+L'objectif de l'optimisation  est de minimiser le temps de recherche. Pour cela, on définit une stratégie ou méthode d'optimisation selon 3 critères:
+\begin{itemize}
+	\item Plan d'exécution
+	\item Espace de recherche
+	\item Modèle de coûts
+\end{itemize}
+De ces 3 critères découlent l'obtention du Plan d'exécution le plus proche de l'optimal. 
+(cf. schéma)
+
+\begin{remarque}
+Le plan d'exécution n'est jamais le plus optimal possible car il engendre d'énorme coûts pour des différences moindres.
+\end{remarque}
+
+	\tableofcontents
+
+\chapter{Les opérateurs physiques}
+\section{Système de gestion de fichier}
+\begin{definition}
+	\textbf{Fichier} collection d'article (de fichiers) contenant de l'information (information de gestion).
+\end{definition}
+\begin{definition}
+	SGF\footnote{Système de Gestion de Fichier} programme permettant à l'utilisateur de: 
+	\begin{itemize}
+		\item Définir la structure d'un fichier
+		\item Créer un fichier
+		\item Interroger un fichier
+		\item Modifier un fichier
+	\end{itemize}
+\end{definition}
+\section{Algorithme de jointure}
+\subsection{Jointure par produits cartésiens}
+Principe: Comparaison de tous les tuples de la relation R avec tous les tuples de la relation S.
+
+\subsubsection{Jointure par produit cartésien sans index}
+%% TODO schémas
+$$\textrm Nombre de pages lues = |R| \times |S| + |R|$$
+\begin{remarque}
+	 Pour des raisons de performance, on privilégiera la plus petite relation comme relation externe.
+
+	 Relation externe = R
+\end{remarque}
+\begin{attention}
+	\textbf{Inconvénients}
+	\begin{itemize}
+		\item Nombre important d'entrées/sorties disque
+		\item Pour chaque tuple de R la totalité de S est balayé
+	\end{itemize}
+\end{attention}
+
+\subsubsection{Jointure du produit cartésien par ind}
+\begin{itemize}
+	\item La création d'un index permet d'éviter que, pour chaque tuple R, la totalité de S soit balayé. 
+	\item L'utilisation d'un index se fait sur l'attribut de jointure de la relation interne (S) sous la forme (attribut, pointeur). 
+\end{itemize}
+On obtient alors: 
+\begin{description}
+	\item[Index plein] $$nb_{pages} = \frac{nbTuples \times (taille(attribut) + taille(pointeur))}{taille(page)}$$
+	\item[Index creux] $$nb_{pages} = \frac{nbPagesPrecedents \times (taille(attribut) + taille(pointeur))}{taille(page)}$$
+\end{description}
+Tant que l'on obtient pas un nombre de page (nbPages) égal à 1 on continue.  
+
+\begin{remarque}
+	 On arrondi ici toujours le nombre le nombre de page à la valeur entière supérieure (on ne lit pas une moitié de page).
+\end{remarque}
+$$tempsLecture = (nb_{index}+1) \times tempsAccesDisque$$ 
+ou le nombre d'index
+$$nb_{index} = 1 \times index_{plein} + n \times index_{creux}$$
+
+\end{document}
+
