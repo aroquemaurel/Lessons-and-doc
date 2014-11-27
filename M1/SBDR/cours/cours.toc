@@ -4,4 +4,20 @@
 \contentsline {section}{\numberline {1.2}Algorithme de jointure}{4}{section.1.2}
 \contentsline {subsection}{\numberline {1.2.1}Jointure par produits cart\IeC {\'e}siens}{4}{subsection.1.2.1}
 \contentsline {subsubsection}{\numberline {1.2.1.1}Jointure par produit cart\IeC {\'e}sien sans index}{4}{subsubsection.1.2.1.1}
-\contentsline {subsubsection}{\numberline {1.2.1.2}Jointure du produit cart\IeC {\'e}sien par ind}{4}{subsubsection.1.2.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1.2}Jointure du produit cart\IeC {\'e}sien par ind}{5}{subsubsection.1.2.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1.3}Jointure par tri-fusion}{5}{subsubsection.1.2.1.3}
+\contentsline {paragraph}{Principe}{5}{subsubsection.1.2.1.3}
+\contentsline {subsubsection}{\numberline {1.2.1.4}Jointure par hachage}{5}{subsubsection.1.2.1.4}
+\contentsline {paragraph}{Principe}{6}{subsubsection.1.2.1.4}
+\contentsline {chapter}{\numberline {2}Optimisation logique}{7}{chapter.2}
+\contentsline {section}{\numberline {2.1}Principe}{7}{section.2.1}
+\contentsline {section}{\numberline {2.2}Calcul du volume de donn\IeC {\'e}es}{7}{section.2.2}
+\contentsline {chapter}{\numberline {3}Optimisation physique}{9}{chapter.3}
+\contentsline {section}{\numberline {3.1}Strat\IeC {\'e}gies \IeC {\'e}num\IeC {\'e}ratives}{9}{section.3.1}
+\contentsline {section}{\numberline {3.2}Strat\IeC {\'e}gies al\IeC {\'e}atoires}{9}{section.3.2}
+\contentsline {chapter}{\numberline {4}Transactions}{10}{chapter.4}
+\contentsline {section}{\numberline {4.1}Contraintes d'int\IeC {\'e}grit\IeC {\'e}s}{10}{section.4.1}
+\contentsline {section}{\numberline {4.2}Concept de transaction}{10}{section.4.2}
+\contentsline {section}{\numberline {4.3}Synchronisation des acc\IeC {\`e}s concurrents}{11}{section.4.3}
+\contentsline {section}{\numberline {4.4}Transactions \IeC {\`a} 2 phases}{11}{section.4.4}
+\contentsline {section}{\numberline {4.5}Transaction bien form\IeC {\'e}e}{11}{section.4.5}

@@ -31,7 +31,7 @@
 
 
 \newcommand{\pole}{}
-\newcommand{\sigle}{TL}
+\newcommand{\sigle}{SBDR}
 
 
 \input{/home/aroquemaurel/cours/templates/templates/listings.tex}
@@ -125,5 +125,205 @@ $$tempsLecture = (nb_{index}+1) \times tempsAccesDisque$$
 ou le nombre d'index
 $$nb_{index} = 1 \times index_{plein} + n \times index_{creux}$$
 
+\begin{remarque}
+	L'index réduit considérablement le temps d'exécution. Cela peut encore être amélioré en utilisant un \textbf{cluster}
+\end{remarque}
+
+%% TODO schéma 
+\subsubsection{Jointure par tri-fusion}
+\paragraph{Principe}
+\begin{itemize}
+	\item Trie les deux relations (la relation externe R et la relation interne S) sur leur attributs de 
+		jointure 
+	\item Parcourt les deux relations pour déterminer les tuples satisfaisant la condition de jointure.  
+\end{itemize}
+% TODO schéma 
+
+\subsubsection{Jointure par hachage}
+Permet de réduire le nombre de comparaison par rapport au produit cartésien.  
+
+\paragraph{Principe}
+\begin{itemize}
+	\item construit « build » une table de hachage avec la plus petite des relations (ici la relation R) 
+		La construction se fait avec une fonction de hachage appliquée sur l'attribut de jointure. Les tuples 
+		sont ainsi répartis dans des paquets « bucket » composés d'une ou plusieurs page.  
+		La fonction de hachage associe à une valeur un entier représentant un numéro de paquet dans la 
+		table. Ainsi, tous les tuples ayant même valeur après application de la fonction de hashage se 
+		retrouve dans le paquet en question.  
+	\item balaie la relation S de manière séquentielle (page par page) en sondant « build » la table 
+		de hachage afin de trouver les tuples pertinents pour calculer la jointure. 
+\end{itemize}
+
+\chapter{Optimisation logique}
+L'optimisation logique a pou but de retarder le plus possible les opérateurs qui augmentent l'information (comme la jointure et l'union).  
+
+Optimisation globale puis opérateur par opérateur
+
+\section{Principe}
+Préférer  l'utilisation  de  projection/sélection  AVANT  une  jointure/union  lorsque  cela  est 
+possible. Cela permet de traiter un volume de données moins important.  
+
+\section{Calcul du volume de données}
+\begin{lstlisting}
+TRAIN(No_T, No_W)
+WAGON(No_W, Type_W, Poids_W, Capacite, Etat, Gare_affect
+\end{lstlisting}
+\begin{tabular}{ccc}
+	\textbf{Nom de la relation} & \textbf{Taille} & \textbf{Longueur d'un tuple en caractères}\\
+	\hline
+	TRAIN & $60\;000$& $10$\\
+	\hline
+	WAGON & $200\;000$ & $30$\\
+	\hline
+\end{tabular}
+
+\begin{tabular}{ccc}
+	Constitutants & Nombre de valeurs possibles & Longueur en caractères\\
+	\hline
+	No\_T &$2\;000$ & 4\\
+	\hline
+	No\_W &$200\;000$& 6\\
+	\hline
+	Type\_W & 200 & 2\\
+	\hline
+\end{tabular}
+
+\begin{tabular}{ll}
+	\begin{minipage}{0.4\textwidth} 
+		\begin{lstlisting}[linewidth=180px, language=SQL]
+-- Liste des types de wagons
+-- du train de numéro 4002
+SELECT w.Type_W
+FROM WAGON w, TRAIN t
+WHERE t.No_W = w.No_W
+AND No_T = 4002;
+\end{lstlisting}
+	\end{minipage}
+	&
+	\begin{minipage}{0.7\textwidth} 
+		% TODO
+	\end{minipage}
+
+\end{tabular}
+
+\begin{lstlisting}
+
+Volume = 60 000 * 10 + (60 000/2000) * 10 + (60 000/2000) * 6 + 200 000 * 30 + (60 000/2000) * (30+6) + (60 000/2000) * 2
+
+Étape 1 = taille(TRAIN) * longueur(TRAIN)
+
+Étape 2 = moyenne * longueur(TRAIN) 
+= (taille(TRAIN) / nbValeursPossibles(No_T)) * longueur(TRAIN)
+
+Étape 3 =  moyenne * longueur(No_W) 
+= (taille(TRAIN) / nbValeursPossibles(No_T)) * longueur(No_W)
+
+Étape 4 = nbValeursPossibles(No_W) * longueur(No_W)
+
+Etape 5 = moyenne * (longueur(WAGON) + longueur(No_W) 
+= (taille(TRAIN) / nbValeursPossibles(No_T)) * (longueur(WAGON) * longueur(No_W))
+
+Étape 6 = moyenne * longueur(Type_W) 
+= (taille(TRAIN) / nbValeursPossibles(No_T)) * longueur(Type_W)
+
+\end{lstlisting}
+
+\chapter{Optimisation physique}
+\section{Stratégies énumératives}
+Consiste à énumérer l'ensemble des solutions alternatives à des sous plans d'exécution déjà optimisés afin de choisir la plus performante possible. 
+
+\begin{description}
+	\item[Avantage] Optimalité globale
+	\item[Inconvénient] Coût élevé
+\end{description}
+
+\section{Stratégies aléatoires}
+\begin{description}
+	\item[Utilisation]Lorsqu'on a un grand nombre de relations
+	\item[Fonctionnement] 
+		\begin{itemize}
+			\item Obtention d'un plan d'exécution initial via une stratégie énumérative (exemple par une 
+				recherche en profondeur d'abord) 
+			\item Application de transformations générés aléatoirement au plan obtenu précédemment dans le but d'obtenir éventuellement un optimum local.  
+		\end{itemize}
+\end{description}
+\begin{description}
+	\item[Avantages] Réduction significative de la taille du problème, coût moins élevé 
+	\item[Inconvénient] Moins optimale
+\end{description}
+
+\chapter{Transactions}
+L'objectif des transactions est de maintenir la cohérence d'une base de données en cas 
+d'accès concurrents et de pannes/défaillances. 
+
+\section{Contraintes d'intégrités}
+L'état  d'une  base  de  données  est  dit  cohérent  s'il  satisfait  à  toutes  les  contraintes 
+d'intégrités définies.  
+
+\begin{itemize}
+	\item Contraintes statiques: Contraintes statiques: prédicat sur l'état courant de la base de données 
+		Contrainte du type primary\_key, foreign\_key, check 
+		\begin{exemple}
+			Clé primaire unique, salaire >= SMIC
+		\end{exemple}
+	\item Contraintes dynamiques : concerne le passage d'un état à un autre 
+		Contrainte de type trigger 
+		\begin{exemple}
+			New salaire >= Old salaire
+		\end{exemple}
+\end{itemize}
+La vérification d'une contrainte d'intégrité est liée au concept de transaction. Cela peut se faire de 
+façon immédiate ou différée.  
+
+\section{Concept de transaction}
+\begin{definition}
+	\textbf{Transaction}
+
+	\begin{itemize}
+		\item Séquence d'actions qui réalise une unité logique de traitement 
+		\item Séquence d'opérations (actions) sur un ensemble d'objets 
+	\end{itemize}
+\end{definition}
+
+\begin{definition}
+	\textbf{Action} commande indivisible exécutée pour le compte d'une transation par le système (lire/écrire 
+	dans la base)
+\end{definition}
+
+Propriété des transactions:
+\begin{description}
+	\item[Atomicité] Mise à jour de tout ou annulation de toutes les modifications 
+	\item[Cohérence]~
+	\item[Isolation] Visibilité de la transaction aux autres transaction qu'une fois celle-ci validée
+	\item[Durabilité] Les modifications validées doivent être conservées en cas de panne   
+\end{description}
+
+Mots clés: Commit et Rollback 
+
+\section{Synchronisation des accès concurrents}
+Dans un SGBD multi-utilisateurs, il se produit un conflit lorsque 2 transactions T1 et T2 s'intéressent à un même objet. Il faut donc appliquer un ordre d'exécution.  
+
+\begin{remarque}
+	Seule l'isolation est requise pour les accès concurrents 
+\end{remarque}
+
+\section{Transactions à 2 phases}
+Pour chaque transaction, on doit procéder à: 
+\begin{itemize}
+	\item Phase d'expansion: phase d'acquisition des verrous :  
+\begin{itemize}
+	\item verrous partageables (share) en lecture : v partagé(x) 
+	\item verrous d'accès exclusif : v exclusif(x) 
+\end{itemize}
+\item Phase de réduction : phase de libération des verrous (unlock): libérer(x)
+\end{itemize}
+
+\section{Transaction bien formée}
+Une transaction T est dite bien formée lorsqu'elle obéit aux règles suivantes: 
+\begin{itemize}
+	\item Avant de LIRE un objet x: v partagé(x). T doit avoir au moins un verrou d'accès partagée sur x 
+	\item Avant d'ÉCRIRE sur un objet x: v exclusif(x). T doit avoir UN verrou d'accès exclusif sur x 
+	\item Aucun objet ne reste verrouillé par T après la fin de T 
+\end{itemize}
 \end{document}
 
