@@ -1,5 +1,7 @@
 package ex1;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.Timer;
 
@@ -15,6 +17,11 @@ public class Ex1FrenchTricolor extends javax.swing.JFrame {
      */
     public Ex1FrenchTricolor() {
         initComponents();
+        initRedTimer();
+        initOrangeTimer();
+        initGreenTimer();
+        initOffPaneTimer();
+        initOnPanneTimer();
         init();
     }
 
@@ -25,14 +32,17 @@ public class Ex1FrenchTricolor extends javax.swing.JFrame {
     }
     
     private void turnOnOrange() {
-        redLabel.setIcon(new ImageIcon(getClass().getResource("/ex1/tricolor_orange.png")));        
+        turnOffAll();
+        orangeLabel.setIcon(new ImageIcon(getClass().getResource("/ex1/tricolor_orange.png")));        
     }
     
     private void turnOnGreen() {
-        redLabel.setIcon(new ImageIcon(getClass().getResource("/ex1/tricolor_green.png")));        
+        turnOffAll();
+        greenLabel.setIcon(new ImageIcon(getClass().getResource("/ex1/tricolor_green.png")));        
     }
     
     private void turnOnRed() {
+        turnOffAll();
         redLabel.setIcon(new ImageIcon(getClass().getResource("/ex1/tricolor_red.png")));
     }
     
@@ -46,36 +56,67 @@ public class Ex1FrenchTricolor extends javax.swing.JFrame {
         onButton.setEnabled(true);
         offButton.setEnabled(false);
         panneButton.setEnabled(false);
+        redTimer.stop();
+        greenTimer.stop();
+        orangeTimer.stop();
+        onPanneTimer.stop();
+        offPanneTimer.stop();
     }
     
     private void redActivation() {
         onButton.setEnabled(false);
         offButton.setEnabled(true);
         panneButton.setEnabled(true);        
+        redTimer.start();
+        orangeTimer.stop();
+        greenTimer.stop();
+        onPanneTimer.stop();
+        offPanneTimer.stop();
     }
     
     private void greenActivation() {
         onButton.setEnabled(false);
         offButton.setEnabled(true);
         panneButton.setEnabled(true);               
+        redTimer.stop();
+        greenTimer.start();
+        orangeTimer.stop();
+        onPanneTimer.stop();
+        offPanneTimer.stop();
     }
     
     private void orangeActivation() {
         onButton.setEnabled(false);
         offButton.setEnabled(true);
         panneButton.setEnabled(true);        
+        redTimer.stop();
+        greenTimer.stop();
+        orangeTimer.start();
+        onPanneTimer.stop();
+        offPanneTimer.stop();
     }
     
     private void onPanneActivation() {
         onButton.setEnabled(false);
         offButton.setEnabled(true);
-        panneButton.setEnabled(false);               
+        panneButton.setEnabled(false);      
+        onPanneTimer.start();
+        offPanneTimer.stop();
+        redTimer.stop();
+        greenTimer.stop();
+        orangeTimer.stop();
     }
     
     private void offPanneActivation() {
         onButton.setEnabled(false);
         offButton.setEnabled(true);
         panneButton.setEnabled(false);                
+        onPanneTimer.stop();
+        offPanneTimer.start();
+        redTimer.stop();
+        greenTimer.stop();
+        orangeTimer.stop();
+
     }
 
     /**
@@ -152,13 +193,63 @@ public class Ex1FrenchTricolor extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    private void redTimerActionPerformed() {
+        switch(state) {
+            case RED:
+                state = States.GREEN;
+                turnOnGreen();
+                greenActivation();
+                break;
+        }
+    }
 
+    private void greenTimerActionPerformed() {
+        switch(state) {
+            case GREEN:
+                state = States.ORANGE;
+                turnOnOrange();
+                orangeActivation();
+                break;
+        }
+
+    }
+
+    private void orangeTimerActionPerformed() {
+        switch(state) {
+            case ORANGE:
+                state = States.RED;
+                turnOnRed();
+                redActivation();
+                break;
+        }
+    }                
+    
+    private void offPanneTimerActionPerformed() {
+        switch(state) {
+            case OFFPANNE:
+                state = States.ONPANNE;
+                turnOffAll();
+                onPanneActivation();
+                break;
+        }
+    }
+    
+    private void onPanneTimerActionPerformed() {
+        switch(state) {
+            case ONPANNE:
+                state = States.OFFPANNE;
+                turnOnOrange();
+                offPanneActivation();
+                break;
+        }
+    }
+    
     private void onButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onButtonActionPerformed
         switch(state) {
             case INIT:
                 state = States.RED;
-                redActivation();
                 turnOnRed();
+                redActivation();
                 break;
             case ORANGE:
             case RED:
@@ -174,8 +265,8 @@ public class Ex1FrenchTricolor extends javax.swing.JFrame {
             case ORANGE:
             case RED:
             case GREEN:
-                turnOnOrange();
                 state = States.ONPANNE;
+                turnOnOrange();                
                 onPanneActivation();
                 break;            
             case ONPANNE:
@@ -189,8 +280,8 @@ public class Ex1FrenchTricolor extends javax.swing.JFrame {
         switch(state) {
             case INIT:
                 state = States.RED;
-                redActivation();
                 turnOnRed();
+                redActivation();
                 break;
             case ORANGE:
             case RED:
@@ -233,6 +324,65 @@ public class Ex1FrenchTricolor extends javax.swing.JFrame {
             public void run() {
                 new Ex1FrenchTricolor().setVisible(true);
             }
+        });
+    }
+    
+    
+    private void initRedTimer() {
+            redTimer = new Timer(1000, new ActionListener() {
+ 
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                redTimerActionPerformed();
+            }          
+        });
+    
+    }
+    
+    private void initOrangeTimer() {
+        orangeTimer = new Timer(1000, new ActionListener() {
+ 
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                orangeTimerActionPerformed();
+            }          
+             
+        });
+
+    }
+    
+    private void initGreenTimer() {
+            greenTimer = new Timer(1000, new ActionListener() {
+ 
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                greenTimerActionPerformed();
+            }          
+             
+        });
+    
+    }
+    
+    private void initOnPanneTimer() {
+        onPanneTimer = new Timer(1000, new ActionListener() {
+ 
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                onPanneTimerActionPerformed();
+            }          
+             
+        });
+ 
+    }
+    
+    private void initOffPaneTimer() {
+        offPanneTimer = new Timer(1000, new ActionListener() {
+ 
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                offPanneTimerActionPerformed();
+            }          
+             
         });
     }
     private States state;
