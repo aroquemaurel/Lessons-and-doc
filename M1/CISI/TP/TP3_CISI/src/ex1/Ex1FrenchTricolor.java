@@ -200,6 +200,12 @@ public class Ex1FrenchTricolor extends javax.swing.JFrame {
                 turnOnGreen();
                 greenActivation();
                 break;
+            case ONPANNE:
+            case OFFPANNE:
+            case ORANGE:
+            case GREEN:
+            case INIT:
+                throw new RuntimeException("bad state");                                
         }
     }
 
@@ -210,6 +216,12 @@ public class Ex1FrenchTricolor extends javax.swing.JFrame {
                 turnOnOrange();
                 orangeActivation();
                 break;
+            case ONPANNE:
+            case OFFPANNE:
+            case RED:
+            case ORANGE:
+            case INIT:
+                throw new RuntimeException("bad state");                                
         }
 
     }
@@ -221,6 +233,12 @@ public class Ex1FrenchTricolor extends javax.swing.JFrame {
                 turnOnRed();
                 redActivation();
                 break;
+            case ONPANNE:
+            case OFFPANNE:
+            case RED:
+            case GREEN:
+            case INIT:
+                throw new RuntimeException("bad state");                
         }
     }                
     
@@ -228,9 +246,15 @@ public class Ex1FrenchTricolor extends javax.swing.JFrame {
         switch(state) {
             case OFFPANNE:
                 state = States.ONPANNE;
-                turnOffAll();
+                turnOnOrange();
                 onPanneActivation();
                 break;
+            case ORANGE:
+            case ONPANNE:
+            case RED:
+            case GREEN:
+            case INIT:
+                throw new RuntimeException("bad state");
         }
     }
     
@@ -238,9 +262,15 @@ public class Ex1FrenchTricolor extends javax.swing.JFrame {
         switch(state) {
             case ONPANNE:
                 state = States.OFFPANNE;
-                turnOnOrange();
+                turnOffAll();
                 offPanneActivation();
                 break;
+            case ORANGE:
+            case OFFPANNE:
+            case RED:
+            case GREEN:
+            case INIT:
+                throw new RuntimeException("bad state");
         }
     }
     
@@ -279,16 +309,15 @@ public class Ex1FrenchTricolor extends javax.swing.JFrame {
     private void offButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_offButtonActionPerformed
         switch(state) {
             case INIT:
-                state = States.RED;
-                turnOnRed();
-                redActivation();
-                break;
+                throw new RuntimeException("Bad state !");            
             case ORANGE:
             case RED:
             case GREEN:
             case ONPANNE:
             case OFFPANNE:
-                throw new RuntimeException("Bad state !");            
+                state = States.INIT;
+                turnOffAll();
+                initActivation();
         }
     }//GEN-LAST:event_offButtonActionPerformed
 
@@ -329,7 +358,7 @@ public class Ex1FrenchTricolor extends javax.swing.JFrame {
     
     
     private void initRedTimer() {
-            redTimer = new Timer(1000, new ActionListener() {
+            redTimer = new Timer(RED_TIME, new ActionListener() {
  
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -340,7 +369,7 @@ public class Ex1FrenchTricolor extends javax.swing.JFrame {
     }
     
     private void initOrangeTimer() {
-        orangeTimer = new Timer(1000, new ActionListener() {
+        orangeTimer = new Timer(ORANGE_TIME, new ActionListener() {
  
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -352,7 +381,7 @@ public class Ex1FrenchTricolor extends javax.swing.JFrame {
     }
     
     private void initGreenTimer() {
-            greenTimer = new Timer(1000, new ActionListener() {
+            greenTimer = new Timer(GREEN_TIME, new ActionListener() {
  
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -364,7 +393,7 @@ public class Ex1FrenchTricolor extends javax.swing.JFrame {
     }
     
     private void initOnPanneTimer() {
-        onPanneTimer = new Timer(1000, new ActionListener() {
+        onPanneTimer = new Timer(PANNE_ON_TIME, new ActionListener() {
  
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -376,7 +405,7 @@ public class Ex1FrenchTricolor extends javax.swing.JFrame {
     }
     
     private void initOffPaneTimer() {
-        offPanneTimer = new Timer(1000, new ActionListener() {
+        offPanneTimer = new Timer(PANNE_OFF_TIME, new ActionListener() {
  
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -391,6 +420,13 @@ public class Ex1FrenchTricolor extends javax.swing.JFrame {
     private Timer greenTimer;
     private Timer onPanneTimer;
     private Timer offPanneTimer;
+    
+    private final int RED_TIME = 2000;
+    private final int ORANGE_TIME = 500;
+    private final int GREEN_TIME = 1500;
+    private final int PANNE_ON_TIME = 600;
+    private final int PANNE_OFF_TIME = 400;
+    
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel greenLabel;
