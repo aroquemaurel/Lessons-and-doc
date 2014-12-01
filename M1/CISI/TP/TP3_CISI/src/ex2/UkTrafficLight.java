@@ -8,13 +8,13 @@ import javax.swing.Timer;
  *
  * @author aroquemaurel
  */
-public class Ex2UkTricolor extends javax.swing.JFrame {
+public class UkTrafficLight extends javax.swing.JFrame {
     private enum States {INIT, RED, GREEN, ORANGE, RED_ORANGE, ONPANNE, OFFPANNE};
     
     /**
      * Creates new form Ex2UsTricolor
      */
-    public Ex2UkTricolor() {
+    public UkTrafficLight() {
         initComponents();
         initRedTimer();
         initOrangeTimer();
@@ -408,14 +408,18 @@ public class Ex2UkTricolor extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Ex2UkTricolor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UkTrafficLight.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Ex2UkTricolor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UkTrafficLight.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Ex2UkTricolor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UkTrafficLight.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Ex2UkTricolor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UkTrafficLight.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -424,7 +428,7 @@ public class Ex2UkTricolor extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Ex2UkTricolor().setVisible(true);
+                new UkTrafficLight().setVisible(true);
             }
         });
     }
