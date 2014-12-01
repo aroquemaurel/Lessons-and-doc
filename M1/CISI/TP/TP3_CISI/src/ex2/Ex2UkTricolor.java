@@ -2,7 +2,6 @@ package ex2;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.ImageIcon;
 import javax.swing.Timer;
 
 /**
@@ -34,27 +33,29 @@ public class Ex2UkTricolor extends javax.swing.JFrame {
     
     private void turnOnOrange() {
         turnOffAll();
-        orangeLabel.setIcon(new ImageIcon(getClass().getResource("/tricolors/tricolor_orange.png")));        
+        orangeTrafficLight.turnOnOrange();
     }
     
     private void turnOnGreen() {
         turnOffAll();
-        greenLabel.setIcon(new ImageIcon(getClass().getResource("/tricolors/tricolor_green.png")));        
+        greenTrafficLight.turnOnGreen();
     }
     
     private void turnOnRed() {
         turnOffAll();
-        redLabel.setIcon(new ImageIcon(getClass().getResource("/tricolors/tricolor_red.png")));
+        redTrafficLight.turnOnRed();
     }
+    
     private void turnOnRedOrange() {
         turnOffAll();
-        redLabel.setIcon(new ImageIcon(getClass().getResource("/tricolors/tricolor_red.png")));
-        orangeLabel.setIcon(new ImageIcon(getClass().getResource("/tricolors/tricolor_orange.png")));        
+        redTrafficLight.turnOnRed();
+        orangeTrafficLight.turnOnOrange();
     }
+    
     private void turnOffAll() {
-        redLabel.setIcon(new ImageIcon(getClass().getResource("/tricolors/tricolor_off.png")));
-        greenLabel.setIcon(new ImageIcon(getClass().getResource("/tricolors/tricolor_off.png")));
-        orangeLabel.setIcon(new ImageIcon(getClass().getResource("/tricolors/tricolor_off.png")));
+        redTrafficLight.turnOff();
+        orangeTrafficLight.turnOff();
+        greenTrafficLight.turnOff();
     }
     
     private void initActivation() {
@@ -119,7 +120,7 @@ public class Ex2UkTricolor extends javax.swing.JFrame {
     }
     
     private void onPanneActivation() {
-        onButton.setEnabled(false);
+        onButton.setEnabled(true);
         offButton.setEnabled(true);
         panneButton.setEnabled(false);      
         onPanneTimer.start();
@@ -131,7 +132,7 @@ public class Ex2UkTricolor extends javax.swing.JFrame {
     }
     
     private void offPanneActivation() {
-        onButton.setEnabled(false);
+        onButton.setEnabled(true);
         offButton.setEnabled(true);
         panneButton.setEnabled(false);                
         onPanneTimer.stop();
@@ -152,9 +153,9 @@ public class Ex2UkTricolor extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        redLabel = new javax.swing.JLabel();
-        orangeLabel = new javax.swing.JLabel();
-        greenLabel = new javax.swing.JLabel();
+        redTrafficLight = new tricolors.TrafficLight();
+        orangeTrafficLight = new tricolors.TrafficLight();
+        greenTrafficLight = new tricolors.TrafficLight();
         jPanel1 = new javax.swing.JPanel();
         onButton = new javax.swing.JButton();
         panneButton = new javax.swing.JButton();
@@ -166,14 +167,44 @@ public class Ex2UkTricolor extends javax.swing.JFrame {
         jPanel2.setMinimumSize(new java.awt.Dimension(150, 200));
         jPanel2.setLayout(new java.awt.GridLayout(3, 1));
 
-        redLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel2.add(redLabel);
+        javax.swing.GroupLayout redTrafficLightLayout = new javax.swing.GroupLayout(redTrafficLight);
+        redTrafficLight.setLayout(redTrafficLightLayout);
+        redTrafficLightLayout.setHorizontalGroup(
+            redTrafficLightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        redTrafficLightLayout.setVerticalGroup(
+            redTrafficLightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 166, Short.MAX_VALUE)
+        );
 
-        orangeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel2.add(orangeLabel);
+        jPanel2.add(redTrafficLight);
 
-        greenLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel2.add(greenLabel);
+        javax.swing.GroupLayout orangeTrafficLightLayout = new javax.swing.GroupLayout(orangeTrafficLight);
+        orangeTrafficLight.setLayout(orangeTrafficLightLayout);
+        orangeTrafficLightLayout.setHorizontalGroup(
+            orangeTrafficLightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        orangeTrafficLightLayout.setVerticalGroup(
+            orangeTrafficLightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 166, Short.MAX_VALUE)
+        );
+
+        jPanel2.add(orangeTrafficLight);
+
+        javax.swing.GroupLayout greenTrafficLightLayout = new javax.swing.GroupLayout(greenTrafficLight);
+        greenTrafficLight.setLayout(greenTrafficLightLayout);
+        greenTrafficLightLayout.setHorizontalGroup(
+            greenTrafficLightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        greenTrafficLightLayout.setVerticalGroup(
+            greenTrafficLightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 166, Short.MAX_VALUE)
+        );
+
+        jPanel2.add(greenTrafficLight);
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.CENTER);
 
@@ -316,6 +347,8 @@ public class Ex2UkTricolor extends javax.swing.JFrame {
     private void onButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onButtonActionPerformed
         switch(state) {
             case INIT:
+            case ONPANNE:
+            case OFFPANNE:
                 state = States.RED;
                 turnOnRed();
                 redActivation();
@@ -323,8 +356,6 @@ public class Ex2UkTricolor extends javax.swing.JFrame {
             case ORANGE:
             case RED:
             case GREEN:
-            case ONPANNE:
-            case OFFPANNE:
                 throw new RuntimeException("Bad state !");
         }
     }//GEN-LAST:event_onButtonActionPerformed
@@ -482,13 +513,13 @@ public class Ex2UkTricolor extends javax.swing.JFrame {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel greenLabel;
+    private tricolors.TrafficLight greenTrafficLight;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton offButton;
     private javax.swing.JButton onButton;
-    private javax.swing.JLabel orangeLabel;
+    private tricolors.TrafficLight orangeTrafficLight;
     private javax.swing.JButton panneButton;
-    private javax.swing.JLabel redLabel;
+    private tricolors.TrafficLight redTrafficLight;
     // End of variables declaration//GEN-END:variables
 }
