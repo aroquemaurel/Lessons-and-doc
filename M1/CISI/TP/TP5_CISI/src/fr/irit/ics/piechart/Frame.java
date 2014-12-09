@@ -87,22 +87,18 @@ public class Frame extends javax.swing.JFrame {
      */
     private void initAction() {
         model.setValue(0);
-        model.notifyValChanged();
     }
 
     private void incrementAction() {
         model.incrementValue();
-        model.notifyValChanged();
     }
 
     private void decrementAction() {
         model.decrementValue();
-        model.notifyValChanged();
     }
 
     private void calcPercentAction(int value) {
         model.setValue(value > 100 ? 100 : (value < 0 ? 0 : value));
-        model.notifyValChanged();
     }
 
     private void enteredValAction() {
@@ -114,7 +110,6 @@ public class Frame extends javax.swing.JFrame {
         }
 
         model.setValue(value);
-        model.notifyValChanged();
     }
 
     @SuppressWarnings("unchecked")
@@ -334,7 +329,7 @@ public class Frame extends javax.swing.JFrame {
             case EDITING:
                 if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
                     value = Integer.valueOf(jTextFieldPercent1.getText());
-                    if (value < 100) {
+                    if (value < 0) {
                         state = States.NO_DOWN;
                         noDownActivation();
                         enteredValAction();
@@ -383,7 +378,6 @@ public class Frame extends javax.swing.JFrame {
                 state = States.DOWN;
                 downActivation();
                  int value = UtilitiesPieChart.pointToPercentage(pieChartView1, evt.getX(), evt.getY());
-
                  calcPercentAction(value);
                 break;
             case OK:

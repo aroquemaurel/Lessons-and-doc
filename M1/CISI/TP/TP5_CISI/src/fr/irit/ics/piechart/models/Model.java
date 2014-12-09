@@ -25,6 +25,7 @@ public class Model implements IModel {
     @Override
     public void setValue(int value) {
         this.value = value;
+        updateValue();
     }
 
     @Override
@@ -32,7 +33,7 @@ public class Model implements IModel {
         views.add(view);
     }
 
-    public void notifyValChanged() {
+    public void updateValue() {
         for(IView view : views) {
             view.notifyValChanged(value);
         }
@@ -40,10 +41,12 @@ public class Model implements IModel {
     @Override
     public void incrementValue() {
         ++value;
+        updateValue();
     }
 
     @Override
     public void decrementValue() {
         --value;
+        updateValue();
     }
 }
