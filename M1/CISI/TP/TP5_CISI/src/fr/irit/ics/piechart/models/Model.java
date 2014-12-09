@@ -31,4 +31,19 @@ public class Model implements IModel {
     public void addView(IView view) {
         views.add(view);
     }
+
+    public void notifyValChanged() {
+        for(IView view : views) {
+            view.notifyValChanged(value);
+        }
+    }
+    @Override
+    public void incrementValue() {
+        ++value;
+    }
+
+    @Override
+    public void decrementValue() {
+        --value;
+    }
 }

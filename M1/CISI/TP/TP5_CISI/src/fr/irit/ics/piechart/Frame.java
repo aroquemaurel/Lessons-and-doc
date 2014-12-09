@@ -1,6 +1,7 @@
 package fr.irit.ics.piechart;
 
 import fr.irit.ics.piechart.models.Model;
+import java.awt.event.KeyEvent;
 
 /**
  *
@@ -9,6 +10,7 @@ import fr.irit.ics.piechart.models.Model;
 public class Frame extends javax.swing.JFrame {
 
     private enum States {
+
         INIT, OK, NO_UP, EDITING, DOWN, NO_DOWN
     };
 
@@ -22,9 +24,97 @@ public class Frame extends javax.swing.JFrame {
 
     private void init() {
         state = States.INIT;
+        initActivation();
         model = new Model();
         model.addView(pieChartView1);
         model.addView(jTextFieldPercent1);
+    }
+
+    /*
+    Activations methods
+    1 state = 1 activation method
+    */
+    private void noDownActivation() {
+        startButton.setEnabled(false);
+        stopButton.setEnabled(true);
+        upButton.setEnabled(true);
+        downButton.setEnabled(false);
+        jTextFieldPercent1.setEnabled(true);
+    }
+
+    private void initActivation() {
+        startButton.setEnabled(true);
+        stopButton.setEnabled(false);
+        upButton.setEnabled(false);
+        downButton.setEnabled(false);
+        jTextFieldPercent1.setEnabled(false);
+    }
+
+    private void downActivation() {
+        startButton.setEnabled(false);
+        stopButton.setEnabled(true);
+        upButton.setEnabled(false);
+        downButton.setEnabled(false);
+        jTextFieldPercent1.setEnabled(false);
+    }
+
+    private void noUpActivation() {
+        startButton.setEnabled(false);
+        stopButton.setEnabled(true);
+        upButton.setEnabled(false);
+        downButton.setEnabled(true);
+        jTextFieldPercent1.setEnabled(true);
+    }
+
+    private void okActivation() {
+        startButton.setEnabled(false);
+        stopButton.setEnabled(true);
+        upButton.setEnabled(true);
+        downButton.setEnabled(true);
+        jTextFieldPercent1.setEnabled(true);
+    }
+
+    private void editingActivation() {
+        startButton.setEnabled(false);
+        stopButton.setEnabled(false);
+        upButton.setEnabled(false);
+        downButton.setEnabled(false);
+        jTextFieldPercent1.setEnabled(true);
+    }
+
+    /*
+     * Actions methods
+     */
+    private void initAction() {
+        model.setValue(0);
+        model.notifyValChanged();
+    }
+
+    private void incrementAction() {
+        model.incrementValue();
+        model.notifyValChanged();
+    }
+
+    private void decrementAction() {
+        model.decrementValue();
+        model.notifyValChanged();
+    }
+
+    private void calcPercentAction(int value) {
+        model.setValue(value > 100 ? 100 : (value < 0 ? 0 : value));
+        model.notifyValChanged();
+    }
+
+    private void enteredValAction() {
+        int value = Integer.valueOf(jTextFieldPercent1.getText());
+        if (value < 0) {
+            value = 0;
+        } else if (value > 100) {
+            value = 100;
+        }
+
+        model.setValue(value);
+        model.notifyValChanged();
     }
 
     @SuppressWarnings("unchecked")
@@ -76,6 +166,11 @@ public class Frame extends javax.swing.JFrame {
         jPanel3.setLayout(new javax.swing.BoxLayout(jPanel3, javax.swing.BoxLayout.LINE_AXIS));
         jPanel3.add(filler7);
 
+        jTextFieldPercent1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jTextFieldPercent1MouseReleased(evt);
+            }
+        });
         jTextFieldPercent1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTextFieldPercent1KeyPressed(evt);
@@ -114,6 +209,20 @@ public class Frame extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.SOUTH);
 
+        pieChartView1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                pieChartView1MousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                pieChartView1MouseReleased(evt);
+            }
+        });
+        pieChartView1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                pieChartView1MouseDragged(evt);
+            }
+        });
+
         javax.swing.GroupLayout pieChartView1Layout = new javax.swing.GroupLayout(pieChartView1);
         pieChartView1.setLayout(pieChartView1Layout);
         pieChartView1Layout.setHorizontalGroup(
@@ -130,21 +239,32 @@ public class Frame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /*
+     Events methods
+    */
     private void upButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upButtonActionPerformed
         switch (state) {
-            case INIT:
-                break;
             case OK:
-                break;
-            case NO_UP:
-                break;
-            case EDITING:
-                break;
-            case DOWN:
+                if (model.getValue() < 99) {
+                    state = States.OK;
+                    okActivation();
+                    incrementAction();
+                } else {
+                    state = States.NO_UP;
+                    noUpActivation();
+                    incrementAction();
+                }
                 break;
             case NO_DOWN:
+                state = States.OK;
+                okActivation();
+                incrementAction();
                 break;
             default:
+            case NO_UP:
+            case EDITING:
+            case DOWN:          
+            case INIT:                
                 throw new AssertionError(state.name());
 
         }
@@ -153,16 +273,23 @@ public class Frame extends javax.swing.JFrame {
     private void downButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_downButtonActionPerformed
         switch (state) {
             case OK:
-                state = States.OK;
-                //treatmentBtnDownOK();
+            case NO_UP:
+                if (model.getValue() > 1) {
+                    state = States.OK;
+                    okActivation();
+                    decrementAction();
+                } else {
+                    state = States.NO_DOWN;
+                    noDownActivation();
+                    decrementAction();
+                }
                 break;
+            case NO_DOWN:
             case EDITING:
             case INIT:
-            case NO_DOWN:
             case DOWN:
-            case NO_UP:
             default:
-                throw new RuntimeException("bad state");
+                throw new RuntimeException("Bad state");
 
         }
     }//GEN-LAST:event_downButtonActionPerformed
@@ -170,6 +297,9 @@ public class Frame extends javax.swing.JFrame {
     private void startButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonActionPerformed
         switch (state) {
             case INIT:
+                state = States.NO_DOWN;
+                noDownActivation();
+                initAction();
                 break;
             case OK:
             case NO_UP:
@@ -183,28 +313,139 @@ public class Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_startButtonActionPerformed
 
     private void stopButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stopButtonActionPerformed
-        switch(state) {
-               case NO_DOWN:
-                       state = States.INIT;
-                     //  initValue();
-                       break;
-               case NO_UP:
-                       state = States.INIT;
-                     //  initValue();
-                       break;
-               case OK:
-                     //  initValue();
-                       break;
-               case EDITING:
-                case INIT:
-                case DOWN:
-                       throw new RuntimeException("bad state");
-       }
+        switch (state) {
+            case NO_DOWN:
+            case NO_UP:
+            case OK:
+                state = States.INIT;
+                initActivation();
+                initAction();
+                break;
+            case EDITING:
+            case INIT:
+            case DOWN:
+                throw new RuntimeException("bad state");
+        }
     }//GEN-LAST:event_stopButtonActionPerformed
 
     private void jTextFieldPercent1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldPercent1KeyPressed
-        // TODO add your handling code here:
+        int value;
+        switch (state) {
+            case EDITING:
+                if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+                    value = Integer.valueOf(jTextFieldPercent1.getText());
+                    if (value < 100) {
+                        state = States.NO_DOWN;
+                        noDownActivation();
+                        enteredValAction();
+                    } else if (value < 100 && value > 0) {
+                        state = States.OK;
+                        okActivation();
+                        enteredValAction();
+                    } else if (value > 100) {
+                        state = States.NO_UP;
+                        noUpActivation();
+                        enteredValAction();
+                    }
+                }
+                break;
+            case DOWN:
+            case NO_DOWN:
+            case INIT:
+            case OK:
+            case NO_UP:                
+            default:
+                throw new AssertionError(state.name());
+
+        }
     }//GEN-LAST:event_jTextFieldPercent1KeyPressed
+
+    private void jTextFieldPercent1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextFieldPercent1MouseReleased
+        switch (state) {
+            case OK:
+            case NO_UP:
+            case NO_DOWN:
+            case EDITING:                
+                state = States.EDITING;
+                editingActivation();
+                break;
+            case DOWN:
+            case INIT:                
+            default:
+                throw new RuntimeException("bad state");
+
+        }
+    }//GEN-LAST:event_jTextFieldPercent1MouseReleased
+
+    private void pieChartView1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pieChartView1MouseDragged
+        switch (state) {
+            case DOWN:
+                state = States.DOWN;
+                downActivation();
+                 int value = UtilitiesPieChart.pointToPercentage(pieChartView1, evt.getX(), evt.getY());
+
+                 calcPercentAction(value);
+                break;
+            case OK:
+            case NO_UP:
+            case EDITING:
+            case INIT:
+            case NO_DOWN:                
+            default:
+                throw new RuntimeException("bad state");
+        }
+    }//GEN-LAST:event_pieChartView1MouseDragged
+
+    private void pieChartView1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pieChartView1MouseReleased
+        int value;
+        switch (state) {
+            case DOWN:
+                state = States.DOWN;
+                downActivation();
+                 value = UtilitiesPieChart.pointToPercentage(pieChartView1, evt.getX(), evt.getY());
+                  
+                 if (value == 0) {
+                     state = States.NO_DOWN;
+                     noDownActivation();
+                     initAction();
+                 } else if (value == 100) {
+                     state = States.NO_UP;
+                     noUpActivation();
+                     calcPercentAction(value);
+                 } else {
+                     state = States.OK;
+                     okActivation();
+                     calcPercentAction(value);
+                 }
+                break;
+            case OK:
+            case NO_UP:
+            case EDITING:
+            case INIT:
+            case NO_DOWN:                
+            default:
+                throw new RuntimeException("bad state");
+        }
+    }//GEN-LAST:event_pieChartView1MouseReleased
+
+    private void pieChartView1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pieChartView1MousePressed
+        switch (state) {
+            case NO_DOWN:
+                state = States.DOWN;
+                break;
+            case OK:
+                state = States.DOWN;
+                break;
+            case EDITING:
+                state = States.DOWN;
+                break;
+            case NO_UP:
+            case DOWN:
+            case INIT:
+            default:
+                throw new RuntimeException("bad state");
+        }
+    }//GEN-LAST:event_pieChartView1MousePressed
 
     /**
      * @param args the command line arguments

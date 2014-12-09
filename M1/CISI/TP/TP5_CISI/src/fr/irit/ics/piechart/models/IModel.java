@@ -16,5 +16,7 @@ import fr.irit.ics.piechart.views.IView;
 public interface IModel {
     public void setValue(int value);
     public int getValue();
+    public void incrementValue();
+    public void decrementValue();
     public void addView(IView view);
 }
