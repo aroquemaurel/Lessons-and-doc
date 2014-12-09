@@ -112,6 +112,7 @@ public class AustriaTrafficLight extends javax.swing.JFrame {
         redOrangeTimer.stop();
         greenTimer.stop();
     }    
+    
     private void orangeActivation() {
         onButton.setEnabled(false);
         offButton.setEnabled(true);
@@ -292,6 +293,7 @@ public class AustriaTrafficLight extends javax.swing.JFrame {
             case ORANGE:
             case GREEN_BLINK_OFF:
             case GREEN_BLINK_ON:
+            case GREEN:
             case INIT:
             case RED_ORANGE:                
                 throw new RuntimeException("bad state");                                
@@ -317,6 +319,8 @@ public class AustriaTrafficLight extends javax.swing.JFrame {
             case ORANGE:
             case INIT:
             case RED_ORANGE:
+            case GREEN_BLINK_OFF:
+            case GREEN:
                 throw new RuntimeException("bad state");                                
         }
 
@@ -334,6 +338,7 @@ public class AustriaTrafficLight extends javax.swing.JFrame {
             case RED:
             case GREEN_BLINK_OFF:
             case GREEN_BLINK_ON:
+            case GREEN:
             case INIT:
             case RED_ORANGE:
                 throw new RuntimeException("bad state");                
@@ -353,6 +358,7 @@ public class AustriaTrafficLight extends javax.swing.JFrame {
             case RED:
             case GREEN_BLINK_OFF:
             case GREEN_BLINK_ON:
+            case GREEN:
             case INIT:
                 throw new RuntimeException("bad state");                
         }
@@ -371,6 +377,7 @@ public class AustriaTrafficLight extends javax.swing.JFrame {
             case RED:
             case GREEN_BLINK_OFF:
             case GREEN_BLINK_ON:
+            case GREEN:
             case INIT:
                 throw new RuntimeException("bad state");
         }
@@ -384,6 +391,7 @@ public class AustriaTrafficLight extends javax.swing.JFrame {
                 greenBlinkOnActivation();
                 break;
             case GREEN_BLINK_ON:
+            case GREEN:
             case ONPANNE:
             case ORANGE:
             case OFFPANNE:

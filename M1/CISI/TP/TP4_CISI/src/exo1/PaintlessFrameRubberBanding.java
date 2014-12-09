@@ -5,7 +5,6 @@ import java.awt.Point;
 
 /**
  *
- * @author florent
  */
 public class PaintlessFrameRubberBanding extends javax.swing.JFrame {
         private enum States {

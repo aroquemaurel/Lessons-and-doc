@@ -6,7 +6,6 @@ import javax.swing.SwingUtilities;
 
 /**
  *
- * @author florent
  */
 public class GimplessFrameRubberBanding extends javax.swing.JFrame {
     private enum States {
