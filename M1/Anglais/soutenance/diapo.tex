@@ -1,6 +1,8 @@
 % /solutions/conference-talks/conference-ornate-20min.fr.tex, 22/02/2006 De Sousa
 \documentclass{beamer}
 \usepackage{listings}
+\usepackage{tikz} %Vectoriel
+\usepackage{pgfplots}
 % Ce fichier est un exemple d'exposé
 
 % - pour des conférences,
@@ -21,6 +23,8 @@
 % package ou programme, je vous donne la permission exceptionnelle de copier librement et
 % de modifier ce fichier et même d'effacer ce message de copyright.
 \usepackage{pdfpages}
+\newcommand{\ts}{\textsuperscript}
+
 
 
 \mode<presentation> {
@@ -32,7 +36,7 @@
 }
 
 
-\usepackage[francais]{babel}
+\usepackage[english]{babel}
 % or autre comme par exemple \usepackage[english]{babel}
 
 \usepackage[latin1]{inputenc}
@@ -48,10 +52,10 @@
 
 
 \title[] % (facultatif, à utiliser uniquement si le titre de l'article est trop long)
-{Développement d'une application Android}
-\subtitle {CatchGame}
+{Free Software}
+\subtitle {}
 
-\author{Antoine de \bsc{Roquemaurel}}
+%author{Antoine de \bsc{Roquemaurel}}
 
 % - Composez les noms dans l'ordre dans lequel ils apparaîtrons dans l'article
 % - Utilisez la commande \inst{?} uniquement si les auteurs ont des affiliations
@@ -60,14 +64,14 @@
 \institute[] % (facultatif mais généralement nécessaire)
 {
 Toulouse III University -- Paul Sabatier \\
-  M1 Informatique
+Master in computer science
   \vspace{-10px}
 }
 % - Utilisez la commande \inst uniquement s'il y a plusieurs affectations
 % - Faîtes quelque chose de simple, personne ne s'intéresse à votre adresse
 
-\date[ ~ ~ ~ 29 / 03 / 2014] % (facultatif, peut être une abréviation du nom de la conférence)
-{29 / 03 / 2014}
+\date[ ~ ~ ~ 12/15/2014] % (facultatif, peut être une abréviation du nom de la conférence)
+{December 14\ts{th}, 2014}
 % - Utilisez à la fois le nom de la conférence et son abréviation.
 % - N'a pas réellement d'importance pour l'assistance qui sera présente lors de la conférence,
 %   mais en a surtout pour les personnes (y compris vous-même) qui liront les transparents en ligne.
@@ -88,7 +92,7 @@ Toulouse III University -- Paul Sabatier \\
 % À supprimer si vous ne voulez pas que la table des matières apparaisse
 % au début de chaque sous-section : 
 \AtBeginSection[] {
-  \begin{frame}<beamer>{Ligne directrice}
+  \begin{frame}<beamer>{Guideline}
     \tableofcontents[currentsection]
   \end{frame}
 }
@@ -107,7 +111,7 @@ Toulouse III University -- Paul Sabatier \\
 	\end{beamercolorbox}%
 
 	\begin{beamercolorbox}[wd=.76\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot}%
-		\usebeamerfont{section in head/foot} Développement d'une application Android 
+		\usebeamerfont{section in head/foot} Free Software 
 	\end{beamercolorbox}%
 
 	\begin{beamercolorbox}[wd=.10\paperwidth,ht=2.27ex,dp=1ex,right]{section in head/foot}%
@@ -121,36 +125,185 @@ Toulouse III University -- Paul Sabatier \\
 \begin{frame}
   \titlepage
 \end{frame}
+\begin{frame}{Introduction}
+	\begin{itemize}
+		\item Since decades, free software is everywhere !
+
+	\begin{figure}
+		\includegraphics[height=2cm]{firefox.png}
+		\includegraphics[height=2cm]{tux.png}
+		\includegraphics[height=2cm]{gimp.png}
+		\includegraphics[height=2cm]{moodle.jpg}
+		\caption{Differents free Software}
+	\end{figure}
+	\pause
+		\item How it works ?
+	\end{itemize}
+		
+\end{frame}
 \begin{frame}{Plan}
 	\tableofcontents
 \end{frame}
-\section{Free software and liberty}
-\subsection{A free software}
-\begin{frame}{Free software}
+\section{Free software}
+\subsection{Free software and freedoms}
+\uncover<1>{
+\begin{frame}{Free software and freedoms}
 	\begin{block}{Free software is not\ldots}
 	\begin{itemize}
-		\item Free
-		\item Open-source
+		\item Software without payment
+		\item Open-source software
 	\end{itemize}
 \end{block}
+}
+\uncover<2->{
 
-\begin{block}{But free software is}
+\begin{block}{\ldots but free software is}
+\setbeamercovered{transparent}
+	\begin{wrapfigure}{r}{0.4\textwidth}
+		\vspace{-20px}
+		\begin{figure}[H]
+	\includegraphics[width=3cm]{gnu.png}
+	\caption{GNU Project}
+\end{figure}
+\end{wrapfigure}
+
 	A software that you can 
 	\begin{itemize}
+			\pause
 		\item Run
+			\pause
 		\item Study 
+			\pause
 		\item Modify 
+			\pause
 		\item Distribute
 	\end{itemize}
+	~\\~\\
 \end{block}
+}
 \end{frame}
-\section{A particular economic model}
-\subsection{Need moneys !}
+
+\subsection{Free software and community}
+\begin{frame}{Free software and community}
+	\uncover<1->{
+	\begin{itemize}
+		\item Lot of contributors\ldots
+			\begin{itemize}
+				\item Developpers, Translators, Designers, Writers, Helpers,\ldots 
+			\end{itemize}
+			\pause
+		\item \ldots in lot of nations
+	\end{itemize}
+	}
+	\uncover<3>{
+
+	\begin{figure}[H]
+			\begin{tikzpicture}[scale=.7]
+				\begin{axis}[ybar,ylabel={\textbf{Number of contributors}}, 
+					xtick={1,2,3,4,5, 6},xticklabels={Linux, Firefox, Git, LibreOffice, Gimp, Moodle}, width=13cm, height=7cm, nodes near coords]
+					\addplot[ybar, fill=rouge] coordinates{(1,4500)(2,2330)(3,900)(4,410)(5,330)(6, 280)};
+				\end{axis}
+			\end{tikzpicture}
+			\caption{Number of contributors and their project}
+		\end{figure}
+			}
+\end{frame}
+
+\section{Business model}
+\subsection{Need money !}
+\begin{frame}{Need money !}
+	\begin{block}{Money is required for}
+\setbeamercovered{transparent}
+	\begin{itemize}
+		\item Servers
+			\pause
+		\item Web sites
+			\pause
+		\item Advertising 
+			\pause
+		\item Few developpers
+	\end{itemize}
+	\pause
+\end{block}
+	\vfill
+\uncover<5>{
+$\Rightarrow$ Creation of \textbf{associations} or \textbf{companies} for money management 
+	}
+\end{frame}
+
 \subsection{Differents financing}
-\section{A difficult innovation} 
-\subsection{The patents}
-\subsection{..}
+\begin{frame}{Differents financing}
+\setbeamercovered{transparent}
+	\begin{itemize}
+		\item Technical supports
+			\pause
+		\item All-inclusive solution
+			\pause
+		\item Sponsoring and gifts
+			\pause
+		\item Advertising 
+			\pause
+		\item Goodies
+	\end{itemize}
+\end{frame}
+\section{Innovation} 
+\subsection{Collaborative work is powerfull}
+\begin{frame}{Collaborative work is powerfull}
+	\begin{itemize}
+		\item Many people
+			\begin{itemize}
+				\item Many ideas
+				\item Many point of view
+				\item Many talented persons
+			\end{itemize}
+			\pause
+		\item Do it with passion
+			\pause
+		\item `` \textit{Forks} ''
+			\pause
+			\vfill
+		\item Some companies pay contributors
+			\begin{itemize}
+				\item Google, Microsoft, \ldots\\
+				~ $\Rightarrow$ They need free software !
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+\subsection{Examples of innovation with Free Software}
+\begin{frame}{Examples}
+\setbeamercovered{transparent}
+	
+	\begin{itemize}
+		\item<1> Linux
+		\item<2> Wikis
+		\item<3> Live CD
+		\item<4> Virtual Network Computing (VNC)
+	\end{itemize}
+	\begin{figure}[H]
+	\only<1>{
+		\includegraphics[height=3cm]{tux.png}
+		\caption{Tux, Linux symbol}
+	}
+	\only<2>{
+		\includegraphics[height=3cm]{wiki.png}
+		\caption{Wikipédia}
+	}
+	\only<3>{
+		\includegraphics[height=3cm]{live.jpg}
+		\caption{Knoppix, first distribution with Live CD}
+	}
+	\only<4>{
+		\includegraphics[height=3cm]{vnc.jpg}
+		\caption{VNC in use}
+	}
+	\end{figure}
+\end{frame}
+% Exemples
+% Entreprises contribuent ! 
+
 \section*{Conclusion}
+% C'est bien, mais bon, ça pourrait être mieux quoi
+% Securité
 \begin{frame}{Conclusion}
 Free software is cool ! 
 \end{frame}
